@@ -1,6 +1,6 @@
-![Zoly](http://lucida-brasil.github.io/public/Images/zoly-logo.png)
+![Riachuelo](https://www.riachuelo.com.br/static/version1623357894/frontend/Corra/webjump/pt_BR/images/logo.svg)
 
-> Área - Digital Analytics<br />
+> Área - Web Analytics<br />
 > Documento de Especificação Técnica
 
 <br />
@@ -22,9 +22,13 @@
 
 <br />
 
-## Implementação da Camada de dados - Riachuelo - e-Store
+## Implementação da Camada de dados - Projeto E-Store
 Última atualização: 15/12/2020 <br />
-Em caso de dúvidas, entrar em contato com: [digitalanalytics@zoly.com.br](mailto:digitalanalytics@zoly.com.br)
+Em caso de dúvidas, entrar em contato com algum desses e-mails: 
+
+[camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) 
+[guilherme.lacerda@riachuelo.com.br](mailto:guilherme.lacerda@riachuelo.com.br)
+[gustavo.pereira@riachuelo.com.br](mailto:gustavo.pereira@riachuelo.com.br)
 
 <br />
 
@@ -208,15 +212,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 - **Onde:** Em todas as páginas que estiverem disponíveis
     - **Titulo ou nome do botão/link:** Título: &quot;sacola&quot; (ícone), &quot;Riachuelo&quot; (logo), &quot;login&quot;, &quot;sair&quot;, &quot;início&quot; e etc
-    
-```html
-<div
-   data-gtm-event-category='estore:geral'
-   data-gtm-event-action='clique:header'
-   data-gtm-event-label='[[link-clicado]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:geral',
+    'eventAction': 'clique:header',
+    'eventLabel': '[[link-clicado]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -241,14 +248,13 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[termo-buscado]] | &#039;vestidos&#039;, &#039;calca-masculina&#039; e etc | Deve retornar o termo buscado pelo usuário. |
-| [[erro]] | &#039;nao-encontramos-nenhum-resultado&#039;, &#039;ops-ocorreu-um-erro&#039;, &#039;pagina-nao-encontrada&#039; e etc | Deve retornar o erro apresentado após fazer a busca e não encontrar nenhum resultado. |
+| [[erro]] | &#039;nao-encontramos-nenhum-resultado&#039;, &#039;ops-ocorreu-um-erro&#039;, &#039;pagina-nao-encontrada&#039; e etc | Deve retornar o erro apresentado após fazer a busca e não encontrar nenhum resultado. <br /> <b>OBS: A variável de [[erro]] só deve ser retornada caso não encontre nenhum resultado na pesquisa, caso contrário, deve ser ignorada </b>|
 
 <br />
+
 
 
 **Ao carregar uma página de não encontrada ou ocorreu um erro por conta do serviço ou servidor.**<br />
@@ -295,16 +301,35 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-campo]] | &#039;matricula&#039;, &#039;cpf&#039; e etc | Deve retornar o nome do campo preenchido pelo usuário. |
 
 <br />
 
+**Após interagir com o campo de "Selecione a loja".**<br />
 
-**No clique do botão &quot;Continuar&quot; para validar os campos preenchidos de CPF e Senha**<br />
+- **Onde:** Na página home do site
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:lightbox-identificacao',
+    'eventAction': 'interacao:campo',
+    'eventLabel': 'selecione-a-loja:[[opcao-selecionada]]',
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[opcao-selecionada]] | 'loja-1', 'loja-abc' | Deve retornar a opção selecionada pelo usuário.|
+
+<br />
+
+**No clique do botão "Continuar" para validar os campos preenchidos de CPF, Senha e Loja selecionada.**<br />
 
 - **Onde:** Na página home do site
     
@@ -320,13 +345,10 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
-
 <br />
+                  
 
-
-**No callback, após clicar no botão &quot;Continuar&quot; para validar os campos preenchidos CPF e Senha com sucesso**<br />
+**No callback, após clicar no botão "Continuar" para validar os campos preenchidos CPF, Senha e Loja selecionada com sucesso**<br />
 
 - **Onde:** Na página home do site
     
@@ -343,91 +365,10 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:matricula-invalida&#039; e etc | eve retornar o label do botão &#039;sucesso&#039; ou o status de erro retorno. |
 | [[cd5-user-funcionarioid]] |  &#039;10203040&#039; | ID único do funcionário |
-
-<br />
-
-
-**Após interagir com os campos de &quot;Selecione a loja&quot; e de &quot;Selecione o Dispositivo&quot;**<br />
-
-- **Onde:** Na página home do site
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:lightbox-identificacao',
-    'eventAction': 'interacao:campo',
-    'eventLabel': '[[campo]]:[[opcao-selecionada]]',
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[campo]] | &#039;selecione-a-loja&#039; ou &#039;selecione-o-dispositivo&#039; | Deve retornar o nome do campo . |
-| [[opcao-selecionada]] | &#039;loja-1&#039;, &#039;loja-abc&#039;, &#039;computador&#039;, &#039;totem&#039;, &#039;espelho&#039; e etc | Deve retornar a opção selecionada pelo usuário. |
-
-<br />
-
-
-**No clique do botão &quot;Continuar&quot;  para validar os itens selecionados de Loja e Dispositivo**<br />
-
-- **Onde:** Na página home do site
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:lightbox-identificacao',
-    'eventAction': 'tentativa:loja-dispositivo',
-    'eventLabel': 'continuar'
-  });
-</script>
-```
-
-
-
-
-<br />
-
-
-**No callback, após clicar no botão &quot;Continuar&quot; depois de ter selecionado a Loja e Dispositivo**<br />
-
-- **Onde:** Na página home do site
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:lightbox-identificacao',
-    'eventAction': 'callback:loja-dispositivo',
-    'eventLabel': '[[sucesso ou tipo-erro]]',
-    'dimension5': '[[cd5-user-funcionarioid]]',
-    'dimension6': '[[cd6-hit-loja]]',
-    'dimension7': '[[cd7-hit-dispositivo]]',
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:selecione-a-loja-para-prosseguir&#039; e etc | eve retornar o label do botão &#039;sucesso&#039; ou o status de erro retorno. |
-| [[cd5-user-funcionarioid]] |  &#039;10203040&#039; | ID único do funcionário |
-| [[cd6-hit-loja]] |  &#039;ABC&#039; | Nome da Loja preenchido |
-| [[cd7-hit-dispositivo]] |  &#039;Dispositivo-1&#039; | Nome do dispositivo usado |
 
 <br />
 
@@ -513,19 +454,20 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique no botão de &quot;Esqueci minha senha&quot;**<br />
 
 - **Onde:** Na página de login
-    
+
 ```html
-<div
-   data-gtm-event-category='estore:login'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='esqueci-senha'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:login',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'esqueci-senha'
+  });
+</script>
 ```
 
-
-
 <br />
-
 
 **Na interação com o campo de cpf para redefinir senha**<br />
 
@@ -650,15 +592,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique no botão de &quot;Continuar&quot;, &quot;termos e condições de uso&quot; e &quot;Política de Privacidade&quot;**<br />
 
 - **Onde:** No formulário de cadastro
-    
-```html
-<div
-   data-gtm-event-category='estore:criar-conta'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:criar-conta',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -723,15 +668,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique no botão de &quot;Desconectar Agora&quot;**<br />
 
 - **Onde:** Na caixa de alerta de segurança
-    
-```html
-<div
-   data-gtm-event-category='estore:alerta-seguranca'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:alerta-seguranca',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -752,6 +700,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventCategory': 'estore:logoff',
     'eventAction': 'desconectado:ate-logo',
     'eventLabel': 'deslogado-com-sucesso',
+    'noInteraction': '1',
   });
 </script>
 ```
@@ -766,18 +715,22 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 - **Onde:** Na página de lista de produtos
     
 ```html
-<div
-   data-gtm-event-category='estore:clp'
-   data-gtm-event-action='clique:[[categoria ou subcategoria]]'
-   data-gtm-event-label='[[item-selecionada]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:clp',
+    'eventAction': 'clique:[[categoria ou subcategoria]]',
+    'eventLabel': '[[item-selecionada]]'
+  });
+</script>
 ```
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[item-selecionada]] | &#039;colecao-feminina&#039;,  &#039;plus-size&#039;, &#039;esporte-fitness&#039; e etc | Deve retornar a  categoria selecionada. |
 | [[categoria ou subcategoria]] | &#039;categoria&#039;,  &#039;subcategoria&#039; | Deve retornar a se foi selecionado um elemento de categoria ou subcategoria . |
+| [[item-selecionada]] | &#039;colecao-feminina&#039;,  &#039;plus-size&#039;, &#039;esporte-fitness&#039; e etc | Deve retornar a  categoria selecionada. |
+
 
 <br />
 
@@ -803,12 +756,12 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[filtro]] | &#039;tamanho&#039;, &#039;marcas&#039;, &#039;padronagem&#039;, &#039;cor&#039;, &#039;relevancia&#039; e etc | Deve retornar o nome do filtro. |
-| [[filtro-selecionado]] | &#039;marca-1&#039;, &#039;bordado&#039;, &#039;vermelho&#039;,   &#039;preco:maiores-primeiro&#039;, &#039;lancamentos&#039; e etc | Deve retornar o label do filtro selecionado. |
+| [[filtro-selecionado]] | &#039;marca-1&#039;, &#039;bordado&#039;, &#039;vermelho&#039;,   &#039;preco:maiores-primeiro&#039;, &#039;lancamentos&#039; e etc | Deve retornar o label do filtro selecionado. <br /> <b>OBS: Caso seja selecionado mais de um filtro, retornar de forma concatenada, separando por ponto e vírgula ( ; ). Ex: 'tamanho:46;48' </b>|
 
 <br />
 
 
-**No clique no &quot;ordenar por&quot;**<br />
+**Nos cliques do filtro "ordenar por" e na escolha de visualização de grade.**<br />
 
 - **Onde:** Na página de lista de produtos
     
@@ -818,39 +771,65 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'estore:[[clp ou busca]]',
-    'eventAction': 'clique:ordenar-por',
+    'eventAction': 'clique:[[item-clicado]]',
     'eventLabel': '[[ordem-selecionado]]',
   });
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
+| [[clp ou busca]] | 'cpl' ou 'busca' | Deve retorna o tipo de página. |
+| [[item-clicado]] | 'ordenar-por', 'exibir-2-colunas', 'exibir-4-colunas' e etc. | Deve retornar o nome do item clicado.|
 | [[ordem-selecionado]] | &#039;por-preco&#039;, &#039;por-relevancia&#039; e etc | Deve retornar o label do ordem selecionado. |
 
 <br />
 
+**No clique no botão "voltar"**<br />
+
+- **Onde:** Na página de lista de produtos
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:[[clp ou busca]]',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'voltar',
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[clp ou busca]] | 'cpl' ou 'busca' | Deve retorna o tipo de página. |
+
+
+<br />
 
 ### Checkout
 
-**No clique nos botões de &quot;Continuar&quot;, &quot;+&quot;(Aumentar), &quot;-&quot; (Diminuir), Lixeira**<br />
+**No clique nos botões de "Continuar", "+"(Aumentar), "-" (Diminuir), Lixeira e voltar**<br />
 
 - **Onde:** Na página de Sacola
     
 ```html
-<div
-   data-gtm-event-category='estore:sacola'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:sacola',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
 ```
 
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;continuar&#039;, &#039;aumentar-quantidade&#039;, &#039;diminuir-quantidade&#039;, &#039;excluir&#039; e etc | Deve retornar o nome do botão clicado. |
+| [[nome-botao]] |  'continuar', 'aumentar-quantidade', 'diminuir-quantidade', 'excluir', 'voltar' | Deve retornar o nome do botão clicado. |
 
 <br />
 
@@ -866,7 +845,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'eventCategory': 'estore:sacola',
     'eventAction': 'callback:produtos',
-    'eventLabel': 'item-indisponivel'
+    'eventLabel': 'item-indisponivel',
+    'noInteraction': '1',
   });
 </script>
 ```
@@ -882,14 +862,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 - **Onde:** No lightbox de &quot;A quantidade desejada está indisponível no momento&quot;
     
 ```html
-<div
-   data-gtm-event-category='estore:sacola'
-   data-gtm-event-action='clique:botao:lightbox:quantidade-desejada-indisponivel'
-   data-gtm-event-label='continuar'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:sacola',
+    'eventAction': 'clique:botao:lightbox:quantidade-desejada-indisponivel',
+    'eventLabel': 'continuar'
+  });
+</script>
 ```
-
-
 
 <br />
 
@@ -897,22 +879,24 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique nos botões de &quot;Remover&quot; ou &quot;Cancelar**<br />
 
 - **Onde:** No lightbox de &quot;Tem certeza que quer remover esse item da sua sacola?&quot;
-    
-```html
-<div
-   data-gtm-event-category='estore:sacola'
-   data-gtm-event-action='clique:botao:lightbox:remover-item-sacola'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:sacola',
+    'eventAction': 'clique:botao:lightbox:remover-item-sacola',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-botao]] | &#039;remover&#039;, &#039;cancelar&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
-
 
 **No callback após remover todos os produtos do carrinho**<br />
 
@@ -925,13 +909,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'eventCategory': 'estore:sacola',
     'eventAction': 'callback:produtos',
-    'eventLabel': 'sacola-vazia'
+    'eventLabel': 'sacola-vazia',
+    'noInteraction': '1',
   });
 </script>
 ```
-
-
-
 
 <br />
 
@@ -939,16 +921,63 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique no botão de &quot;Desconectar&quot;**<br />
 
 - **Onde:** No lightbox de &quot;Sua sacola está vazia&quot;
-    
+
 ```html
-<div
-   data-gtm-event-category='estore:sacola'
-   data-gtm-event-action='clique:botao:lightbox:sacola-vazia'
-   data-gtm-event-label='desconectar'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:sacola',
+    'eventAction': 'clique:botao:lightbox:sacola-vazia',
+    'eventLabel': 'desconectar'
+  });
+</script>
 ```
 
+<br />
 
+**No clique nos botões/links**<br />
+
+- **Onde:** Na tela de "Finalize sua compra pelo celular"
+
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:compra',
+    'eventAction': 'clique:[[botao-ou-link]]',
+    'eventLabel': '[[item-clicado]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-ou-link]] | 'botao' ou 'link' | Deve retornar o nome do elemento clicado. |
+| [[item-clicado]] | 'voltar', 'continuar', 'duvidas' ou 'fechar' | Deve retornar o nome do item clicado.|
+
+<br />
+
+**No clique dos botões "Continuar Conectado" ou "Finalizar"**<br />
+
+- **Onde:** Na tela de "Finalize sua compra pelo celular", seção "Para manter a segurança"
+
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:compra:modal-seguranca',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[botao-clicado]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-clicado]] | 'continuar-conectado' e 'fechar' | Deve retornar o nome do botão clicado. |
 
 <br />
 
@@ -956,19 +985,22 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique nas opções**<br />
 
 - **Onde:** Na tela de &quot;Compra&quot;
-    
-```html
-<div
-   data-gtm-event-category='estore:compra'
-   data-gtm-event-action='clique:opcao'
-   data-gtm-event-label='[[opcao-selecionada]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:compra',
+    'eventAction': 'clique:opcao',
+    'eventLabel': '[[opcao-selecionada]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[opcao-selecionada]] | &#039;entrega&#039;, &#039;cupons-vale-cartao-presente&#039;, &#039;pagamento&#039; e etc | Deve retornar a opção selecionada. |
+| [[opcao-selecionada]] |  'entrega', 'cupons-vale-cartao-presente', 'pagamento' e etc| Deve retornar a opção selecionada. |
 
 <br />
 
@@ -976,15 +1008,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique no botão de &quot;Adicionar novo endereço&quot; ou &quot;Editar Endereço&quot;, na seção de Endereço**<br />
 
 - **Onde:** Na página de Entrega, na seção de Endereço
-    
-```html
-<div
-   data-gtm-event-category='estore:checkout:endereco'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:endereco',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1009,12 +1044,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]]  |  &#039;cep&#039;, &#039;nome&#039;, telefone&#039;  e etc | Deve retornar o nome do campo preenchido. |
 | [[nome-formulario]] | &#039;editar-endereco&#039; ou &#039;novo-endereco&#039; | Deve retornar o nome do formulário que o botão está localizado. |
+| [[nome-campo]]  |  &#039;cep&#039;, &#039;nome&#039;, telefone&#039;  e etc | Deve retornar o nome do campo preenchido. |
+
 
 <br />
 
@@ -1034,8 +1068,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1059,8 +1091,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1086,8 +1116,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[opcao-selecionada]] | &#039;cupons-vales&#039;, &#039;cartao-presente&#039; e etc | Deve retornar a opção selecionada. |
@@ -1095,7 +1123,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <br />
 
 
-**No clique nas opções de &quot;Cartaõ Riachuelo ou Cartão de Crédito&quot; ou &quot;Boleto&quot;**<br />
+**No clique nas opções de &quot;Cartão Riachuelo ou Cartão de Crédito&quot; ou &quot;Boleto&quot;**<br />
 
 - **Onde:** Na página de &quot;Pagamento&quot;
     
@@ -1110,8 +1138,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1136,8 +1162,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:numero-invalido&#039;, &#039;erro:nome-obrigatorio&#039;, &#039;erro:cpf-incompleto&#039;, &#039;erro:selecione-parcelamento&#039; e etc | Deve retornar o status sucesso ou de erro retorno. |
@@ -1150,13 +1174,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 - **Onde:** Na página de checkout,
     
 ```html
-<div
-   data-gtm-event-category='estore:checkout'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
 ```
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1190,8 +1217,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1237,8 +1262,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:cupom-invalido&#039; e etc | Deve retornar o status do retorno. |
@@ -1262,8 +1285,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[finalizar ou tipo-erro]] | &#039;finalizar&#039;, &#039;erro:verifique-os-dados-inseridos-ou-utilize-outro-meio-pagamento&#039;, &#039;erro:nao-foi-possivel-concluir-tente-novamente&#039; e etc | Deve retornar o label do botão &#039;finalizar&#039; ou o status de erro retorno. |
@@ -1274,16 +1295,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique do botão &quot;Copiar Código&quot; para copiar o código de barras**<br />
 
 - **Onde:** Na página de Pedido Realizado com Sucesso
-    
+
 ```html
-<div
-   data-gtm-event-category='estore:purchase'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='copiar-codigo-barras'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:purchase',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'copiar-codigo-barras'
+  });
+</script>
 ```
-
-
 
 <br />
 
@@ -1301,12 +1324,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'eventCategory': 'estore:produto',
     'eventAction': 'callback:sem-selecao',
-    'eventLabel': 'selecionar:[[cor ou tamanho]]'
+    'eventLabel': 'selecionar:[[cor ou tamanho]]',
+    'noInteraction': '1',
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1314,6 +1336,21 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
+**No clique do botão voltar**<br />
+
+- **Onde:** Nas páginas de produtos
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:produto',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'voltar',
+  });
+</script>
+```
 
 ### Enhanced Ecommerce
 
@@ -1342,8 +1379,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[id-promocao]] |  &#039;banner123&#039;, &#039;banner234&#039; e etc | ID único do Banner |
@@ -1352,12 +1387,10 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
-
 **No clique dos banners**<br />
 
 - **Onde:** Na página home do site
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -1391,12 +1424,12 @@ window.dataLayer.push({
 
 - **Onde:** Em todas as páginas que exibirem uma lista de produtos
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   'event': 'productImpressions',
+  'noInteraction': '1',
   'eventCategory':'estore:enhanced-ecommerce',
   'eventAction': 'impressions',
     'ecommerce': {
@@ -1428,7 +1461,7 @@ window.dataLayer.push({
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
-| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
+| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção.<br /> **OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula)**|
 | [[cd18-product-exclusivoecommerce]] |  &#039;true&#039; ou &#039;false&#039; | Se é um produto exclusivo do ecommerce |
 | [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
 | [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
@@ -1446,12 +1479,10 @@ window.dataLayer.push({
 
 <br />
 
-
 **No clique dos produtos da vitrine interagidos na página**<br />
 
 - **Onde:** Em todas as páginas que exibirem uma lista de produtos
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -1491,7 +1522,7 @@ window.dataLayer.push({
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
-| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
+| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção.<br /> **OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula)**|
 | [[cd18-product-exclusivoecommerce]] |  &#039;true&#039; ou &#039;false&#039; | Se é um produto exclusivo do ecommerce |
 | [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
 | [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
@@ -1509,7 +1540,6 @@ window.dataLayer.push({
 
 <br />
 
-
 **No carregamento da página de detalhe**<br />
 
 - **Onde:** Na página de detalhes de produto
@@ -1520,6 +1550,7 @@ window.dataLayer.push({
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   'event': 'productDetail',
+  'noInteraction': '1',
   'eventCategory': 'estore:enhanced-ecommerce',
   'eventAction': 'detail',
   'eventLabel': '-',
@@ -1553,7 +1584,7 @@ window.dataLayer.push({
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
-| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
+| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção.<br /> **OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula)**|
 | [[cd18-product-exclusivoecommerce]] |  &#039;true&#039; ou &#039;false&#039; | Se é um produto exclusivo do ecommerce |
 | [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
 | [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
@@ -1570,12 +1601,10 @@ window.dataLayer.push({
 
 <br />
 
-
 **No clique para adicionar produto ao carrinho**<br />
 
 - **Onde:** Na página de detalhes de produto
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -1617,7 +1646,7 @@ window.dataLayer.push({
 | [[cd14-product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
-| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
+| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção.<br /> **OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula)**|
 | [[cd18-product-exclusivoecommerce]] |  &#039;true&#039; ou &#039;false&#039; | Se é um produto exclusivo do ecommerce |
 | [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
 | [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
@@ -1635,11 +1664,9 @@ window.dataLayer.push({
 
 <br />
 
-
 **No clique para remover produto do carrinho, dentro do lightbox de &quot;Tem certeza que quer remover esse item da sua sacola?&quot;**<br />
 
 - **Onde:** No lightbox de &quot;Tem certeza que quer remover esse item da sua sacola?&quot;
-    
 
 ```html
 <script>
@@ -1682,7 +1709,7 @@ window.dataLayer.push({
 | [[cd14-product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
-| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
+| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção.<br /> **OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula)**|
 | [[cd18-product-exclusivoecommerce]] |  &#039;true&#039; ou &#039;false&#039; | Se é um produto exclusivo do ecommerce |
 | [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
 | [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
@@ -1711,10 +1738,10 @@ window.dataLayer.push({
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   'event': 'checkout',
+  'noInteraction': '1',
   'eventCategory': 'estore:enhanced-ecommerce',
   'eventAction': 'checkout',
-  'eventLabel': '-',
-  'dimension12': '[[cd112-hit-frete]]',
+  'dimension12': '[[cd12-hit-frete]]',
   'dimension13': '[[cd13-hit-parcelamento]]',
   'ecommerce': {
     'checkout': {
@@ -1738,8 +1765,7 @@ window.dataLayer.push({
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[checkout-index]] |  | Retornar &quot;1&quot; ou &quot;2&quot; ou &quot;3&quot; ou &quot;4&quot; ou &quot;5&quot; os exemplos citados |
-| [[cd112-hit-frete]] |  &#039;normal, expresso, entrega-agendada&#039;  | Nome do tipo de entrega.  |
+| [[cd12-hit-frete]] |  &#039;normal, expresso, entrega-agendada&#039;  | Nome do tipo de entrega.  |
 | [[cd13-hit-parcelamento]] |  &#039;2&#039; | Quantidade de parcelas |
 | [[cd14-product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
@@ -1757,7 +1783,6 @@ window.dataLayer.push({
 | [[passo-checkout]] |  &#039;5&#039; | Página de seleção do método de pagamento |
 
 <br />
-
 
 **Ao selecionar uma opção de entrega ou pagamento**<br />
 
@@ -1795,18 +1820,17 @@ window.dataLayer.push({
 
 <br />
 
-
 **No carregamento da página  de resumo de compra  após confirmação.**<br />
 
 - **Onde:** Na página de confirmação de compra
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   'event': 'purchase',
-  'eventCategory': 'eestore:nhanced-ecommerce',
+  'noInteraction': '1',
+  'eventCategory': 'estore:enhanced-ecommerce',
   'eventAction': 'purchase',
   'dimension5': '[[cd5-user-funcionarioid]]',
   'dimension6': '[[cd6-hit-loja]]',
@@ -1814,7 +1838,7 @@ window.dataLayer.push({
   'dimension9': '[[cd9-hit-bandeiracartão]]',
   'dimension10': '[[cd10-hit-metodopagamento]]',
   'dimension11': '[[cd11-hit-statuspagamento]]',
-  'dimension12': '[[cd112-hit-frete]]',
+  'dimension12': '[[cd12-hit-frete]]',
   'dimension13': '[[cd13-hit-parcelamento]]',
   'dimension26': '[[cd26-hit-valorfrete]]',
   'dimension27': '[[cd27-hit-prazofrete]]',
@@ -1862,12 +1886,12 @@ window.dataLayer.push({
 | [[cd9-hit-bandeiracartão]] |  &#039;mastercard&#039; | Bandeira do cartão utilizada na compra |
 | [[cd10-hit-metodopagamento]] |  &#039;cartao&#039;, &#039;boleto&#039; | Nome do tipo do pagamento. |
 | [[cd11-hit-statuspagamento]] |  &#039;aprovado&#039;   | Nome do status do pagamento.  |
-| [[cd112-hit-frete]] |  &#039;normal, expresso, entrega-agendada&#039;  | Nome do tipo de entrega.  |
+| [[cd12-hit-frete]] |  &#039;normal, expresso, entrega-agendada&#039;  | Nome do tipo de entrega.  |
 | [[cd13-hit-parcelamento]] |  &#039;2&#039; | Quantidade de parcelas |
 | [[cd14-product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
-| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
+| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. <br /> **OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula)**|
 | [[cd18-product-exclusivoecommerce]] |  &#039;true&#039; ou &#039;false&#039; | Se é um produto exclusivo do ecommerce |
 | [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
 | [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
@@ -1893,17 +1917,14 @@ window.dataLayer.push({
 
 <br />
 
-
-<br />
-
 ---
 
 ## Considerações Finais
-> Recomendações do Google:
-> 0. [GA - Index ID ]($reference->url)
-> 1. []($reference->url)
 
-> Em caso de dúvidas, entrar em contato com: [digitalanalytics@zoly.com.br](mailto:digitalanalytics@zoly.com.br)
+
+> Documentações Oficiais do Google: <br />
+> [Google Analytics - Avaliação de comércio eletrônico ](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce?hl=pt-br)
+> [Google Tag Manager - Guia do desenvolvedor ](https://developers.google.com/tag-manager/enhanced-ecommerce)
 
 <script>
   document.addEventListener('DOMContentLoaded', function(event) {
