@@ -26,9 +26,9 @@
 Última atualização: 14/07/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
-[camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) 
-[guilherme.lacerda@riachuelo.com.br](mailto:guilherme.lacerda@riachuelo.com.br)
-[gustavo.pereira@riachuelo.com.br](mailto:gustavo.pereira@riachuelo.com.br)
+[camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) &nbsp;
+[guilherme.lacerda@riachuelo.com.br](mailto:guilherme.lacerda@riachuelo.com.br) &nbsp;
+[gustavo.pereira@riachuelo.com.br](mailto:gustavo.pereira@riachuelo.com.br) &nbsp;
 
 <br />
 
