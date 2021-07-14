@@ -23,7 +23,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto E-Store
-Última atualização: 15/12/2020 <br />
+Última atualização: 14/07/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) 
