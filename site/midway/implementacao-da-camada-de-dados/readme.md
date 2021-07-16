@@ -1,13 +1,25 @@
-![Zoly](http://lucida-brasil.github.io/public/Images/zoly-logo.png)
+![Riachuelo](https://www.riachuelo.com.br/static/version1623357894/frontend/Corra/webjump/pt_BR/images/logo.svg)
 
-> Área - Digital Analytics<br />
+> Área - Web Analytics<br />
 > Documento de Especificação Técnica
 
 <br />
 
-## Implementação da Camada de dados - Riachuelo - Midway Site
-Última atualização: 31/05/2021 <br />
-Em caso de dúvidas, entrar em contato com: [digitalanalytics@zoly.com.br](mailto:digitalanalytics@zoly.com.br)
+## Sumário
+
+- [Objetivo](#objetivo)
+- [Implementação](#implementa%c3%a7%c3%a3o)
+- [Especificações Globais](#especifica%c3%a7%c3%b5es-globais)
+- [Dimensões Globais](#dimens&#245;es-globais)
+- [Eventos Gerais](#eventos-gerais)
+
+## Implementação da Camada de dados - Projeto Midway Site
+Última atualização: 16/07/2021 <br />
+Em caso de dúvidas, entrar em contato com algum desses e-mails: 
+
+[camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
+[guilherme.lacerda@riachuelo.com.br](mailto:guilherme.lacerda@riachuelo.com.br) <br />
+[gustavo.pereira@riachuelo.com.br](mailto:gustavo.pereira@riachuelo.com.br) <br />
 
 <br />
 
@@ -539,13 +551,17 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique dos cards dos parceiros**<br />
 
 - **Onde:** Na página Parceiros.
-    
+
 ```html
-<div
-   data-gtm-event-category='midway:parcerias'
-   data-gtm-event-action='clique:[[botao]]'
-   data-gtm-event-label='card:[[nome-do-parceiro]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'midway:parceiros',
+    'eventAction': 'clique:[[botao]]',
+    'eventLabel': 'card:[[nome-do-parceiro]]'
+  });
+</script>
 ```
 
 | Variável        | Exemplo                               | Descrição                         |
@@ -2601,32 +2617,14 @@ window.dataLayer.push({
 ---
 
 ## Considerações Finais
-> Recomendações do Google:
-> 0. [Documentação:]($reference->url)
-> 1. [Etapa da Documentação]($reference->url)
-> 2. [Geral - Área não logada]($reference->url)
-> 3. [Snippet GTM]($reference->url)
-> 4. [Page View
-Dimensões Globais]($reference->url)
-> 5. [Micro conversão]($reference->url)
-> 6. [Micro conversão]($reference->url)
-> 7. [Micro conversão]($reference->url)
-> 8. [Micro conversão]($reference->url)
-> 9. [Micro conversão]($reference->url)
-> 10. [Home]($reference->url)
-> 11. [Micro conversão]($reference->url)
-> 12. [Micro conversão]($reference->url)
-> 13. [Micro conversão]($reference->url)
-> 14. [Micro conversão]($reference->url)
-> 15. [Micro conversão]($reference->url)
 
-> Em caso de dúvidas, entrar em contato com: [digitalanalytics@zoly.com.br](mailto:digitalanalytics@zoly.com.br)
+
+> Documentações Oficiais do Google: <br />
+> [Google Analytics - Avaliação de comércio eletrônico ](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce?hl=pt-br)
+> [Google Tag Manager - Guia do desenvolvedor ](https://developers.google.com/tag-manager/enhanced-ecommerce)
 
 <script>
   document.addEventListener('DOMContentLoaded', function(event) {
     document.querySelectorAll('h1 a')[0].style.display = 'none';
   });
 </script>
-
-
-
