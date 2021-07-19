@@ -11,7 +11,18 @@
 - [Implementação](#implementa%c3%a7%c3%a3o)
 - [Especificações Globais](#especifica%c3%a7%c3%b5es-globais)
 - [Dimensões Globais](#dimens&#245;es-globais)
-- [Eventos Gerais](#eventos-gerais)
+- [Geral](#geral)
+- [Home](#home)
+- [Modal Importante](#modal-importante)
+- [Customização](#customiza&#231;&#227;o)
+- [Customização - Enviar minha foto](#customiza&#231;&#227;o-enviar-minha-foto)
+- [Acesso - Login](#acesso-login)
+- [Acesso - Redefinir minha senha](#acesso-redefinir-minha-senha)
+- [Cadastro](#cadastro)
+- [Checkout](#checkout)
+- [Pedido finalizado com Sucesso](#pedido-finalizado-com-sucesso)
+- [NPS](#nps)
+- [Enhanced Ecommerce](#enhanced-ecommerce)
 
 <br />
 
@@ -22,8 +33,6 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
 [guilherme.lacerda@riachuelo.com.br](mailto:guilherme.lacerda@riachuelo.com.br) <br />
 [gustavo.pereira@riachuelo.com.br](mailto:gustavo.pereira@riachuelo.com.br) <br />
-
-<br />
 
 <br />
 
@@ -182,7 +191,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'dimension1': '[[userid]]',
     'dimension2': '[[gaclientid]]',
-    'dimension4': '[[etapacheckout]]',
   });
 </script>
 ```
@@ -202,15 +210,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique dos links do Footer.**<br />
 
 - **Onde:** No footer da pagina
-    
-```html
-<div
-   data-gtm-event-category='rchlo-mais:footer'
-   data-gtm-event-action='clique:link'
-   data-gtm-event-label='[[nome-link]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:footer',
+    'eventAction': 'clique:link',
+    'eventLabel': '[[nome-link]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -222,15 +233,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique no botão &quot;Inicio&quot;**<br />
 
 - **Onde:** Nas telas de erros
-    
-```html
-<div
-   data-gtm-event-category='rchlo-mais:tela-de-erro'
-   data-gtm-event-action='clique:botao:inicio'
-   data-gtm-event-label='[[nome-erro]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:tela-de-erro',
+    'eventAction': 'clique:botao:inicio',
+    'eventLabel': '[[nome-erro]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -244,15 +258,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique do botões &quot;Acompanhar meu pedido&quot; e &quot;Criar minha estampa&quot;**<br />
 
 - **Onde:** Na Home do site.
-    
-```html
-<div
-   data-gtm-event-category='rchlo-mais:home'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:home',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -266,15 +283,19 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique do botões &quot;Cancelar&quot; ou &quot;Ok, Entendi&quot;**<br />
 
 - **Onde:** No modal &quot;Importante&quot;, após ter clicado no botão &quot;Criar minha estampa&quot;
-    
-```html
-<div
-   data-gtm-event-category='rchlo-mais:home:modal:importante'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
-```
 
+
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:home:modal:importante',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -288,15 +309,19 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique na peça selecionada.**<br />
 
 - **Onde:** Na página de customização do site.
-    
-```html
-<div
-   data-gtm-event-category='rchlo-mais:customizacao'
-   data-gtm-event-action='clique:peca'
-   data-gtm-event-label='[[tipo-de-peca]]'
->Botão</div>
-```
 
+
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:customizacao',
+    'eventAction': 'clique:peca',
+    'eventLabel': '[[tipo-de-peca]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -308,15 +333,19 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique no modelo selecionado.**<br />
 
 - **Onde:** Na página de customização do site.
-    
-```html
-<div
-   data-gtm-event-category='rchlo-mais:customizacao'
-   data-gtm-event-action='clique:modelo-peca'
-   data-gtm-event-label='[[modelo-clicado]]'
->Botão</div>
-```
 
+
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:customizacao',
+    'eventAction': 'clique:modelo-peca',
+    'eventLabel': '[[modelo-clicado]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -328,16 +357,19 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique do botão &quot;Continuar&quot; do modal &quot;Bem Vindo&quot;**<br />
 
 - **Onde:** Na página de customização do site, modal Bem Vindo.
-    
+
+
 ```html
-<div
-   data-gtm-event-category='rchlo-mais:customizacao:modal:bem-vindo'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='continuar'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:customizacao:modal:bem-vindo',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'continuar'
+  });
+</script>
 ```
-
-
 
 <br />
 
@@ -355,32 +387,23 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventAction': 'interacao:campo',
     'eventLabel': '[[nome-campo]]',
     'dimension5': '[[modelodapeça]]',
-    'dimension18': '[[cd18-product-departamentodoproduto]]',
     'dimension25': '[[product-tamanhodoproduto]]',
-    'dimension26': '[[product-cordoproduto]]',
     'dimension27': '[[product-padronagemdoproduto]]',
     'dimension30': '[[product-subcategoria]]',
     'dimension32': '[[product-preçooriginal]]',
-    'dimension38': '[[product-lifestyle]]',
-    'dimension39': '[[product-gender]]',
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-campo]] | &#039;texto&#039;, &#039;enviar-minha-foto&#039;, &#039;customizar&#039; ou &#039;nossas-estampas&#039; | Deve retornar o nome do campo. |
 | [[modelodapeça]] | camiseta-masculina&#039;, &#039;camiseta-feminina&#039;, &#039;camiseta-juvenil&#039; e etc. | Retorna o modelo da peça selecionada |
-| [[cd18-product-departamentodoproduto]] |  &#039;masculino&#039; | Departamento da empresa principal do produto  |
 | [[product-tamanhodoproduto]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto  |
 | [[product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
 | [[product-subcategoria]] |  &#039;310090&#039; | Código da categoria GM  |
 | [[product-preçooriginal]] |  &#039;12&#039; | Preço do produto (dê) |
-| [[product-lifestyle]] | &#039;casual&#039;, &#039;esportivo&#039; | Estilo do produto  |
-| [[product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
+
 
 <br />
 
@@ -388,16 +411,22 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique do botão &quot;Apagar tudo&quot;**<br />
 
 - **Onde:** Na página de customização do site, seção &quot;Criar minha estampa&quot;
-    
+
 ```html
-<div
-   data-gtm-event-category='rchlo-mais:customizacao'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='apagar-tudo'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:customizacao',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[item-clicado]]'
+  });
+</script>
 ```
 
-
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[item-clicado]] | 'centralizar', 'apagar-tudo', 'girar' e etc | Deve retornar o nome do item clicado. |
 
 <br />
 
@@ -405,15 +434,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **Nos cliques dos botões &quot;Alterar&quot; ou &quot;Continuar&quot;**<br />
 
 - **Onde:** Na página de Confirmação da estampa.
-    
-```html
-<div
-   data-gtm-event-category='rchlo-mais:customizacao:confirmacao-estampa'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:customizacao:confirmacao-estampa',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -438,8 +470,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[erro]] | &#039;aceite-os-termos-para-prosseguir&#039; e etc. | Deve retornar o callback de erro dos termos. |
@@ -450,15 +480,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **Nos cliques dos botões &quot;Voltar&quot; ou &quot;Aceitar e Prosseguir&quot;**<br />
 
 - **Onde:** Na página de &quot;Aceite os termos e condições&quot;
-    
-```html
-<div
-   data-gtm-event-category='rchlo-mais:customizacao:aceite-os-termos'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:customizacao:aceite-os-termos',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -472,16 +505,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique do botão &quot;Fazer upload do Computador&quot;**<br />
 
 - **Onde:** Na página de customização do site, seção &quot;Enviar Minha Foto&quot;
-    
+
 ```html
-<div
-   data-gtm-event-category='rchlo-mais:customizacao:enviar-minha-foto'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='fazer-upload-pelo-computador'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:customizacao:enviar-minha-foto',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'fazer-upload-pelo-computador'
+  });
+</script>
 ```
-
-
 
 <br />
 
@@ -501,7 +536,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
 
 
 | Variável        | Exemplo                               | Descrição                         |
@@ -527,8 +561,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso-ou-erro]] | &#039;foto-recebida-com-sucesso&#039;, &#039;atencao-o-arquivo-e-muito-grande&#039;, &#039;formato-de-arquivo-invalido&#039; e etc. | Deve retornar o callback da tentativa de fazer o envio de foto. |
@@ -539,15 +571,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique nos botões &quot;Enviar uma nova foto&quot; ou &quot;Tentar Novamente&quot;**<br />
 
 - **Onde:** Na página de customização do site, seção &quot;Enviar Minha Foto&quot;
-    
-```html
-<div
-   data-gtm-event-category='rchlo-mais:customizacao:enviar-minha-foto'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:customizacao:enviar-minha-foto',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -557,6 +592,28 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 ### Acesso - Login
+
+**Na interação com as opções de linguagem da página**<br />
+
+- **Onde:** Na página de &quot;Login&quot;
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:acesso',
+    'eventAction': 'interacao:opcoes-de-lingaguem',
+    'eventLabel': '[[linguagem-escolhida]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[linguagem-escolhida]] | 'portugues-brasil' ou 'english' | Deve retornar o nome da linguagem escolhida. |
+
+<br />
 
 **Na interação com os campos &quot;CPF&quot; e &quot;Senha&quot;**<br />
 
@@ -574,8 +631,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-campo]] | &#039;cpf&#039; ou &#039;senha&#039; | Deve retornar o nome do campo preenchido. |
@@ -583,22 +638,26 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <br />
 
 
-**No clique dos botões &quot;Acessar&quot; ou &quot;Esqueci Minha Senha&quot;**<br />
+**No clique em todos os elementos da página**<br />
 
-- **Onde:** Na página de &quot;Login&quot;
-    
+- **Onde:** Na página de "Login"
+
 ```html
-<div
-   data-gtm-event-category='rchlo-mais:acesso'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:acesso',
+    'eventAction': 'clique:[[elemento]]',
+    'eventLabel': '[[nome-elemento]]'
+  });
+</script>
 ```
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;acessar&#039; ou &#039;esqueci-minha-senha&#039; | Deve retornar o nome do botão clicado. |
+| [[elemento]] | 'botao', 'link', 'checkbox' ou 'password-visibility' | Deve retornar o nome do elemento.|
+| [[nome-elemento]] | 'acessar', 'quero-criar-minha-conta', 'esquece-minha-senha', 'mostrar-senha', 'esconder-senha', 'mantenha-me-conectado' e etc. | Deve retornar o nome do elemento clicado. |
 
 <br />
 
@@ -619,11 +678,9 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] |  | Deve retornar o nome do campo que iremos receber o callback. &#039;cpf&#039; ou &#039;senha&#039; |
+| [[nome-campo]] | &#039;cpf&#039; ou &#039;senha&#039; | Deve retornar o nome do campo que iremos receber o callback.  |
 | [[erro]] | &#039;insira-sua-senha-para-acessar&#039;, &#039;senha-invalida&#039; e etc. | Deve retornar o callback de erro dos campos CPF e Senha. |
 
 <br />
@@ -642,13 +699,13 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'eventCategory': 'rchlo-mais:acesso:redefir-senha',
     'eventAction': 'preencheu-campo',
-    'eventLabel': 'cpf'
+    'eventLabel': '[[email-ou-cpf]]'
   });
 </script>
 ```
-
-
-
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[email-ou-cpf]] | 'email' ou 'cpf' |Deve retornar o nome do elemento clicado. |
 
 <br />
 
@@ -656,16 +713,22 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique do botão &quot;Redefir Senha&quot;**<br />
 
 - **Onde:** Na página de &quot;Redefinir minha senha&quot;
-    
+
 ```html
-<div
-   data-gtm-event-category='rchlo-mais:acesso:redefir-senha'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='redefinir-senha'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:acesso:redefir-senha',
+    'eventAction': 'clique:[[botao-ou-link]]',
+    'eventLabel': '[[item-clicado]]'
+  });
+</script>
 ```
-
-
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-ou-link]] | 'botao' ou 'link' |Deve retornar o elemento clicado. |
+| [[item-clicado]] | 'continuar' ou 'entrar' |Deve retornar do elemento clicado. |
 
 <br />
 
@@ -680,13 +743,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'rchlo-mais:acesso:redefir-senha',
-    'eventAction': 'callback:campo-cpf',
+    'eventAction': 'callback:campo-cpf-ou-email',
     'eventLabel': '[[erro]]'
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -711,8 +772,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso-ou-erro]] | &#039;sucesso&#039;, &#039;erro:email-incompleto&#039; e etc | Deve retornar o callback de sucesso ou erro do e-mail enviado. |
@@ -721,6 +780,29 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 ### Cadastro
+
+**Na interação com as opções de linguagem da página**<br />
+
+- **Onde:** Nas páginas dos formulários de Cadastro
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:[[etapa-cadastro]]',
+    'eventAction': 'interacao:opcoes-de-lingaguem',
+    'eventLabel': '[[linguagem-escolhida]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[etapa-cadastro]] | 'cadastro', 'criar-senha', 'verifique-seu-email' ou 'acao-realizada-com-sucesso' | Deve retornar a etapa do cadastro que usuário está. |
+| [[linguagem-escolhida]] | 'portugues-brasil' ou 'english' | Deve retornar o nome da linguagem escolhida. |
+
+<br />
 
 **No preenchimento dos campos**<br />
 
@@ -738,8 +820,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-campo]] | &#039;nome-completo&#039;, &#039;email&#039;, &#039;cpf&#039; e etc. | Deve retornar o nome do campo preenchido. |
@@ -747,39 +827,26 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <br />
 
 
-**No clique do botão &quot;Continuar&quot;**<br />
+**No clique no botões, links e elementos da página**<br />
 
 - **Onde:** Na página de &quot;Cadastro&quot;
     
 ```html
-<div
-   data-gtm-event-category='rchlo-mais:cadastro'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='continuar'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:cadastro',
+    'eventAction': 'clique:[[botao-ou-link]]',
+    'eventLabel': '[[nome-item-clicado]]'
+  });
+</script>
 ```
-
-
-
-<br />
-
-
-**No clique no links**<br />
-
-- **Onde:** Na página de &quot;Cadastro&quot;
-    
-```html
-<div
-   data-gtm-event-category='rchlo-mais:cadastro'
-   data-gtm-event-action='clique:link'
-   data-gtm-event-label='[[nome-link]]'
->Botão</div>
-```
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-link]] | &#039;termos-e-condicoes&#039; ou &#039;politica-de-privacidade&#039; | Deve retornar o nome do link clicado. |
+| [[botao-ou-link]] | 'botao', 'link', 'password-visibility' e etc. | Deve retornar o elemento clicado. |
+| [[nome-item-clicado]] | 'continuar', 'entrar', 'condicoes' ou 'privacidade' | Deve retornar do elemento clicado. |
 
 <br />
 
@@ -800,8 +867,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-campo]] | &#039;nome-completo&#039;, &#039;email&#039;, &#039;cpf&#039;, &#039;endereco&#039;, &#039;bairro&#039; e etc. | Deve retornar o nome do campo que está retornando o callback. |
@@ -809,23 +874,109 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
+**No preenchimento dos campos**<br />
 
-**No clique do botão &quot;Continuar&quot;**<br />
-
-- **Onde:** Após fazer o cadastro, na página &quot;Seja Bem Vindo&quot;
+- **Onde:** Na página de "Criar senha"
     
 ```html
-<div
-   data-gtm-event-category='rchlo-mais:cadastro:seja-bem-vindo'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='continuar'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:cadastro:criar-senha',
+    'eventAction': 'callback:[[nome-campo]]',
+    'eventLabel': '[[erro]]'
+  });
+</script>
 ```
 
-
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-campo]] | 'senha', 'confirme-sua-nova-senha' | Deve retornar o nome do campo que está retornando o callback. |
+| [[erro]] | 'senha-invalida', 'confirme-sua-senha' e etc | Deve retornar o callback de erro do campo. |
 
 <br />
 
+**No clique no botões, links e elementos da página**<br />
+
+- **Onde:** Na página de "Criar senha"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:cadastro:criar-senha',
+    'eventAction': 'clique:[[elemento]]',
+    'eventLabel': '[[nome-elemento]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[elemento]] | 'botao', 'link', 'checkbox' ou 'password-visibility' | Deve retornar o nome do elemento.  |
+| [[nome-elemento]] | 'enviar', 'aceito-os-termos', 'termos-e-condicoes', 'declaracao-de-privacidade', 'mostrar-senha', 'esconder-senha' e etc. | Deve retornar o nome do elemento clicado. |
+
+<br />
+
+**No clique no link "Reenviar", para reenviar o e-mail**<br />
+
+- **Onde:** Na página de "Verifique seu e-mail"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:cadastro:verifique-seu-email',
+    'eventAction': 'clique:link',
+    'eventLabel': 'reenviar-email'
+  });
+</script>
+```
+
+<br />
+
+**No clique do botão "Acessar"**<br />
+
+- **Onde:** Após verificar o e-mail de cadastro, na página "Ação realizada com sucesso"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:cadastro:acao-realizada-com-sucesso',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'acessar'
+  });
+</script>
+```
+
+<br />
+
+**No carregamento da página**<br />
+
+- **Onde:** Após clicar no botão "Acessar" confirmando que o e-mail foi verificado.
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:cadastro:acao-realizada-com-sucesso',
+    'eventAction': 'callback',
+    'eventLabel': '[[sucesso-ou-erro]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[sucesso-ou-erro]] | 'sucesso:seu-endereco-de-email-foi-confirmado', 'erro:email-incompleto' e etc | Deve retornar o callback de sucesso ou erro do e-mail enviado/conclusão do cadastro. |
+
+<br />
 
 ### Checkout
 
@@ -846,15 +997,12 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-loja]] | &#039;morumbi-shopping&#039; e etc. | Deve retornar o nome da loja escolhida para retirada. |
 | [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
 
 <br />
-
 
 **No clique nos botões de todas as etapas do checkout**<br />
 
@@ -873,15 +1021,12 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;continuar&#039;, &#039;consultar&#039;, &#039;aplicar&#039; e etc | Deve retornar o nome do botão clicado. |
 | [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
 
 <br />
-
 
 **No callback de sucesso ou erro ao inserir um Cupom ou Vale Presente**<br />
 
@@ -899,8 +1044,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -928,15 +1071,12 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[cupom-ou-vale-presente]] | &#039;cupom&#039; ou &#039;vale-presente&#039;. | Deve retornar qual item foi removido. |
 | [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
 
 <br />
-
 
 **No callback de erro, caso o usuário tente passa sem efetuar o pagamento.**<br />
 
@@ -954,8 +1094,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -982,8 +1120,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
@@ -1008,8 +1144,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[erro]] | &#039;nao-foi-possivel-concluir-seu-pedido&#039; e etc. | Deve retornar o callback de erro. |
@@ -1023,15 +1157,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique nos botões &quot;Ver Boleto&quot; e &quot;Ver Pedido&quot;**<br />
 
 - **Onde:** Na página de &quot;Pedido finalizado com Sucesso&quot;
-    
-```html
-<div
-   data-gtm-event-category='rchlo-mais:pedido-finalizado-com-sucesso'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:pedido-finalizado-com-sucesso',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[erro]]',
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1058,8 +1195,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[opcao-escolhida]] | &#039;nao-gostei&#039;, &#039;gostei&#039; e etc | Deve retornar o nome da opção clicada. |
@@ -1083,8 +1218,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[opcao]] | &#039;nao-gostei&#039;, &#039;gostei&#039; e etc | Deve retornar o nome da opção clicada. |
@@ -1092,7 +1225,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | [[status]] | &#039;sugestao-enviada&#039;, &#039;erro:nao-foi-possivel-enviar-sugestao&#039; e etc | Deve retornar a mensagem de sucesso ou tipo de erro. |
 
 <br />
-
 
 ### Enhanced Ecommerce
 
@@ -1119,14 +1251,10 @@ window.dataLayer.push({
           'category': '[[categoria-produto]]',
           'variant': '[[variacao-produto]]',
           'dimension5': '[[modelodapeça]]',
-          'dimension18': '[[cd18-product-departamentodoproduto]]',
           'dimension25': '[[product-tamanhodoproduto]]',
-          'dimension26': '[[product-cordoproduto]]',
           'dimension27': '[[product-padronagemdoproduto]]',
           'dimension30': '[[product-subcategoria]]',
           'dimension32': '[[product-preçooriginal]]',
-          'dimension38': '[[product-lifestyle]]',
-          'dimension39': '[[product-gender]]',
         }]
       }
     }
@@ -1144,14 +1272,10 @@ window.dataLayer.push({
 | [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
 | [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
 | [[modelodapeça]] | camiseta-masculina&#039;, &#039;camiseta-feminina&#039;, &#039;camiseta-juvenil&#039; e etc. | Retorna o modelo da peça selecionada |
-| [[cd18-product-departamentodoproduto]] |  &#039;masculino&#039; | Departamento da empresa principal do produto  |
 | [[product-tamanhodoproduto]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto  |
 | [[product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
 | [[product-subcategoria]] |  &#039;310090&#039; | Código da categoria GM  |
 | [[product-preçooriginal]] |  &#039;12&#039; | Preço do produto (dê) |
-| [[product-lifestyle]] | &#039;casual&#039;, &#039;esportivo&#039; | Estilo do produto  |
-| [[product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
 
 <br />
 
@@ -1178,14 +1302,10 @@ window.dataLayer.push({
         'category': '[[categoria-produto]]',
         'variant': '[[variacao-produto]]',
         'dimension5': '[[modelodapeça]]',
-        'dimension18': '[[cd18-product-departamentodoproduto]]',
         'dimension25': '[[product-tamanhodoproduto]]',
-        'dimension26': '[[product-cordoproduto]]',
         'dimension27': '[[product-padronagemdoproduto]]',
         'dimension30': '[[product-subcategoria]]',
         'dimension32': '[[product-preçooriginal]]',
-        'dimension38': '[[product-lifestyle]]',
-        'dimension39': '[[product-gender]]',
       }]
     }
   }
@@ -1203,14 +1323,10 @@ window.dataLayer.push({
 | [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
 | [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
 | [[modelodapeça]] | camiseta-masculina&#039;, &#039;camiseta-feminina&#039;, &#039;camiseta-juvenil&#039; e etc. | Retorna o modelo da peça selecionada |
-| [[cd18-product-departamentodoproduto]] |  &#039;masculino&#039; | Departamento da empresa principal do produto  |
 | [[product-tamanhodoproduto]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto  |
 | [[product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
 | [[product-subcategoria]] |  &#039;310090&#039; | Código da categoria GM  |
 | [[product-preçooriginal]] |  &#039;12&#039; | Preço do produto (dê) |
-| [[product-lifestyle]] | &#039;casual&#039;, &#039;esportivo&#039; | Estilo do produto  |
-| [[product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
 
 <br />
 
@@ -1246,14 +1362,10 @@ window.dataLayer.push({
         'variant': '[[variacao-produto]]',
         'quantity': '[[quantidade-produto]]',
         'dimension5': '[[modelodapeça]]',
-        'dimension18': '[[cd18-product-departamentodoproduto]]',
         'dimension25': '[[product-tamanhodoproduto]]',
-        'dimension26': '[[product-cordoproduto]]',
         'dimension27': '[[product-padronagemdoproduto]]',
         'dimension30': '[[product-subcategoria]]',
         'dimension32': '[[product-preçooriginal]]',
-        'dimension38': '[[product-lifestyle]]',
-        'dimension39': '[[product-gender]]',
       }]
     }
   }
@@ -1277,21 +1389,13 @@ window.dataLayer.push({
 | [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
 | [[erro]] | &#039;nao-foi-possivel-concluir-seu-pedido&#039; e etc. | Deve retornar o callback de erro. |
 | [[modelodapeça]] | camiseta-masculina&#039;, &#039;camiseta-feminina&#039;, &#039;camiseta-juvenil&#039; e etc. | Retorna o modelo da peça selecionada |
-| [[cd18-product-departamentodoproduto]] |  &#039;masculino&#039; | Departamento da empresa principal do produto  |
 | [[product-tamanhodoproduto]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto  |
 | [[product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
 | [[product-subcategoria]] |  &#039;310090&#039; | Código da categoria GM  |
 | [[product-preçooriginal]] |  &#039;12&#039; | Preço do produto (dê) |
-| [[product-lifestyle]] | &#039;casual&#039;, &#039;esportivo&#039; | Estilo do produto  |
-| [[product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
 
 <br />
 
-
-### 
-
-<br />
 
 ---
 
