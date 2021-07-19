@@ -1,13 +1,26 @@
-![Zoly](http://lucida-brasil.github.io/public/Images/zoly-logo.png)
+![Riachuelo](https://www.riachuelo.com.br/static/version1623357894/frontend/Corra/webjump/pt_BR/images/logo.svg)
 
-> Área - Digital Analytics<br />
+> Área - Data Analytics<br />
 > Documento de Especificação Técnica
+
+<br />
+
+## Sumário
+
+- [Objetivo](#objetivo)
+- [Implementação](#implementa%c3%a7%c3%a3o)
+- [Especificações Globais](#especifica%c3%a7%c3%b5es-globais)
+- [Dimensões Globais](#dimens&#245;es-globais)
 
 <br />
 
 ## Implementação da Camada de dados - Riachuelo - Carters
 Última atualização: 07/12/2020 <br />
-Em caso de dúvidas, entrar em contato com: [digitalanalytics@zoly.com.br](mailto:digitalanalytics@zoly.com.br)
+Em caso de dúvidas, entrar em contato com algum desses e-mails: 
+
+[camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
+[guilherme.lacerda@riachuelo.com.br](mailto:guilherme.lacerda@riachuelo.com.br) <br />
+[gustavo.pereira@riachuelo.com.br](mailto:gustavo.pereira@riachuelo.com.br) <br />
 
 <br />
 
@@ -1323,7 +1336,12 @@ window.dataLayer.push({
 ---
 
 
-> Em caso de dúvidas, entrar em contato com: [digitalanalytics@zoly.com.br](mailto:digitalanalytics@zoly.com.br)
+## Considerações Finais
+
+
+> Documentações Oficiais do Google: <br />
+> [Google Analytics - Avaliação de comércio eletrônico ](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce?hl=pt-br)
+> [Google Tag Manager - Guia do desenvolvedor ](https://developers.google.com/tag-manager/enhanced-ecommerce)
 
 <script>
   document.addEventListener('DOMContentLoaded', function(event) {

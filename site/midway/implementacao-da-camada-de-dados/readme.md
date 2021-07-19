@@ -1,6 +1,6 @@
 ![Riachuelo](https://www.riachuelo.com.br/static/version1623357894/frontend/Corra/webjump/pt_BR/images/logo.svg)
 
-> Área - Web Analytics<br />
+> Área - Data Analytics<br />
 > Documento de Especificação Técnica
 
 <br />

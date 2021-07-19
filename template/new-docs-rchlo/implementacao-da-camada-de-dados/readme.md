@@ -1,6 +1,6 @@
 ![Riachuelo](https://www.riachuelo.com.br/static/version1623357894/frontend/Corra/webjump/pt_BR/images/logo.svg)
 
-> Área - Web Analytics<br />
+> Área - Data Analytics<br />
 > Documento de Especificação Técnica
 
 <br />
@@ -11,8 +11,6 @@
 - [Implementação](#implementa%c3%a7%c3%a3o)
 - [Especificações Globais](#especifica%c3%a7%c3%b5es-globais)
 - [Dimensões Globais](#dimens&#245;es-globais)
-- [Eventos Gerais](#eventos-gerais)
-
 
 <br />
 
