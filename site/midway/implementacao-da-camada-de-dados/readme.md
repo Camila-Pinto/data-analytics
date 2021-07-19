@@ -14,7 +14,7 @@
 - [Eventos Gerais](#eventos-gerais)
 
 ## Implementação da Camada de dados - Projeto Midway Site
-Última atualização: 16/07/2021 <br />
+Última atualização: 19/07/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -709,12 +709,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | [[nome-do-botao]] | &#039;acompanhe-os-sorteados-do-mes&#039;, &#039;saiba-mais&#039; | Deve retornar o nome do link clicado. |
 
 <br />
-
-
-<br />
-
-
-
 
 
 ### Atendimento
