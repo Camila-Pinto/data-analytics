@@ -11,7 +11,20 @@
 - [Implementação](#implementa%c3%a7%c3%a3o)
 - [Especificações Globais](#especifica%c3%a7%c3%b5es-globais)
 - [Dimensões Globais](#dimens&#245;es-globais)
-- [Eventos Gerais](#eventos-gerais)
+- [Geral - Cliente não logado](#geral-cliente-n&#227;o-logado)
+- [Home](#home)
+- [Cartões](#cart&#245;es)
+- [Cartões - Cartão RCHLO](#cart&#245;es-cart&#227;o-rchlo)
+- [Cartões - Visa e Mastercard](#cart&#245;es-visa-e-mastercard)
+- [Parceiros](#parceiros)
+- [Produtos Financeiros](#produtos-financeiros)
+- [Atendimento](#atendimento)
+- [Faça Parte](#fa&#231;a-parte)
+- [Enhanced E-commerce](#enhanced-e-commerce)
+- [Login](#login)
+- [Area logada](#area-logada)
+- [Quitação de Dívida](#quita&#231;&#227;o-de-d&#237;vida)
+- [Simulação de Empréstimo](#simula&#231;&#227;o-de-empr&#233;stimo)
 
 ## Implementação da Camada de dados - Projeto Midway Site
 Última atualização: 19/07/2021 <br />
@@ -188,7 +201,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ---
 
 
-### Geral - Área não logada
+### Geral - Cliente não logado
 
 
 **No clique dos itens do menu e sub-menu**<br />
@@ -1246,7 +1259,7 @@ window.dataLayer.push({
 <br />
 
 
-### Área logada
+### Area logada
 
 **No clique dos itens do header.**<br />
 
