@@ -703,9 +703,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[email-ou-cpf]] | 'email' ou 'cpf' |Deve retornar o nome do elemento clicado. |
+| [[email-ou-cpf]] | 'email' ou 'cpf' | Deve retornar o nome do elemento clicado.  |
+
 
 <br />
 
@@ -725,10 +727,12 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[botao-ou-link]] | 'botao' ou 'link' |Deve retornar o elemento clicado. |
-| [[item-clicado]] | 'continuar' ou 'entrar' |Deve retornar do elemento clicado. |
+| [[botao-ou-link]] | 'botao' ou 'link' | Deve retornar o elemento clicado.  |
+| [[item-clicado]] | 'continuar' ou 'entrar' | Deve retornar do elemento clicado.  |
+
 
 <br />
 
