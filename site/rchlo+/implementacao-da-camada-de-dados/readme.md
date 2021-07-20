@@ -603,7 +603,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'rchlo-mais:acesso',
-    'eventAction': 'interacao:opcoes-de-lingaguem',
+    'eventAction': 'interacao:opcoes-de-linguagem',
     'eventLabel': '[[linguagem-escolhida]]'
   });
 </script>
