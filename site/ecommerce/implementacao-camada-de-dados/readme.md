@@ -1,13 +1,17 @@
-![Zoly](http://lucida-brasil.github.io/public/Images/zoly-logo.png)
+![Riachuelo](https://www.riachuelo.com.br/static/version1623357894/frontend/Corra/webjump/pt_BR/images/logo.svg)
 
-> Área - Digital Analytics<br />
+> Área - Data Analytics<br />
 > Documento de Especificação Técnica
 
 <br />
 
-## Implementação da Camada de dados - Riachuelo - Ecommerce
+## Implementação da Camada de dados - Projeto Ecommerce
 Última atualização: 14/06/2021 <br />
-Em caso de dúvidas, entrar em contato com: [digitalanalytics@zoly.com.br](mailto:digitalanalytics@zoly.com.br)
+Em caso de dúvidas, entrar em contato com algum desses e-mails: 
+
+[camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
+[guilherme.lacerda@riachuelo.com.br](mailto:guilherme.lacerda@riachuelo.com.br) <br />
+[gustavo.pereira@riachuelo.com.br](mailto:gustavo.pereira@riachuelo.com.br) <br />
 
 <br />
 
@@ -2714,20 +2718,11 @@ window.dataLayer.push({
 ---
 
 ## Considerações Finais
-> Recomendações do Google:
-> 1. [Enhanced Ecommerce - Product Impressions](https://developers.google.com/tag-manager/enhanced-ecommerce#product-impressions)
-> 2. [Enhanced Ecommerce - Product Clicks](https://developers.google.com/tag-manager/enhanced-ecommerce#product-clicks)
-> 3. [Enhanced Ecommerce - Promotion View](https://developers.google.com/tag-manager/enhanced-ecommerce#promo-impressions)
-> 4. [Enhanced Ecommerce - Promotion Clicks](https://developers.google.com/tag-manager/enhanced-ecommerce#promo-clicks)
-> 5. [Enhanced Ecommerce - AddToCart / Remove From Cart](https://developers.google.com/tag-manager/enhanced-ecommerce#cart)
-> 6. [Enhanced Ecommerce -Product Detail](https://developers.google.com/tag-manager/enhanced-ecommerce#details)
-> 7. [Enhanced Ecommerce - Checkout](https://developers.google.com/tag-manager/enhanced-ecommerce#checkout)
-> 8. [Enhanced Ecommerce - Checkout Option](https://developers.google.com/tag-manager/enhanced-ecommerce#checkout_option)
-> 9. [Enhanced Ecommerce - Purchase](https://developers.google.com/tag-manager/enhanced-ecommerce#purchases)
 
-<br/>
 
-> Em caso de dúvidas, entrar em contato com: [digitalanalytics@zoly.com.br](mailto:digitalanalytics@zoly.com.br)
+> Documentações Oficiais do Google: <br />
+> [Google Analytics - Avaliação de comércio eletrônico ](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce?hl=pt-br) <br />
+> [Google Tag Manager - Guia do desenvolvedor ](https://developers.google.com/tag-manager/enhanced-ecommerce)
 
 <script>
   document.addEventListener('DOMContentLoaded', function(event) {
