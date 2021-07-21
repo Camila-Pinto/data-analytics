@@ -1131,7 +1131,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <br />
 
 
-**No callback de erro, quando não conseguir finalizer o pedido.**<br />
+**No callback de erro, quando não conseguir finalizar o pedido.**<br />
 
 - **Onde:** Na página de &quot;Sua Compra&quot;, seção &quot;Resumo do Pedido&quot;
     
