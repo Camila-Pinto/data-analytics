@@ -27,7 +27,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Rchlo+
-Última atualização: 19/07/2021 <br />
+Última atualização: 21/07/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -1027,7 +1027,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;voltar&#039;, &#039;continuar&#039;, &#039;consultar&#039;, &#039;aplicar&#039; e etc | Deve retornar o nome do botão clicado. |
+| [[nome-botao]] |'voltar', 'continuar', 'consultar', 'aplicar', 'finalizar-compra', 'salvar' e etc | Deve retornar o nome do botão clicado. |
 | [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
 
 <br />
@@ -1045,6 +1045,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventAction': 'callback:[[cupom-ou-vale-presente]]',
     'eventLabel': '[[sucesso-ou-erro]]',
     'dimension4': '[[etapacheckout]]',
+    'dimension6': '[[nome-cupom-ou-vale-presente]]',
   });
 </script>
 ```
@@ -1054,6 +1055,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | [[cupom-ou-vale-presente]] | &#039;cupom&#039; ou &#039;vale-presente&#039;. | Deve retornar qual item esta retornando o callback. |
 | [[sucesso-ou-erro]] | &#039;cupom-invalido&#039;, &#039;cupom-aplicado-com-sucesso&#039;, &#039;esse-cartao-nao-possui-saldo&#039; e etc. | Deve retornar o callback de sucesso ou erro do campo. |
 | [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
+| [[nome-cupom-ou-vale-presente]] | 'bem-vindo', 'cupom-promocional' e etc | Deve retornar o nome do cupom inserido |
 
 <br />
 
@@ -1071,6 +1073,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventAction': 'clique:icone:remover',
     'eventLabel': '[[cupom-ou-vale-presente]]',
     'dimension4': '[[etapacheckout]]',
+    'dimension6': '[[nome-cupom-ou-vale-presente]]',
   });
 </script>
 ```
@@ -1079,6 +1082,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[cupom-ou-vale-presente]] | &#039;cupom&#039; ou &#039;vale-presente&#039;. | Deve retornar qual item foi removido. |
 | [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
+| [[nome-cupom-ou-vale-presente]] | 'bem-vindo', 'cupom-promocional' e etc | Deve retornar o nome do cupom inserido |
 
 <br />
 
