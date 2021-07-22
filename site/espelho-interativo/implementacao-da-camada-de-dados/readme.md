@@ -5,15 +5,13 @@
 
 <br />
 
-## Implementação da Camada de dados - Riachuelo - Espelho Interativo
+## Implementação da Camada de dados - Projeto Espelho Interativo
 Última atualização: 27/11/2020 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
 [guilherme.lacerda@riachuelo.com.br](mailto:guilherme.lacerda@riachuelo.com.br) <br />
 [gustavo.pereira@riachuelo.com.br](mailto:gustavo.pereira@riachuelo.com.br) <br />
-
-<br />
 
 <br />
 
