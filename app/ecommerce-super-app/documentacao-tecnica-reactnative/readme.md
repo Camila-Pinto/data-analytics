@@ -1,15 +1,20 @@
-![Zoly](https://lucida-brasil.github.io/public/Images/zoly-logo.png)
+![Riachuelo](https://www.riachuelo.com.br/static/version1623357894/frontend/Corra/webjump/pt_BR/images/logo.svg)
 
-> Área - Digital Analytics <br />
+> Área - Data Analytics<br />
 > Documento de Especificação Técnica
 
 <br />
 
-## Implementação de Tags Firebase - Riachuelo APP
+## Implementação de Tags Firebase - Projeto Riachuelo APP
 
 Última atualização: 14/06/2021. <br />
-Em caso de dúvidas, entrar em contato com: [digitalanalytics@zoly.com.br](mailto:digitalanalytics@zoly.com.br)
+Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
+[camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
+[guilherme.lacerda@riachuelo.com.br](mailto:guilherme.lacerda@riachuelo.com.br) <br />
+[gustavo.pereira@riachuelo.com.br](mailto:gustavo.pereira@riachuelo.com.br) <br />
+
+<br />
 
 ## Sumário 
 
@@ -4425,10 +4430,4 @@ Analytics.logEvent("event", {
 | [[nome-item]] | &#039;continuar&#039;, &#039;fechar&#039; e etc | Deve retornar o nome do item. |
 
 <br />
-
-
-## Contato
-
-Em caso de dúvidas, por favor entrar em contato pelo e-mail [digitalanalytics@zoly.com.br](mailto:digitalanalytics@zoly.com.br)
-<br /><br />
 <br />
