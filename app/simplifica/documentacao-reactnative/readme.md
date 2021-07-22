@@ -1,16 +1,20 @@
-![Zoly](https://lucida-brasil.github.io/public/Images/zoly-logo.png)
+![Riachuelo](https://www.riachuelo.com.br/static/version1623357894/frontend/Corra/webjump/pt_BR/images/logo.svg)
 
-> Área - Digital Analytics <br />
+> Área - Data Analytics<br />
 > Documento de Especificação Técnica
-
 
 <br />
 
-## Implementação de Tags Firebase - Riachuelo - APP Simplifica - React Native
+## Implementação de Tags Firebase - Projeto APP Simplifica - React Native
 
-Última atualização: 02/06/2021 <br />
-Em caso de dúvidas, entrar em contato com: [digitalanalytics@zoly.com.br](mailto:digitalanalytics@zoly.com.br)
+Última atualização: 22/07/2021 <br />
+Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
+[camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
+[guilherme.lacerda@riachuelo.com.br](mailto:guilherme.lacerda@riachuelo.com.br) <br />
+[gustavo.pereira@riachuelo.com.br](mailto:gustavo.pereira@riachuelo.com.br) <br />
+
+<br />
 
 ## Sumário
 
@@ -99,7 +103,7 @@ Analytics.setUserId('[[UserID]]');
 
 
 ```javascript
-    Analytics.logScreenView("/login");
+    Analytics.logScreenView("/login/");
 ```
     
 
@@ -177,10 +181,18 @@ Analytics.setUserId('[[UserID]]');
 
 <br />
 
+- **Onde: Na visualização da tela para preencher o telefone celular**
+
+```javascript
+    Analytics.logScreenView("/login/recuperar-senha/celular/")
+```
+
+<br />
+
 - **Na visualização da tela de redefinição de senha na etapa do codigo do celular**
 
 ```javascript
-    Analytics.logScreenView("/login/recuperar-senha/codigo/")
+    Analytics.logScreenView("/login/recuperar-senha/celular/codigo-sms/")
 ```
 
 <br />
@@ -190,7 +202,7 @@ Analytics.setUserId('[[UserID]]');
 
 
 ```javascript
-    Analytics.logScreenView("/login/recuperar-senha/nova-senha/")
+    Analytics.logScreenView("/login/recuperar-senha/celular/codigo-sms/nova-senha/")
 ```
 
 <br />
@@ -202,7 +214,7 @@ Analytics.setUserId('[[UserID]]');
 
 
 ```javascript
-    Analytics.logScreenView("/seja-bem-vindo");
+    Analytics.logScreenView("/seja-bem-vindo/");
 ```
 
 <br />
@@ -228,7 +240,7 @@ Analytics.setUserId('[[UserID]]');
 
 
 ```javascript
-    Analytics.logScreenView("/home");
+    Analytics.logScreenView("/home/");
 ```
 
 <br />
@@ -258,7 +270,7 @@ Analytics.setUserId('[[UserID]]');
 
 
 ```javascript
-    Analytics.logScreenView("/notificacoes");
+    Analytics.logScreenView("/notificacoes/");
 ```
 
 
@@ -301,7 +313,7 @@ Analytics.setUserId('[[UserID]]');
 
 
 ```javascript
-    Analytics.logScreenView("/perfil");
+    Analytics.logScreenView("/perfil/");
 ```
 
 
@@ -331,7 +343,7 @@ Analytics.setUserId('[[UserID]]');
 
 
 ```javascript
-    Analytics.logScreenView("/reembolso");
+    Analytics.logScreenView("/reembolso/");
 ```
 
 <br />
@@ -413,7 +425,7 @@ Analytics.setUserId('[[UserID]]');
 
 
 ```javascript
-    Analytics.logScreenView("/reembolso/detalhes");
+    Analytics.logScreenView("/reembolso/detalhes/");
 ```
 
 
@@ -444,7 +456,7 @@ Analytics.setUserId('[[UserID]]');
 
 
 ```javascript
-    Analytics.logScreenView("/reembolso/novo-reembolso");
+    Analytics.logScreenView("/reembolso/novo-reembolso/");
 ```
 
 <br />
@@ -485,7 +497,7 @@ Analytics.setUserId('[[UserID]]');
 
 
 ```javascript
-    Analytics.logScreenView("/reembolso/novo-reembolso/confirmacao");
+    Analytics.logScreenView("/reembolso/novo-reembolso/confirmacao/");
 ```
 
 <br />
@@ -494,7 +506,7 @@ Analytics.setUserId('[[UserID]]');
 
 
 ```javascript
-    Analytics.logScreenView("/reembolso/novo-reembolso/progresso");
+    Analytics.logScreenView("/reembolso/novo-reembolso/progresso/");
 ```
 
 
@@ -527,7 +539,7 @@ Analytics.setUserId('[[UserID]]');
 
 
 ```javascript
-    Analytics.logScreenView("novo-reembolso/duvidas-[[tela]]");
+    Analytics.logScreenView("novo-reembolso/duvidas-[[tela]]/");
 ```
 
 
@@ -561,7 +573,7 @@ Analytics.setUserId('[[UserID]]');
 
 
 ```javascript
-    Analytics.logScreenView("/nps");
+    Analytics.logScreenView("/nps/");
 ```
 
 
@@ -593,7 +605,7 @@ Analytics.setUserId('[[UserID]]');
 **Visualização das telas de  &quot;Holerite Quinzenal&quot; e &quot;Holerite Mensal&quot;**
 
 ```javascript
-    Analytics.logScreenView("/holerite/[[periodo]]")
+    Analytics.logScreenView("/holerite/[[periodo]]/")
 ```
 
 | Variável        | Exemplo                               | Descrição                         |
@@ -714,7 +726,7 @@ Analytics.setUserId('[[UserID]]');
 **Visualização da tela de &quot;Contato&quot;**
 
 ```javascript
-    Analytics.logScreenView("/covid19/contato")
+    Analytics.logScreenView("/covid19/contato/")
 ```
 
 
@@ -760,7 +772,7 @@ Analytics.setUserId('[[UserID]]');
 **Visualização da tela de "Área"**
 
 ```javascript
-    Analytics.logScreenView("/faq-rh/area")
+    Analytics.logScreenView("/faq-rh/area/")
 ```
 
 <br />
@@ -785,7 +797,7 @@ Analytics.setUserId('[[UserID]]');
 **Visualização da tela de "Tema"**
 
 ```javascript
-    Analytics.logScreenView("/faq-rh/tema")
+    Analytics.logScreenView("/faq-rh/tema/")
 ```
 
 <br />
@@ -810,7 +822,7 @@ Analytics.setUserId('[[UserID]]');
 **Visualização da tela de "Perguntas e Respostas"**
 
 ```javascript
-    Analytics.logScreenView(" /faq-rh/perguntas-respostas")
+    Analytics.logScreenView(" /faq-rh/perguntas-respostas/")
 ```
 
 <br />
@@ -832,9 +844,4 @@ Analytics.setUserId('[[UserID]]');
 | [[nome-icone]] | &#039;abrir&#039; e &#039;fechar&#039; e etc | Deve retornar o icone clicado.  |
 
 <br />
-
-## Contato
-
-Em caso de dúvidas, por favor entrar em contato pelo e-mail [digitalanalytics@zoly.com.br](mailto:digitalanalytics@zoly.com.br)
-<br /><br />
 <br />
