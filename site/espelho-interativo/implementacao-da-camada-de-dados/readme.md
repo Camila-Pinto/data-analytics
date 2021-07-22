@@ -53,7 +53,7 @@ O `snippet` do Google Tag Manager é um pequeno trecho de código javascript ou 
   </head>
 ```
 
-#### 2. Copie o seguinte trecho e cole-o imediatamente após a marcação `<body>` de abertura em cada página do seu site.
+### 2. Copie o seguinte trecho e cole-o imediatamente após a marcação `<body>` de abertura em cada página do seu site.
 
 ```html
 <body>
