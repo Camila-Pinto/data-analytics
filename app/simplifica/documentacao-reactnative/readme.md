@@ -1,3 +1,5 @@
+<br />
+
 ![Riachuelo](https://www.riachuelo.com.br/static/version1623357894/frontend/Corra/webjump/pt_BR/images/logo.svg)
 
 > Área - Data Analytics<br />
