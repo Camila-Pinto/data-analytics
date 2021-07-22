@@ -14,7 +14,7 @@
 
 <br />
 
-## Implementação da Camada de dados - Riachuelo - Carters
+## Implementação da Camada de dados - Projeto Carters
 Última atualização: 07/12/2020 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 

@@ -14,7 +14,7 @@
 
 <br />
 
-## Implementação da Camada de dados - Riachuelo - Do Meu Jeito
+## Implementação da Camada de dados - Projeto Do Meu Jeito
 Última atualização: 02/06/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
