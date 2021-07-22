@@ -11507,3 +11507,10 @@ Resumo de produtos cadastrados
    
 <br />
 <br />
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(event) {
+    document.querySelectorAll('h1 a')[0].style.display = 'none';
+  });
+</script>
+
