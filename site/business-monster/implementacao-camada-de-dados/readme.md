@@ -15,7 +15,7 @@
 
 <br />
 
-## Implementação da Camada de dados - Riachuelo - Riachuelo - Monster
+## Implementação da Camada de dados - Projeto Monster
 Última atualização: 16/04/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
