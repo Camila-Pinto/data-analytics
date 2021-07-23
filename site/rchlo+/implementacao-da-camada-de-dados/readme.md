@@ -27,7 +27,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Rchlo+
-Última atualização: 21/07/2021 <br />
+Última atualização: 23/07/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -189,7 +189,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
-    'dimension1': '[[userid]]',
     'dimension2': '[[gaclientid]]',
   });
 </script>
@@ -1121,8 +1120,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'rchlo-mais:checkout',
-    'eventAction': 'clique:opcao',
-    'eventLabel': 'alterar',
+    'eventAction': 'clique:opcao-alterar',
+    'eventLabel': '[[opcao-escolhida]]',
     'dimension4': '[[etapacheckout]]',
   });
 </script>
@@ -1130,6 +1129,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
+| [[opcao-escolhida]] | 'entrega' ou 'pagamento' | Deve retornar o nome da opção clicada. |
 | [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
 
 <br />
