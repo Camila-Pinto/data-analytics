@@ -11506,6 +11506,1549 @@ Resumo de produtos cadastrados
 | [[nome-item]]] |  'fechar', 'recusar', 'aceitar' e etc | Deve retornar o nome do item clicado. |
    
 <br />
+
+- **Onde:** Nas telas &quot;Solicitação recusada sucesso&quot;, &quot;solicitação aceita sucesso&quot;
+
+```javascript
+    Analytics.logScreenView("/minhas-chaves/solicitacao-[[recusada-aceita]]-sucesso/");
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[recusada-aceita]] | &#039;recusada&#039; ou &#039;aceita&#039; | Deve retornar a tela. |
+| TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Nas telas &quot;Solicitação recusada sucesso&quot;, &quot;solicitação aceita sucesso&quot;
+- **Link:** Novo Fluxo
+
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:[[nome-tela]]" ,
+        	eventAction: "clique:[[botao-icone-link]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-tela]] | &#039;solicitacao-recusada-sucesso&#039;, &#039;solicitacao-aceita-sucesso&#039; e etc | Deve retornar o nome da tela. |
+| [[botao-icone-link]] | &#039;botao&#039;, &#039;icone&#039; ou &#039;link&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] | &#039;fechar&#039;, &#039;minha-conta&#039;, &#039;atendimento&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Visualização do modal de &quot;Limite 5 chaves atingido&quot;
+
+```javascript
+    Analytics.logScreenView("/modal-limite-5-chaves-atingido/");
+```
+
+<br />
+
+### Devolução Pix
+
+
+- **Onde:** Visualização da tela &quot;Devolução Pix&quot;
+
+```javascript
+    Analytics.logScreenView("/devolucao-pix/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de &quot;Devolução Pix&quot;
+- **Link:** Novo Fluxo
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:devolucao-pix" ,
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] | &#039;voltar&#039;, &#039;devolver&#039; e etc | Deve retornar o nome do item clicado. |
+| TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
+
+<br />
+
+- **Quando:** No callback de caso o valor a ser devolvido seja mairo que recebido
+- **Onde:** Na tela &quot;Devolução Pix&quot;.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:devolucao-pix" ,
+        	eventAction: "interacao:campo:callback" ,
+        	eventLabel: "[[status]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[status]] | &#039;valor-maior-que-recebido&#039; e etc | Deve retornar o status do callback. |
+
+<br />
+
+- **Onde:** Visualização da tela &quot;Devolução Pix Sucesso&quot;.
+
+```javascript
+    Analytics.logScreenView("/devolucao-pix-sucesso/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
+
+
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de &quot;Devolução Pix Sucesso&quot;
+- **Link:** Novo Fluxo
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:devolucao-pix:sucesso" ,
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] | &#039;fechar&#039;, &#039;fazer-outro-pix&#039;, &#039;ver-comprovante&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+### Exclusão Pix
+
+```javascript
+    Analytics.logScreenView("/modal-deseja-excluir-chave/")
+```
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** No modal de &quot;Deseja exluir chave&quot;
+
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:modal-deseja-excluir-chave" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-item]] | &#039;voltar&#039;, &#039;confirmar&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+
+- **Onde:** Visualização das telas de &quot;Chave pix excluída&quot; e &quot;Chave pix será excluída&quot;
+
+```javascript
+    Analytics.logScreenView("/[[nome-tela]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-tela]] | &#039;chave-pix-excluida-sucesso&#039;, &#039;chave-pix-sera-excluida&#039; e etc | Deve retornar o nome da tela. |
+| TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
+
+<br />
+
+ **Quando:** No clique dos elementos
+- **Onde:** Nas telas &quot;Chave pix excluída&quot;, &quot;Chave pix será excluída&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:[[nome-tela]]" ,
+        	eventAction: "clique:[[botao-icone-link]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-icone-link]] | &#039;botao&#039;, &#039;icone&#039; ou &#039;link&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] | &#039;fechar&#039;, &#039;minha-conta&#039;, &#039;atendimento&#039; e etc | Deve retornar o nome do item clicado. |
+| [[nome-tela]] | &#039;chave-pix-excluida-sucesso&#039;, &#039;chave-pix-sera-excluida&#039; e etc | Deve retornar o nome da tela. |
+
+<br />
+
+
+### Qr Code Pix
+
+- **Onde:** Visualização das telas de &quot;informações Qr Code&quot;.
+
+```javascript
+    Analytics.logScreenView("/informacoes-qrcode/")
+```
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Nas telas &quot;informações Qr Code&quot;
+
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:informacoes-qr-code" ,
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] | &#039;voltar&#039;, &#039;criar-qr-code&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Quando:** Após clicar no botão de &quot;Criar qr code&quot;
+- **Onde:** Nas telas &quot;informações Qr Code&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:informacoes-qr-code" ,
+        	eventAction: "interacao:campo" ,
+        	eventLabel: "[[nome-campo]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-campo]] | &#039;valor&#039;, &#039;descricao&#039; e etc | Deve retornar o campo opcional preenchido. |
+| TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
+
+<br/>
+
+
+- **Onde:** Visualização do modal de &quot;Escolha sua chave pix&quot;.
+
+```javascript
+    Analytics.logScreenView("/modal-escolha-sua-chave-pix/")
+```
+
+- **Onde:** Visualização da tela de &quot;Qr Code Criado&quot;.
+
+```javascript
+    Analytics.logScreenView("/qr-code-criado/")
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
+
+
+<br/>
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela &quot;Qr Code Criado&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:qr-code-criado" ,
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] | &#039;fechar&#039;, &#039;compartilhar-qr-code&#039;, &#039;copiar-codigo&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+### Pagamentos e Transferências Pix
+
+- **Onde:** Visualização das telas &quot;Posicione o Qr Code abaixo&quot; , &quot;Cole o código Pix&quot;
+
+```javascript
+    Analytics.logScreenView("/[[nome-tela]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-tela]] | &#039;posicione-qr-code-abaixo&#039;, &#039;cole-codigo-pix&#039; e etc | Deve retornar o nome da tela. |
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Nas telas &quot;Posicione o Qr Code abaixo&quot;, &quot;Cole o código Pix&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:[[nome-tela]]" ,
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-tela]] | &#039;posicione-qr-code-abaixo&#039;, &#039;cole-codigo-pix&#039; e etc | Deve retornar o nome da tela. |
+| [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] | &#039;voltar&#039;, &#039;pix-copia-cola&#039;, &#039;continuar&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+
+- **Quando:** No callback de erro após &quot;scanear o qr code&quot; ou após &quot;colar o código Pix&quot;
+- **Onde:** Nas telas &quot;Posicione o Qr Code abaixo&quot;, &quot;Cole o código Pix&quot;
+
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:[[nome-tela]]" ,
+        	eventAction: "interacao:campo:callback" ,
+        	eventLabel: "[[status]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-tela]] | &#039;posicione-qr-code-abaixo&#039;, &#039;cole-codigo-pix&#039; e etc | Deve retornar o nome da tela. |
+| [[status]] | &#039;erro:nao-foi-possivel-identificar-qr-code&#039;, &#039;erro:pix-incorreto&#039; e etc | Deve retornar o status do callback. |
+
+<br />
+
+- **Onde:**Visualização do modal de &quot;Você quer fazer um Pix usando&quot;.
+
+```javascript
+    Analytics.logScreenView("/modal-voce-quer-fazer-pix-usando/")
+```
+
+<br />
+
+- **Quando:** No clique das opções
+- **Onde:** No modal de &quot;Você quer fazer um Pix usando&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:modal-voce-quer-fazer-pix-usando" ,
+        	eventAction: "clique:opcao" ,
+        	eventLabel: "[[opcao-selecionada]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[opcao-selecionada]] | &#039;cpf/cnpj&#039;, &#039;celular&#039;, &#039;chave-aleatoria&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+
+- **Onde:** Visualização das telas de opções selecionadas &quot;Digite Cpf ou Cnpj&quot;, &quot;Digite Celular com DDD&quot;, &quot;Digite Email&quot;, &quot;Digite chave aleatória&quot; e etc
+
+```javascript
+    Analytics.logScreenView("/[[nome-tela]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-tela]] | &#039;digite-cpf-cnpj&#039;, &#039;digite-celular-ddd&#039;, &#039;digite-email&#039;, &#039;digite-chave-aleatoria&#039; e etc | Deve retornar o nome da tela. |
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Nas telas de opções selecionadas &quot;Digite Cpf ou Cnpj&quot;, &quot;Digite Celular com DDD&quot;, &quot;Digite Email&quot;, &quot;Digite chave aleatória&quot; e etc
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:[[nome-tela]]" ,
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-tela]] | &#039;digite-cpf-cnpj&#039;, &#039;digite-celular-ddd&#039;, &#039;digite-email&#039;, &#039;digite-chave-aleatoria&#039; e etc | Deve retornar o nome da tela. |
+| [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] | &#039;voltar&#039;, &#039;continuar&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Quando:** No callback de erro após preencher os campos
+- **Onde:** Nas telas de opções selecionadas &quot;Digite Cpf ou Cnpj&quot;, &quot;Digite Celular com DDD&quot;, &quot;Digite Email&quot;, &quot;Digite chave aleatória&quot; e etc
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:[[nome-tela]]" ,
+        	eventAction: "interacao:campo:callback" ,
+        	eventLabel: "[[status]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-tela]] | &#039;digite-cpf-cnpj&#039;, &#039;digite-celular-ddd&#039;, &#039;digite-email&#039;, &#039;digite-chave-aleatoria&#039; e etc | Deve retornar o nome da tela. |
+| [[status]] | &#039;erro:cpf-incorreto&#039;, &#039;erro:celular-incorreto&#039;, &#039;erro:email-incorreto&#039; e etc | Deve retornar o status do callback. |
+
+<br />
+
+
+- **Onde:** Visualização das telas de transferência Modelo estático ou dinâmico 
+
+```javascript
+    Analytics.logScreenView("/transferencia-pix-[[estatico-dinamico]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[estatico-dinamico]] | &#039;estatico&#039; ou &#039;dinamico&#039; | Deve retornar o tipo da tela. |
+| TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Nas telas de transferência (Modelo estático ou dinâmico)
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:transferencia-pix-[[estatico-dinamico]]" ,
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[estatico-dinamico]] | &#039;estatico&#039; ou &#039;dinamico&#039; | Deve retornar o tipo da tela. |
+| [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] | &#039;voltar&#039;, &#039;transferir&#039; e etc | Deve retornar o nome do item clicado. |
+| TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
+
+<br />
+
+- **Quando:** Após clicar no botão de &quot;Transferir&quot;
+- **Onde:** Nas telas de transferência (Modelo estático ou dinâmico)
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:transferencia-pix-[[estatico-dinamico]]" ,
+        	eventAction: "interacao:campo" ,
+        	eventLabel: "[[nome-campo]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[estatico-dinamico]] | &#039;estatico&#039; ou &#039;dinamico&#039; | Deve retornar o tipo da tela. |
+| [[nome-campo]] | &#039;descricao&#039; e etc | Deve retornar o campo opcional preenchido. |
+
+<br />
+
+- **Onde:** Visualização dos modais de erro &quot;saldo insuficiente&quot;, &quot;algo deu errado&quot; e etc
+
+```javascript
+    Analytics.logScreenView("/modal-erro-[[nome-erro]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-erro]] | &#039;saldo-insuficiente&#039;, &#039;algo-deu-errado&#039;, &#039;chave-dados-bancarios-invalidos&#039; e etc | Deve retornar o nome do erro. |
+
+<br />
+
+- **Onde:**Visualização da tela de &quot;Pix realizado com sucesso&quot;.
+
+```javascript
+    Analytics.logScreenView("/pix-realizado-sucesso/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de &quot;Pix realizado com sucesso&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pix-realizado:sucesso" ,
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] | &#039;fechar&#039;, &#039;fazer-outro-pix&#039;, &#039;ver-comprovante&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Visualização das telas de &quot;Comprovante Pix&quot; (Modelo estático ou dinâmico).
+
+```javascript
+    Analytics.logScreenView("/comprovante-pix-[[estatico-dinamico]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[estatico-dinamico]] | &#039;estatico&#039; ou &#039;dinamico&#039; | Deve retornar o tipo da tela. |
+| TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Nas telas de &quot;Comprovante Pix&quot; (Modelo estático ou dinâmico)
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:comprovante-pix-[[estatico-dinamico]]" ,
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] | &#039;fechar&#039;, &#039;compartilhar&#039;, &#039;fazer-outro-pix&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+
+### Extrato Pix
+
+- **Onde:** Visualização das telas de &quot;Extrato Pix&quot;
+
+```javascript
+    Analytics.logScreenView("/extrato-pix/")
+```
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de &quot;Extrato Pix&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:extrato-pix" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-item]] | &#039;devolver-pix&#039;, &#039;ver-comprovante&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+
+### Alterar Senha
+
+- **Onde:** Visualização da tela de &quot;Digite nova senha cartão&quot;
+
+```javascript
+    Analytics.logScreenView("/digite-nova-senha-cartao/")
+```
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de &quot;Digite nova senha cartão&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:digite-nova-senha-cartao" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-item]] | &#039;voltar&#039;, &#039;mostrar-senha&#039;, &#039;esconder-senha&#039;, &#039;enviar-senha&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+
+- **Quando:** No callback de sucesso ou erro após preencher o campo
+- **Onde:** Na tela de &quot;Digite nova senha cartão&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:digite-nova-senha-cartao" ,
+        	eventAction: "interacao:campo:callback" ,
+        	eventLabel: "[[status]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[status]] | &#039;sucesso&#039;, &#039;erro:repeticao-numeros-seguidos&#039; e etc | Deve retornar o status do callback. |
+
+<br />
+
+- **Onde:** Visualização da tela de &quot;Confirme nova senha cartão&quot;
+
+```javascript
+    Analytics.logScreenView("/confirme-nova-senha-cartao/")
+```
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de &quot;Confirme nova senha cartão&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:confirme-nova-senha-cartao" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-item]] | &#039;voltar&#039;, &#039;mostrar-senha&#039;, &#039;esconder-senha&#039;, &#039;enviar-confirmacao-senha&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Quando:** No callback de sucesso ou erro após preencher o campo
+- **Onde:** Na tela de &quot;Confirme nova senha cartão&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:confirme-nova-senha-cartao" ,
+        	eventAction: "interacao:campo:callback" ,
+        	eventLabel: "[[status]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[status]] | &#039;sucesso&#039;, &#039;erro:senha-digitada-diferente-anterior&#039; e etc | Deve retornar o status do callback. |
+
+<br />
+
+- **Onde:** Visualização da tela de &quot;Senha do cartão alterada com sucesso&quot;
+
+```javascript
+    Analytics.logScreenView("/senha-cartao-alterada-sucesso/")
+```
+
+
+### Desbloqueio de Senha Cartão
+
+- **Onde:** Visualização do modal de  &quot;Não possui cartão para desbloqueio&quot;
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/modal-nao-possui-cartao-desbloqueio/")
+```
+
+<br />
+
+- **Onde:** Visualização da tela de  &quot;Confirme o CVV do seu novo cartão&quot;
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/confirmacao-cvv/")
+```
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela &#039;Confirme o CVV do seu novo cartão&#039;.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:confirmacao-cvv" ,
+        	eventAction: "clique:[[botao-link]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-link]] | &#039;link&#039; ou &#039;botao&#039; | Deve retornar o tipo de elemento. |
+| [[nome-item]] | &#039;o-numero-do-cartao-nao-e-esse&#039;, &#039;continuar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Visualização do modal de &quot;Número do cartão diferente&quot;
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/modal-numero-cartao-diferente/")
+```
+
+<br />
+
+
+- **Quando:** No clique dos elementos
+- **Onde:** No modal de &#039;Número do cartão diferente&#039;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:confirmacao-cvv" ,
+        	eventAction: "clique:[[botao-link]]:modal-numero-cartao-diferente" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-link]] | &#039;link&#039; ou &#039;botao&#039; | Deve retornar o tipo de elemento. |
+| [[nome-item]] | &#039;fechar&#039;, &#039;telefone-capitais&#039;, &#039;telefone-demais-localidades&#039; etc. | Deve retornar o nome do item clicado. |
+
+<br />
+
+
+- **Onde:** Visualização da tela &quot;Digite uma senha para o cartão&quot;
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/criacao-senha/")
+```
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela &#039;Digite uma senha para o cartão&#039;.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:criacao-senha" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | &#039;mostrar-senha&#039;, &#039;esconder-senha&#039;, &#039;voltar&#039;, &#039;enviar-senha&#039; etc. | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Quando:** No callback do preenchimento do campo de senha.
+- **Onde:** Na tela &#039;Digite uma senha para seu cartão&#039;.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:criacao-senha" ,
+        	eventAction: "callback" ,
+        	eventLabel: "[[status]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[status]] | &#039;sucesso&#039; ou &#039;erro:repeticao-numeros-seguidos&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
+
+<br />
+
+- **Onde:** Visualização da tela &quot;Confirme sua senha&quot;
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/confirmacao-senha/")
+```
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela &#039;Confirme sua senha&#039;.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:confirmacao-senha" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | &#039;mostrar-senha&#039;, &#039;esconder-senha&#039;, &#039;voltar&#039;, &#039;enviar-senha&#039; etc. | Deve retornar o nome do botão clicado. |
+
+<br />
+
+
+- **Quando:** No callback do preenchimento do campo de confirmação de senha.
+- **Onde:** Na tela &#039;Confirme sua senha&#039;.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:confirmacao-senha" ,
+        	eventAction: "callback" ,
+        	eventLabel: "[[status]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[status]] | &#039;sucesso&#039; ou &#039;erro:senha-diferente-anterior&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
+
+<br />
+
+- **Onde:** Visualização da tela &quot;Você já pode usar seu cartão&quot;
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/ja-pode-usar-cartao/")
+```
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela &#039;Você já pode usar seu cartão&#039;.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:ja-pode-usar-cartao" ,
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "fechar"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar se clicou no botao ou no icone. |
+
+<br />
+
+### Eventos - Super App - Assistências e Seguros
+**Visualização da tela de assistencia e seguros**<br />
+
+- **Onde:** Visualização da tela &quot;assistencia e seguros&quot;
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/")
+```
+
+
+<br />
+
+- **Quando:** No clique nos botões &#039;Simule e contrate&#039;
+- **Onde:** Na tela de &quot;Seguros e assitências&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "simule-e-contrate"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+
+- **Quando:** No clique nos botões
+- **Onde:** Nas telas &quot;Seguros e assitências&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | &#039;cancelamento&#039;, &#039;meus-numeros-da-sorte&#039;, &#039;produtos-contratados&#039; e etc. | Deve retornar o nome do botão clicado. |
+
+<br />
+
+**Visualização da tela de produtos de  assistencia e seguros**<br />
+
+- **Onde:** Visualização da tela de &quot;produtos de  assistencia e seguros&quot;
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-tela-modal]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-tela-modal]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; , &#039;modal-moto-premiavel&#039;, &#039;modal-mais-saude&#039; e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+
+<br />
+
+
+- **Quando:** No clique nos botões
+- **Onde:** Nas telas de detalhes do produtos de &quot;Seguros e assitências&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:detalhe-produto" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | &#039;entendi-vamos-la&#039;, &#039;fechar&#039;, &#039;continuar&#039; e etc. | Deve retornar o nome do botão clicado. |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+
+**Visualização da tela home de produtos de  assistencia e seguros**<br />
+
+- **Onde:** Visualização da tela de &quot;home de produtos de  assistencia e seguros&quot;
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-tela]]/home/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-tela]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+
+<br />
+
+- **Quando:** No clique nos botões
+- **Onde:** Nas telas de home do produtos de &quot;Seguros e assitências&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:home-produto" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | &#039;simular-e-contratar&#039;, &#039;saiba-mais&#039;, &#039;area-do-cliente&#039; e etc | Deve retornar o nome do botão clicado. |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+**Visualização do modal que aparece após clicar em &#039;área do cliente&#039; e em &#039;saiba mais &#039; na home de produtos de &#039; assistência e seguros**<br />
+
+- **Onde:** Visualização do modal que aparece após clicar em &quot;área do cliente&quot; e em &quot;saiba mais&quot; na home de produtos de assistência e seguros.
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-tela]]/home/[[nome-modal]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-tela]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+| [[nome-modal]] | &#039;saiba-mais&#039;, &#039;parceiro-vale-saude&#039; e etc | Deve retornar o nome do modal . |
+
+<br />
+
+- **Quando:** No clique nos botões
+- **Onde:** No modal que aparece após clicar em &#039;área do cliente&#039; e em &#039;saiba mais &#039; na home de produtos de &#039; assistência e seguros
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:home-produto" ,
+        	eventAction: "[[nome-modal]]:clique-botao" ,
+        	eventLabel: "[[nome-botao]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] |  &#039;fechar&#039;, &#039;entendi&#039; , &#039;ok-continuar&#039; e etc | Deve retornar o nome do botão clicado. |
+| [[nome-modal]] | &#039;saiba-mais&#039;, &#039;parceiro-vale-saude&#039; e etc | Deve retornar o nome do modal . |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+**Visualização da tela de cadastro de dados para os produtos de  assistencia e seguros**<br />
+
+- **Onde:** Visualização da tela de cadastro de dados para os produtos de  assistencia e seguros
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/cadastro-de-dados/[[etapa-form]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+| [[etapa-form]] | &#039;etapa-1&#039;, &#039;etapa-2&#039; e etc | Caso o formulario de cadastro tenha mais de uma etapa , essa variavel deve retornar a etapa do formulario em que o usuario esta, caso contrario retornar a informação vazia. |
+
+<br />
+
+- **Quando:** No callback dos campos
+- **Onde:** Na tela de cadastro de dados para os produtos de  assistencia e seguros
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:cadastro" ,
+        	eventAction: "callback:campo:[[etapa-form]]" ,
+        	eventLabel: "[[nome-campo]]:[[sucesso-erro]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[etapa-form]] | &#039;etapa-1&#039;, &#039;etapa-2&#039; e etc | Caso o formulario de cadastro tenha mais de uma etapa , essa variavel deve retornar a etapa do formulario em que o usuario esta, caso contrario retornar a informação vazia. |
+| [[nome-campo]] | &#039;nome&#039;, &#039;cpf&#039;, &#039;celular&#039; e etc | Deve retornar o nome do campo preenchido. |
+| [[sucesso-erro]] | &#039;sucesso&#039;, &#039;campo-invalido&#039; e etc | Deve retornar se o campo foi preenchido com sucesso ou o tipo de erro. |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+- **Quando:** No clique nos botões
+- **Onde:** Na tela de cadastro de dados para os produtos de  assistencia e seguros
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:cadastro" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[etapa-form]]:[[nome-botao]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[etapa-form]] | &#039;etapa-1&#039;, &#039;etapa-2&#039; e etc | Caso o formulario de cadastro tenha mais de uma etapa , essa variavel deve retornar a etapa do formulario em que o usuario esta, caso contrario retornar a informação vazia. |
+| [[nome-botao]] |  &#039;continuar&#039;, &#039;cancelar&#039; , &#039;voltar&#039; e etc | Deve retornar o nome do botão clicado. |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+**Visualização da tela de planos após finalizar o preenchimento do formulario de cadastro**<br />
+
+- **Onde:** Visualização da tela de planos após finalizar o preenchimento do formulario de cadastro
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/planos/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+
+<br />
+
+- **Quando:** No clique nos botões( OBS: Os extra parameters só devem retornar preenchidos, quando o usuario selecionar o plano)
+- **Onde:** Na tela de planos para os produtos de  assistencia e seguros e detalhes de planos
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:planos" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] |  &#039;continuar&#039;, &#039;contratar&#039; , &#039;voltar&#039; e etc | Deve retornar o nome do botão clicado. |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| qtdeParcelas |  &#039;10x-130,50&#039; e etc | Deve retornar a quantidade de parcelas |
+| qtdeParcelas |  &#039;1&#039;, &#039;2&#039;, &#039;12&#039; e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+
+<br />
+
+**Visualização da tela de cartão riachuelo, após o usuario escolher o plano do produto de assistencia e seguros**<br />
+
+- **Onde:** Visualização da tela de cartão riachuelo, após o usuario escolher o plano do produto de assistencia e seguros
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/cartao-riachuelo/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+
+<br />
+
+- **Quando:** No clique nos botões e links(Os extraparameters planoAssistenciaSeguro, qtdeParcelas e
+- **Onde:** valorParcela só devem ser retornados quando o clique for no botão &quot;continuar&quot; ou &quot;contratar&quot;).
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:cartao-riachuelo" ,
+        	eventAction: "clique:[[botao-link]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-item]] |  &#039;cancelar&#039;, &#039;continuar&#039;, &#039;contratar&#039; e etc | Deve retornar o nome do item clicado(Os extraparameters planoAssistenciaSeguro, qtdeParcelas e  |
+| [[botao-link]] | &#039;botao&#039; ou &#039;link&#039;  . | Deve retornar se o item clicado foi um link ou um botão. |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| qtdeParcelas |  &#039;10x-130,50&#039; e etc | Deve retornar a quantidade de parcelas |
+| qtdeParcelas |  &#039;1&#039;, &#039;2&#039;, &#039;12&#039; e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+
+<br />
+
+**Ao visualizar a tela de &quot;Plano escolhido&quot;**<br />
+
+- **Onde:** Ao visualizar a tela de &quot;Plano escolhido&quot;
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/[[nome-plano]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+| [[nome-plano]] | &#039;pacote-mega&#039;, &#039;mais-saude-premiavel&#039; e etc | Deve retornar o nome do plano escolhido. |
+
+<br />
+
+- **Quando:** No clique nos botões e links(Os extraparameters planoAssistenciaSeguro, qtdeParcelas e
+- **Onde:** valorParcela só devem ser retornados quando o clique for no botão &quot;Finalizar Contratação&quot;)
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:plano-escolhido" ,
+        	eventAction: "clique:[[botao-link]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-item]] |  &#039;cancelar, &#039;finalizar-contratacao&#039; e etc | Deve retornar o nome do item clicado (Os extraparameters planoAssistenciaSeguro, qtdeParcelas e  |
+| [[botao-link]] | &#039;botao&#039; ou &#039;link&#039;  . | Deve retornar se o item clicado foi um link ou um botão. |
+
+<br />
+
+- **Quando:** Ao aceitar os termos listados na tela
+- **Onde:** Na tela de plano escolhido, após o usuario escolher o plano do produto de assistencia e seguros
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:plano-escolhido" ,
+        	eventAction: "[[acao]]:termos" ,
+        	eventLabel: "[[termo-aceito]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[acao]] | &#039;marcou&#039; ou &#039;desmarcou&#039; . | Deve retornar se o usuario marcou ou desmarcou o termo. |
+| [[termo-aceito]] | &#039;termos-e-condicoes&#039;, &#039;compartilhar-dados-com-vale-saude&#039; e etc | Deve retornar o nome do termo aceito. |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+**Visualização do modal de confirmação de adesão do plano**<br />
+
+- **Onde:** Visualização do modal de confirmação de adesão do plano
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/modal-confirmacao-de-adesao/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+
+<br />
+
+- **Quando:** No clique nos botões .
+- **Onde:** No modal de confirmação de adesão do plano.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:cartao-riachuelo" ,
+        	eventAction: "modal:clique:botao" ,
+        	eventLabel: "confirmar-adesao:[[nome-botao]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+| [[nome-botao]] |  &#039;fechar&#039; &#039;sim-confirmar-e-contratar&#039;  e etc | Deve retornar o nome do botão clicado. |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+**Visualização da tela de sucesso ou erro ao tentar contratar o plano**<br />
+
+- **Onde:** Visualização da tela de sucesso ou erro ao tentar contratar o plano
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/contratacao-plano/[[sucesso-erro]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc | Deve retornar a tela de qual opção o usuario escolheu. |
+| [[sucesso-erro]] | &#039;sucesso&#039; ou &#039;erro&#039; | Deve retornar se a tela é de erro ou sucesso. |
+
+<br />
+
+- **Quando:** No callback de sucesso.
+- **Onde:** Na tela de sucesso da contratação do produto de &#039;seguros e assistencia&#039;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias" ,
+        	eventAction: "callback:contratacao" ,
+        	eventLabel: "sucesso"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| qtdeParcelas |  &#039;10x-130,50&#039; e etc | Deve retornar a quantidade de parcelas |
+| qtdeParcelas |  &#039;1&#039;, &#039;2&#039;, &#039;12&#039; e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+
+<br />
+
+- **Quando:** No callback de erro.
+- **Onde:** Na tela de erro da contratação do produto de &#039;seguros e assistencia&#039;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias" ,
+        	eventAction: "callback:contratacao" ,
+        	eventLabel: "erro:[[tipo-erro]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[tipo-erro]] | &#039;cadastro-invalido&#039; e etc. | Deve retornar  o tipo de erro. |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| qtdeParcelas |  &#039;10x-130,50&#039; e etc | Deve retornar a quantidade de parcelas |
+| qtdeParcelas |  &#039;1&#039;, &#039;2&#039;, &#039;12&#039; e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+
+<br />
+
+- **Quando:** No clique nos botões.
+- **Onde:** Na tela de sucesso da contratação do produto de &#039;seguros e assistencia&#039; ou cancelamento da contratação
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:[[tela]]" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | &#039;ok&#039;, &#039;fechar&#039;, &#039;sim&#039;, &#039;nao&#039; e &#039;continuar&#039; e etc | Deve retornar o nome do botão. |
+| [[tela]] | &#039;cancelamento&#039;, &#039;conclusao&#039; e etc | Deve retornar se o usuario esta na tela de conclusao ou de cancelamento. |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+**Visualização da tela de cancelar contratação do plano**<br />
+
+- **Onde:** Visualização da tela de cancelar contratação do plano
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/contratacao-plano/cancelar/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+
+<br />
+
+**Visualização da tela de &#039;Termos e Condições&#039;**<br />
+
+- **Onde:** Visualização da tela de &quot;Termos e Condições&quot;
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/[[nome-plano]]/termos-e-condicoes/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+| [[nome-plano]] | &#039;pacote-mega&#039;, &#039;mais-saude-premiavel&#039; e etc | Deve retornar o nome do plano escolhido. |
+
+<br />
+
+- **Quando:** No clique nos botões.
+- **Onde:** Na tela de  &#039;Termos e Condições&#039;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:termos-e-condicoes" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-item]] |  &#039;entendi&#039;, &#039;fechar&#039; e etc | Deve retornar o nome do botão clicado. |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+**Visualização das telas de erros**<br />
+
+- **Onde:** Visualização das telas de erros
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/[[tipo-do-erro]]")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+| [[tela-erro]] |  &#039;notificacao-de-bloqueio&#039;, &#039;algo-deu-errado&#039;, &#039;notificacao-de-seguranca&#039;. | Deve retornar o nome da tela de erro que o usuário se encontra. |
+
+<br />
+
+- **Quando:** No clique nos botões ou links nas telas de erros
+- **Onde:** Na tela de  erros
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:[[tela-erro]]" ,
+        	eventAction: "clique:[[item]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[tela-erro]] |  &#039;notificacao-de-bloqueio&#039;, &#039;algo-deu-errado&#039;, &#039;notificacao-de-seguranca&#039;. | Deve retornar o nome da tela de erro que o usuário se encontra. |
+| [[item]] |  &#039;link&#039; ou &#039;botao&#039; | Deve retornar o nome do item clicado. |
+| [[nome-item]] |  &#039;central-de-atendimento&#039; ou &#039;ok&#039; | Deve retornar o nome do botão clicado. |
+| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+### Eventos - Saque Digital
+**Visualização das telas de onboarding**<br />
+
+- **Onde:** Visualização das telas de erros
+
+```javascript
+    Analytics.logScreenView("/saque-digital/onboarding-[[numero-tela]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[numero-tela]] | &#039;1&#039;, &#039;2&#039;, &#039;3&#039;  e etc | Deve retornar o número da tela apresentada. |
+
+<br />
+
+- **Quando:** No clique nos botões ou ícones
+- **Onde:** Nas telas de onboarding
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:saque-digital:onboarding-[[numero-tela]]" ,
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[numero-tela]] | &#039;1&#039;, &#039;2&#039;, &#039;3&#039;  e etc | Deve retornar o número da tela apresentada. |
+| [[botao-icone]]  | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] |  &#039;voltar&#039;, &#039;continuar&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Visualização da primeira tela de &quot;Saque digital&quot;<br />
+
+```javascript
+    Analytics.logScreenView("/saque-digital-1-3/")
+```
+<br />
+
+- **Quando:** No clique nos botões ou ícones
+- **Onde:** Na primeira tela de &quot;Saque digital&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:saque-digital:1-3" ,
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-icone]]  | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] |  &#039;voltar&#039;, &#039;sacar-outro-valor&#039;, &#039;continuar:saque:200.00&#039;, &#039;continuar:saque:250.00&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+**Onde**Visualização das telas de callbacks, dentro de &quot;Saque digital&quot;<br />
+
+```javascript
+    Analytics.logScreenView("/saque-digital-1-3/callback-[[nome-tela]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-tela]] | &#039;valor-abaixo-minimo-permitido&#039;, &#039;valor-acima-maximo-permitido&#039;, &#039;valor-invalido&#039;, &#039;saldo-insuficiente&#039;  e etc | Deve retornar o nome da tela apresentada. |
+
+<br />
+
+- **Quando:** No clique nos botões
+- **Onde:** Nas telas de callbacks, dentro de &quot;Saque digital&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:saque-digital:1-3:[[nome-tela]]" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "ok"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-tela]] | &#039;valor-abaixo-minimo-permitido&#039;, &#039;valor-acima-maximo-permitido&#039;, &#039;valor-invalido&#039;, &#039;saldo-insuficiente&#039;  e etc | Deve retornar o nome da tela apresentada. |
+
+<br />
+
+**Onde**Visualização da segunda tela de &quot;Saque digital&quot;<br />
+
+```javascript
+    Analytics.logScreenView("/saque-digital-2-3/")
+```
+
+<br />
+
+- **Quando:** No clique nos botões ou ícones
+- **Onde:** Na segunda tela de &quot;Saque digital&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:saque-digital:2-3" ,
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-icone]]  | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] |  &#039;voltar&#039;, &#039;sacar-outro-valor&#039;, &#039;leitor-qr-code&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+**Onde**Visualização da terceira tela de &quot;Saque digital&quot;<br />
+
+```javascript
+    Analytics.logScreenView("/saque-digital-3-3/")
+```
+
+<br />
+
+- **Quando:** No clique nos links ou ícones
+- **Onde:** Na terceira tela de &quot;Saque digital&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:saque-digital:3-3" ,
+        	eventAction: "clique:[[link-icone]]" ,
+        	eventLabel: "[[nome-item]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[link-icone]]  | &#039;link&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
+| [[nome-item]] |  &#039;voltar&#039;, &#039;precisa-ajuda&#039; e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Quando:** No callback após ler o qr code
+- **Onde:** Na terceira tela de &quot;Saque digital&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:saque-digital:3-3" ,
+        	eventAction: "callback:leitura-qr-code" ,
+        	eventLabel: "[[retorno]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[retorno]] |  &#039;erro:nao-foi-possivel-ler-qr-code&#039;, &#039;qr-code-lido-com-sucesso&#039; e etc | Deve retornar o erro. |
+
+<br />
+
+**Onde**Visualização do modal de &quot;Habilitando o QR Code&quot;<br />
+
+```javascript
+    Analytics.logScreenView("/saque-digital-3-3/modal-habilitando-qr-code/")
+```
+<br />
+
+- **Quando:** No clique no botão
+- **Onde:** No modal de &quot;Habilitando o QR Code&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:saque-digital:3-3:modal-habilitando-qr-code" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "entendi"
+		})
+```
+<br />
+
+**Onde**Visualização da tela de &quot;Saque realizado com sucesso&quot;<br />
+
+```javascript
+    Analytics.logScreenView("/saque-digital/saque-realizado-sucesso/")
+```
+<br />
+
+- **Quando:** No clique no botão
+- **Onde:** Na tela de &quot;Saque realizado com sucesso&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:saque-digital:saque-realizado-sucesso" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] |  &#039;compartilhar&#039;, &#039;voltar-para-inicio&#039; e etc | Deve retornar o nome do botão. |
+
+<br />
+
 <br />
 
 <script>
