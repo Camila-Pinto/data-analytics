@@ -22,10 +22,10 @@
 - [Compartilhe](#compartilhe)
 - [Como Funciona](#como-funciona)
 - [Junte-se a nós](#junte-se-a-n&oacute;s)
-- [Como funciona - Tutoriais](#como-funciona-tutoriais)
+- [Tutoriais](#tutoriais)
 - [Meus dados e Comissão](#meus-dados-e-comiss&#227;o)
 - [Faq](#faq)
-- [Enhanced Ecommerce](#enhanced-ecommerce)
+- [Enhanced E-commerce](#enhanced-e-commerce)
 - [Considerações Finais](#considera&#231;&#245;es-finais)
 
 <br />
@@ -1672,7 +1672,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <br />
 
 
-### Como funciona - Tutoriais
+### Tutoriais
 
 **no click nos vídeos**<br />
 
