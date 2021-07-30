@@ -11,6 +11,22 @@
 - [Implementação](#implementa%c3%a7%c3%a3o)
 - [Especificações Globais](#especifica%c3%a7%c3%b5es-globais)
 - [Dimensões Globais](#dimens&#245;es-globais)
+- [Geral](#geral)
+- [Inicio](#inicio)
+- [Login](#login)
+- [Redefinir Minha Senha](#redefinir-minha-senha)
+- [Home](#home)
+- [Minha loja](#minha-loja)
+- [Loja criada](#loja-criada)
+- [Dashboard](#dashboard)
+- [Compartilhe](#compartilhe)
+- [Como Funciona](#como-funciona)
+- [Junte-se a nós](#junte-se-a-n&oacute;s)
+- [Como funciona - Tutoriais](#como-funciona-tutoriais)
+- [Meus dados e Comissão](#meus-dados-e-comiss&#227;o)
+- [Faq](#faq)
+- [Enhanced Ecommerce](#enhanced-ecommerce)
+- [Considerações Finais](#considera&#231;&#245;es-finais)
 
 <br />
 
@@ -1556,8 +1572,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-
-
 <br />
 
 
@@ -1599,8 +1613,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-campo]] | &#039;nome-completo&#039;, &#039;cpf&#039; e etc | Deve retornar o nome do campo preenchido. |
@@ -1624,8 +1636,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso ou tipo-de-erro]] | &#039;sucesso&#039;, &#039;erro:nao-foi-possivel&#039; e etc | Deve retornar a mensagem de sucesso ou o tipo de erro. |
@@ -1645,10 +1655,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-
-
 <br />
-
 
 **No click do botão acessar, em conta verificada com sucesso**<br />
 
@@ -1662,12 +1669,10 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-
-
 <br />
 
 
-### Como funciona
+### Como funciona - Tutoriais
 
 **no click nos vídeos**<br />
 
@@ -1707,8 +1712,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1776,8 +1779,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso ou tipo-de-erro]] | &#039;sucesso&#039;, &#039;erro:dados-invalidos&#039; e etc | Deve retornar a mensagem de sucesso ou o tipo de erro. |
@@ -1796,8 +1797,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
    data-gtm-event-label='ajuda:meus-dados'
 >Botão</div>
 ```
-
-
 
 <br />
 
@@ -1837,8 +1836,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1885,8 +1882,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[status]] |  | Deve retornar o status selecionado, exemplo: status-cancelado, status-aguardando-faturamento, etc |
@@ -1910,9 +1905,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
-
 <br />
 
 
@@ -1931,8 +1923,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1959,8 +1949,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-pergunta]] | &#039;1-quem-pode-participar-da-campanha&#039; e etc | Deve retornar o nome da pergunta que teve interação. |
@@ -1981,8 +1969,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-
-
 <br />
 
 
@@ -1999,15 +1985,27 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'promotionImpression',
     'eventCategory': 'rchlover:enhanced-ecommerce',
     'eventAction': 'promotionImpression',
-'noInteraction': '1',
+    'noInteraction': '1',
+    'ecommerce': {
+      'promoView': {
+        'promotions': [{
+          'id': '[[id-promocao]]',
+          'name': '[[nome-promocao]]',
+          'position': '[[posicao-promocao]]',
+          'creative': '[[arte-banner]]'
+        }]
+      }
+    }
   });
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
+| [[id-promocao]] | &quot;banner123&quot; | ID único do Banner |
+| [[nome-promocao]] | &quot;o-primeiro-colocado-ganha-uma-honda-biz-0km&quot; | Nome amigável do banner |
+| [[posicao-promocao]] | &quot;1&quot; | Posição que o banner é exibido  |
+| [[arte-banner]] | &quot;https://www.sourchlover.com.br/imagem.jpg&quot; | URL da imagem do banner |
 
 <br />
 
@@ -2024,7 +2022,7 @@ window.dataLayer.push({
   'event': 'promotionClick',
   'eventCategory': 'rchlover:enhanced-ecommerce',
   'eventAction': 'promotionClick',
-    'ecommerce': {
+  'ecommerce': {
     'promoClick': {
       'promotions': [{
         'id': '[[id-promocao]]',
@@ -2063,18 +2061,18 @@ window.dataLayer.push({
   'noInteraction': '1',
   'ecommerce': {
     'impressions': [{
-'dimension7': '[[dco-product-codsubcategoria]]',
-  'dimension8': '[[product-padronagemdoproduto]]',
-  'dimension9': '[[product-subcategoria]]',
-  'dimension10': '[[product-lifestyle]]',
-  'dimension11': '[[product-gender]]',
-        'name': '[[nome-produto]]',
-        'id': '[[id-produto]]',
-        'list': '[[lista-produto]]',
-        'price': '[[preco-produto]]',
-        'brand': '[[marca-produto]]',
-        'category': '[[categoria-produto]]',
-        'position': '[[posicao-produto]]'
+      'dimension7': '[[dco-product-codsubcategoria]]',
+      'dimension8': '[[product-padronagemdoproduto]]',
+      'dimension9': '[[product-subcategoria]]',
+      'dimension10': '[[product-lifestyle]]',
+      'dimension11': '[[product-gender]]',
+      'name': '[[nome-produto]]',
+      'id': '[[id-produto]]',
+      'list': '[[lista-produto]]',
+      'price': '[[preco-produto]]',
+      'brand': '[[marca-produto]]',
+      'category': '[[categoria-produto]]',
+      'position': '[[posicao-produto]]'
     }]
   }
 });
@@ -2111,23 +2109,23 @@ window.dataLayer.push({
     'event': 'productClick',
     'eventCategory': 'rchlover:enhanced-ecommerce',
     'eventAction': 'productClick',
-        'ecommerce': {
-        'click': {
-            'actionField': {'list': '[[lista-produto]]'},
-            'products': [{
-'dimension7': '[[dco-product-codsubcategoria]]',
-  'dimension8': '[[product-padronagemdoproduto]]',
-  'dimension9': '[[product-subcategoria]]',
-  'dimension10': '[[product-lifestyle]]',
-  'dimension11': '[[product-gender]]',
-                'name': '[[nome-produto]]',
-                'id': '[[id-produto]]',
-                'price': '[[preco-produto]]',
-                'brand': '[[marca-produto]]',
-                'category': '[[categoria-produto]]',
-        'position': '[[posicao-produto]]'
-            }]
-        }
+    'ecommerce': {
+      'click': {
+        'actionField': {'list': '[[lista-produto]]'},
+        'products': [{
+          'dimension7': '[[dco-product-codsubcategoria]]',
+          'dimension8': '[[product-padronagemdoproduto]]',
+          'dimension9': '[[product-subcategoria]]',
+          'dimension10': '[[product-lifestyle]]',
+          'dimension11': '[[product-gender]]',
+          'name': '[[nome-produto]]',
+          'id': '[[id-produto]]',
+          'price': '[[preco-produto]]',
+          'brand': '[[marca-produto]]',
+          'category': '[[categoria-produto]]',
+          'position': '[[posicao-produto]]'
+        }]
+      }
     }
 });
 </script>
@@ -2150,8 +2148,6 @@ window.dataLayer.push({
 
 <br />
 
-
-<br />
 
 ---
 
