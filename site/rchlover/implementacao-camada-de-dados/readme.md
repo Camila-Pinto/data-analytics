@@ -1280,6 +1280,28 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
+**Napágina de callback de &quot;loja não encontrada&quot; ou &quot;não existem produtos nessa loja&quot;.**<br />
+
+- **Onde:** Na página da loja criada.
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-loja:loja-criada',
+    'eventAction': 'erro:calback',
+    'eventLabel': '[[status]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[status]] | &#039;loja-não-encontrada&#039;, &#039;nao-existe-produtos-nessa-loja&#039; e etc. | Deve retornar qual o status de erro da tentativa de acesso a loja. |
+
+<br />
+
 
 ### Dashboard
 
@@ -1930,6 +1952,121 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
+**Na interação com o botão de exclusão de conta**<br />
+
+- **Onde:** Em &quot;Dados de Contato&quot;, dentro do menu &quot;Minha Conta&quot;, no componente de &quot;Excluir Conta&#039;
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-conta',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'excluir-conta:[[passo]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[passo] | &#039;step-1&#039;, &#039;step-2&#039;. | Deve retortar se é o primeiro ou segundo botão &quot;Excluir minha conta&quot; do processo de exclusão. |
+
+<br />
+
+
+**Na interação com o checkbox de confimação de exclusão de conta**<br />
+
+- **Onde:** Em &quot;Dados de Contato&quot;, dentro do menu &quot;Minha Conta&quot;, no componente de &quot;Excluir Conta&#039;
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-conta',
+    'eventAction': 'interacao:checkbox:[[selecionou-desselecionou]]',
+    'eventLabel': 'excluir-conta'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[selecionou-desselecionou]] |  | Deve retornar se o checkbox foi selecionado ou desselecionado. |
+
+<br />
+
+
+**Na interação com os botões do modal de exclusão**<br />
+
+- **Onde:** No modal de Exclusão
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-conta',
+    'eventAction': 'clique:botao:modal-motivo-exclusao',
+    'eventLabel': '[[botao]]:[[motivo]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao]] | &#039;fechar&#039;, &#039;cancelar&#039;, &#039;continuar&#039;, &#039;confirmar&#039;, etc. | Deve retornar o nome do botão ou link clicado no modal de exclusão. |
+| [[motivo]] | &#039;nao-gostei-da-comeissao&#039;, &#039;nao-consigo-vender&#039;, &#039;nao-gostei-da-plataforma&#039;, &#039;outro&#039;. | Quando clicar em continuar deve trazer o motivo selecionado da exclusão. |
+
+<br />
+
+
+**Na interação com os botões do modal de confirmação de exclusão**<br />
+
+- **Onde:** No modal de Exclusão
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-conta',
+    'eventAction': 'clique:botao:modal-confirma-exclusao',
+    'eventLabel': '[[botao-link]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-link]] | &#039;fechar&#039;, &#039;cancelar&#039;, &#039;clique-aqui&#039;, &#039;confirmar&#039;, &#039;finalizar&#039;, etc. | Deve retornar o nome do botão ou link clicado no modal de exclusão. |
+
+<br />
+
+
+**Quando o usuário tentar acessar a conta depois de ter solicitado a exclusão da mesma**<br />
+
+- **Onde:** No modal de  Alerta da Exclusão
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-conta',
+    'eventAction': 'clique:botao:[[modal-tipo]]',
+    'eventLabel': '[[botao]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao]] | &#039;finalizar&#039;. | Deve retornar o nome do botão clicado no modal de alerta de exclusão. |
+| [[modal-tipo]] | &#039;modal-conta-excluida-em-ate-24-horas&#039;, &#039;modal-aguarde-processamento-exclusao&#039;. | Retornar o tipo de alerta de exclussão. |
+
+<br />
 
 ### FAQ
 
