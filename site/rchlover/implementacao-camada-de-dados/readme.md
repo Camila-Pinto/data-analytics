@@ -17,6 +17,7 @@
 - [Redefinir Minha Senha](#redefinir-minha-senha)
 - [Home](#home)
 - [Minha loja](#minha-loja)
+- [Painel Mensagens](#painel-mensagens)
 - [Loja criada](#loja-criada)
 - [Dashboard](#dashboard)
 - [Compartilhe](#compartilhe)
@@ -24,6 +25,7 @@
 - [Junte-se a nós](#junte-se-a-n&oacute;s)
 - [Tutoriais](#tutoriais)
 - [Meus dados e Comissão](#meus-dados-e-comiss&#227;o)
+- [Minha conta - Exclusão de Conta](#minha-conta-exclus&#227;o-de-conta)
 - [Faq](#faq)
 - [Enhanced E-commerce](#enhanced-e-commerce)
 - [Considerações Finais](#considera&#231;&#245;es-finais)
@@ -1088,6 +1090,32 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
+### Painel Mensagens
+
+**No clique dos elementos**<br />
+
+- **Onde:** No painel do menu Mensagens
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:painel-mensagem',
+    'eventAction': 'clique:[[botao ou link]]',
+    'eventLabel': '[[item-clicado]]'
+  });
+</script>
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao ou link]] | 'botao' ou 'link' | Deve retornar o tipo de elemento clicado |
+| [[item-clicado]] | 'meus-dados', 'carregar-mais' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
 
 ### Loja criada
 
@@ -1133,7 +1161,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 **Na interação com a alternância de páginas**<br />
 
-- **Onde:** onde: Na página da loja criada.
+- **Onde:** Na página da loja criada.
     
 ```html
 <div
@@ -1153,7 +1181,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 **Na interação com a busca**<br />
 
-- **Onde:** onde: Na página da loja criada.
+- **Onde:** Na página da loja criada.
     
 ```html
 <script>
@@ -1203,7 +1231,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 **No clique para copiar o cupom**<br />
 
-- **Onde:** onde: Na página da loja criada.
+- **Onde:** Na página da loja criada.
     
 ```html
 <div
@@ -1220,7 +1248,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 **Na interação com o filtro**<br />
 
-- **Onde:** onde: Na página da loja criada.
+- **Onde:** Na página da loja criada.
     
 ```html
 <script>
@@ -1246,7 +1274,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 **No clique do link &quot;Crie a sua loja&quot;**<br />
 
-- **Onde:** onde: Na página da loja criada.
+- **Onde:** Na página da loja criada.
     
 ```html
 <div
@@ -1906,7 +1934,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[status]] |  | Deve retornar o status selecionado, exemplo: status-cancelado, status-aguardando-faturamento, etc |
+| [[status]] | status-cancelado, status-aguardando-faturamento, etc | Deve retornar o status selecionado |
 
 <br />
 
@@ -1952,6 +1980,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
+### Minha conta - Exclusão de Conta
+
 **Na interação com o botão de exclusão de conta**<br />
 
 - **Onde:** Em &quot;Dados de Contato&quot;, dentro do menu &quot;Minha Conta&quot;, no componente de &quot;Excluir Conta&#039;
@@ -1993,7 +2023,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[selecionou-desselecionou]] |  | Deve retornar se o checkbox foi selecionado ou desselecionado. |
+| [[selecionou-desselecionou]] | 'selecionou' ou 'desselecionou' | Deve retornar se o checkbox foi selecionado ou desselecionado. |
 
 <br />
 
