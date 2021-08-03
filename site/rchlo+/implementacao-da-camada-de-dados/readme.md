@@ -959,28 +959,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
-**No carregamento da página**<br />
-
-- **Onde:** Após clicar no botão "Acessar" confirmando que o e-mail foi verificado.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'rchlo-mais:cadastro:acao-realizada-com-sucesso',
-    'eventAction': 'callback',
-    'eventLabel': '[[sucesso-ou-erro]]'
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso-ou-erro]] | 'sucesso:seu-endereco-de-email-foi-confirmado', 'erro:email-incompleto' e etc | Deve retornar o callback de sucesso ou erro do e-mail enviado/conclusão do cadastro. |
-
-<br />
-
 ### Checkout
 
 **No clique para escolher o &quot;Endereço de Retirada&quot;**<br />
