@@ -25,7 +25,7 @@
 - [Junte-se a nós](#junte-se-a-n&oacute;s)
 - [Tutoriais](#tutoriais)
 - [Meus dados e Comissão](#meus-dados-e-comiss&#227;o)
-- [Minha conta - Excluir de Conta](#minha-conta-excluir-de-conta)
+- [Exclusão de Conta](#exclus&#227;o-de-conta)
 - [Faq](#faq)
 - [Enhanced E-commerce](#enhanced-e-commerce)
 - [Considerações Finais](#considera&#231;&#245;es-finais)
@@ -1980,7 +1980,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
-### Minha conta - Excluir de Conta
+### Exclusão de Conta
 
 **Na interação com o botão de exclusão de conta**<br />
 
