@@ -1267,7 +1267,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-filtro]] | &#039;ordernar-por&#039; e etc | Deve retornar o nome do filtro. |
-| [[valor-selecionado]] | &#039;menor-preco&#039;, &#039;maior-preco&#039; e etc | Deve retornar o valor selecionado no filtro. |
+| [[valor-selecionado]] | &#039;menor-preco&#039;, &#039;maior-preco&#039;, 'personalizado' e etc | Deve retornar o valor selecionado no filtro. |
 
 <br />
 
