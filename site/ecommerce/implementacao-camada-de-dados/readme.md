@@ -1034,8 +1034,9 @@ window.dataLayer.push({
   });
 </script>
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+
+| Variável    | Exemplo  | Descrição   |
+| :-------------- | :--------- | :---------------------- |
 | [[nome-botao]] | 'entrar' ou 'quero-criar-a-minha-conta' | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -1055,6 +1056,7 @@ window.dataLayer.push({
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-campo]] | 'cpf-ou-email' ou 'senha' |Deve retornar o nome do campo preenchido.  |
@@ -1076,6 +1078,7 @@ window.dataLayer.push({
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[elemento]] | 'botao', 'link', 'checkbox' ou 'password-visibility' |Deve retornar o nome do elemento.|
@@ -1098,6 +1101,7 @@ window.dataLayer.push({
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[rede-social]] | 'facebook', 'google' e etc |Deve retornar o nome da Rede Social escolhida para efetuar o Login.|
@@ -1119,6 +1123,7 @@ window.dataLayer.push({
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-campo]] | 'cpf' ou 'senha' |Deve retornar o nome do campo que iremos receber o callback.|
@@ -1161,6 +1166,7 @@ window.dataLayer.push({
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[botao-link]] | 'botao' ou 'link' |Deve retornar o elemento clicado.|
@@ -1183,6 +1189,7 @@ window.dataLayer.push({
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[erro]] | 'insira-sua-senha-para-acessar', 'senha-invalida' e etc. | Deve retornar o callback de erro dos campos CPF e Senha.|
@@ -1206,6 +1213,7 @@ window.dataLayer.push({
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-campo]] | 'nome-completo', 'email', 'data-de-nascimento', 'endereco', 'bairro' e etc | Deve retornar o nome do campo preenchido. |
@@ -1227,6 +1235,7 @@ window.dataLayer.push({
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[elemento]] | 'botao', 'link', 'checkbox' e etc. | Deve retornar o elemento clicado.|
@@ -1249,6 +1258,7 @@ window.dataLayer.push({
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-campo]] | 'nome-completo', 'email', 'cpf', 'endereco', 'bairro' e etc. | Deve retornar o nome do campo que está retornando o callback.|
@@ -1272,6 +1282,7 @@ window.dataLayer.push({
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[cpf-ou-email]] | 'cpf' ou 'email' | Deve retornar a informação informada no modal.|
@@ -1296,8 +1307,6 @@ window.dataLayer.push({
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
