@@ -1524,7 +1524,7 @@ window.dataLayer.push({
 <br />
 
 
-### Minha Conta - Devolução Online e Retirar em Loja
+### Minha Conta Devolução Online e Retirar em Loja
 
 **No clique em &quot;Visualizar Pedido&quot;**<br />
 
