@@ -72,7 +72,6 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Desbloqueio de Senha Cartão](#desbloqueio-de-senha-cart&#227;o)
 - [Eventos - Midway - Assistências e Seguros](#eventos---midway---assist&ecirc;ncias-e-seguros)
 - [Eventos - Saque Digital](#eventos---saque-digital)
-- [Onboarding](#onboarding)
 - [Contato](#contato)
 
 
