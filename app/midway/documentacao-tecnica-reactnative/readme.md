@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Midway APP
 
-Última atualização: 24/06/2021 <br />
+Última atualização: 05/08/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -60,6 +60,10 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Empréstimo Consulta](#empr&#233;stimo-consulta)
 - [Empréstimo Cancelamento](#empr&#233;stimo-cancelamento)
 - [Empréstimo Liquidação](#empr&#233;stimo-liquida&#231;&#227;o)
+- [Seguros e Assistências](#seguros-e-assist&#234;ncias)
+- [Segunda via comprovante](#segunda-via-comprovante)
+- [Recarga Celular](#recarga-celular)
+- [Recarga Rápida](#recarga-r&#225;pida)
 - [Home Pix](#home-pix)
 - [Cadastrar Pix](#cadastrar-pix)
 - [Minhas chaves Pix](#minhas-chaves-pix)
@@ -11107,6 +11111,99 @@ Resumo de produtos cadastrados
 | `[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | &#039;voltar&#039;, &#039;fechar&#039;, &#039;compartilhar&#039; e etc | Deve retornar o nome do item clicado. |
 
+<br />
+
+### Recarga Rápida
+
+- **Onde:** Visualização da tela "Recarga de Celular", com a opção de "Repetir última recarga?"
+
+```javascript
+    Analytics.logScreenView("/recarga-celular/repetir-ultima-recarga/");
+```
+
+- **Quando:** No clique no elemento fechar, botão "Repetir Recarga" ou no clique do ícone para voltar.
+- **Onde:** Na tela de "Recarga de celular", "Repetir última recarga"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:repetir-ultima-recarga",
+        	eventAction: "clique:[[botao-icone]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
+| `[[nome-item]]` | 'fechar', 'repetir-recarga', 'voltar', 'continuar:tim:20,00', 'continuar:vivo:25,00' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Quando:** Na interação dos campos "Número para recarga"
+- **Onde:** Na tela de "Recarga de celular", "Repetir última recarga"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:repetir-ultima-recarga",
+        	eventAction: "interacao:campo",
+        	eventLabel: "[[nome-campo]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-campo]]` | 'ddd', 'numero' e 'valor-recarga' | DDeve retornar o nome do campo. |
+
+<br />
+
+- **Onde:** Visualização da tela "Confirme os dados da sua recarga"
+
+```javascript
+    Analytics.logScreenView("/recarga-celular/repetir-ultima-recarga/confirme-dados-recarga/");
+```
+<br />
+
+- **Quando:** No clique das opções "Pagar com"
+- **Onde:** Na tela de "Confirme os dados da sua recarga"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:repetir-ultima-recarga",
+        	eventAction: "clique:[[botao-icone]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[botao-icone]]` | 'botao' ou 'icone' | Deve retornar o nome da opção clicada. |
+| `[[nome-item]]` | 'voltar', 'pagar:saldo-conta', 'pagar:cartao' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Quando:** No clique no elemento voltar e botão "Recarregar"
+- **Onde:** Na tela de "Confirme os dados da sua recarga"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:confirme:repetir-ultima-recarga",
+        	eventAction: "clique:[[botao-icone]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[botao-icone]]` | 'botao' ou 'icone' | Deve retornar o nome da opção clicada. |
+| `[[nome-item]]` | 'fechar', 'recarregar' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela de "Recarga realizada com sucesso"
+
+```javascript
+    Analytics.logScreenView("/recarga-celular/repetir-ultima-recarga/realizada-sucesso:op-[[operadora]]:val-[[valor]]/");
+```
 <br />
 
 ### Home Pix
