@@ -215,8 +215,8 @@ Analytics.logEvent("event", {
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:onboarding" ,
-        	eventAction: "clique:botao" ,
+        	eventCategory: "riachuelo:app:onboarding",
+        	eventAction: "clique:botao",
         	eventLabel: "[[titulo-da-tela]]:[[nome-botao]]"
 		})
 ```
