@@ -72,6 +72,7 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Desbloqueio de Senha Cartão](#desbloqueio-de-senha-cart&#227;o)
 - [Eventos - Midway - Assistências e Seguros](#eventos---midway---assist&ecirc;ncias-e-seguros)
 - [Eventos - Saque Digital](#eventos---saque-digital)
+- [Onboarding](#onboarding)
 - [Contato](#contato)
 
 
@@ -12907,7 +12908,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-**Onde**Visualização das telas de callbacks, dentro de &quot;Saque digital&quot;<br />
+**Onde:** Visualização das telas de callbacks, dentro de &quot;Saque digital&quot;<br />
 
 ```javascript
     Analytics.logScreenView("/saque-digital-1-3/callback-[[nome-tela]]/")
@@ -12936,7 +12937,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-**Onde**Visualização da segunda tela de &quot;Saque digital&quot;<br />
+**Onde:** Visualização da segunda tela de &quot;Saque digital&quot;<br />
 
 ```javascript
     Analytics.logScreenView("/saque-digital-2-3/")
@@ -12962,7 +12963,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-**Onde**Visualização da terceira tela de &quot;Saque digital&quot;<br />
+**Onde:** Visualização da terceira tela de &quot;Saque digital&quot;<br />
 
 ```javascript
     Analytics.logScreenView("/saque-digital-3-3/")
@@ -13005,7 +13006,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-**Onde**Visualização do modal de &quot;Habilitando o QR Code&quot;<br />
+**Onde:** Visualização do modal de &quot;Habilitando o QR Code&quot;<br />
 
 ```javascript
     Analytics.logScreenView("/saque-digital-3-3/modal-habilitando-qr-code/")
@@ -13024,7 +13025,7 @@ Resumo de produtos cadastrados
 ```
 <br />
 
-**Onde**Visualização da tela de &quot;Saque realizado com sucesso&quot;<br />
+**Onde:** Visualização da tela de &quot;Saque realizado com sucesso&quot;<br />
 
 ```javascript
     Analytics.logScreenView("/saque-digital/saque-realizado-sucesso/")
@@ -13048,6 +13049,37 @@ Resumo de produtos cadastrados
 | [[nome-botao]] |  &#039;compartilhar&#039;, &#039;voltar-para-inicio&#039; e etc | Deve retornar o nome do botão. |
 
 <br />
+
+### Onboarding
+
+**Onde:** Visualização das telas de Onboarding<br />
+
+```javascript
+    Analytics.logScreenView("/onboarding/[[titulo-da-tela]]")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[titulo-da-tela]] | 'use-o-cartao-riachuelo', 'acesse-seu-cartao-riachuelo', 'promocoes-exclusivas', 'retire-na-loja-com-frete-gratis' e etc |Deve retornar o título da tela que o usuário visualizou.|
+
+<br />
+
+- **Quando:** No clique nos botões "Avançar" ou "Pular"
+- **Onde:** Nas telas de Onboarding
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:onboarding" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'avancar' ou 'pular' | Deve retornar o nome do botão. |
+
 
 <br />
 
