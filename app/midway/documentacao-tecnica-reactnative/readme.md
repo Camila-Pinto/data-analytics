@@ -13055,7 +13055,7 @@ Resumo de produtos cadastrados
 **Onde:** Visualização das telas de Onboarding<br />
 
 ```javascript
-    Analytics.logScreenView("/onboarding/[[titulo-da-tela]]")
+    Analytics.logScreenView("/onboarding/[[titulo-da-tela]]/")
 ```
 
 | Variável        | Exemplo                               | Descrição                         |
