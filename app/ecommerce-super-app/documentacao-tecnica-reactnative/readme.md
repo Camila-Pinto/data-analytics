@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Riachuelo APP
 
-Última atualização: 14/06/2021. <br />
+Última atualização: 05/08/2021. <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -24,6 +24,7 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Definições Globais](#defini%c3%a7%c3%b5es-globais)
 - [Telas](#telas)
 - [Eventos - Geral](#eventos---geral)
+- [Onboarding](#onboarding)
 - [Eventos - Home](#eventos---home)
 - [Eventos - Busca](#eventos---busca)
 - [Eventos - Vitrine](#eventos---vitrine)
@@ -192,6 +193,39 @@ Analytics.logEvent("event", {
 | :----------------- | :------------------------------ | :----------------------------------------- |
 | `[[nome-fluxo]]` | 'super-app-solicitacao-cartao' e etc |  Deve retornar o nome do fluxo.|
 | `[[nome-tela]]` | 'ops-tivemos-problemas', 'desculpa-nao-foi-dessa-vez', 'estamos-analisando-seu-cadastro' e etc |  Deve retornar o nome da tela apresentada.|
+
+<br />
+
+### Onboarding
+
+**Onde:** Visualização das telas de Onboarding<br />
+
+```javascript
+    Analytics.logScreenView("/onboarding/[[titulo-da-tela]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[titulo-da-tela]] | 'use-o-cartao-riachuelo', 'acesse-seu-cartao-riachuelo', 'promocoes-exclusivas', 'retire-na-loja-com-frete-gratis' e etc |Deve retornar o título da tela que o usuário visualizou.|
+
+<br />
+
+- **Quando:** No clique nos botões "Avançar" ou "Pular"
+- **Onde:** Nas telas de Onboarding
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:onboarding" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+		})
+```
+
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'avancar' ou 'pular' | Deve retornar o nome do botão. |
+
 
 <br />
 
@@ -4134,7 +4168,6 @@ Analytics.logEvent("event", {
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[acao]] | &#039;marcou&#039; ou &#039;desmarcou&#039; . | Deve retornar se o usuario marcou ou desmarcou o termo. |
 | [[termo-aceito]] | &#039;termos-e-condicoes&#039;, &#039;compartilhar-dados-com-vale-saude&#039; e etc | Deve retornar o nome do termo aceito. |
-
 | [[produtoAssistenciaSeguro]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro | 
 
 <br />
