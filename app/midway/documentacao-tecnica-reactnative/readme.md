@@ -13050,39 +13050,6 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Onboarding
-
-**Onde:** Visualização das telas de Onboarding<br />
-
-```javascript
-    Analytics.logScreenView("/onboarding/[[titulo-da-tela]]/")
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[titulo-da-tela]] | 'use-o-cartao-riachuelo', 'acesse-seu-cartao-riachuelo', 'promocoes-exclusivas', 'retire-na-loja-com-frete-gratis' e etc |Deve retornar o título da tela que o usuário visualizou.|
-
-<br />
-
-- **Quando:** No clique nos botões "Avançar" ou "Pular"
-- **Onde:** Nas telas de Onboarding
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:onboarding" ,
-        	eventAction: "clique:botao" ,
-        	eventLabel: "[[nome-botao]]"
-		})
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | 'avancar' ou 'pular' | Deve retornar o nome do botão. |
-
-
-<br />
-
 <script>
   document.addEventListener('DOMContentLoaded', function(event) {
     document.querySelectorAll('h1 a')[0].style.display = 'none';
