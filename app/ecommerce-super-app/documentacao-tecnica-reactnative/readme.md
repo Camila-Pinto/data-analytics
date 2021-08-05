@@ -217,13 +217,14 @@ Analytics.logEvent("event", {
         Analytics.logEvent("event", {
         	eventCategory: "app-midway:onboarding" ,
         	eventAction: "clique:botao" ,
-        	eventLabel: "[[nome-botao]]"
+        	eventLabel: "[[titulo-da-tela]]:[[nome-botao]]"
 		})
 ```
 
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
+| [[titulo-da-tela]] | 'use-o-cartao-riachuelo', 'acesse-seu-cartao-riachuelo', 'promocoes-exclusivas', 'retire-na-loja-com-frete-gratis' e etc |Deve retornar o título da tela que o usuário visualizou.|
 | [[nome-botao]] | 'avancar' ou 'pular' | Deve retornar o nome do botão. |
 
 
