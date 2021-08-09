@@ -2256,6 +2256,114 @@ Analytics.logEvent("event", {
 
 <br />
 
+**Visualização da tela de "Bem vindo"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/possui-cartao-riachuelo/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Nas tela de "Bem vindo"
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "riachuelo:app:cartoes:possui-cartao-riachuelo",
+  eventAction: "clique:botão",
+  eventLabel: "vincular-cartao"
+});
+```
+
+<br />
+
+**Visualização da tela de "Possui solicitação proposta ativa"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/possui-solicitacao-proposta-ativa/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Nas tela de "Possui solicitação proposta ativa"
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "riachuelo:app:cartoes:cadastro-possui-solicitacao-proposta-ativa",
+  eventAction: "clique:botão",
+  eventLabel: "acompanhar-status"
+});
+```
+
+<br />
+
+**Na tela de "Não será possível prosseguir solicitação de fraude"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/nao-sera-possivel-prosseguir-solicitacao-fraude/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Nas tela de "Não será possível prosseguir solicitação de fraude"
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "riachuelo:app:cartoes:nao-sera-possivel-prosseguir-solicitacao-fraude",
+  eventAction: "clique:botão",
+  eventLabel: "ok-entendi"
+});
+```
+
+<br />
+
+**Na tela de "Desculpe não foi dessa vez"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/desculpe-nao-foi-dessa-vez/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Nas tela de "Desculpe não foi dessa vez"
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "riachuelo:app:cartoes:desculpe-nao-foi-dessa-vez",
+  eventAction: "clique:botão",
+  eventLabel: "ok-entendi"
+});
+```
+
+<br />
+
+**Nos possíveis callbacks de erros ao "Solicitar cartão"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/ops-tivemos-um-problema/");
+```
+
+<br />
+
+- **Quando:** Callback de erro ao solicitar cartão
+- **Onde:** Nos possíveis callbacks de erros ao "Solicitar cartão"
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "riachuelo:app:cartoes:solicitacao-cartao",
+  eventAction: "callback",
+  eventLabel: "[[erro]]"
+});
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[erro]]` | 'possui-cartao-riachuelo', 'possui-solicitacao-proposta-ativa', 'nao-sera-possivel-prosseguir-solicitacao-fraude', 'desculpe-nao-foi-dessa-vez', 'erro-tivemos-um-problema' e etc. | Deve retornar o erro. |
+
+<br />
+
 - **Quando:** Após o preenchimento dos campos.
 - **Onde:** Nas telas de &quot;Bem vindo&quot; e &quot;Contato&quot;
 
@@ -2542,6 +2650,26 @@ Analytics.logEvent("event", {
     Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/tire-foto/");
 ```
 
+<br />
+
+- **Quando:** No clique do botão "Tire foto"
+- **Onde:** Na tela de "Tire a foto"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:cartoes:tire-foto",
+        	eventAction: "clique:botao",
+        	eventLabel: "tirar-foto"
+        });
+```
+
+<br />
+
+**Visualização da tela de "Carregando sua selfie"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/carregando-selfie/");
+```
 
 <br />
 
@@ -2572,6 +2700,27 @@ Analytics.logEvent("event", {
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | `[[callback-possivel]]` | &#039;selfie-aprovada&#039;, &#039;ops-selfie-recusada&#039;, &#039;atencao&#039; e etc | Deve retornar o callback. |
 | `[[nome-item]]` | &#039;continuar&#039;, &#039;tirar-novamente&#039;, &#039;fechar&#039; e etc | Deve retornar o nome do item. |
+
+<br />
+
+**Visualização da tela de "Reenvio foto"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/tire-foto/reenvio/");
+```
+
+<br />
+
+- **Quando:** No clique do botão "Tire foto"
+- **Onde:** Na tela de "Reenvio foto"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:cartoes:tire-foto-reenvio",
+        	eventAction: "clique:botao",
+        	eventLabel: "tirar-foto"
+        });
+```
 
 <br />
 
@@ -2644,6 +2793,35 @@ Analytics.logEvent("event", {
 
 <br />
 
+**Visualização da tela de "Tire a foto"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/tire-foto/[[nome-item]]/");
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-item]]` |'foto-rg-frente', 'foto-rg-verso', 'foto-rne-verso', 'foto-cnh' e etc | Deve retornar a tela apresentada. |
+
+<br />
+
+- **Quando:** No clique do botão "Tire foto"
+- **Onde:** Na tela de "Foto do documento"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:cartoes:foto-documento-[[num-tela]]",
+        	eventAction: "clique:botao",
+        	eventLabel: "tirar-foto"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[num-tela]]` | '1', '2', '3' e etc | Deve retornar o número da tela. |
+
+<br />
+
 - **Quando:** No clique dos elementos
 - **Onde:** Nas telas de &quot;Foto RG Frente&quot;, &quot;Foto RG Verso&quot;, &quot;Foto RNE verso&quot;, &quot;Foto CNH&quot; e etc
 
@@ -2672,7 +2850,24 @@ Analytics.logEvent("event", {
 
 <br />
 
-- **Quando:** No clique dos elementos
+- **Quando:** Na interação dos campos
+- **Onde:** Na tela de &quot;Vencimento da fatura&quot;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:cartoes:vencimento-fatura",
+        	eventAction: "interacao:campo",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-item]]` | 'vencimento-05', 'vencimento-06', vencimento-07' e etc. | Deve retornar o nome do item selecionado |
+
+<br />
+
+- **Quando:** No clique dos botões ou ícones
 - **Onde:** Na tela de &quot;Vencimento da fatura&quot;
 
 ```javascript
@@ -2696,15 +2891,117 @@ Analytics.logEvent("event", {
     Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/termos-condicoes/");
 ```
 
+<br />
+
+- **Quando:** No clique do botão em "Termos e condições"
+- **Onde:** Na tela de "Termos e condições"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:cartoes:termos-condicoes",
+        	eventAction: "clique:botao",
+        	eventLabel: "li-e-concordo-com-as-condicoes"
+        });
+```
+
+<br />
+
+**Visualização da tela de "Tire foto validação"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/tire-foto-validacao/");
+```
+
+<br />
+
+- **Quando:** No clique do botão "Tire foto"
+- **Onde:** Na tela de "Tire foto validação"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:cartoes:tire-foto-validacao",
+        	eventAction: "clique:botao",
+        	eventLabel: "tirar-foto"
+        });
+```
+
+<br />
+
+**Visualização da tela de "Carregando selfie validação"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/carregando-selfie-validacao/");
+```
+
+<br />
+
+**Visualização da tela de "Selfie aprovada validação"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/selfie-aprovada-validacao/");
+```
+
+<br />
+
+- **Quando:** No clique do botão
+- **Onde:** Na tela de "Selfie aprovada validação"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:cartoes:selfie-aprovada-validacao",
+        	eventAction: "clique:botao",
+        	eventLabel: "continuar"
+        });
+```
+
+<br />
+
+**Visualização da tela de "Enviando dados"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/enviando-dados-short/");
+```
+
+<br />
+
+**Visualização da tela de "Reenviando dados"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/reenvio-dados-short/");
+```
+
+<br />
+
+- **Quando:** No clique do botão
+- **Onde:** Na tela de "Reeviando dados"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:cartoes:reenvio-de-documentos",
+        	eventAction: "clique:botao",
+        	eventLabel: "enviar-documento"
+        });
+```
+
+<br />
+
+**Visualizção da tela de "Recuperando dados"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/recuperando-dados-solicitacao/");
+```
 
 <br />
 
 **Visualização da tela de &quot;Em análise&quot;**<br />
 
 ```javascript
-    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/em-analise/");
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/em-analise-[[long ou short]]/");
 ```
 
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[long ou short]]` | 'long' ou 'short' | Deve retornar o fluxo percorrido. |
 
 <br />
 
@@ -2713,12 +3010,15 @@ Analytics.logEvent("event", {
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "riachuelo:app:cartoes:em-analise",
+        	eventCategory: "riachuelo:app:cartoes:em-analise-[[long ou short]]",
         	eventAction: "clique:link",
         	eventLabel: "como-funciona-analise"
         });
 ```
 
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[long ou short]]` | 'long' ou 'short' | Deve retornar o fluxo percorrido. |
 
 <br />
 
@@ -2808,14 +3108,21 @@ Analytics.logEvent("event", {
 **Visualização da tela de &quot;Documento enviado, analisando novamente&quot;**<br />
 
 ```javascript
-    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/documento-enviado-analisando-novamente/");
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/documento-reenviado-analisando-novamente/");
 ```
 
+<br />
+
+**Visualização da tela de "Parabéns! Solicitação aprovada"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/parabens-solicitacao-aprovada/");
+```
 
 <br />
 
 - **Quando:** Após o callback de sucesso ou erro na solicitação do cartão
-- **Onde:** Nas telas após solicitar o fluxo de cartão
+- **Onde:** Na tela de “Parabéns! Solicitação aprovada” após solicitar o fluxo de cartão
 
 ```javascript
         Analytics.logEvent("event", {
@@ -2830,12 +3137,6 @@ Analytics.logEvent("event", {
 | `[[status]]` | &#039;sucesso&#039;, &#039;nao-foi-desta-vez&#039; e etc | Deve retornar o status do callback. |
 
 <br />
-
-**Visualização da tela de &quot;Parabéns! Solicitação aprovada&quot;**<br />
-
-```javascript
-    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/parabens-solicitacao-aprovada/");
-```
 
 - **Quando:** Após o callback de sucesso ou erro de callback de vinculo
 - **Onde:** Na telas de “Parabéns! Solicitação aprovada”
@@ -2931,7 +3232,7 @@ Analytics.logEvent("event", {
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/cartoes/midway/associe-riachuelo/","[[currentClass]]"
+  "/riachuelo-app/cartoes/midway/associe-riachuelo/"
 );
 ```
 
@@ -3051,35 +3352,6 @@ Analytics.logEvent("event",{"status_fatura":"[[status_fatura]]"});
 ```
 
 <br />
-
-- **Quando:** Visualização da tela "emprestimos"
-
-```javascript
-Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/associe-riachuelo/limite/emprestimos");
-Analytics.logEvent("event",{"status_fatura":"[[status_fatura]]"});
-```
-
-<br />
-
-- **Quando:** Nos cliques dos botões ou ícones na tela de emprestimos
-- **Onde:** Na tela de emprestimos
-
-```javascript
-        Analytics.logEvent("event", {
-        	"eventCategory": "riachuelo:app:emprestimos",
-        	"eventAction": "clique:[[botao-ou-icone]]",
-        	"eventLabel": "[[item-clicado]]"
-        })
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[botao-ou-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o ícone ou botão clicado. |
-| [[item-clicado]] | &#039;google-play-store&#039; ou &#039;voltar&#039; | Deve retornar o nome do item clicado. |
-
-<br />
-
-
 
 - **Quando:** No clique dos itens ao lado do limite disponivel
 - **Onde:** Na tela &quot;Limite&quot;
@@ -3209,7 +3481,31 @@ Analytics.logEvent("event", {
 
 <br />
 
+- **Quando:** Visualização da tela "Empréstimos"
 
+```javascript
+Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/associe-riachuelo/limite/emprestimos");
+```
+
+<br />
+
+- **Quando:** Nos cliques dos botões ou ícones na tela de emprestimos
+- **Onde:** Na tela de emprestimos
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:emprestimos",
+        	"eventAction": "clique:[[elemento]]",
+        	"eventLabel": "[[item-clicado]]"
+        })
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[elemento]]` |  'botao', 'link', 'icone' e etc | Deve retornar o nome do elemento. |
+| `[[item-clicado]]` |  'baixar-o-app-midway', 'clique-aqui', 'voltar' e etc | Deve retornar o nome do item clicado. |
+
+<br />
 
 - **Onde:** Visualização das telas dos lightboxes "Sem fatura", "App cartões RCHLO"
 
@@ -3217,7 +3513,7 @@ Analytics.logEvent("event", {
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/cartoes/midway/associe-riachuelo/limite/[[nome-lightbox]]/","[[currentClass]]");
+  "/riachuelo-app/cartoes/midway/associe-riachuelo/limite/[[nome-lightbox]]/");
 ```
 
 | Variável         | Exemplo                                                 | Descrição                             |
@@ -3529,7 +3825,7 @@ Analytics.logEvent("event", {
 - **Onde:** Visualização da tela de "Cartão desbloqueado com sucesso!"
 
 ```javascript
-Analytics.setCurrentScreen("/riachuelo-app/desbloquear-cartao/sucesso/", "[[currentClass]]");
+Analytics.setCurrentScreen("/riachuelo-app/desbloquear-cartao/sucesso/");
 ```
 
 <br />
@@ -3556,7 +3852,7 @@ Analytics.logEvent("event", {
 - **Onde:** Visualização da tela de "Callback de erro" com o tipo do cartão
 
 ```javascript
-Analytics.setCurrentScreen("/riachuelo-app/desbloquear-cartao/erro:[[tipo-cartao]]/", "[[currentClass]]");
+Analytics.setCurrentScreen("/riachuelo-app/desbloquear-cartao/erro:[[tipo-cartao]]/");
 ```
 
 | Variável        | Exemplo               | Descrição                            |
@@ -3565,7 +3861,6 @@ Analytics.setCurrentScreen("/riachuelo-app/desbloquear-cartao/erro:[[tipo-cartao
 
 
 <br />
-
 
 - **Quando:** No clique do botão
 - **Onde:**  Na tela de "Callback de erro" com o tipo do cartão
@@ -3582,7 +3877,191 @@ Analytics.logEvent("event", {
 | :-------------- | :-------------------- | :----------------------------------- |
 | `[[tipo-cartao]]` | 'adicional', 'titular' | Deve retornar o tipo do cartão  |
 
+<br />
 
+- **Onde:** Visualização da tela de aparição de "Seu Upgrade de cartão está disponível"
+
+```javascript
+Analytics.setCurrentScreen("/riachuelo-app/modal-sem-problemas-super-app/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões em "Seu Upgrade de cartão está disponível"
+- **Onde:**  Na home de Catões. 
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "app-midway:super-app:modal-oferta-especial-cartao",
+  eventAction: "clique:botao",
+  eventLabel: "[[nome-botao]]"
+});
+```
+
+| Variável        | Exemplo               | Descrição                            |
+| :-------------- | :-------------------- | :----------------------------------- |
+| `[[nome-botao]]` | 'ver-mais', 'fechar' e etc. | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Quando:** No clique dos botões em "Sem problemas"
+- **Onde:** No clique em recusar "Seu Upgrade de cartão está disponível"
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "app-midway:super-app:modal-sem-problemas",
+  eventAction: "clique:botao",
+  eventLabel: "[[nome-botao]]"
+});
+```
+
+| Variável        | Exemplo               | Descrição                            |
+| :-------------- | :-------------------- | :----------------------------------- |
+| `[[nome-botao]]` | 'ja-tenho-um-cartao', 'valor-da-anuidade', 'valor-do-limite-pre-aprovado', 'nao-vi-beneficios' e etc. | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Onde: Visualização da tela "Agradecimento"
+
+```javascript
+Analytics.setCurrentScreen("/cartoes/midway/modal-sem-problemas-agradecimento-super-app/");
+```
+
+<br />
+
+- **Quando:** No clique do botão em "Agradecimento"
+- **Onde:** Na tela de "Agradecimento".
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "app-midway:super-app:modal-sem-problemas-agradecimento",
+  eventAction: "clique:botao",
+  eventLabel: "fechar"
+});
+```
+
+<br />
+
+- **Onde:** Onde: Visualização da tela de "Upgrade de cartão disponível"
+
+```javascript
+Analytics.setCurrentScreen("/cartoes/home/upgrade-cartao-super-app/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões em "Upgrade de cartão disponível"
+- **Onde:** Na tela de "Upgrade de cartão disponível"
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "app-midway:super-app:upgrade-cartao-riachuelo",
+  eventAction: "clique:botao",
+  eventLabel: "[[nome-botao]]"
+});
+```
+
+| Variável        | Exemplo               | Descrição                            |
+| :-------------- | :-------------------- | :----------------------------------- |
+| `[[nome-botao]]` | 'voltar', 'fazer-upgrade' e etc. | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Quando:** No clique dos ícones
+- **Onde:** Em "Upgrade de cartão disponível" 
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "app-midway:super-app:upgrade-cartao-riachuelo",
+  eventAction: "clique:icone",
+  eventLabel: "[[nome-icone]]"
+});
+```
+
+| Variável        | Exemplo               | Descrição                            |
+| :-------------- | :-------------------- | :----------------------------------- |
+| `[[nome-icone]]` | 'expandir-saiba-mais', 'recolher-saiba-mais', 'aceito-os-termos-e-condicoes-do-cartao-riachuelo', nao-aceito-os-termos-e-condicoes-do-cartao-riachuelo' e etc. | Deve retornar o nome do ícone clicado. |
+
+<br />
+
+- **Quando:** No clique do link
+- **Onde:** Em "Upgrade de cartão disponível"
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "app-midway:super-app:upgrade-cartao-riachuelo",
+  eventAction: "clique:link",
+  eventLabel: "[[nome-link]]"
+});
+```
+
+| Variável        | Exemplo               | Descrição                            |
+| :-------------- | :-------------------- | :----------------------------------- |
+| `[[nome-link]]` | 'termos-e-condicoes' e etc | Deve retornar o nome do link clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela de "Termos e Condições Cartão Riachuelo"
+
+```javascript
+Analytics.setCurrentScreen("/cartoes/contrato-cartao-bandeira-super-app/");
+```
+
+<br />
+
+- **Quando:** No clique do botão em "Termos e Condições Cartão Riachuelo"
+- **Onde:** Na tela de "Termos e Condições Cartão Riachuelo"
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "app-midway:super-app:contrato-cartao-bandeira",
+  eventAction: "clique:botao",
+  eventLabel: "voltar"
+});
+```
+
+<br />
+
+- **Onde:** Visualização da tela de "Upgrade realizado com sucesso"
+
+```javascript
+Analytics.setCurrentScreen("/cartoes/sucesso-upgrade-super-app/");
+```
+
+<br />
+
+- **Quando:** No clique do botão
+- **Onde:** Na tela de "Upgrade realizado com sucesso"
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "app-midway:super-app:sucesso-upgrade",
+  eventAction: "clique:botao",
+  eventLabel: "[[nome-botao]]"
+});
+```
+
+| Variável        | Exemplo               | Descrição                            |
+| :-------------- | :-------------------- | :----------------------------------- |
+| `[[nome-botao]]` | 'ok', 'fechar' e etc. | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Quando:** No callback de erro em "Fazer Upgrade"
+- **Onde:** Na tela de "Upgrade de cartão"
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "app-midway:super-app:upgrade-cartao:modal-atencao",
+  eventAction: "callback:[[erro]]",
+  eventLabel: "[[nome-botao]]"
+});
+```
+
+| Variável        | Exemplo               | Descrição                            |
+| :-------------- | :-------------------- | :----------------------------------- |
+| `[[erro]]` | 'nao-foi-possivel-realizar-upgrade' | Deve retornar o nome do sucesso ou erro. |
+| `[[nome-botao]]` | 'tentar-novamente', 'voltar', 'fechar' e etc. | Deve retornar o nome do botão clicado. |
 
 <br />
 
