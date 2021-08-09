@@ -48,8 +48,8 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
   - [Begin Checkout](#begin-checkout)
   - [Checkout Progress:](#checkout-progress)
   - [Purchase](#purchase)
-- [Eventos - Cartões - Super APP](#eventos-cart&otilde;es-super-app)
-- [Eventos - Cartões - Super APP Guideline](#eventos-cart&otilde;es-super-app-guideline)
+- [Eventos - Cartões - Super APP](#eventos-cart&#245;es-super-app)
+- [Eventos - Cartões - Super APP Guideline](#eventos-cart&#245;es-super-app-guideline)
 - [Eventos - Super App - Declarações Anuais](#eventos-super-app-declara&#231;&#245;es-anuais)
 
 
@@ -4941,9 +4941,16 @@ Analytics.logEvent("event", {
 <br />
 <br />
 
+## Considerações Finais
+
+
+> Documentações Oficiais do Google: <br />
+> [Google Analytics - Avaliação de comércio eletrônico ](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce?hl=pt-br) <br />
+> [Google Tag Manager - Guia do desenvolvedor ](https://developers.google.com/tag-manager/enhanced-ecommerce)
+
+
 <script>
   document.addEventListener('DOMContentLoaded', function(event) {
     document.querySelectorAll('h1 a')[0].style.display = 'none';
   });
 </script>
-
