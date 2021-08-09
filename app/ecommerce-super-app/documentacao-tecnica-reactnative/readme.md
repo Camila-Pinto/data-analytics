@@ -393,7 +393,7 @@ Analytics.logEvent("event", {
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/plp/vitrine/[[categoria]]/","[[currentClass]]"
+  "/riachuelo-app/plp/vitrine/[[categoria]]/"
 );
 ```
 
@@ -476,7 +476,7 @@ Analytics.logEvent("event", {
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/produto/","[[currentClass]]"
+  "/riachuelo-app/produto/"
 );
 ```
 
@@ -571,7 +571,7 @@ Analytics.logEvent("event", {
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/produto/consulte-frete/","[[currentClass]]"
+  "/riachuelo-app/produto/consulte-frete/"
 );
 ```
 
@@ -619,7 +619,7 @@ Analytics.logEvent("event", {
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/produto/consulte-frete/selecione-entrega/","[[currentClass]]"
+  "/riachuelo-app/produto/consulte-frete/selecione-entrega/"
 );
 ```
 
@@ -648,7 +648,7 @@ Analytics.logEvent("event", {
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/produto/consulte-frete/selecione-entrega/selecione-envio/","[[currentClass]]"
+  "/riachuelo-app/produto/consulte-frete/selecione-entrega/selecione-envio/"
 );
 ```
 
@@ -686,7 +686,7 @@ Analytics.logEvent("event", {
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/produto/detalhes/","[[currentClass]]"
+  "/riachuelo-app/produto/detalhes/"
 );
 ```
 
@@ -748,7 +748,7 @@ Analytics.logEvent("event", {
 - **Onde:** Visualização da tela de 'Provador virtual'.
 
 ```javascript
-Analytics.setCurrentScreen("/riachuelo-app/produto/detalhes/provador-virtual/","[[currentClass]]");
+Analytics.setCurrentScreen("/riachuelo-app/produto/detalhes/provador-virtual/");
 Analytics.logEvent("event",{"dimension3":"[[recomendacao-provador-virtual]]}");
 ```
 
@@ -782,7 +782,7 @@ Analytics.setCurrentScreen("/riachuelo-app/meus-dados/", "[[currentClass]]");
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/conta/meus-dados/[[tela]]/","[[currentClass]]"
+  "/riachuelo-app/conta/meus-dados/[[tela]]/"
 );
 ```
 
@@ -1258,7 +1258,7 @@ Analytics.setCurrentScreen("/riachuelo-app/minha-conta/mensagens/nao-autorizou-n
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/checkout/[[nome-step]]","[[currentClass]]"
+  "/riachuelo-app/checkout/[[nome-step]]"
 );
 ```
 
@@ -1564,7 +1564,7 @@ Analytics.logEvent("event", {
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/checkout/cartao-presente/","[[currentClass]]"
+  "/riachuelo-app/checkout/cartao-presente/"
 );
 ```
 
@@ -1630,7 +1630,7 @@ Analytics.logEvent("event", {
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/checkout/cupom/","[[currentClass]]"
+  "/riachuelo-app/checkout/cupom/"
 );
 ```
 
@@ -1785,7 +1785,7 @@ Analytics.logEvent("event", {
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/checkout/sucesso/","[[currentClass]]"
+  "/riachuelo-app/checkout/sucesso/"
 );
 ```
 
@@ -2086,7 +2086,7 @@ Analytics.logPurchase({
 
 ```javascript
 Analytics.setCurrentScreen(
-  "/riachuelo-app/cartoes/midway/","[[currentClass]]"
+  "/riachuelo-app/cartoes/midway/"
 );
 ```
 
