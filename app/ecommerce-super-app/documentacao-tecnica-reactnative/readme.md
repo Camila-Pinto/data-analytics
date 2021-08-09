@@ -48,11 +48,9 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
   - [Begin Checkout](#begin-checkout)
   - [Checkout Progress:](#checkout-progress)
   - [Purchase](#purchase)
-- [Eventos - Cartões - Super APP](#eventos---cart&otilde;es---super-app)
-- [Eventos - Super App - Declarações Anuais](#eventos---super-app---declaracoes-anuais)
-- [Eventos - Super App - Assistências e Seguros](#eventos---super---app-assist&ecirc;ncias-e-seguros)
-- [Eventos - Cadastro Biometria Facial](#eventos---cadastro-biometria-facial)
-- [Considerações Finais](#considera%c3%a7%c3%b5es-finais)
+- [Eventos - Cartões - Super APP](#eventos-cart&otilde;es-super-app)
+- [Eventos - Cartões - Super APP Guideline](#eventos-cart&otilde;es-super-app-guideline)
+- [Eventos - Super App - Declarações Anuais](#eventos-super-app-declara&#231;&#245;es-anuais)
 
 
 ## Objetivo
@@ -4314,9 +4312,7 @@ Analytics.logEvent("event", {
 
 <br />
 
-
 ---
-
 
 ### Eventos - Super App - Assistências e Seguros
 
