@@ -6182,6 +6182,41 @@ Resumo de produtos cadastrados
 
 <br />
 
+- **Quando:** No clique nos botões Voltar
+- **Onde:** Na tela de Cartão de Crédito, oferta especial
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:credito-pre-aprovado:oferta-especial",
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "voltar" 
+        })
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-icone]] | 'botao' ou 'icone' | Deve retonar o nome do elemento. |
+
+<br />
+
+- **Quando:** No clique nos botão/ícones "Fechar"
+- **Onde:** Na abertura dos modais "Taxas e encargos" e "Consulte aqui o contrato do seu cartão"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:credito-pre-aprovado:modal:[[nome-modal]]",
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[opcao-fechar]]" 
+        })
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-modal]] | 'taxas-encargos' ou 'consulte-aqui-seu-contrato' | Deve retornar o nome do modal. |
+| [[opcao-fechar]] | 'fechar' 'voltar', 'clicou-fora' | Deve retornar a opção clicada.|
+
+<br />
+
 
 - **VIsualização da tela de &#039;Taxas e encargos&#039; e &#039;Contrato&#039;**
 
@@ -6854,7 +6889,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;voltar&#039;, &#039;aceito&#039; etc. | Deve retornar o nome do botão clicado. |
+| [[nome-botao]] | 'agora-nao', 'aceito' etc. | Deve retornar o nome do botão clicado. |
 
 <br />
 
@@ -6875,13 +6910,9 @@ Resumo de produtos cadastrados
         Analytics.logEvent("event", {
         	eventCategory: "app-midway:conta-pagamento:solicitar-cartao:cartao-de-debito:seu-cartao-sera-enviado",
         	eventAction: "clique:botao",
-        	eventLabel: "[[nome-botao]]"
+        	eventLabel: "ok"
         });
 ```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;voltar&#039;, &#039;cancelar&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
 
@@ -7069,7 +7100,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[dimension2]] | &quot;conta-corrente&quot;, &quot;cartao-de-credito&quot; ou &quot;conta-corrente-e-cartao-de-credito&quot; | Deve retornar se o usuário possui uma conta corrente, cartão de crédito ou as duas opções |
+| [[dimension2]] | "conta-corrente", "possui-cartao-de-credito", "nao-possui-cartao-de-credito" "conta-corrente-e-cartao-de-credito" | Deve retornar se o usuário possui uma conta corrente, cartão de crédito ou as duas opções |
 
 <br />
 
@@ -7145,7 +7176,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-card]] | &#039;saldo-disponivel&#039;, &#039;cartao-de-debito-midway&#039;, &#039;atualize-seus-dados-cadastrais&#039; etc. | Deve retornar o nome do card exibido no carrossel. |
+| [[nome-card]] | 'saldo-disponivel', 'cartao-de-debito-midway', 'atualize-seus-dados-cadastrais', 'saiba-mais:credito-aprovado', 'conheca-e-ative:credito-aprovado' etc.| Deve retornar o nome do card exibido no carrossel. |
 
 <br />
 
@@ -7166,6 +7197,23 @@ Resumo de produtos cadastrados
 
 <br />
 
+- **Quando:** Na visualização dos card Crédito aprovado
+- **Onde:** Na tela &#039;Home&#039;.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:conta-pagamento:home",
+        	eventAction: "exibiu-banner",
+        	eventLabel: "[[nome-banner]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-banner]] | 'assistencia-automovel-midway', 'saiba-mais:credito-aprovado', 'conheca-e-ative:credito-aprovado' | Deve retornar o nome do banner atualmente exibito na tela (acredito que ele varie. Se não variar, retorne &#039;assistencia-automovel-midway&#039;). |
+
+<br />
+
 - **Quando:** No clique do banner.
 - **Onde:** Na tela &#039;Home&#039;.
 
@@ -7179,7 +7227,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-banner]] | &#039;assistencia-automovel-midway&#039; etc. | Deve retornar o nome do banner atualmente exibito na tela (acredito que ele varie. Se não variar, retorne &#039;assistencia-automovel-midway&#039;). |
+| [[nome-banner]] | 'assistencia-automovel-midway', 'saiba-mais:credito-aprovado', 'conheca-e-ative:credito-aprovado' | Deve retornar o nome do banner atualmente exibito na tela (acredito que ele varie. Se não variar, retorne &#039;assistencia-automovel-midway&#039;). |
 
 <br />
 
