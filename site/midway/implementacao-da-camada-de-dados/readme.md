@@ -27,7 +27,7 @@
 - [Simulação de Empréstimo](#simula&#231;&#227;o-de-empr&#233;stimo)
 
 ## Implementação da Camada de dados - Projeto Midway Site
-Última atualização: 19/07/2021 <br />
+Última atualização: 12/08/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -2403,9 +2403,6 @@ window.dataLayer.push({
 </script>
 ```
 
-
-
-
 <br />
 
 
@@ -2425,14 +2422,33 @@ window.dataLayer.push({
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[erro]] | &#039;erro:data-nascimento-invalido&#039;, &#039;erro:email-inexistente&#039; e etc | Deve retornar o erro apresentado. |
 
 <br />
 
+**No clique dos botões**<br />
+
+- **Onde:** Na tela de dados pessoais
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'midway:simulacao-emprestimo',
+    'eventAction': 'clique:botao:dados-pessoais',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'voltar' ou 'prosseguir'. | Deve retornar o nome do botão.  |
+
+<br />
 
 **No clique dos botões**<br />
 
