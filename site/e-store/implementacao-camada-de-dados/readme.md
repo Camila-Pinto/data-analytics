@@ -1009,6 +1009,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[botao-ou-link]] | 'botao' ou 'link' | Deve retornar o nome do elemento clicado. |
@@ -1031,6 +1032,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
+
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[botao-clicado]] | 'continuar-conectado' e 'fechar' | Deve retornar o nome do botão clicado. |
