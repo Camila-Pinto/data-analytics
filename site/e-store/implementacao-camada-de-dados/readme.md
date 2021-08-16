@@ -1385,6 +1385,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
+    'noInteraction': '1',
     'eventCategory': 'estore:produto',
     'eventAction': 'callback:sem-selecao',
     'eventLabel': 'selecionar:[[cor ou tamanho]]'
@@ -1392,14 +1393,29 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[cor ou tamanho]] | &#039;m&#039;, &#039;p&#039;, &#039;azul&#039;, &#039;vermelho&#039; e etc | Deve retornar a cor ou o tamanho selecionado. |
 
 <br />
 
+**No clique do botão voltar**<br />
+
+- **Onde:** Nas páginas de produtos
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:produto',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'voltar'
+  });
+</script>
+```
+
+<br />
 
 ### Enhanced Ecommerce
 
