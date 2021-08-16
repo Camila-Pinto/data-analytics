@@ -23,7 +23,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto E-Store
-Última atualização: 14/07/2021 <br />
+Última atualização: 12/08/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -213,14 +213,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 - **Onde:** Em todas as páginas que estiverem disponíveis
     - **Titulo ou nome do botão/link:** Título: &quot;sacola&quot; (ícone), &quot;Riachuelo&quot; (logo), &quot;login&quot;, &quot;sair&quot;, &quot;início&quot; e etc
     
-```html
-<div
-   data-gtm-event-category='estore:geral'
-   data-gtm-event-action='clique:header'
-   data-gtm-event-label='[[link-clicado]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:geral',
+    'eventAction': 'clique:header',
+    'eventLabel': '[[link-clicado]]',
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -517,16 +521,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique no botão de &quot;Esqueci minha senha&quot;**<br />
 
 - **Onde:** Na página de login
-    
+
 ```html
-<div
-   data-gtm-event-category='estore:login'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='esqueci-senha'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:login',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'esqueci-senha',
+  });
+</script>
 ```
-
-
 
 <br />
 
@@ -565,9 +571,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
-
 
 <br />
 
@@ -656,11 +659,15 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 - **Onde:** No formulário de cadastro
     
 ```html
-<div
-   data-gtm-event-category='estore:criar-conta'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:criar-conta',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]',
+  });
+</script>
 ```
 
 
@@ -727,15 +734,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique no botão de &quot;Desconectar Agora&quot;**<br />
 
 - **Onde:** Na caixa de alerta de segurança
-    
-```html
-<div
-   data-gtm-event-category='estore:alerta-seguranca'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:alerta-seguranca',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]',
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -753,6 +763,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
+    'noInteraction': '1',
     'eventCategory': 'estore:logoff',
     'eventAction': 'desconectado:ate-logo',
     'eventLabel': 'deslogado-com-sucesso',
@@ -770,13 +781,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 - **Onde:** Na página de lista de produtos
     
 ```html
-<div
-   data-gtm-event-category='estore:clp'
-   data-gtm-event-action='clique:[[categoria ou subcategoria]]'
-   data-gtm-event-label='[[item-selecionada]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:clp',
+    'eventAction': 'clique:[[categoria ou subcategoria]]',
+    'eventLabel': '[[item-selecionada]]',
+  });
+</script>
 ```
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -812,7 +826,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <br />
 
 
-**No clique no &quot;ordenar por&quot;**<br />
+**Nos cliques do filtro "ordenar por" e na escolha de visualização de grade.**<br />
 
 - **Onde:** Na página de lista de produtos
     
@@ -822,39 +836,63 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'estore:[[clp ou busca]]',
-    'eventAction': 'clique:ordenar-por',
+    'eventAction': 'clique:[[item-clicado]]',
     'eventLabel': '[[ordem-selecionado]]',
   });
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
+| [[clp ou busca]] | 'cpl' ou 'busca' | Deve retorna o tipo de página.  |
+| [[item-clicado]] | 'ordenar-por', 'exibir-2-colunas', 'exibir-4-colunas' e etc. | Deve retornar o nome do item clicado. |
 | [[ordem-selecionado]] | &#039;por-preco&#039;, &#039;por-relevancia&#039; e etc | Deve retornar o label do ordem selecionado. |
 
 <br />
 
+**No clique no botão "voltar"**<br />
 
-### Checkout
-
-**No clique nos botões de &quot;Continuar&quot;, &quot;+&quot;(Aumentar), &quot;-&quot; (Diminuir), Lixeira**<br />
-
-- **Onde:** Na página de Sacola
+- **Onde:** Na página de lista de produtos
     
 ```html
-<div
-   data-gtm-event-category='estore:sacola'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:[[clp ou busca]]',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'voltar',
+  });
+</script>
 ```
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;continuar&#039;, &#039;aumentar-quantidade&#039;, &#039;diminuir-quantidade&#039;, &#039;excluir&#039; e etc | Deve retornar o nome do botão clicado. |
+| [[clp ou busca]] | 'cpl' ou 'busca' | Deve retorna o tipo de página.  |
+
+<br />
+
+### Checkout
+
+**No clique nos botões de "Continuar", "+"(Aumentar), "-" (Diminuir), Lixeira e voltar**<br />
+
+- **Onde:** Na página de Sacola
+
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:sacola',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]',
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'continuar', 'aumentar-quantidade', 'diminuir-quantidade', 'excluir', 'voltar' e etc. | Deve retornar o nome do botão clicado. |
 
 <br />
 
@@ -868,15 +906,13 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
+    'noInteraction': '1',
     'eventCategory': 'estore:sacola',
     'eventAction': 'callback:produtos',
     'eventLabel': 'item-indisponivel'
   });
 </script>
 ```
-
-
-
 
 <br />
 
@@ -886,37 +922,40 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 - **Onde:** No lightbox de &quot;A quantidade desejada está indisponível no momento&quot;
     
 ```html
-<div
-   data-gtm-event-category='estore:sacola'
-   data-gtm-event-action='clique:botao:lightbox:quantidade-desejada-indisponivel'
-   data-gtm-event-label='continuar'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:sacola',
+    'eventAction': 'clique:botao:lightbox:quantidade-desejada-indisponivel',
+    'eventLabel': 'continuar',
+  });
+</script>
 ```
-
-
 
 <br />
 
-
-**No clique nos botões de &quot;Remover&quot; ou &quot;Cancelar**<br />
+**No clique nos botões de &quot;Remover&quot; ou &quot;Cancelar"**<br />
 
 - **Onde:** No lightbox de &quot;Tem certeza que quer remover esse item da sua sacola?&quot;
-    
-```html
-<div
-   data-gtm-event-category='estore:sacola'
-   data-gtm-event-action='clique:botao:lightbox:remover-item-sacola'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
-```
 
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:sacola',
+    'eventAction': 'clique:botao:lightbox:remover-item-sacola',
+    'eventLabel': '[[nome-botao]]',
+  });
+</script>
+```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-botao]] | &#039;remover&#039;, &#039;cancelar&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
-
 
 **No callback após remover todos os produtos do carrinho**<br />
 
@@ -927,6 +966,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
+    'noInteraction': '1',
     'eventCategory': 'estore:sacola',
     'eventAction': 'callback:produtos',
     'eventLabel': 'sacola-vazia'
@@ -934,41 +974,84 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
-
 <br />
-
 
 **No clique no botão de &quot;Desconectar&quot;**<br />
 
 - **Onde:** No lightbox de &quot;Sua sacola está vazia&quot;
-    
+
 ```html
-<div
-   data-gtm-event-category='estore:sacola'
-   data-gtm-event-action='clique:botao:lightbox:sacola-vazia'
-   data-gtm-event-label='desconectar'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:sacola',
+    'eventAction': 'clique:botao:lightbox:sacola-vazia',
+    'eventLabel': 'desconectar',
+  });
+</script>
 ```
-
-
 
 <br />
 
+**No clique nos botões/links**<br />
+
+- **Onde:** Na tela de "Finalize sua compra pelo celular"
+
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:compra',
+    'eventAction': 'clique:[[botao-ou-link]]',
+    'eventLabel': '[[item-clicado]]',
+  });
+</script>
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-ou-link]] | 'botao' ou 'link' | Deve retornar o nome do elemento clicado. |
+| [[item-clicado]] | 'voltar', 'continuar', 'duvidas' ou 'fechar' | Deve retornar o nome do item clicado. |
+
+<br />
+
+**No clique dos botões "Continuar Conectado" ou "Finalizar"**<br />
+
+- **Onde:** Na tela de "Finalize sua compra pelo celular", seção "Para manter a segurança"
+
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:compra:modal-seguranca',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[botao-clicado]]',
+  });
+</script>
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-clicado]] | 'continuar-conectado' e 'fechar' | Deve retornar o nome do botão clicado. |
+
+<br />
 
 **No clique nas opções**<br />
 
 - **Onde:** Na tela de &quot;Compra&quot;
     
 ```html
-<div
-   data-gtm-event-category='estore:compra'
-   data-gtm-event-action='clique:opcao'
-   data-gtm-event-label='[[opcao-selecionada]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:compra',
+    'eventAction': 'clique:opcao',
+    'eventLabel': '[[opcao-selecionada]]',
+  });
+</script>
 ```
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -980,22 +1063,24 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique no botão de &quot;Adicionar novo endereço&quot; ou &quot;Editar Endereço&quot;, na seção de Endereço**<br />
 
 - **Onde:** Na página de Entrega, na seção de Endereço
-    
+  
 ```html
-<div
-   data-gtm-event-category='estore:checkout:endereco'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:endereco',
+    'eventAction': 'cclique:botao',
+    'eventLabel': '[[nome-botao]]',
+  });
+</script>
 ```
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-botao]] | &#039;editar-endereco-1&#039;, &#039;editar-endereco-2&#039;, &#039;adicionar-novo-endereco&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
-
 
 **Na interação com os campos para editar um endereço já cadastrado ou um novo endereço**<br />
 
@@ -1013,12 +1098,10 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]]  |  &#039;cep&#039;, &#039;nome&#039;, telefone&#039;  e etc | Deve retornar o nome do campo preenchido. |
 | [[nome-formulario]] | &#039;editar-endereco&#039; ou &#039;novo-endereco&#039; | Deve retornar o nome do formulário que o botão está localizado. |
+| [[nome-campo]]  |  &#039;cep&#039;, &#039;nome&#039;, telefone&#039;  e etc | Deve retornar o nome do campo preenchido. |
 
 <br />
 
@@ -1038,8 +1121,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1099,7 +1180,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <br />
 
 
-**No clique nas opções de &quot;Cartaõ Riachuelo ou Cartão de Crédito&quot; ou &quot;Boleto&quot;**<br />
+**No clique nas opções de &quot;Cartão Riachuelo ou Cartão de Crédito&quot; ou &quot;Boleto&quot;**<br />
 
 - **Onde:** Na página de &quot;Pagamento&quot;
     
@@ -1114,8 +1195,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1140,8 +1219,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:numero-invalido&#039;, &#039;erro:nome-obrigatorio&#039;, &#039;erro:cpf-incompleto&#039;, &#039;erro:selecione-parcelamento&#039; e etc | Deve retornar o status sucesso ou de erro retorno. |
@@ -1154,13 +1231,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 - **Onde:** Na página de checkout,
     
 ```html
-<div
-   data-gtm-event-category='estore:checkout'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]',
+  });
+</script>
 ```
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -1171,7 +1251,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 **No carregamento das opções de entrega**<br />
 
-- **Onde:** Na página de checkout,
+- **Onde:** No fluxo de checkout, página de entrega
     
 ```html
 <script>
@@ -1266,8 +1346,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[finalizar ou tipo-erro]] | &#039;finalizar&#039;, &#039;erro:verifique-os-dados-inseridos-ou-utilize-outro-meio-pagamento&#039;, &#039;erro:nao-foi-possivel-concluir-tente-novamente&#039; e etc | Deve retornar o label do botão &#039;finalizar&#039; ou o status de erro retorno. |
@@ -1278,16 +1356,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique do botão &quot;Copiar Código&quot; para copiar o código de barras**<br />
 
 - **Onde:** Na página de Pedido Realizado com Sucesso
-    
+
 ```html
-<div
-   data-gtm-event-category='estore:purchase'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='copiar-codigo-barras'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:purchase',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'copiar-codigo-barras',
+  });
+</script>
 ```
-
-
 
 <br />
 
@@ -1405,23 +1485,23 @@ window.dataLayer.push({
   'eventAction': 'impressions',
     'ecommerce': {
     'impressions': [{
-        'dimension15': '[[cd15-product-lookcompleto]]',
-        'dimension16': '[[cd16-product-iddolook]]',
-        'dimension17': '[[cd17-product-selo/tag]]',
-        'dimension18': '[[cd18-product-exclusivoecommerce]]',
-        'dimension19': '[[cd19-product-variante]]',
-        'dimension20': '[[cd20-product-gm]]',
-        'dimension21': '[[cd21-product-preçode]]',
-        'dimension22': '[[cd22-product-estilo]]',
-        'dimension23': '[[cd23-product-genero]]',
-        'dimension24': '[[cd24-product-lojamktplace]]',
-        'name': '[[nome-produto]]',
-        'id': '[[id-produto]]',
-        'list': '[[lista-produto]]',
-        'price': '[[preco-produto]]',
-        'brand': '[[marca-produto]]',
-        'category': '[[categoria-produto]]',
-        'position': '[[posicao-produto]]'
+      'dimension15': '[[cd15-product-lookcompleto]]',
+      'dimension16': '[[cd16-product-iddolook]]',
+      'dimension17': '[[cd17-product-selo/tag]]',
+      'dimension18': '[[cd18-product-exclusivoecommerce]]',
+      'dimension19': '[[cd19-product-variante]]',
+      'dimension20': '[[cd20-product-gm]]',
+      'dimension21': '[[cd21-product-preçode]]',
+      'dimension22': '[[cd22-product-estilo]]',
+      'dimension23': '[[cd23-product-genero]]',
+      'dimension24': '[[cd24-product-lojamktplace]]',
+      'name': '[[nome-produto]]',
+      'id': '[[id-produto]]',
+      'list': '[[lista-produto]]',
+      'price': '[[preco-produto]]',
+      'brand': '[[marca-produto]]',
+      'category': '[[categoria-produto]]',
+      'position': '[[posicao-produto]]'
     }]
   }
 });
@@ -1464,28 +1544,28 @@ window.dataLayer.push({
     'eventCategory': 'estore:enhanced-ecommerce',
     'eventAction': 'click',
     'eventLabel': '-',
-        'ecommerce': {
-        'click': {
-            'actionField': {'list': '[[lista-produto]]'},
-            'products': [{
-                'dimension15': '[[cd15-product-lookcompleto]]',
-                'dimension16': '[[cd16-product-iddolook]]',
-                'dimension17': '[[cd17-product-selo/tag]]',
-                'dimension18': '[[cd18-product-exclusivoecommerce]]',
-                'dimension19': '[[cd19-product-variante]]',
-                'dimension20': '[[cd20-product-gm]]',
-                'dimension21': '[[cd21-product-preçode]]',
-                'dimension22': '[[cd22-product-estilo]]',
-                'dimension23': '[[cd23-product-genero]]',
-                'dimension24': '[[cd24-product-lojamktplace]]',
-                'name': '[[nome-produto]]',
-                'id': '[[id-produto]]',
-                'price': '[[preco-produto]]',
-                'brand': '[[marca-produto]]',
-                'category': '[[categoria-produto]]',
-                'position': '[[posicao-produto]]'
-            }]
-        }
+      'ecommerce': {
+      'click': {
+        'actionField': {'list': '[[lista-produto]]'},
+        'products': [{
+          'dimension15': '[[cd15-product-lookcompleto]]',
+          'dimension16': '[[cd16-product-iddolook]]',
+          'dimension17': '[[cd17-product-selo/tag]]',
+          'dimension18': '[[cd18-product-exclusivoecommerce]]',
+          'dimension19': '[[cd19-product-variante]]',
+          'dimension20': '[[cd20-product-gm]]',
+          'dimension21': '[[cd21-product-preçode]]',
+          'dimension22': '[[cd22-product-estilo]]',
+          'dimension23': '[[cd23-product-genero]]',
+          'dimension24': '[[cd24-product-lojamktplace]]',
+          'name': '[[nome-produto]]',
+          'id': '[[id-produto]]',
+          'price': '[[preco-produto]]',
+          'brand': '[[marca-produto]]',
+          'category': '[[categoria-produto]]',
+          'position': '[[posicao-produto]]'
+        }]
+      }
     }
 });
 </script>
