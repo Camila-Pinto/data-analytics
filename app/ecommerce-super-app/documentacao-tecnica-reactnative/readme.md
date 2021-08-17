@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Riachuelo APP
 
-Última atualização: 05/08/2021. <br />
+Última atualização: 17/08/2021. <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -87,6 +87,7 @@ Quando ocorrer as trocas de telas o código abaixo deve ser definido para que os
 Analytics.setUserId("[[UserID]]");
 Analytics.setUserProperty("login_status", "[[logado-ou-nao-logado]]");
 Analytics.setUserProperty("tipo_cartao", "[[tipo-do-cartao]]");
+Analytics.setUserProperty("cartID", "[[id-do-carrinho]]");
 ```
 
 **OBS:** Esta definição global deve ser disparada em todo momento que o usuário estiver logado.
@@ -96,6 +97,7 @@ Analytics.setUserProperty("tipo_cartao", "[[tipo-do-cartao]]");
 | Custumer ID Magento | `[[UserID]]`               | '9876542'                | ID único do usuário                |
 | login_status         | `[[logado-ou-nao-logado]]` | ‘logado’ ou ‘nao-logado’ | Identificação de Login do usuário. |
 | tipo_cartao    | `[[tipo-do-cartao]]` | 'cartao-midway-master', 'cartao-midway-visa', 'cartao-midway-pl' e etc |Deve retornar o tipo do cartão |
+| cartID    | `[[id-do-carrinho]]` |  '04245fsdf4fsdaf32fsd' |Deve retornar o ID do carrinho do usuário |
 
 --- 
 
