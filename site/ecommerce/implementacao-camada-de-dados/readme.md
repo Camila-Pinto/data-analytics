@@ -28,7 +28,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Ecommerce
-Última atualização: 03/08/2021 <br />
+Última atualização: 17/08/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -195,7 +195,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'dimension5': '[[cd5-hit-loginstatus]]',
     'dimension7': '[[cd7-user-usermagentoid]]',
     'dimension17': '[[cd17-hit-pagename]]',
-  
+    'dimension61': '[[cd61-user-cartID]]',
   });
 </script>
 ```
@@ -205,8 +205,9 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[cd4-hit-userstatus]] | &#039;sim&#039;, &#039;nao&#039; | Deve retornar se o usuário já fez alguma compra anteriormente (sim) ou se não é sua primeira compra (nao). |
 | [[cd5-hit-loginstatus]] | &#039;logged-in&#039;, &#039;logged-out&#039; | Status do login do usuário |
-| [[cd7-user-usermagentoid]] | &quot;0123456&quot; | ID único do usuário definido após cadastro (MagentoID) |
+| [[cd7-user-usermagentoid]] | '0123456' | ID único do usuário definido após cadastro (MagentoID) |
 | [[cd17-hit-pagename]] | &#039;home&#039;, &#039;pdp-produto-1&#039; | Nome amigável da página definido |
+| [[cd61-user-cartID]] |  '04245fsdf4fsdaf32fsd' | Deve retornar o ID do carrinho do usuário |
 
 
 ---
