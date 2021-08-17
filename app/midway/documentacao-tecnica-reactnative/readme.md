@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Midway APP
 
-Última atualização: 11/08/2021 <br />
+Última atualização: 17/08/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -38,7 +38,7 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Conta Remunerada](#conta-remunerada)
 - [Encerramento de conta](#encerramento-de-conta)
 - [Cheque Especial](#cheque-especial)
-- [Desbloqueio de Cartão](#desbloqueio-de-cartao)
+- [Desbloqueio de Cartão](#desbloqueio-de-cart&#227;o)
 - [Home](#home)
 - [Home - Migração de Conta](#home-migra&#231;&#227;o-de-conta)
 - [Cotação de câmbio](cota&#231;&#227;o-de-c&#226;mbio)
@@ -5596,6 +5596,123 @@ Resumo de produtos cadastrados
         });
 ```
 
+
+<br />
+
+- **Onde:** Visualização da tela 'Digite os 4 primeiros dígitos do seu CPF'.
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/cpf/");
+```
+
+<br />
+
+- **Quando:** No preenchimento do campo CPF
+- **Onde:** Na tela 'Digite os 4 primeiros dígitos do seu CPF'.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:cpf",
+        	eventAction: "preencheu:campo",
+        	eventLabel: "cpf"
+        });
+```
+
+
+<br />
+
+- **Quando:** No callback do preenchimento do campo CPF
+- **Onde:** Na tela 'Digite os 4 primeiros dígitos do seu CPF'.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:cpf",
+        	eventAction: "callback",
+        	eventLabel: "[[status]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[status]] | 'sucesso', 'erro:cpf-invalido', 'erro:numero-invalido' e etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
+
+
+<br />
+
+- **Quando:** No clique do botão "Continuar" ou no Ícone de "Voltar"
+- **Onde:** Na tela 'Digite os 4 primeiros dígitos do seu CPF'.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:cpf",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[elemento-clicado]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[elemento-clicado]] | 'continuar' ou 'voltar' | Deve retornar o nome do elemento clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela 'Confirme o numero do seu novo cartão'.
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/confirme-cartao/");
+```
+
+<br />
+
+- **Quando:** No preenchimento dos campos
+- **Onde:** Na tela 'Confirme o numero do seu novo cartão'
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:confirme-cartao",
+        	eventAction: "preencheu:campo",
+        	eventLabel: "[[nome-campo]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-campo]] | 'primeiros-digitos' ou 'ultimos-digitos' | Deve retornar o nome do campo preenchido. |
+
+<br />
+
+- **Quando:** No callback do preenchimento do campo CPF
+- **Onde:** Na tela 'Confirme o numero do seu novo cartão'
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:confirme-cartao",
+        	eventAction: "callback",
+        	eventLabel: "[[status]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[status]] | 'sucesso', 'erro:cartao-invalido', 'erro:numero-invalido' e etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
+
+
+<br />
+
+- **Quando:** No clique dos botões da página.
+- **Onde:** Na tela 'Confirme o numero do seu novo cartão'
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:confirme-cartao",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[elemento-clicado]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[elemento-clicado]] | 'continuar', 'voltar' ou 'precisa-de-ajuda' | Deve retornar o nome do elemento clicado. |
 
 <br />
 
