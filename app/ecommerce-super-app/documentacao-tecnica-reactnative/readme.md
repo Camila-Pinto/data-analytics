@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Riachuelo APP
 
-Última atualização: 17/08/2021. <br />
+Última atualização: 18/08/2021. <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -49,6 +49,7 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
   - [Checkout Progress:](#checkout-progress)
   - [Purchase](#purchase)
 - [Eventos - Cartões - Super APP](#eventos---cart&#245;es---super-app)
+- [Cartões - Antecipar Pagamento](#cart&#245;es---antecipar-pagamento)
 - [Eventos - Cartões - Super APP Guideline](#eventos---cart&#245;es---super-app-guideline)
 - [Eventos - Super App - Declarações Anuais](#eventos---super-app---declara&#231;&#245;es-anuais)
 - [Eventos - Super App - Assistências e Seguros](#eventos---super-app---assist&#234;ncias-e-seguros)
@@ -4065,6 +4066,190 @@ Analytics.logEvent("event", {
 | :-------------- | :-------------------- | :----------------------------------- |
 | `[[erro]]` | 'nao-foi-possivel-realizar-upgrade' | Deve retornar o nome do sucesso ou erro. |
 | `[[nome-botao]]` | 'tentar-novamente', 'voltar', 'fechar' e etc. | Deve retornar o nome do botão clicado. |
+
+<br />
+
+### Cartões - Antecipar Pagamento
+
+- **Quando:** No clique do botão "Extrato"
+- **Onde:** Na tela "Limite disponível", seção "Fatura aberta"
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes",
+        	"eventAction": "clique:botao",
+        	"eventLabel": "extrato",
+                "status_fatura": "[[status_fatura]]"
+        })
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[status_fatura]] | 'fatura-aberta', 'fatura-fechada', 'fatura-em-atraso' e etc. | Deve retornar o status da fatura. |
+
+<br />
+
+**Visualização da tela de "Extrato da fatura"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/limite/extrato-fatura:[[mes]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[mes]] | 'setembro', 'novembro' e etc | Deve retornar o mês que o usuário está visualizando o extrato. |
+
+<br />
+
+- **Quando:** No clique nos botões "Voltar" e "Antecipar Fatura"
+- **Onde:** Na tela "Extrato da Fatura"
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:extrato-fatura:[[mes]]",
+        	"eventAction": "clique:botao",
+        	"eventLabel": "[[nome-botao]]"
+        })
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[mes]] | 'setembro', 'novembro' e etc | Deve retornar o mês que o usuário está visualizando o extrato. |
+| [[nome-botao]] | 'voltar' ou 'antecipar-fatura' | Deve retornar o nome do botão clicado. |
+
+<br />
+
+**Visualização da tela de "Antecipação de Fatura"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/limite/extrato-fatura:[[mes]]/antecipar-fatura/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[mes]] | 'setembro', 'novembro' e etc | Deve retornar o mês que o usuário está visualizando o extrato. |
+
+<br />
+
+- **Quando:** No clique nos botões "Voltar" e "Gerar Boleto"
+- **Onde:** Na tela "Antecipação de Fatura"
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:antecipar-fatura:[[mes]]",
+        	"eventAction": "clique:botao",
+        	"eventLabel": "[[nome-botao]]"
+        })
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[mes]] | 'setembro', 'novembro' e etc | Deve retornar o mês que o usuário está visualizando o extrato. |
+| [[nome-botao]] | 'voltar' ou 'gerar-boleto' | Deve retornar o nome do botão clicado. |
+
+<br />
+
+**Visualização da tela de "Antecipação de Fatura", com o código de barras disponível para pagamento.**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/limite/extrato-fatura:[[mes]]/antecipar-fatura/codigo-de-barras/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[mes]] | 'setembro', 'novembro' e etc | Deve retornar o mês que o usuário está visualizando o extrato. |
+
+<br />
+
+- **Quando:** No clique nos botões "Voltar", "Ver Boleto" ou "Copiar Código"
+- **Onde:** Na tela "Antecipação de Fatura", com o código de barras disponível para pagamento
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:antecipar-fatura:[[mes]]:codigo-de-barras",
+        	"eventAction": "clique:botao",
+        	"eventLabel": "[[nome-botao]]"
+        })
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[mes]] | 'setembro', 'novembro' e etc | Deve retornar o mês que o usuário está visualizando o extrato. |
+| [[nome-botao]] | 'voltar', 'ver-boleto' ou 'copiar-codigo' | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Quando:** No callback ao copiar o código de barras.
+- **Onde:** Na tela "Antecipação de Fatura", com o código de barras disponível para pagamento
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:antecipar-fatura:[[mes]]:codigo-de-barras",
+        	"eventAction": "callback:codigo-de-barras",
+        	"eventLabel": "[[sucesso-ou-erro]]"
+        })
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[mes]] | 'setembro', 'novembro' e etc | Deve retornar o mês que o usuário está visualizando o extrato. |
+| [[sucesso-ou-erro]] | 'sucesso', 'erro:codigo-de-barras-vencido' e etc | Deve retornar o callback após o usuário copiar o código de barras. |
+
+<br />
+
+**Visualização da tela de "Boleto"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/limite/extrato-fatura:[[mes]]/antecipar-fatura/codigo-de-barras/boleto/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[mes]] | 'setembro', 'novembro' e etc | Deve retornar o mês que o usuário está visualizando o extrato. |
+
+<br />
+
+- **Quando:** No clique nos botões "Voltar" ou "Compartilhar"
+- **Onde:** Na tela de "Boleto".
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:antecipar-fatura:[[mes]]:boleto",
+        	"eventAction": "clique:botao",
+        	"eventLabel": "[[nome-botao]]"
+        })
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[mes]] | 'setembro', 'novembro' e etc | Deve retornar o mês que o usuário está visualizando o extrato. |
+| [[nome-botao]] | 'voltar' ou 'compatilhar' | Deve retornar o nome do botão clicado. |
+
+<br />
+
+**Visualização da tela de "Ops, tivemos um problema!"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/limite/extrato-fatura/antecipar-fatura/erro:tivemos-um-problema")
+```
+
+<br />
+
+- **Quando:** No clique nos botões "Voltar" ou "Tentar Novamente"
+- **Onde:** Na tela de "Ops, tivemos um problema!".
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:antecipar-fatura:erro:tivemos-um-problema",
+        	"eventAction": "clique:botao",
+        	"eventLabel": "[[nome-botao]]"
+        })
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[mes]] | 'setembro', 'novembro' e etc | Deve retornar o mês que o usuário está visualizando o extrato. |
+| [[nome-botao]] | 'voltar' ou 'tentar-novamente' | Deve retornar o nome do botão clicado. |
 
 <br />
 
