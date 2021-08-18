@@ -856,12 +856,12 @@ window.dataLayer.push({
   'noInteraction': '1',
   'ecommerce': {
     'impressions': [{
-'dimension20': '[[cd20-product-selo/tag]]',
-        'name': '[[nome-produto]]',
-        'id': '[[id-produto]]',
-        'list': '[[lista-produto]]',
-        'variant': '[[variacao-produto]]',
-        'position': '[[posicao-produto]]'
+      'dimension20': '[[cd20-product-selo/tag]]',
+      'name': '[[nome-produto]]',
+      'id': '[[id-produto]]',
+      'list': '[[lista-produto]]',
+      'variant': '[[variacao-produto]]',
+      'position': '[[posicao-produto]]'
     }]
   }
 });
@@ -889,31 +889,31 @@ window.dataLayer.push({
 <script>
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
-    'event': 'productClick',
-    'eventCategory': 'enhanced-ecommerce',
-    'eventAction': 'click',
-        'ecommerce': {
-        'click': {
-            'actionField': {'list': '[[lista-produto]]'},
-            'products': [{
-'dimension7': '[[cd7-product-idadedoproduto]]',
-  'dimension10': '[[cd10-product-ordemdeinserção]]',
-  'dimension13': '[[cd13-product-padronagemdoproduto]]',
-  'dimension15': '[[cd15-product-subcategoria]]',
-  'dimension16': '[[cd16-product-preçooriginal]]',
-  'dimension17': '[[cd17-product-gender]]',
-  'dimension18': '[[cd18-product-skufilho]]',
-  'dimension20': '[[cd20-product-selo/tag]]',
-                'name': '[[nome-produto]]',
-                'id': '[[id-produto]]',
-                'price': '[[preco-produto]]',
-                'brand': '[[marca-produto]]',
-                'category': '[[categoria-produto]]',
+  'event': 'productClick',
+  'eventCategory': 'enhanced-ecommerce',
+  'eventAction': 'click',
+    'ecommerce': {
+      'click': {
+        'actionField': {'list': '[[lista-produto]]'},
+        'products': [{
+        'dimension7': '[[cd7-product-idadedoproduto]]',
+        'dimension10': '[[cd10-product-ordemdeinserção]]',
+        'dimension13': '[[cd13-product-padronagemdoproduto]]',
+        'dimension15': '[[cd15-product-subcategoria]]',
+        'dimension16': '[[cd16-product-preçooriginal]]',
+        'dimension17': '[[cd17-product-gender]]',
+        'dimension18': '[[cd18-product-skufilho]]',
+        'dimension20': '[[cd20-product-selo/tag]]',
+        'name': '[[nome-produto]]',
+        'id': '[[id-produto]]',
+        'price': '[[preco-produto]]',
+        'brand': '[[marca-produto]]',
+        'category': '[[categoria-produto]]',
         'position': '[[posicao-produto]]'
-            }]
-        }
+        }]
+      }
     }
-});
+  });
 </script>
 ```
 
@@ -954,14 +954,14 @@ window.dataLayer.push({
   'ecommerce': {
     'detail': {
       'products': [{
-'dimension7': '[[cd7-product-idadedoproduto]]',
-  'dimension10': '[[cd10-product-ordemdeinserção]]',
-  'dimension13': '[[cd13-product-padronagemdoproduto]]',
-  'dimension15': '[[cd15-product-subcategoria]]',
-  'dimension16': '[[cd16-product-preçooriginal]]',
-  'dimension17': '[[cd17-product-gender]]',
-  'dimension18': '[[cd18-product-skufilho]]',
-  'dimension20': '[[cd20-product-selo/tag]]',
+        'dimension7': '[[cd7-product-idadedoproduto]]',
+        'dimension10': '[[cd10-product-ordemdeinserção]]',
+        'dimension13': '[[cd13-product-padronagemdoproduto]]',
+        'dimension15': '[[cd15-product-subcategoria]]',
+        'dimension16': '[[cd16-product-preçooriginal]]',
+        'dimension17': '[[cd17-product-gender]]',
+        'dimension18': '[[cd18-product-skufilho]]',
+        'dimension20': '[[cd20-product-selo/tag]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -970,7 +970,7 @@ window.dataLayer.push({
       }]
     }
   }
- });
+});
 </script>
 ```
 
@@ -1008,15 +1008,15 @@ window.dataLayer.push({
     'ecommerce': {
     'add': {
       'products': [{
-'dimension7': '[[cd7-product-idadedoproduto]]',
-  'dimension10': '[[cd10-product-ordemdeinserção]]',
-  'dimension11': '[[cd11-product-tamanhodoproduto]]',
-  'dimension12': '[[cd12-product-cordoproduto]]',
-  'dimension13': '[[cd13-product-padronagemdoproduto]]',
-  'dimension15': '[[cd15-product-subcategoria]]',
-  'dimension16': '[[cd16-product-preçooriginal]]',
-  'dimension17': '[[cd17-product-gender]]',
-  'dimension18': '[[cd18-product-skufilho]]',
+        'dimension7': '[[cd7-product-idadedoproduto]]',
+        'dimension10': '[[cd10-product-ordemdeinserção]]',
+        'dimension11': '[[cd11-product-tamanhodoproduto]]',
+        'dimension12': '[[cd12-product-cordoproduto]]',
+        'dimension13': '[[cd13-product-padronagemdoproduto]]',
+        'dimension15': '[[cd15-product-subcategoria]]',
+        'dimension16': '[[cd16-product-preçooriginal]]',
+        'dimension17': '[[cd17-product-gender]]',
+        'dimension18': '[[cd18-product-skufilho]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1068,15 +1068,15 @@ window.dataLayer.push({
     'ecommerce': {
     'remove': {
       'products': [{
-'dimension7': '[[cd7-product-idadedoproduto]]',
-  'dimension10': '[[cd10-product-ordemdeinserção]]',
-  'dimension11': '[[cd11-product-tamanhodoproduto]]',
-  'dimension12': '[[cd12-product-cordoproduto]]',
-  'dimension13': '[[cd13-product-padronagemdoproduto]]',
-  'dimension15': '[[cd15-product-subcategoria]]',
-  'dimension16': '[[cd16-product-preçooriginal]]',
-  'dimension17': '[[cd17-product-gender]]',
-  'dimension18': '[[cd18-product-skufilho]]',
+        'dimension7': '[[cd7-product-idadedoproduto]]',
+        'dimension10': '[[cd10-product-ordemdeinserção]]',
+        'dimension11': '[[cd11-product-tamanhodoproduto]]',
+        'dimension12': '[[cd12-product-cordoproduto]]',
+        'dimension13': '[[cd13-product-padronagemdoproduto]]',
+        'dimension15': '[[cd15-product-subcategoria]]',
+        'dimension16': '[[cd16-product-preçooriginal]]',
+        'dimension17': '[[cd17-product-gender]]',
+        'dimension18': '[[cd18-product-skufilho]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1130,15 +1130,15 @@ window.dataLayer.push({
     'checkout': {
       'actionField': {'step': '[[passo-checkout]]'},
       'products': [{
-'dimension7': '[[cd7-product-idadedoproduto]]',
-  'dimension10': '[[cd10-product-ordemdeinserção]]',
-  'dimension11': '[[cd11-product-tamanhodoproduto]]',
-  'dimension12': '[[cd12-product-cordoproduto]]',
-  'dimension13': '[[cd13-product-padronagemdoproduto]]',
-  'dimension15': '[[cd15-product-subcategoria]]',
-  'dimension16': '[[cd16-product-preçooriginal]]',
-  'dimension17': '[[cd17-product-gender]]',
-  'dimension18': '[[cd18-product-skufilho]]',
+        'dimension7': '[[cd7-product-idadedoproduto]]',
+        'dimension10': '[[cd10-product-ordemdeinserção]]',
+        'dimension11': '[[cd11-product-tamanhodoproduto]]',
+        'dimension12': '[[cd12-product-cordoproduto]]',
+        'dimension13': '[[cd13-product-padronagemdoproduto]]',
+        'dimension15': '[[cd15-product-subcategoria]]',
+        'dimension16': '[[cd16-product-preçooriginal]]',
+        'dimension17': '[[cd17-product-gender]]',
+        'dimension18': '[[cd18-product-skufilho]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1245,7 +1245,7 @@ window.dataLayer.push({
   'eventCategory': 'enhanced-ecommerce',
   'eventAction': 'purchase',
   'noInteraction': '1',
-'dimension4': '[[cd4-tipodecartão]]',
+  'dimension4': '[[cd4-tipodecartão]]',
   'dimension6': '[[cd6-bandeiracartão]]',
   'dimension8': '[[cd8-hit-metodopagamento]]',
   'dimension9': '[[cd9-hit-statuspagamento]]',
@@ -1268,14 +1268,14 @@ window.dataLayer.push({
         'coupon': '[[coupon-transacao]]'
       },
       'products': [{
-'dimension10': '[[cd10-product-ordemdeinserção]]',
-  'dimension11': '[[cd11-product-tamanhodoproduto]]',
-  'dimension12': '[[cd12-product-cordoproduto]]',
-  'dimension13': '[[cd13-product-padronagemdoproduto]]',
-  'dimension15': '[[cd15-product-subcategoria]]',
-  'dimension16': '[[cd16-product-preçooriginal]]',
-  'dimension17': '[[cd17-product-gender]]',
-  'dimension18': '[[cd18-product-skufilho]]',
+        'dimension10': '[[cd10-product-ordemdeinserção]]',
+        'dimension11': '[[cd11-product-tamanhodoproduto]]',
+        'dimension12': '[[cd12-product-cordoproduto]]',
+        'dimension13': '[[cd13-product-padronagemdoproduto]]',
+        'dimension15': '[[cd15-product-subcategoria]]',
+        'dimension16': '[[cd16-product-preçooriginal]]',
+        'dimension17': '[[cd17-product-gender]]',
+        'dimension18': '[[cd18-product-skufilho]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1328,10 +1328,6 @@ window.dataLayer.push({
 
 <br />
 
-
-### 
-
-<br />
 
 ---
 
