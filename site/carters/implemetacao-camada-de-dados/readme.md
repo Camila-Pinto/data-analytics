@@ -1183,8 +1183,7 @@ window.dataLayer.push({
 
 **Ao selecionar uma opção de pagamento ou frete**<br />
 
-- **Onde:** Na página de carrinho e de checkout
-    
+- **Onde:** Na página de carrinho e de checkout   
 
 ```html
 <script>
@@ -1196,24 +1195,7 @@ window.dataLayer.push({
   'eventLabel': 'tipode-de-[[pagamento ou frete]]-method',
     'ecommerce': {
     'checkout_option': {
-        'actionField':  {'step':'4','option':'frete:[[opcao escolhida]]:[[previsao-entrega]]'},
-    }
-  }
-});
-</script>
-```
-
-```html
-<script>
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  'event': 'checkoutOption',
-  'eventCategory': 'enhanced-ecommerce',
-  'eventAction': 'checkoutOption',
-  'eventLabel': 'tipode-de-[[pagamento ou frete]]-method',
-    'ecommerce': {
-    'checkout_option': {
-        'actionField':  {'step':'5','option':'pagamento:[[opcao escolhida]]'},
+        'actionField':  {'step':'[[checkout-index]]','option':'[[pagamento ou frete]]:[[opcao escolhida]]'},
     }
   }
 });
@@ -1223,6 +1205,8 @@ window.dataLayer.push({
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
+| [[checkout-index]] | '4' ou '5' | Deve retorna o numero do index do checkout. |
+| [[pagamento ou frete]] |'pagamento' ou 'frete' | Deve retornar o nome da etapa do checkout. |
 | [[opcao escolhida]] | &#039;cartao-de-credito&#039;, &#039;boleto&#039;, &#039;normal&#039;, &#039;expresso &#039;, &#039;entrega-agendada&#039;,&#039;retirar-em-loja:shopping-tiete-plaza&#039;, &#039;retirar-em-loja:shopping-bourbon-sp&#039; | Deve retornar o nome da opção de pagamento ou entrega escolhida. |
 | [[valor]] | &#039;&#039;0.00&#039;, &#039;2.99&#039;, &#039;5.00&#039;. | Deve retornar os valores dos fretes. |
 | [[opcao-adicional]] | &#039;vale-troca&#039; | Deve retornar a opção de pagamento adicional. |
