@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Midway APP
 
-Última atualização: 17/08/2021 <br />
+Última atualização: 24/08/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -64,6 +64,9 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Segunda via comprovante](#segunda-via-comprovante)
 - [Recarga Celular](#recarga-celular)
 - [Recarga Rápida](#recarga-r&#225;pida)
+- [Recarga - Fluxos de Recarregar Agora e Recarga Programada](#recarga---fluxos-de-recarregar-agora-e-recarga-programada)
+- [Recarga - Fluxo Repetir Ultima Recarga](#recarga---fluxo-repetir-ultima-recarga)
+- [Recarga - Lista de contatos e favoritos](#recarga---lista-de-contatos-e-favoritos)
 - [Home Pix](#home-pix)
 - [Cadastrar Pix](#cadastrar-pix)
 - [Minhas chaves Pix](#minhas-chaves-pix)
@@ -11002,6 +11005,77 @@ Resumo de produtos cadastrados
 
 <br />
 
+- **Onde:** Visualização da tela "Cancelar Recorrência"
+
+```javascript
+    Analytics.logScreenView("/seguros-assistencias/cancelar-recorrencia/");
+```
+
+
+<br />
+
+- **Quando:** No clique nas opções de recorrências
+- **Onde:** Na tela de "Cancelar recorrência"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:cancelar-recorrencia",
+        	eventAction: "clique:[[botao-icone]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+|`[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
+| `[[nome-item]]`| 'voltar:cancelar-recorrencia', 'recarga-programada' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela "Detalhes da Recorrência"
+
+```javascript
+    Analytics.logScreenView("/seguros-assistencias/cancelar-recorrencia/detalhes-recorrencia/");
+```
+
+
+<br />
+
+- **Quando:** No clique nos botões
+- **Onde:** Na tela de "Detalhes da recorrência"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:cancelar-recorrencia:detalhes",
+        	eventAction: "clique:[[botao-icone]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+|`[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
+| `[[nome-item]]`| 'voltar:detalhes-recorrencia', 'cancelar-recorrencia', 'ir-para-home' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Quando:** No clique dos botões do modal "Deseja Cancelar essa recorrência?"
+- **Onde:** Na tela de "Detalhes da recorrência", modal "Deseja Cancelar essa recorrência?"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:cancelar-recorrencia:detalhes",
+        	eventAction: "modal:cancelar-recorrencia",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-botao]]`| 'fechar', 'clicou-fora', 'confirmar-cancelamento' e etc. | Deve retornar o nome do botao clicado. |
+
+<br />
+
 - **Onde:** Visualização da tela "Comprovantes"
 
 ```javascript
@@ -11226,7 +11300,7 @@ Resumo de produtos cadastrados
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | `[[operadora]]` | &#039;tim&#039;, &#039;claro&#039; e etc | Deve retornar a operadora que foi a recarga. |
-| `[[valor]]` | &#039;R$15,00&#039;, &#039;R$20,00&#039; e etc | Deve retornar o valor da recarga. |
+| `[[valor]]` |  '15,00', '20,00' e etc | Deve retornar o valor da recarga. |
 
 <br />
 
@@ -11369,6 +11443,580 @@ Resumo de produtos cadastrados
 ```javascript
     Analytics.logScreenView("/recarga-celular/repetir-ultima-recarga/realizada-sucesso:op-[[operadora]]:val-[[valor]]/");
 ```
+<br />
+
+### Recarga - Fluxos de Recarregar Agora e Recarga Programada
+
+- **Onde:** Visualização da tela "Recarregue seu celular sem sair de casa!"
+
+```javascript
+    Analytics.logScreenView("/recarregar-celular/");
+```
+<br />
+
+- **Quando:** No clique dos elementos "Voltar" ou "Recarregar celular"
+- **Onde:** Na tela de "Recarregue seu celular sem sair de casa!"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:splash",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-botao]]` | 'voltar:recarregue-sem-sair-de-casa' ou 'recarregar-celular' | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização das telas "Como deseja recarregar"
+
+```javascript
+    Analytics.logScreenView("/recarregar-celular/como-deseja-recarregar/");
+```
+<br />
+
+- **Quando:** No clique das opções "Recarregar agora" ou "Programar recarga mensal"
+- **Onde:**Nas telas de "Como deseja recarregar"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:splash",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-botao]]` | 'voltar:como-deseja-recarregar', 'recarregar-agora', 'programar-recarga-mensal' ou 'repertir-ultima-recarga' | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela "Qual o número que irá receber a recarga"
+
+```javascript
+    Analytics.logScreenView("/recarregar-celular/[[nome-fluxo]]/numero-recebe-recarga/");
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+
+<br />
+
+- **Quando:** Na interação dos campos
+- **Onde:** Nas telas de "Qual o número que irá receber a recarga"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:[[nome-fluxo]]",
+        	eventAction: "preencheu:campo",
+        	eventLabel: "[[nome-campo]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+| `[[nome-campo]]` | 'ddd', 'telefone', 'nome' e etc | Deve retornar o nome do campo preenchido. |
+
+<br />
+
+- **Quando:** No clique nas opções da página
+- **Onde:** Nas telas de "Qual o número que irá receber a recarga"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:[[nome-fluxo]]",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[nome-elemento]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+| `[[elemento]]` | 'botao' ou 'link' | Deve retornar o nome do elemento. |
+| `[[nome-elemento]]` | 'voltar:qual-numero-vai-receber-a-recarga', 'escolher-numero-dos-seus-contatos', 'continuar' e etc. | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Quando:** Na interação com o checkbox
+- **Onde:** Nas telas de "Qual o número que irá receber a recarga"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:[[nome-fluxo]]",
+        	eventAction: "checkbox:[[status]]",
+        	eventLabel: "salvar-esse-contato"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+| `[[status]]` | 'selecionado' ou 'desselecionado' | Deve retornar o status do checkbox. |
+
+<br />
+
+- **Onde:** Visualização da tela "Qual operadora do número?"
+
+```javascript
+    Analytics.logScreenView("/recarregar-celular/[[nome-fluxo]]/operadora-numero/");
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+
+<br />
+
+- **Quando:** No clique para escolher a operadora
+- **Onde:** Na tela de "Qual operadora do número?"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:[[nome-fluxo]]",
+        	eventAction: "clique:operadora",
+        	eventLabel: "[[operadora]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+| `[[operadora]]` | 'claro', 'vivo', 'tim' e etc. | Deve retornar a operadora escolhida. |
+
+<br />
+
+- **Quando:** No clique dos elementos "Voltar" ou "Continuar"
+- **Onde:** Na tela de "Qual operadora do número?"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:[[nome-fluxo]]",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+| `[[nome-botao]]` | 'voltar:qual-operadora-do-numero' ou 'continuar' | Deve retornar o nome do botão clicado |
+
+<br />
+
+- **Onde:** Visualização da tela "Valor da recarga"
+
+```javascript
+    Analytics.logScreenView("/recarregar-celular/[[nome-fluxo]]/operadora-numero/valor-recarga/");
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+
+<br />
+
+- **Quando:** No clique para escolher os valores de recarga
+- **Onde:** Na tela de "Qual o valor da recarga?"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:[[nome-fluxo]]",
+        	eventAction: "clique:valores",
+        	eventLabel: "[[valor]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+| `[[valor]]` | '20', '30', '40' e etc  | Deve retornar o valor escolhido. |
+
+<br />
+
+- **Quando:** No clique dos elementos "Voltar" ou "Continuar"
+- **Onde:** Na tela de "Qual o valor da recarga?"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:[[nome-fluxo]]",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+| `[[nome-botao]]` | 'voltar:qual-valor-da-recarga', 'continuar:20:tim', 'continuar:10:claro' e etc | Deve retornar o nome do botão clicado |
+
+<br />
+
+- **Onde:** Visualização da tela "Forma de pagamento"
+
+```javascript
+    Analytics.logScreenView("/recarregar-celular/[[nome-fluxo]]/operadora-numero/valor-recarga/forma-pagamento/");
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+
+<br />
+
+- **Quando:** No clique nas opções de Forma de pagamento
+- **Onde:** Na tela de "Forma de Pagamento"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:[[nome-fluxo]]",
+        	eventAction: "clique:forma-pagamento",
+        	eventLabel: "[[pagamento]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+| `[[pagamento]]` | 'saldo-disponivel-em-conta' e etc | Deve retornar a forma de pagamento escolhida. |
+
+<br />
+
+- **Quando:** No clique dos elementos "Voltar" ou "Continuar"
+- **Onde:** Na tela de "Forma de Pagamento"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:[[nome-fluxo]]",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+| `[[nome-botao]]` | 'voltar:forma-de-pagamento', 'continuar', 'voltar-para-o-inicio' e etc | Deve retornar o nome do botão clicado |
+
+<br />
+
+- **Quando:** No callback de erro no Pagamento
+- **Onde:** Na tela de "Forma de Pagamento"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:[[nome-fluxo]]",
+        	eventAction: "callback:erro-pagamento",
+        	eventLabel: "[[erro]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+| `[[erro]]` | 'saldo-insuficiente' e etc | Deve retornar o erro mostrado ao usuário. |
+
+<br />
+
+- **Onde:** Visualização da tela "Programar recarga mensal"
+**Obs: Somente para o fluxo de "Recarga programada"**
+```javascript
+    Analytics.logScreenView("/recarregar-celular/recarga-programada/operadora-numero/valor-recarga/forma-pagamento/programar-recarga-mensal/");
+```
+
+<br />
+
+- **Quando:** Na interação do modal para escolher o dia da recarga
+- **Onde:** Nas telas de "Programar recarga mensal", modal "Escolha o dia da recarga"
+**Obs: Somente para o fluxo de "Recarga programada"**
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:recarga-programada",
+        	eventAction: "modal:dia-da-recarga",
+        	eventLabel: "[[dia-escolhido]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[dia-escolhido]]` | 'dia-01', 'dia-10', 'dia-20' e etc | Deve retornar o dia escolhido. |
+
+<br />
+
+- **Quando:** No clique do ícone de fechar ou na ação de clicar fora do modal;
+- **Onde:** Na tela de "Programar recarga mensal", modal "Escolha o dia da recarga"
+**Obs: Somente para o fluxo de "Recarga programada"**
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:recarga-programada",
+        	eventAction: "modal:dia-da-recarga:fechar",
+        	eventLabel: "[[fechar]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[fechar]]` | 'fechar' ou 'clicou-fora' | Deve retornar o clique do usuário. |
+
+<br />
+
+- **Quando:** No clique dos elementos "Voltar" ou "Continuar"
+- **Onde:** Na tela  "Programar recarga mensal"
+**Obs: Somente para o fluxo de "Recarga programada"**
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:recarga-programada",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-botao]]` | 'voltar:programar-recarga-mensal', 'continuar' e etc | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela "Resumo da transação"
+
+```javascript
+    Analytics.logScreenView("/recarregar-celular/[[nome-fluxo]]/operadora-numero/valor-recarga/forma-pagamento/resumo-transacao/");
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+
+<br />
+
+- **Quando:** No clique dos elementos "Voltar" ou "Continuar"
+- **Onde:** Na tela "Resumo da transação"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:[[nome-fluxo]]",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+| `[[nome-botao]]` | 'voltar:resumo-transacao', 'concluir-recarga' e etc | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela "Pedido de recarga concluído"
+
+```javascript
+    Analytics.logScreenView("/recarregar-celular/[[nome-fluxo]]/operadora-numero/valor-recarga/forma-pagamento/resumo-transacao/pedido-concluido-com-sucesso/");
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+
+<br />
+
+- **Quando:** No clique dos botões "Programar recarga mensal" ou "Fechar"
+- **Onde:** Na tela "Resumo da transação"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:recarga-celular:[[nome-fluxo]]",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
+| `[[nome-botao]]` | 'fechar:pedido-concluido', 'programar-recarga-mensal' e etc | Deve retornar o nome do botão clicado. |
+
+<br />
+
+### Recarga - Fluxo Repetir Ultima Recarga
+
+- **Onde:** Visualização da tela "Gostaria de repetir a última recarga realizada?"
+
+```javascript
+    Analytics.logScreenView("/recarregar-celular/repetir-ultima-recarga/");
+```
+
+<br />
+
+- **Quando:** No clique no item de editar os campos
+- **Onde:** Na tela  "Gostaria de repetir a última recarga realizada?"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:repetir-ultima-recarga",
+        	eventAction: "clique:item-editar",
+        	eventLabel: "[[nome-campo]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-campo]]` | 'operadora', 'valor', 'forma-de-pagamento' e etc| Deve retornar o nome do campo que o usuário quer editar. |
+
+<br />
+
+- **Quando:** No clique dos botões "Programar recarga mensal" ou "Fechar"
+- **Onde:** Na tela "Resumo da transação"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:repetir-ultima-recarga",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-botao]]` | 'voltar:repertir-ultima-recarga', 'recarregar-celular' e etc | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela "Pedido de recarga concluído"
+
+```javascript
+    Analytics.logScreenView("/recarregar-celular/repetir-ultima-recarga/pedido-concluido-com-sucesso/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões "Programar recarga mensal" ou "Fechar"
+- **Onde:** Na tela "Resumo da transação"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:repetir-ultima-recarga",
+        	eventAction: "clique:item-editar",
+        	eventLabel: "[[nome-campo]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-campo]]` | 'fechar:pedido-concluido', 'programar-recarga-mensal' e etc | Deve retornar o nome do botão clicado. |
+
+<br />
+
+### Recarga - Lista de contatos e favoritos
+
+- **Onde:** Visualização da tela "Escolher número dos contatos"
+
+```javascript
+    Analytics.logScreenView("/recarregar-celular/lista-contatos-e-favoritos/");
+```
+
+<br />
+
+- **Quando:** No clique nas opções "Buscar na agenda do seu celular" ou "Numeros salvos"
+- **Onde:** Na tela "Escolher número dos contatos"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:contatos-e-favoritos",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-botao]]` | 'voltar:numero-dos-contatos', 'buscar-na-agenda-do-seu-celular', 'meu-numero', 'tia-claudia' e etc | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela "Informação do contato"
+
+```javascript
+    Analytics.logScreenView("/recarregar-celular/lista-contatos-e-favoritos/informacao-do-contato/");
+```
+
+<br />
+
+- **Quando:** Na interação dos campos
+- **Onde:** Na tela "Informação do contato"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:contatos-e-favoritos",
+        	eventAction: "preencheu:campo",
+        	eventLabel: "[[nome-campo]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-campo]]` | 'ddd', 'telefone', 'nome', 'operadora:vivo', 'operadora:tim', 'operadora:claro' e etc | Deve retornar o nome do campo preenchido. |
+
+<br />
+
+- **Quando:** No clique nos botões "Voltar", "Remover Contato" e "Selecionar Contato"
+- **Onde:** Na tela "Informação do contato"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:contatos-e-favoritos",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-botao]]` | 'voltar:informacao-do-contato', 'remover-contato' ou 'selecionar-contato' | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Quando:** No clique nos botões de "Fechar" ou "Confirmar Remoção"
+- **Onde:** No modal "Remover contato da lista?"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:contatos-e-favoritos",
+        	eventAction: "modal:remover-contato",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-botao]]` | 'fechar', 'confirmar-remocao' ou 'clicou-fora' | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Quando:** No callback para "Salvar" ou "Excluir" um contato na lista
+- **Onde:** Na tela "Qual o número que irá receber a recarga"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:contatos-e-favoritos",
+        	eventAction: "callback:[[acao]]:contato",
+        	eventLabel: "[[retorno]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[acao]]` | 'salvar:contato', 'remover:contato' e etc | Deve retornar a ação do usuário. |
+| `[[retorno]]` | 'alteracoes-salvas-com-sucesso', 'erro:nao-foi-possivel-excluir-contato', 'nao-foi-possivel-salvar-as-alteracoes' e etc | Deve retornar o callback da aplicação |
+
 <br />
 
 ### Home Pix
