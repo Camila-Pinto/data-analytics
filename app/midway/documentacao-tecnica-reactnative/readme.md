@@ -11725,7 +11725,10 @@ Resumo de produtos cadastrados
 <br />
 
 - **Onde:** Visualização da tela "Programar recarga mensal"
+<br />
+
 **Obs: Somente para o fluxo de "Recarga programada"**
+
 ```javascript
     Analytics.logScreenView("/recarregar-celular/recarga-programada/operadora-numero/valor-recarga/forma-pagamento/programar-recarga-mensal/");
 ```
@@ -11734,6 +11737,8 @@ Resumo de produtos cadastrados
 
 - **Quando:** Na interação do modal para escolher o dia da recarga
 - **Onde:** Nas telas de "Programar recarga mensal", modal "Escolha o dia da recarga"
+<br />
+
 **Obs: Somente para o fluxo de "Recarga programada"**
 
 ```javascript
@@ -11752,6 +11757,8 @@ Resumo de produtos cadastrados
 
 - **Quando:** No clique do ícone de fechar ou na ação de clicar fora do modal;
 - **Onde:** Na tela de "Programar recarga mensal", modal "Escolha o dia da recarga"
+<br />
+
 **Obs: Somente para o fluxo de "Recarga programada"**
 
 ```javascript
@@ -11770,6 +11777,8 @@ Resumo de produtos cadastrados
 
 - **Quando:** No clique dos elementos "Voltar" ou "Continuar"
 - **Onde:** Na tela  "Programar recarga mensal"
+<br />
+
 **Obs: Somente para o fluxo de "Recarga programada"**
 
 ```javascript
