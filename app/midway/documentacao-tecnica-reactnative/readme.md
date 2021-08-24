@@ -13256,7 +13256,6 @@ Resumo de produtos cadastrados
 <br />
 
 ### Eventos - Super App - Assistências e Seguros
-**Visualização da tela de assistencia e seguros**<br />
 
 - **Onde:** Visualização da tela &quot;assistencia e seguros&quot;
 
@@ -13303,8 +13302,6 @@ Resumo de produtos cadastrados
 
 <br />
 
-**Visualização da tela de produtos de  assistencia e seguros**<br />
-
 - **Onde:** Visualização da tela de &quot;produtos de  assistencia e seguros&quot;
 
 ```javascript
@@ -13336,9 +13333,6 @@ Resumo de produtos cadastrados
 
 <br />
 
-
-**Visualização da tela home de produtos de  assistencia e seguros**<br />
-
 - **Onde:** Visualização da tela de &quot;home de produtos de  assistencia e seguros&quot;
 
 ```javascript
@@ -13369,7 +13363,6 @@ Resumo de produtos cadastrados
 
 <br />
 
-**Visualização do modal que aparece após clicar em &#039;área do cliente&#039; e em &#039;saiba mais &#039; na home de produtos de &#039; assistência e seguros**<br />
 
 - **Onde:** Visualização do modal que aparece após clicar em &quot;área do cliente&quot; e em &quot;saiba mais&quot; na home de produtos de assistência e seguros.
 
@@ -13404,7 +13397,6 @@ Resumo de produtos cadastrados
 
 <br />
 
-**Visualização da tela de cadastro de dados para os produtos de  assistencia e seguros**<br />
 
 - **Onde:** Visualização da tela de cadastro de dados para os produtos de  assistencia e seguros
 
@@ -13458,7 +13450,195 @@ Resumo de produtos cadastrados
 
 <br />
 
-**Visualização da tela de planos após finalizar o preenchimento do formulario de cadastro**<br />
+
+- **Onde:** Visualização da tela de "Vamos iniciar" na seleção de quem e para quantos será o benefício 
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+
+
+<br />
+
+
+- **Quando:** No clique nos botões
+- **Onde:** Na tela de "Vamos iniciar"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:vamos-iniciar" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'voltar', 'apenas-para-mim', 'para-mim-e-dependentes', 'para-outras-pessoas' e etc. | Deve retornar o nome do botão clicado. |
+| [[produtoAssistenciaSeguro]] |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+- **Quando:** No clique dos itens "Para mim e dependentes" ou "Para outras pessoas"
+- **Onde:** Na tela de "Vamos iniciar"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:vamos-iniciar" ,
+        	eventAction: "clique:botao:[[selecao]]" ,
+        	eventLabel: "[[nome-botao]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[selecao]] | '0-dependentes', '01-dependentes' e etc. | Deve retornar uma lista suspensa com a quantidade de dependentes. |
+| [[nome-botao]] |  'continuar' e etc | Deve retornar o nome do botão clicado. |
+| [[produtoAssistenciaSeguro]] |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+- **Onde:** Visualização da tela de "relação de benefíciarios" para opções com mais dependentes
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/relacao-beneficiarios/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+
+<br />
+
+- **Onde:** Visualização da tela de cadastro de um novo beneficiario
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/relacao-beneficiarios/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+
+<br />
+
+- **Quando:** No clique nos botões
+- **Onde:** Na tela de "relação de benefíciarios"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:relacao-beneficiarios" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'voltar', 'editar-dados', 'continuar', 'adicionar-dependentes' e etc. | Deve retornar o nome do botão clicado. |
+| [[produtoAssistenciaSeguro]] |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+- **Onde:** Visualização da tela de "dados do dependente" na tela de cadastro de dependentes
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/dados-do-dependente/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+
+<br />
+
+- **Quando:** No clique nos botões
+- **Onde:** Na tela de "dados do dependente"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:dados-do-dependente" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'voltar', 'adicionar-dependentes' e etc. | Deve retornar o nome do botão clicado. |
+| [[produtoAssistenciaSeguro]] |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+- **Onde:** Visualização da tela de modal "dados pessoais do dependente" na tela de confirmação
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/confirmacao-dados-dependente/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+
+<br />
+
+- **Quando:** No clique nos botões
+- **Onde:** Na tela de "dados pessoais do dependente"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:dados-pessoais-do-dependente" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'fechar', 'salvar-continuar', 'editar-dados' e etc. | Deve retornar o nome do botão clicado. |
+| [[produtoAssistenciaSeguro]] |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+- **Onde:** Visualização da tela de modal "editar dados do dependente" quando clicado em "editar dados"
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/editar-dados/")
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+
+<br />
+
+- **Quando:** No clique nos botões
+- **Onde:** Na tela de "editar dados do dependente"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:editar-dados-dependente" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
+		})
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'fechar', 'editar-dados', 'cancelar' e etc. | Deve retornar o nome do botão clicado. |
+| [[produtoAssistenciaSeguro]] |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
 
 - **Onde:** Visualização da tela de planos após finalizar o preenchimento do formulario de cadastro
 
@@ -13471,6 +13651,7 @@ Resumo de produtos cadastrados
 | [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
 
 <br />
+
 
 - **Quando:** No clique nos botões( OBS: Os extra parameters só devem retornar preenchidos, quando o usuario selecionar o plano)
 - **Onde:** Na tela de planos para os produtos de  assistencia e seguros e detalhes de planos
