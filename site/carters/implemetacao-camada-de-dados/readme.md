@@ -177,16 +177,14 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
-    'dimension1': '[[cd1-user-usermagentoid]]',
-    'dimension5': '[[cd5-hit-loginstatus]]',
+    'dimension4': '[[cd4-hit-loginstatus]]',
   });
 </script>
 ```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd1-user-usermagentoid]] | &quot;0123456&quot; | ID único do usuário definido após cadastro (MagentoID) |
-| [[cd5-hit-loginstatus]] | &#039;logged-in&#039;, &#039;logged-out&#039; | Status do login do usuário |
+| [[cd4-hit-loginstatus]] | &#039;logged-in&#039;, &#039;logged-out&#039; | Status do login do usuário |
 
 ---
 
@@ -205,7 +203,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'eventCategory': 'carters:geral',
     'eventAction': 'visualizou-modal-lateral',
-'noInteraction': '1',
+    'noInteraction': '1',
     'eventLabel': 'sacola:[[com ou sem]]-produtos'
   });
 </script>
@@ -231,7 +229,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'eventCategory': 'carters:geral',
     'eventAction': 'visualizou-modal-lateral',
-'noInteraction': '1',
+    'noInteraction': '1',
     'eventLabel': '[[cpf ou senha]]'
   });
 </script>
@@ -326,9 +324,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
-
 <br />
 
 
@@ -369,7 +364,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
    data-gtm-event-label='[[nome-link]]'
 >Botão</div>
 ```
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -416,8 +410,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-campo]] | &#039;cpf&#039; , &#039;senha&#039; | Deve retornar o nome do campo preenchido. |
@@ -437,8 +429,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-
-
 <br />
 
 
@@ -455,21 +445,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventAction': 'tentativa:callback',
     'eventLabel': '[[sucesso ou tipo-erro]]',
     'dimension1': '[[cd1-user-usermagentoid]]',
-    'dimension5': '[[cd5-hit-loginstatus]]',
+    'dimension5': '[[cd4-hit-loginstatus]]',
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;voce-nao-digitou-os-dados-corretamente&#039;, etc | Deve retornar o sucesso ou descrição do erro da tentativa de login |
 | [[cd1-user-usermagentoid]] | &quot;0123456&quot; | ID único do usuário definido após cadastro (MagentoID) |
-| [[cd5-hit-loginstatus]] | &#039;logged-in&#039;, &#039;logged-out&#039; | Status do login do usuário |
+| [[cd4-hit-loginstatus]] | &#039;logged-in&#039;, &#039;logged-out&#039; | Status do login do usuário |
 
 <br />
-
 
 **No preenchimento dos campos do formulário de cadastro.**<br />
 
@@ -486,8 +473,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -508,8 +493,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-
-
 <br />
 
 
@@ -528,8 +511,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -574,9 +555,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
-
 <br />
 
 
@@ -598,15 +576,12 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[plp ou pdp]] | &#039;plp&#039;, &#039;pdp&#039; e etc | Deve retornar o nome da página. |
 | [[id-produto]] | &#039;0655&#039;, &#039;8566&#039; etc | Deve retornar o id do produto adicionado a lista de desejos. |
 
 <br />
-
 
 **Na interação com o modal de tabela de medidas**<br />
 
@@ -623,8 +598,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -650,8 +623,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -702,14 +673,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome campo]] | &#039;nome&#039;, &#039;email&#039; etc | Deve retornar o nome do campo preenchido. |
 
 <br />
-
 
 **No erro de preenchimento de campo**<br />
 
@@ -727,15 +695,12 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-campo]] | &#039;numero-do-cartao&#039;, &#039;data-de-validade&#039; etc | Deve retornar o nome do campo preenchido. |
 | [[tipo-erro]] | &#039;dados-invalidos&#039; etc | Deve retornar a descrição do erro de preechimento de campo. |
 
 <br />
-
 
 **No carregamento dos tipos de entrega disponíveis**<br />
 
@@ -748,13 +713,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'eventCategory': 'carters:checkout',
     'eventAction': 'tipos-de-entrega:[[cart ou checkout]]',
-'noInteraction': '1',
-    'eventLabel': '[{&quot;t&quot;:&quot;[[nome-entrega]]&quot;,&quot;d&quot;:&quot;[[previsao]]&quot;,&quot;p&quot;:&quot;[[valor]]&quot;},{&quot;t&quot;:&quot;[[nome-entrega]]&quot;,&quot;d&quot;:&quot;[[previsao]]&quot;,&quot;p&quot;:&quot;[[valor]]&quot;}]'
+    'noInteraction': '1',
+    'eventLabel': '[[cart-ou-checkout]]:[[nome-entrega]]:[[previsao]]:[[valor]]'
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -856,7 +819,7 @@ window.dataLayer.push({
   'noInteraction': '1',
   'ecommerce': {
     'impressions': [{
-      'dimension20': '[[cd20-product-selo/tag]]',
+      'dimension19': '[[cd19-product-selo/tag]]',
       'name': '[[nome-produto]]',
       'id': '[[id-produto]]',
       'list': '[[lista-produto]]',
@@ -870,7 +833,7 @@ window.dataLayer.push({
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd20-product-selo/tag]] | &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
+| [[cd19-product-selo/tag]] | &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
 | [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
 | [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
 | [[lista-produto]] | &quot;feminino-blusa&quot;, &quot;masculino-polo&quot;, &quot;acessorios-e-relogios-aneis&quot;, &quot;feminino_em-destaque_plus-size&quot;, &quot;plp_campanhas_modacasa_fevereiro-2020_pascoa-casa-riachuelo&quot;, &quot;pdp_quem-viu-tambem-viu&quot;, &quot;home-destaques&quot;, &quot;novidades&quot; e etc | Nome da lista que o produto aparece, no caso de PLP, o nome da PLP tem que ser a URL ao invés de usar a “/” colocar “_“ |
@@ -896,14 +859,14 @@ window.dataLayer.push({
       'click': {
         'actionField': {'list': '[[lista-produto]]'},
         'products': [{
-        'dimension7': '[[cd7-product-idadedoproduto]]',
-        'dimension10': '[[cd10-product-ordemdeinserção]]',
-        'dimension13': '[[cd13-product-padronagemdoproduto]]',
-        'dimension15': '[[cd15-product-subcategoria]]',
-        'dimension16': '[[cd16-product-preçooriginal]]',
-        'dimension17': '[[cd17-product-gender]]',
-        'dimension18': '[[cd18-product-skufilho]]',
-        'dimension20': '[[cd20-product-selo/tag]]',
+        'dimension6': '[[cd6-product-idadedoproduto]]',
+        'dimension9': '[[cd9-product-ordemdeinserção]]',
+        'dimension12': '[[cd12-product-padronagemdoproduto]]',
+        'dimension14': '[[cd14-product-subcategoria]]',
+        'dimension15': '[[cd15-product-preçooriginal]]',
+        'dimension16': '[[cd16-product-gender]]',
+        'dimension17': '[[cd17-product-skufilho]]',
+        'dimension19': '[[cd19-product-selo/tag]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -919,14 +882,14 @@ window.dataLayer.push({
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd7-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
-| [[cd10-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção ao carrinho |
-| [[cd13-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[cd15-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
-| [[cd16-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
-| [[cd17-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
-| [[cd18-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
-| [[cd20-product-selo/tag]] | &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
+| [[cd6-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
+| [[cd9-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção a2 carrinho2|
+| [[cd12-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
+| [[cd14-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
+| [[cd15-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
+| [[cd16-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
+| [[cd17-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
+| [[cd19-product-selo/tag]] | &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
 | [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
 | [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
 | [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
@@ -954,14 +917,14 @@ window.dataLayer.push({
   'ecommerce': {
     'detail': {
       'products': [{
-        'dimension7': '[[cd7-product-idadedoproduto]]',
-        'dimension10': '[[cd10-product-ordemdeinserção]]',
-        'dimension13': '[[cd13-product-padronagemdoproduto]]',
-        'dimension15': '[[cd15-product-subcategoria]]',
-        'dimension16': '[[cd16-product-preçooriginal]]',
-        'dimension17': '[[cd17-product-gender]]',
-        'dimension18': '[[cd18-product-skufilho]]',
-        'dimension20': '[[cd20-product-selo/tag]]',
+        'dimension7': '[[cd6-product-idadedoproduto]]',
+        'dimension10': '[[cd9-product-ordemdeinserção]]',
+        'dimension12': '[[cd12-product-padronagemdoproduto]]',
+        'dimension14': '[[cd14-product-subcategoria]]',
+        'dimension15': '[[cd15-product-preçooriginal]]',
+        'dimension16': '[[cd16-product-gender]]',
+        'dimension17': '[[cd17-product-skufilho]]',
+        'dimension19': '[[cd19-product-selo/tag]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -976,14 +939,14 @@ window.dataLayer.push({
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd7-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
-| [[cd10-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção ao carrinho |
-| [[cd13-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[cd15-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
-| [[cd16-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
-| [[cd17-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
-| [[cd18-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
-| [[cd20-product-selo/tag]] | &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
+| [[cd6-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
+| [[cd9-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção a2 carrinho2|
+| [[cd12-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
+| [[cd14-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
+| [[cd15-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
+| [[cd16-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
+| [[cd17-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
+| [[cd19-product-selo/tag]] | &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
 | [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
 | [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
 | [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
@@ -1008,15 +971,15 @@ window.dataLayer.push({
     'ecommerce': {
     'add': {
       'products': [{
-        'dimension7': '[[cd7-product-idadedoproduto]]',
-        'dimension10': '[[cd10-product-ordemdeinserção]]',
-        'dimension11': '[[cd11-product-tamanhodoproduto]]',
-        'dimension12': '[[cd12-product-cordoproduto]]',
-        'dimension13': '[[cd13-product-padronagemdoproduto]]',
-        'dimension15': '[[cd15-product-subcategoria]]',
-        'dimension16': '[[cd16-product-preçooriginal]]',
-        'dimension17': '[[cd17-product-gender]]',
-        'dimension18': '[[cd18-product-skufilho]]',
+        'dimension6': '[[cd6-product-idadedoproduto]]',
+        'dimension9': '[[cd9-product-ordemdeinserção]]',
+        'dimension10': '[[cd10-product-tamanhodoproduto]]',
+        'dimension11': '[[cd11-product-cordoproduto]]',
+        'dimension13': '[[cd12-product-padronagemdoproduto]]',
+        'dimension15': '[[cd14-product-subcategoria]]',
+        'dimension16': '[[cd15-product-preçooriginal]]',
+        'dimension17': '[[cd16-product-gender]]',
+        'dimension18': '[[cd17-product-skufilho]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1033,15 +996,15 @@ window.dataLayer.push({
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd7-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
-| [[cd10-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção ao carrinho |
+| [[cd6-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
+| [[cd9-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção a2 carrinho2|
 | [[cd11-product-tamanhodoproduto]] | &#039;p&#039;,&#039;&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; | Tamanho do produto |
-| [[cd12-product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto |
-| [[cd13-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[cd15-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
-| [[cd16-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
-| [[cd17-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
-| [[cd18-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
+| [[cd11-product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto |
+| [[cd12-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
+| [[cd14-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
+| [[cd15-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
+| [[cd16-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
+| [[cd17-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
 | [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
 | [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
 | [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
@@ -1068,15 +1031,15 @@ window.dataLayer.push({
     'ecommerce': {
     'remove': {
       'products': [{
-        'dimension7': '[[cd7-product-idadedoproduto]]',
-        'dimension10': '[[cd10-product-ordemdeinserção]]',
-        'dimension11': '[[cd11-product-tamanhodoproduto]]',
-        'dimension12': '[[cd12-product-cordoproduto]]',
-        'dimension13': '[[cd13-product-padronagemdoproduto]]',
-        'dimension15': '[[cd15-product-subcategoria]]',
-        'dimension16': '[[cd16-product-preçooriginal]]',
-        'dimension17': '[[cd17-product-gender]]',
-        'dimension18': '[[cd18-product-skufilho]]',
+        'dimension7': '[[cd6-product-idadedoproduto]]',
+        'dimension10': '[[cd9-product-ordemdeinserção]]',
+        'dimension10:' '[[cd10-product-tamanhodoproduto]]',
+        'dimension11': '[[cd11-product-cordoproduto]]',
+        'dimension12': '[[cd12-product-padronagemdoproduto]]',
+        'dimension14': '[[cd14-product-subcategoria]]',
+        'dimension15': '[[cd15-product-preçooriginal]]',
+        'dimension16': '[[cd16-product-gender]]',
+        'dimension17': '[[cd17-product-skufilho]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1093,15 +1056,15 @@ window.dataLayer.push({
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd7-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
-| [[cd10-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção ao carrinho |
+| [[cd6-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
+| [[cd9-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção a2 carrinho2|
 | [[cd11-product-tamanhodoproduto]] | &#039;p&#039;,&#039;&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; | Tamanho do produto |
-| [[cd12-product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto |
-| [[cd13-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[cd15-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
-| [[cd16-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
-| [[cd17-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
-| [[cd18-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
+| [[cd11-product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto |
+| [[cd12-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
+| [[cd14-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
+| [[cd15-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
+| [[cd16-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
+| [[cd17-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
 | [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
 | [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
 | [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
@@ -1130,15 +1093,15 @@ window.dataLayer.push({
     'checkout': {
       'actionField': {'step': '[[passo-checkout]]'},
       'products': [{
-        'dimension7': '[[cd7-product-idadedoproduto]]',
-        'dimension10': '[[cd10-product-ordemdeinserção]]',
-        'dimension11': '[[cd11-product-tamanhodoproduto]]',
-        'dimension12': '[[cd12-product-cordoproduto]]',
-        'dimension13': '[[cd13-product-padronagemdoproduto]]',
-        'dimension15': '[[cd15-product-subcategoria]]',
-        'dimension16': '[[cd16-product-preçooriginal]]',
-        'dimension17': '[[cd17-product-gender]]',
-        'dimension18': '[[cd18-product-skufilho]]',
+        'dimension6': '[[cd6-product-idadedoproduto]]',
+        'dimension9': '[[cd9-product-ordemdeinserção]]',
+        'dimension10': '[[cd10-product-tamanhodoproduto]]',
+        'dimension11': '[[cd11-product-cordoproduto]]',
+        'dimension12': '[[cd12-product-padronagemdoproduto]]',
+        'dimension14': '[[cd14-product-subcategoria]]',
+        'dimension15': '[[cd15-product-preçooriginal]]',
+        'dimension16': '[[cd16-product-gender]]',
+        'dimension17': '[[cd17-product-skufilho]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1156,15 +1119,15 @@ window.dataLayer.push({
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[checkout-index]] |  | Retornar &quot;1&quot; ou &quot;2&quot; ou &quot;3&quot; ou &quot;4&quot; ou &quot;5&quot; os exemplos citados |
-| [[cd7-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
-| [[cd10-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção ao carrinho |
-| [[cd11-product-tamanhodoproduto]] | &#039;p&#039;,&#039;&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; | Tamanho do produto |
-| [[cd12-product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto |
-| [[cd13-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[cd15-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
-| [[cd16-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
-| [[cd17-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
-| [[cd18-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
+| [[cd6-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
+| [[cd9-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção a2 carrinho2|
+| [[cd10-product-tamanhodoproduto]] | &#039;p&#039;,&#039;&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; | Tamanho do produto |
+| [[cd11-product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto |
+| [[cd12-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
+| [[cd14-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
+| [[cd15-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
+| [[cd16-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
+| [[cd17-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
 | [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
 | [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
 | [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
@@ -1229,12 +1192,12 @@ window.dataLayer.push({
   'eventCategory': 'enhanced-ecommerce',
   'eventAction': 'purchase',
   'noInteraction': '1',
-  'dimension4': '[[cd4-tipodecartão]]',
-  'dimension6': '[[cd6-bandeiracartão]]',
-  'dimension8': '[[cd8-hit-metodopagamento]]',
-  'dimension9': '[[cd9-hit-statuspagamento]]',
-  'dimension14': '[[cd14-hit-frete]]',
-  'dimension19': '[[cd19-hit-parcelamento]]',
+  'dimension3': '[[cd3-tipodecartão]]',
+  'dimension5': '[[cd5-bandeiracartão]]',
+  'dimension7': '[[cd7-hit-metodopagamento]]',
+  'dimension8': '[[cd8-hit-statuspagamento]]',
+  'dimension13': '[[cd13-hit-frete]]',
+  'dimension18': '[[cd18-hit-parcelamento]]',
   'metric1': '[[descontofrete]]',
   'metric2': '[[descontofuncionário]]',
   'metric3': '[[descontopromoção]]',
@@ -1252,14 +1215,14 @@ window.dataLayer.push({
         'coupon': '[[coupon-transacao]]'
       },
       'products': [{
-        'dimension10': '[[cd10-product-ordemdeinserção]]',
-        'dimension11': '[[cd11-product-tamanhodoproduto]]',
-        'dimension12': '[[cd12-product-cordoproduto]]',
-        'dimension13': '[[cd13-product-padronagemdoproduto]]',
-        'dimension15': '[[cd15-product-subcategoria]]',
-        'dimension16': '[[cd16-product-preçooriginal]]',
-        'dimension17': '[[cd17-product-gender]]',
-        'dimension18': '[[cd18-product-skufilho]]',
+        'dimension9': '[[cd9-product-ordemdeinserção]]',
+        'dimension10': '[[cd10-product-tamanhodoproduto]]',
+        'dimension11': '[[cd11-product-cordoproduto]]',
+        'dimension12': '[[cd12-product-padronagemdoproduto]]',
+        'dimension14': '[[cd14-product-subcategoria]]',
+        'dimension15': '[[cd15-product-preçooriginal]]',
+        'dimension16': '[[cd16-product-gender]]',
+        'dimension17': '[[cd17-product-skufilho]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1276,20 +1239,20 @@ window.dataLayer.push({
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd4-tipodecartão]] | &#039;credito&#039;, &#039;riachuelo&#039; | Tipo do cartão utilizado na compra |
-| [[cd6-bandeiracartão]] | &quot;visa&quot;, &quot;mastercard&quot; | Bandeira do cartão utilizada na compra |
-| [[cd8-hit-metodopagamento]] | &#039;cartao-de-credito&#039;, &#039;boleto&#039; | Nome do tipo do pagamento. |
-| [[cd9-hit-statuspagamento]] | &#039;aprovado&#039; | Nome do status do pagamento. |
-| [[cd10-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção ao carrinho |
-| [[cd11-product-tamanhodoproduto]] | &#039;p&#039;,&#039;&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; | Tamanho do produto |
-| [[cd12-product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto |
-| [[cd13-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[cd14-hit-frete]] | &#039;normal, expresso, entrega-agendada&#039; | Nome do tipo de entrega. |
-| [[cd15-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
-| [[cd16-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
-| [[cd17-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
-| [[cd18-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
-| [[cd19-hit-parcelamento]] | &#039;2&#039; | Quantidade de parcelas |
+| [[cd3-tipodecartão]] | &#039;credito&#039;, &#039;riachuelo&#039; | Tipo do cartão utilizado na compra |
+| [[cd5-bandeiracartão]] | &quot;visa&quot;, &quot;mastercard&quot; | Bandeira do cartão utilizada na compra |
+| [[cd7-hit-metodopagamento]] | &#039;cartao-de-credito&#039;, &#039;boleto&#039; | Nome do tipo do pagamento. |
+| [[cd8-hit-statuspagamento]] | &#039;aprovado&#039; | Nome do status do pagamento. |
+| [[cd9-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção a2 carrinho2|
+| [[cd10-product-tamanhodoproduto]] | &#039;p&#039;,&#039;&#039;2&#039;,&#239;8-12&#039;,&#039;42&#039; | Tamanho do produto |
+| [[cd11-product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto |
+| [[cd12-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
+| [[cd13-hit-frete]] | &#039;normal, expresso, entrega-agendada&#039; | Nome do tipo de entrega. |
+| [[cd14-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
+| [[cd15-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
+| [[cd16-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
+| [[cd17-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
+| [[cd18-hit-parcelamento]] | &#039;2&#039; | Quantidade de parcelas |
 | [[descontofrete]] | &#039;10&#039; | Valor do desconto de frete |
 | [[descontofuncionário]] | &#039;22&#039; | Valor do desconto para funcionário |
 | [[descontopromoção]] | &#039;15&#039; | Valor do desconto promocional - cupom, primeira compra, etc |
