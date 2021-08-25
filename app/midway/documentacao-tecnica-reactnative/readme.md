@@ -6797,7 +6797,7 @@ Resumo de produtos cadastrados
 ```
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[valor-fatura]] | '600', '1200' e etc |  Deve retornar a data de vencimento selecionada para o boleto. |
+| [[valor-fatura]] | '600', '1200' e etc  |  Deve retornar a data de vencimento selecionada para o boleto. |
 | [[dataVencimento]] | '15/11' e etc | Deve retornar a data de vencimento selecionada para o boleto. |
 
 <br />
@@ -6861,6 +6861,7 @@ Resumo de produtos cadastrados
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[valor-parcelado]] | '739,05', '638,29' e etc  | Deve retornar o valor parcelado da fatura. |
 
+
 <br />
 
 - **Quando:** Na interação com o campo "Selecione o valor da entrada"
@@ -6876,6 +6877,7 @@ Resumo de produtos cadastrados
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[valor]] | '74,00', '200,00' e etc  | Deve retornar o valor de entrada que o usuário informou. |
+
 
 <br />
 
@@ -6908,8 +6910,9 @@ Resumo de produtos cadastrados
 ```
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[selecionou-ou-desselecionou]] | 'selecionou' ou 'desselecionou'  | Deve retornar a ação do usuário.  |
-| [[qtdeParcelas]] | '10x-130,50' e etc  | Deve retornar a quantidade de parcelas. |
+| [[selecionou-ou-desselecionou]] | 'selecionou' ou 'desselecionou'  | Deve retornar a ação do usuário. |
+| [[qtdeParcelas]] | '10x-130,50' e etc   | Deve retornar a quantidade de parcelas. |
+
 
 <br />
 
@@ -6927,6 +6930,7 @@ Resumo de produtos cadastrados
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-botao]] | 'voltar:parcelar-fatura:valor-parcelado', 'continuar' e etc  | Deve retornar o nome do botão clicado.  |
 
+
 <br />
 
 - **Onde:** Visualização da tela de "Parcelar Fatura", onde o usuário visualiza o valor parcelado
@@ -6937,8 +6941,9 @@ Resumo de produtos cadastrados
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[valor-entrada]] | '73,05', '63,29' e etc | Deve retornar o valor da entrada para o parcelamento da fatura. |
-| [[qtdeParcelas]] | '10x-130,50' e etc | Deve retornar a quantidade de parcelas. |
-| [[dataVencimento]] | '15/11' e etc | Deve retornar a data de vencimento selecionada para o boleto. |
+| [[qtdeParcelas]] | '10x-130,50' e etc  | Deve retornar a quantidade de parcelas.  |
+| [[dataVencimento]] | '15/11' e etc  | Deve retornar a data de vencimento selecionada para o boleto. |
+
 
 <br />
 
@@ -6957,8 +6962,9 @@ Resumo de produtos cadastrados
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-botao]] | 'voltar:parcelar-fatura:valor-entrada', 'continuar' e etc  | Deve retornar o nome do botão clicado. |
-| [[qtdeParcelas]] | '10x-130,50' e etc | Deve retornar a quantidade de parcelas. |
-| [[dataVencimento]] | '15/11' e etc | Deve retornar a data de vencimento selecionada para o boleto. |
+| [[qtdeParcelas]] | '10x-130,50' e etc  | Deve retornar a quantidade de parcelas.  |
+| [[dataVencimento]] | '15/11' e etc  | Deve retornar a data de vencimento selecionada para o boleto. |
+
 
 <br />
 
@@ -6990,9 +6996,10 @@ Resumo de produtos cadastrados
 ```
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[valor-entrada]] | '73,05', '63,29' e etc  | Deve retornar o valor da entrada para o parcelamento da fatura. |
-| [[qtdeParcelas]] | '10x-130,50' e etc | Deve retornar a quantidade de parcelas. |
-| [[dataVencimento]] | '15/11' e etc | Deve retornar a data de vencimento selecionada para o boleto. |
+| [[valor-entrada]] | '73,05', '63,29' e etc | Deve retornar o valor da entrada para o parcelamento da fatura. |
+| [[qtdeParcelas]] | '10x-130,50' e etc  | Deve retornar a quantidade de parcelas.  |
+| [[dataVencimento]] | '15/11' e etc  | Deve retornar a data de vencimento selecionada para o boleto. |
+
 
 <br />
 
@@ -7010,6 +7017,7 @@ Resumo de produtos cadastrados
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-botao]] | 'visualizar-boleto' e 'copiar-codigo' | Deve retornar o nome do botão clicado. |
 
+
 <br />
 
 - **Quando:** No callback, após copiar o código do boleto
@@ -7025,6 +7033,7 @@ Resumo de produtos cadastrados
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[callback]] | 'codigo-copiado-com-sucesso', 'erro:codigo-vencido' e etc | Deve retornar o callback mostrado ao usuário. |
+
 
 <br />
 
