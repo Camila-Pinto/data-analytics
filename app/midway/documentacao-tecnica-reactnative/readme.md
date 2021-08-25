@@ -6798,7 +6798,7 @@ Resumo de produtos cadastrados
 
 | Variável  | Exemplo  | Descrição    |
 | :--------- | :------ | :------------------ |
-| [[valor-fatura]] | '600', '1200' e etc | Deve retornar a data de vencimento selecionada para o boleto. |
+| [[valor-fatura]] | '600', '1200' e etc | Deve retornar o valor da fatura. |
 | [[dataVencimento]] | '15/11' e etc | Deve retornar a data de vencimento selecionada para o boleto. |
 
 
@@ -6848,9 +6848,11 @@ Resumo de produtos cadastrados
         	eventLabel: "[[nome-botao]]"
         });
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
 | [[nome-botao]] | 'voltar:parcelar-fatura', 'continuar' e etc  | Deve retornar o nome do botão clicado. |
+
 
 <br />
 
@@ -6859,9 +6861,10 @@ Resumo de produtos cadastrados
 ```javascript
     Analytics.logScreenView("/pagamento-de-fatura/parcelar-fatura:[[valor-parcelado]]/");
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[valor-parcelado]] | '739,05', '638,29' e etc  | Deve retornar o valor parcelado da fatura. |
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
+| [[valor-parcelado]] | '739,05', '638,29' e etc  | Deve retornar o valor parcelado da fatura.  |
 
 
 <br />
@@ -6876,9 +6879,10 @@ Resumo de produtos cadastrados
         	eventLabel: "valor-entrada:[[valor]]"
         });
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[valor]] | '74,00', '200,00' e etc  | Deve retornar o valor de entrada que o usuário informou. |
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
+| [[valor]] | '74,00', '200,00' e etc  | Deve retornar o valor de entrada que o usuário informou.  |
 
 
 <br />
@@ -6893,9 +6897,11 @@ Resumo de produtos cadastrados
         	eventLabel: "[[sucesso-ou-erro]]"
         });
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
 | [[sucesso-ou-erro]] | 'sucesso', 'erro:valor-minimo-permitido-74,00' e etc  | Deve retornar o callback do campo. |
+
 
 <br />
 
@@ -6910,10 +6916,11 @@ Resumo de produtos cadastrados
 		qtdeParcelas: "[[qtdeParcelas]]"
         });
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[selecionou-ou-desselecionou]] | 'selecionou' ou 'desselecionou'  | Deve retornar a ação do usuário. |
-| [[qtdeParcelas]] | '10x-130,50' e etc   | Deve retornar a quantidade de parcelas. |
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
+| [[selecionou-ou-desselecionou]] | 'selecionou' ou 'desselecionou'   | Deve retornar a ação do usuário. |
+| [[qtdeParcelas]] | '10x-130,50' e etc | Deve retornar a quantidade de parcelas. |
 
 
 <br />
@@ -6928,9 +6935,10 @@ Resumo de produtos cadastrados
         	eventLabel: "[[nome-botao]]"
         });
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | 'voltar:parcelar-fatura:valor-parcelado', 'continuar' e etc  | Deve retornar o nome do botão clicado.  |
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
+| [[nome-botao]] | 'voltar:parcelar-fatura:valor-parcelado', 'continuar' e etc  | Deve retornar o nome do botão clicado. |
 
 
 <br />
@@ -6940,10 +6948,11 @@ Resumo de produtos cadastrados
 ```javascript
     Analytics.logScreenView("/pagamento-de-fatura/parcelar-fatura:[[valor-entrada]]/[[qtdeParcelas]]/[[dataVencimento]]/");
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[valor-entrada]] | '73,05', '63,29' e etc | Deve retornar o valor da entrada para o parcelamento da fatura. |
-| [[qtdeParcelas]] | '10x-130,50' e etc  | Deve retornar a quantidade de parcelas.  |
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
+| [[valor-entrada]] | '73,05', '63,29' e etc  | Deve retornar o valor da entrada para o parcelamento da fatura. |
+| [[qtdeParcelas]] | '10x-130,50' e etc | Deve retornar a quantidade de parcelas. |
 | [[dataVencimento]] | '15/11' e etc  | Deve retornar a data de vencimento selecionada para o boleto. |
 
 
@@ -6961,10 +6970,11 @@ Resumo de produtos cadastrados
 		dataVencimento: "[[dataVencimento]]"
         });
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
 | [[nome-botao]] | 'voltar:parcelar-fatura:valor-entrada', 'continuar' e etc  | Deve retornar o nome do botão clicado. |
-| [[qtdeParcelas]] | '10x-130,50' e etc  | Deve retornar a quantidade de parcelas.  |
+| [[qtdeParcelas]] | '10x-130,50' e etc | Deve retornar a quantidade de parcelas. |
 | [[dataVencimento]] | '15/11' e etc  | Deve retornar a data de vencimento selecionada para o boleto. |
 
 
@@ -6996,10 +7006,11 @@ Resumo de produtos cadastrados
 ```javascript
     Analytics.logScreenView("/pagamento-de-fatura/parcelar-fatura:[[valor-entrada]]/codigo-do-boleto/[[qtdeParcelas]]/[[dataVencimento]]/");
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
 | [[valor-entrada]] | '73,05', '63,29' e etc | Deve retornar o valor da entrada para o parcelamento da fatura. |
-| [[qtdeParcelas]] | '10x-130,50' e etc  | Deve retornar a quantidade de parcelas.  |
+| [[qtdeParcelas]] | '10x-130,50' e etc | Deve retornar a quantidade de parcelas. |
 | [[dataVencimento]] | '15/11' e etc  | Deve retornar a data de vencimento selecionada para o boleto. |
 
 
@@ -7015,9 +7026,11 @@ Resumo de produtos cadastrados
         	eventLabel: "[[nome-botao]]"
         });
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
 | [[nome-botao]] | 'visualizar-boleto' e 'copiar-codigo' | Deve retornar o nome do botão clicado. |
+
 
 
 <br />
@@ -7032,9 +7045,11 @@ Resumo de produtos cadastrados
         	eventLabel: "[[callback]]"
         });
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
 | [[callback]] | 'codigo-copiado-com-sucesso', 'erro:codigo-vencido' e etc | Deve retornar o callback mostrado ao usuário. |
+
 
 
 <br />
