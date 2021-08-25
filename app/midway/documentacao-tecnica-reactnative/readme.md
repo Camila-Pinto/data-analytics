@@ -45,7 +45,7 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Habilitar Função Crédito do Cartão](#habilitar-fun&#231;&#227;o-cr&#233;dito-do-cart&#227;o)
 - [Credito Pré Aprovado](#credito-pr&#233;-aprovado)
 - [Cartões - Fase 2.1](#cartoes-fase-2.1)
-- [Pagar Fatura - Fase 2.2](#pagar-fatura-fase.2.2)
+- [Pagamento de Fatura](#pagamento-de-fatura)
 - [Fase 2.3](#fase-2.3)
 - [Fase 2.2.5 - Conta Pagamento - Depósito via Boleto](#fase-2.2.5-conta-pagamento-deposito-via-boleto)
 - [Fase 2.4 - Conta Pagamento - Extrato](#fase2.4-conta-pagamento-extrato)
@@ -4542,8 +4542,6 @@ Resumo de produtos cadastrados
 
 ### Perfil / Canais Digitais 2.2.5
 
-### Perfil / Canais Digitais 2.2.5
-
 - **Onde:** Visualização da tela &quot;Perfil&quot;.
 
 ```javascript
@@ -6790,7 +6788,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Pagar Fatura - Fase 2.2
+### Pagamento de Fatura
 
 - **Onde:** Visualização da tela de "Pagamento de Fatura"
 
@@ -6817,8 +6815,8 @@ Resumo de produtos cadastrados
 
 <br />
 
-- **Quando:** Após a seleção de um valor de parcela
-- **Onde:** Na primeira tela de Pagamento de fatura dentro do card &quot;Parcelar Fatura&quot;
+- **Quando:** Na interação com o card "Parcelar Fatura"
+- **Onde:** Na primeira tela de "Pagamento de Fatura"
 
 ```javascript
         Analytics.logEvent("event", {
@@ -6905,7 +6903,7 @@ Resumo de produtos cadastrados
         	eventCategory: "app-midway:pagamento-de-fatura:parcelar-fatura",
         	eventAction: "checkbox:parcela",
         	eventLabel: "[[selecionou-ou-desselecionou]]",
-			qtdeParcelas: "[[qtdeParcelas]]"
+		qtdeParcelas: "[[qtdeParcelas]]"
         });
 ```
 | Variável        | Exemplo                               | Descrição                         |
@@ -6931,6 +6929,104 @@ Resumo de produtos cadastrados
 
 <br />
 
+- **Onde:** Visualização da tela de "Parcelar Fatura", onde o usuário visualiza o valor parcelado
+
+```javascript
+    Analytics.logScreenView("/pagamento-de-fatura/parcelar-fatura:[[valor-entrada]]/[[qtdeParcelas]]/[[dataVencimento]]/");
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[valor-entrada]] | '73,05', '63,29' e etc | Deve retornar o valor da entrada para o parcelamento da fatura. |
+| [[qtdeParcelas]] | '10x-130,50' e etc | Deve retornar a quantidade de parcelas. |
+| [[dataVencimento]] | '15/11' e etc | Deve retornar a data de vencimento selecionada para o boleto. |
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "Parcelar fatura", fase "Valor da entrada"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:parcelar-fatura",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]",
+		qtdeParcelas: "[[qtdeParcelas]]",
+		dataVencimento: "[[dataVencimento]]"
+        });
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'voltar:parcelar-fatura:valor-entrada', 'continuar' e etc  | Deve retornar o nome do botão clicado. |
+| [[qtdeParcelas]] | '10x-130,50' e etc | Deve retornar a quantidade de parcelas. |
+| [[dataVencimento]] | '15/11' e etc | Deve retornar a data de vencimento selecionada para o boleto. |
+
+<br />
+
+- **Onde:** Visualização da tela de "Processando o seu parcelamento"
+
+```javascript
+    Analytics.logScreenView("/pagamento-de-fatura/parcelar-fatura/processando-seu-parcelamento/");
+```
+
+<br />
+
+- **Quando:** No clique do botão "OK"
+- **Onde:** Na tela de "Processando o seu parcelamento"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:parcelar-fatura",
+        	eventAction: "clique:botao",
+        	eventLabel: "ok:processando-seu-parcelamento"
+        });
+```
+
+<br />
+
+- **Onde:** Visualização da tela de "Parcelar Fatura", onde estará disponível o código do boleto para pagamento.
+
+```javascript
+    Analytics.logScreenView("/pagamento-de-fatura/parcelar-fatura:[[valor-entrada]]/codigo-do-boleto/[[qtdeParcelas]]/[[dataVencimento]]/");
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[valor-entrada]] | '73,05', '63,29' e etc  | Deve retornar o valor da entrada para o parcelamento da fatura. |
+| [[qtdeParcelas]] | '10x-130,50' e etc | Deve retornar a quantidade de parcelas. |
+| [[dataVencimento]] | '15/11' e etc | Deve retornar a data de vencimento selecionada para o boleto. |
+
+<br />
+
+- **Quando:** No clique dos botões "Visualizar boleto" e "Copiar Código"
+- **Onde:** Na tela de "Parcelar Fatura", onde estará disponível o código do boleto para pagamento.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:parcelar-fatura:boleto",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'visualizar-boleto' e 'copiar-codigo' | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Quando:** No callback, após copiar o código do boleto
+- **Onde:** Na tela de "Parcelar Fatura", onde estará disponível o código do boleto para pagamento.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:parcelar-fatura:boleto",
+        	eventAction: "callback:copiar-codigo",
+        	eventLabel: "[[callback]]"
+        });
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[callback]] | 'codigo-copiado-com-sucesso', 'erro:codigo-vencido' e etc | Deve retornar o callback mostrado ao usuário. |
+
+<br />
 
 - **Quando:** Na interação com o card &quot;Pagar outro valor&quot; após a seleção ou preenchimento do valor que será pago
 - **Onde:** Na primeira tela de Pagamento de fatura
@@ -6942,7 +7038,6 @@ Resumo de produtos cadastrados
         	eventLabel: "pagar-outro-valor"
         });
 ```
-
 
 <br />
 
@@ -6957,14 +7052,12 @@ Resumo de produtos cadastrados
         });
 ```
 
-
 <br />
 
 
 ```javascript
     Analytics.logScreenView("/pagamento-de-fatura/condicoes-e-tarifas/");
 ```
-
 
 <br />
 
@@ -6979,7 +7072,6 @@ Resumo de produtos cadastrados
         });
 ```
 
-
 <br />
 
 - **Onde:**  Visualização da tela de &#039;Pagamento de Fatura&#039; após a seleção do tipo de pagamento
@@ -6990,7 +7082,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tipo-pagamento]]  | Ex.: &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipo de pagamento efetuada pelo cliente. |
+| [[tipo-pagamento]]  | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipo de pagamento efetuada pelo cliente. |
 
 <br />
 
@@ -7008,7 +7100,7 @@ Resumo de produtos cadastrados
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[tipo-pagamento]] | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipo de pagamento efetuada pelo cliente. |
-| [[nome-botao]] | Deve retornar o título do botão clicado pelo usuário. | Ex.: &#039;pagar-com-a-conta-midway&#039; ou &#039;gerar-boleto&#039; |
+| [[nome-botao]] |  &#039;pagar-com-a-conta-midway&#039; ou &#039;gerar-boleto&#039; | Deve retornar o título do botão clicado pelo usuário. |
 
 <br />
 
