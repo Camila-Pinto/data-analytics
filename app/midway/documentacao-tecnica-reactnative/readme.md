@@ -6451,7 +6451,6 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/credito-pre-aprovado/avaliacao-emergencial-de-credito")
 ```
 
-
 <br />
 
 - **VIsualização das telas de 'Sucesso'**
@@ -6462,8 +6461,6 @@ Resumo de produtos cadastrados
 
 
 <br />
-
-
 
 
 ### Cartões - Fase 2.1 - Cartões - Home
@@ -6521,8 +6518,6 @@ Resumo de produtos cadastrados
         	eventLabel: "informacoes-cambio"
         });
 ```
-
-
 
 <br />
 
@@ -6589,7 +6584,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tela]] |  | Deve retornar o título da tela acessada pelo usuário. Ex.: &#039;termo-de-uso-da-conta-pagamento&#039;, &#039;termo-de-uso-da-conta-corrente&#039;, &#039;termo-de-uso-cartoes-rchlo&#039;, &#039;parcelamento-de-limite-emergencial&#039;, &#039;cancelamento-de-limite-emergencial&#039;, &#039;termo-de-privacidade-app-midway&#039;, etc |
+| [[tela]] | &#039;termo-de-uso-da-conta-pagamento&#039;, &#039;termo-de-uso-da-conta-corrente&#039;, &#039;termo-de-uso-cartoes-rchlo&#039;, &#039;parcelamento-de-limite-emergencial&#039;, &#039;cancelamento-de-limite-emergencial&#039;, &#039;termo-de-privacidade-app-midway&#039; | Deve retornar o título da tela acessada pelo usuário.|
 
 <br />
 
@@ -6606,7 +6601,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[titulo-botao]] |  | Deve retornar o nome do botão clicado. Ex.: &#039;termo-de-uso-da-conta-pagamento&#039;, &#039;termo-de-uso-da-conta-corrente&#039;, &#039;termo-de-uso-cartoes-rchlo&#039;, &#039;parcelamento-de-limite-emergencial&#039;, &#039;cancelamento-de-limite-emergencial&#039;, &#039;termo-de-privacidade-app-midway&#039;, etc |
+| [[titulo-botao]] | &#039;termo-de-uso-da-conta-pagamento&#039;, &#039;termo-de-uso-da-conta-corrente&#039;, &#039;termo-de-uso-cartoes-rchlo&#039;, &#039;parcelamento-de-limite-emergencial&#039;, &#039;cancelamento-de-limite-emergencial&#039;, &#039;termo-de-privacidade-app-midway&#039;, | etc  Deve retornar o nome do botão clicado. |
 
 <br />
 
@@ -6676,7 +6671,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tela]] |  | Deve retornar o o título da tela acessada pelo usuário. Ex.: &#039;configuracao&#039;, &#039;melhor-dia-de-compra&#039;, &#039;vencimento-de-fatura&#039;, &#039;voce-nao-vai-querer-perder&#039;, &#039;compra-aprovada&#039;, &#039;fatura-disponivel-para-pagamento&#039;, etc |
+| [[tela]] | &#039;configuracao&#039;, &#039;melhor-dia-de-compra&#039;, &#039;vencimento-de-fatura&#039;, &#039;voce-nao-vai-querer-perder&#039;, &#039;compra-aprovada&#039;, &#039;fatura-disponivel-para-pagamento&#039;, etc | Deve retornar o o título da tela acessada pelo usuário.  |
 
 <br />
 
@@ -6693,7 +6688,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-card]] | &#039;melhor-dia-de-compra&#039;, &#039;vencimento-de-fatura&#039;, &#039;voce-nao-vai-querer-perceber&#039;, &#039;compra-aprovada&#039;, etc | Deve retornar o título do botão clicado; |
+| [[nome-card]] | 'melhor-dia-de-compra', 'vencimento-de-fatura', 'voce-nao-vai-querer-perceber', 'compra-aprovada', 'parcelamento-de-fatura' e etc <br />  **Obs.: Deve retornar 'configuracoes' na interação com o botão 'Engrenagem'**  | Deve retornar o título do botão clicado; |
 
 <br />
 
@@ -6710,8 +6705,8 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tela]] |  | Deve retornar o o título da tela acessada pelo usuário. Ex.: &#039;configuracao&#039;, &#039;melhor-dia-de-compra&#039;, &#039;vencimento-de-fatura&#039;, &#039;voce-nao-vai-querer-perder&#039;, &#039;compra-aprovada&#039;, &#039;fatura-disponivel-para-pagamento&#039;, etc |
-| [[titulo-botao]] |  | Deve retornar o título do botões clicado. Ex.: &#039;voltar&#039;, &#039;aviso-de-compras-ativado&#039;, &#039;aviso-de-compras-desativado&#039;, &#039;melhor-dia-de-compra-ativado&#039;, &#039;melhor-dia-de-compra-desativado&#039;, &#039;vencimento-de-fatura-ativado&#039;, &#039;vencimento-de-fatura-desativado&#039;, &#039;descontos-e-promocoes-ativado&#039;, &#039;descontos-e-promocoes-desativado&#039;, &#039;apagar-mensagem&#039;, &#039;ir-para-pagamento-de-fatura&#039;, &#039;ir-para-loja-online&#039;,  |
+| [[tela]] | &#039;configuracao&#039;, &#039;melhor-dia-de-compra&#039;, &#039;vencimento-de-fatura&#039;, &#039;voce-nao-vai-querer-perder&#039;, &#039;compra-aprovada&#039;, &#039;fatura-disponivel-para-pagamento&#039;, etc | Deve retornar o o título da tela acessada pelo usuário.  |
+| [[titulo-botao]] | &#039;voltar&#039;, &#039;aviso-de-compras-ativado&#039;, &#039;aviso-de-compras-desativado&#039;, &#039;melhor-dia-de-compra-ativado&#039;, &#039;melhor-dia-de-compra-desativado&#039;, &#039;vencimento-de-fatura-ativado&#039;, &#039;vencimento-de-fatura-desativado&#039;, &#039;descontos-e-promocoes-ativado&#039;, &#039;descontos-e-promocoes-desativado&#039;, &#039;apagar-mensagem&#039;, &#039;ir-para-pagamento-de-fatura&#039;, &#039;ir-para-loja-online&#039;, |  Deve retornar o título do botões clicado. |
 
 <br />
 
@@ -6739,7 +6734,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[mes]] |  | Deve retornar o título do mês clicado pelo usuário. Ex.: &#039;set&#039;, &#039;out&#039;, &#039;nov&#039;, etc |
+| [[mes]] | Ex.: &#039;set&#039;, &#039;out&#039;, &#039;nov&#039;, etc | Deve retornar o título do mês clicado pelo usuário. |
 
 <br />
 
@@ -6756,7 +6751,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[titulo-botao]] |  | Deve retornar o título do botões clicado. Ex.:  &#039;pagar-em-pdf&#039;, &#039;visualizar-a-fatura-em-pdf&#039; e &#039;pagar-fatura&#039; |
+| [[titulo-botao]] | Deve retornar o título do botões clicado. | Ex.:  &#039;pagar-em-pdf&#039;, &#039;visualizar-a-fatura-em-pdf&#039; e &#039;pagar-fatura&#039; |
 
 <br />
 
@@ -6773,7 +6768,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[opcao-selecionada]] |  | Deve retornar a opção selecionada pelo usuário. Ex.: &#039;titular&#039; ou &#039;adicional&#039; |
+| [[opcao-selecionada]] |&#039;titular&#039; ou &#039;adicional&#039; | Deve retornar a opção selecionada pelo usuário.  |
 
 <br />
 
@@ -6790,19 +6785,22 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[consulta-pagamento]] |  | Deve retornar se o boleto que esta sendo gerado pelo usuário é para Pagamento de fatura ou apenas visualização. Ex.: &#039;visualizar-fatura&#039; quando o boleto é gerado a partir do clique em Visualizar a fatura em PDF ou &#039;pagar-fatura&#039; quando o boleto é gerado a partir do clique em Pagar fatura |
+| [[consulta-pagamento]] | &#039;visualizar-fatura&#039; quando o boleto é gerado a partir do clique em Visualizar a fatura em PDF ou &#039;pagar-fatura&#039; quando o boleto é gerado a partir do clique em Pagar fatura | Deve retornar se o boleto que esta sendo gerado pelo usuário é para Pagamento de fatura ou apenas visualização. |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:falha-ao-gerar-o-boleto&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
 
 ### Pagar Fatura - Fase 2.2
 
-- **Onde:** Visualização da tela de &#039;Pagamento de Fatura&#039;
+- **Onde:** Visualização da tela de "Pagamento de Fatura"
 
 ```javascript
-    Analytics.logScreenView("/pagamento-de-fatura/");
+    Analytics.logScreenView("/pagamento-de-fatura:[[valor-fatura]]/vencimento:[[dataVencimento]]/");
 ```
-
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[valor-fatura]] | '600', '1200' e etc |  Deve retornar a data de vencimento selecionada para o boleto. |
+| [[dataVencimento]] | '15/11' e etc | Deve retornar a data de vencimento selecionada para o boleto. |
 
 <br />
 
@@ -6817,7 +6815,6 @@ Resumo de produtos cadastrados
         });
 ```
 
-
 <br />
 
 - **Quando:** Após a seleção de um valor de parcela
@@ -6827,15 +6824,113 @@ Resumo de produtos cadastrados
         Analytics.logEvent("event", {
         	eventCategory: "app-midway:pagamento-de-fatura",
         	eventAction: "interagiu:card",
-        	eventLabel: "parcelar-fatura:[[valor-parcela]]"
+        	eventLabel: "parcelar-fatura"
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[valor-parcela]] |  | Deve retornar o valor da parcela selecionada pelo usuário. Ex.: &#039;10x-de-70.00&#039;, &#039;6x-de-110.00&#039;, &#039;2x-de-320.00&#039;, etc |
+<br />
+
+- **Onde:** Visualização da tela de "Parcelar Fatura"
+
+```javascript
+    Analytics.logScreenView("/pagamento-de-fatura/parcelar-fatura/");
+```
 
 <br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "Parcelar fatura"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:parcelar-fatura",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'voltar:parcelar-fatura', 'continuar' e etc  | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela de "Parcelar Fatura", onde o usuário visualiza o valor parcelado
+
+```javascript
+    Analytics.logScreenView("/pagamento-de-fatura/parcelar-fatura:[[valor-parcelado]]/");
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[valor-parcelado]] | '739,05', '638,29' e etc  | Deve retornar o valor parcelado da fatura. |
+
+<br />
+
+- **Quando:** Na interação com o campo "Selecione o valor da entrada"
+- **Onde:** Na tela de "Parcelar fatura", fase "Valor Parcelado"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:parcelar-fatura",
+        	eventAction: "interacao:campo",
+        	eventLabel: "valor-entrada:[[valor]]"
+        });
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[valor]] | '74,00', '200,00' e etc  | Deve retornar o valor de entrada que o usuário informou. |
+
+<br />
+
+- **Quando:** No callback do campo de "Selecione o valor de entrada"
+- **Onde:** Na tela de "Parcelar fatura", fase "Valor Parcelado"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:parcelar-fatura",
+        	eventAction: "callback:campo:valor-de-entrada",
+        	eventLabel: "[[sucesso-ou-erro]]"
+        });
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[sucesso-ou-erro]] | 'sucesso', 'erro:valor-minimo-permitido-74,00' e etc  | Deve retornar o callback do campo. |
+
+<br />
+
+- **Quando:** Na interação com os checkboxs para escolher a quantidade de Parcelas
+- **Onde:** Na tela de "Parcelar fatura", fase "Valor Parcelado"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:parcelar-fatura",
+        	eventAction: "checkbox:parcela",
+        	eventLabel: "[[selecionou-ou-desselecionou]]",
+			qtdeParcelas: "[[qtdeParcelas]]"
+        });
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[selecionou-ou-desselecionou]] | 'selecionou' ou 'desselecionou'  | Deve retornar a ação do usuário.  |
+| [[qtdeParcelas]] | '10x-130,50' e etc  | Deve retornar a quantidade de parcelas. |
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "Parcelar fatura", fase "Valor Parcelado"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:parcelar-fatura",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'voltar:parcelar-fatura:valor-parcelado', 'continuar' e etc  | Deve retornar o nome do botão clicado.  |
+
+<br />
+
 
 - **Quando:** Na interação com o card &quot;Pagar outro valor&quot; após a seleção ou preenchimento do valor que será pago
 - **Onde:** Na primeira tela de Pagamento de fatura
@@ -6844,7 +6939,7 @@ Resumo de produtos cadastrados
         Analytics.logEvent("event", {
         	eventCategory: "app-midway:pagamento-de-fatura",
         	eventAction: "interagiu:card",
-        	eventLabel: "outro-valor"
+        	eventLabel: "pagar-outro-valor"
         });
 ```
 
@@ -6895,7 +6990,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tipo-pagamento]] |  | Deve retornar o valor conforme a seleção de tipo de pagamento efetuada pelo cliente. Ex.: &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; |
+| [[tipo-pagamento]]  | Ex.: &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipo de pagamento efetuada pelo cliente. |
 
 <br />
 
@@ -6912,8 +7007,8 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tipo-pagamento]] |  | Deve retornar o valor conforme a seleção de tipo de pagamento efetuada pelo cliente. Ex.: &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; |
-| [[nome-botao]] |  | Deve retornar o título do botão clicado pelo usuário. Ex.: &#039;pagar-com-a-conta-midway&#039; ou &#039;gerar-boleto&#039; |
+| [[tipo-pagamento]] | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipo de pagamento efetuada pelo cliente. |
+| [[nome-botao]] | Deve retornar o título do botão clicado pelo usuário. | Ex.: &#039;pagar-com-a-conta-midway&#039; ou &#039;gerar-boleto&#039; |
 
 <br />
 
@@ -6930,7 +7025,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tipo-pagamento]] |  | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente. Ex.: &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; |
+| [[tipo-pagamento]]  | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039;  |  Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente. |
 | [[status]] | &#039;sucesso:recebemos-o-seu-pagamento&#039;, &#039;sucesso:seu-boleto-foi-gerado&#039;, &#039;erro:falha-ao-gerar-o-boleto&#039;, &#039;erro:saldo-insuficiente&#039;, &#039;erro:falha-no-servico&#039;, etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -6948,7 +7043,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] |  | Deve retornar o título do botão clicado pelo usuário. Ex.: &#039;gerar-boleto&#039; ou &#039;voltar&#039; |
+| [[nome-botao]] | &#039;gerar-boleto&#039; ou &#039;voltar&#039; | Deve retornar o título do botão clicado pelo usuário. |
 
 <br />
 
@@ -6960,7 +7055,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tipo-pagamento]] |  | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente. Ex.: &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; |
+| [[tipo-pagamento]] | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente  |
 
 <br />
 
@@ -6977,7 +7072,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tipo-pagamento]] |  | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente. Ex.: &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; |
+| [[tipo-pagamento]] |  &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente. |
 
 <br />
 
@@ -6989,7 +7084,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tipo-pagamento]] |  | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente. Ex.: &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; |
+| [[tipo-pagamento]] | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente.  |
 
 <br />
 
@@ -7006,7 +7101,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tipo-pagamento]] |  | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente. Ex.: &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; |
+| [[tipo-pagamento]] | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente.  |
 
 <br />
 
@@ -7018,7 +7113,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tipo-pagamento]] |  | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente. Ex.: &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; |
+| [[tipo-pagamento]] | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente.  |
 
 <br />
 
@@ -7035,7 +7130,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tipo-pagamento]] |  | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente. Ex.: &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; |
+| [[tipo-pagamento]] | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente.  |
 | [[nome-botao]] | &#039;copiar-codigo&#039; ou &#039;compartilhar&#039; | Deve retornar o nome do botão clicado. |
 
 <br />
