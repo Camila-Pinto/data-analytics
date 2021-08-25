@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Midway APP
 
-Última atualização: 24/08/2021 <br />
+Última atualização: 25/08/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -42,7 +42,8 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Home](#home)
 - [Home - Migração de Conta](#home-migra&#231;&#227;o-de-conta)
 - [Cotação de câmbio](cota&#231;&#227;o-de-c&#226;mbio)
-- [Credito Pré Aprovado](credito-pr&#233;-aprovado)
+- [Habilitar Função Crédito do Cartão](#habilitar-fun&#231;&#227;o-cr&#233;dito-do-cart&#231;o)
+- [Credito Pré Aprovado](#credito-pr&#233;-aprovado)
 - [Cartões - Fase 2.1](#cartoes-fase-2.1)
 - [Pagar Fatura - Fase 2.2](#pagar-fatura-fase.2.2)
 - [Fase 2.3](#fase-2.3)
@@ -6053,7 +6054,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[banner-clicado]] | &#039;habilite-token-no-app&#039;, &#039;assistencia-automovel-midway&#039; e etc | Deve retornar o nome do banner clicado. |
+| [[banner-clicado]] | 'habilite-token-no-app', 'assistencia-automovel-midway', 'habilitar-credito-cartao:seja-um-dos-primeiros' e etc | Deve retornar o nome do banner clicado. |
 
 <br />
 
@@ -6274,9 +6275,63 @@ Resumo de produtos cadastrados
 
 <br />
 
+### Habilitar Função Crédito do Cartão
+
+- **Visualização do modal "Está chegando a função crédito do seu cartão!"**
+
+```javascript
+    Analytics.logScreenView("/modal-funcao-credito/")
+```
+
+<br />
+
+- **Quando:** No clique nos botões "Tenho Interesse", "Fechar" ou "Clicou fora"
+- **Onde:** No modal de "Está chegando a função crédito do seu cartão"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:modal-funcao-credito",
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-botao]]" 
+        })
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-icone]] | 'botao' ou 'icone' | Deve retornar o elemento clicado. |
+| [[nome-botao]] | 'fechar:modal-funcao-credito', 'tenho-interesse', 'clicou-fora:modal-funcao-credito' e etc | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Visualização do modal "Tudo certo!"**
+
+```javascript
+    Analytics.logScreenView("/modal-funcao-credito/tudo-certo/")
+```
+
+<br />
+
+- **Quando:** No clique nos botões "Fechar" ou "Clicou fora"
+- **Onde:** No modal "Tudo certo!"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:modal-funcao-credito:tudo-certo",
+        	eventAction: "clique:[[botao-icone]]" ,
+        	eventLabel: "[[nome-botao]]" 
+        })
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-icone]] | 'botao' ou 'icone' | Deve retornar o elemento clicado. |
+| [[nome-botao]] | 'fechar:modal-tudo-certo', 'fechar', 'clicou-fora:modal-tudo-certo' e etc | Deve retornar o nome do botão clicado. |
+
+<br />
+
 ### Credito Pré Aprovado 
 
--**VIsualização da tela de Crédito Pré Aprovado**
+- **Visualização da tela de Crédito Pré Aprovado**
 
 ```javascript
     Analytics.logScreenView("/credito-pre-aprovado")
@@ -6363,7 +6418,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-- **VIsualização das telas de &#039;Dia de vencimento da fatura&#039;**
+- **Visualização das telas de &#039;Dia de vencimento da fatura&#039;**
 
 ```javascript
     Analytics.logScreenView("/credito-pre-aprovado/vencimento-da-fatura")
