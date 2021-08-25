@@ -6795,10 +6795,12 @@ Resumo de produtos cadastrados
 ```javascript
     Analytics.logScreenView("/pagamento-de-fatura:[[valor-fatura]]/vencimento:[[dataVencimento]]/");
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[valor-fatura]] | '600', '1200' e etc  |  Deve retornar a data de vencimento selecionada para o boleto. |
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
+| [[valor-fatura]] | '600', '1200' e etc | Deve retornar a data de vencimento selecionada para o boleto. |
 | [[dataVencimento]] | '15/11' e etc | Deve retornar a data de vencimento selecionada para o boleto. |
+
 
 <br />
 
