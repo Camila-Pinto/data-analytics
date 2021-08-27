@@ -27,7 +27,7 @@
 - [Simulação de Empréstimo](#simula&#231;&#227;o-de-empr&#233;stimo)
 
 ## Implementação da Camada de dados - Projeto Midway Site
-Última atualização: 12/08/2021 <br />
+Última atualização: 27/08/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -2210,8 +2210,6 @@ window.dataLayer.push({
 >Botão</div>
 ```
 
-
-
 <br />
 
 ### Quitação de Dívida
@@ -2228,13 +2226,11 @@ window.dataLayer.push({
 >Botão</div>
 ```
 
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-botao]]  | 'botao:primeira-etapa', 'botao:segunda-etapa' e etc | Deve retornar o nome do botão clicado. |
 
 <br />
-
 
 **No callback após preencher os campos**<br />
 
@@ -2252,14 +2248,11 @@ window.dataLayer.push({
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[erro]] | &#039;erro:cpf-invalido&#039;, &#039;erro:data-nascimento-invalido&#039;, &#039;erro:dados-invalidos&#039; e etc | Deve retornar o erro do callback, após preencher os campos. |
 
 <br />
-
 
 **No callback após validar os campos**<br />
 
@@ -2277,83 +2270,77 @@ window.dataLayer.push({
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[status]] | &#039;possui-pendencia&#039;, &#039;nao-foi-encontrada-nenhuma-pendencia&#039; e etc | Deve retornar o status do callback. |
 
 <br />
 
+**No clique dos botões para negociar a dívida**<br />
 
-**No clique dos botões**<br />
-
-- **Onde:** Na tela de Negocie sua dívida, na etapa de &quot;Confira os detalhes do seu cartão Riachuelo&quot;
+- **Onde:** Na tela de Negocie sua dívida, na etapa de "Confira os detalhes do seu cartão Riachuelo e Empréstimo Pessoal"
     
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'midway:negocie-sua-divida',
+    'eventCategory': 'midway:negocie-sua-divida:[[produto]]',
     'eventAction': 'clique:botao',
     'eventLabel': 'valor:[[valor]]:[[nome-botao]]'
   });
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
+| [[produto]] | 'cartao-riachuelo' ou 'emprestimo-pessoal' | Deve retornar o produto que usuário deseja negociar a dívida. |
 | [[valor]] | &#039;1893.22&#039;, &#039;1495.38-2x&#039; e etc | Deve retornar o valor com desconto. |
 | [[nome-botao]]  | &#039;pagar-com-desconto&#039;, &#039;simular-parcelamento&#039;, &#039;parcelado&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
 
-
 **No clique dos links**<br />
 
-- **Onde:** Na tela de Negocie sua dívida, na etapa de &quot;Confira os detalhes do seu cartão Riachuelo&quot;
+- **Onde:** Na tela de Negocie sua dívida, na etapa de "Confira os detalhes do seu cartão Riachuelo e Empréstimo Pessoal"
     
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'midway:negocie-sua-divida',
+    'eventCategory': 'midway:negocie-sua-divida:[[produto]]',
     'eventAction': 'clique:link',
     'eventLabel': 'mais-opcoes-parcelamento'
   });
 </script>
 ```
 
-
-
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[produto]] | 'cartao-riachuelo' ou 'emprestimo-pessoal' | Deve retornar o produto que usuário deseja negociar a dívida. |
 
 <br />
 
-
 **No callback após tentar realizar um pagamento**<br />
 
-- **Onde:** Na tela de Negocie sua dívida, na etapa de &quot;Confira os detalhes do seu cartão Riachuelo&quot;
+- **Onde:** Na tela de Negocie sua dívida, na etapa de "Confira os detalhes do seu cartão Riachuelo e Empréstimo Pessoal"
     
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'midway:negocie-sua-divida',
+    'eventCategory': 'midway:negocie-sua-divida:[[produto]]',
     'eventAction': 'validacao-pagamento:callback',
     'eventLabel': 'tipo:[[tipo-pagamento]]:[[status]]'
   });
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
+| [[produto]] | 'cartao-riachuelo' ou 'emprestimo-pessoal' | Deve retornar o produto que usuário deseja negociar a dívida. |
 | [[tipo-pagamento]] | &#039;pagar-com-desconto&#039;, &#039;parcelado&#039;, &#039;simular-parcelamento&#039; e etc | Deve retornar o tipo do pagamento. |
 | [[status]] | &#039;token-expirado-recarregar-pagina&#039; e etc | Deve retornar o status do callback. |
 
@@ -2369,21 +2356,19 @@ window.dataLayer.push({
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'midway:negocie-sua-divida',
+    'eventCategory': 'midway:negocie-sua-divida:[[produto]]',
     'eventAction': 'clique:botao',
     'eventLabel': '[[tipo-pagamento]]:copiar-codigo'
   });
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
+| [[produto]] | 'cartao-riachuelo' ou 'emprestimo-pessoal' | Deve retornar o produto que usuário deseja negociar a dívida. |
 | [[tipo-pagamento]] | &#039;pagar-com-desconto&#039;, &#039;parcelado&#039;, &#039;simular-parcelamento&#039; e etc | Deve retornar o tipo do pagamento. |
 
 <br />
-
 
 ### Simulação de Empréstimo
 
