@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Midway APP
 
-Última atualização: 25/08/2021 <br />
+Última atualização: 27/08/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -56,6 +56,7 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Fase 2.7 - Conta Pagamento - Transferênica Midway para Midway](#fase2.7-conta-pagamento-transferencia-midway-para-midway)
 - [Fase 2.8 - Conta Pagamento - Transferência Midway - Outros Bancos](#fase2.8-conta-pagamento-transferencia-midway-para-outros-bancos)
 - [Outros Serviços](#outros-servi&#231;os)
+- [Convide e Ganhe](#convide-e-ganhe)
 - [MarketPlace Financeiro - Geral](#marketplace-financeiro---geral)
 - [Empréstimo Contratação](#empr&#233;stimo-contrata&#231;&#227;o)
 - [Empréstimo Consulta](#empr&#233;stimo-consulta)
@@ -6052,7 +6053,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[banner-clicado]] | 'habilite-token-no-app', 'assistencia-automovel-midway', 'habilitar-credito-cartao:seja-um-dos-primeiros' e etc | Deve retornar o nome do banner clicado. |
+| [[banner-clicado]] | 'habilite-token-no-app', 'assistencia-automovel-midway', 'habilitar-credito-cartao:seja-um-dos-primeiros', 'convide-e-ganhe' e etc | Deve retornar o nome do banner clicado. |
 
 <br />
 
@@ -7049,7 +7050,6 @@ Resumo de produtos cadastrados
 | Variável  | Exemplo  | Descrição    |
 | :--------- | :------ | :------------------ |
 | [[callback]] | 'codigo-copiado-com-sucesso', 'erro:codigo-vencido' e etc | Deve retornar o callback mostrado ao usuário. |
-
 
 
 <br />
@@ -10018,7 +10018,7 @@ Resumo de produtos cadastrados
 
 ### Outros Serviços
 
-- **Onde:** Na visuliazação da tela de &#039;Outros serviços&#039;, após clicar no botão do menu inferior
+- **Onde:** Na visualização da tela de &#039;Outros serviços&#039;, após clicar no botão do menu inferior
 
 
 ```javascript
@@ -10089,9 +10089,424 @@ Resumo de produtos cadastrados
 
 <br />
 
+### Convide e Ganhe
+
+- **Onde:** Na visualização da tela de "Traga seu amigo para a Midway"
+
+```javascript
+    Analytics.logScreenView("/traga-seu-amigo-para-midway/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões ou links
+- **Onde:** Na tela de "Traga seu amigo para a Midway"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convide-e-ganhe",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[elemento]] | 'botao', 'link' ou 'icone' | Deve retornar o elemento clicado. |
+| [[nome-item]] | 'voltar:traga-seu-amigo-para-midway', 'regulamento', 'convidar-amigos' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Na visualização da tela de "Regulamento"
+
+```javascript
+    Analytics.logScreenView("/traga-seu-amigo-para-midway/regulamento/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões "Voltar"
+- **Onde:** Na tela de "Regulamento"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convide-e-ganhe:regulamento",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[elemento]] | 'botao', 'link' ou 'icone' | Deve retornar o elemento clicado. |
+| [[nome-botao]] | 'voltar:regulamento' e etc | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Na visualização da tela de "Convide e Ganhe"
+
+```javascript
+    Analytics.logScreenView("/traga-seu-amigo-para-midway/convide-e-ganhe/");
+```
+
+<br />
+
+- **Quando:** No clique dos elementos da tela
+- **Onde:** Na tela de "Convide e Ganhe"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convide-e-ganhe",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[elemento]] | 'botao', 'link' ou 'icone' | Deve retornar o elemento clicado. |
+| [[nome-item]] | 'voltar:convide-e-ganhe', 'whatsapp', 'email', 'facebook' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Na visualização da tela de "Para qual e-mail você quer enviar sua indicação?"
+
+```javascript
+    Analytics.logScreenView("/traga-seu-amigo-para-midway/convide-e-ganhe/email-para-indicacao/");
+```
+
+<br />
+
+- **Quando:** Na interação com o campo e-mail
+- **Onde:** Na tela de "Para qual e-mail você quer enviar sua indicação?
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convide-e-ganhe:indicacao-por-email",
+        	eventAction: "interacao:campo",
+        	eventLabel: "preencheu:email"
+        });
+```
+
+<br />
+
+- **Quando:** No callback do campo e-mail
+- **Onde:** Na tela de "Para qual e-mail você quer enviar sua indicação?
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convide-e-ganhe:indicacao-por-email",
+        	eventAction: "callback:campo-email",
+        	eventLabel: "[[erro]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[erro]] | 'erro:email-invalido' e etc | Deve retornar o callback do campo. |
+
+<br />
+
+- **Quando:** No clique dos elementos da tela
+- **Onde:** Na tela de "Para qual e-mail você quer enviar sua indicação?
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convide-e-ganhe:indicacao-por-email",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[elemento]] | 'botao', 'link' ou 'icone' | Deve retornar o elemento clicado. |
+| [[nome-item]] | 'voltar:para-qual-email-voce-quer-enviar-sua-solicitacao', 'enviar' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Na visualização da tela de "Sua indicação foi enviada!"
+
+```javascript
+    Analytics.logScreenView("/traga-seu-amigo-para-midway/convide-e-ganhe/indicacao-enviada-por-email/");
+```
+
+<br />
+
+- **Quando:** No clique dos elementos da tela
+- **Onde:** Na tela de "Sua indicação foi enviada!"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convide-e-ganhe:indicacao-enviada-por-email",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[elemento]] | 'botao', 'link' ou 'icone' | Deve retornar o elemento clicado. |
+| [[nome-item]] | 'voltar:sua-indicacao-foi-enviada', 'voltar-para-o-inicio' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Na visualização da tela de "Sua Conta Midway"
+
+```javascript
+    Analytics.logScreenView("/convidado/sua-conta-midway/");
+```
+
+<br />
+
+- **Quando:** No clique no botão "Abrir Conta"
+- **Onde:** Na tela de "Sua Conta Midway"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convidado:sua-conta-midway",
+        	eventAction: "clique:botao",
+        	eventLabel: "abrir-conta"
+        });
+```
+
+<br />
+
+- **Onde:** Na visualização da tela de "Estamos felizes em ter você aqui"
+
+```javascript
+    Analytics.logScreenView("/convidado/sua-conta-midway/estamos-felizes-em-ter-voce-aqui/");
+```
+
+<br />
+
+- **Quando:** Na interação com o campo CPF
+- **Onde:** Na tela de "Estamos felizes em ter você aqui"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convidado",
+        	eventAction: "interacao:campo",
+        	eventLabel: "preencheu:cpf"
+        });
+```
+
+<br />
+
+- **Quando:** No callback de erro do campo e-mail
+- **Onde:** Na tela de "Estamos felizes em ter você aqui"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convidado",
+        	eventAction: "callback:campo-cpf",
+        	eventLabel: "[[erro]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[erro]] | 'erro:cpf-invalido' e etc | Deve retornar o callback do campo. |
+
+<br />
+
+- **Quando:** No clique no botão "Continuar"
+- **Onde:** Na tela de "Estamos felizes em ter você aqui"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convidado",
+        	eventAction: "clique:botao",
+        	eventLabel: "continuar"
+        });
+```
+
+<br />
+
+- **Onde:** Na visualização da tela de "Vimos aqui que foi a Fulana(o) que te indicou"
+
+```javascript
+    Analytics.logScreenView("/convidado/sua-conta-midway/vimos-que-indicaram-voce/");
+```
+
+<br />
+
+- **Quando:** No clique dos elementos da tela
+- **Onde:** Na tela de "Dados pessoais"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convidado:vimos-que-indicaram-voce",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[elemento]] | 'botao', 'link' ou 'icone' | Deve retornar o elemento clicado. |
+| [[nome-item]] | 'voltar:vimos-que-indicaram-voce', 'continuar' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Na visualização da tela de "Dados pessoais"
+
+```javascript
+    Analytics.logScreenView("/convidado/sua-conta-midway/vimos-que-indicaram-voce/dados-pessoais/");
+```
+
+<br />
+
+- **Quando:** Na interação com os campos 
+- **Onde:** Na tela de "Dados pessoais"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convidado:dados-pessoais",
+        	eventAction: "interacao:campo",
+        	eventLabel: "[[nome-campo]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[nome-campo]] | 'como-gostaria-de-ser-chamado', 'email', 'cpf' e etc | Deve retornar o nome do campo preenchido. |
+
+<br />
+
+- **Quando:** No callback de erro dos campos
+- **Onde:** Na tela de "Dados pessoais"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convidado:dados-pessoais",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[erro]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[erro]] | 'erro:cpf-invalido', 'erro:campo-invalido' e etc | Deve retornar o callback do campo. |
+
+<br />
+
+- **Quando:** No clique dos elementos da tela
+- **Onde:** Na tela de "Dados pessoais"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convidado:dados-pessoais",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[elemento]] | 'botao', 'link' ou 'icone' | Deve retornar o elemento clicado. |
+| [[nome-item]] | 'voltar:dados-pessoais', 'continuar' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Na visualização do modal "Sua conta foi aberta!"
+
+```javascript
+    Analytics.logScreenView("/convidado/sua-conta-foi-aberta/");
+```
+
+<br />
+
+- **Quando:** No clique dos elementos do modal
+- **Onde:**  No modal "Sua conta foi aberta!"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convidado:modal-sua-conta-foi-aberta",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[elemento]] | 'botao', 'link' ou 'icone' | Deve retornar o elemento clicado. |
+| [[nome-item]] | 'fechar:modal-sua-conta-foi-aberta', 'resgatar-meu-cupom', 'clicou-fora' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela de "Notificações"
+
+```javascript
+    Analytics.logScreenView("/convidado/conta-aberta/notificacoes/");
+```
+
+<br />
+
+- **Quando:** No clique dos elementos da tela
+- **Onde:** Na tela de "Notificações"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convidado:notificacoes",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[elemento]] | 'botao', 'link' ou 'icone' | Deve retornar o elemento clicado. |
+| [[nome-item]] | 'voltar:notificacoes', 'estamos-felizes-em-ter-voce-aqui' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela de "Ver detalhes"
+
+```javascript
+    Analytics.logScreenView("/convidado/conta-aberta/notificacoes/ver-detalhes/");
+```
+
+<br />
+
+- **Quando:** No clique no icone "Voltar" e ao copiar o cupom de desconto
+- **Onde:** Na tela de "Ver Detalhes"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convidado:notificacoes:ver-detalhes",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[elemento]] | 'botao', 'link' ou 'icone' | Deve retornar o elemento clicado. |
+| [[nome-item]] | 'voltar:ver-detalhes', 'copiou-cupom-de-desconto' | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Quando:** No clique no icone "Voltar" e ao copiar o cupom de desconto
+- **Onde:** Na tela de "Ver Detalhes"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:convidado:notificacoes:ver-detalhes",
+        	eventAction: "callback",
+        	eventLabel: "[[sucesso-ou-erro]]"
+        });
+```
+
+| Variável     | Exemplo      | Descrição          |
+| :----------- | :----------- | :----------------- |
+| [[sucesso-ou-erro]] | 'sucesso:cupom-copiado', 'erro:cupom-invalido', 'erro:impossivel-copiar-cupom' e etc | Deve retornar o callback após tentar copiar o cupom de desconto. |
+
+<br />
+
 ### MarketPlace Financeiro - Geral
 
-- **Onde:** Na visuliazação da tela de 'Soluções para você' dentro de Outros serviços', após clicar no botão do menu inferior
+- **Onde:** Na visualização da tela de 'Soluções para você' dentro de Outros serviços', após clicar no botão do menu inferior
 
 
 ```javascript
@@ -10101,7 +10516,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-- **Onde:** Na visuliazação da tela de produtos dentro de 'Outros serviços', após clicar no botão do menu inferior
+- **Onde:** Na visualização da tela de produtos dentro de 'Outros serviços', após clicar no botão do menu inferior
 
 
 ```javascript
