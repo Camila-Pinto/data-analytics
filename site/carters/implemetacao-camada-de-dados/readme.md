@@ -15,7 +15,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Carters
-Última atualização: 07/12/2020 <br />
+Última atualização: 30/08/2020 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -1195,7 +1195,7 @@ window.dataLayer.push({
   'dimension3': '[[cd3-tipodecartão]]',
   'dimension5': '[[cd5-bandeiracartão]]',
   'dimension7': '[[cd7-hit-metodopagamento]]',
-  'dimension8': '[[cd8-hit-statuspagamento]]',
+  'dimension8': '[[cd8-hit-status-do-pedido]]',
   'dimension13': '[[cd13-hit-frete]]',
   'dimension18': '[[cd18-hit-parcelamento]]',
   'metric1': '[[descontofrete]]',
@@ -1242,7 +1242,7 @@ window.dataLayer.push({
 | [[cd3-tipodecartão]] | &#039;credito&#039;, &#039;riachuelo&#039; | Tipo do cartão utilizado na compra |
 | [[cd5-bandeiracartão]] | &quot;visa&quot;, &quot;mastercard&quot; | Bandeira do cartão utilizada na compra |
 | [[cd7-hit-metodopagamento]] | &#039;cartao-de-credito&#039;, &#039;boleto&#039; | Nome do tipo do pagamento. |
-| [[cd8-hit-statuspagamento]] | &#039;aprovado&#039; | Nome do status do pagamento. |
+| [[cd8-hit-status-do-pedido]] |  'aprovado', 'pendente', 'reprovado' e etc | Nome do status do pedido. |
 | [[cd9-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção a2 carrinho2|
 | [[cd10-product-tamanhodoproduto]] | &#039;p&#039;,&#039;&#039;2&#039;,&#239;8-12&#039;,&#039;42&#039; | Tamanho do produto |
 | [[cd11-product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto |
