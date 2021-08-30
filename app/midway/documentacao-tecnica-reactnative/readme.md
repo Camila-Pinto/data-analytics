@@ -3820,8 +3820,6 @@ Resumo de produtos cadastrados
 
 <br />
 
-
-
 ### Transferência
 
 - **Onde:** Visualização da tela &#039;Para que conta quer transferir?&#039;.
@@ -4050,6 +4048,37 @@ Resumo de produtos cadastrados
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização do modal "Este valor não está disponível na conta hoje"
+
+```javascript
+    Analytics.logScreenView("/[[conta simples ou conta completa]]/transferencia/data-transferencia/modal:valor-indisponivel-em-conta-hoje/");
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
+
+<br />
+
+- **Quando:** No clique em um dos botões e links
+- **Onde:** No modal "Este valor não está disponível na conta hoje"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:[[conta simples ou conta completa]]:transferencia:data-transferencia",
+        	eventAction: "clique:[[botao-ou-link]]:modal:valor-indisponivel",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
+| [[botao-ou-link]] | 'botao' ou 'link' | Deve retornar o nome do elemento clicado. |
+| [[nome-item]] | 'tentar-outro-valor-ou-data:sim', 'credito-pessoal:quero-contratar', 'nao-ir-para-o-inicio', 'clicou-fora' e etc | Deve retornar o nome do item clicado. |
 
 <br />
 
