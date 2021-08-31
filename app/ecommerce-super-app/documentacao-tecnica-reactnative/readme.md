@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Riachuelo APP
 
-Última atualização: 18/08/2021. <br />
+Última atualização: 31/08/2021. <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -3507,7 +3507,33 @@ Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/associe-riachuelo/limi
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | `[[elemento]]` |  'botao', 'link', 'icone' e etc | Deve retornar o nome do elemento. |
-| `[[item-clicado]]` |  'baixar-o-app-midway', 'clique-aqui', 'voltar' e etc | Deve retornar o nome do item clicado. |
+| `[[item-clicado]]` |  'baixar-o-app-midway', 'clique-aqui', 'voltar:emprestimos', 'simular-agora', 'contratar-no-app-midway' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Quando:** Visualização do modal "App Midway", para baixar o aplicativo App Midway
+
+```javascript
+Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/associe-riachuelo/limite/emprestimos/modal:baixe-o-app-da-midway/");
+```
+
+<br />
+
+- **Quando:** Nos cliques dos botões ou ícones do modal para baixar o novo App da Midway
+- **Onde:** No modal "App Midway", para baixar o aplicativo App Midway
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:emprestimos:modal:baixe-o-app-midway",
+        	"eventAction": "clique:[[elemento]]",
+        	"eventLabel": "[[item-clicado]]"
+        })
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[elemento]]` |  'botao', 'link', 'icone' e etc | Deve retornar o nome do elemento. |
+| `[[item-clicado]]` |  'play-store', 'app-store', 'fechar:modal-baixe-o-app' e etc | Deve retornar o nome do item clicado. |
 
 <br />
 
