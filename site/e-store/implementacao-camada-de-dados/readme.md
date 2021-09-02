@@ -23,7 +23,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto E-Store
-Última atualização: 12/08/2021 <br />
+Última atualização: 02/09/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -874,16 +874,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 ### Checkout
 
-**No clique nos botões de "Continuar", "+"(Aumentar), "-" (Diminuir), Lixeira e voltar**<br />
+**No clique nos botões de "Continuar Comprando", "Finalizar Compra", "+"(Aumentar), "-" (Diminuir), Fechar**<br />
 
-- **Onde:** Na página de Sacola
+- **Onde:** No modal de "Sua Sacola"
 
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'estore:sacola',
+    'eventCategory': 'estore:modal-sacola',
     'eventAction': 'clique:botao',
     'eventLabel': '[[nome-botao]]',
   });
@@ -892,7 +892,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | 'continuar', 'aumentar-quantidade', 'diminuir-quantidade', 'excluir', 'voltar' e etc. | Deve retornar o nome do botão clicado. |
+| [[nome-botao]] | 'continuar-comprando', 'finalizar-compra', 'aumentar-quantidade', 'diminuir-quantidade', 'fechar:modal-sacola' e etc | Deve retornar o nome do botão clicado. |
 
 <br />
 
@@ -994,16 +994,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
-**No clique nos botões/links**<br />
+**No clique nos botões "Voltar", "Continuar" e "Fechar"**<br />
 
-- **Onde:** Na tela de "Finalize sua compra pelo celular"
+- **Onde:** Nas telas de "Finalize sua compra pelo celular", seções "Sacola" e "Finalização"
 
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'estore:compra',
+    'eventCategory': 'estore:sacola:finalize-sua-compra',
     'eventAction': 'clique:[[botao-ou-link]]',
     'eventLabel': '[[item-clicado]]',
   });
@@ -1013,7 +1013,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[botao-ou-link]] | 'botao' ou 'link' | Deve retornar o nome do elemento clicado. |
-| [[item-clicado]] | 'voltar', 'continuar', 'duvidas' ou 'fechar' | Deve retornar o nome do item clicado. |
+| [[item-clicado]] | 'voltar:sacola:finalize-sua-compra', 'continuar:sacola:finalize-sua-compra', 'fechar:qr-code:finalize-sua-compra' e etc | Deve retornar o nome do item clicado. |
 
 <br />
 
@@ -1376,44 +1376,49 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 ### PDP
 
-**No callback de erro de adicionar ao carrinho quando cor ou tamanho estiver sem seleção**<br />
+**Na interação com as opções de tamanho ou cor**<br />
 
-- **Onde:** Nas páginas de produtos
+- **Onde:** Nas páginas de detalhe do produto
     
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'noInteraction': '1',
-    'eventCategory': 'estore:produto',
-    'eventAction': 'callback:sem-selecao',
-    'eventLabel': 'selecionar:[[cor ou tamanho]]'
+    'eventCategory': 'estore:pdp',
+    'eventAction': 'escolha:[[cor ou tamanho]]',
+    'eventLabel': '[[opcao-escolhida]]'
   });
 </script>
 ```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cor ou tamanho]] | &#039;m&#039;, &#039;p&#039;, &#039;azul&#039;, &#039;vermelho&#039; e etc | Deve retornar a cor ou o tamanho selecionado. |
+| [[cor ou tamanho]] | 'cor' ou 'tamanho' | Deve retornar qual tipo de escolha o usuário está fazendo. |
+| [[opcao-escolhida]] | 'm', 'g', 'gg', 'azul', 'amarelo', '36', '38' e etc | Deve retornar a opção escolhida. |
 
 <br />
 
-**No clique do botão voltar**<br />
+**No clique dos botões**<br />
 
-- **Onde:** Nas páginas de produtos
+- **Onde:** Nas páginas de detalhe do produto
     
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'estore:produto',
+    'eventCategory': 'estore:pdp',
     'eventAction': 'clique:botao',
-    'eventLabel': 'voltar'
+    'eventLabel': '[[nome-botao]]'
   });
 </script>
 ```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[nome-botao]] | 'voltar:pdp', 'adicionar-a-sacola' e etc | Deve retornar o nome do botão clicado. |
+
 
 <br />
 
@@ -1513,6 +1518,7 @@ window.dataLayer.push({
       'dimension22': '[[cd22-product-estilo]]',
       'dimension23': '[[cd23-product-genero]]',
       'dimension24': '[[cd24-product-lojamktplace]]',
+      'dimension28': '[[cd28-product-cor]]',
       'name': '[[nome-produto]]',
       'id': '[[id-produto]]',
       'list': '[[lista-produto]]',
@@ -1538,6 +1544,7 @@ window.dataLayer.push({
 | [[cd22-product-estilo]] |  &#039;life-style&#039; | Estilo do produto |
 | [[cd23-product-genero]] |  &#039;feminino&#039; | Genero do produto |
 | [[cd24-product-lojamktplace]] |  &#039;riachuelo&#039;, &#039;loja-a&#039;, &#039;loja-b&#039; | Nome da loja mktplace |
+| [[cd28-product-cor]] |   'branco', 'preto' e etc | Retornar a cor do produto |
 | [[nome-produto]] |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
 | [[id-produto]] |  &#039;13239635&#039; | SKU do produto - pai |
 | [[preco-produto]] |  &#039;139,99&#039; | Preço do produto |
@@ -1576,6 +1583,7 @@ window.dataLayer.push({
           'dimension22': '[[cd22-product-estilo]]',
           'dimension23': '[[cd23-product-genero]]',
           'dimension24': '[[cd24-product-lojamktplace]]',
+          'dimension28': '[[cd28-product-cor]]',
           'name': '[[nome-produto]]',
           'id': '[[id-produto]]',
           'price': '[[preco-produto]]',
@@ -1601,6 +1609,7 @@ window.dataLayer.push({
 | [[cd22-product-estilo]] |  &#039;life-style&#039; | Estilo do produto |
 | [[cd23-product-genero]] |  &#039;feminino&#039; | Genero do produto |
 | [[cd24-product-lojamktplace]] |  &#039;riachuelo&#039;, &#039;loja-a&#039;, &#039;loja-b&#039; | Nome da loja mktplace |
+| [[cd28-product-cor]] |   'branco', 'preto' e etc | Retornar a cor do produto |
 | [[nome-produto]] |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
 | [[id-produto]] |  &#039;13239635&#039; | SKU do produto - pai |
 | [[preco-produto]] |  &#039;139,99&#039; | Preço do produto |
@@ -1638,6 +1647,7 @@ window.dataLayer.push({
         'dimension22': '[[cd22-product-estilo]]',
         'dimension23': '[[cd23-product-genero]]',
         'dimension24': '[[cd24-product-lojamktplace]]',
+        'dimension28': '[[cd28-product-cor]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1663,6 +1673,7 @@ window.dataLayer.push({
 | [[cd22-product-estilo]] |  &#039;life-style&#039; | Estilo do produto |
 | [[cd23-product-genero]] |  &#039;feminino&#039; | Genero do produto |
 | [[cd24-product-lojamktplace]] |  &#039;riachuelo&#039;, &#039;loja-a&#039;, &#039;loja-b&#039; | Nome da loja mktplace |
+| [[cd28-product-cor]] |   'branco', 'preto' e etc | Retornar a cor do produto |
 | [[nome-produto]] |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
 | [[id-produto]] |  &#039;13239635&#039; | SKU do produto - pai |
 | [[preco-produto]] |  &#039;139,99&#039; | Preço do produto |
@@ -1700,6 +1711,7 @@ window.dataLayer.push({
         'dimension22': '[[cd22-product-estilo]]',
         'dimension23': '[[cd23-product-genero]]',
         'dimension24': '[[cd24-product-lojamktplace]]',
+        'dimension28': '[[cd28-product-cor]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1727,6 +1739,7 @@ window.dataLayer.push({
 | [[cd22-product-estilo]] |  &#039;life-style&#039; | Estilo do produto |
 | [[cd23-product-genero]] |  &#039;feminino&#039; | Genero do produto |
 | [[cd24-product-lojamktplace]] |  &#039;riachuelo&#039;, &#039;loja-a&#039;, &#039;loja-b&#039; | Nome da loja mktplace |
+| [[cd28-product-cor]] |   'branco', 'preto' e etc | Retornar a cor do produto |
 | [[nome-produto]] |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
 | [[id-produto]] |  &#039;13239635&#039; | SKU do produto - pai |
 | [[preco-produto]] |  &#039;139,99&#039; | Preço do produto |
@@ -1765,6 +1778,7 @@ window.dataLayer.push({
         'dimension22': '[[cd22-product-estilo]]',
         'dimension23': '[[cd23-product-genero]]',
         'dimension24': '[[cd24-product-lojamktplace]]',
+        'dimension28': '[[cd28-product-cor]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1792,6 +1806,7 @@ window.dataLayer.push({
 | [[cd22-product-estilo]] |  &#039;life-style&#039; | Estilo do produto |
 | [[cd23-product-genero]] |  &#039;feminino&#039; | Genero do produto |
 | [[cd24-product-lojamktplace]] |  &#039;riachuelo&#039;, &#039;loja-a&#039;, &#039;loja-b&#039; | Nome da loja mktplace |
+| [[cd28-product-cor]] |   'branco', 'preto' e etc | Retornar a cor do produto |
 | [[nome-produto]] |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
 | [[id-produto]] |  &#039;13239635&#039; | SKU do produto - pai |
 | [[preco-produto]] |  &#039;139,99&#039; | Preço do produto |
@@ -1942,6 +1957,7 @@ window.dataLayer.push({
         'dimension22': '[[cd22-product-estilo]]',
         'dimension23': '[[cd23-product-genero]]',
         'dimension24': '[[cd24-product-lojamktplace]]',
+        'dimension28': '[[cd28-product-cor]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1979,6 +1995,7 @@ window.dataLayer.push({
 | [[cd24-product-lojamktplace]] |  &#039;riachuelo&#039;, &#039;loja-a&#039;, &#039;loja-b&#039; | Nome da loja mktplace |
 | [[cd26-hit-valorfrete]] |  &#039;gratuito&#039;, &#039;15.90&#039; e etc | Valor do frete escolhido |
 | [[cd27-hit-prazofrete]] |  &#039;DD/MM/AAAA&#039; | Prazo do frete escolhido |
+| [[cd28-product-cor]] |   'branco', 'preto' e etc | Retornar a cor do produto |
 | [[id-transacao]] |  &#039;000011652&#039; | ID único da transação |
 | [[valor-total-transacao]] |  &#039;139,99&#039; | Valor total da transação incluindo frete e taxas |
 | [[frete-transacao]] |  &#039;129,99&#039; | Valor do frete da transação |
