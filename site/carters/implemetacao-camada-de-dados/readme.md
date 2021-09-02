@@ -917,8 +917,8 @@ window.dataLayer.push({
   'ecommerce': {
     'detail': {
       'products': [{
-        'dimension7': '[[cd6-product-idadedoproduto]]',
-        'dimension10': '[[cd9-product-ordemdeinserção]]',
+        'dimension6': '[[cd6-product-idadedoproduto]]',
+        'dimension9': '[[cd9-product-ordemdeinserção]]',
         'dimension12': '[[cd12-product-padronagemdoproduto]]',
         'dimension14': '[[cd14-product-subcategoria]]',
         'dimension15': '[[cd15-product-preçooriginal]]',
@@ -975,11 +975,11 @@ window.dataLayer.push({
         'dimension9': '[[cd9-product-ordemdeinserção]]',
         'dimension10': '[[cd10-product-tamanhodoproduto]]',
         'dimension11': '[[cd11-product-cordoproduto]]',
-        'dimension13': '[[cd12-product-padronagemdoproduto]]',
-        'dimension15': '[[cd14-product-subcategoria]]',
-        'dimension16': '[[cd15-product-preçooriginal]]',
-        'dimension17': '[[cd16-product-gender]]',
-        'dimension18': '[[cd17-product-skufilho]]',
+        'dimension12': '[[cd12-product-padronagemdoproduto]]',
+        'dimension14': '[[cd14-product-subcategoria]]',
+        'dimension15': '[[cd15-product-preçooriginal]]',
+        'dimension16': '[[cd16-product-gender]]',
+        'dimension17': '[[cd17-product-skufilho]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
