@@ -187,7 +187,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'dimension1': '[[cd1-user-userid]]',
     'dimension4': '[[cd4-hit-loginstatus(cliente)]]',
-    'dimension5': '[[cd5-user-funcionarioid]]',
+    'dimension5': '[[cd5-user-cartID]]',
     'dimension6': '[[cd6-hit-loja]]',
     'dimension7': '[[cd7-hit-dispositivo]]',
   });
@@ -198,7 +198,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[cd1-user-userid]] |  &#039;01234&#039; | ID único do usuário definido após cadastro (MagentoID) |
 | [[cd4-hit-loginstatus(cliente)]] |  &#039;Logged in&#039;, &#039;Logged out&#039; | Status do login do usuário (CLIENTE) |
-| [[cd5-user-funcionarioid]] |  &#039;10203040&#039; | ID único do funcionário |
+| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
 | [[cd6-hit-loja]] |  &#039;ABC&#039; | Nome da Loja preenchido |
 | [[cd7-hit-dispositivo]] |  &#039;Dispositivo-1&#039; | Nome do dispositivo usado |
 
@@ -346,7 +346,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventCategory': 'estore:lightbox-identificacao',
     'eventAction': 'callback:login',
     'eventLabel': '[[sucesso ou tipo-erro]]',
-    'dimension5': '[[cd5-user-funcionarioid]]',
+    'dimension5': '[[cd5-user-cartID]]',
   });
 </script>
 ```
@@ -356,7 +356,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:matricula-invalida&#039; e etc | eve retornar o label do botão &#039;sucesso&#039; ou o status de erro retorno. |
-| [[cd5-user-funcionarioid]] |  &#039;10203040&#039; | ID único do funcionário |
+| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
 
 <br />
 
@@ -421,7 +421,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventCategory': 'estore:lightbox-identificacao',
     'eventAction': 'callback:loja-dispositivo',
     'eventLabel': '[[sucesso ou tipo-erro]]',
-    'dimension5': '[[cd5-user-funcionarioid]]',
+    'dimension5': '[[cd5-user-cartID]]',
     'dimension6': '[[cd6-hit-loja]]',
     'dimension7': '[[cd7-hit-dispositivo]]',
   });
@@ -433,7 +433,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:selecione-a-loja-para-prosseguir&#039; e etc | eve retornar o label do botão &#039;sucesso&#039; ou o status de erro retorno. |
-| [[cd5-user-funcionarioid]] |  &#039;10203040&#039; | ID único do funcionário |
+| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
 | [[cd6-hit-loja]] |  &#039;ABC&#039; | Nome da Loja preenchido |
 | [[cd7-hit-dispositivo]] |  &#039;Dispositivo-1&#039; | Nome do dispositivo usado |
 
@@ -502,7 +502,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventAction': 'callback:login',
     'eventLabel': '[[sucesso ou tipo-erro]]',
     'dimension1': '[[cd1-user-userid]]',
-    'dimension5': '[[cd5-user-funcionarioid]]',
+    'dimension5': '[[cd5-user-cartID]]',
   });
 </script>
 ```
@@ -513,7 +513,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso ou tipo-erro]] | &#039;sucesso&#039;,  &#039;erro:senha-invalida&#039; e etc | Deve retornar o label do botão &#039;sucesso&#039; ou o status de erro retorno. |
 | [[cd1-user-userid]] |  &#039;01234&#039; | ID único do usuário definido após cadastro (MagentoID) |
-| [[cd5-user-funcionarioid]] |  &#039;10203040&#039; | ID único do funcionário |
+| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
 
 <br />
 
@@ -588,7 +588,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventAction': 'callback:senha',
     'eventLabel': '[[sucesso ou tipo-erro]]',
     'dimension1': '[[cd1-user-userid]]',
-    'dimension5': '[[cd5-user-funcionarioid]]',
+    'dimension5': '[[cd5-user-cartID]]',
   });
 </script>
 ```
@@ -599,7 +599,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:insira-um-cpf-para-prosseguir&#039;, &#039;erro:cpf-invalido&#039; e etc | Deve retornar o label do botão &#039;sucesso&#039; ou o status de erro retorno. |
 | [[cd1-user-userid]] |  &#039;01234&#039; | ID único do usuário definido após cadastro (MagentoID) |
-| [[cd5-user-funcionarioid]] |  &#039;10203040&#039; | ID único do funcionário |
+| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
 
 <br />
 
@@ -713,7 +713,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventAction': 'callback:cadastro',
     'eventLabel': '[[sucesso ou tipo-erro]]',
     'dimension1': '[[cd1-user-userid]]',
-    'dimension5': '[[cd5-user-funcionarioid]]',
+    'dimension5': '[[cd5-user-cartID]]',
   });
 </script>
 ```
@@ -724,7 +724,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[sucesso ou tipo-erro]] | &#039;sucesso&#039;,&#039;erro:campo:bairro;nome;cpf&#039; e etc | Deve retornar o label do botão &#039;continuar&#039; ou o status de erro retorno. |
 | [[cd1-user-userid]] |  &#039;01234&#039; | ID único do usuário definido após cadastro (MagentoID) |
-| [[cd5-user-funcionarioid]] |  &#039;10203040&#039; | ID único do funcionário |
+| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
 
 <br />
 
@@ -1700,6 +1700,7 @@ window.dataLayer.push({
     'ecommerce': {
     'add': {
       'products': [{
+        'dimension5': '[[cd5-user-cartID]]',
         'dimension14': '[[cd14-product-skufilho]]',
         'dimension15': '[[cd15-product-lookcompleto]]',
         'dimension16': '[[cd16-product-iddolook]]',
@@ -1728,6 +1729,7 @@ window.dataLayer.push({
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
+| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
 | [[cd14-product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
@@ -1767,6 +1769,7 @@ window.dataLayer.push({
     'ecommerce': {
     'remove': {
       'products': [{
+        'dimension5': '[[cd5-user-cartID]]',
         'dimension14': '[[cd14-product-skufilho]]',
         'dimension15': '[[cd15-product-lookcompleto]]',
         'dimension16': '[[cd16-product-iddolook]]',
@@ -1795,6 +1798,7 @@ window.dataLayer.push({
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
+| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
 | [[cd14-product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
@@ -1925,7 +1929,7 @@ window.dataLayer.push({
   'event': 'purchase',
   'eventCategory': 'eestore:nhanced-ecommerce',
   'eventAction': 'purchase',
-  'dimension5': '[[cd5-user-funcionarioid]]',
+  'dimension5': '[[cd5-user-cartID]]',
   'dimension6': '[[cd6-hit-loja]]',
   'dimension8': '[[cd8-hit-tipodecartão]]',
   'dimension9': '[[cd9-hit-bandeiracartão]]',
@@ -1974,7 +1978,7 @@ window.dataLayer.push({
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd5-user-funcionarioid]] |  &#039;10203040&#039; | ID único do funcionário |
+| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
 | [[cd6-hit-loja]] |  &#039;ABC&#039; | Nome da Loja preenchido |
 | [[cd8-hit-tipodecartão]] |  &#039;credito&#039;, &#039;riachuelo&#039; | Tipo do cartão utilizado na compra |
 | [[cd9-hit-bandeiracartão]] |  &#039;mastercard&#039; | Bandeira do cartão utilizada na compra |
