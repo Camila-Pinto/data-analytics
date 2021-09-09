@@ -1031,8 +1031,8 @@ window.dataLayer.push({
     'ecommerce': {
     'remove': {
       'products': [{
-        'dimension7': '[[cd6-product-idadedoproduto]]',
-        'dimension10': '[[cd9-product-ordemdeinserção]]',
+        'dimension6': '[[cd6-product-idadedoproduto]]',
+        'dimension9': '[[cd9-product-ordemdeinserção]]',
         'dimension10:' '[[cd10-product-tamanhodoproduto]]',
         'dimension11': '[[cd11-product-cordoproduto]]',
         'dimension12': '[[cd12-product-padronagemdoproduto]]',
@@ -1155,7 +1155,7 @@ window.dataLayer.push({
   'event': 'checkoutOption',
   'eventCategory': 'enhanced-ecommerce',
   'eventAction': 'checkoutOption',
-  'eventLabel': 'tipode-de-[[pagamento ou frete]]-method',
+  'eventLabel': 'tipo-de-[[pagamento ou frete]]-metodo',
     'ecommerce': {
     'checkout_option': {
         'actionField':  {'step':'[[checkout-index]]','option':'[[pagamento ou frete]]:[[opcao escolhida]]'},
