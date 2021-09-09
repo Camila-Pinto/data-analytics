@@ -23,7 +23,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto E-Store
-Última atualização: 02/09/2021 <br />
+Última atualização: 09/09/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -190,6 +190,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'dimension5': '[[cd5-user-cartID]]',
     'dimension6': '[[cd6-hit-loja]]',
     'dimension7': '[[cd7-hit-dispositivo]]',
+    'dimension25': '[[cd25-user-matricula-funcionario]]',
+    'dimension29': '[[cd29-user-loja]]',
   });
 </script>
 ```
@@ -201,6 +203,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
 | [[cd6-hit-loja]] |  &#039;ABC&#039; | Nome da Loja preenchido |
 | [[cd7-hit-dispositivo]] |  &#039;Dispositivo-1&#039; | Nome do dispositivo usado |
+| [[cd25-user-matricula-funcionario]] |  '3129832', '2313214' e etc | Retorna a matrícula do funcionario |
+| [[cd29-user-loja]] |   'santos', 'morumbi' e etc | Retorna o nome da Loja |
 
 ---
 
@@ -1511,7 +1515,7 @@ window.dataLayer.push({
       'dimension15': '[[cd15-product-lookcompleto]]',
       'dimension16': '[[cd16-product-iddolook]]',
       'dimension17': '[[cd17-product-selo/tag]]',
-      'dimension18': '[[cd18-product-exclusivoecommerce]]',
+      'dimension18': '[[cd18-product-exclusivo-ecommerce+marketplace]]',
       'dimension19': '[[cd19-product-variante]]',
       'dimension20': '[[cd20-product-gm]]',
       'dimension21': '[[cd21-product-preçode]]',
@@ -1537,7 +1541,7 @@ window.dataLayer.push({
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
 | [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[cd18-product-exclusivoecommerce]] |  &#039;true&#039; ou &#039;false&#039; | Se é um produto exclusivo do ecommerce |
+| [[cd18-product-exclusivo-ecommerce+marketplace]] |  'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
 | [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
 | [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
 | [[cd21-product-preçode]] |  &#039;139,99&#039; | Preço de do produto |
@@ -1576,7 +1580,7 @@ window.dataLayer.push({
           'dimension15': '[[cd15-product-lookcompleto]]',
           'dimension16': '[[cd16-product-iddolook]]',
           'dimension17': '[[cd17-product-selo/tag]]',
-          'dimension18': '[[cd18-product-exclusivoecommerce]]',
+          'dimension18': '[[cd18-product-exclusivo-ecommerce+marketplace]]',
           'dimension19': '[[cd19-product-variante]]',
           'dimension20': '[[cd20-product-gm]]',
           'dimension21': '[[cd21-product-preçode]]',
@@ -1602,7 +1606,7 @@ window.dataLayer.push({
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
 | [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[cd18-product-exclusivoecommerce]] |  &#039;true&#039; ou &#039;false&#039; | Se é um produto exclusivo do ecommerce |
+| [[cd18-product-exclusivo-ecommerce+marketplace]] | 'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
 | [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
 | [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
 | [[cd21-product-preçode]] |  &#039;139,99&#039; | Preço de do produto |
@@ -1640,7 +1644,7 @@ window.dataLayer.push({
         'dimension15': '[[cd15-product-lookcompleto]]',
         'dimension16': '[[cd16-product-iddolook]]',
         'dimension17': '[[cd17-product-selo/tag]]',
-        'dimension18': '[[cd18-product-exclusivoecommerce]]',
+        'dimension18': '[[cd18-product-exclusivo-ecommerce+marketplace]]',
         'dimension19': '[[cd19-product-variante]]',
         'dimension20': '[[cd20-product-gm]]',
         'dimension21': '[[cd21-product-preçode]]',
@@ -1666,7 +1670,7 @@ window.dataLayer.push({
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
 | [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[cd18-product-exclusivoecommerce]] |  &#039;true&#039; ou &#039;false&#039; | Se é um produto exclusivo do ecommerce |
+| [[cd18-product-exclusivo-ecommerce+marketplace]] |  'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
 | [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
 | [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
 | [[cd21-product-preçode]] |  &#039;139,99&#039; | Preço de do produto |
@@ -1705,7 +1709,7 @@ window.dataLayer.push({
         'dimension15': '[[cd15-product-lookcompleto]]',
         'dimension16': '[[cd16-product-iddolook]]',
         'dimension17': '[[cd17-product-selo/tag]]',
-        'dimension18': '[[cd18-product-exclusivoecommerce]]',
+        'dimension18': '[[cd18-product-exclusivo-ecommerce+marketplace]]',
         'dimension19': '[[cd19-product-variante]]',
         'dimension20': '[[cd20-product-gm]]',
         'dimension21': '[[cd21-product-preçode]]',
@@ -1734,7 +1738,7 @@ window.dataLayer.push({
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
 | [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[cd18-product-exclusivoecommerce]] |  &#039;true&#039; ou &#039;false&#039; | Se é um produto exclusivo do ecommerce |
+| [[cd18-product-exclusivo-ecommerce+marketplace]] |  'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
 | [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
 | [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
 | [[cd21-product-preçode]] |  &#039;139,99&#039; | Preço de do produto |
@@ -1774,7 +1778,7 @@ window.dataLayer.push({
         'dimension15': '[[cd15-product-lookcompleto]]',
         'dimension16': '[[cd16-product-iddolook]]',
         'dimension17': '[[cd17-product-selo/tag]]',
-        'dimension18': '[[cd18-product-exclusivoecommerce]]',
+        'dimension18': '[[cd18-product-exclusivo-ecommerce+marketplace]]',
         'dimension19': '[[cd19-product-variante]]',
         'dimension20': '[[cd20-product-gm]]',
         'dimension21': '[[cd21-product-preçode]]',
@@ -1803,7 +1807,7 @@ window.dataLayer.push({
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
 | [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[cd18-product-exclusivoecommerce]] |  &#039;true&#039; ou &#039;false&#039; | Se é um produto exclusivo do ecommerce |
+| [[cd18-product-exclusivo-ecommerce+marketplace]] |  'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
 | [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
 | [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
 | [[cd21-product-preçode]] |  &#039;139,99&#039; | Preço de do produto |
@@ -1954,7 +1958,7 @@ window.dataLayer.push({
         'dimension15': '[[cd15-product-lookcompleto]]',
         'dimension16': '[[cd16-product-iddolook]]',
         'dimension17': '[[cd17-product-selo/tag]]',
-        'dimension18': '[[cd18-product-exclusivoecommerce]]',
+        'dimension18': '[[cd18-product-exclusivo-ecommerce+marketplace]]',
         'dimension19': '[[cd19-product-variante]]',
         'dimension20': '[[cd20-product-gm]]',
         'dimension21': '[[cd21-product-preçode]]',
@@ -1990,7 +1994,7 @@ window.dataLayer.push({
 | [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
 | [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
 | [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[cd18-product-exclusivoecommerce]] |  &#039;true&#039; ou &#039;false&#039; | Se é um produto exclusivo do ecommerce |
+| [[cd18-product-exclusivo-ecommerce+marketplace]] |  'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
 | [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
 | [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
 | [[cd21-product-preçode]] |  &#039;139,99&#039; | Preço de do produto |
