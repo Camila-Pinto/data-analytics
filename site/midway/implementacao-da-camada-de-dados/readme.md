@@ -25,9 +25,10 @@
 - [Area logada](#area-logada)
 - [Quitação de Dívida](#quita&#231;&#227;o-de-d&#237;vida)
 - [Simulação de Empréstimo](#simula&#231;&#227;o-de-empr&#233;stimo)
+- [Home Empréstimo](#home-empr&#233;stimo)
 
 ## Implementação da Camada de dados - Projeto Midway Site
-Última atualização: 27/08/2021 <br />
+Última atualização: 09/09/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -2611,13 +2612,105 @@ window.dataLayer.push({
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-botao]] | &#039;google-play&#039;, &#039;app-store&#039; e etc | Deve retornar o nome do botão. |
 
 <br />
+
+### Home Empréstimo
+
+<br />
+
+**No clique dos elementos da página**<br />
+
+- **Onde:** Na tela de empréstimos
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'midway:emprestimo',
+    'eventAction': 'clique:[[elemento]]',
+    'eventLabel': '[[nome-elemento]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[elemento]] | 'botao' ou 'link' | Deve retornar o tipo do elemento clicado. |
+| [[nome-elemento]] | 'simular-emprestimo', 'clicando-aqui', 'gerar-boleto', e etc| Deve retornar o nome do elemento clicado. |
+
+<br />
+
+**No clique dos botões para download do APP Midway**<br />
+
+- **Onde:** Na tela de empréstimos
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'midway:emprestimo',
+    'eventAction': 'clique:botao:download-app-midway',
+    'eventLabel': 'download:[[store]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[store]] | 'apple-store' ou 'play-store' | Deve retornar o nome da loja clicada.  |
+
+
+<br />
+
+**Na ação de expandir/recolher as perguntas**<br />
+
+- **Onde:** Na tela de empréstimos, seção Perguntas Frequentes
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'midway:emprestimo',
+    'eventAction': 'clique:perguntas-frequentes',
+    'eventLabel': '[[acao]]:[[titulo-pergunta]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[acao]] | 'abriu' ou 'fechou' | Deve retornar a ação do usuário.  |
+| [[titulo-pergunta]] | 'como-e-feita-analise-de-credito', 'quando-recebo-os-boletos' e etc | Deve retornar o titulo da pergunta que o usuário interagiu.  |
+
+
+<br />
+
+**No clique nas categorias de Perguntas Frequentes**<br />
+
+- **Onde:** Após a tela empréstimos, tela com todas as Perguntas Frequentes
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'midway:emprestimo',
+    'eventAction': 'clique:perguntas-frequentes',
+    'eventLabel': '[[categorias]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[categorias]] | 'sobre-o-produto', 'eligibilidade-do-cliente', 'contratacao' e etc | Deve retornar o nome da categoria clicada.  |
 
 
 <br />
