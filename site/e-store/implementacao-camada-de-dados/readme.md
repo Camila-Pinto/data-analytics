@@ -11,19 +11,21 @@
 - [Implementação](#implementa%c3%a7%c3%a3o)
 - [Especificações Globais](#especifica%c3%a7%c3%b5es-globais)
 - [Dimensões Globais](#dimens&#245;es-globais)
-- [Eventos Gerais](#eventos-gerais)
-- [Home](#home)
-- [Login e Esqueci Senha](#login-e-esqueci-senha)
+- [Desktop - Eventos Gerais](#desktop---eventos-gerais)
+- [Desktop - Identificação ](#desktop---identifica%c3%a7%c3%a3o)
+- [Desktop - Home](#desktop---home)
+- [Desktop - PLP](#desktop---plp)
+- [Desktop - Modal Sacola](#desktop---modal-sacola)
+- [Desktop - Sacola-QR Code](#desktop---sacola-qr-code)
+- [MSite - Login - Esqueci Senha e Cadastro](#msite---login---esqueci-senha-e-cadastro)
+- [MSite - Checkout](#msite---checkout)
 - [Logoff](#logoff)
-- [Categorias](#categorias)
-- [Checkout](#checkout)
-- [PDP](#pdp)
-- [Enhanced Ecommerce](#enhanced-ecommerce)
+- [Enhanced Ecommerce - Desktop-Msite](#enhanced-ecommerce---desktop-msite)
 
 <br />
 
 ## Implementação da Camada de dados - Projeto E-Store
-Última atualização: 09/09/2021 <br />
+Última atualização: 16/09/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -189,33 +191,29 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'dimension4': '[[cd4-hit-loginstatus(cliente)]]',
     'dimension5': '[[cd5-user-cartID]]',
     'dimension6': '[[cd6-hit-loja]]',
-    'dimension7': '[[cd7-hit-dispositivo]]',
-    'dimension25': '[[cd25-user-matricula-funcionario]]',
-    'dimension29': '[[cd29-user-loja]]',
+    'dimension7': '[[cd7-hit-matricula-funcionario]]'
   });
 </script>
 ```
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd1-user-userid]] |  &#039;01234&#039; | ID único do usuário definido após cadastro (MagentoID) |
-| [[cd4-hit-loginstatus(cliente)]] |  &#039;Logged in&#039;, &#039;Logged out&#039; | Status do login do usuário (CLIENTE) |
-| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
-| [[cd6-hit-loja]] |  &#039;ABC&#039; | Nome da Loja preenchido |
-| [[cd7-hit-dispositivo]] |  &#039;Dispositivo-1&#039; | Nome do dispositivo usado |
-| [[cd25-user-matricula-funcionario]] |  '3129832', '2313214' e etc | Retorna a matrícula do funcionario |
-| [[cd29-user-loja]] |   'santos', 'morumbi' e etc | Retorna o nome da Loja |
+| `[[cd1-user-userid]]` |  &#039;01234&#039; | ID único do usuário definido após cadastro (MagentoID) |
+| `[[cd4-hit-loginstatus(cliente)]]` |  &#039;Logged in&#039;, &#039;Logged out&#039; | Status do login do usuário (CLIENTE) |
+| `[[cd5-user-cartID]]` |  '102030dfasdf' | ID únido do carrinho do usuário |
+| `[[cd6-hit-loja]]` |  'abc', 'santos', 'morumbi' e etc | Retorna o nome da Loja |
+| `[[cd7-hit-matricula-funcionario]]` | '3129832', '2313214' e etc | Retorna a matrícula do funcionario |
+
 
 ---
 
 
-### Eventos Gerais
-
+### Desktop - Eventos Gerais
 
 **No clique nos links do header**<br />
 
 - **Onde:** Em todas as páginas que estiverem disponíveis
-    - **Titulo ou nome do botão/link:** Título: &quot;sacola&quot; (ícone), &quot;Riachuelo&quot; (logo), &quot;login&quot;, &quot;sair&quot;, &quot;início&quot; e etc
+Título: "sacola" (ícone), "Riachuelo" (logo)
     
 
 ```html
@@ -232,12 +230,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[link-clicado]] | &#039;riachuelo&#039;(logo), &#039;login&#039;, &#039;sacola&#039;, &#039;sair&#039;, &#039;inicio&#039; e etc | Deve retornar o nome do link clicado. |
+| `[[link-clicado]]` | &#039;riachuelo&#039;(logo), &#039;login&#039;, &#039;sacola&#039;, &#039;sair&#039;, &#039;inicio&#039; e etc | Deve retornar o nome do link clicado. |
 
 <br />
 
-
-**Após interagir com o campo de busca e clicar na lupa (ícone para realizar a busca)**<br />
+**No callback, após fazer uma busca**<br />
 
 - **Onde:** Em todas as páginas que estiverem disponíveis
     
@@ -247,18 +244,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'estore:geral',
-    'eventAction': 'interacao:busca',
+    'eventAction': 'callback:busca',
     'eventLabel': '[[termo-buscado]]:[[erro]]',
   });
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[termo-buscado]] | &#039;vestidos&#039;, &#039;calca-masculina&#039; e etc | Deve retornar o termo buscado pelo usuário. |
-| [[erro]] | &#039;nao-encontramos-nenhum-resultado&#039;, &#039;ops-ocorreu-um-erro&#039;, &#039;pagina-nao-encontrada&#039; e etc | Deve retornar o erro apresentado após fazer a busca e não encontrar nenhum resultado. |
+| `[[termo-buscado]]` | &#039;vestidos&#039;, &#039;calca-masculina&#039; e etc | Deve retornar o termo buscado pelo usuário. |
+| `[[erro]]` | &#039;nao-encontramos-nenhum-resultado&#039;, &#039;ops-ocorreu-um-erro&#039;, &#039;pagina-nao-encontrada&#039; e etc | Deve retornar o erro apresentado após fazer a busca e não encontrar nenhum resultado. |
 
 <br />
 
@@ -280,20 +275,17 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-erro]] | &#039;ocorreu-erro-serviço,&#039; &#039;404-not-found&#039; | Deve retornar o nome do erro ocorrido na página genérica. |
+| `[[nome-erro]]` | &#039;ocorreu-erro-serviço,&#039; &#039;404-not-found&#039; | Deve retornar o nome do erro ocorrido na página genérica. |
 
 <br />
 
+### Desktop - Identificação 
 
-### Home
+**Após interagir com os campos de "Matrícula", "CPF" e "Selecione a Loja" para fazer o login**<br />
 
-**Após interagir com os campos de matrícula e de cpf para fazer o login**<br />
-
-- **Onde:** Na página home do site
+- **Onde:** No modal de identificação
     
 ```html
 <script>
@@ -302,23 +294,20 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'eventCategory': 'estore:lightbox-identificacao',
     'eventAction': 'interacao:campo',
-    'eventLabel': 'preencheu:[[nome-campo]]',
+    'eventLabel': 'preencheu:[[nome-campo]]'
   });
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;matricula&#039;, &#039;cpf&#039; e etc | Deve retornar o nome do campo preenchido pelo usuário. |
+| `[[nome-campo]]` | 'matricula', 'cpf', 'selecione-a-loja' e etc | Deve retornar o nome do campo preenchido pelo usuário.|
 
 <br />
 
+**No clique do botão "Acessar" para validar os campos preenchidos de Matricula, CPF e Loja**<br />
 
-**No clique do botão &quot;Continuar&quot; para validar os campos preenchidos de CPF e Senha**<br />
-
-- **Onde:** Na página home do site
+- **Onde:** No modal de identificação
     
 ```html
 <script>
@@ -326,21 +315,17 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'estore:lightbox-identificacao',
-    'eventAction': 'tentativa:login',
-    'eventLabel': 'continuar'
+    'eventAction': 'clique:botao',
+    'eventLabel': 'acessar'
   });
 </script>
 ```
 
-
-
-
 <br />
 
+**No callback, após clicar no botão "Acessar" para validar os campos preenchidos CPF e Senha com sucesso**<br />
 
-**No callback, após clicar no botão &quot;Continuar&quot; para validar os campos preenchidos CPF e Senha com sucesso**<br />
-
-- **Onde:** Na página home do site
+- **Onde:** No modal de identificação
     
 ```html
 <script>
@@ -349,102 +334,348 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'eventCategory': 'estore:lightbox-identificacao',
     'eventAction': 'callback:login',
-    'eventLabel': '[[sucesso ou tipo-erro]]',
-    'dimension5': '[[cd5-user-cartID]]',
+    'eventLabel': '[[sucesso ou tipo-erro]]'
   });
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:matricula-invalida&#039; e etc | eve retornar o label do botão &#039;sucesso&#039; ou o status de erro retorno. |
-| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
+| `[[nome-campo]]` | 'sucesso', 'erro:matricula-invalida' e etc | Deve retornar o label do botão 'sucesso' ou o status de erro retorno.|
 
 <br />
 
+### Desktop - Home
 
-**Após interagir com os campos de &quot;Selecione a loja&quot; e de &quot;Selecione o Dispositivo&quot;**<br />
+**No clique dos cards de Departamento**<br />
 
-- **Onde:** Na página home do site
+- **Onde:** Na home do Desktop
     
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'estore:lightbox-identificacao',
-    'eventAction': 'interacao:campo',
-    'eventLabel': '[[campo]]:[[opcao-selecionada]]',
+    'eventCategory': 'estore:home',
+    'eventAction': 'clique:card-departamento',
+    'eventLabel': '[[nome-card]]'
   });
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[campo]] | &#039;selecione-a-loja&#039; ou &#039;selecione-o-dispositivo&#039; | Deve retornar o nome do campo . |
-| [[opcao-selecionada]] | &#039;loja-1&#039;, &#039;loja-abc&#039;, &#039;computador&#039;, &#039;totem&#039;, &#039;espelho&#039; e etc | Deve retornar a opção selecionada pelo usuário. |
+| `[[nome-card]]` | 'feminino', 'infantil', 'casa-riachuelo' e etc | Deve retornar o nome do card clicado.|
 
 <br />
 
+### Desktop - PLP 
 
-**No clique do botão &quot;Continuar&quot;  para validar os itens selecionados de Loja e Dispositivo**<br />
+**No clique do filtro de "Escolha a Categoria"**<br />
 
-- **Onde:** Na página home do site
+- **Onde:** Na PLP
     
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'estore:lightbox-identificacao',
-    'eventAction': 'tentativa:loja-dispositivo',
-    'eventLabel': 'continuar'
+    'eventCategory': 'estore:plp',
+    'eventAction': 'clique:filtro-categoria',
+    'eventLabel': '[[nome-categoria]]'
   });
 </script>
 ```
 
-
-
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-categoria]]` | 'colecao-feminina', 'lifestyles', 'praia' e etc |Deve retornar o nome da categoria clicada.|
 
 <br />
 
+**No clique do filtro de "Escolha a Subcategoria"**<br />
 
-**No callback, após clicar no botão &quot;Continuar&quot; depois de ter selecionado a Loja e Dispositivo**<br />
-
-- **Onde:** Na página home do site
+- **Onde:** Na PLP
     
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'estore:lightbox-identificacao',
-    'eventAction': 'callback:loja-dispositivo',
-    'eventLabel': '[[sucesso ou tipo-erro]]',
-    'dimension5': '[[cd5-user-cartID]]',
-    'dimension6': '[[cd6-hit-loja]]',
-    'dimension7': '[[cd7-hit-dispositivo]]',
+    'eventCategory': 'estore:plp',
+    'eventAction': 'clique:filtro-subcategoria',
+    'eventLabel': '[[nome-subcategoria]]'
   });
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:selecione-a-loja-para-prosseguir&#039; e etc | eve retornar o label do botão &#039;sucesso&#039; ou o status de erro retorno. |
-| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
-| [[cd6-hit-loja]] |  &#039;ABC&#039; | Nome da Loja preenchido |
-| [[cd7-hit-dispositivo]] |  &#039;Dispositivo-1&#039; | Nome do dispositivo usado |
+| `[[nome-subcategoria]]` | 'blusa', 'calca', 'vestido' e etc | Deve retornar o nome da subcategoria clicada.|
 
 <br />
 
+**Na interação com os filtros**<br />
 
-### Login e Esqueci Senha
+- **Onde:** Na PLP
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:plp',
+    'eventAction': 'clique:filtro-produto',
+    'eventLabel': '[[nome-filtro]]:[[opcao-escolhida]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-filtro]]` | 'cor', 'departamento', 'modelagem' e etc | Deve retornar o nome do filtro usado pelo usuário.|
+| `[[opcao-escolhida]]` | 'vermelha', 'jeans-feminino', 'skinny' e etc | Deve retornar a opção escolhida.|
+
+<br />
+
+**Na ordenação da lista de produtos, "Relevância"**<br />
+
+- **Onde:** Na PLP
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:plp',
+    'eventAction': 'clique:ordenacao',
+    'eventLabel': '[[nome-ordenacao]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-ordenacao]]` |  'preco:menores-primeiro', 'preco:maiores-primeiro' e etc | Deve retornar o nome da ordenação escolhida.|
+
+<br />
+
+**No clique do botão "Carregar mais"**<br />
+
+- **Onde:** Na PLP
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:plp',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'carregar-mais'
+  });
+</script>
+```
+
+<br />
+
+### Desktop - Modal Sacola 
+
+**Nos cliques dos elementos**<br />
+
+- **Onde:** No modal da sacola
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:modal-sacola',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-botao]]` |  'fechar', 'continuar-comprando' e 'finalizar-compra' | Deve retornar o nome do botão clicado.|
+
+<br />
+
+**No callback da sacola**<br />
+
+- **Onde:** No modal da sacola
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:modal-sacola',
+    'eventAction': 'callback:modal-sacola',
+    'eventLabel': '[[erro]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[erro]]` | 'a-quantidade-desejada-esta-indisponivel-no-momento' e etc | Deve retornar o erro apresentado na sacola.|
+
+<br />
+
+### Desktop - Sacola-QR Code
+
+**No callback de erro na página**<br />
+
+- **Onde:** Na página da Sacola
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:sacola',
+    'eventAction': 'callback:sacola',
+    'eventLabel': '[[erro]]',
+    'noInteraction': '1'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[erro]]` | 'a-quantidade-desejada-esta-indisponivel-no-momento', 'sacola-vazia' e etc | Deve retornar o erro aprensentado na sacola.|
+
+<br />
+
+**No clique no botões de "Continuar" e "Continuar Comprando"**<br />
+
+- **Onde:** Na página da Sacola
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:sacola',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-botao]]` | 'continuar' e 'continuar-comprando' | Deve retornar o nome do botão clicado.|
+
+<br />
+
+**No clique nos botões de "Remover" ou "Cancelar"**<br />
+
+- **Onde:** No lightbox "Tem certeza que quer remover esse item da sua sacola?"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:sacola',
+    'eventAction': 'clique:botao:lightbox:remover-item-sacola',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-botao]]` | 'remover', 'cancelar' ou 'fechar' | Deve retornar o nome do botão clicado.|
+
+<br />
+
+**No clique no botão de "Ir para página inicial"**<br />
+
+- **Onde:** Na página de "Sua sacola está vazia"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:sacola',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'ir-para-pagina-inicial'
+  });
+</script>
+```
+
+<br />
+
+**No clique dos botões "Continuar Conectado" ou "Finalizar"**<br />
+
+- **Onde:** Na tela de "Para manter a segurança vamos finalizr a sua sacola"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:sacola:modal-seguranca',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-botao]]` |  'continuar-conectado' e 'fechar' | Deve retornar o nome do botão clicado.|
+
+<br />
+
+**No clique nos botões**<br />
+
+- **Onde:** Na tela de instruções do QR Code
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:instrucoes-qr-code',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| `[[nome-botao]]` |  'voltar' e 'continuar' | Deve retornar o nome do botão clicado.|
+
+<br />
+
+**No clique no botão "Fechar"**<br />
+
+- **Onde:** Na tela de acesse o QR Code
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:qr-code',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'fechar'
+  });
+</script>
+```
+
+<br />
+
+---
+
+### MSite - Login - Esqueci Senha e Cadastro
 
 **Na interação com os campos para fazer login**<br />
 
@@ -457,21 +688,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'eventCategory': 'estore:login',
     'eventAction': 'interacao:campo',
-    'eventLabel': 'preencheu:[[nome-campo]]',
+    'eventLabel': 'preencheu:[[nome-campo]]'
   });
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]]  | &#039;cpf&#039;, &#039;senha&#039; e etc | Deve retornar o nome do campo preenchido. |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[nome-campo]]` | 'cpf', 'senha' e etc | Deve retornar o nome do campo preenchido.|
 
 <br />
 
-
-**No clique do botão &quot;Continuar&quot; para validar os campos preenchidos e fazer o login**<br />
+**No clique do botão "Continuar" para validar os campos preenchidos e fazer o login**<br />
 
 - **Onde:** Na página de Login
     
@@ -481,21 +709,17 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'estore:login',
-    'eventAction': 'tentativa:login',
-    'eventLabel': 'continuar'
+    'eventAction': 'clique:botao',
+    'eventLabel': 'continuar',
   });
 </script>
 ```
 
-
-
-
 <br />
 
+**No callback, após clicar no botão "Continuar" para validar os campos preenchidos e fazer o login**<br />
 
-**No callback, após clicar no botão &quot;Continuar&quot; para validar os campos preenchidos e fazer o login**<br />
-
-- **Onde:** Na página de login
+- **Onde:** Na página de Login
     
 ```html
 <script>
@@ -505,43 +729,19 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventCategory': 'estore:login',
     'eventAction': 'callback:login',
     'eventLabel': '[[sucesso ou tipo-erro]]',
-    'dimension1': '[[cd1-user-userid]]',
-    'dimension5': '[[cd5-user-cartID]]',
+    'dimension1': '[[cd1-user-userid]]'
   });
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-erro]] | &#039;sucesso&#039;,  &#039;erro:senha-invalida&#039; e etc | Deve retornar o label do botão &#039;sucesso&#039; ou o status de erro retorno. |
-| [[cd1-user-userid]] |  &#039;01234&#039; | ID único do usuário definido após cadastro (MagentoID) |
-| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[sucesso ou tipo-erro]]` | 'a-quantidade-desejada-esta-indisponivel-no-momento', 'sacola-vazia' e etc | Deve retornar o erro aprensentado na sacola.|
+| `[[cd1-user-userID]]` | '01234312hbjhdsfs32' e etc | CPF racheado do usuário|
 
 <br />
 
-
-**No clique no botão de &quot;Esqueci minha senha&quot;**<br />
-
-- **Onde:** Na página de login
-
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:login',
-    'eventAction': 'clique:botao',
-    'eventLabel': 'esqueci-senha',
-  });
-</script>
-```
-
-<br />
-
-
-**Na interação com o campo de cpf para redefinir senha**<br />
+**No clique no botão de "Esqueci minha senha"**<br />
 
 - **Onde:** Na página para Redefinir Senha
     
@@ -559,27 +759,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
-
-**No clique do botão &quot;Redefinir minha senha&quot; para validar os campos preenchidos e redefinir a senha**<br />
-
-- **Onde:** Na página para Redefinir Senha
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:redefinir-senha',
-    'eventAction': 'tentativa:senha',
-    'eventLabel': 'redefinir'
-  });
-</script>
-```
-
-<br />
-
-
-**No callback, após clicar no botão &quot;Redefinir minha senha&quot; para validar os campos preenchidos e redefinir a senha**<br />
+**No clique do botão "Redefinir minha senha" para validar os campos preenchidos e redefinir a senha**<br />
 
 - **Onde:** Na página para Redefinir Senha
     
@@ -589,24 +769,39 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'estore:redefinir-senha',
-    'eventAction': 'callback:senha',
-    'eventLabel': '[[sucesso ou tipo-erro]]',
-    'dimension1': '[[cd1-user-userid]]',
-    'dimension5': '[[cd5-user-cartID]]',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'redefinir-minha-senha'
   });
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:insira-um-cpf-para-prosseguir&#039;, &#039;erro:cpf-invalido&#039; e etc | Deve retornar o label do botão &#039;sucesso&#039; ou o status de erro retorno. |
-| [[cd1-user-userid]] |  &#039;01234&#039; | ID único do usuário definido após cadastro (MagentoID) |
-| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[erro]]` | 'a-quantidade-desejada-esta-indisponivel-no-momento', 'sacola-vazia' e etc | Deve retornar o erro aprensentado na sacola.|
 
 <br />
 
+**No callback, após clicar no botão "Redefinir minha senha" para validar os campos preenchidos e redefinir a senha**<br />
+
+- **Onde:** Na página para Redefinir Senha
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:redefinir-senha',
+    'eventAction': 'callback:redefinir-senha',
+    'eventLabel': '[[sucesso ou tipo-erro]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[sucesso ou tipo-erro]]` | 'sucesso', 'erro:insira-um-cpf-para-prosseguir', 'erro:cpf-invalido' e etc | Deve retornar o callback da aplicação. |
+
+<br />
 
 **Na interação com os campos para criar conta**<br />
 
@@ -619,46 +814,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'eventCategory': 'estore:criar-conta',
     'eventAction': 'interacao:campo',
-    'eventLabel': 'preencheu:[[nome-campo]]',
+    'eventLabel': 'preencheu:[[nome-campo]]'
   });
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]]  | &#039;cpf&#039;, &#039;email&#039;, &#039;data-nascimento&#039;, telefone&#039;, &#039;senha&#039;, &#039;confirmar-senha&#039;, cep&#039; e etc | Deve retornar o nome do campo preenchido. |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[nome-campo]]` | 'cpf', 'email', 'data-nascimento', telefone', 'senha', 'confirmar-senha', cep' e etc | Deve retornar o nome do campo preenchido.|
 
 <br />
 
-
-**Na interação com os checkboxes para receber ofertas por e-mail e por sms**<br />
-
-- **Onde:** No formulário de cadastro
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:criar-conta',
-    'eventAction': 'interacao:checkbox',
-    'eventLabel': 'preencheu:[[nome-campo]]',
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]]  | &#039;receber-ofertas-conteudos-por-email&#039;, ou &#039;receber-ofertas-conteudos-por-sms&#039; | Deve retornar o nome do campo preenchido. |
-
-<br />
-
-
-**No clique no botão de &quot;Continuar&quot;, &quot;termos e condições de uso&quot; e &quot;Política de Privacidade&quot;**<br />
+**No clique nos botões de "Continuar", "termos e condições de uso" e "Política de Privacidade"**<br />
 
 - **Onde:** No formulário de cadastro
     
@@ -669,42 +836,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'eventCategory': 'estore:criar-conta',
     'eventAction': 'clique:botao',
-    'eventLabel': '[[nome-botao]]',
+    'eventLabel': '[[nome-botao]]'
   });
 </script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;continuar&#039;, &#039;termos-condicoes-uso&#039;, &#039;politica-privacidade&#039; e etc | Deve retornar o nome do botão clicado. |
-
-<br />
-
-
-**No clique do botão &quot;Continuar&quot; para validar os campos preenchidos**<br />
-
-- **Onde:** No formulário de cadastro
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:criar-conta',
-    'eventAction': 'tentativa:cadastro',
-    'eventLabel': 'continuar'
-  });
-</script>
-```
-
-
-
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[erro]]` | 'continuar', 'termos-condicoes-uso', 'politica-privacidade' e etc | Deve retornar o nome do botão clicado.|
 
 <br />
 
-
-**No callback, após clicar no botão &quot;Continuar&quot; para validar os campos preenchidos**<br />
+**No callback, após clicar no botão "Continuar" para validar os campos preenchidos**<br />
 
 - **Onde:** No formulário de cadastro
     
@@ -716,51 +859,454 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventCategory': 'estore:criar-conta',
     'eventAction': 'callback:cadastro',
     'eventLabel': '[[sucesso ou tipo-erro]]',
-    'dimension1': '[[cd1-user-userid]]',
-    'dimension5': '[[cd5-user-cartID]]',
+    'dimension1': '[[cd1-user-userid]]'
   });
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-erro]] | &#039;sucesso&#039;,&#039;erro:campo:bairro;nome;cpf&#039; e etc | Deve retornar o label do botão &#039;continuar&#039; ou o status de erro retorno. |
-| [[cd1-user-userid]] |  &#039;01234&#039; | ID único do usuário definido após cadastro (MagentoID) |
-| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[sucesso ou tipo-erro]]` | 'a-quantidade-desejada-esta-indisponivel-no-momento', 'sacola-vazia' e etc | Deve retornar o erro aprensentado na sacola.|
+| `[[cd1-user-userid]]` | '01234312hbjhdsfs32' e etc | CPF racheado do usuário|
 
 <br />
 
+### MSite - Checkout
 
-### Logoff
+**No callback de "Ocorreu um problema com a sua sacola"**<br />
 
-**No clique no botão de &quot;Desconectar Agora&quot;**<br />
-
-- **Onde:** Na caixa de alerta de segurança
-
+- **Onde:** Na página da Sacola do MSite
+    
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'estore:alerta-seguranca',
+    'eventCategory': 'estore:checkout:sacola',
+    'eventAction': 'callback:sacola',
+    'eventLabel': '[[erro]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[erro]]` | 'solicite-ao-colaborador-um-novo-link-ou-qr-code' | Deve retornar o tipo de erro apresentado.|
+
+<br />
+
+**No clique dos botões "Remover" ou "Cancelar"**<br />
+
+- **Onde:** No modal "Tem certeza de que quer remover esse item da sua sacola?" Na página da Sacola do MSite
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:sacola:modal:remover-esse-item',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[nome-botao]]` | 'editar-endereco-1', 'editar-endereco-2', 'adicionar-novo-endereco' e etc | Deve retornar o nome do botão clicado.|
+
+<br />
+
+
+**No clique no botão "Continuar"**<br />
+
+- **Onde:** Na página da Sacola do MSite
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:sacola',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'continuar'
+  });
+</script>
+```
+
+<br />
+
+**No clique das opções na página de Compra**<br />
+
+- **Onde:** Na página de Compra do MSite
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:compra',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[nome-botao]]` | 'entrega', 'cupom-de-desconto' e 'pagamento' | Deve retornar o nome do botão clicado.|
+
+<br />
+
+**No callback da página de Entrega**<br />
+
+- **Onde:** Na página de Entrega
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:endereco',
+    'eventAction': 'callback:endereco',
+    'eventLabel': '[[erro]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[erro]]` | 'erro:estes-produtos-nao-podem-ser-entregues-na-regia-selecionada' | Deve retornar o tipo de erro apresentado.|
+
+<br />
+
+**No clique no botão de "Adicionar novo endereço" ou "Editar Endereço", na seção de Endereço**<br />
+
+- **Onde:** Na página de Entrega, na seção de Endereço
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:endereco',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[nome-botao]]` | 'editar-endereco-1', 'editar-endereco-2', 'adicionar-novo-endereco' e etc | Deve retornar o nome do botão clicado.|
+
+<br />
+
+**Na interação com os campos para editar um endereço já cadastrado ou um novo endereço**<br />
+
+- **Onde:** Nas páginas de "Editar endereço" ou "Novo Endereço" do MSite
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:[[nome-formulario]]',
+    'eventAction': 'interacao:campo',
+    'eventLabel': 'preencheu:[[nome-campo]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[nome-formulario]]` | 'editar-endereco' ou 'novo-endereco' | Deve retornar o nome do formulário que o botão está localizado.|
+| `[[nome-campo]]` | 'cep', 'nome', telefone'  e etc | Deve retornar o nome do campo preenchido.|
+
+<br />
+
+**No clique no botão de "Salvar", para "Editar um endereço já cadastrado" ou "Adicionar um novo endereço"**<br />
+
+- **Onde:** Nas páginas de "Editar endereço" ou "Novo Endereço" do MSite
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:[[nome-formulario]]',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'salvar'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[nome-formulario]]` | 'editar-endereco' ou 'novo-endereco' | Deve retornar o nome do formulário que o botão está localizado.|
+
+<br />
+
+**No callback, após clicar no botão "Salvar" para validar os campos preenchidos**<br />
+
+- **Onde:** Nas páginas de "Editar endereço" ou "Novo Endereço"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:[[nome-formulario]]',
+    'eventAction': 'callback:endereco',
+    'eventLabel': '[[sucesso ou tipo-erro]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[nome-formulario]]` | 'editar-endereco' ou 'novo-endereco' | Deve retornar o nome do formulário que o botão está localizado.|
+| `[[sucesso ou tipo-erro]]` | 'sucesso', 'erro:preencha-campo-bairro' e etc | Deve retornar o label do botão 'sucesso' ou o status de erro retorno.|
+
+<br />
+
+**No clique nos botões "Adicionar", "Continuar" e no ìcone para excluir o cupom**<br />
+
+- **Onde:** Na página de Cupom
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:cupom',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[cupom]]:[[nome-botao]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[cupom]]` | 'zap10', 'seja-bem-vindo' e etc | Deve retornar o cupom utlizado.|
+| `[[nome-botao]]` | 'adicionar', 'continuar', 'excluir-cupom' e etc | Deve retornar o nome do botão clicado.|
+
+<br />
+
+**No callback para inserir o Cupom de desconto**<br />
+
+- **Onde:** Na página de Cupom
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:cupom',
+    'eventAction': 'callback:cupom:[[cupom]]',
+    'eventLabel': '[[sucesso ou tipo-erro]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[cupom]]` | 'zap10', 'seja-bem-vindo' e etc | Deve retornar o cupom utlizado.|
+| `[[sucesso ou tipo-erro]]` | 'sucesso', 'erro:cupom-invalido', 'erro:cupom-vencido', 'erro:informe-um-cupom-valido' e etc | Deve retornar o status sucesso ou de erro retorno.|
+
+<br />
+
+**No clique nas opções "Forma de Pagamento"**<br />
+
+- **Onde:** Na página de "Pagamento"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:pagamento',
+    'eventAction': 'clique:opcao',
+    'eventLabel': '[[opcao-selecionada]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[opcao-selecionada]]` | 'cartao-riachuelo-ou-cartao-credito', 'boleto' e etc | Deve retornar a opção selecionada.|
+
+<br />
+
+**No callback para validar dados do Cartão.**<br />
+
+- **Onde:** Na página de "Dados do Cartão"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:pagamento',
+    'eventAction': 'callback:dados-cartao',
+    'eventLabel': '[[sucesso ou tipo-erro]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[sucesso ou tipo-erro]]` | 'sucesso', 'erro:numero-cartao-invalido', 'erro:nome-obrigatorio' e etc | Deve retornar o status sucesso ou de erro retorno.|
+
+<br />
+
+**Nas opções de parcelamento**<br />
+
+- **Onde:** Na página de "Pagamento"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:pagamento',
+    'eventAction': 'interacao:parcelamento',
+    'eventLabel': '[[opcao-selecionada]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[opcao-selecionada]]` | '1x35,91', '2x50,00' e etc | Deve retornar a opção selecionada para parcelamento.|
+
+<br />
+
+**No clique dos botões "Continuar"**<br />
+
+- **Onde:** Nas páginas de "Pagamento" e "Dados do Cartão"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:pagamento',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-pagina]]:continuar'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[nome-pagina]]` | 'pagamento' ou 'dados-do-cartao' | Deve retornar o nome da página.|
+
+<br />
+
+**No clique do botão "Finalizar"**<br />
+
+- **Onde:** Na página de Compra
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:compra',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'finalizar'
+  });
+</script>
+```
+
+<br />
+
+**No callback após clicar no botão "Finalizar"**<br />
+
+- **Onde:** Na página de Compra
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:compra',
+    'eventAction': 'callback:finalizar-compra',
+    'eventLabel': '[[sucesso ou tipo-erro]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[sucesso ou tipo-erro]]` | 'sucesso', 'erro:cupom-invalido', 'erro:pagamento-recusado', 'erro:entrega' e etc | Deve retornar o status sucesso ou de erro retorno.|
+
+<br />
+
+**No clique do botão "Continuar"**<br />
+
+- **Onde:** Na página de Compra, modal "Desculpe, o pagamento do seu pedido foi recusado"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:compra:modal:pagamento-recusado',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'continuar'
+  });
+</script>
+```
+
+<br />
+
+**No clique do botão "Copiar Código" para copiar o código de barras**<br />
+
+- **Onde:** Na página de Pedido Realizado com Sucesso
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:purchase',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'copiar-codigo-barras'
+  });
+</script>
+```
+
+<br />
+
+### Logoff
+
+**No clique no botão de "Desconectar Agora"**<br />
+
+- **Onde:** Na caixa de alerta de segurança
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:logoff:alerta-seguranca',
     'eventAction': 'clique:botao',
     'eventLabel': '[[nome-botao]]',
   });
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;continuar-conectado&#039; e &#039;Desconectar Agora&#039; | Deve retornar o nome do botão clicado. |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[nome-botao]]` | 'continuar-conectado' e 'desconectar-agora' | Deve retornar o nome do botão clicado.|
 
 <br />
 
-
 **No carregamento da página de Logoff**<br />
 
-- **Onde:** Na página de &quot;Você se desconectou com sucesso&quot;
+- **Onde:** Na página de "Você se desconectou com sucesso"
     
 ```html
 <script>
@@ -774,755 +1320,30 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   });
 </script>
 ```
-
 <br />
 
-
-### Categorias
-
-**No clique para selecionar as categorias, na seção de &quot;Escolha por Categoria&quot;**<br />
-
-- **Onde:** Na página de lista de produtos
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:clp',
-    'eventAction': 'clique:[[categoria ou subcategoria]]',
-    'eventLabel': '[[item-selecionada]]',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[item-selecionada]] | &#039;colecao-feminina&#039;,  &#039;plus-size&#039;, &#039;esporte-fitness&#039; e etc | Deve retornar a  categoria selecionada. |
-| [[categoria ou subcategoria]] | &#039;categoria&#039;,  &#039;subcategoria&#039; | Deve retornar a se foi selecionado um elemento de categoria ou subcategoria . |
-
-<br />
-
-
-**No clique nos filtros**<br />
-
-- **Onde:** Na página de lista de produtos
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:clp',
-    'eventAction': 'clique:filtro',
-    'eventLabel': '[[filtro]]:[[filtro-selecionado]]',
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[filtro]] | &#039;tamanho&#039;, &#039;marcas&#039;, &#039;padronagem&#039;, &#039;cor&#039;, &#039;relevancia&#039; e etc | Deve retornar o nome do filtro. |
-| [[filtro-selecionado]] | &#039;marca-1&#039;, &#039;bordado&#039;, &#039;vermelho&#039;,   &#039;preco:maiores-primeiro&#039;, &#039;lancamentos&#039; e etc | Deve retornar o label do filtro selecionado. |
-
-<br />
-
-
-**Nos cliques do filtro "ordenar por" e na escolha de visualização de grade.**<br />
-
-- **Onde:** Na página de lista de produtos
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:[[clp ou busca]]',
-    'eventAction': 'clique:[[item-clicado]]',
-    'eventLabel': '[[ordem-selecionado]]',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[clp ou busca]] | 'cpl' ou 'busca' | Deve retorna o tipo de página.  |
-| [[item-clicado]] | 'ordenar-por', 'exibir-2-colunas', 'exibir-4-colunas' e etc. | Deve retornar o nome do item clicado. |
-| [[ordem-selecionado]] | &#039;por-preco&#039;, &#039;por-relevancia&#039; e etc | Deve retornar o label do ordem selecionado. |
-
-<br />
-
-**No clique no botão "voltar"**<br />
-
-- **Onde:** Na página de lista de produtos
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:[[clp ou busca]]',
-    'eventAction': 'clique:botao',
-    'eventLabel': 'voltar',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[clp ou busca]] | 'cpl' ou 'busca' | Deve retorna o tipo de página.  |
-
-<br />
-
-### Checkout
-
-**No clique nos botões de "Continuar Comprando", "Finalizar Compra", "+"(Aumentar), "-" (Diminuir), Fechar**<br />
-
-- **Onde:** No modal de "Sua Sacola"
-
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:modal-sacola',
-    'eventAction': 'clique:botao',
-    'eventLabel': '[[nome-botao]]',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | 'continuar-comprando', 'finalizar-compra', 'aumentar-quantidade', 'diminuir-quantidade', 'fechar:modal-sacola' e etc | Deve retornar o nome do botão clicado. |
-
-<br />
-
-
-**No callback de erro de produtos indisponiveis**<br />
-
-- **Onde:** No ligthbox de &quot;A quantidade desejada está indisponível no momento&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'noInteraction': '1',
-    'eventCategory': 'estore:sacola',
-    'eventAction': 'callback:produtos',
-    'eventLabel': 'item-indisponivel'
-  });
-</script>
-```
-
-<br />
-
-
-**No clique no botão de &quot;Continuar&quot;**<br />
-
-- **Onde:** No lightbox de &quot;A quantidade desejada está indisponível no momento&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:sacola',
-    'eventAction': 'clique:botao:lightbox:quantidade-desejada-indisponivel',
-    'eventLabel': 'continuar',
-  });
-</script>
-```
-
-<br />
-
-**No clique nos botões de &quot;Remover&quot; ou &quot;Cancelar"**<br />
-
-- **Onde:** No lightbox de &quot;Tem certeza que quer remover esse item da sua sacola?&quot;
-
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:sacola',
-    'eventAction': 'clique:botao:lightbox:remover-item-sacola',
-    'eventLabel': '[[nome-botao]]',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;remover&#039;, &#039;cancelar&#039; e etc | Deve retornar o nome do botão clicado. |
-
-<br />
-
-**No callback após remover todos os produtos do carrinho**<br />
-
-- **Onde:** No ligthbox de &quot;Sua sacola está vazia&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'noInteraction': '1',
-    'eventCategory': 'estore:sacola',
-    'eventAction': 'callback:produtos',
-    'eventLabel': 'sacola-vazia'
-  });
-</script>
-```
-
-<br />
-
-**No clique no botão de &quot;Desconectar&quot;**<br />
-
-- **Onde:** No lightbox de &quot;Sua sacola está vazia&quot;
-
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:sacola',
-    'eventAction': 'clique:botao:lightbox:sacola-vazia',
-    'eventLabel': 'desconectar',
-  });
-</script>
-```
-
-<br />
-
-**No clique nos botões "Voltar", "Continuar" e "Fechar"**<br />
-
-- **Onde:** Nas telas de "Finalize sua compra pelo celular", seções "Sacola" e "Finalização"
-
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:sacola:finalize-sua-compra',
-    'eventAction': 'clique:[[botao-ou-link]]',
-    'eventLabel': '[[item-clicado]]',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[botao-ou-link]] | 'botao' ou 'link' | Deve retornar o nome do elemento clicado. |
-| [[item-clicado]] | 'voltar:sacola:finalize-sua-compra', 'continuar:sacola:finalize-sua-compra', 'fechar:qr-code:finalize-sua-compra' e etc | Deve retornar o nome do item clicado. |
-
-<br />
-
-**No clique dos botões "Continuar Conectado" ou "Finalizar"**<br />
-
-- **Onde:** Na tela de "Finalize sua compra pelo celular", seção "Para manter a segurança"
-
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:compra:modal-seguranca',
-    'eventAction': 'clique:botao',
-    'eventLabel': '[[botao-clicado]]',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[botao-clicado]] | 'continuar-conectado' e 'fechar' | Deve retornar o nome do botão clicado. |
-
-<br />
-
-**No clique nas opções**<br />
-
-- **Onde:** Na tela de &quot;Compra&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:compra',
-    'eventAction': 'clique:opcao',
-    'eventLabel': '[[opcao-selecionada]]',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[opcao-selecionada]] | &#039;entrega&#039;, &#039;cupons-vale-cartao-presente&#039;, &#039;pagamento&#039; e etc | Deve retornar a opção selecionada. |
-
-<br />
-
-
-**No clique no botão de &quot;Adicionar novo endereço&quot; ou &quot;Editar Endereço&quot;, na seção de Endereço**<br />
-
-- **Onde:** Na página de Entrega, na seção de Endereço
-  
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:checkout:endereco',
-    'eventAction': 'cclique:botao',
-    'eventLabel': '[[nome-botao]]',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;editar-endereco-1&#039;, &#039;editar-endereco-2&#039;, &#039;adicionar-novo-endereco&#039; e etc | Deve retornar o nome do botão clicado. |
-
-<br />
-
-**Na interação com os campos para editar um endereço já cadastrado ou um novo endereço**<br />
-
-- **Onde:** Nas páginas de &quot;Editar endereço&quot; ou &quot;Novo Endereço&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:checkout:[[nome-formulario]]',
-    'eventAction': 'interacao:campo',
-    'eventLabel': 'preencheu:[[nome-campo]]',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-formulario]] | &#039;editar-endereco&#039; ou &#039;novo-endereco&#039; | Deve retornar o nome do formulário que o botão está localizado. |
-| [[nome-campo]]  |  &#039;cep&#039;, &#039;nome&#039;, telefone&#039;  e etc | Deve retornar o nome do campo preenchido. |
-
-<br />
-
-
-**No clique no botão de &quot;Salvar&quot;, para &quot;Editar um endereço já cadastrado&quot; ou &quot;Adicionar um novo endereço&quot;**<br />
-
-- **Onde:** Nas páginas de &quot;Editar endereço&quot; ou &quot;Novo Endereço&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:checkout:[[nome-formulario]]',
-    'eventAction': 'tentativa:adicionar',
-    'eventLabel': 'salvar',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-formulario]] | &#039;editar-endereco&#039; ou &#039;novo-endereco&#039; | Deve retornar o nome do formulário que o botão está localizado. |
-
-<br />
-
-
-**No callback, após clicar no botão &quot;Salvar&quot; para validar os campos preenchidos**<br />
-
-- **Onde:** Nas páginas de &quot;Editar endereço&quot; ou &quot;Novo Endereço&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:checkout:[[nome-formulario]]',
-    'eventAction': 'callback:adicionar',
-    'eventLabel': '[[sucesso ou tipo-erro]]',
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-formulario]] | &#039;editar-endereco&#039; ou &#039;novo-endereco&#039; | Deve retornar o nome do formulário que o botão está localizado. |
-| [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:preencha-campo-bairro&#039; e etc | Deve retornar o label do botão &#039;sucesso&#039; ou o status de erro retorno. |
-
-<br />
-
-
-**No clique nas opções de &quot;Cupons ou Vales&quot; ou &quot;Cartão Presente&quot;**<br />
-
-- **Onde:** Na página de &quot;Cupons, Vales ou Cartão Presente&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:checkout:cupons-vales-cartao-presente',
-    'eventAction': 'clique:opcao',
-    'eventLabel': '[[opcao-selecionada]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[opcao-selecionada]] | &#039;cupons-vales&#039;, &#039;cartao-presente&#039; e etc | Deve retornar a opção selecionada. |
-
-<br />
-
-
-**No clique nas opções de &quot;Cartão Riachuelo ou Cartão de Crédito&quot; ou &quot;Boleto&quot;**<br />
-
-- **Onde:** Na página de &quot;Pagamento&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:checkout:pagamento',
-    'eventAction': 'clique:opcao',
-    'eventLabel': '[[opcao-selecionada]]'
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[opcao-selecionada]] | &#039;cartao-riachuelo-cartao-credito&#039;, &#039;boleto&#039; e etc | Deve retornar a opção selecionada. |
-
-<br />
-
-
-**No callback, após clicar no botão &quot;Continuar&quot; para validar os campos preenchidos**<br />
-
-- **Onde:** Nas páginas de &quot;Cartão de Crédito&quot;, &quot;Cartão Riachuelo&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:checkout:pagamento',
-    'eventAction': 'callback:cartao-credito',
-    'eventLabel': '[[sucesso ou tipo-erro]]',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:numero-invalido&#039;, &#039;erro:nome-obrigatorio&#039;, &#039;erro:cpf-incompleto&#039;, &#039;erro:selecione-parcelamento&#039; e etc | Deve retornar o status sucesso ou de erro retorno. |
-
-<br />
-
-
-**No clique no botão de &quot;Editar&quot; das etapas anteriores**<br />
-
-- **Onde:** Na página de checkout,
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:checkout',
-    'eventAction': 'clique:botao',
-    'eventLabel': '[[nome-botao]]',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;editar-entrega&#039;, &#039;editar-endereco&#039;, &#039;editar-pagamento&#039; | Deve retornar o nome do botão clicado. |
-
-<br />
-
-
-**No carregamento das opções de entrega**<br />
-
-- **Onde:** No fluxo de checkout, página de entrega
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'noInteraction': '1',
-    'eventCategory': 'estore:checkout',
-    'eventAction': 'tipos-de-entrega',
-    'eventLabel': [{
-      't':'[[nome-entrega]]',
-      'd':'[[previsao]]',
-      'p':'[[valor]]'
-        },
-      {
-        't':'[[nome-entrega]]',
-        'd':'[[previsao]]',
-        'p':'[[valor]]'
-        }],
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-entrega]] | &#039;normal&#039;, &#039;expresso &#039;, &#039;entrega-agendada&#039;,&#039;retirar-em-loja&#039;  | Deve retornar os nomes dos tipos de entrega. |
-| [[previsao]] | &#039;DD/MM/AAAA&#039;, | Deve retornar a quantidade de dias para a entrega. |
-| [[valor]] | &#039;&#039;0.00&#039;, &#039;2.99&#039;, &#039;5.00&#039; | Deve retornar os valores dos fretes. |
-
-<br />
-
-
-**No  clique do botão &quot;Aplicar&quot; para validar os campos preenchidos de &quot;Cupom&quot;**<br />
-
-- **Onde:** Na página de Carrinho, no Step de &quot;Cupons, vales e trocas&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:checkout',
-    'eventAction': 'tentativa:inserir-cupom',
-    'eventLabel': 'aplicar',
-  });
-</script>
-```
-
-<br />
-
-
-**No callback, após clicar no botão &quot;Aplicar&quot; para validar os campos preenchidos de &quot;Cupom&quot;**<br />
-
-- **Onde:** Na página de Carrinho, no Step de &quot;Cupons, vales e trocas&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:checkout',
-    'eventAction': 'callback:inserir-cupom',
-    'eventLabel': '[[sucesso ou tipo-erro]]',
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;erro:cupom-invalido&#039; e etc | Deve retornar o status do retorno. |
-
-<br />
-
-
-**No clique do botão &quot;Finalizar&quot; para validar os campos preenchidos de &quot;Pagamento&quot; e finalizar a compra**<br />
-
-- **Onde:** Na página de Compra
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:checkout',
-    'eventAction': 'callback:tentativa:finalizar-compra',
-    'eventLabel': '[[finalizar ou tipo-erro]]',
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[finalizar ou tipo-erro]] | &#039;finalizar&#039;, &#039;erro:verifique-os-dados-inseridos-ou-utilize-outro-meio-pagamento&#039;, &#039;erro:nao-foi-possivel-concluir-tente-novamente&#039; e etc | Deve retornar o label do botão &#039;finalizar&#039; ou o status de erro retorno. |
-
-<br />
-
-
-**No clique do botão &quot;Copiar Código&quot; para copiar o código de barras**<br />
-
-- **Onde:** Na página de Pedido Realizado com Sucesso
-
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:purchase',
-    'eventAction': 'clique:botao',
-    'eventLabel': 'copiar-codigo-barras',
-  });
-</script>
-```
-
-<br />
-
-
-### PDP
-
-**Na interação com as opções de tamanho ou cor**<br />
-
-- **Onde:** Nas páginas de detalhe do produto
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:pdp',
-    'eventAction': 'escolha:[[cor ou tamanho]]',
-    'eventLabel': '[[opcao-escolhida]]'
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cor ou tamanho]] | 'cor' ou 'tamanho' | Deve retornar qual tipo de escolha o usuário está fazendo. |
-| [[opcao-escolhida]] | 'm', 'g', 'gg', 'azul', 'amarelo', '36', '38' e etc | Deve retornar a opção escolhida. |
-
-<br />
-
-**No clique dos botões**<br />
-
-- **Onde:** Nas páginas de detalhe do produto
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'estore:pdp',
-    'eventAction': 'clique:botao',
-    'eventLabel': '[[nome-botao]]'
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | 'voltar:pdp', 'adicionar-a-sacola' e etc | Deve retornar o nome do botão clicado. |
-
-
-<br />
-
-### Enhanced Ecommerce
-
-**Na visualização do grupo de banners exibidos**<br />
-
-- **Onde:** Na página home do site
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'promoView',
-    'eventCategory': 'estore:enhanced-ecommerce',
-    'eventAction': 'promoView',
-    'noInteraction': '1',
-    'ecommerce': {
-    'promoView': {
-      'promotions': [{
-        'id': '[[id-promocao]]',
-        'name': '[[nome-promocao]]',
-        'position': '[[posicao-promocao]]',
-      }]
-    }
-  }
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[id-promocao]] |  &#039;banner123&#039;, &#039;banner234&#039; e etc | ID único do Banner |
-| [[nome-promocao]] |  &#039;masculino&#039;, &#039;infantil&#039;, &#039;teen&#039; e etc | Nome amigável do banner |
-| [[posicao-promocao]] |  &#039;1&#039; | Posição que o banner é exibido  |
-
-<br />
-
-
-**No clique dos banners**<br />
-
-- **Onde:** Na página home do site
-    
-
-```html
-<script>
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  'event': 'promotionClick',
-  'eventCategory': 'estore:enhanced-ecommerce',
-  'eventAction': 'promoClick',
-  'ecommerce': {
-  'promoClick': {
-    'promotions': [{
-      'id': '[[id-promocao]]',
-      'name': '[[nome-promocao]]',
-      'position': '[[posicao-promocao]]',
-    }]
-  }
-}
-});
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[id-promocao]] |  &#039;banner123&#039;, &#039;banner234&#039; e etc | ID único do Banner |
-| [[nome-promocao]] |  &#039;masculino&#039;, &#039;infantil&#039;, &#039;teen&#039; e etc | Nome amigável do banner |
-| [[posicao-promocao]] |  &#039;1&#039; | Posição que o banner é exibido  |
-
-<br />
-
+### Enhanced Ecommerce - Desktop-Msite
 
 **Na visualização de uma vitrine de produtos**<br />
 
-- **Onde:** Em todas as páginas que exibirem uma lista de produtos
+- **Onde:** Exclusivo para o desktop. Em todas as páginas que exibirem uma lista de produtos
     
 
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
-  'event': 'productImpressions',
+  'event': 'productImpression',
   'eventCategory':'estore:enhanced-ecommerce',
-  'eventAction': 'impressions',
+  'eventAction': 'impression',
+  'noInteraction': '1',
     'ecommerce': {
     'impressions': [{
-      'dimension15': '[[cd15-product-lookcompleto]]',
-      'dimension16': '[[cd16-product-iddolook]]',
-      'dimension17': '[[cd17-product-selo/tag]]',
-      'dimension18': '[[cd18-product-exclusivo-ecommerce+marketplace]]',
-      'dimension19': '[[cd19-product-variante]]',
-      'dimension20': '[[cd20-product-gm]]',
-      'dimension21': '[[cd21-product-preçode]]',
-      'dimension22': '[[cd22-product-estilo]]',
-      'dimension23': '[[cd23-product-genero]]',
-      'dimension24': '[[cd24-product-lojamktplace]]',
-      'dimension28': '[[cd28-product-cor]]',
+      'dimension16': '[[cd16-product-selo/tag]]',
+      'dimension17': '[[cd17-product-exclusivo-ecommerce+marketplace]]',
+      'dimension19': '[[cd19-product-gm]]',
+      'dimension21': '[[cd21-product-estilo]]',
+      'dimension22': '[[cd22-product-genero]]',
       'name': '[[nome-produto]]',
       'id': '[[id-produto]]',
       'list': '[[lista-produto]]',
@@ -1536,33 +1357,27 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
-| [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
-| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[cd18-product-exclusivo-ecommerce+marketplace]] |  'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
-| [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
-| [[cd21-product-preçode]] |  &#039;139,99&#039; | Preço de do produto |
-| [[cd22-product-estilo]] |  &#039;life-style&#039; | Estilo do produto |
-| [[cd23-product-genero]] |  &#039;feminino&#039; | Genero do produto |
-| [[cd24-product-lojamktplace]] |  &#039;riachuelo&#039;, &#039;loja-a&#039;, &#039;loja-b&#039; | Nome da loja mktplace |
-| [[cd28-product-cor]] |   'branco', 'preto' e etc | Retornar a cor do produto |
-| [[nome-produto]] |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
-| [[id-produto]] |  &#039;13239635&#039; | SKU do produto - pai |
-| [[preco-produto]] |  &#039;139,99&#039; | Preço do produto |
-| [[marca-produto]] |  &#039;pool-original&#039; | Marca do produto |
-| [[categoria-produto]] |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
-| [[lista-produto]] |  &#039;feminino-blusa&#039;, &#039;masculino-polo&#039;, &#039;acessorios-e-relogios-aneis&#039;, &#039;feminino_em-destaque_plus-size&#039;, &#039;plp_quem-viu-tambem-viu&#039;, &#039;pdp_quem-viu-tambem-viu&#039;, &#039;home-destaques&#039;, &#039;novidades&#039; e etc | Nome da lista que o produto aparece |
-| [[posicao-produto]] |  &#039;2&#039; | Posição que o produto aparece em uma lista de produtos |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[cd16-product-selo/tag]]` |  'selo:black-friday', 'tag:frete-gratis' e etc | Deve retornar o tipo do selo ou tag e a promoção **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por "" ; "" (Ponto e vírgula) |
+| `[[cd17-product-exclusivo-ecommerce+marketplace]]` | 'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
+| `[[cd19-product-gm]]` |  '101508', '310011', '204002', etc | Subcategorias composto por 6 numeros |
+| `[[cd21-product-estilo]]` |   'life-style', 'esporte' e etc | Estilo do produto |
+| `[[cd22-product-genero]]` |  'feminino', 'unissex', 'infantil' e etc | Genero do produto |
+| `[[nome-produto]]` |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
+| `[[id-produto]]` |  &#039;13239635&#039; | SKU do produto - pai |
+| `[[preco-produto]]` |  &#039;139,99&#039; | Preço do produto |
+| `[[marca-produto]]` |  'rchlo', 'carters', 'levis' e etc | Marca do produto |
+| `[[categoria-produto]]` |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
+| `[[lista-produto]]` |   'plp:feminino', 'plp:dia-das-maes', 'plp:infantil', 'busca:blusa', 'busca:blusa-florida' e etc | Nome da lista que o produto aparece |
+| `[[posicao-produto]]` |  '1', '2', '3' e etc | Posição que o produto aparece em uma lista de produtos |
 
 <br />
 
 
 **No clique dos produtos da vitrine interagidos na página**<br />
 
-- **Onde:** Em todas as páginas que exibirem uma lista de produtos
+- **Onde:** Exclusivo para o desktop. Em todas as páginas que exibirem uma lista de produtos
     
 
 ```html
@@ -1572,22 +1387,15 @@ window.dataLayer.push({
     'event': 'productClick',
     'eventCategory': 'estore:enhanced-ecommerce',
     'eventAction': 'click',
-    'eventLabel': '-',
       'ecommerce': {
       'click': {
         'actionField': {'list': '[[lista-produto]]'},
         'products': [{
-          'dimension15': '[[cd15-product-lookcompleto]]',
-          'dimension16': '[[cd16-product-iddolook]]',
-          'dimension17': '[[cd17-product-selo/tag]]',
-          'dimension18': '[[cd18-product-exclusivo-ecommerce+marketplace]]',
-          'dimension19': '[[cd19-product-variante]]',
-          'dimension20': '[[cd20-product-gm]]',
-          'dimension21': '[[cd21-product-preçode]]',
-          'dimension22': '[[cd22-product-estilo]]',
-          'dimension23': '[[cd23-product-genero]]',
-          'dimension24': '[[cd24-product-lojamktplace]]',
-          'dimension28': '[[cd28-product-cor]]',
+          'dimension16': '[[cd16-product-selo/tag]]',
+          'dimension17': '[[cd17-product-exclusivo-ecommerce+marketplace]]',
+          'dimension19': '[[cd19-product-gm]]',
+          'dimension21': '[[cd21-product-estilo]]',
+          'dimension22': '[[cd22-product-genero]]',
           'name': '[[nome-produto]]',
           'id': '[[id-produto]]',
           'price': '[[preco-produto]]',
@@ -1601,35 +1409,27 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
-| [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
-| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[cd18-product-exclusivo-ecommerce+marketplace]] | 'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
-| [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
-| [[cd21-product-preçode]] |  &#039;139,99&#039; | Preço de do produto |
-| [[cd22-product-estilo]] |  &#039;life-style&#039; | Estilo do produto |
-| [[cd23-product-genero]] |  &#039;feminino&#039; | Genero do produto |
-| [[cd24-product-lojamktplace]] |  &#039;riachuelo&#039;, &#039;loja-a&#039;, &#039;loja-b&#039; | Nome da loja mktplace |
-| [[cd28-product-cor]] |   'branco', 'preto' e etc | Retornar a cor do produto |
-| [[nome-produto]] |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
-| [[id-produto]] |  &#039;13239635&#039; | SKU do produto - pai |
-| [[preco-produto]] |  &#039;139,99&#039; | Preço do produto |
-| [[marca-produto]] |  &#039;pool-original&#039; | Marca do produto |
-| [[categoria-produto]] |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
-| [[lista-produto]] |  &#039;feminino-blusa&#039;, &#039;masculino-polo&#039;, &#039;acessorios-e-relogios-aneis&#039;, &#039;feminino_em-destaque_plus-size&#039;, &#039;plp_quem-viu-tambem-viu&#039;, &#039;pdp_quem-viu-tambem-viu&#039;, &#039;home-destaques&#039;, &#039;novidades&#039; e etc | Nome da lista que o produto aparece |
-| [[posicao-produto]] |  &#039;2&#039; | Posição que o produto aparece em uma lista de produtos |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[cd16-product-selo/tag]]` |  'selo:black-friday', 'tag:frete-gratis' e etc | Deve retornar o tipo do selo ou tag e a promoção **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por "" ; "" (Ponto e vírgula) |
+| `[[cd17-product-exclusivo-ecommerce+marketplace]]` | 'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
+| `[[cd19-product-gm]]` |  '101508', '310011', '204002', etc | Subcategorias composto por 6 numeros |
+| `[[cd21-product-estilo]]` |   'life-style', 'esporte' e etc | Estilo do produto |
+| `[[cd22-product-genero]]` |  'feminino', 'unissex', 'infantil' e etc | Genero do produto |
+| `[[nome-produto]]` |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
+| `[[id-produto]]` |  &#039;13239635&#039; | SKU do produto - pai |
+| `[[preco-produto]]` |  &#039;139,99&#039; | Preço do produto |
+| `[[marca-produto]]` |  'rchlo', 'carters', 'levis' e etc | Marca do produto |
+| `[[categoria-produto]]` |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
+| `[[lista-produto]]` |   'plp:feminino', 'plp:dia-das-maes', 'plp:infantil', 'busca:blusa', 'busca:blusa-florida' e etc | Nome da lista que o produto aparece |
+| `[[posicao-produto]]` |  '1', '2', '3' e etc | Posição que o produto aparece em uma lista de produtos |
 
 <br />
-
 
 **No carregamento da página de detalhe**<br />
 
 - **Onde:** Na página de detalhes de produto
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -1637,21 +1437,16 @@ window.dataLayer.push({
   'event': 'productDetail',
   'eventCategory': 'estore:enhanced-ecommerce',
   'eventAction': 'detail',
-  'eventLabel': '-',
+  'noInteraction': '1',
     'ecommerce': {
     'detail': {
       'products': [{
-        'dimension15': '[[cd15-product-lookcompleto]]',
-        'dimension16': '[[cd16-product-iddolook]]',
-        'dimension17': '[[cd17-product-selo/tag]]',
-        'dimension18': '[[cd18-product-exclusivo-ecommerce+marketplace]]',
-        'dimension19': '[[cd19-product-variante]]',
-        'dimension20': '[[cd20-product-gm]]',
-        'dimension21': '[[cd21-product-preçode]]',
-        'dimension22': '[[cd22-product-estilo]]',
-        'dimension23': '[[cd23-product-genero]]',
-        'dimension24': '[[cd24-product-lojamktplace]]',
-        'dimension28': '[[cd28-product-cor]]',
+        'dimension16': '[[cd16-product-selo/tag]]',
+        'dimension17': '[[cd17-product-exclusivo-ecommerce+marketplace]]',
+        'dimension19': '[[cd19-product-gm]]',
+        'dimension20': '[[cd20-product-preco-de]]',
+        'dimension21': '[[cd21-product-estilo]]',
+        'dimension22': '[[cd22-product-genero]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1665,32 +1460,28 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
-| [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
-| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[cd18-product-exclusivo-ecommerce+marketplace]] |  'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
-| [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
-| [[cd21-product-preçode]] |  &#039;139,99&#039; | Preço de do produto |
-| [[cd22-product-estilo]] |  &#039;life-style&#039; | Estilo do produto |
-| [[cd23-product-genero]] |  &#039;feminino&#039; | Genero do produto |
-| [[cd24-product-lojamktplace]] |  &#039;riachuelo&#039;, &#039;loja-a&#039;, &#039;loja-b&#039; | Nome da loja mktplace |
-| [[cd28-product-cor]] |   'branco', 'preto' e etc | Retornar a cor do produto |
-| [[nome-produto]] |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
-| [[id-produto]] |  &#039;13239635&#039; | SKU do produto - pai |
-| [[preco-produto]] |  &#039;139,99&#039; | Preço do produto |
-| [[marca-produto]] |  &#039;pool-original&#039; | Marca do produto |
-| [[categoria-produto]] |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
-| [[variacao-produto]] |  &#039;101, 310, 204, etc&#039; | DCO Categorias composto por 3 números |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[cd16-product-selo/tag]]` |  'selo:black-friday', 'tag:frete-gratis' e etc | Deve retornar o tipo do selo ou tag e a promoção **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por "" ; "" (Ponto e vírgula) |
+| `[[cd17-product-exclusivo-ecommerce+marketplace]]` | 'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
+| `[[cd19-product-gm]]` |  '101508', '310011', '204002', etc | Subcategorias composto por 6 numeros |
+| `[[cd20-product-preco-de]]` | '139,99' | Preço de do produto |
+| `[[cd21-product-estilo]]` |   'life-style', 'esporte' e etc | Estilo do produto |
+| `[[cd22-product-genero]]` |  'feminino', 'unissex', 'infantil' e etc | Genero do produto |
+| `[[nome-produto]]` |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
+| `[[id-produto]]` |  &#039;13239635&#039; | SKU do produto - pai |
+| `[[preco-produto]]` |  &#039;139,99&#039; | Preço do produto |
+| `[[marca-produto]]` |  'rchlo', 'carters', 'levis' e etc | Marca do produto |
+| `[[categoria-produto]]` |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
+| `[[variacao-produto]]` |  '101, 310, 204, etc' | DCO Categorias composto por 3 números |
+
 
 <br />
 
 
-**No clique para adicionar produto ao carrinho**<br />
+**Em todas as opções para adicionar produto ao carrinho e na opção de acrescentar a quantidade do produto na sacola**<br />
 
-- **Onde:** Na página de detalhes de produto
+- **Onde:** Na página de detalhes de produto no Desktop, na página da Sacola do MSite, na tela da Sacola do APP E-store e no clique do botão "Adicionar ao Carrinho" no APP E-store, tela de produto
     
 
 ```html
@@ -1700,23 +1491,17 @@ window.dataLayer.push({
   'event': 'addToCart',
   'eventCategory':'estore:enhanced-ecommerce',
   'eventAction': 'add',
-  'eventLabel': '-',
     'ecommerce': {
     'add': {
       'products': [{
-        'dimension5': '[[cd5-user-cartID]]',
-        'dimension14': '[[cd14-product-skufilho]]',
-        'dimension15': '[[cd15-product-lookcompleto]]',
-        'dimension16': '[[cd16-product-iddolook]]',
-        'dimension17': '[[cd17-product-selo/tag]]',
-        'dimension18': '[[cd18-product-exclusivo-ecommerce+marketplace]]',
-        'dimension19': '[[cd19-product-variante]]',
-        'dimension20': '[[cd20-product-gm]]',
-        'dimension21': '[[cd21-product-preçode]]',
-        'dimension22': '[[cd22-product-estilo]]',
-        'dimension23': '[[cd23-product-genero]]',
-        'dimension24': '[[cd24-product-lojamktplace]]',
-        'dimension28': '[[cd28-product-cor]]',
+        'dimension15': '[[cd15-product-cor]]',
+        'dimension16': '[[cd16-product-selo/tag]]',
+        'dimension17': '[[cd17-product-exclusivo-ecommerce+marketplace]]',
+        'dimension18': '[[cd18-product-tamanho-produto]]',
+        'dimension19': '[[cd19-product-gm]]',
+        'dimension20': '[[cd20-product-preco-de]]',
+        'dimension21': '[[cd21-product-estilo]]',
+        'dimension22': '[[cd22-product-genero]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1731,35 +1516,30 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
-| [[cd14-product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
-| [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
-| [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
-| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[cd18-product-exclusivo-ecommerce+marketplace]] |  'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
-| [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
-| [[cd21-product-preçode]] |  &#039;139,99&#039; | Preço de do produto |
-| [[cd22-product-estilo]] |  &#039;life-style&#039; | Estilo do produto |
-| [[cd23-product-genero]] |  &#039;feminino&#039; | Genero do produto |
-| [[cd24-product-lojamktplace]] |  &#039;riachuelo&#039;, &#039;loja-a&#039;, &#039;loja-b&#039; | Nome da loja mktplace |
-| [[cd28-product-cor]] |   'branco', 'preto' e etc | Retornar a cor do produto |
-| [[nome-produto]] |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
-| [[id-produto]] |  &#039;13239635&#039; | SKU do produto - pai |
-| [[preco-produto]] |  &#039;139,99&#039; | Preço do produto |
-| [[marca-produto]] |  &#039;pool-original&#039; | Marca do produto |
-| [[categoria-produto]] |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
-| [[variacao-produto]] |  &#039;101, 310, 204, etc&#039; | DCO Categorias composto por 3 números |
-| [[quantidade-produto]] |  &#039;1&#039;, &#039;2&#039; e etc | Quantidade do produto |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[cd15-product-cor]]` | 'branco', 'preto' e etc | Retornar a cor do produto |
+| `[[cd16-product-selo/tag]]` |  'selo:black-friday', 'tag:frete-gratis' e etc | Deve retornar o tipo do selo ou tag e a promoção **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por "" ; "" (Ponto e vírgula) |
+| `[[cd17-product-exclusivo-ecommerce+marketplace]]` | 'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
+| `[[cd18-product-tamanho-produto]]` | 'p', 'm', '8-12', '42' | Tamanho do produto |
+| `[[cd19-product-gm]]` |  '101508', '310011', '204002', etc | Subcategorias composto por 6 numeros |
+| `[[cd20-product-preco-de]]` | '139,99' | Preço de do produto |
+| `[[cd21-product-estilo]]` |   'life-style', 'esporte' e etc | Estilo do produto |
+| `[[cd22-product-genero]]` |  'feminino', 'unissex', 'infantil' e etc | Genero do produto |
+| `[[nome-produto]]` |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
+| `[[id-produto]]` |  &#039;13239635&#039; | SKU do produto - pai |
+| `[[preco-produto]]` |  &#039;139,99&#039; | Preço do produto |
+| `[[marca-produto]]` |  'rchlo', 'carters', 'levis' e etc | Marca do produto |
+| `[[categoria-produto]]` |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
+| `[[variacao-produto]]` |  '101, 310, 204, etc' | DCO Categorias composto por 3 números |
+| `[[quantidade-produto]]` |  '1', '2' e etc | Quantidade do produto|
 
 <br />
 
 
-**No clique para remover produto do carrinho, dentro do lightbox de &quot;Tem certeza que quer remover esse item da sua sacola?&quot;**<br />
+**Em todas as opções para remover produtos do carrinho.**<br />
 
-- **Onde:** No lightbox de &quot;Tem certeza que quer remover esse item da sua sacola?&quot;
+- **Onde:** Na página de detalhes de produto no Desktop, na página da Sacola do MSite, na tela da Sacola do APP E-store e no clique do botão "Adicionar ao Carrinho" no APP E-store, tela de produto
     
 
 ```html
@@ -1769,23 +1549,17 @@ window.dataLayer.push({
   'event': 'removeFromCart',
   'eventCategory': 'estore:enhanced-ecommerce',
   'eventAction': 'remove',
-  'eventLabel': '-',
     'ecommerce': {
     'remove': {
       'products': [{
-        'dimension5': '[[cd5-user-cartID]]',
-        'dimension14': '[[cd14-product-skufilho]]',
-        'dimension15': '[[cd15-product-lookcompleto]]',
-        'dimension16': '[[cd16-product-iddolook]]',
-        'dimension17': '[[cd17-product-selo/tag]]',
-        'dimension18': '[[cd18-product-exclusivo-ecommerce+marketplace]]',
-        'dimension19': '[[cd19-product-variante]]',
-        'dimension20': '[[cd20-product-gm]]',
-        'dimension21': '[[cd21-product-preçode]]',
-        'dimension22': '[[cd22-product-estilo]]',
-        'dimension23': '[[cd23-product-genero]]',
-        'dimension24': '[[cd24-product-lojamktplace]]',
-        'dimension28': '[[cd28-product-cor]]',
+        'dimension15': '[[cd15-product-cor]]',
+        'dimension16': '[[cd16-product-selo/tag]]',
+        'dimension17': '[[cd17-product-exclusivo-ecommerce+marketplace]]',
+        'dimension18': '[[cd18-product-tamanho-produto]]',
+        'dimension19': '[[cd19-product-gm]]',
+        'dimension20': '[[cd20-product-preco-de]]',
+        'dimension21': '[[cd21-product-estilo]]',
+        'dimension22': '[[cd22-product-genero]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1800,36 +1574,32 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
-| [[cd14-product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
-| [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
-| [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
-| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[cd18-product-exclusivo-ecommerce+marketplace]] |  'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
-| [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
-| [[cd21-product-preçode]] |  &#039;139,99&#039; | Preço de do produto |
-| [[cd22-product-estilo]] |  &#039;life-style&#039; | Estilo do produto |
-| [[cd23-product-genero]] |  &#039;feminino&#039; | Genero do produto |
-| [[cd24-product-lojamktplace]] |  &#039;riachuelo&#039;, &#039;loja-a&#039;, &#039;loja-b&#039; | Nome da loja mktplace |
-| [[cd28-product-cor]] |   'branco', 'preto' e etc | Retornar a cor do produto |
-| [[nome-produto]] |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
-| [[id-produto]] |  &#039;13239635&#039; | SKU do produto - pai |
-| [[preco-produto]] |  &#039;139,99&#039; | Preço do produto |
-| [[marca-produto]] |  &#039;pool-original&#039; | Marca do produto |
-| [[categoria-produto]] |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
-| [[variacao-produto]] |  &#039;101, 310, 204, etc&#039; | DCO Categorias composto por 3 números |
-| [[quantidade-produto]] |  &#039;1&#039;, &#039;2&#039; e etc | Quantidade do produto |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[cd15-product-cor]]` | 'branco', 'preto' e etc | Retornar a cor do produto |
+| `[[cd16-product-selo/tag]]` |  'selo:black-friday', 'tag:frete-gratis' e etc | Deve retornar o tipo do selo ou tag e a promoção **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por "" ; "" (Ponto e vírgula) |
+| `[[cd17-product-exclusivo-ecommerce+marketplace]]` | 'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
+| `[[cd18-product-tamanho-produto]]` | 'p', 'm', '8-12', '42' | Tamanho do produto |
+| `[[cd19-product-gm]]` |  '101508', '310011', '204002', etc | Subcategorias composto por 6 numeros |
+| `[[cd20-product-preco-de]]` | '139,99' | Preço de do produto |
+| `[[cd21-product-estilo]]` |   'life-style', 'esporte' e etc | Estilo do produto |
+| `[[cd22-product-genero]]` |  'feminino', 'unissex', 'infantil' e etc | Genero do produto |
+| `[[nome-produto]]` |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
+| `[[id-produto]]` |  &#039;13239635&#039; | SKU do produto - pai |
+| `[[preco-produto]]` |  &#039;139,99&#039; | Preço do produto |
+| `[[marca-produto]]` |  'rchlo', 'carters', 'levis' e etc | Marca do produto |
+| `[[categoria-produto]]` |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
+| `[[variacao-produto]]` |  '101, 310, 204, etc' | DCO Categorias composto por 3 números |
+| `[[quantidade-produto]]` |  '1', '2' e etc | Quantidade do produto|
 
 <br />
 
 
 **No carregamento das páginas do fluxo de compra do  checkout.**<br />
 
-- **Onde:** Nas páginas de Carrinho(sacola), &quot;Endereço&quot;, &quot;Opções de Entrega&quot;, &quot;Cupons,vales e trocas&quot; e &quot;Pagamento&quot;
-    
+- **Onde:** Nas páginas de Carrinho(sacola), "Endereço", "Opções de Entrega", "Cupons,vales e trocas" e "Pagamento"
+
+**Obs: Vamos considerar o fluxo do MSite para esse fluxo de checkout**
 
 ```html
 <script>
@@ -1838,15 +1608,24 @@ window.dataLayer.push({
   'event': 'checkout',
   'eventCategory': 'estore:enhanced-ecommerce',
   'eventAction': 'checkout',
-  'eventLabel': '-',
-  'dimension12': '[[cd112-hit-frete]]',
-  'dimension13': '[[cd13-hit-parcelamento]]',
+  'noInteraction': '1',
+  'dimension10': '[[cd10-hit-metodo-pagamento]]',
+  'dimension11': '[[cd11-hit-frete]]',
+  'dimension12': '[[cd12-hit-parcelamento]]',
+  'dimension14': '[[cd14-hit-prazo-frete]]',
   'ecommerce': {
     'checkout': {
       'actionField': {'step': '[[passo-checkout]]'},
       'products': [{
-        'dimension14': '[[cd14-product-skufilho]]',
-        'dimension15': '[[cd15-product-lookcompleto]]',
+        'dimension13': '[[cd13-product-sku-filho]]',
+        'dimension15': '[[cd15-product-cor]]',
+        'dimension16': '[[cd16-product-selo/tag]]',
+        'dimension17': '[[cd17-product-exclusivo-ecommerce+marketplace]]',
+        'dimension18': '[[cd18-product-tamanho-produto]]',
+        'dimension19': '[[cd19-product-gm]]',
+        'dimension20': '[[cd20-product-preco-de]]',
+        'dimension21': '[[cd21-product-estilo]]',
+        'dimension22': '[[cd22-product-genero]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1861,44 +1640,50 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[checkout-index]] |  | Retornar &quot;1&quot; ou &quot;2&quot; ou &quot;3&quot; ou &quot;4&quot; ou &quot;5&quot; os exemplos citados |
-| [[cd112-hit-frete]] |  &#039;normal, expresso, entrega-agendada&#039;  | Nome do tipo de entrega.  |
-| [[cd13-hit-parcelamento]] |  &#039;2&#039; | Quantidade de parcelas |
-| [[cd14-product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
-| [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
-| [[nome-produto]] |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
-| [[id-produto]] |  &#039;13239635&#039; | SKU do produto - pai |
-| [[preco-produto]] |  &#039;139,99&#039; | Preço do produto |
-| [[marca-produto]] |  &#039;pool-original&#039; | Marca do produto |
-| [[categoria-produto]] |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
-| [[variacao-produto]] |  &#039;101, 310, 204, etc&#039; | DCO Categorias composto por 3 números |
-| [[quantidade-produto]] |  &#039;1&#039;, &#039;2&#039; e etc | Quantidade do produto |
-| [[passo-checkout]] |  &#039;1&#039; | Página de carrinho de compras |
-| [[passo-checkout]] |  &#039;2&#039; | Página de confirmação do endereço de entrega |
-| [[passo-checkout]] |  &#039;3&#039; | Página de seleção de opções de entrega |
-| [[passo-checkout]] |  &#039;4&#039; | Página de seleção de cupons e vales ou trocas |
-| [[passo-checkout]] |  &#039;5&#039; | Página de seleção do método de pagamento |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[cd10-hit-metodo-pagamento]]` | 'cartao', 'boleto' | Nome do tipo do pagamento. |
+| `[[cd11-hit-frete]]` |  'normal, expresso, entrega-agendada'  | Nome do tipo de entrega. |
+| `[[cd12-hit-parcelamento]]` | '2', '3' e etc | Quantidade de parcelas |
+| `[[cd13-product-sku-filho]]` | '2552' | ID filho do produto |
+| `[[cd14-hit-prazo-frete]]` |  'dd/mm/yyyy', '3-dias', '2-dias' e etc | Prazo do frete escolhido |
+| `[[cd15-product-cor]]` | 'branco', 'preto' e etc | Retornar a cor do produto |
+| `[[cd16-product-selo/tag]]` |  'selo:black-friday', 'tag:frete-gratis' e etc | Deve retornar o tipo do selo ou tag e a promoção **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por "" ; "" (Ponto e vírgula) |
+| `[[cd17-product-exclusivo-ecommerce+marketplace]]` | 'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
+| `[[cd18-product-tamanho-produto]]` | 'p', 'm', '8-12', '42' | Tamanho do produto |
+| `[[cd19-product-gm]]` |  '101508', '310011', '204002', etc | Subcategorias composto por 6 numeros |
+| `[[cd20-product-preco-de]]` | '139,99' | Preço de do produto |
+| `[[cd21-product-estilo]]` |   'life-style', 'esporte' e etc | Estilo do produto |
+| `[[cd22-product-genero]]` |  'feminino', 'unissex', 'infantil' e etc | Genero do produto |
+| `[[nome-produto]]` |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
+| `[[id-produto]]` |  &#039;13239635&#039; | SKU do produto - pai |
+| `[[preco-produto]]` |  &#039;139,99&#039; | Preço do produto |
+| `[[marca-produto]]` |  'rchlo', 'carters', 'levis' e etc | Marca do produto |
+| `[[categoria-produto]]` |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
+| `[[variacao-produto]]` |  '101, 310, 204, etc' | DCO Categorias composto por 3 números |
+| `[[quantidade-produto]]` |  '1', '2' e etc | Quantidade do produto|
 
 <br />
 
 
-**Ao selecionar uma opção de entrega ou pagamento**<br />
+**No Carregamento da página de compra quando o usuário já selecionou um modo de entrega**<br />
 
-- **Onde:** Na página de Entrega, no Step de "Modo de Envio" e na página de Pagamento
-    
+- **Onde:**  No carregamento da página de compra, com a etapa de "Entrega" já concluída.
 
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
-  'event': 'checkout',
+  'event': 'checkoutOption',
   'eventCategory': 'estore:enhanced-ecommerce',
-  'eventAction': 'checkoutoption',
-  'eventLabel': '[[opcoes-de-entrega ou tipo-de-pagamento]]',
+  'eventAction': 'checkoutOption',
+  'eventLabel': [{
+    't':'[[nome-entrega]]',
+    'd':'[[previsao-entrega]]',
+    'p':'[[valor]]'
+  }],
     'ecommerce': {
-    'checkout': {
+    'checkout_option': {
       'actionField': {'step':'[[passo-checkout]]','option':'[[shipping ou payment]]:[[opcao escolhida]]:[[previsao-entrega]]'},
     }
   }
@@ -1906,43 +1691,37 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[opcoes-de-entrega ou tipo-de-pagamento]] | 'opcoes-de-entrega' ou 'tipo-de-pagamento' | Deve retornar a opção escolhida pelo usuário |
-| [[shipping ou payment]] | 'shipping' ou 'payment' | Deve retornar a opção escolhida pelo usuário |
-| [[opcao escolhida]] | 'boleto', 'cartao-de-credito', 'frete-gratis' e etc | Deve retornar a opção escolhida pelo usuário |
-| [[previsao]] | &#039;DD/MM/AAAA&#039;, | Deve retornar a quantidade de dias para a entrega. |
-| [[passo-checkout]] |  &#039;1&#039; | Página de carrinho de compras |
-| [[passo-checkout]] |  &#039;2&#039; | Página de confirmação do endereço de entrega |
-| [[passo-checkout]] |  &#039;3&#039; | Página de seleção de opções de entrega |
-| [[passo-checkout]] |  &#039;4&#039; | Página de seleção de cupons e vales ou trocas |
-| [[passo-checkout]] |  &#039;5&#039; | Página de seleção do método de pagamento |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[nome-entrega]]` | 'frete-gratis', 'normal', 'expressa' | Retorna a opção de entrega |
+| `[[previsao-entrega]]` |  'dd/mm/yyyy', '3-dias', '2-dias' e etc | Retorna a previsão de entrega |
+| `[[valor]]` | '7.50', '0.00' e etc | Retorna o valor do frete |
+| `[[passo-checkout]]` | '1', '2', '3', '4' ou '5' | Retorna o step do checkout da página carregada |
+| `[[shipping ou payment]]` | 'shipping' ou 'payment' | Deve retornar a opção escolhida pelo usuário |
+| `[[opcao escolhida]]` | 'boleto', 'cartao-de-credito', 'frete-gratis', 'expressa' e etc | Deve retornar a opção de frete ou pagamento escolhida pelo usuário |
 
 <br />
-
 
 **No carregamento da página  de resumo de compra  após confirmação.**<br />
 
 - **Onde:** Na página de confirmação de compra
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   'event': 'purchase',
-  'eventCategory': 'eestore:nhanced-ecommerce',
+  'eventCategory': 'estore:enhanced-ecommerce',
   'eventAction': 'purchase',
-  'dimension5': '[[cd5-user-cartID]]',
-  'dimension6': '[[cd6-hit-loja]]',
-  'dimension8': '[[cd8-hit-tipodecartão]]',
-  'dimension9': '[[cd9-hit-bandeiracartão]]',
-  'dimension10': '[[cd10-hit-metodopagamento]]',
-  'dimension11': '[[cd11-hit-statuspagamento]]',
-  'dimension12': '[[cd112-hit-frete]]',
-  'dimension13': '[[cd13-hit-parcelamento]]',
-  'dimension26': '[[cd26-hit-valorfrete]]',
-  'dimension27': '[[cd27-hit-prazofrete]]',
+  'noInteraction': '1',
+  'metri1': '[[cm1-hit-cupom-valor]]',
+  'dimension8': '[[cd8-hit-tipo-de-cartao]]',
+  'dimension9': '[[cd9-hit-bandeira-cartao]]',
+  'dimension10': '[[cd10-hit-metodo-pagamento]]',
+  'dimension11': '[[cd11-hit-frete]]',
+  'dimension12': '[[cd12-hit-parcelamento]]',
+  'dimension14': '[[cd14-hit-prazo-frete]]',
+  'dimension23': '[[cd23-hit-origem-de-venda]]',
   'ecommerce': {
     'purchase': {
       'actionField': {
@@ -1954,18 +1733,15 @@ window.dataLayer.push({
         'coupon': '[[coupon-transacao]]'
       },
       'products': [{
-        'dimension14': '[[cd14-product-skufilho]]',
-        'dimension15': '[[cd15-product-lookcompleto]]',
-        'dimension16': '[[cd16-product-iddolook]]',
-        'dimension17': '[[cd17-product-selo/tag]]',
-        'dimension18': '[[cd18-product-exclusivo-ecommerce+marketplace]]',
-        'dimension19': '[[cd19-product-variante]]',
-        'dimension20': '[[cd20-product-gm]]',
-        'dimension21': '[[cd21-product-preçode]]',
-        'dimension22': '[[cd22-product-estilo]]',
-        'dimension23': '[[cd23-product-genero]]',
-        'dimension24': '[[cd24-product-lojamktplace]]',
-        'dimension28': '[[cd28-product-cor]]',
+        'dimension13': '[[cd13-product-sku-filho]]',
+        'dimension15': '[[cd15-product-cor]]',
+        'dimension16': '[[cd16-product-selo/tag]]',
+        'dimension17': '[[cd17-product-exclusivo-ecommerce+marketplace]]',
+        'dimension18': '[[cd18-product-tamanho-produto]]',
+        'dimension19': '[[cd19-product-gm]]',
+        'dimension20': '[[cd20-product-preco-de]]',
+        'dimension21': '[[cd21-product-estilo]]',
+        'dimension22': '[[cd22-product-genero]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1980,50 +1756,44 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd5-user-cartID]] |  '102030dfasdf' | ID únido do carrinho do usuário |
-| [[cd6-hit-loja]] |  &#039;ABC&#039; | Nome da Loja preenchido |
-| [[cd8-hit-tipodecartão]] |  &#039;credito&#039;, &#039;riachuelo&#039; | Tipo do cartão utilizado na compra |
-| [[cd9-hit-bandeiracartão]] |  &#039;mastercard&#039; | Bandeira do cartão utilizada na compra |
-| [[cd10-hit-metodopagamento]] |  &#039;cartao&#039;, &#039;boleto&#039; | Nome do tipo do pagamento. |
-| [[cd11-hit-statuspagamento]] |  &#039;aprovado&#039;   | Nome do status do pagamento.  |
-| [[cd112-hit-frete]] |  &#039;normal, expresso, entrega-agendada&#039;  | Nome do tipo de entrega.  |
-| [[cd13-hit-parcelamento]] |  &#039;2&#039; | Quantidade de parcelas |
-| [[cd14-product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
-| [[cd15-product-lookcompleto]] |  &#039;true&#039; ou &#039;false&#039; | Look Completo |
-| [[cd16-product-iddolook]] |  &#039;produto-sem-vinculo&#039; | ID do produto do tipo look |
-| [[cd17-product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[cd18-product-exclusivo-ecommerce+marketplace]] |  'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
-| [[cd19-product-variante]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[cd20-product-gm]] |  &#039;101508&#039;, &#039;310011&#039;, &#039;204002&#039;, etc | Subcategorias composto por 6 numeros |
-| [[cd21-product-preçode]] |  &#039;139,99&#039; | Preço de do produto |
-| [[cd22-product-estilo]] |  &#039;life-style&#039; | Estilo do produto |
-| [[cd23-product-genero]] |  &#039;feminino&#039; | Genero do produto |
-| [[cd24-product-lojamktplace]] |  &#039;riachuelo&#039;, &#039;loja-a&#039;, &#039;loja-b&#039; | Nome da loja mktplace |
-| [[cd26-hit-valorfrete]] |  &#039;gratuito&#039;, &#039;15.90&#039; e etc | Valor do frete escolhido |
-| [[cd27-hit-prazofrete]] |  &#039;DD/MM/AAAA&#039; | Prazo do frete escolhido |
-| [[cd28-product-cor]] |   'branco', 'preto' e etc | Retornar a cor do produto |
-| [[id-transacao]] |  &#039;000011652&#039; | ID único da transação |
-| [[valor-total-transacao]] |  &#039;139,99&#039; | Valor total da transação incluindo frete e taxas |
-| [[frete-transacao]] |  &#039;129,99&#039; | Valor do frete da transação |
-| [[coupon-transacao]] |  &#039;cupom-2018&#039; | Cupom de desconto utilizado na transação - promoção nivel pedido |
-| [[afiliacao-transacao]] |  &#039;Riachuelo&#039; | Nome fixo da loja - usada para Marketplace |
-| [[taxa-transacao]] |  &#039;3,99&#039; | Valor de taxas da transação |
-| [[nome-produto]] |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
-| [[id-produto]] |  &#039;13239635&#039; | SKU do produto - pai |
-| [[preco-produto]] |  &#039;139,99&#039; | Preço do produto |
-| [[marca-produto]] |  &#039;pool-original&#039; | Marca do produto |
-| [[categoria-produto]] |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
-| [[variacao-produto]] |  &#039;101, 310, 204, etc&#039; | DCO Categorias composto por 3 números |
-| [[quantidade-produto]] |  &#039;1&#039;, &#039;2&#039; e etc | Quantidade do produto |
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[cm1-hit-cupom-valor]]` | '0', '3,99', '12,90' e etc | Retorna o valor do Cupom |
+| `[[cd8-hit-tipo-de-cartao]]` |  'credito', 'riachuelo' | Tipo do cartão utilizado na compra |
+| `[[cd9-hit-bandeira-cartao]]` |  'mastercard', 'visa' e etc | Bandeira do cartão utilizada na compra |
+| `[[cd10-hit-metodo-pagamento]]` | 'cartao', 'boleto' | Nome do tipo do pagamento. |
+| `[[cd11-hit-frete]]` |  'normal, expresso, entrega-agendada'  | Nome do tipo de entrega. |
+| `[[cd12-hit-parcelamento]]` | '2', '3' e etc | Quantidade de parcelas |
+| `[[cd13-product-sku-filho]]` | '2552' | ID filho do produto |
+| `[[cd14-hit-prazo-frete]]` |  'dd/mm/yyyy', '3-dias', '2-dias' e etc | Prazo do frete escolhido |
+| `[[cd15-product-cor]]` | 'branco', 'preto' e etc | Retornar a cor do produto |
+| `[[cd16-product-selo/tag]]` |  'selo:black-friday', 'tag:frete-gratis' e etc | Deve retornar o tipo do selo ou tag e a promoção **OBS:** Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por "" ; "" (Ponto e vírgula) |
+| `[[cd17-product-exclusivo-ecommerce+marketplace]]` | 'sim:rchlo', 'nao:rchlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
+| `[[cd18-product-tamanho-produto]]` | 'p', 'm', '8-12', '42' | Tamanho do produto |
+| `[[cd19-product-gm]]` |  '101508', '310011', '204002', etc | Subcategorias composto por 6 numeros |
+| `[[cd20-product-preco-de]]` | '139,99' | Preço de do produto |
+| `[[cd21-product-estilo]]` |   'life-style', 'esporte' e etc | Estilo do produto |
+| `[[cd22-product-genero]]` |  'feminino', 'unissex', 'infantil' e etc | Genero do produto |
+| `[[cd23-hit-origem-de-venda]]` | 'venda-em-loja', 'venda-pelo-whatsapp' e etc | Retornar a origem da venda |
+| `[[id-transacao]]` |  &#039;000011652&#039; | ID único da transação |
+| `[[valor-total-transacao]]` |  &#039;139,99&#039; | Valor total da transação incluindo frete e taxas |
+| `[[frete-transacao]]` |  &#039;129,99&#039; | Valor do frete da transação |
+| `[[coupon-transacao]]` |  &#039;cupom-2018&#039; | Cupom de desconto utilizado na transação - promoção nivel pedido |
+| `[[afiliacao-transacao]]` | 'riachuelo' | Nome fixo da loja - usada para Marketplace |
+| `[[taxa-transacao]]` |  &#039;3,99&#039; | Valor de taxas da transação |
+| `[[nome-produto]]` |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
+| `[[id-produto]]` |  &#039;13239635&#039; | SKU do produto - pai |
+| `[[preco-produto]]` |  &#039;139,99&#039; | Preço do produto |
+| `[[marca-produto]]` |  'rchlo', 'carters', 'levis' e etc | Marca do produto |
+| `[[categoria-produto]]` |  &#039;masculino/calças&#039; | Departamento e Categoria do produto |
+| `[[variacao-produto]]` |  '101, 310, 204, etc' | DCO Categorias composto por 3 números |
+| `[[quantidade-produto]]` |  '1', '2' e etc | Quantidade do produto|
 
 <br />
 
 ---
 
 ## Considerações Finais
-
 
 > Documentações Oficiais do Google: <br />
 > [Google Analytics - Avaliação de comércio eletrônico ](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce?hl=pt-br)
