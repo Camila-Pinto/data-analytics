@@ -1626,6 +1626,7 @@ window.dataLayer.push({
         'dimension20': '[[cd20-product-preco-de]]',
         'dimension21': '[[cd21-product-estilo]]',
         'dimension22': '[[cd22-product-genero]]',
+        'dimension24': '[[cd24-product-frete-do-produto]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1655,6 +1656,7 @@ window.dataLayer.push({
 | `[[cd20-product-preco-de]]` | '139,99' | Preço de do produto |
 | `[[cd21-product-estilo]]` |   'life-style', 'esporte' e etc | Estilo do produto |
 | `[[cd22-product-genero]]` |  'feminino', 'unissex', 'infantil' e etc | Genero do produto |
+| `[[cd24-product-frete-do-produto]]` |   'tipo-de-frete:prazo:valor-do-frete' | Retorna todas as informações de frete concatenadas do produto |
 | `[[nome-produto]]` |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
 | `[[id-produto]]` |  &#039;13239635&#039; | SKU do produto - pai |
 | `[[preco-produto]]` |  &#039;139,99&#039; | Preço do produto |
@@ -1742,6 +1744,7 @@ window.dataLayer.push({
         'dimension20': '[[cd20-product-preco-de]]',
         'dimension21': '[[cd21-product-estilo]]',
         'dimension22': '[[cd22-product-genero]]',
+        'dimension24': '[[cd24-product-frete-do-produto]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1775,6 +1778,7 @@ window.dataLayer.push({
 | `[[cd21-product-estilo]]` |   'life-style', 'esporte' e etc | Estilo do produto |
 | `[[cd22-product-genero]]` |  'feminino', 'unissex', 'infantil' e etc | Genero do produto |
 | `[[cd23-hit-origem-de-venda]]` | 'venda-em-loja', 'venda-pelo-whatsapp' e etc | Retornar a origem da venda |
+| `[[cd24-product-frete-do-produto]]` |   'tipo-de-frete:prazo:valor-do-frete' | Retorna todas as informações de frete concatenadas do produto|
 | `[[id-transacao]]` |  &#039;000011652&#039; | ID único da transação |
 | `[[valor-total-transacao]]` |  &#039;139,99&#039; | Valor total da transação incluindo frete e taxas |
 | `[[frete-transacao]]` |  &#039;129,99&#039; | Valor do frete da transação |
