@@ -1335,7 +1335,7 @@ window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   'event': 'productImpression',
   'eventCategory':'estore:enhanced-ecommerce',
-  'eventAction': 'impression',
+  'eventAction': 'impressions',
   'noInteraction': '1',
     'ecommerce': {
     'impressions': [{
