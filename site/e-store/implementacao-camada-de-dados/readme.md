@@ -1779,7 +1779,7 @@ window.dataLayer.push({
 | `[[valor-total-transacao]]` |  &#039;139,99&#039; | Valor total da transação incluindo frete e taxas |
 | `[[frete-transacao]]` |  &#039;129,99&#039; | Valor do frete da transação |
 | `[[coupon-transacao]]` |  &#039;cupom-2018&#039; | Cupom de desconto utilizado na transação - promoção nivel pedido |
-| `[[afiliacao-transacao]]` | 'riachuelo' | Nome fixo da loja - usada para Marketplace |
+| `[[afiliacao-transacao]]` | 'riachuelo', 'levis', 'rihappy' e etc | Nome fixo da loja - usada para Marketplace |
 | `[[taxa-transacao]]` |  &#039;3,99&#039; | Valor de taxas da transação |
 | `[[nome-produto]]` |  &#039;calca-masculina-super-skinny-em-jeans&#039; | Nome do produto |
 | `[[id-produto]]` |  &#039;13239635&#039; | SKU do produto - pai |
