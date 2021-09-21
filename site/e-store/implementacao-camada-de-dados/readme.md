@@ -1714,7 +1714,7 @@ window.dataLayer.push({
   'eventCategory': 'estore:enhanced-ecommerce',
   'eventAction': 'purchase',
   'noInteraction': '1',
-  'metri1': '[[cm1-hit-cupom-valor]]',
+  'metric1': '[[cm1-hit-cupom-valor]]',
   'dimension8': '[[cd8-hit-tipo-de-cartao]]',
   'dimension9': '[[cd9-hit-bandeira-cartao]]',
   'dimension10': '[[cd10-hit-metodo-pagamento]]',
