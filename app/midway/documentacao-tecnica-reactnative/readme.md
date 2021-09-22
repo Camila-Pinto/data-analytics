@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Midway APP
 
-Última atualização: 27/08/2021 <br />
+Última atualização: 22/09/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -58,6 +58,8 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Outros Serviços](#outros-servi&#231;os)
 - [Convide e Ganhe](#convide-e-ganhe)
 - [MarketPlace Financeiro - Geral](#marketplace-financeiro---geral)
+- [MarketPlace Financeiro - NPS](#marketplace-financeiro---nps)
+- [MarketPlace Financeiro - Telas de Erro 500](#marketplace-financeiro---telas-de-erro-500)
 - [Empréstimo Contratação](#empr&#233;stimo-contrata&#231;&#227;o)
 - [Empréstimo Consulta](#empr&#233;stimo-consulta)
 - [Empréstimo Cancelamento](#empr&#233;stimo-cancelamento)
@@ -10920,7 +10922,136 @@ Resumo de produtos cadastrados
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[card-seller]] | &#039;ifood&#039;, &#039;uber&#039;, &#039;creditas&#039; e etc | Deve retornar o nome do card clicado.  |
 
+<br />
 
+### MarketPlace Financeiro - NPS
+
+- **Onde:** Na visualização da tela de "Detalhes"
+
+
+```javascript
+    Analytics.logScreenView("/mktplace-financeiro/nps/detalhes:[[numero-pedido]]:[[seller]]/");
+```
+
+| Variável     | Exemplo            | Descrição           |
+| :----------- | :----------------- | :------------------ |
+| [[numero-pedido]] | '931234', '9283423' e etc | Retorna o número do pedido. |
+| [[seller]] | 'play-store', 'ifood', 'creditas' e etc | Retorna o seller escolhido. |
+
+<br />
+
+- **Quando:** No clique das estrelas para avaliar o NPS
+- **Onde:** Na tela de "Detalhes", sessão nível de experiência ao comprar Gift Card
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:mktplace-financeiro:nps:[[numero-pedido]]",
+        	eventAction: "clique:nota-nps",
+        	eventLabel: "[[voto-nps]]",
+		SellerFinanceiro: "[[SellerFinanceiro]]"
+        });
+```
+
+| Variável     | Exemplo            | Descrição           |
+| :----------- | :----------------- | :------------------ |
+| [[numero-pedido]] | '931234', '9283423' e etc | Retorna o número do pedido. |
+| [[voto-nps]] | '1-estrela', '2-estrelas', '3-estrelas' e etc | Retorna o voto do usuário. |
+| [[SellerFinanceiro]] | 'play-store', 'ifood', 'creditas' e etc | Retorna o seller escolhido. |
+
+<br />
+
+- **Quando:** No clique em "Termos e condições de Gift Card" e "Voltar"
+- **Onde:** Na tela de "Detalhes", sessão nível de experiência ao comprar Gift Card
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:mktplace-financeiro:nps:[[numero-pedido]]",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]",
+		SellerFinanceiro: "[[SellerFinanceiro]]"
+        });
+```
+
+| Variável     | Exemplo            | Descrição           |
+| :----------- | :----------------- | :------------------ |
+| [[numero-pedido]] | '931234', '9283423' e etc | Retorna o número do pedido. |
+| [[nome-botao]] | 'voltar' ou 'termos-e-condicoes-de-gift-card' | Retorna o nome do botão clicado. |
+| [[SellerFinanceiro]] | 'play-store', 'ifood', 'creditas' e etc | Retorna o seller escolhido. |
+
+<br />
+
+- **Quando:** No clique no botão "Enviar"
+- **Onde:** Na tela de "Detalhes", sessão nível de experiência ao comprar Gift Card
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:mktplace-financeiro:nps:[[numero-pedido]]",
+        	eventAction: "clique:botao:comentario-nps",
+        	eventLabel: "enviar",
+		SellerFinanceiro: "[[SellerFinanceiro]]"
+        });
+```
+
+| Variável     | Exemplo            | Descrição           |
+| :----------- | :----------------- | :------------------ |
+| [[numero-pedido]] | '931234', '9283423' e etc | Retorna o número do pedido. |
+| [[SellerFinanceiro]] | 'play-store', 'ifood', 'creditas' e etc | Retorna o seller escolhido. |
+
+<br />
+
+- **Quando:** No callback para enviar a nota e comentário do NPS.
+- **Onde:** Na tela de "Detalhes", sessão nível de experiência ao comprar Gift Card
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:mktplace-financeiro:nps:[[numero-pedido]]",
+        	eventAction: "callback:nps",
+        	eventLabel: "[[sucesso-ou-erro]]",
+		SellerFinanceiro: "[[SellerFinanceiro]]"
+        });
+```
+
+| Variável     | Exemplo            | Descrição           |
+| :----------- | :----------------- | :------------------ |
+| [[numero-pedido]] | '931234', '9283423' e etc | Retorna o número do pedido. |
+| [[sucesso-ou-erro]] | 'sucesso:obrigado-por-compartilhar', 'erro:nao-foi-possivel-cadastrar-sua-nota' e etc | Retorna o sucesso ou erro do envio da nota nps.  |
+| [[SellerFinanceiro]] | 'play-store', 'ifood', 'creditas' e etc | Retorna o seller escolhido. |
+
+<br />
+
+### MarketPlace Financeiro - Telas de Erro 500
+
+- **Onde:** Na visualização das telas ou modais de erro
+
+
+```javascript
+    Analytics.logScreenView("/mktplace-financeiro/[[tela-ou-modal]]-de-erro:[[nome-tela]]:[[codigo-erro]]/");
+```
+
+| Variável     | Exemplo            | Descrição           |
+| :----------- | :----------------- | :------------------ |
+| [[tela-ou-modal]] | 'tela' ou 'modal' | Retornar qual elemento foi apresentado. |
+| [[nome-tela]] | 'forma-de-pagamento', 'ifood', 'meus-pedidos', 'detalhes' e etc | Retorna o nome da tela que aconteceu o erro. |
+| [[codigo-erro]] | 'erro:500', 'erro:404' e etc | Retorna o código do erro apresentado. |
+
+<br />
+
+- **Quando:** No clique dos botões das telas ou modais de erro
+- **Onde:** Nas telas de erros
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:mktplace-financeiro:[[tela-ou-modal]]:[[codigo-erro]]",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável     | Exemplo            | Descrição           |
+| :----------- | :----------------- | :------------------ |
+| [[tela-ou-modal]] | 'tela' ou 'modal' | Retornar qual elemento foi apresentado. |
+| [[nome-botao]] | 'atualizar', 'voltar', 'fechar' e etc | Retorna o nome do botão clicado. |
+| [[codigo-erro]] | 'erro:500', 'erro:404' e etc | Retorna o código do erro apresentado. |
 
 <br />
 
