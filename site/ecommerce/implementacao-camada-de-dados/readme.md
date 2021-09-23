@@ -1237,8 +1237,8 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :------------------- |
 | [[elemento]] | 'botao', 'link', 'checkbox' e etc. | Deve retornar o elemento clicado.|
 | [[nome-item-clicado]] | 'nao-sei-meu-cep', 'termos-e-condicoes', 'declaracao-de-privacidade', 'finalizar-meu-cadastro' e etc | Deve retornar o nome do elemento clicado. |
 
@@ -1260,7 +1260,8 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :------------------- |
 | [[nome-campo]] | 'nome-completo', 'email', 'cpf', 'endereco', 'bairro' e etc. | Deve retornar o nome do campo que está retornando o callback.|
 | [[erro]] | 'dado-incorreto', 'cpf-invalido', 'bairro-nao-existente' e etc. | Deve retornar o callback de erro do campo.|
 
@@ -1283,7 +1284,8 @@ window.dataLayer.push({
 </script>
 ```
 
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :------------------- |
 | [[cpf-ou-email]] | 'cpf' ou 'email' | Deve retornar a informação informada no modal.|
 | [[nome-botao]] | 'entrar-na-minha-conta', 'usar-outro-email' ou 'usar-outro-cpf'. | Deve retornar o nome do botão clicado.|
 
