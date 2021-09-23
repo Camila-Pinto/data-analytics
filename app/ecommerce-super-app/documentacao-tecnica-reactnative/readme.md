@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Riachuelo APP
 
-Última atualização: 31/08/2021. <br />
+Última atualização: 23/09/2021. <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -35,6 +35,7 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Eventos - Sacola](#eventos---sacola)
 - [Eventos - Lista de desejos](#eventos---lista-de-desejo)
 - [Eventos - Login](#eventos---login)
+- [Eventos - Minha Conta](#eventos---minha-conta)
 - [Eventos - Painel de Notificações](#eventos---painel-de-notifica&#231;&#245;es)
 - [Eventos - Checkout](#eventos---checkout)
 - [Eventos - Checkout - Cupom](#eventos---checkout---cupom)
@@ -1168,6 +1169,38 @@ Analytics.logEvent("event", {
 | Variável                   | Exemplo                                      | Descrição                                             |
 | :------------------------- | :------------------------------------------- | :---------------------------------------------------- |
 | `[[sucesso ou tipo-erro]]` | 'sucesso', 'erro:favor-digitar-seu-cpf', etc | Deve retornar o sucesso ou descrição do erro de login |
+
+<br />
+
+### Eventos - Minha Conta
+
+**Visualização da tela de "Minha Conta"**<br />
+
+```javascript
+Analytics.setCurrentScreen("/riachuelo-app/minha-conta:[[login_status]]/");
+```
+
+| Variável        | Exemplo         | Descrição           |
+| :-------------- | :-------------- | :------------------ |
+| [[login_status]] | 'logado' ou 'nao-logado' | Identificação de Login do usuário |
+
+<br />
+
+- **Quando:** Na clique das opções
+- **Onde:** Na tela de "Minha Conta"
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo-app:minha-conta",
+        	"eventAction": "clique:opcao:[[secao]]",
+        	"eventLabel": "[[opcao-selecionada]]"
+        })
+```
+
+| Variável        | Exemplo         | Descrição           |
+| :-------------- | :-------------- | :------------------ |
+| [[secao]] | 'minha-conta', 'produtos-riachuelo', 'suporte' e etc | Retorna a seção que o usuário interagir. |
+| [[opcao-selecionada]] | Logado ou Não Logado | Identificação de Login do usuário |
 
 <br />
 
