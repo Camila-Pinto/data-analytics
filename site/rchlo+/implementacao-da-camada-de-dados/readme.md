@@ -194,14 +194,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[userid]] |  &#039;01234&#039; | ID único de usuário definido após o cadastro |
-| [[gaclientid]] |  &#039;XXXXXXXXXX:XXXX:XX&#039; | ID aleatório do Google Analytics |
-| [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[gaclientid]]` |  &#039;XXXXXXXXXX:XXXX:XX&#039; | ID aleatório do Google Analytics |
 
 ---
-
 
 ### Geral
 
@@ -222,14 +219,14 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-link]] | &#039;condicoes-gerais-e-politica-de-troca&#039;, &#039;portal-de-privacidade&#039;, &#039;atendimento&#039; e etc. | Deve retornar o nome do link clicado. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-link]]` | &#039;condicoes-gerais-e-politica-de-troca&#039;, &#039;portal-de-privacidade&#039;, &#039;atendimento&#039; e etc. | Deve retornar o nome do link clicado. |
 
 <br />
 
 
-**No clique no botão &quot;Inicio&quot;**<br />
+**No clique no botão 'Inicio'**<br />
 
 - **Onde:** Nas telas de erros
 
@@ -245,16 +242,15 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-erro]] | &#039;eita-alguma-coisa-deu-errado&#039;, &#039;pagina-nao-encontrada&#039; e etc | Deve retornar o nome do erro que aconteceu. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-erro]]` | &#039;eita-alguma-coisa-deu-errado&#039;, &#039;pagina-nao-encontrada&#039; e etc | Deve retornar o nome do erro que aconteceu. |
 
 <br />
 
-
 ### Home
 
-**No clique do botões &quot;Acompanhar meu pedido&quot; e &quot;Criar minha estampa&quot;**<br />
+**No clique do botões 'Acompanhar meu pedido' e 'Criar minha estampa'**<br />
 
 - **Onde:** Na Home do site.
 
@@ -270,18 +266,17 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;acompanhar-meu-pedido&#039; ou &#039;criar-minha-estampa&#039; | Deve retornar o nome do botão clicado. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-botao]]` | &#039;acompanhar-meu-pedido&#039; ou &#039;criar-minha-estampa&#039; | Deve retornar o nome do botão clicado. |
 
 <br />
 
-
 ### Modal Importante
 
-**No clique do botões &quot;Cancelar&quot; ou &quot;Ok, Entendi&quot;**<br />
+**No clique do botões 'Cancelar' ou 'Ok, Entendi'**<br />
 
-- **Onde:** No modal &quot;Importante&quot;, após ter clicado no botão &quot;Criar minha estampa&quot;
+- **Onde:** No modal 'Importante', após ter clicado no botão 'Criar minha estampa'
 
 
 ```html
@@ -296,9 +291,9 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;cancelar&#039; ou &#039;ok-entendi&#039; | Deve retornar o nome do botão clicado. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-botao]]` | &#039;cancelar&#039; ou &#039;ok-entendi&#039; | Deve retornar o nome do botão clicado. |
 
 <br />
 
@@ -322,9 +317,9 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tipo-de-peca]] | &#039;camiseta&#039;, &#039;body&#039;, &#039;jaqueta&#039; e etc. | Deve retornar o tipo da peça clicada |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[tipo-de-peca]]` | &#039;camiseta&#039;, &#039;body&#039;, &#039;jaqueta&#039; e etc. | Deve retornar o tipo da peça clicada |
 
 <br />
 
@@ -346,14 +341,14 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[modelo-clicado]] | &#039;camiseta-masculina&#039;, &#039;camiseta-feminina&#039;, &#039;camiseta-juvenil&#039; e etc. | Deve retornar o modelo clicado. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[modelo-clicado]]` | &#039;camiseta-masculina&#039;, &#039;camiseta-feminina&#039;, &#039;camiseta-juvenil&#039; e etc. | Deve retornar o modelo clicado. |
 
 <br />
 
 
-**No clique do botão &quot;Continuar&quot; do modal &quot;Bem Vindo&quot;**<br />
+**No clique do botão 'Continuar' do modal 'Bem Vindo'**<br />
 
 - **Onde:** Na página de customização do site, modal Bem Vindo.
 
@@ -375,7 +370,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 **Na interação com os campos Texto, Enviar minha foto, Customizar e Nossas estampas**<br />
 
-- **Onde:** Na página de customização do site, seção &quot;Criar minha estampa&quot;
+- **Onde:** Na página de customização do site, seção 'Criar minha estampa'
     
 ```html
 <script>
@@ -385,31 +380,29 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventCategory': 'rchlo-mais:customizacao',
     'eventAction': 'interacao:campo',
     'eventLabel': '[[nome-campo]]',
-    'dimension5': '[[modelodapeça]]',
-    'dimension25': '[[product-tamanhodoproduto]]',
-    'dimension27': '[[product-padronagemdoproduto]]',
-    'dimension30': '[[product-subcategoria]]',
-    'dimension32': '[[product-preçooriginal]]',
+    'dimension5': '[[cd5-product-modelo+nome+cor-da-peca]]',
+    'dimension8': '[[cd8-product-tamanho-do-produto]]',
+    'dimension10': '[[cd10-product-padronagem-do-produto]]',
+    'dimension11': '[[cd11-product-subcategoria]]',
+    'dimension12': '[[cd12-product-preco-de]]'
   });
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;texto&#039;, &#039;enviar-minha-foto&#039;, &#039;customizar&#039; ou &#039;nossas-estampas&#039; | Deve retornar o nome do campo. |
-| [[modelodapeça]] | camiseta-masculina&#039;, &#039;camiseta-feminina&#039;, &#039;camiseta-juvenil&#039; e etc. | Retorna o modelo da peça selecionada |
-| [[product-tamanhodoproduto]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[product-subcategoria]] |  &#039;310090&#039; | Código da categoria GM  |
-| [[product-preçooriginal]] |  &#039;12&#039; | Preço do produto (dê) |
-
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-campo]]` | &#039;texto&#039;, &#039;enviar-minha-foto&#039;, &#039;customizar&#039; ou &#039;nossas-estampas&#039; | Deve retornar o nome do campo. |
+| `[[cd5-product-modelo+nome+cor-da-peca]]` |  'camiseta-masculina-preta', 'camiseta-feminina-branca', 'camiseta-juvenil-preta' e etc. | Retorna o modelo + nome + cor da peça selecionada |
+| `[[cd8-product-tamanho-do-produto]]` | 'p', 'm', '8-12', '42' | Tamanho do produto |
+| `[[cd10-product-padronagem-do-produto]]` |  'florido', 'listado' | Padrão da estampa do produto |
+| `[[cd11-product-subcategoria]]` | '310090'| Código da categoria GM  |
+| `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
 
 <br />
 
+**No clique do botão 'Apagar tudo'**<br />
 
-**No clique do botão &quot;Apagar tudo&quot;**<br />
-
-- **Onde:** Na página de customização do site, seção &quot;Criar minha estampa&quot;
+- **Onde:** Na página de customização do site, seção 'Criar minha estampa'
 
 ```html
 <script>
@@ -423,14 +416,13 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[item-clicado]] | 'centralizar', 'apagar-tudo', 'girar' e etc | Deve retornar o nome do item clicado. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[item-clicado]]` | 'centralizar', 'apagar-tudo', 'girar' e etc | Deve retornar o nome do item clicado. |
 
 <br />
 
-
-**Nos cliques dos botões &quot;Alterar&quot; ou &quot;Continuar&quot;**<br />
+**Nos cliques dos botões 'Alterar' ou 'Continuar'**<br />
 
 - **Onde:** Na página de Confirmação da estampa.
 
@@ -446,16 +438,15 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;alterar&#039; ou &#039;continuar&#039; | Deve retornar o nome do botão clicado. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-botao]]` | &#039;alterar&#039; ou &#039;continuar&#039; | Deve retornar o nome do botão clicado. |
 
 <br />
 
-
 **No callback de erro dos termos**<br />
 
-- **Onde:** Na página de &quot;Aceite os termos e condições&quot;
+- **Onde:** Na página de 'Aceite os termos e condições'
     
 ```html
 <script>
@@ -469,16 +460,15 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[erro]] | &#039;aceite-os-termos-para-prosseguir&#039; e etc. | Deve retornar o callback de erro dos termos. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[erro]]` | &#039;aceite-os-termos-para-prosseguir&#039; e etc. | Deve retornar o callback de erro dos termos. |
 
 <br />
 
+**Nos cliques dos botões 'Voltar' ou 'Aceitar e Prosseguir'**<br />
 
-**Nos cliques dos botões &quot;Voltar&quot; ou &quot;Aceitar e Prosseguir&quot;**<br />
-
-- **Onde:** Na página de &quot;Aceite os termos e condições&quot;
+- **Onde:** Na página de 'Aceite os termos e condições'
 
 ```html
 <script>
@@ -492,18 +482,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;voltar&#039; ou &#039;aceitar-e-prosseguir&#039; | Deve retornar o nome do botão clicado. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-botao]]` | &#039;voltar&#039; ou &#039;aceitar-e-prosseguir&#039; | Deve retornar o nome do botão clicado. |
 
 <br />
 
 
 ### Customização - Enviar minha foto
 
-**No clique do botão &quot;Fazer upload do Computador&quot;**<br />
+**No clique do botão 'Fazer upload do Computador'**<br />
 
-- **Onde:** Na página de customização do site, seção &quot;Enviar Minha Foto&quot;
+- **Onde:** Na página de customização do site, seção 'Enviar Minha Foto'
 
 ```html
 <script>
@@ -519,10 +509,9 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
-
 **No callback de Smartphone conectado**<br />
 
-- **Onde:** Na página de customização do site, seção &quot;Enviar Minha Foto&quot;
+- **Onde:** Na página de customização do site, seção 'Enviar Minha Foto'
     
 ```html
 <script>
@@ -537,16 +526,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[status-conexao]] | &#039;seu-smartphone-esta-conectado&#039; ou &#039;smaptphone-nao-encontrado&#039; | Deve retornar o status da conexão com o telefone. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[status-conexao]]` | &#039;seu-smartphone-esta-conectado&#039; ou &#039;smaptphone-nao-encontrado&#039; | Deve retornar o status da conexão com o telefone. |
 
 <br />
 
 
 **No callback de envio de foto**<br />
 
-- **Onde:** Na página de customização do site, seção &quot;Enviar Minha Foto&quot;
+- **Onde:** Na página de customização do site, seção 'Enviar Minha Foto'
     
 ```html
 <script>
@@ -560,16 +549,15 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso-ou-erro]] | &#039;foto-recebida-com-sucesso&#039;, &#039;atencao-o-arquivo-e-muito-grande&#039;, &#039;formato-de-arquivo-invalido&#039; e etc. | Deve retornar o callback da tentativa de fazer o envio de foto. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[sucesso-ou-erro]]` | &#039;foto-recebida-com-sucesso&#039;, &#039;atencao-o-arquivo-e-muito-grande&#039;, &#039;formato-de-arquivo-invalido&#039; e etc. | Deve retornar o callback da tentativa de fazer o envio de foto. |
 
 <br />
 
+**No clique nos botões 'Enviar uma nova foto' ou 'Tentar Novamente'**<br />
 
-**No clique nos botões &quot;Enviar uma nova foto&quot; ou &quot;Tentar Novamente&quot;**<br />
-
-- **Onde:** Na página de customização do site, seção &quot;Enviar Minha Foto&quot;
+- **Onde:** Na página de customização do site, seção 'Enviar Minha Foto'
 
 ```html
 <script>
@@ -583,18 +571,17 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;enviar-uma-nova-foto&#039; ou &#039;tentar-novamente&#039; | Deve retornar o nome do botão clicado. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-botao]]` | &#039;enviar-uma-nova-foto&#039; ou &#039;tentar-novamente&#039; | Deve retornar o nome do botão clicado. |
 
 <br />
-
 
 ### Acesso - Login
 
 **Na interação com as opções de linguagem da página**<br />
 
-- **Onde:** Na página de &quot;Login&quot;
+- **Onde:** Na página de 'Login'
     
 ```html
 <script>
@@ -608,15 +595,15 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[linguagem-escolhida]] | 'portugues-brasil' ou 'english' | Deve retornar o nome da linguagem escolhida. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[linguagem-escolhida]]` | 'portugues-brasil' ou 'english' | Deve retornar o nome da linguagem escolhida. |
 
 <br />
 
-**Na interação com os campos &quot;CPF&quot; e &quot;Senha&quot;**<br />
+**Na interação com os campos 'CPF' e 'Senha'**<br />
 
-- **Onde:** Na página de &quot;Login&quot;
+- **Onde:** Na página de 'Login'
     
 ```html
 <script>
@@ -630,12 +617,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;cpf&#039; ou &#039;senha&#039; | Deve retornar o nome do campo preenchido. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-campo]]` | &#039;cpf&#039; ou &#039;senha&#039; | Deve retornar o nome do campo preenchido. |
 
 <br />
-
 
 **No clique em todos os elementos da página**<br />
 
@@ -653,17 +639,17 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[elemento]] | 'botao', 'link', 'checkbox' ou 'password-visibility' | Deve retornar o nome do elemento.|
-| [[nome-elemento]] | 'acessar', 'quero-criar-minha-conta', 'esquece-minha-senha', 'mostrar-senha', 'esconder-senha', 'mantenha-me-conectado' e etc. | Deve retornar o nome do elemento clicado. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[elemento]]` | 'botao', 'link', 'checkbox' ou 'password-visibility' | Deve retornar o nome do elemento.|
+| `[[nome-elemento]]` | 'acessar', 'quero-criar-minha-conta', 'esquece-minha-senha', 'mostrar-senha', 'esconder-senha', 'mantenha-me-conectado' e etc. | Deve retornar o nome do elemento clicado. |
 
 <br />
 
 
-**No callback dos campos &quot;CPF&quot; e &quot;Senha&quot;**<br />
+**No callback dos campos 'CPF' e 'Senha'**<br />
 
-- **Onde:** Na página de &quot;Login&quot;
+- **Onde:** Na página de 'Login'
     
 ```html
 <script>
@@ -677,19 +663,19 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;cpf&#039; ou &#039;senha&#039; | Deve retornar o nome do campo que iremos receber o callback.  |
-| [[erro]] | &#039;insira-sua-senha-para-acessar&#039;, &#039;senha-invalida&#039; e etc. | Deve retornar o callback de erro dos campos CPF e Senha. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-campo]]` | &#039;cpf&#039; ou &#039;senha&#039; | Deve retornar o nome do campo que iremos receber o callback.  |
+| `[[erro]]` | &#039;insira-sua-senha-para-acessar&#039;, &#039;senha-invalida&#039; e etc. | Deve retornar o callback de erro dos campos CPF e Senha. |
 
 <br />
 
 
 ### Acesso - Redefinir minha senha
 
-**Na interação com o campo &quot;CPF&quot;.**<br />
+**Na interação com o campo 'CPF'.**<br />
 
-- **Onde:** Na página de &quot;Redefinir minha senha&quot;
+- **Onde:** Na página de 'Redefinir minha senha'
     
 ```html
 <script>
@@ -703,17 +689,17 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[email-ou-cpf]] | 'email' ou 'cpf' | Deve retornar o nome do elemento clicado.  |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[email-ou-cpf]]` | 'email' ou 'cpf' | Deve retornar o nome do elemento clicado.  |
 
 
 <br />
 
 
-**No clique do botão &quot;Redefir Senha&quot;**<br />
+**No clique do botão 'Redefir Senha'**<br />
 
-- **Onde:** Na página de &quot;Redefinir minha senha&quot;
+- **Onde:** Na página de 'Redefinir minha senha'
 
 ```html
 <script>
@@ -727,18 +713,18 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[botao-ou-link]] | 'botao' ou 'link' | Deve retornar o elemento clicado.  |
-| [[item-clicado]] | 'continuar' ou 'entrar' | Deve retornar do elemento clicado.  |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[botao-ou-link]]` | 'botao' ou 'link' | Deve retornar o elemento clicado.  |
+| `[[item-clicado]]` | 'continuar' ou 'entrar' | Deve retornar do elemento clicado.  |
 
 
 <br />
 
 
-**No callback do campo &quot;CPF&quot;**<br />
+**No callback do campo 'CPF'**<br />
 
-- **Onde:** Na página de &quot;Redefinir minha senha&quot;
+- **Onde:** Na página de 'Redefinir minha senha'
     
 ```html
 <script>
@@ -752,16 +738,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[erro]] | &#039;cpf-nao-encontrado&#039;, &#039;cpf-invalido&#039; e etc | Deve retornar o callback de erro do campo CPF. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[erro]]` | &#039;cpf-nao-encontrado&#039;, &#039;cpf-invalido&#039; e etc | Deve retornar o callback de erro do campo CPF. |
 
 <br />
 
 
 **No callback de e-mail enviado.**<br />
 
-- **Onde:** Na página de &quot;Redefinir minha senha&quot;
+- **Onde:** Na página de 'Redefinir minha senha'
     
 ```html
 <script>
@@ -775,9 +761,9 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso-ou-erro]] | &#039;sucesso&#039;, &#039;erro:email-incompleto&#039; e etc | Deve retornar o callback de sucesso ou erro do e-mail enviado. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[sucesso-ou-erro]]` | &#039;sucesso&#039;, &#039;erro:email-incompleto&#039; e etc | Deve retornar o callback de sucesso ou erro do e-mail enviado. |
 
 <br />
 
@@ -800,16 +786,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[etapa-cadastro]] | 'cadastro', 'criar-senha', 'verifique-seu-email' ou 'acao-realizada-com-sucesso' | Deve retornar a etapa do cadastro que usuário está. |
-| [[linguagem-escolhida]] | 'portugues-brasil' ou 'english' | Deve retornar o nome da linguagem escolhida. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[etapa-cadastro]]` | 'cadastro', 'criar-senha', 'verifique-seu-email' ou 'acao-realizada-com-sucesso' | Deve retornar a etapa do cadastro que usuário está. |
+| `[[linguagem-escolhida]]` | 'portugues-brasil' ou 'english' | Deve retornar o nome da linguagem escolhida. |
 
 <br />
 
 **No preenchimento dos campos**<br />
 
-- **Onde:** Na página de &quot;Cadastro&quot;
+- **Onde:** Na página de 'Cadastro'
     
 ```html
 <script>
@@ -823,16 +809,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;nome-completo&#039;, &#039;email&#039;, &#039;cpf&#039; e etc. | Deve retornar o nome do campo preenchido. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-campo]]` | &#039;nome-completo&#039;, &#039;email&#039;, &#039;cpf&#039; e etc. | Deve retornar o nome do campo preenchido. |
 
 <br />
 
 
 **No clique no botões, links e elementos da página**<br />
 
-- **Onde:** Na página de &quot;Cadastro&quot;
+- **Onde:** Na página de 'Cadastro'
     
 ```html
 <script>
@@ -846,17 +832,17 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[botao-ou-link]] | 'botao', 'link', 'password-visibility' e etc. | Deve retornar o elemento clicado. |
-| [[nome-item-clicado]] | 'continuar', 'entrar', 'condicoes' ou 'privacidade' | Deve retornar do elemento clicado. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[botao-ou-link]]` | 'botao', 'link', 'password-visibility' e etc. | Deve retornar o elemento clicado. |
+| `[[nome-item-clicado]]` | 'continuar', 'entrar', 'condicoes' ou 'privacidade' | Deve retornar do elemento clicado. |
 
 <br />
 
 
 **No callback dos campos obrigatórios**<br />
 
-- **Onde:** Na página de &quot;Cadastro&quot;
+- **Onde:** Na página de 'Cadastro'
     
 ```html
 <script>
@@ -870,10 +856,10 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;nome-completo&#039;, &#039;email&#039;, &#039;cpf&#039;, &#039;endereco&#039;, &#039;bairro&#039; e etc. | Deve retornar o nome do campo que está retornando o callback. |
-| [[erro]] | &#039;dado-incorreto&#039;, &#039;cpf-invalido&#039;, &#039;bairro-nao-existente&#039; e etc. | Deve retornar o callback de erro do campo. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-campo]]` | &#039;nome-completo&#039;, &#039;email&#039;, &#039;cpf&#039;, &#039;endereco&#039;, &#039;bairro&#039; e etc. | Deve retornar o nome do campo que está retornando o callback. |
+| `[[erro]]` | &#039;dado-incorreto&#039;, &#039;cpf-invalido&#039;, &#039;bairro-nao-existente&#039; e etc. | Deve retornar o callback de erro do campo. |
 
 <br />
 
@@ -893,10 +879,10 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | 'senha', 'confirme-sua-nova-senha' | Deve retornar o nome do campo que está retornando o callback. |
-| [[erro]] | 'senha-invalida', 'confirme-sua-senha' e etc | Deve retornar o callback de erro do campo. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-campo]]` | 'senha', 'confirme-sua-nova-senha' | Deve retornar o nome do campo que está retornando o callback. |
+| `[[erro]]` | 'senha-invalida', 'confirme-sua-senha' e etc | Deve retornar o callback de erro do campo. |
 
 <br />
 
@@ -916,10 +902,10 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[elemento]] | 'botao', 'link', 'checkbox' ou 'password-visibility' | Deve retornar o nome do elemento.  |
-| [[nome-elemento]] | 'enviar', 'aceito-os-termos', 'termos-e-condicoes', 'declaracao-de-privacidade', 'mostrar-senha', 'esconder-senha' e etc. | Deve retornar o nome do elemento clicado. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[elemento]]` | 'botao', 'link', 'checkbox' ou 'password-visibility' | Deve retornar o nome do elemento.  |
+| `[[nome-elemento]]` | 'enviar', 'aceito-os-termos', 'termos-e-condicoes', 'declaracao-de-privacidade', 'mostrar-senha', 'esconder-senha' e etc. | Deve retornar o nome do elemento clicado. |
 
 <br />
 
@@ -961,9 +947,9 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 ### Checkout
 
-**No clique para escolher o &quot;Endereço de Retirada&quot;**<br />
+**No clique para escolher o 'Endereço de Retirada'**<br />
 
-- **Onde:** Na página de &quot;Sua Compra&quot;, seção &quot;Endereço para Retirada&quot;
+- **Onde:** Na página de 'Sua Compra', seção 'Endereço para Retirada'
     
 ```html
 <script>
@@ -978,16 +964,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-loja]] | &#039;morumbi-shopping&#039; e etc. | Deve retornar o nome da loja escolhida para retirada. |
-| [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-loja]]` | &#039;morumbi-shopping&#039; e etc. | Deve retornar o nome da loja escolhida para retirada. |
+| `[[etapacheckout]]` |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
 
 <br />
 
 **No clique nos botões de todas as etapas do checkout**<br />
 
-- **Onde:** Na página de &quot;Sua Compra&quot;, seção &quot;Endereço para Retirada&quot;
+- **Onde:** Na página de 'Sua Compra', seção 'Endereço para Retirada'
     
 ```html
 <script>
@@ -1002,16 +988,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] |'voltar', 'continuar', 'consultar', 'aplicar', 'finalizar-compra', 'salvar' e etc | Deve retornar o nome do botão clicado. |
-| [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-botao]]` |'voltar', 'continuar', 'consultar', 'aplicar', 'finalizar-compra', 'salvar' e etc | Deve retornar o nome do botão clicado. |
+| `[[etapacheckout]]` |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
 
 <br />
 
 **No callback de sucesso ou erro ao inserir um Cupom ou Vale Presente**<br />
 
-- **Onde:** Na página de &quot;Sua Compra&quot;, seção &quot;Cupons, Vales ou Cartão Presentes&quot;
+- **Onde:** Na página de 'Sua Compra', seção 'Cupons, Vales ou Cartão Presentes'
     
 ```html
 <script>
@@ -1027,19 +1013,19 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cupom-ou-vale-presente]] | &#039;cupom&#039; ou &#039;vale-presente&#039;. | Deve retornar qual item esta retornando o callback. |
-| [[sucesso-ou-erro]] | &#039;cupom-invalido&#039;, &#039;cupom-aplicado-com-sucesso&#039;, &#039;esse-cartao-nao-possui-saldo&#039; e etc. | Deve retornar o callback de sucesso ou erro do campo. |
-| [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
-| [[nome-cupom-ou-vale-presente]] | 'bem-vindo', 'cupom-promocional' e etc | Deve retornar o nome do cupom inserido |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[cupom-ou-vale-presente]]` | &#039;cupom&#039; ou &#039;vale-presente&#039;. | Deve retornar qual item esta retornando o callback. |
+| `[[sucesso-ou-erro]]` | &#039;cupom-invalido&#039;, &#039;cupom-aplicado-com-sucesso&#039;, &#039;esse-cartao-nao-possui-saldo&#039; e etc. | Deve retornar o callback de sucesso ou erro do campo. |
+| `[[etapacheckout]]` |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
+| `[[nome-cupom-ou-vale-presente]]` | 'bem-vindo', 'cupom-promocional' e etc | Deve retornar o nome do cupom inserido |
 
 <br />
 
 
-**No clique no ícone &quot;X&quot; para remover um cupom ou Vale Presente.**<br />
+**No clique no ícone 'X' para remover um cupom ou Vale Presente.**<br />
 
-- **Onde:** Na página de &quot;Sua Compra&quot;, seção &quot;Cupons, Vales ou Cartão Presentes&quot;
+- **Onde:** Na página de 'Sua Compra', seção 'Cupons, Vales ou Cartão Presentes'
     
 ```html
 <script>
@@ -1055,17 +1041,17 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cupom-ou-vale-presente]] | &#039;cupom&#039; ou &#039;vale-presente&#039;. | Deve retornar qual item foi removido. |
-| [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
-| [[nome-cupom-ou-vale-presente]] | 'bem-vindo', 'cupom-promocional' e etc | Deve retornar o nome do cupom inserido |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[cupom-ou-vale-presente]]` | &#039;cupom&#039; ou &#039;vale-presente&#039;. | Deve retornar qual item foi removido. |
+| `[[etapacheckout]]` |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
+| `[[nome-cupom-ou-vale-presente]]` | 'bem-vindo', 'cupom-promocional' e etc | Deve retornar o nome do cupom inserido |
 
 <br />
 
 **No callback de erro, caso o usuário tente passa sem efetuar o pagamento.**<br />
 
-- **Onde:** Na página de &quot;Sua Compra&quot;, seção &quot;Pagamento&quot;
+- **Onde:** Na página de 'Sua Compra', seção 'Pagamento'
     
 ```html
 <script>
@@ -1080,17 +1066,17 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[erro]] | &#039;por-favor-selecione-uma-opcao-de-pagamento&#039; | Deve retornar o callback de erro. |
-| [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[erro]]` | &#039;por-favor-selecione-uma-opcao-de-pagamento&#039; | Deve retornar o callback de erro. |
+| `[[etapacheckout]]` |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
 
 <br />
 
 
-**No clique na opção de &quot;Alterar&quot;**<br />
+**No clique na opção de 'Alterar'**<br />
 
-- **Onde:** Na página de &quot;Sua Compra&quot;, seção &quot;Resumo do Pedido&quot;
+- **Onde:** Na página de 'Sua Compra', seção 'Resumo do Pedido'
     
 ```html
 <script>
@@ -1105,17 +1091,17 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[opcao-escolhida]] | 'entrega' ou 'pagamento' | Deve retornar o nome da opção clicada. |
-| [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[opcao-escolhida]]` | 'entrega' ou 'pagamento' | Deve retornar o nome da opção clicada. |
+| `[[etapacheckout]]` |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
 
 <br />
 
 
 **No callback de erro, quando não conseguir finalizar o pedido.**<br />
 
-- **Onde:** Na página de &quot;Sua Compra&quot;, seção &quot;Resumo do Pedido&quot;
+- **Onde:** Na página de 'Sua Compra', seção 'Resumo do Pedido'
     
 ```html
 <script>
@@ -1130,19 +1116,19 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[erro]] | &#039;nao-foi-possivel-concluir-seu-pedido&#039; e etc. | Deve retornar o callback de erro. |
-| [[etapacheckout]] |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[erro]]` | &#039;nao-foi-possivel-concluir-seu-pedido&#039; e etc. | Deve retornar o callback de erro. |
+| `[[etapacheckout]]` |  &#039;identificacao&#039;, &#039;entrega&#039;, &#039;cupons&#039; ou &#039;pagamento&#039; | Retorna a etapa do checkout que foi carregada |
 
 <br />
 
 
 ### Pedido finalizado com Sucesso
 
-**No clique nos botões &quot;Ver Boleto&quot; e &quot;Ver Pedido&quot;**<br />
+**No clique nos botões 'Ver Boleto' e 'Ver Pedido'**<br />
 
-- **Onde:** Na página de &quot;Pedido finalizado com Sucesso&quot;
+- **Onde:** Na página de 'Pedido finalizado com Sucesso'
 
 ```html
 <script>
@@ -1156,9 +1142,9 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;ver-boleto&#039; ou &#039;ver-pedido&#039; | Deve retornar o nome do botão clicado. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-botao]]` | &#039;ver-boleto&#039; ou &#039;ver-pedido&#039; | Deve retornar o nome do botão clicado. |
 
 <br />
 
@@ -1167,7 +1153,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 **No clique nas opções de avaliação**<br />
 
-- **Onde:** Na página &quot;Avalie&quot;, seção &quot;O que achou da nossa experiência?&quot;
+- **Onde:** Na página 'Avalie', seção 'O que achou da nossa experiência?'
     
 ```html
 <script>
@@ -1181,16 +1167,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[opcao-escolhida]] | &#039;nao-gostei&#039;, &#039;gostei&#039; e etc | Deve retornar o nome da opção clicada. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[opcao-escolhida]]` | &#039;nao-gostei&#039;, &#039;gostei&#039; e etc | Deve retornar o nome da opção clicada. |
 
 <br />
 
 
 **Na tentativa de callback para enviar a avaliação de Nps**<br />
 
-- **Onde:** Na página &quot;Avalie&quot;, seção &quot;O que achou da nossa experiência?&quot;
+- **Onde:** Na página 'Avalie', seção 'O que achou da nossa experiência?'
     
 ```html
 <script>
@@ -1204,11 +1190,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[opcao]] | &#039;nao-gostei&#039;, &#039;gostei&#039; e etc | Deve retornar o nome da opção clicada. |
-| [[sugestao]] | &#039;site-lento&#039;, &#039;default&#039; e etc | Deve retornar a sugestão feita pelo usuário. |
-| [[status]] | &#039;sugestao-enviada&#039;, &#039;erro:nao-foi-possivel-enviar-sugestao&#039; e etc | Deve retornar a mensagem de sucesso ou tipo de erro. |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[opcao]]` | &#039;nao-gostei&#039;, &#039;gostei&#039; e etc | Deve retornar o nome da opção clicada. |
+| `[[sugestao]]` | &#039;site-lento&#039;, &#039;default&#039; e etc | Deve retornar a sugestão feita pelo usuário. |
+| `[[status]]` | &#039;sugestao-enviada&#039;, &#039;erro:nao-foi-possivel-enviar-sugestao&#039; e etc | Deve retornar a mensagem de sucesso ou tipo de erro. |
 
 <br />
 
@@ -1236,11 +1222,11 @@ window.dataLayer.push({
           'brand': '[[marca-produto]]',
           'category': '[[categoria-produto]]',
           'variant': '[[variacao-produto]]',
-          'dimension5': '[[modelodapeça]]',
-          'dimension25': '[[product-tamanhodoproduto]]',
-          'dimension27': '[[product-padronagemdoproduto]]',
-          'dimension30': '[[product-subcategoria]]',
-          'dimension32': '[[product-preçooriginal]]',
+          'dimension5': '[[cd5-product-modelo+nome+cor-da-peca]]',
+          'dimension8': '[[cd8-product-tamanho-do-produto]]',
+          'dimension10': '[[cd10-product-padronagem-do-produto]]',
+          'dimension11': '[[cd11-product-subcategoria]]',
+          'dimension12': '[[cd12-product-preco-de]]'
         }]
       }
     }
@@ -1248,28 +1234,25 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
-| [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
-| [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
-| [[marca-produto]] | &quot;pool-original&quot; | Marca do produto |
-| [[categoria-produto]] | &quot;masculino&quot; | Departamento do produto |
-| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
-| [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
-| [[modelodapeça]] | camiseta-masculina&#039;, &#039;camiseta-feminina&#039;, &#039;camiseta-juvenil&#039; e etc. | Retorna o modelo da peça selecionada |
-| [[product-tamanhodoproduto]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[product-subcategoria]] |  &#039;310090&#039; | Código da categoria GM  |
-| [[product-preçooriginal]] |  &#039;12&#039; | Preço do produto (dê) |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-produto]]` | 'calca-masculina-super-skinny-em-jeans' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[preco-produto]]` | '139.99' | Preço do produto |
+| `[[marca-produto]]` | 'pool-original' | Marca do produto |
+| `[[categoria-produto]]` | 'masculino' | Departamento do produto |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[cd5-product-modelo+nome+cor-da-peca]]` |  'camiseta-masculina-preta', 'camiseta-feminina-branca', 'camiseta-juvenil-preta' e etc. | Retorna o modelo + nome + cor da peça selecionada |
+| `[[cd8-product-tamanho-do-produto]]` | 'p', 'm', '8-12', '42' | Tamanho do produto |
+| `[[cd10-product-padronagem-do-produto]]` |  'florido', 'listado' | Padrão da estampa do produto |
+| `[[cd11-product-subcategoria]]` | '310090'| Código da categoria GM  |
+| `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
 
 <br />
 
+**No clique do botão "Continuar"**<br />
 
-**No clique do botão &quot;Comprar&quot;**<br />
-
-- **Onde:** Na página de customização do site, seção &quot;Criar minha estampa&quot;
-    
+- **Onde:** Na página de "Confirmação de Estampa"
 
 ```html
 <script>
@@ -1287,11 +1270,12 @@ window.dataLayer.push({
         'brand': '[[marca-produto]]',
         'category': '[[categoria-produto]]',
         'variant': '[[variacao-produto]]',
-        'dimension5': '[[modelodapeça]]',
-        'dimension25': '[[product-tamanhodoproduto]]',
-        'dimension27': '[[product-padronagemdoproduto]]',
-        'dimension30': '[[product-subcategoria]]',
-        'dimension32': '[[product-preçooriginal]]',
+        'quantity': '[[quantidade-produto]]',
+        'dimension5': '[[cd5-product-modelo+nome+cor-da-peca]]',
+        'dimension8': '[[cd8-product-tamanho-do-produto]]',
+        'dimension10': '[[cd10-product-padronagem-do-produto]]',
+        'dimension11': '[[cd11-product-subcategoria]]',
+        'dimension12': '[[cd12-product-preco-de]]'
       }]
     }
   }
@@ -1299,28 +1283,117 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
-| [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
-| [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
-| [[marca-produto]] | &quot;pool-original&quot; | Marca do produto |
-| [[categoria-produto]] | &quot;masculino&quot; | Departamento do produto |
-| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
-| [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
-| [[modelodapeça]] | camiseta-masculina&#039;, &#039;camiseta-feminina&#039;, &#039;camiseta-juvenil&#039; e etc. | Retorna o modelo da peça selecionada |
-| [[product-tamanhodoproduto]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[product-subcategoria]] |  &#039;310090&#039; | Código da categoria GM  |
-| [[product-preçooriginal]] |  &#039;12&#039; | Preço do produto (dê) |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-produto]]` | 'calca-masculina-super-skinny-em-jeans' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[preco-produto]]` | '139.99' | Preço do produto |
+| `[[marca-produto]]` | 'pool-original' | Marca do produto |
+| `[[categoria-produto]]` | 'masculino' | Departamento do produto |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[quantidade-produto]]` | '1' | Quantidade do produto |
+| `[[cd5-product-modelo+nome+cor-da-peca]]` |  'camiseta-masculina-preta', 'camiseta-feminina-branca', 'camiseta-juvenil-preta' e etc. | Retorna o modelo + nome + cor da peça selecionada |
+| `[[cd8-product-tamanho-do-produto]]` | 'p', 'm', '8-12', '42' | Tamanho do produto |
+| `[[cd10-product-padronagem-do-produto]]` |  'florido', 'listado' | Padrão da estampa do produto |
+| `[[cd11-product-subcategoria]]` | '310090'| Código da categoria GM  |
+| `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
 
 <br />
 
+**No carregamento das páginas do fluxo de compra do  checkout.**<br />
 
-**No carregamento da página de &quot;Pedido Finalizado com Sucesso&quot;**<br />
+- **Onde:** Nas páginas de "Sua Compra", steps: "Identificação", "Entrega" e "Pagamento"
 
-- **Onde:** Na página de &quot;Pedido finalizado com Sucesso&quot;
-    
+```html
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'event': 'checkout',
+  'eventCategory': 'rchlo-mais:enhanced-ecommerce',
+  'eventAction': 'checkout',
+  'noInteraction': '1',
+  'ecommerce': {
+    'checkout': {
+      'actionField': {'step': '[[passo-checkout]]'},
+      'products': [{
+        'name': '[[nome-produto]]',
+        'id': '[[id-produto]]',
+        'price': '[[preco-produto]]',
+        'brand': '[[marca-produto]]',
+        'category': '[[categoria-produto]]',
+        'variant': '[[variacao-produto]]',
+        'quantity': '[[quantidade-produto]]',
+        'dimension5': '[[cd5-product-modelo+nome+cor-da-peca]]',
+        'dimension8': '[[cd8-product-tamanho-do-produto]]',
+        'dimension10': '[[cd10-product-padronagem-do-produto]]',
+        'dimension11': '[[cd11-product-subcategoria]]',
+        'dimension12': '[[cd12-product-preco-de]]'
+      }]
+    }
+  }
+});
+</script>
+```
+
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[passo-checkout]]` | '1', '2' ou '3' | Retorna qual index do checkout que o usuário está. |
+| `[[nome-produto]]` | 'calca-masculina-super-skinny-em-jeans' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[preco-produto]]` | '139.99' | Preço do produto |
+| `[[marca-produto]]` | 'pool-original' | Marca do produto |
+| `[[categoria-produto]]` | 'masculino' | Departamento do produto |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[quantidade-produto]]` | '1' | Quantidade do produto |
+| `[[cd5-product-modelo+nome+cor-da-peca]]` |  'camiseta-masculina-preta', 'camiseta-feminina-branca', 'camiseta-juvenil-preta' e etc. | Retorna o modelo + nome + cor da peça selecionada |
+| `[[cd8-product-tamanho-do-produto]]` | 'p', 'm', '8-12', '42' | Tamanho do produto |
+| `[[cd10-product-padronagem-do-produto]]` |  'florido', 'listado' | Padrão da estampa do produto |
+| `[[cd11-product-subcategoria]]` | '310090'| Código da categoria GM  |
+| `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
+
+<br />
+
+**Nas escolha das opções de entrega e pagamento (Quando o usuário já tiver escolhido sua opção)**<br />
+
+- **Onde:** Nas páginas de "Sua Compra"
+
+```html
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'event': 'checkoutOption',
+  'eventCategory': 'rchlo-mais:enhanced-ecommerce',
+  'eventAction': 'checkoutOption',
+  'dimension15': '[[cd15-hit-nome-loja]]',
+  'eventLabel': [{
+    't':'[[nome-entrega]]',
+    'd':'[[previsao-entrega]]',
+    'p':'[[valor]]'
+  }],
+    'ecommerce': {
+    'checkout_option': {
+      'actionField': {'step':'[[passo-checkout]]','option':'[[shipping ou payment]]:[[opcao escolhida]]:[[previsao-entrega]]'},
+    }
+  }
+});
+</script>
+```
+
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[cd15-hit-nome-loja]]` | 'spa-morumbi-sh', 'abc' e etc | Retorna o nome da loja selecionada. |
+| `[[nome-entrega]]` | 'frete-gratis', 'normal', 'expressa' | Retorna a opção de entrega |
+| `[[previsao-entrega]]` |  'dd/mm/yyyy', '3-dias', '2-dias' e etc | Retorna a previsão de entrega |
+| `[[valor]]` | '7.50', '0.00' e etc | Retorna o valor do frete |
+| `[[passo-checkout]]` | '1', '2' ou '3' | Retorna qual index do checkout que o usuário está. |
+| `[[shipping ou payment]]` | 'shipping' ou 'payment' | Deve retornar a opção escolhida pelo usuário |
+| `[[opcao escolhida]]` | 'boleto', 'cartao-de-credito', 'frete-gratis', 'expressa' e etc | Deve retornar a opção de frete ou pagamento escolhida pelo usuário |
+
+<br />
+
+**No carregamento da página de 'Pedido Finalizado com Sucesso'**<br />
+
+- **Onde:** Na página de 'Pedido finalizado com Sucesso'
 
 ```html
 <script>
@@ -1329,6 +1402,7 @@ window.dataLayer.push({
   'event': 'purchase',
   'eventCategory': 'rchlo-mais:enhanced-ecommerce',
   'eventAction': 'purchase',
+  'dimension15': '[[cd15-hit-nome-loja]]',
   'noInteraction': '1',
   'ecommerce': {
     'purchase': {
@@ -1347,11 +1421,11 @@ window.dataLayer.push({
         'category': '[[categoria-produto]]',
         'variant': '[[variacao-produto]]',
         'quantity': '[[quantidade-produto]]',
-        'dimension5': '[[modelodapeça]]',
-        'dimension25': '[[product-tamanhodoproduto]]',
-        'dimension27': '[[product-padronagemdoproduto]]',
-        'dimension30': '[[product-subcategoria]]',
-        'dimension32': '[[product-preçooriginal]]',
+        'dimension5': '[[cd5-product-modelo+nome+cor-da-peca]]',
+        'dimension8': '[[cd8-product-tamanho-do-produto]]',
+        'dimension10': '[[cd10-product-padronagem-do-produto]]',
+        'dimension11': '[[cd11-product-subcategoria]]',
+        'dimension12': '[[cd12-product-preco-de]]'
       }]
     }
   }
@@ -1359,32 +1433,31 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[id-transacao]] | &quot;000011652&quot; | ID único da transação |
-| [[valor-total-transacao]] | &quot;139.99&quot; | Valor total da transação incluindo frete e taxas |
-| [[frete-transacao]] | &quot;0.00&quot; | Valor do frete da transação |
-| [[coupon-transacao]] | &quot;cupom-2018&quot; | Cupom de desconto utilizado na transação - promoção nivel pedido |
-| [[taxa-transacao]] | &quot;0.00&quot; | Valor de taxas da transação |
-| [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
-| [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
-| [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
-| [[marca-produto]] | &quot;pool-original&quot; | Marca do produto |
-| [[categoria-produto]] | &quot;masculino&quot; | Departamento do produto |
-| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
-| [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
-| [[erro]] | &#039;nao-foi-possivel-concluir-seu-pedido&#039; e etc. | Deve retornar o callback de erro. |
-| [[modelodapeça]] | camiseta-masculina&#039;, &#039;camiseta-feminina&#039;, &#039;camiseta-juvenil&#039; e etc. | Retorna o modelo da peça selecionada |
-| [[product-tamanhodoproduto]] |  &#039;p&#039;, &#039;m&#039;, &#039;8-12&#039;, &#039;42&#039; | Tamanho do produto |
-| [[product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[product-subcategoria]] |  &#039;310090&#039; | Código da categoria GM  |
-| [[product-preçooriginal]] |  &#039;12&#039; | Preço do produto (dê) |
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[id-transacao]]` | '000011652' | ID único da transação |
+| `[[valor-total-transacao]]` | '139.99' | Valor total da transação incluindo frete e taxas |
+| `[[frete-transacao]]` | '0.00' | Valor do frete da transação |
+| `[[coupon-transacao]]` | 'cupom-2018' | Cupom de desconto utilizado na transação - promoção nivel pedido |
+| `[[taxa-transacao]]` | '0.00' | Valor de taxas da transação |
+| `[[nome-produto]]` | 'calca-masculina-super-skinny-em-jeans' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[preco-produto]]` | '139.99' | Preço do produto |
+| `[[marca-produto]]` | 'pool-original' | Marca do produto |
+| `[[categoria-produto]]` | 'masculino' | Departamento do produto |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[quantidade-produto]]` | '1' | Quantidade do produto |
+| `[[erro]]` | &#039;nao-foi-possivel-concluir-seu-pedido&#039; e etc. | Deve retornar o callback de erro. |
+| `[[cd5-product-modelo+nome+cor-da-peca]]` |  'camiseta-masculina-preta', 'camiseta-feminina-branca', 'camiseta-juvenil-preta' e etc. | Retorna o modelo + nome + cor da peça selecionada |
+| `[[cd8-product-tamanho-do-produto]]` | 'p', 'm', '8-12', '42' | Tamanho do produto |
+| `[[cd10-product-padronagem-do-produto]]` |  'florido', 'listado' | Padrão da estampa do produto |
+| `[[cd11-product-subcategoria]]` | '310090'| Código da categoria GM  |
+| `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
+| `[[cd15-hit-nome-loja]]` | 'spa-morumbi-sh', 'abc' e etc | Retorna o nome da loja selecionada. |
 
 <br />
 
-
 ---
-
 
 ## Considerações Finais
 
