@@ -309,7 +309,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'rchlover:[[minha-conta-ou-loja-criada]]',
+    'eventCategory': 'rchlover:[[minha-loja-ou-loja-criada]]',
     'eventAction': 'clique:botao:copiar-codigo',
     'eventLabel': 'compartilhe-seu-cupom'
   });
@@ -318,7 +318,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo         | Descrição        |
 | :-------------- | :-------------- | :--------------- |
-| [[minha-conta-ou-loja-criada]] | 'minha-conta' ou 'loja-criada' | Retorna onde ocorreu a interação. |
+| [[minha-loja-ou-loja-criada]] | 'minha-loja' ou 'loja-criada' | Retorna onde ocorreu a interação. |
 
 <br />
 
@@ -802,10 +802,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-
-
 <br />
-
 
 **No preenchimento dos campos, no menu minha loja, sub menu personalizar**<br />
 
@@ -823,14 +820,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-campo]] | &#039;nome-da-loja&#039;, &#039;descricao&#039; e etc | Deve retornar o nome do campo preenchido. |
 
 <br />
-
 
 **No clique dos botões no menu minha loja, sub menu personalizar**<br />
 
@@ -1080,8 +1074,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-filtro]] | &#039;novidades&#039;, &#039;feminino&#039;, &#039;masculino&#039; e etc | Deve retornar o nome do filtro. |
@@ -1102,11 +1094,50 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[botao ou link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o tipo de elemento clicado. |
 | [[nome-item]] | &#039;carregar-mais-produtos&#039;, &#039;ir-para-minha-loja&#039;, &#039;clique-aqui-para-ver-seus-produtos&#039;. | Deve retornar o nome do item clicado. |
+
+<br />
+
+**No clique do botão "Copiar Link**<br />
+
+- **Onde:** Na página minha loja
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-loja:modal-compartilhar',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'copiar-link'
+  });
+</script>
+```
+
+<br />
+
+**No clique das opções de Redes Sociais**<br />
+
+- **Onde:** Na página minha loja, modal "Compartilhar"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-loja:modal-compartilhar',
+    'eventAction': 'clique:botao:redes-sociais',
+    'eventLabel': '[[botao-clicado]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-clicado]] | 'whatsapp', 'facebook', 'twitter' e etc | Retorna o botão clicado. |
 
 <br />
 
