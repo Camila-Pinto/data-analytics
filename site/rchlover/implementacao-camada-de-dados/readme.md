@@ -1101,6 +1101,28 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
+**No clique do botão "Compartilhe"**<br />
+
+- **Onde:** Na página minha loja
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-loja',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'compartilhar'
+  });
+</script>
+```
+
+| Variável        | Exemplo                               | Descrição                         |
+| :-------------- | :------------------------------------ | :-------------------------------- |
+| [[botao-clicado]] | 'whatsapp', 'facebook', 'twitter' e etc | Retorna o botão clicado. |
+
+<br />
+
 **No clique do botão "Copiar Link**<br />
 
 - **Onde:** Na página minha loja
