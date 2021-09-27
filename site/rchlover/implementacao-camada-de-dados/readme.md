@@ -294,13 +294,33 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[nome-elemento]] | &#039;fechar&#039;. &#039;ir-para-meus-dados&#039; e etc. | Deve retornar o nome do elemento. |
 
 <br />
 
+**Nos cliques para copiar o código do cupom**<br />
+
+- **Onde:** Em todas as páginas que estiver disponível. (Minha conta e Loja Criada)
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:[[minha-conta-ou-loja-criada]]',
+    'eventAction': 'clique:botao:copiar-codigo',
+    'eventLabel': 'compartilhe-seu-cupom'
+  });
+</script>
+```
+
+| Variável        | Exemplo         | Descrição        |
+| :-------------- | :-------------- | :--------------- |
+| [[minha-conta-ou-loja-criada]] | 'minha-conta' ou 'loja-criada' | Retorna onde ocorreu a interação. |
+
+<br />
 
 ### Inicio
 
