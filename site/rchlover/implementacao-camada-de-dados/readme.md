@@ -1101,7 +1101,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
-**No clique do botão "Compartilhe"**<br />
+**No clique do botão "Compartilhar"**<br />
 
 - **Onde:** Na página minha loja
     
