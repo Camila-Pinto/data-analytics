@@ -705,7 +705,7 @@ window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   'event': 'promotionImpression',
   'eventCategory': 'enhanced-ecommerce',
-  'eventAction': 'promoImpressions',
+  'eventAction': 'promotionImpression',
   'noInteraction': '1',
   'ecommerce': {
     'promoView': {
@@ -740,7 +740,7 @@ window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
   'event': 'promotionClick',
   'eventCategory': 'enhanced-ecommerce',
-  'eventAction': 'promoClick',
+  'eventAction': 'promotionClick',
     'ecommerce': {
     'promoClick': {
       'promotions': [{
@@ -774,7 +774,7 @@ window.dataLayer.push({
 <script>
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
-  'event': 'productImpressions',
+  'event': 'productImpression',
   'eventCategory':'enhanced-ecommerce',
   'eventAction': 'impressions',
   'noInteraction': '1',
