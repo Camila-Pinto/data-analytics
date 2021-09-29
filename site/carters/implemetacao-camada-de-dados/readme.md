@@ -11,11 +11,17 @@
 - [Implementação](#implementa%c3%a7%c3%a3o)
 - [Especificações Globais](#especifica%c3%a7%c3%b5es-globais)
 - [Dimensões Globais](#dimens&#245;es-globais)
+- [General](#general)
+- [Login e Cadastro](#login-e-cadastro)
+- [PLP e PDP](#plp-e-pdp)
+- [Filtro PLP](#filtro-plp)
+- [Checkout](#checkout)
+- [Enhanced E-commerce](#enhanced-e-commerce)
 
 <br />
 
 ## Implementação da Camada de dados - Projeto Carters
-Última atualização: 30/08/2020 <br />
+Última atualização: 28/09/2020 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -177,20 +183,20 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
-    'dimension4': '[[cd4-hit-loginstatus]]',
+    'dimension1': '[[cd1-session-clientid]]',
+    'dimension4': '[[cd4-hit-loginstatus]]'
   });
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd4-hit-loginstatus]] | &#039;logged-in&#039;, &#039;logged-out&#039; | Status do login do usuário |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[cd1-session-clientid]]` | 'XXXXXXXXXX:XXXX:XX' | ID do usuário gerado pelo cookie do Analytics - session level |
+| `[[cd4-hit-loginstatus]]` | &#039;logged-in&#039;, &#039;logged-out&#039; | Status do login do usuário |
 
 ---
 
-
 ### General
-
 
 **No carregamento do modal lateral  - Sua Sacola sem produtos ou com produtos;**<br />
 
@@ -209,11 +215,9 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[com ou sem]] | &#039;sacola:com-produtos&#039;, &#039;sacola:sem-produtos&#039; | Deve retornar se a sacola está com ou sem produtos. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[com ou sem]]` | &#039;sacola:com-produtos&#039;, &#039;sacola:sem-produtos&#039; | Deve retornar se a sacola está com ou sem produtos. |
 
 <br />
 
@@ -235,75 +239,81 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cpf ou senha]] | &#039;cpf&#039;, &#039;senha&#039; | Deve retornar a confirmação que o usuário preencheu cpf e senha. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[cpf ou senha]]` | &#039;cpf&#039;, &#039;senha&#039; | Deve retornar a confirmação que o usuário preencheu cpf e senha. |
 
 <br />
-
 
 **No clique dos links do header**<br />
 
 - **Onde:** Em todas as páginas em que estiverem disponíveis
     - **Titulo ou nome do botão/link:** &quot;riachuelo&quot;(logo), &quot;login&quot;, &quot;minha-conta&quot; etc
-    
+
 ```html
-<div
-   data-gtm-event-category='carters:geral'
-   data-gtm-event-action='clique:header'
-   data-gtm-event-label='[[nome-clicacdo]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'carters:geral',
+    'eventAction': 'clique:header',
+    'eventLabel': '[[nome-clicacdo]]'
+  });
+</script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-clicado]] | &#039;riachuelo&#039; (logo), &#039;login&#039;, &#039;minha-conta&#039; e etc | Deve retornar o nome do link do header e no logo clicado. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[nome-clicado]]` | &#039;riachuelo&#039; (logo), &#039;login&#039;, &#039;minha-conta&#039; e etc | Deve retornar o nome do link do header e no logo clicado. |
 
 <br />
-
 
 **No clique dos links do menu superior (Obs: ignorar a categoria e subcategoria quando o clique for diretamente nos links principais do menu superior. Ignorar subcategoria quando o clique for apenas no link de categoria.)**<br />
 
 - **Onde:** Em todas as páginas em que estiverem disponíveis
     - **Titulo ou nome do botão/link:** &quot;Novidades&quot;, &quot;Masculino&quot;, &quot;Feminino&quot;, &quot;Calça&quot; etc
     
+
 ```html
-<div
-   data-gtm-event-category='carters:geral'
-   data-gtm-event-action='clique:menu-superior'
-   data-gtm-event-label='[[nome-clicacdo]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'carters:geral',
+    'eventAction': 'clique:menu-superior',
+    'eventLabel': '[[nome-clicacdo]]'
+  });
+</script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-clicacdo]] | &#039;novidades&#039;, &#039;masculino&#039;, &#039;feminino&#039;, &#039;alfaiataria&#039;, &#039;outlet&#039;, &#039;busca&#039;, &#039;camisetas, tenis, polo_manga_curta&#039;, &#039;super_skinny&#039;, &#039;regular&#039;, &#039;feminino:vestido_feminino_colecao_feminina&#039;, &#039;feminino:busca_feminino_colecao_feminina&#039; | Deve retornar o nome do link principal do menu. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[nome-clicacdo]]` | &#039;novidades&#039;, &#039;masculino&#039;, &#039;feminino&#039;, &#039;alfaiataria&#039;, &#039;outlet&#039;, &#039;busca&#039;, &#039;camisetas, tenis, polo_manga_curta&#039;, &#039;super_skinny&#039;, &#039;regular&#039;, &#039;feminino:vestido_feminino_colecao_feminina&#039;, &#039;feminino:busca_feminino_colecao_feminina&#039; | Deve retornar o nome do link principal do menu. |
 
 <br />
-
 
 **No clique dos links interno do footer**<br />
 
 - **Onde:** Em todas as páginas em que estiverem disponíveis
     - **Titulo ou nome do botão/link:** &quot;Carter&#039;s&quot;, &quot;Pool&quot;, &quot;Jeans&quot;, &quot;Geek&quot; etc
     
+
 ```html
-<div
-   data-gtm-event-category='carters:geral'
-   data-gtm-event-action='clique:footer:link'
-   data-gtm-event-label='[[nome-categoria]]:[[nome-link]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'carters:geral',
+    'eventAction': 'clique:footer:link',
+    'eventLabel': '[[nome-categoria]]:[[nome-link]]'
+  });
+</script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-categoria]] | &quot;cartao-riachuelo&quot;, &quot;sobre-a-riachuelo&quot;, &quot;moda-que-transforma&quot; e etc | Deve retornar o nome da categoria do footer. |
-| [[nome-link]] | &#039;saiba-como-adquirir &#039;a-empresa&#039;, &#039;entre-costuras&#039;  e etc | Deve retornar o nome do link do footer clicado. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[nome-categoria]]`| &quot;cartao-riachuelo&quot;, &quot;sobre-a-riachuelo&quot;, &quot;moda-que-transforma&quot; e etc | Deve retornar o nome da categoria do footer. |
+| `[[nome-link]]` | &#039;saiba-como-adquirir &#039;a-empresa&#039;, &#039;entre-costuras&#039;  e etc | Deve retornar o nome do link do footer clicado. |
 
 <br />
 
@@ -326,7 +336,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
-
 **No sucesso ou erro da tentativa de cadastro de newsletter**<br />
 
 - **Onde:** No cadastro de newsletter, localizado no footer em todas as páginas
@@ -343,56 +352,58 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
 | [[sucesso ou erro]] | &quot;sucesso&quot; ou &quot;erro&quot; | Deve retornar o status do envio. |
 
 <br />
-
 
 **No clique nos links de redes sociais**<br />
 
 - **Onde:** Localizado no footer em todas as páginas
     - **Titulo ou nome do botão/link:** &quot;Riachuelo-facebook&quot;, &quot;Riachuelo-Youtube&quot; etc
-    
+
 ```html
-<div
-   data-gtm-event-category='carters:geral'
-   data-gtm-event-action='clique:link:rede-social:footer'
-   data-gtm-event-label='[[nome-link]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'carters:geral',
+    'eventAction': 'clique:link:rede-social:footer',
+    'eventLabel': '[[nome-link]]'
+  });
+</script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-link]] | &quot;riachuelo-facebook&quot;,  &quot;riachuelo-youtube&quot;, &quot;riachuelo-linkedin&quot; e etc | Deve retornar o nome do link da rede social clicada. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[nome-link]]` | &quot;riachuelo-facebook&quot;,  &quot;riachuelo-youtube&quot;, &quot;riachuelo-linkedin&quot; e etc | Deve retornar o nome do link da rede social clicada. |
 
 <br />
 
-
-### Login e  Cadastro
+### Login e Cadastro
 
 **Ao clicar no botão de “Cadastre-se usando suas Redes Sociais”**<br />
 
 - **Onde:** Modal de Cadastro/Login.
-    
+
 ```html
-<div
-   data-gtm-event-category='carters:login'
-   data-gtm-event-action='clique:cadastre-com-redes-sociais'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'carters:login',
+    'eventAction': 'clique:cadastre-com-redes-sociais',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;facebook, google&#039;. | Deve retornar o botão clicado. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[nome-botao]]` | &#039;facebook, google&#039;. | Deve retornar o botão clicado. |
 
 <br />
-
 
 **No preenchimento do campo &quot;Enter Cpf&quot; e &quot;Senha&quot;**<br />
 
@@ -410,27 +421,29 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;cpf&#039; , &#039;senha&#039; | Deve retornar o nome do campo preenchido. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[nome-campo]]` | &#039;cpf&#039; , &#039;senha&#039; | Deve retornar o nome do campo preenchido. |
 
 <br />
-
 
 **No clique do link &quot;Esqueceu a sua senha? Clique aqui&quot;**<br />
 
 - **Onde:** No modal Entrar/Criar Conta
-    
+
 ```html
-<div
-   data-gtm-event-category='carters:login'
-   data-gtm-event-action='clique:link'
-   data-gtm-event-label='esqueceu-senha'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'carters:login',
+    'eventAction': 'clique:link',
+    'eventLabel': 'esqueceu-senha'
+  });
+</script>
 ```
 
 <br />
-
 
 **No callback da tentativa de login**<br />
 
@@ -444,17 +457,15 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventCategory': 'carters:login',
     'eventAction': 'tentativa:callback',
     'eventLabel': '[[sucesso ou tipo-erro]]',
-    'dimension1': '[[cd1-user-usermagentoid]]',
     'dimension5': '[[cd4-hit-loginstatus]]',
   });
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-erro]] | &#039;sucesso&#039;, &#039;voce-nao-digitou-os-dados-corretamente&#039;, etc | Deve retornar o sucesso ou descrição do erro da tentativa de login |
-| [[cd1-user-usermagentoid]] | &quot;0123456&quot; | ID único do usuário definido após cadastro (MagentoID) |
-| [[cd4-hit-loginstatus]] | &#039;logged-in&#039;, &#039;logged-out&#039; | Status do login do usuário |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[sucesso ou tipo-erro]]` | &#039;sucesso&#039;, &#039;voce-nao-digitou-os-dados-corretamente&#039;, etc | Deve retornar o sucesso ou descrição do erro da tentativa de login |
+| `[[cd4-hit-loginstatus]]` | &#039;logged-in&#039;, &#039;logged-out&#039; | Status do login do usuário |
 
 <br />
 
@@ -474,27 +485,29 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;nome-completo, e-mail, data-de-nascimento&#039; e etc. | Deve retornar o nome do campo preenchido. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[nome-campo]]` | &#039;nome-completo, e-mail, data-de-nascimento&#039; e etc. | Deve retornar o nome do campo preenchido. |
 
 <br />
-
 
 **Ao clicar no botão continuar.**<br />
 
 - **Onde:** Na página de cadastro.
-    
+
 ```html
-<div
-   data-gtm-event-category='carters:cadastro'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='continuar'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'carters:cadastro',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'continuar'
+  });
+</script>
 ```
 
 <br />
-
 
 **No sucesso ou erro da tentativa de cadastro.**<br />
 
@@ -512,32 +525,33 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-erro]] | &quot;sucesso&quot; ou &quot;dados-invalidos&quot; | Deve retornar o status do envio. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[sucesso ou tipo-erro]]` | &quot;sucesso&quot; ou &quot;dados-invalidos&quot; | Deve retornar o status do envio. |
 
 <br />
-
 
 **No clique dos links da página de formulário**<br />
 
 - **Onde:** Na página de cadastro.
-    
+
 ```html
-<div
-   data-gtm-event-category='carters:cadastro'
-   data-gtm-event-action='clique:link'
-   data-gtm-event-label='[[nome-link]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'carters:cadastro',
+    'eventAction': 'clique:link',
+    'eventLabel': '[[nome-link]]'
+  });
+</script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-link]] | &#039;politica-de-privacidade, nao-sei-meu-cep, termos-e-condicoes-de-uso&#039;. | Deve retornar o link clicado. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[nome-link]]` | &#039;politica-de-privacidade, nao-sei-meu-cep, termos-e-condicoes-de-uso&#039;. | Deve retornar o link clicado. |
 
 <br />
-
 
 **Ao efetivar as alterações cadastrais em &quot;Informações da conta&quot;**<br />
 
@@ -557,7 +571,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
-
 ### PLP e PDP
 
 **No clique para adicionar um produto à lista de desejos**<br />
@@ -576,10 +589,10 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[plp ou pdp]] | &#039;plp&#039;, &#039;pdp&#039; e etc | Deve retornar o nome da página. |
-| [[id-produto]] | &#039;0655&#039;, &#039;8566&#039; etc | Deve retornar o id do produto adicionado a lista de desejos. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[plp ou pdp]]` | &#039;plp&#039;, &#039;pdp&#039; e etc | Deve retornar o nome da página. |
+| `[[id-produto]]` | &#039;0655&#039;, &#039;8566&#039; etc | Deve retornar o id do produto adicionado a lista de desejos. |
 
 <br />
 
@@ -599,12 +612,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[abriu ou fechou]] | &#039;abriu&#039;, &#039;fechou&#039; | Deve retornar a ação do usuário. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[abriu ou fechou]]` | &#039;abriu&#039;, &#039;fechou&#039; | Deve retornar a ação do usuário. |
 
 <br />
-
 
 ### Filtro PLP
 
@@ -624,36 +636,38 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[localizacao-filtro]] | &#039;busca&#039;, &#039;plp&#039; | Deve retornar a localização do filtro. |
-| [[filtro]] | &#039;departamento&#039;, &#039;categorias&#039;, &#039;tamanho&#039;, &#039;ordenar&#039;, &#039;mais-filtros&#039;, &#039;modal-mais-filtros&#039; e etc | Deve retornar o nome do filtro. |
-| [[filtro-selecionado]] | &#039;menor-preco&#039;, &#039;masculino&#039;, &#039;infanto-juvenil&#039;, &#039;list&#039;, &#039;grid&#039;,  &#039;definicao-valor:0-300&#039; e etc | Deve retornar o label do filtro selecionado. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[localizacao-filtro]]` | &#039;busca&#039;, &#039;plp&#039; | Deve retornar a localização do filtro. |
+| `[[filtro]]` | &#039;departamento&#039;, &#039;categorias&#039;, &#039;tamanho&#039;, &#039;ordenar&#039;, &#039;mais-filtros&#039;, &#039;modal-mais-filtros&#039; e etc | Deve retornar o nome do filtro. |
+| `[[filtro-selecionado]]` | &#039;menor-preco&#039;, &#039;masculino&#039;, &#039;infanto-juvenil&#039;, &#039;list&#039;, &#039;grid&#039;,  &#039;definicao-valor:0-300&#039; e etc | Deve retornar o label do filtro selecionado. |
 
 <br />
-
 
 **No clique do botão &quot;Aplicar&quot; para aplicar os filtros selecionados**<br />
 
 - **Onde:** Na página de busca, após buscar algum termo e também nas páginas de Listas de Produtos
     - **Titulo ou nome do botão/link:** &quot;Aplicar&quot;
+
     
 ```html
-<div
-   data-gtm-event-category='carters:filtro'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[localizacao-filtro]]:[[nome-botao]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'carters:filtro',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[localizacao-filtro]]:[[nome-botao]]'
+  });
+</script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[localizacao-filtro]] | &#039;busca&#039;, &#039;plp&#039; | Deve retornar a localização do filtro. |
-| [[nome-botao]] | &#039;limpar&#039; ou &#039;aplicar&#039; | Deve retornar o nome do botão. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[localizacao-filtro]]` | &#039;busca&#039;, &#039;plp&#039; | Deve retornar a localização do filtro. |
+| `[[nome-botao]]` | &#039;limpar&#039; ou &#039;aplicar&#039; | Deve retornar o nome do botão. |
 
 <br />
-
 
 ### Checkout
 
@@ -673,61 +687,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome campo]] | &#039;nome&#039;, &#039;email&#039; etc | Deve retornar o nome do campo preenchido. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[nome campo]]` | &#039;nome&#039;, &#039;email&#039; etc | Deve retornar o nome do campo preenchido. |
 
 <br />
-
-**No erro de preenchimento de campo**<br />
-
-- **Onde:** Na página de checkout
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'carters:checkout',
-    'eventAction': 'interacao:campo:[[nome-campo]]',
-    'eventLabel': 'erro:[[tipo-erro]]'
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;numero-do-cartao&#039;, &#039;data-de-validade&#039; etc | Deve retornar o nome do campo preenchido. |
-| [[tipo-erro]] | &#039;dados-invalidos&#039; etc | Deve retornar a descrição do erro de preechimento de campo. |
-
-<br />
-
-**No carregamento dos tipos de entrega disponíveis**<br />
-
-- **Onde:** Na página de carrinho e checkout
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'carters:checkout',
-    'eventAction': 'tipos-de-entrega:[[cart ou checkout]]',
-    'noInteraction': '1',
-    'eventLabel': '[[cart-ou-checkout]]:[[nome-entrega]]:[[previsao]]:[[valor]]'
-  });
-</script>
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cart ou checkout]] | &#039;checkout&#039; ou &#039;cart&#039; | Deve retornar o local que a lista de tipos de entrega aparece. |
-| [[nome-entrega]] | &#039;normal&#039;, &#039;expresso &#039;, &#039;entrega-agendada&#039;,&#039;retirar-em-loja&#039; | Deve retornar os nomes dos tipos de entrega. |
-| [[previsao]] | &#039;DD/MM/AAAA&#039;, | Deve retornar a quantidade de dias para a entrega. |
-| [[valor]] | &#039;&#039;0.00&#039;, &#039;2.99&#039;, &#039;5.00&#039; | Deve retornar os valores dos fretes. |
-
-<br />
-
 
 ### Enhanced E-commerce
 
@@ -735,7 +699,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 - **Onde:** Em todas as páginas que exibirem banners (home, clp, plp)
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -758,21 +721,19 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[id-promocao]] | &quot;https://midia.fotos-riachuelo.com.br/fotos/megamenu/home/janeiro2020/ADS-5506/Carrossel-home-mcasa-kit-colcha_.jpg&quot; e etc | Deve retornar o link da imagem do banner |
-| [[nome-promocao]] | &quot;polos-diferenciadas&quot; | Deve retornar o nome amigável do banner |
-| [[arte-banner]] | &quot;hero;clp;banner:clicavel&quot;, &quot;mosaico;blog;banner:nao-clicavel&quot; e etc | Deve retornar o formato, o tipo de página que o banner foi clicado e o tipo do banner |
-| [[posicao-promocao]] | &quot;1&quot; | Deve retornar a posição que o banner é exibido |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[id-promocao]]` | 'https://midia.fotos-riachuelo.com.br/fotos/megamenu/home/janeiro2020/ADS-5506/Carrossel-home-mcasa-kit-colcha_.jpg' e etc | Deve retornar o link da imagem do banner |
+| `[[nome-promocao]]` | 'polos-diferenciadas', 'banner-hero' e etc | Deve retornar o nome amigável do banner |
+| `[[arte-banner]]` | 'hero;clp;banner:clicavel', 'mosaico;blog;banner:nao-clicavel' e etc | Deve retornar o formato, o tipo de página que o banner foi clicado e o tipo do banner |
+| `[[posicao-promocao]]` | '1' | Deve retornar a posição que o banner é exibido |
 
 <br />
-
 
 **No clique dos banners**<br />
 
 - **Onde:** Em todas as páginas que exibirem banners (home, clp, plp)
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -794,12 +755,12 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[id-promocao]] | &quot;https://midia.fotos-riachuelo.com.br/fotos/megamenu/home/janeiro2020/ADS-5506/Carrossel-home-mcasa-kit-colcha_.jpg&quot; e etc | Deve retornar o link da imagem do banner |
-| [[nome-promocao]] | &quot;polos-diferenciadas&quot; | Deve retornar o nome amigável do banner |
-| [[arte-banner]] | &quot;hero;clp;banner:clicavel&quot;, &quot;mosaico;blog;banner:nao-clicavel&quot; e etc | Deve retornar o formato, o tipo de página que o banner foi clicado e o tipo do banner |
-| [[posicao-promocao]] | &quot;1&quot; | Deve retornar a posição que o banner é exibido |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[id-promocao]]` | 'https://midia.fotos-riachuelo.com.br/fotos/megamenu/home/janeiro2020/ADS-5506/Carrossel-home-mcasa-kit-colcha_.jpg' e etc | Deve retornar o link da imagem do banner |
+| `[[nome-promocao]]` | 'polos-diferenciadas', 'banner-hero' e etc | Deve retornar o nome amigável do banner |
+| `[[arte-banner]]` | 'hero;clp;banner:clicavel', 'mosaico;blog;banner:nao-clicavel' e etc | Deve retornar o formato, o tipo de página que o banner foi clicado e o tipo do banner |
+| `[[posicao-promocao]]` | '1' | Deve retornar a posição que o banner é exibido |
 
 <br />
 
@@ -831,14 +792,14 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd19-product-selo/tag]] | &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
-| [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
-| [[lista-produto]] | &quot;feminino-blusa&quot;, &quot;masculino-polo&quot;, &quot;acessorios-e-relogios-aneis&quot;, &quot;feminino_em-destaque_plus-size&quot;, &quot;plp_campanhas_modacasa_fevereiro-2020_pascoa-casa-riachuelo&quot;, &quot;pdp_quem-viu-tambem-viu&quot;, &quot;home-destaques&quot;, &quot;novidades&quot; e etc | Nome da lista que o produto aparece, no caso de PLP, o nome da PLP tem que ser a URL ao invés de usar a “/” colocar “_“ |
-| [[posicao-produto]] | &quot;2&quot; | Posição que o produto aparece em uma lista de produtos |
-| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[cd19-product-selo/tag]]` | &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por ' ; ' (Ponto e vírgula) |
+| `[[nome-produto]]` | 'calca-masculina-super-skinny-em-jeans' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[lista-produto]]` | 'feminino-blusa', 'masculino-polo', 'acessorios-e-relogios-aneis', 'feminino_em-destaque_plus-size', 'plp_campanhas_modacasa_fevereiro-2020_pascoa-casa-riachuelo', 'pdp_quem-viu-tambem-viu', 'home-destaques', 'novidades' e etc | Nome da lista que o produto aparece, no caso de PLP, o nome da PLP tem que ser a URL ao invés de usar a “/” colocar “_“ |
+| `[[posicao-produto]]` | '2' | Posição que o produto aparece em uma lista de produtos |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
 
 <br />
 
@@ -880,23 +841,23 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd6-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
-| [[cd9-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção a2 carrinho2|
-| [[cd12-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[cd14-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
-| [[cd15-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
-| [[cd16-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
-| [[cd17-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
-| [[cd19-product-selo/tag]] | &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
-| [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
-| [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
-| [[marca-produto]] | &quot;pool-original&quot; | Marca do produto |
-| [[categoria-produto]] | &quot;masculino&quot; | Departamento do produto |
-| [[lista-produto]] | &quot;feminino-blusa&quot;, &quot;masculino-polo&quot;, &quot;acessorios-e-relogios-aneis&quot;, &quot;feminino_em-destaque_plus-size&quot;, &quot;plp_campanhas_modacasa_fevereiro-2020_pascoa-casa-riachuelo&quot;, &quot;pdp_quem-viu-tambem-viu&quot;, &quot;home-destaques&quot;, &quot;novidades&quot; e etc | Nome da lista que o produto aparece, no caso de PLP, o nome da PLP tem que ser a URL ao invés de usar a “/” colocar “_“ |
-| [[posicao-produto]] | &quot;2&quot; | Posição que o produto aparece em uma lista de produtos |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[cd6-product-idadedoproduto]]` | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
+| `[[cd9-product-ordemdeinserção]]` | 1,2,3 .. | Ordem de inserção a2 carrinho2|
+| `[[cd12-product-padronagemdoproduto]]` | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
+| `[[cd14-product-subcategoria]]` | &#039;310090&#039; | Código da categoria GM |
+| `[[cd15-product-preçooriginal]]` | &#039;12&#039; | Preço do produto (dê) |
+| `[[cd16-product-gender]]` | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
+| `[[cd17-product-skufilho]]` | &#039;2552&#039; | ID filho do produto |
+| `[[cd19-product-selo/tag]]` | &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por ' ; ' (Ponto e vírgula) |
+| `[[nome-produto]]` | 'calca-masculina-super-skinny-em-jeans' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[preco-produto]]` | '139.99' | Preço do produto |
+| `[[marca-produto]]` | 'pool-original' | Marca do produto |
+| `[[categoria-produto]]` | 'masculino' | Departamento do produto |
+| `[[lista-produto]]` | 'feminino-blusa', 'masculino-polo', 'acessorios-e-relogios-aneis', 'feminino_em-destaque_plus-size', 'plp_campanhas_modacasa_fevereiro-2020_pascoa-casa-riachuelo', 'pdp_quem-viu-tambem-viu', 'home-destaques', 'novidades' e etc | Nome da lista que o produto aparece, no caso de PLP, o nome da PLP tem que ser a URL ao invés de usar a “/” colocar “_“ |
+| `[[posicao-produto]]` | '2' | Posição que o produto aparece em uma lista de produtos |
 
 <br />
 
@@ -937,21 +898,21 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd6-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
-| [[cd9-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção a2 carrinho2|
-| [[cd12-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[cd14-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
-| [[cd15-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
-| [[cd16-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
-| [[cd17-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
-| [[cd19-product-selo/tag]] | &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
-| [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
-| [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
-| [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
-| [[categoria-produto]] | &quot;masculino&quot; | Departamento do produto |
-| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[cd6-product-idadedoproduto]]` | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
+| `[[cd9-product-ordemdeinserção]]` | 1,2,3 .. | Ordem de inserção a2 carrinho2|
+| `[[cd12-product-padronagemdoproduto]]` | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
+| `[[cd14-product-subcategoria]]` | &#039;310090&#039; | Código da categoria GM |
+| `[[cd15-product-preçooriginal]]` | &#039;12&#039; | Preço do produto (dê) |
+| `[[cd16-product-gender]]` | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
+| `[[cd17-product-skufilho]]` | &#039;2552&#039; | ID filho do produto |
+| `[[cd19-product-selo/tag]]` | &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por ' ; ' (Ponto e vírgula) |
+| `[[nome-produto]]` | 'calca-masculina-super-skinny-em-jeans' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[preco-produto]]` | '139.99' | Preço do produto |
+| `[[categoria-produto]]` | 'masculino' | Departamento do produto |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
 
 <br />
 
@@ -994,33 +955,31 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd6-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
-| [[cd9-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção a2 carrinho2|
-| [[cd11-product-tamanhodoproduto]] | &#039;p&#039;,&#039;&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; | Tamanho do produto |
-| [[cd11-product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto |
-| [[cd12-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[cd14-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
-| [[cd15-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
-| [[cd16-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
-| [[cd17-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
-| [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
-| [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
-| [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
-| [[marca-produto]] | &quot;pool-original&quot; | Marca do produto |
-| [[categoria-produto]] | &quot;masculino&quot; | Departamento do produto |
-| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
-| [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[cd6-product-idadedoproduto]]` | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
+| `[[cd9-product-ordemdeinserção]]` | 1,2,3 .. | Ordem de inserção a2 carrinho2|
+| `[[cd11-product-tamanhodoproduto]]` | &#039;p&#039;,&#039;&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; | Tamanho do produto |
+| `[[cd11-product-cordoproduto]]` | &#039;vermelho&#039; | Cor do produto |
+| `[[cd12-product-padronagemdoproduto]]` | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
+| `[[cd14-product-subcategoria]]` | &#039;310090&#039; | Código da categoria GM |
+| `[[cd15-product-preçooriginal]]` | &#039;12&#039; | Preço do produto (dê) |
+| `[[cd16-product-gender]]` | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
+| `[[cd17-product-skufilho]]` | &#039;2552&#039; | ID filho do produto |
+| `[[nome-produto]]` | 'calca-masculina-super-skinny-em-jeans' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[preco-produto]]` | '139.99' | Preço do produto |
+| `[[marca-produto]]` | 'pool-original' | Marca do produto |
+| `[[categoria-produto]]` | 'masculino' | Departamento do produto |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[quantidade-produto]]` | '1' | Quantidade do produto |
 
 <br />
-
 
 **No clique para remover produto do carrinho**<br />
 
 - **Onde:** No carrinho modal lateral - Sua Sacola;
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -1054,33 +1013,31 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd6-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
-| [[cd9-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção a2 carrinho2|
-| [[cd11-product-tamanhodoproduto]] | &#039;p&#039;,&#039;&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; | Tamanho do produto |
-| [[cd11-product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto |
-| [[cd12-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[cd14-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
-| [[cd15-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
-| [[cd16-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
-| [[cd17-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
-| [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
-| [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
-| [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
-| [[marca-produto]] | &quot;pool-original&quot; | Marca do produto |
-| [[categoria-produto]] | &quot;masculino&quot; | Departamento do produto |
-| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
-| [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[cd6-product-idadedoproduto]]` | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
+| `[[cd9-product-ordemdeinserção]]` | 1,2,3 .. | Ordem de inserção a2 carrinho2|
+| `[[cd11-product-tamanhodoproduto]]` | &#039;p&#039;,&#039;&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; | Tamanho do produto |
+| `[[cd11-product-cordoproduto]]` | &#039;vermelho&#039; | Cor do produto |
+| `[[cd12-product-padronagemdoproduto]]` | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
+| `[[cd14-product-subcategoria]]` | &#039;310090&#039; | Código da categoria GM |
+| `[[cd15-product-preçooriginal]]` | &#039;12&#039; | Preço do produto (dê) |
+| `[[cd16-product-gender]]` | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
+| `[[cd17-product-skufilho]]` | &#039;2552&#039; | ID filho do produto |
+| `[[nome-produto]]` | 'calca-masculina-super-skinny-em-jeans' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[preco-produto]]` | '139.99' | Preço do produto |
+| `[[marca-produto]]` | 'pool-original' | Marca do produto |
+| `[[categoria-produto]]` | 'masculino' | Departamento do produto |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[quantidade-produto]]` | '1' | Quantidade do produto |
 
 <br />
-
 
 **No carregamento das páginas do fluxo de compra do  checkout.**<br />
 
 - **Onde:** Nas páginas de Carrinho, CPF, Cadastro, Entrega e Pagamento
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -1116,33 +1073,32 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[checkout-index]] |  | Retornar &quot;1&quot; ou &quot;2&quot; ou &quot;3&quot; ou &quot;4&quot; ou &quot;5&quot; os exemplos citados |
-| [[cd6-product-idadedoproduto]] | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
-| [[cd9-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção a2 carrinho2|
-| [[cd10-product-tamanhodoproduto]] | &#039;p&#039;,&#039;&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; | Tamanho do produto |
-| [[cd11-product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto |
-| [[cd12-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[cd14-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
-| [[cd15-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
-| [[cd16-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
-| [[cd17-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
-| [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
-| [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
-| [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
-| [[marca-produto]] | &quot;pool-original&quot; | Marca do produto |
-| [[categoria-produto]] | &quot;masculino&quot; | Departamento do produto |
-| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
-| [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
-| [[passo-checkout]] | &quot;1&quot; | No clique de Fechar Pedido no rodapé do modal de Sua Sacola |
-| [[passo-checkout]] | &quot;2&quot; | No carregamento do modal de indentificação com CPF |
-| [[passo-checkout]] | &quot;3&quot; | No carregamento da página de formulário de cadastro |
-| [[passo-checkout]] | &quot;4&quot; | No carregamento da página de confirmação do endereço de entrega |
-| [[passo-checkout]] | &quot;5&quot; | No carregamento da página de seleção do método de pagamento |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[checkout-index]]` |  | Retornar '1' ou '2' ou '3' ou '4' ou '5' os exemplos citados |
+| `[[cd6-product-idadedoproduto]]` | &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
+| `[[cd9-product-ordemdeinserção]]` | 1,2,3 .. | Ordem de inserção a2 carrinho2|
+| `[[cd10-product-tamanhodoproduto]]` | &#039;p&#039;,&#039;&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; | Tamanho do produto |
+| `[[cd11-product-cordoproduto]]` | &#039;vermelho&#039; | Cor do produto |
+| `[[cd12-product-padronagemdoproduto]]` | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
+| `[[cd14-product-subcategoria]]` | &#039;310090&#039; | Código da categoria GM |
+| `[[cd15-product-preçooriginal]]` | &#039;12&#039; | Preço do produto (dê) |
+| `[[cd16-product-gender]]` | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
+| `[[cd17-product-skufilho]]` | &#039;2552&#039; | ID filho do produto |
+| `[[nome-produto]]` | 'calca-masculina-super-skinny-em-jeans' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[preco-produto]]` | '139.99' | Preço do produto |
+| `[[marca-produto]]` | 'pool-original' | Marca do produto |
+| `[[categoria-produto]]` | 'masculino' | Departamento do produto |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[quantidade-produto]]` | '1' | Quantidade do produto |
+| `[[passo-checkout]]` | '1' | No clique de Fechar Pedido no rodapé do modal de Sua Sacola |
+| `[[passo-checkout]]` | '2' | No carregamento do modal de indentificação com CPF |
+| `[[passo-checkout]]` | '3' | No carregamento da página de formulário de cadastro |
+| `[[passo-checkout]]` | '4' | No carregamento da página de confirmação do endereço de entrega |
+| `[[passo-checkout]]` | '5' | No carregamento da página de seleção do método de pagamento |
 
 <br />
-
 
 **Ao selecionar uma opção de pagamento ou frete**<br />
 
@@ -1165,25 +1121,22 @@ window.dataLayer.push({
 </script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[checkout-index]] | '4' ou '5' | Deve retorna o numero do index do checkout. |
-| [[pagamento ou frete]] |'pagamento' ou 'frete' | Deve retornar o nome da etapa do checkout. |
-| [[opcao escolhida]] | &#039;cartao-de-credito&#039;, &#039;boleto&#039;, &#039;normal&#039;, &#039;expresso &#039;, &#039;entrega-agendada&#039;,&#039;retirar-em-loja:shopping-tiete-plaza&#039;, &#039;retirar-em-loja:shopping-bourbon-sp&#039; | Deve retornar o nome da opção de pagamento ou entrega escolhida. |
-| [[valor]] | &#039;&#039;0.00&#039;, &#039;2.99&#039;, &#039;5.00&#039;. | Deve retornar os valores dos fretes. |
-| [[opcao-adicional]] | &#039;vale-troca&#039; | Deve retornar a opção de pagamento adicional. |
-| [[previsao]] | &#039;3-dias, 4-dias,5-dias&#039; | Deve retornar a quantidade de dias. |
-| [[pagamento ou frete]] | &#039;pagamento&#039; ou &#039;frete&#039; | Deve retornar o nome da etapa do checkout. |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[checkout-index]]` | '4' ou '5' | Deve retorna o numero do index do checkout. |
+| `[[pagamento ou frete]]` |'pagamento' ou 'frete' | Deve retornar o nome da etapa do checkout. |
+| `[[opcao escolhida]]` | &#039;cartao-de-credito&#039;, &#039;boleto&#039;, &#039;normal&#039;, &#039;expresso &#039;, &#039;entrega-agendada&#039;,&#039;retirar-em-loja:shopping-tiete-plaza&#039;, &#039;retirar-em-loja:shopping-bourbon-sp&#039; | Deve retornar o nome da opção de pagamento ou entrega escolhida. |
+| `[[valor]]` | &#039;&#039;0.00&#039;, &#039;2.99&#039;, &#039;5.00&#039;. | Deve retornar os valores dos fretes. |
+| `[[opcao-adicional]]` | &#039;vale-troca&#039; | Deve retornar a opção de pagamento adicional. |
+| `[[previsao]]` | &#039;3-dias, 4-dias,5-dias&#039; | Deve retornar a quantidade de dias. |
+| `[[pagamento ou frete]]` | &#039;pagamento&#039; ou &#039;frete&#039; | Deve retornar o nome da etapa do checkout. |
 
 <br />
-
 
 **No carregamento da página  de resumo de compra  após confirmação.**<br />
 
 - **Onde:** Na página de confirmação de compra
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -1237,50 +1190,47 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd3-tipodecartão]] | &#039;credito&#039;, &#039;riachuelo&#039; | Tipo do cartão utilizado na compra |
-| [[cd5-bandeiracartão]] | &quot;visa&quot;, &quot;mastercard&quot; | Bandeira do cartão utilizada na compra |
-| [[cd7-hit-metodopagamento]] | &#039;cartao-de-credito&#039;, &#039;boleto&#039; | Nome do tipo do pagamento. |
-| [[cd8-hit-status-do-pedido]] |  'aprovado', 'pendente', 'reprovado' e etc | Nome do status do pedido. |
-| [[cd9-product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção a2 carrinho2|
-| [[cd10-product-tamanhodoproduto]] | &#039;p&#039;,&#039;&#039;2&#039;,&#239;8-12&#039;,&#039;42&#039; | Tamanho do produto |
-| [[cd11-product-cordoproduto]] | &#039;vermelho&#039; | Cor do produto |
-| [[cd12-product-padronagemdoproduto]] | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
-| [[cd13-hit-frete]] | &#039;normal, expresso, entrega-agendada&#039; | Nome do tipo de entrega. |
-| [[cd14-product-subcategoria]] | &#039;310090&#039; | Código da categoria GM |
-| [[cd15-product-preçooriginal]] | &#039;12&#039; | Preço do produto (dê) |
-| [[cd16-product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
-| [[cd17-product-skufilho]] | &#039;2552&#039; | ID filho do produto |
-| [[cd18-hit-parcelamento]] | &#039;2&#039; | Quantidade de parcelas |
-| [[descontofrete]] | &#039;10&#039; | Valor do desconto de frete |
-| [[descontofuncionário]] | &#039;22&#039; | Valor do desconto para funcionário |
-| [[descontopromoção]] | &#039;15&#039; | Valor do desconto promocional - cupom, primeira compra, etc |
-| [[totaldedesconto]] | &#039;47&#039; | Soma de todos os descontos |
-| [[cartãopresente]] | 100.00&#039;, &#039;50.00&#039; e etc | Deve retornar o valor pago por cartão presente utilizado. |
-| [[valetroca]] | 40.00&#039;, &#039;23.00&#039;, &#039;200.00&#039; | Deve retornar o valor pago pelo vale troca utilizado. |
-| [[pagamentocomum]] | 140.00&#039;, &#039;67.00&#039;, &#039;100.00&#039; | Deve retornar o valor pago em formas de  pagamentos comuns como, por exemplo, boleto, cartão de credito e etc |
-| [[id-transacao]] | &quot;000011652&quot; | ID único da transação |
-| [[valor-total-transacao]] | &quot;139.99&quot; | Valor total da transação incluindo frete e taxas |
-| [[frete-transacao]] | &quot;0.00&quot; | Valor do frete da transação |
-| [[coupon-transacao]] | &quot;cupom-2018&quot; | Cupom de desconto utilizado na transação - promoção nivel pedido |
-| [[taxa-transacao]] | &quot;0.00&quot; | Valor de taxas da transação |
-| [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
-| [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
-| [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
-| [[marca-produto]] | &quot;pool-original&quot; | Marca do produto |
-| [[categoria-produto]] | &quot;masculino&quot; | Departamento do produto |
-| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
-| [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
+| Variável        | Exemplo         | Descrição          |
+| :-------------- | :-------------- | :----------------- |
+| `[[cd3-tipodecartão]]` | &#039;credito&#039;, &#039;riachuelo&#039; | Tipo do cartão utilizado na compra |
+| `[[cd5-bandeiracartão]]` | 'visa', 'mastercard' | Bandeira do cartão utilizada na compra |
+| `[[cd7-hit-metodopagamento]]` | &#039;cartao-de-credito&#039;, &#039;boleto&#039; | Nome do tipo do pagamento. |
+| `[[cd8-hit-status-do-pedido]]` |  'aprovado', 'pendente', 'reprovado' e etc | Nome do status do pedido. |
+| `[[cd9-product-ordemdeinserção]]` | 1,2,3 .. | Ordem de inserção a2 carrinho2|
+| `[[cd10-product-tamanhodoproduto]]` | &#039;p&#039;,&#039;&#039;2&#039;,&#239;8-12&#039;,&#039;42&#039; | Tamanho do produto |
+| `[[cd11-product-cordoproduto]]` | &#039;vermelho&#039; | Cor do produto |
+| `[[cd12-product-padronagemdoproduto]]` | &#039;florido&#039;, &#039;listado&#039; | Padrão da estampa do produto |
+| `[[cd13-hit-frete]]` | &#039;normal, expresso, entrega-agendada&#039; | Nome do tipo de entrega. |
+| `[[cd14-product-subcategoria]]` | &#039;310090&#039; | Código da categoria GM |
+| `[[cd15-product-preçooriginal]]` | &#039;12&#039; | Preço do produto (dê) |
+| `[[cd16-product-gender]]` | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
+| `[[cd17-product-skufilho]]` | &#039;2552&#039; | ID filho do produto |
+| `[[cd18-hit-parcelamento]]` | &#039;2&#039; | Quantidade de parcelas |
+| `[[descontofrete]]` | &#039;10&#039; | Valor do desconto de frete |
+| `[[descontofuncionário]]` | &#039;22&#039; | Valor do desconto para funcionário |
+| `[[descontopromoção]]` | &#039;15&#039; | Valor do desconto promocional - cupom, primeira compra, etc |
+| `[[totaldedesconto]]` | &#039;47&#039; | Soma de todos os descontos |
+| `[[cartãopresente]]` | 100.00&#039;, &#039;50.00&#039; e etc | Deve retornar o valor pago por cartão presente utilizado. |
+| `[[valetroca]]` | 40.00&#039;, &#039;23.00&#039;, &#039;200.00&#039; | Deve retornar o valor pago pelo vale troca utilizado. |
+| `[[pagamentocomum]]` | 140.00&#039;, &#039;67.00&#039;, &#039;100.00&#039; | Deve retornar o valor pago em formas de  pagamentos comuns como, por exemplo, boleto, cartão de credito e etc |
+| `[[id-transacao]]` | '000011652' | ID único da transação |
+| `[[valor-total-transacao]]` | '139.99' | Valor total da transação incluindo frete e taxas |
+| `[[frete-transacao]]` | '0.00' | Valor do frete da transação |
+| `[[coupon-transacao]]` | 'cupom-2018' | Cupom de desconto utilizado na transação - promoção nivel pedido |
+| `[[taxa-transacao]]` | '0.00' | Valor de taxas da transação |
+| `[[nome-produto]]` | 'calca-masculina-super-skinny-em-jeans' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[preco-produto]]` | '139.99' | Preço do produto |
+| `[[marca-produto]]` | 'pool-original' | Marca do produto |
+| `[[categoria-produto]]` | 'masculino' | Departamento do produto |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[quantidade-produto]]` | '1' | Quantidade do produto |
 
 <br />
 
-
 ---
 
-
 ## Considerações Finais
-
 
 > Documentações Oficiais do Google: <br />
 > [Google Analytics - Avaliação de comércio eletrônico ](https://developers.google.com/analytics/devguides/collection/analyticsjs/ecommerce?hl=pt-br) <br />
