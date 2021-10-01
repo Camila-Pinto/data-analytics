@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Midway APP
 
-Última atualização: 22/09/2021 <br />
+Última atualização: 01/10/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -64,7 +64,6 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Empréstimo Consulta](#empr&#233;stimo-consulta)
 - [Empréstimo Cancelamento](#empr&#233;stimo-cancelamento)
 - [Empréstimo Liquidação](#empr&#233;stimo-liquida&#231;&#227;o)
-- [Seguros e Assistências](#seguros-e-assist&#234;ncias)
 - [Segunda via comprovante](#segunda-via-comprovante)
 - [Recarga Celular](#recarga-celular)
 - [Recarga Rápida](#recarga-r&#225;pida)
@@ -81,7 +80,8 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Extrato Pix](#extrato-pix)
 - [Alterar Senha](#alterar-senha)
 - [Desbloqueio de Senha Cartão](#desbloqueio-de-senha-cart&#227;o)
-- [Eventos - Midway - Assistências e Seguros](#eventos---midway---assist&ecirc;ncias-e-seguros)
+- [Seguros e Assistências - Meus Produtos Contratados](#seguros-e-assist&#234;ncias---meus-produtos-contratados)
+- [Seguros e Assistências - Contratar Novos Produtos](#seguros-e-assist&#234;ncias---contratar-novos-produtos)
 - [Eventos - Saque Digital](#eventos---saque-digital)
 - [Contato](#contato)
 
@@ -142,8 +142,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;cadastro&#039;, &#039;conta-ilimitada&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 | [[nome-erro]] | &#039;algo-deu-errado&#039;, &#039;nao-conseguimos-conexao-com-a-internet&#039; etc. | Deve retornar a mensagem do erro exibido. |
 
@@ -160,8 +160,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;cadastro&#039;, &#039;conta-ilimitada&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 | [[nome-link]] | &#039;tentar-novamente&#039;, &#039;voltar-para-o-inicio&#039;, &#039;recarregar&#039; etc. | Deve retornar nome do link clicado. |
 
@@ -174,8 +174,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
     Analytics.logScreenView("/[[nome-fluxo]]/[[nome-tela]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;cadastro&#039;, &#039;abertura-conta-ilimitada&#039;, &#039;conta-remunerada&#039;, &#039;emprestimo-pessoal&#039;, &#039;cancelamento-emprestimo-pessoal&#039; e etc | Deve retornar o nome do fluxo. |
 | [[nome-tela]] | &#039;salvando-dados&#039;, &#039;em-analise&#039;, &#039;analise-concluida&#039;, &#039;algo-deu-errado&#039; e etc | Deve retornar o nome da tela apresentada. |
 
@@ -192,8 +192,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;cadastro&#039;, &#039;abertura-conta-ilimitada&#039;, &#039;conta-remunerada&#039;, &#039;emprestimo-pessoal&#039;, &#039;cancelamento-emprestimo-pessoal&#039; e etc | Deve retornar o nome do fluxo. |
 | [[nome-tela]] | &#039;salvando-dados&#039;, &#039;em-analise&#039;, &#039;analise-concluida&#039;, &#039;algo-deu-errado&#039; e etc | Deve retornar o nome da tela apresentada. |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;fechar&#039; e etc. | Deve retornar o nome do botão clicado. |
@@ -209,8 +209,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
     Analytics.logScreenView("/[[nome-fluxo]]/biometria-facial/dicas/[[passo]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[passo]] | &#039;1&#039;,&#039;2&#039;,&#039;3&#039; | Deve retornar o numero do passo das dicas que está sendo visto de acordo com os bullets inferiores. |
 | [[nome-fluxo]] | &#039;cadastro&#039;, &#039;abertura-conta-ilimitada&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 
@@ -227,8 +227,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;cadastro&#039;, &#039;abertura-conta-ilimitada&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 
 <br />
@@ -244,8 +244,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;cadastro&#039;, &#039;abertura-conta-ilimitada&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 | [[nome-link]] | &#039;nao-permito&#039; ou &#039;ok&#039;. | Deve retornar o título do link clicado. |
 
@@ -258,8 +258,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
     Analytics.logScreenView("/[[nome-fluxo]]/biometria-facial/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;cadastro&#039;, &#039;abertura-conta-ilimitada&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 
 <br />
@@ -275,8 +275,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;cadastro&#039;, &#039;abertura-conta-ilimitada&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 | [[nome-botao]] | &#039;tirar-outra-foto&#039; ou &#039;continuar&#039;. | Deve retornar o nome do botão clicado. |
 
@@ -293,8 +293,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;abertura-conta-ilimitada&#039;, &#039;cadastro&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:nao-foi-possivel-salvar-a-imagem&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
@@ -308,8 +308,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
     Analytics.logScreenView("/[[nome-fluxo]]/endereco");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;abertura-conta-ilimitada&#039;, &#039;cadastro&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 
 <br />
@@ -325,8 +325,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;abertura-conta-ilimitada&#039;, &#039;cadastro&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 
 <br />
@@ -342,8 +342,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:cep-invalido&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -359,8 +359,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;abertura-conta-ilimitada&#039;, &#039;cadastro&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;voltar&#039;, &#039;editar&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -377,8 +377,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;abertura-conta-ilimitada&#039;, &#039;cadastro&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 
 <br />
@@ -394,8 +394,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;abertura-conta-ilimitada&#039;, &#039;cadastro&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 | [[nome-campo]] | &#039;endereco&#039;, &#039;numero&#039;, &#039;complemento&#039;, &#039;bairro&#039; etc. | Deve retornar o nome do campo com o qual o usuário interagiu. |
 
@@ -412,8 +412,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;abertura-conta-ilimitada&#039;, &#039;cadastro&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 | [[status]] | &#039;erro:endereco-invalido&#039; e etc. | Deve retornar a mensagem de erro apresentada para o usuário. |
 
@@ -426,8 +426,8 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
     Analytics.logScreenView("/[[nome-fluxo]]/endereco/cadastro-concluido/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;abertura-conta-ilimitada&#039;, &#039;cadastro&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 
 <br />
@@ -444,8 +444,8 @@ Endereço
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;abertura-conta-ilimitada&#039;, &#039;cadastro&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;editar&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -463,8 +463,8 @@ Endereço
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;abertura-conta-ilimitada&#039;, &#039;cadastro&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 
 <br />
@@ -481,8 +481,8 @@ Endereço
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;abertura-conta-ilimitada&#039;, &#039;cadastro&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 
 <br />
@@ -499,8 +499,8 @@ Endereço
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-fluxo]] | &#039;abertura-conta-ilimitada&#039;, &#039;cadastro&#039; etc. | Deve retornar o nome do fluxo em que o usuário está. |
 
 <br />
@@ -528,8 +528,8 @@ Onboarding App - Início
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;abrir-minha-conta-midway&#039;, &#039;fechar&#039; etc. | Deve retornar o nome do botão clicado pelo usuário. |
 
 <br />
@@ -546,8 +546,8 @@ Onboarding App - Início
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-secao]] | &#039;abertura-rapida-conta-simples&#039;, &#039;possivel-upgrade-para-conta-ilimitada&#039; etc. | Deve retornar o nome da seção do link de detalhes clicado pelo usuário. |
 
 <br />
@@ -573,8 +573,8 @@ Onboarding App - Início
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | &#039;beneficios-ideais-para-voce&#039;, &#039;dinheiro-livre-e-facil&#039;, &#039;principais-descontos&#039; etc. | Deve retornar o nome do card exibido no carrossel. |
 
 <br />
@@ -591,8 +591,8 @@ Onboarding App - Início
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | &#039;beneficios-ideais-para-voce&#039;, &#039;dinheiro-livre-e-facil&#039;, &#039;principais-descontos&#039; etc. | Deve retornar o nome do card exibido no carrossel. |
 
 <br />
@@ -633,8 +633,8 @@ Onboarding App - Início
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | &#039;pacote-bacen&#039;, &#039;conta-simples&#039;, &#039;pacote-premium&#039; etc. | Deve retornar o nome do card exibido no carrossel. |
 
 <br />
@@ -699,8 +699,8 @@ Onboarding App - Início
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-modal]] | &#039;permissao-localizacao&#039;, &#039;permissao-notificacao&#039; e etc | Deve retornar o nome do modal de permissão. |
 | [[nome-botao]] | &#039;nao-permito&#039; ou &#039;ok&#039;. | Deve retornar o título do botão clicado. |
 
@@ -717,8 +717,8 @@ Onboarding App - Início
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;entrar&#039; e etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -734,8 +734,8 @@ Onboarding App - Início
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-link]] | &#039;como-cuidamos-dos-seus-dados&#039; etc. | Deve retorna o nome do link clicado. |
 
 <br />
@@ -774,8 +774,8 @@ Onboarding App - Início
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-tela]] | &#039;parceiros-digitais&#039;, &#039;politicas-privacidade&#039; e etc  | Deve retornar o nome da tela. |
 | [[botao-ou-link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o tipo do elemento. |
 | [[nome-botao]] | &#039;li-e-concordo&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
@@ -830,8 +830,8 @@ Onboarding App - Início
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:cpf-invalido&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 | [[userID]] | &quot;01234&quot; | ID único de usuário definido após o cadastro (ID próprio da Midway). |
 
@@ -887,8 +887,8 @@ Onboarding App - Início
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:nome-incompleto&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -943,8 +943,8 @@ No app, não chegou essa etapa de biometria
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-campo]] | &#039;como-quer-ser-chamado&#039;, &#039;celular&#039;, &#039;e-mail&#039; ou &#039;data-de-nascimento&#039;. | Deve retornar o nome do campo preenchido. |
 
 <br />
@@ -959,8 +959,8 @@ No app, não chegou essa etapa de biometria
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-campo]] | &#039;como-quer-ser-chamado&#039;, &#039;celular&#039;, &#039;e-mail&#039; ou &#039;data-de-nascimento&#039;. | Deve retornar o nome do campo preenchido. |
 | [[erro]] | &#039;erro:celular-incorreto&#039;, &#039;erro:preencha-data&#039; e etc | Deve retornar o erro apresentado. |
 
@@ -977,8 +977,8 @@ No app, não chegou essa etapa de biometria
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-checkbox]] | &#039;sou-pcd&#039;, &#039;aceito-compartilhar-meus-dados-com-parceiros-banco-midway&#039; e etc | Deve retornar o nome do checkbox selecionado. |
 | [[selecionado ou desselecionado]] | &#039;selecionado&#039; ou &#039;desselecionado&#039; | Deve retornar o status do checkbox, se está selecionado ou não. |
 
@@ -1009,8 +1009,8 @@ No app, não chegou essa etapa de biometria
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-opcao]] | &#039;nacionalidade&#039;, &#039;pais&#039; e etc | Deve retornar o tipo de opção interagida. |
 | [[nacionalidade-ou-pais]] | &#039;nacionalidade:brasileira&#039;, &#039;nacionalidade:estrangeira&#039;, &#039;pais:estados-unidos-america&#039; e etc | Deve retornar a opção selecionada. |
 
@@ -1066,8 +1066,8 @@ No app, não chegou essa etapa de biometria
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;reenviar-codigo&#039;, &#039;voltar&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -1129,8 +1129,8 @@ No app, não chegou essa etapa de biometria
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-tela]] | &#039;senha-aplicativo&#039;, &#039;confirmar-senha&#039; e etc | Deve retornar o nome da tela. |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;visualizar-senha&#039; e etc. | Deve retornar o nome do botão clicado. |
 
@@ -1159,8 +1159,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;aceitar-conta-simples&#039;, &#039;continuar-para-conta-ilimitada&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -1178,8 +1178,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:senha-digitada-diferente-da-anterior&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 | [[userID]] | &quot;01234&quot; | ID único de usuário definido após o cadastro (ID próprio da Midway). |
 
@@ -1238,8 +1238,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;li-e-concordo&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -1311,8 +1311,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:algo-deu-errado&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -1362,8 +1362,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;li-e-concordo&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -1390,8 +1390,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-ou-link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;continuar&#039;, &#039;acesse-conta-midway&#039; e etc. | Deve retornar o nome do item clicado. |
 
@@ -1418,8 +1418,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;fechar&#039; e etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -1444,8 +1444,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-ou-link]] | &#039;botao&#039;, &#039;link&#039; e etc | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;entrar-conta-midway&#039;, &#039;saiba-mais&#039; e etc. | Deve retornar o nome do item clicado. |
 
@@ -1471,8 +1471,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;fechar&#039; e etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -1529,8 +1529,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-checkbox]] | &#039;aceito-compartilhar-com-grupo-guararapes&#039;, aceito-consulte-minhas-informacoes-scr&#039; e etc | Deve retornar o nome do checkbox selecionado. |
 | [[selecionado ou desselecionado]] | &#039;selecionado&#039; ou &#039;desselecionado&#039; | Deve retornar o status do checkbox, se está selecionado ou não. |
 
@@ -1546,8 +1546,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-link]] | &#039;gurpo-guararapes&#039;, &#039;scr&#039; e etc. | Deve retornar o nome do link clicado. |
 
 <br />
@@ -1559,8 +1559,8 @@ Onboarding App - Fim
     Analytics.logScreenView("/cadastro/transparencia-protecao-dados/modal-[[nome-modal]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-modal]] | &#039;scr&#039;, &#039;grupo-guararapes&#039; e etc. | Deve retornar o nome do modal exibido. |
 
 <br />
@@ -1575,8 +1575,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-ou-link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o elemento clicado. |
 | [[nome-modal]] | &#039;scr&#039;, &#039;grupo-guararapes&#039; e etc. | Deve retornar o nome do modal exibido. |
 | [[item-clicado]] | &#039;entendi&#039;, &#039;politicas-privacidade-empresas-grupo&#039; e etc | Deve retornar o item clicado. |
@@ -1603,8 +1603,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;li-concordo&#039;, &#039;volta&#039; e etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -1659,8 +1659,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:senha-incorreta&#039;, &#039;erro:senha-bloqueada&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada pelo usuário. |
 
 <br />
@@ -1676,8 +1676,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-link]] | &#039;esqueci-minha-senha&#039;, &#039;token&#039;, &#039;criar-nova-conta&#039; e etc | Deve retornar o nome do link clicado. |
 
 <br />
@@ -1703,8 +1703,8 @@ Onboarding App - Fim
     Analytics.logScreenView("/login/[[status]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:senha-incorreta&#039; e etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -1786,8 +1786,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:senha-incorreta&#039;, &#039;erro:cpf-invalido&#039;, &#039;erro:cpf-nao-confere&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -1800,8 +1800,8 @@ Onboarding App - Fim
     Analytics.logScreenView("/login/recuperar-senha/token-[[tipo-token]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-token]] | &#039;sms&#039;, &#039;email&#039; etc. | Deve retornar o tipo de token a ser enviado. |
 
 <br />
@@ -1817,8 +1817,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-token]] | &#039;sms&#039;, &#039;email&#039; etc. | Deve retornar o tipo de token a ser enviado. |
 
 <br />
@@ -1834,8 +1834,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-token]] | &#039;sms&#039;, &#039;email&#039; etc. | Deve retornar o tipo de token a ser enviado. |
 
 <br />
@@ -1851,8 +1851,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-token]] | &#039;sms&#039;, &#039;email&#039; etc. | Deve retornar o tipo de token a ser enviado. |
 
 <br />
@@ -1868,8 +1868,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-token]] | &#039;sms&#039;, &#039;email&#039; etc. | Deve retornar o tipo de token a ser enviado. |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:token-invalido&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
@@ -1882,8 +1882,8 @@ Onboarding App - Fim
     Analytics.logScreenView("/login/recuperar-senha/token-[[tipo-token]]/token-invalido/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-token]] | &#039;sms&#039;, &#039;email&#039; etc. | Deve retornar o tipo de token a ser enviado. |
 
 <br />
@@ -1899,8 +1899,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-token]] | &#039;sms&#039;, &#039;email&#039; etc. | Deve retornar o tipo de token a ser enviado. |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;agora-nao&#039; etc. | Deve retornar o nome do botão clicado pelo usuário. |
 
@@ -1917,8 +1917,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-token]] | &#039;sms&#039;, &#039;email&#039; etc. | Deve retornar o tipo de token a ser enviado. |
 
 <br />
@@ -1934,8 +1934,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-token]] | &#039;sms&#039;, &#039;email&#039; etc. | Deve retornar o tipo de token a ser enviado. |
 | [[nome-botao]] | &#039;sair&#039;, &#039;cancelar&#039; etc. | Deve retornar o nome do botão clicado pelo usuário. |
 
@@ -1947,8 +1947,8 @@ Onboarding App - Fim
     Analytics.logScreenView("/login/recuperar-senha/[[status]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;cancelamento-por-politicas-internas&#039;, &#039;cancelamento-por-erro-sistemico&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -1964,8 +1964,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-erro]] | &#039;cancelamento-por-politicas-internas&#039;, &#039;cancelamento-por-erro-sistemico&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -2027,8 +2027,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;visualizar-senha&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -2095,8 +2095,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;visualizar-senha&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -2112,8 +2112,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:senha-digitada-diferente-da-anterior&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -2152,8 +2152,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:nao-foi-possivel-recuperar-senha&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -2206,8 +2206,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;agora-nao&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -2232,8 +2232,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;sim-deletar&#039;, &#039;cancelar&#039;  etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -2258,8 +2258,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;autorizar&#039;  etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -2299,8 +2299,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:nao-foi-possivel-autorizar-aparelho&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -2328,8 +2328,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;abrir-conta&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -2355,8 +2355,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o nome do documento escolhido. |
 
 <br />
@@ -2368,8 +2368,8 @@ Onboarding App - Fim
     Analytics.logScreenView("/conta-ilimitada/falta-pouco/cadastro-documento/[[tipo-documento]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-documento]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o nome do documento selecionado pelo usuário. |
 
 <br />
@@ -2385,8 +2385,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-documento]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o documento selecionado pelo usuário. |
 | [[nome-campo]] |  | Deve retornar o nome do campo preenchido. Ex.: &#039;numero-documento&#039;, &#039;data-expedicao&#039;, &#039;orgao-emissor&#039;, &#039;data-validade&#039; etc. |
 
@@ -2403,8 +2403,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-documento]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o documento selecionado pelo usuário. |
 
 <br />
@@ -2420,8 +2420,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-documento]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o nome do documento selecionado pelo usuário. |
 
 <br />
@@ -2437,8 +2437,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-documento]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o nome do documento selecionado pelo usuário. |
 | [[nome-botao]] | &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -2455,8 +2455,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-documento]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o nome do documento selecionado pelo usuário. |
 | [[nome-link]] | &#039;terminar-depois&#039; etc. | Deve retornar o nome do link clicado. |
 
@@ -2470,8 +2470,8 @@ Onboarding App - Fim
     Analytics.logScreenView("/conta-ilimitada/abertura/cadastro-documento/[[tipo-documento]]/dicas-captura-imagem/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-documento]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o nome do documento selecionado pelo usuário. |
 
 <br />
@@ -2487,8 +2487,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-documento]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o nome do documento selecionado pelo usuário. |
 
 <br />
@@ -2500,8 +2500,8 @@ Onboarding App - Fim
     Analytics.logScreenView("/conta-ilimitada/abertura/cadastro-documento/[[tipo-documento]]/captura-imagem/[[lado-documento]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-documento]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o nome do documento selecionado pelo usuário. |
 | [[lado-documento]] | &#039;frente&#039; ou &#039;verso&#039;. | Deve retornar se a captura é da frente ou do verso do documento. |
 
@@ -2518,8 +2518,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-documento]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o nome do documento selecionado pelo usuário. |
 | [[lado-documento]] | &#039;frente&#039; ou &#039;verso&#039;. | Deve retornar se a captura é da frente ou do verso do documento. |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;capturar&#039; etc. | Deve retornar o nome do botão clicado. |
@@ -2534,8 +2534,8 @@ Onboarding App - Fim
     Analytics.logScreenView("/conta-ilimitada/abertura/cadastro-documento/[[tipo-documento]]/captura-imagem/[[lado-documento]]/confirmacao/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-documento]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o nome do documento selecionado pelo usuário. |
 | [[lado-documento]] | &#039;frente&#039; ou &#039;verso&#039;. | Deve retornar se a captura é da frente ou do verso do documento. |
 
@@ -2552,8 +2552,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-documento]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o nome do documento selecionado pelo usuário. |
 | [[lado-documento]] | &#039;frente&#039; ou &#039;verso&#039;. | Deve retornar se a captura é da frente ou do verso do documento. |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;continuar&#039; etc. | Deve retornar o nome do botão clicado. |
@@ -2571,8 +2571,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-documento]] | &#039;rg&#039;, &#039;cnh&#039; ou &#039;rne&#039;. | Deve retornar o nome do documento selecionado pelo usuário. |
 | [[lado-documento]] | &#039;frente&#039; ou &#039;verso&#039;. | Deve retornar se a captura é da frente ou do verso do documento. |
 | [[nome-link]] | &#039;capturar-novamente&#039; etc. | Deve retornar o nome do link clicado. |
@@ -2600,8 +2600,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-campo]] | &#039;data-nascimento&#039;, &#039;nome-mae&#039;, &#039;celular&#039; etc. | Deve retornar o nome do campo preenchido. |
 
 <br />
@@ -2617,8 +2617,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-campo]] | &#039;genero&#039;, &#039;nacionalidade&#039;, &#039;uf-naturalidade&#039;, &#039;naturalidade&#039; etc. | Deve retornar o nome do select com o qual o usuário interagiu. |
 
 <br />
@@ -2648,8 +2648,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -2679,8 +2679,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:data-de-nascimento-invalida&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -2707,8 +2707,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-campo]] | &#039;renda-mensal&#039;, &#039;patrimonio&#039; etc. | Deve retornar o nome do campo preenchido. |
 
 <br />
@@ -2724,8 +2724,8 @@ Onboarding App - Fim
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-campo]] | &#039;estado-civil&#039;, &#039;profissao&#039; etc. | Deve retornar o nome do select com o qual o usuário interagiu. |
 
 <br />
@@ -2742,8 +2742,8 @@ Dados adicionais
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;sim&#039; ou &#039;nao&#039;. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -2759,8 +2759,8 @@ Dados adicionais
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;continuar&#039;, &#039;info&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -2776,8 +2776,8 @@ Dados adicionais
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-link]] | &#039;saiba-mais&#039;, &#039;terminar-depois&#039; etc. | Deve retornar o nome do link clicado. |
 
 <br />
@@ -2793,8 +2793,8 @@ Dados adicionais
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-modal]] | &#039;pessoa-exposta-politicamente&#039;, &#039;patrimonio&#039; etc. | Deve retornar o nome do modal aberto. |
 
 <br />
@@ -2810,8 +2810,8 @@ Dados adicionais
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-modal]] | &#039;pessoa-exposta-politicamente&#039;, &#039;patrimonio&#039; etc. | Deve retornar o nome do modal aberto. |
 
 <br />
@@ -2827,8 +2827,8 @@ Dados adicionais
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:preencha-o-estado-civil&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -2854,8 +2854,8 @@ Dados adicionais
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:nao-foi-possivel-realizar-seu-cadastro&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -2881,8 +2881,8 @@ Dados adicionais
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;ok&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -2908,8 +2908,8 @@ Dados adicionais
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -2949,8 +2949,8 @@ Dados adicionais
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-pacote]] | &#039;pacote-basico&#039;, &#039;pacote-light&#039;, &#039;pacote-premium&#039; etc. | Deve retornar o nome do pacote selecionado. |
 
 <br />
@@ -2980,8 +2980,8 @@ Dados adicionais
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-link]] | &#039;saiba-mais&#039;, &#039;terminar-depois&#039; etc. | Deve retornar o nome do link clicado. |
 
 <br />
@@ -3007,8 +3007,8 @@ Dados adicionais
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[dia-cobranca]] | &#039;14&#039;, &#039;25&#039; etc. | Deve retornar o dia escolhido pelo cliente. |
 
 <br />
@@ -3024,8 +3024,8 @@ Dados adicionais
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;selecionar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado pelo usuário. |
 
 <br />
@@ -3052,8 +3052,8 @@ Oferta de cartão
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;agora-nao&#039;, &#039;voltar&#039;, &#039;compartilhar&#039; etc. | Deve retornar o nome do botão clicado pelo usuário. |
 
 <br />
@@ -3070,8 +3070,8 @@ Oferta de cartão
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[contrato-proposta]] |  | Deve retornar entre proposta para o clique no aceito e contrato para o clique no continuar  |
 | [[produto-contratado]] |  | Deve retornar o qual o produto que esta sendo contratado pelo cliente. Ex.: &#039;cartao-de-credito&#039;, &#039;limite-emergencial&#039;, etc |
 | [[valor]] |  | Deve retornar o valor do produto que esta sendo contratado pelo cliente. Ex.: &#039;2000&#039;, &#039;3000&#039;, cesta-de-servico&#039;, etc |
@@ -3120,8 +3120,8 @@ Oferta de cartão
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;sim&#039; ou &#039;agora-nao&#039;. | Deve retornar o nome do botão clicado pelo usuário. |
 
 <br />
@@ -3148,8 +3148,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;compartilhar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado pelo usuário. |
 
 <br />
@@ -3166,8 +3166,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-produto]] | &#039;cesta-de-servicos&#039;, &#039;limite-emergencial&#039;, &#039;cartao-de-credito&#039; etc. | Deve retornar o nome do produto do card clicado. |
 
 <br />
@@ -3195,8 +3195,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;li-e-concordo&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado pelo usuário. |
 
 <br />
@@ -3289,8 +3289,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:nao-foi-possivel-abrir-conta-ilimitada&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -3306,8 +3306,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/boleto/[[tela]]");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tela]] | 'digite-codigo-de-barras', 'camera', 'pagamento', 'modal/saldo-insuficiente', 'pagamento-fora-do-horario', 'pagamento-agendado', 'pagamento-realizado', 'comprovante-pagamento', 'comprovante-agendamento' | Deve retornar a tela em que o usuario esta|
 
 <br />
@@ -3323,8 +3323,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[sucesso-erro]] | 'sucesso', 'erro:codigo-de-barras-invalido' e etc |Deve retorna se o scanner do código de barras foi realizado com sucesso ou não. . |
 
 <br />
@@ -3340,8 +3340,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[sucesso-erro]] | 'sucesso', 'erro:codigo-de-barras-invalido' e etc |Deve retorna se o scanner do código de barras foi realizado com sucesso ou não. . |
 
 <br />
@@ -3357,8 +3357,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[secao]] | 'camera', 'codigo-de-barras',  'saldo-insuficiente', 'pagamento-de-boleto', 'pagamento-fora-do-horario', 'comprovante-pagamento', 'comprovante-agendamento', 'pagamento-realizado', 'pagamento-agendado' e etc.|Deve retornar o nome da seção em que ocorreu o clique. |
 | [[tipo-item]] |  'botao', 'link' ou 'icone' .|Deve retornar se o item é um botão, link ou icone. |
 | [[nome-item]] |  'digite-o-codigo-de-barras', 'continuar', 'voltar', 'limpar', 'camera', 'pagar', 'ok-entendi', 'agendar-um-pagamento', 'compartilhar', 'ver-comprovante', 'fazer-outro-pagamento' e etc | Deve retornar o nome do item clicado. |
@@ -3378,8 +3378,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[situacao-pagamento]] | 'pagamento-realizado-hoje', 'pagamento-agendado-para-12-02-2021'| Deve retornar se o pagamento foi realizado hoje ou foi agendado, se foi agendado trazer a data de agendamento.|
 
 <br />
@@ -3396,8 +3396,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[secao]] |'codigo-de-barras',  'pagamento' e etc.|Deve retornar o nome da seção em que ocorreu o clique. |
 | [[nome-campo]]  |  'codigo-de-barras', 'identificacao-extrato' e etc . |Deve retornar o nome do campo preenchido.  |
 
@@ -3412,8 +3412,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[corrente ou pagamento]]/extrato/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3429,8 +3429,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 | [[nome-card]] | &#039;pagamento&#039;, &#039;transferencia&#039;, &#039;desbloquear-cartao&#039; etc. | Deve retornar o nome do card clicado. |
 
@@ -3447,8 +3447,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 | [[nome-aba]] | &#039;tudo&#039;, &#039;entradas&#039;, &#039;saidas&#039;, &#039;futuro&#039; etc. | Deve retornar o nome da aba clicada. |
 
@@ -3465,8 +3465,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;expandir&#039; ou &#039;reduzir&#039; | Deve retornar o nome do botão clicado. |
 
@@ -3483,8 +3483,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;compartilhar&#039; ou &#039;fazer-outra-transferencia&#039; | Deve retornar o nome do botão clicado. |
 
@@ -3501,8 +3501,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;fechar&#039; ou &#039;enviar-comprovante&#039; | Deve retornar o nome do botão clicado. |
 
@@ -3519,8 +3519,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3536,8 +3536,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3548,8 +3548,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[corrente ou pagamento]]/extrato/limite-emergencial/data-de-cobranca/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3565,8 +3565,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 | [[dia-escolhido]] | &#039;1&#039;, &#039;20&#039;, &#039;15&#039; etc. | Deve retornar o novo dia escolhido para cobrança mensal do limite emergencial. |
 
@@ -3583,8 +3583,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 | [[status]] | &#039;sucesso&#039;, &#039;erro:token-invalido&#039;, etc | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
@@ -3601,8 +3601,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3618,8 +3618,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3630,8 +3630,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[corrente ou pagamento]]/extrato/limite-emergencial/dias-de-uso/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3647,8 +3647,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3661,8 +3661,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[corrente ou pagamento]]/extrato/limite-emergencial/dias-de-uso/detalhes/[[data-clicada]]");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 | [[data-clicada]] |  | Deve retornar a data referente ao detalhe do dia de uso do limite emergencial que foi exibido para o cliente. Ex.: &#039;12.04.2020&#039;, &#039;15.11.2020&#039;, etc |
 
@@ -3679,8 +3679,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3693,8 +3693,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[corrente ou pagamento]]/extrato/filtro/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3710,8 +3710,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 | [[periodo-em-dias]] | &#039;30&#039;, &#039;60&#039;, &#039;90&#039;, &#039;180&#039;, &#039;365&#039; etc. | Deve retornar o período em dias clicado. |
 
@@ -3728,8 +3728,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 | [[nome-campo]] | &#039;de&#039;, &#039;ate&#039; etc. | Deve retornar o nome do campo preenchido. |
 
@@ -3746,8 +3746,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3767,8 +3767,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3784,8 +3784,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 
@@ -3797,8 +3797,8 @@ Resumo de produtos cadastrados
     Analytics.logScrenView("/[[conta simples ou conta completa]]/cambio/cotacao")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 
@@ -3815,8 +3815,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;fechar&#039;, &#039;ok&#039;, e etc | deve retornar o nome do botão clicado. |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
@@ -3830,8 +3830,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/transferencia/destino-transferencia/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3847,8 +3847,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3864,8 +3864,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3881,8 +3881,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-instituicao-financeira]] | &#039;banco-itau&#039;, &#039;nubank&#039;, &#039;banco-do-brasil&#039; etc. | Deve retornar o nome da instituição financeira selecionada. |
 
@@ -3899,8 +3899,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3916,8 +3916,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3933,8 +3933,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039; | Deve retornar o tipo da conta. |
 | [[nome-campo]] | &#039;agencia&#039;, &#039;conta-e-digito&#039;, &#039;nome-razao-social&#039;, &#039;cpf-cnpj&#039; etc. | Deve retornar o nome do campo preenchido. |
 
@@ -3951,8 +3951,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -3969,8 +3969,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:conta-inexistente&#039;, &#039;erro:conta-impossibilitada-de-receber-transacoes&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
@@ -3982,8 +3982,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/transferencia/valor-transferencia/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -3999,8 +3999,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4016,8 +4016,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -4029,8 +4029,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/transferencia/data-transferencia/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4046,8 +4046,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -4059,8 +4059,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/transferencia/data-transferencia/modal:valor-indisponivel-em-conta-hoje/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4076,8 +4076,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[botao-ou-link]] | 'botao' ou 'link' | Deve retornar o nome do elemento clicado. |
 | [[nome-item]] | 'tentar-outro-valor-ou-data:sim', 'credito-pessoal:quero-contratar', 'nao-ir-para-o-inicio', 'clicou-fora' e etc | Deve retornar o nome do item clicado. |
@@ -4095,8 +4095,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4112,8 +4112,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[acao]] | &#039;selecionar&#039;, &#039;desselecionar&#039; e etc | Deve retornar a ação do usuário. |
 
@@ -4130,8 +4130,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[opcao-selecionada]] | &#039;4-meses&#039; e etc | Deve retornar o período selecionado. |
 
@@ -4148,8 +4148,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4165,8 +4165,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-modal]] | &#039;horario-para-efetivacao-da-transferencia&#039;, &#039;este-valor-nao-esta-disponivel-na-sua-conta-hoje&#039; etc. | Deve retornar o nome do modal aberto. |
 
@@ -4183,8 +4183,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4200,8 +4200,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4213,8 +4213,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenview("/[[conta simples ou conta completa]]/transferencia/confirmacao/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4230,8 +4230,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4247,8 +4247,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;confirmar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -4265,8 +4265,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-select]] | &#039;tipo-de-conta&#039;, &#039;finalidade-da-transferencia&#039; etc. | Deve retornar o nome do select com o qual o usuário interagiu. |
 
@@ -4283,8 +4283,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-modal]] | &#039;este-valor-ultrapassa-o-limite-diario-de-transferencia&#039;, &#039;antes-de-continuar-com-sua-transferencia&#039; etc. | Deve retornar o nome do modal aberto. |
 
@@ -4301,8 +4301,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;sim&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -4319,8 +4319,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4331,8 +4331,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/transferencia/efetivacao/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4348,8 +4348,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4365,8 +4365,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4377,8 +4377,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/transferencia/comprovante/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4394,8 +4394,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;compartilhar&#039;, &#039;fechar&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -4407,8 +4407,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/transferencia/para-quem-transferir/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4424,8 +4424,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[botao-ou-link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;editar-contato&#039;, &#039;transferir-novo-contato&#039;, &#039;buscar-contato&#039; etc. | Deve retornar o nome do item clicado. |
@@ -4443,8 +4443,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-opcao]] | &#039;favoritar&#039;, &#039;excluir&#039;, &#039;editar&#039; e etc. | Deve retornar a opção clicada. |
 | [[posicao-contato] | &#039;1&#039;, &#039;2&#039; e etc | Deve retornar a posição que o contato aparece. |
@@ -4457,8 +4457,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/transferencia/para-quem-transferir/modal-transferencia/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4474,8 +4474,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-opcao]] | &#039;fechar&#039;, &#039;conta-banco-midway&#039;, &#039;conta-nu-pagamentos&#039;, &#039;editar-contato&#039; e etc. | Deve retornar a opção clicada. |
 
@@ -4487,8 +4487,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/transferencia/para-quem-transferir/modal-transferencia/ultrapassa-valor-diario/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4504,8 +4504,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-opcao]] | &#039;alterar-limite-diario&#039;, &#039;entendi&#039; e etc. | Deve retornar a opção clicada. |
 
@@ -4517,8 +4517,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/transferencia/para-quem-transferir/modal-transferencia/ultrapassa-valor-diario/ajuste-limite-transferencia/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4534,8 +4534,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-opcao]] | &#039;voltar&#039;, &#039;confirmar&#039;, &#039;ajuste-limite-65.000,00&#039; e etc. | Deve retornar a opção clicada. |
 
@@ -4548,8 +4548,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/transferencia/para-quem-transferir/modal-transferencia/ultrapassa-valor-diario/ajuste-limite-transferencia/limite-diario-alterado/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -4565,8 +4565,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;fechar&#039; e etc. | Deve retornar o botão clicado. |
 
@@ -4594,8 +4594,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;sair&#039;, &#039;meus-dados&#039;, &#039;configurar-conta&#039;, &#039;configurar-cartao&#039;, &#039;traga-seu-salario-para-midway&#039; e etc | deve retornar o nome do botão clicado. |
 
 <br />
@@ -4636,8 +4636,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso:dados-alterados&#039; ou &#039;erro:nao-foi-possivel-alterar-dados&#039; e  etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -4671,8 +4671,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-opcao]] | &#039;cancelar-conta-corrente&#039;, &#039;cancelar-limite-emergencial&#039;, &#039;ativar-limite-emergencial&#039; e etc | Deve retornar o nome da opção selecionada pelo usuário. |
 
 <br />
@@ -4688,8 +4688,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;nao&#039; ou &#039;sim&#039; e etc | Deve retornar o nome do botão clicado pelo usuário. |
 
 <br />
@@ -4705,8 +4705,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso:emergencial-cancelado&#039; ou &#039;erro:no-momento-nao-e-possivel-cancelar&#039; e  etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -4740,8 +4740,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039; ou &#039;acesse-o-chat&#039; e etc | Deve retornar o nome do botão clicado pelo usuário. |
 
 <br />
@@ -4770,8 +4770,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;ajustar-limite&#039;,  &#039;bloqueio-definitivo&#039;, &#039;configuracao-de-senha&#039; e etc  | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -4788,8 +4788,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao]] | &#039;ativou&#039; ou &#039;desativou&#039; | Deve retornar se o usuario ativou e desativou o bloqueio temporario do cartão. |
 
 <br />
@@ -4801,8 +4801,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/perfil/configurar-cartao/[[opcao]]-bloqueio-temporario")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao]] | &#039;ativou&#039; ou &#039;desativou&#039; | Deve retornar se o usuario ativou e desativou o bloqueio temporario do cartão. |
 
 <br />
@@ -4818,8 +4818,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;bloquear&#039;, &#039;desbloquear&#039;, &#039;cancelar&#039;, &#039;fechar&#039; | deve retornar o nome do botão clicado. |
 
 <br />
@@ -4830,8 +4830,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/perfil/configurar-cartao/[[opcao]]-bloqueio-temporario/sucesso")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao]] | &#039;ativou&#039; ou &#039;desativou&#039; | Deve retornar se o usuario ativou e desativou o bloqueio temporario do cartão. |
 
 <br />
@@ -4847,8 +4847,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;bloquear&#039;, &#039;fechar&#039;,  | Deve retornar o nome do botão clicado. |
 | [[motivo]] | perda&#039;, &#039;roubo&#039;, &#039;furto&#039;, &#039;cartao-danificado&#039; e etc | deve retornar preenchida com o motivo que o usuario selecionou para o bloqueio, apenas caso  o usuario clique em &quot;Bloquear&quot;, caso contrario deve retornar vazio. |
 
@@ -4885,8 +4885,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;solicitar-agora&#039;, &#039;solicitar-depois&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -4902,8 +4902,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;solicitar-agora&#039;, &#039;solicitar-depois&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -4930,8 +4930,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-item]] | &#039;voltar&#039;, &#039;editar endereço&#039;, &#039;concluir&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -4957,8 +4957,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-campo]] | &#039;CEP&#039;, &#039;endereco&#039; e etc | Deve retornar o nome do campo preenchido. |
 
 <br />
@@ -4985,8 +4985,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-campo]] | &#039;voltar&#039;, &#039;fechar&#039; e etc | Deve retornar o nome do campo preenchido. |
 
 <br />
@@ -5000,8 +5000,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/remuneracao-conta/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -5017,8 +5017,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -5034,8 +5034,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -5051,8 +5051,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -5068,8 +5068,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;desativar-conta-remunerada&#039;, &#039;ativar-conta-remunerada&#039; e etc | Deve retornar o botão clicado. |
 
@@ -5081,8 +5081,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/remuneracao-conta/[[cancelar-ou-reativar]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[cancelar-ou-reativar]] | &#039;cancelar&#039;, &#039;reativar&#039; | Deve retornar o modal apresentado. |
 
@@ -5099,8 +5099,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[cancelar-ou-reativar]] | &#039;cancelar&#039;, &#039;reativar&#039; | Deve retornar o modal apresentado. |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;cancelar&#039;, &#039;cancelar-conta-remunerada&#039;, &#039;reaitvar-conta-remunerada&#039; e etc. | Deve retornar o nome do botão clicado. |
@@ -5118,8 +5118,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;sim&#039;, &#039;nao&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -5131,8 +5131,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/remuneracao-conta/desativacao/autenticacao/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -5148,8 +5148,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -5165,8 +5165,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[corrente ou pagamento]] | &#039;corrente&#039; ou &#039;pagamento&#039;. | Deve retornar o tipo da conta. |
 | [[status]] | &#039;sucesso:remuneracao-de-conta-desativada&#039; ou &#039;erro:nao-foi-possivel-desativar-remuneracao-de-conta&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
@@ -5180,8 +5180,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/cancelamento/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -5197,8 +5197,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-opcao]] | &#039;tarifas-altas&#039;, &#039;trabalho-com-outros-bancos&#039;, &#039;aplicativo-nao-tem-uma-navegacao-intuitiva&#039; etc. | Nome da opção de motivo de cancelamento escolhida. |
 
 <br />
@@ -5214,8 +5214,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;continuar&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -5231,8 +5231,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-modal]] | &#039;confirmacao-cancelamento-conta-corrente&#039;, &#039;solicitacao-enviada&#039; etc. | Deve retornar o nome do modal aberto. |
 
@@ -5249,8 +5249,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;agora-nao&#039;, &#039;voltar-para-home&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -5262,8 +5262,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/cancelamento/condicoes-do-cancelamento/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -5279,8 +5279,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;continuar&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -5292,8 +5292,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/cancelamento/autenticacao/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -5309,8 +5309,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -5321,8 +5321,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/cancelamento/solicitacao-ja-enviada/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -5338,8 +5338,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -5370,8 +5370,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[dia-cobranca]] | &#039;14&#039;, &#039;25&#039; etc. | Deve retornar o dia escolhido pelo cliente. |
 
 <br />
@@ -5387,8 +5387,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[dia-escolhido]] | &#039;1&#039;, &#039;20&#039;, &#039;15&#039; etc. | Deve retornar o novo dia escolhido para cobrança mensal do limite emergencial. |
 
 <br />
@@ -5441,8 +5441,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso:data-alterada-com-sucesso&#039; ou &#039;erro:algo-deu-errado&#039;, &#039;erro:nao-foi-possivel-alterar-a-data&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -5472,8 +5472,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;sim&#039;, &#039;nao&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -5513,8 +5513,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso:limite-emergencial-cancelado&#039; ou &#039;erro:algo-deu-errado&#039;, &#039;erro:nao-foi-possivel-cancelar-limite-emergencial&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -5568,8 +5568,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -5599,8 +5599,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:erro-de-preenchimento&#039;, &#039;erro:numero-invalido&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -5666,8 +5666,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | 'sucesso', 'erro:cpf-invalido', 'erro:numero-invalido' e etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 
@@ -5684,8 +5684,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[elemento-clicado]] | 'continuar' ou 'voltar' | Deve retornar o nome do elemento clicado. |
 
 <br />
@@ -5709,8 +5709,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-campo]] | 'primeiros-digitos' ou 'ultimos-digitos' | Deve retornar o nome do campo preenchido. |
 
 <br />
@@ -5726,8 +5726,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | 'sucesso', 'erro:cartao-invalido', 'erro:numero-invalido' e etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 
@@ -5744,8 +5744,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[elemento-clicado]] | 'continuar', 'voltar' ou 'precisa-de-ajuda' | Deve retornar o nome do elemento clicado. |
 
 <br />
@@ -5783,8 +5783,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:repeticao-de-numeros-seguidos&#039;, &#039;erro:data-de-nascimento&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -5800,8 +5800,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;ver-senha&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -5842,8 +5842,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:senha-diferente-da-anterior&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -5859,8 +5859,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;ver-senha&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -5923,8 +5923,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:nao-foi-possivel-realizar-o-desbloqueio&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 | [[dimension2]] | &quot;conta-corrente&quot;, &quot;cartao-de-credito&quot; ou &quot;conta-corrente-e-cartao-de-credito&quot; | Deve retornar se o usuário possui uma conta corrente, cartão de crédito ou as duas opções |
 
@@ -5952,8 +5952,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | &#039;saldo-positivo-limite-emergencial&#039;, &#039;uso-limite-emergencial&#039;, &#039;limite-emergencial-nao-contratado&#039;, &#039;limite-emergencial-cancelado&#039; etc. | Deve retornar o nome do card do carrossel exibido. |
 
 <br />
@@ -5969,8 +5969,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | &#039;extrato&#039;, &#039;pagamento&#039;, &#039;transferencia&#039;, &#039;desbloqueio-de-cartao&#039; etc. | Deve retornar o nome do card de atalho clicado. |
 
 <br />
@@ -6000,8 +6000,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;expandir&#039; ou &#039;reduzir&#039;. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -6017,8 +6017,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-menu]] | &#039;home&#039;, &#039;cartoes&#039;, &#039;outros&#039;, &#039;ajuda&#039; e etc | Deve retornar o nome do menu clicado. |
 
 <br />
@@ -6048,8 +6048,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-limite-emergencial]] | &#039;sem-cheque-especial-contratado&#039;, &#039;com-cheque-especial-contratado&#039; etc. | Deve retornar se o cliente tem cheque especial contratado ou não. |
 
 <br />
@@ -6065,8 +6065,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-contato]] | &#039;contato-favorito&#039;, &#039;outros&#039; e etc | Deve retornar o contato selecionado. |
 
 <br />
@@ -6082,8 +6082,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[banner-clicado]] | 'habilite-token-no-app', 'assistencia-automovel-midway', 'habilitar-credito-cartao:seja-um-dos-primeiros', 'convide-e-ganhe' e etc | Deve retornar o nome do banner clicado. |
 
 <br />
@@ -6111,8 +6111,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[local]] | &#039;banner-superior&#039;, &#039;banner-inferior&#039;, &#039;banner-lateral&#039; | Deve retornar se o banner esta localizado na parte superior, inferior, ou lateral da tela. |
 
 <br />
@@ -6137,8 +6137,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;atendimento-via-chat&#039;, &#039;atendimento-telefonico&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -6154,8 +6154,8 @@ Resumo de produtos cadastrados
         ])
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | &#039;cotacao-diaria-euro&#039;, &#039;cotacao-diaria-dolar&#039; e etc | Deve retornar o nome do card clicado. |
 
 <br />
@@ -6169,8 +6169,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/home/onboarding-migracao-conta-[[numero-tela]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[numero-tela]] | &#039;1&#039;, &#039;2&#039; e etc | deve retornar o numero da tela. |
 
 
@@ -6188,8 +6188,8 @@ Resumo de produtos cadastrados
         ])
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[numero-tela]] | &#039;1&#039;, &#039;2&#039; e etc | deve retornar o numero da tela. |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;fechar&#039; e etc | Deve retornar o  nome do botão clicado. |
 
@@ -6214,8 +6214,8 @@ Resumo de produtos cadastrados
         ])
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;editar-endereco&#039; e etc | Deve retornar o  nome do botão clicado. |
 
 <br />
@@ -6238,8 +6238,8 @@ Resumo de produtos cadastrados
         ])
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;acessar-conta&#039; e etc | Deve retornar o  nome do botão clicado. |
 
 <br />
@@ -6255,8 +6255,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/cotacao/cambio/[[moeda]]")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[moeda]] | &#039;dolar&#039;, &#039;euro&#039; e etc | deve retornar o nome da moeda. |
 
 <br />
@@ -6272,8 +6272,8 @@ Resumo de produtos cadastrados
         ])
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;filtrar&#039; e etc | Deve retonrar o  nome do botão clicado. |
 
 <br />
@@ -6298,8 +6298,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[filtros-selecionado]] | &#039;filtrar-data&#039;, &#039;filtrar-dias&#039; e etc | Deve retornar se o usuario selecionou filtrar por data ou por dias. |
 | [[opcao-selecionada]] | &#039;30-dias&#039;. &#039;60-dias&#039;, &#039;12-04-2020-ate-12-04-2021&#039; e etc | Deve retornar a opcao selecionada. |
 
@@ -6326,8 +6326,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | 'botao' ou 'icone' | Deve retornar o elemento clicado. |
 | [[nome-botao]] | 'fechar:modal-funcao-credito', 'tenho-interesse', 'clicou-fora:modal-funcao-credito' e etc | Deve retornar o nome do botão clicado. |
 
@@ -6352,8 +6352,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | 'botao' ou 'icone' | Deve retornar o elemento clicado. |
 | [[nome-botao]] | 'fechar:modal-tudo-certo', 'fechar', 'clicou-fora:modal-tudo-certo' e etc | Deve retornar o nome do botão clicado. |
 
@@ -6381,8 +6381,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;ativar-funcao-credito&#039;, &#039;voltar&#039;, &#039;taxas-e-encargos&#039;, &#039;consulte-aqui-o-contrato-do-seu-cargo&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -6398,8 +6398,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | 'botao' ou 'icone' | Deve retonar o nome do elemento. |
 
 <br />
@@ -6415,8 +6415,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-modal]] | 'taxas-encargos' ou 'consulte-aqui-seu-contrato' | Deve retornar o nome do modal. |
 | [[opcao-fechar]] | 'fechar' 'voltar', 'clicou-fora' | Deve retornar a opção clicada.|
 
@@ -6429,8 +6429,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/credito-pre-aprovado/[[tela]]")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tela]] |&#039;taxas-e-encargos&#039;, &#039;contrato&#039; | deve retornar o nome da tela em que o usuario esta. |
 
 <br />
@@ -6442,8 +6442,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/credito-pre-aprovado/validacao/[[etapa]]")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[etapa]] | &#039;orientacoes&#039;, &#039;foto&#039;, &#039;segunda-foto&#039; e etc | deve retornar a etapa em que o usuario esta. |
 
 <br />
@@ -6468,8 +6468,8 @@ Resumo de produtos cadastrados
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[dia-selecionado]] | &#039;15&#039;, &#039;20&#039;, &#039;30&#039; e etc | Deve retornar o dia selecionado pelo usuario. |
 
 <br />
@@ -6515,8 +6515,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[titulo-botao]] | &#039;ver-lancamento&#039; e &#039;ver-fatura&#039; | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -6532,8 +6532,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao-selecionada]] | &#039;titular&#039; ou &#039;adicional&#039; | Deve retornar a opção selecionada pelo usuário. |
 
 <br />
@@ -6585,8 +6585,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;fechar&#039;, &#039;ok&#039; e etc. | deve retornar o nome do botão clicado. |
 
 <br />
@@ -6600,8 +6600,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/cartoes/termo-de-adesao/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[userID]] | &quot;01234&quot; | ID único de usuário definido após o cadastro (ID próprio da Midway). |
 
 <br />
@@ -6612,8 +6612,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/cartoes/termo-de-adesao/[[tela]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tela]] | &#039;termo-de-uso-da-conta-pagamento&#039;, &#039;termo-de-uso-da-conta-corrente&#039;, &#039;termo-de-uso-cartoes-rchlo&#039;, &#039;parcelamento-de-limite-emergencial&#039;, &#039;cancelamento-de-limite-emergencial&#039;, &#039;termo-de-privacidade-app-midway&#039; | Deve retornar o título da tela acessada pelo usuário.|
 
 <br />
@@ -6629,8 +6629,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[titulo-botao]] | &#039;termo-de-uso-da-conta-pagamento&#039;, &#039;termo-de-uso-da-conta-corrente&#039;, &#039;termo-de-uso-cartoes-rchlo&#039;, &#039;parcelamento-de-limite-emergencial&#039;, &#039;cancelamento-de-limite-emergencial&#039;, &#039;termo-de-privacidade-app-midway&#039;, | etc  Deve retornar o nome do botão clicado. |
 
 <br />
@@ -6661,8 +6661,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:falha-ao-autenticar-a-assinatura&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 | [[dimension2]] | &quot;conta-corrente&quot;, &quot;cartao-de-credito&quot; ou &quot;conta-corrente-e-cartao-de-credito&quot; | Deve retornar se o usuário possui uma conta corrente, cartão de crédito ou as duas opções |
 
@@ -6699,8 +6699,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/cartoes/notificacoes/[[tela]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tela]] | &#039;configuracao&#039;, &#039;melhor-dia-de-compra&#039;, &#039;vencimento-de-fatura&#039;, &#039;voce-nao-vai-querer-perder&#039;, &#039;compra-aprovada&#039;, &#039;fatura-disponivel-para-pagamento&#039;, etc | Deve retornar o o título da tela acessada pelo usuário.  |
 
 <br />
@@ -6716,8 +6716,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | 'melhor-dia-de-compra', 'vencimento-de-fatura', 'voce-nao-vai-querer-perceber', 'compra-aprovada', 'parcelamento-de-fatura' e etc <br />  **Obs.: Deve retornar 'configuracoes' na interação com o botão 'Engrenagem'**  | Deve retornar o título do botão clicado; |
 
 <br />
@@ -6733,8 +6733,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tela]] | &#039;configuracao&#039;, &#039;melhor-dia-de-compra&#039;, &#039;vencimento-de-fatura&#039;, &#039;voce-nao-vai-querer-perder&#039;, &#039;compra-aprovada&#039;, &#039;fatura-disponivel-para-pagamento&#039;, etc | Deve retornar o o título da tela acessada pelo usuário.  |
 | [[titulo-botao]] | &#039;voltar&#039;, &#039;aviso-de-compras-ativado&#039;, &#039;aviso-de-compras-desativado&#039;, &#039;melhor-dia-de-compra-ativado&#039;, &#039;melhor-dia-de-compra-desativado&#039;, &#039;vencimento-de-fatura-ativado&#039;, &#039;vencimento-de-fatura-desativado&#039;, &#039;descontos-e-promocoes-ativado&#039;, &#039;descontos-e-promocoes-desativado&#039;, &#039;apagar-mensagem&#039;, &#039;ir-para-pagamento-de-fatura&#039;, &#039;ir-para-loja-online&#039;, |  Deve retornar o título do botões clicado. |
 
@@ -6762,8 +6762,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[mes]] | Ex.: &#039;set&#039;, &#039;out&#039;, &#039;nov&#039;, etc | Deve retornar o título do mês clicado pelo usuário. |
 
 <br />
@@ -6779,8 +6779,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[titulo-botao]] | Deve retornar o título do botões clicado. | Ex.:  &#039;pagar-em-pdf&#039;, &#039;visualizar-a-fatura-em-pdf&#039; e &#039;pagar-fatura&#039; |
 
 <br />
@@ -6796,8 +6796,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao-selecionada]] |&#039;titular&#039; ou &#039;adicional&#039; | Deve retornar a opção selecionada pelo usuário.  |
 
 <br />
@@ -6813,8 +6813,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[consulta-pagamento]] | &#039;visualizar-fatura&#039; quando o boleto é gerado a partir do clique em Visualizar a fatura em PDF ou &#039;pagar-fatura&#039; quando o boleto é gerado a partir do clique em Pagar fatura | Deve retornar se o boleto que esta sendo gerado pelo usuário é para Pagamento de fatura ou apenas visualização. |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:falha-ao-gerar-o-boleto&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
@@ -7137,8 +7137,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/pagamento-de-fatura/[[tipo-pagamento]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-pagamento]]  | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipo de pagamento efetuada pelo cliente. |
 
 <br />
@@ -7154,8 +7154,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-pagamento]] | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipo de pagamento efetuada pelo cliente. |
 | [[nome-botao]] |  &#039;pagar-com-a-conta-midway&#039; ou &#039;gerar-boleto&#039; | Deve retornar o título do botão clicado pelo usuário. |
 
@@ -7172,8 +7172,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-pagamento]]  | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039;  |  Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente. |
 | [[status]] | &#039;sucesso:recebemos-o-seu-pagamento&#039;, &#039;sucesso:seu-boleto-foi-gerado&#039;, &#039;erro:falha-ao-gerar-o-boleto&#039;, &#039;erro:saldo-insuficiente&#039;, &#039;erro:falha-no-servico&#039;, etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
@@ -7190,8 +7190,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;gerar-boleto&#039; ou &#039;voltar&#039; | Deve retornar o título do botão clicado pelo usuário. |
 
 <br />
@@ -7202,8 +7202,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/pagamento-de-fatura/[[tipo-pagamento]]/recebemos-o-seu-pagamento/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-pagamento]] | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente  |
 
 <br />
@@ -7219,8 +7219,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-pagamento]] |  &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente. |
 
 <br />
@@ -7231,8 +7231,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/pagamento-de-fatura/[[tipo-pagamento]]/comprovante-de-pagamento/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-pagamento]] | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente.  |
 
 <br />
@@ -7248,8 +7248,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-pagamento]] | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente.  |
 
 <br />
@@ -7260,8 +7260,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/pagamento-de-fatura/[[tipo-pagamento]]/pagamento-boleto/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-pagamento]] | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente.  |
 
 <br />
@@ -7277,8 +7277,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-pagamento]] | &#039;pagar-total&#039;, &#039;parcelar-fatura&#039; ou &#039;pagar-outro-valor&#039; | Deve retornar o valor conforme a seleção de tipode pagamento efetuada pelo cliente.  |
 | [[nome-botao]] | &#039;copiar-codigo&#039; ou &#039;compartilhar&#039; | Deve retornar o nome do botão clicado. |
 
@@ -7306,8 +7306,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | 'agora-nao', 'aceito' etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -7383,8 +7383,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;nao-sei-meu-cep&#039;, &#039;continuar&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -7414,8 +7414,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-erro]] | &#039;erro:cep-nao-existe&#039;, &#039;erro:preencha-cep&#039; etc. | Deve retornar o tipo do erro ocorrido. |
 
 <br />
@@ -7431,8 +7431,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-campo]] | &#039;endereco&#039;, &#039;numero&#039;, &#039;complemento&#039;, &#039;bairro&#039;, &#039;cidade&#039;, &#039;estado&#039; etc. | Deve retornar o nome do campo preenchido pelo usuário. |
 
 <br />
@@ -7448,8 +7448,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-erro]] | &#039;erro:preencha-bairro&#039;, &#039;erro:numero-invalido&#039; etc. | Deve retornar o tipo do erro ocorrido. |
 
 <br />
@@ -7476,8 +7476,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;continuar&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -7517,8 +7517,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[dimension2]] | "conta-corrente", "possui-cartao-de-credito", "nao-possui-cartao-de-credito" "conta-corrente-e-cartao-de-credito" | Deve retornar se o usuário possui uma conta corrente, cartão de crédito ou as duas opções |
 
 <br />
@@ -7559,8 +7559,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | &#039;deposito-por-boleto&#039;, &#039;indicar-amigos&#039;, &#039;pagamentos&#039;, &#039;mudar-para-conta-corrente&#039; etc. | Deve retornar o nome do card clicado. |
 
 <br />
@@ -7576,8 +7576,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;notificacao&#039;, &#039;mostrar-saldo&#039;, &#039;ocultar-saldo&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -7593,8 +7593,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | 'saldo-disponivel', 'cartao-de-debito-midway', 'atualize-seus-dados-cadastrais', 'saiba-mais:credito-aprovado', 'conheca-e-ative:credito-aprovado' etc.| Deve retornar o nome do card exibido no carrossel. |
 
 <br />
@@ -7610,8 +7610,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-link]] | &#039;ver-extrato&#039;, &#039;adquirir&#039;, &#039;acompanhar-pedido&#039;, &#039;atualizar&#039; etc. | Deve retornar o texto do link clicado. |
 
 <br />
@@ -7627,8 +7627,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-banner]] | 'assistencia-automovel-midway', 'saiba-mais:credito-aprovado', 'conheca-e-ative:credito-aprovado' | Deve retornar o nome do banner atualmente exibito na tela (acredito que ele varie. Se não variar, retorne &#039;assistencia-automovel-midway&#039;). |
 
 <br />
@@ -7644,8 +7644,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-banner]] | 'assistencia-automovel-midway', 'saiba-mais:credito-aprovado', 'conheca-e-ative:credito-aprovado' | Deve retornar o nome do banner atualmente exibito na tela (acredito que ele varie. Se não variar, retorne &#039;assistencia-automovel-midway&#039;). |
 
 <br />
@@ -7685,8 +7685,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039; ou &#039;sair&#039;. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -7701,8 +7701,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-opcao]] | &#039;alterar-senha&#039;, &#039;bloquear-cartao&#039;, &#039;desbloquear-cartao&#039;, &#039;alterar-data-de-vencimento-do-cartao&#039;, &#039;cancelar-conta-simples&#039; etc. | Deve retornar o nome da opção clicada. |
 
 <br />
@@ -7715,8 +7715,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/deposito/qual-o-valor-do-deposito/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -7732,8 +7732,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[status]] | &#039;valor-maximo-boleto-r$...&#039;, &#039;valor-minimo-boleto-r$...&#039; e etc | Deve retornar o status do callback após preencher o campo. |
 
@@ -7750,8 +7750,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;gerar-boleto&#039;, &#039;voltar&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -7762,8 +7762,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/conta simples/deposito/qual-o-valor-do-deposito/modal-[[tipo-atencao]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-atencao]] | &#039;atencao-primeira&#039;, &#039;atencao-irregular&#039;, &#039;atencao-abertos&#039; e etc | Deve retornar o tipo de atenção apresentado. |
 
 <br />
@@ -7779,8 +7779,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-atencao]] | &#039;atencao-primeira&#039;, &#039;atencao-irregular&#039;, &#039;atencao-abertos&#039; e etc | Deve retornar o tipo de atenção apresentado. |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;voltar&#039; e etc | Deve retornar o nome do botão clicado. |
 
@@ -7793,8 +7793,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/conta simples/deposito/qual-o-valor-do-deposito/modal-[[tipo-atencao]]/modal-mudar-conta-completa/passo-[[numero passo]]");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-atencao]] | &#039;atencao-primeira&#039;, &#039;atencao-irregular&#039;, &#039;atencao-abertos&#039; e etc | Deve retornar o tipo de atenção apresentado. |
 | [[numero passo]] | &#039;1&#039;, &#039;2&#039;, &#039;3&#039; e etc | Deve retornar o passo que o usuário está. |
 
@@ -7811,8 +7811,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[numero-passo]] | &#039;1&#039;, &#039;2&#039;, &#039;3&#039; e etc | Deve retornar o passo que o usuário está. |
 | [[nome-botao]] | &#039;mudar-conta-completa&#039;, &#039;fechar&#039; e etc | Deve retornar o nome do botão clicado. |
 
@@ -7862,8 +7862,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/deposito/qual-o-valor-do-deposito/boleto-gerado-com-sucesso/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -7879,8 +7879,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -7896,8 +7896,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;fechar&#039;, &#039;copiar-codigo&#039;, &#039;visualizar-boleto&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -7910,8 +7910,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/deposito/qual-o-valor-do-deposito/boleto-gerado-com-sucesso/codigo-barras-copiado/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -7927,8 +7927,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;fechar&#039;, &#039;ok&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -7955,8 +7955,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[conta simples ou conta completa]]/deposito-via-boleto/boleto/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 
 <br />
@@ -7972,8 +7972,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;compartilhar&#039; etc. | Deve retornar o nome do botão clicado. |
 
@@ -7990,8 +7990,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[conta simples ou conta completa]] | &#039;simples&#039; ou &#039;completa&#039;. | Deve retornar o tipo da conta. |
 | [[nome-opcao]] | &#039;compartilhar&#039;, &#039;salvar&#039;, &#039;imprimir&#039;, &#039;usar-como&#039;, &#039;detalhes&#039; etc. | Deve retornar o nome do item clicado do submenu. |
 
@@ -8008,8 +8008,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-erro]] | &#039;erro:nao-foi-possivel-salvar-boleto&#039;, &#039;erro:nao-foi-possivel-compartilhar&#039; etc. | Deve retornar o nome do erro ocorrido. |
 
 <br />
@@ -8060,8 +8060,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-ou-link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;fechar&#039;, &#039;atendimento-telefonico&#039;, &#039;atendimento-via-chat&#039;, &#039;ok&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -8078,8 +8078,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | &#039;pagamento&#039;, &#039;transferencia&#039;, &#039;desbloquear-cartao&#039; etc. | Deve retornar o nome do card clicado. |
 
 <br />
@@ -8151,8 +8151,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-aba]] | &#039;tudo&#039;, &#039;entradas&#039;, &#039;saidas&#039; ou &#039;futuro&#039;. | Deve retornar o nome da aba clicada. |
 
 <br />
@@ -8177,8 +8177,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/conta-simples/extrato/comprovante-[[operacao]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[operacao]] | &#039;transferencia&#039;, &#039;compra&#039;, &#039;deposito&#039; etc. | Deve retornar o tipo de operação referente à tela exibida. |
 
 <br />
@@ -8194,8 +8194,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[operacao]] | &#039;transferencia&#039;, &#039;compra&#039;, &#039;deposito&#039; etc. | Deve retornar o tipo de operação referente à tela exibida. |
 
 <br />
@@ -8211,8 +8211,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[operacao]] | &#039;transferencia&#039;, &#039;compra&#039;, &#039;deposito&#039; etc. | Deve retornar o tipo de operação referente à tela exibida. |
 | [[nome-botao]] | &#039;fazer-outro-pagamento&#039;, &#039;voltar-para-conta-corrente&#039;. | Deve retornar o nome do botão clicado. |
 
@@ -8238,8 +8238,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[dia-escolhido]] | &#039;1&#039;, &#039;20&#039;, &#039;15&#039; etc. | Deve retornar o novo dia escolhido para cobrança mensal do limite emergencial. |
 
 <br />
@@ -8255,8 +8255,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[dia-escolhido]] | &#039;1&#039;, &#039;20&#039;, &#039;15&#039; etc. | Deve retornar o novo dia escolhido para cobrança mensal do limite emergencial. |
 
 <br />
@@ -8295,8 +8295,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[periodo-em-dias]] | &#039;30&#039;, &#039;60&#039;, &#039;90&#039;, &#039;180&#039;, &#039;365&#039;. | Deve retornar o período em dias clicado. |
 
 <br />
@@ -8312,8 +8312,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-campo]] | &#039;de:29-02-2020&#039;, &#039;ate:31-03-2020&#039; etc. | Deve retornar o nome do campo preenchido. |
 
 <br />
@@ -8329,8 +8329,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;fechar&#039;, &#039;filtrar&#039;. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -8358,8 +8358,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[data-selecionada]] | &#039;13/04/2017&#039;, &#039;15/02/2020&#039; e etc | Deve retornar a data selecionada. |
 
 <br />
@@ -8375,8 +8375,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[quantidade-parcelas]] | &#039;10x&#039;, &#039;8x&#039; e etc | Deve retornar a quantidade de parcelas selecionadas. |
 
 <br />
@@ -8415,8 +8415,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;detalhamento-do-cet&#039;, &#039;contratar&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -8483,8 +8483,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;compartilhar-contrato&#039;, &#039;ok&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -8594,8 +8594,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao-selecionada]] | &#039;genero&#039;, &#039;nacionalidade&#039; e etc | Deve retornar a opção selecionada. |
 
 <br />
@@ -8611,8 +8611,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039; , &#039;terminar-depois&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -8638,8 +8638,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039; , &#039;nao-sei-meu-cep&#039;, &#039;terminar-depois&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -8689,8 +8689,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | &#039;rg&#039;, &#039;cnh&#039;, &#039;rne&#039; e etc. | Deve retornar o nome do card clicado. |
 
 <br />
@@ -8716,8 +8716,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;tirar-foto-documento&#039;, &#039;terminar-depois&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -8743,8 +8743,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;tirar-foto-documento&#039;, &#039;terminar-depois&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -8770,8 +8770,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;tirar-foto-documento&#039;, &#039;terminar-depois&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -8783,8 +8783,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/conta-pagamento/migracao-conta-corrente/documento/[[modo-de-documento]]/foto-do-documento/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[modo-de-documento]] | &#039;rg&#039;, &#039;cnh&#039;, &#039;rne&#039; e etc | Deve retornar o nome do documento selecionado. |
 
 <br />
@@ -8800,8 +8800,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[modo-de-documento]] | &#039;rg&#039;, &#039;cnh&#039;, &#039;rne&#039; e etc | Deve retornar o nome do documento selecionado. |
 
 <br />
@@ -8813,8 +8813,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/conta-pagamento/migracao-conta-corrente/documento/[[modo-de-documento]]/foto-do-documento/tiraremos-uma-foto-da-frente/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[modo-de-documento]] | &#039;rg&#039;, &#039;cnh&#039;, &#039;rne&#039; e etc | Deve retornar o nome do documento selecionado. |
 
 <br />
@@ -8830,8 +8830,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;capturar-novamente&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -8844,8 +8844,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/conta-pagamento/migracao-conta-corrente/documento/[[modo-de-documento]]/foto-do-documento/tiraremos-uma-foto-do-verso/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[modo-de-documento]] | &#039;rg&#039;, &#039;cnh&#039;, &#039;rne&#039; e etc | Deve retornar o nome do documento selecionado. |
 
 <br />
@@ -8861,8 +8861,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;capturar-novamente&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -8874,8 +8874,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/conta-pagamento/migracao-conta-corrente/documento/[[modo-de-documento]]/foto-do-documento/salvando-seus-dados/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[modo-de-documento]] | &#039;rg&#039;, &#039;cnh&#039;, &#039;rne&#039; e etc | Deve retornar o nome do documento selecionado. |
 
 <br />
@@ -8887,8 +8887,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/conta-pagamento/migracao-conta-corrente/documento/[[modo-de-documento]]/foto-do-documento/algo-deu-errado/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[modo-de-documento]] | &#039;rg&#039;, &#039;cnh&#039;, &#039;rne&#039; e etc | Deve retornar o nome do documento selecionado. |
 
 <br />
@@ -8914,8 +8914,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/conta-pagamento/migracao-conta-corrente/cesta-de-servicos/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[modo-de-documento]] | &#039;rg&#039;, &#039;cnh&#039;, &#039;rne&#039; e etc | Deve retornar o nome do documento selecionado. |
 
 <br />
@@ -8931,8 +8931,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;terminar-depois&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -8943,8 +8943,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/conta-pagamento/migracao-conta-corrente/cesta-de-servicos/[[card-visualizado]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[card-visualizado]] | &#039;pacote-basico&#039;, &#039;pacote-light&#039;, &#039;pacote-premium&#039; e etc | Deve retornar o nome do card visualizado. |
 
 <br />
@@ -8960,8 +8960,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[pacote-selecionado]] | &#039;pacote-basico&#039;, &#039;pacote-light&#039;, &#039;pacote-premium&#039; e etc | Deve retornar o nome do pacote selecionado . |
 | [[nome-botao]] | &#039;escolher-este-pacote&#039;, &#039;terminar-depois&#039; e etc | Deve retornar o nome do botão clicado. |
 
@@ -8974,8 +8974,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/conta-pagamento/migracao-conta-corrente/cesta-de-servicos/limite-emergencial/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[card-visualizado]] | &#039;pacote-basico&#039;, &#039;pacote-light&#039;, &#039;pacote-premium&#039; e etc | Deve retornar o nome do card visualizado. |
 
 <br />
@@ -8991,8 +8991,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;aceito&#039;, &#039;agora-nao&#039;, &#039;consulte-taxas-e-condicoes&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -9018,8 +9018,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[dia-cobranca]] | &#039;14&#039;, &#039;25&#039; etc. | Deve retornar o dia escolhido pelo cliente. |
 
 <br />
@@ -9083,8 +9083,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;adicionar-endereco&#039;, &#039;ok&#039; e etc | Deve retornar o nome do botão selecionado. |
 
 <br />
@@ -9110,8 +9110,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;nao-sei-meu-cep&#039;, &#039;continuar&#039;, &#039;terminar-depois&#039; e etc | Deve retornar o nome do botão selecionado. |
 
 <br />
@@ -9137,8 +9137,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | &#039;cesta-de-servico&#039;, &#039;limite-emergencial&#039;, &#039;cartao-credito&#039; e etc | Deve retornar o nome do card selecionado para editar. |
 
 <br />
@@ -9154,8 +9154,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;compartilhar&#039; e etc | Deve retornar o nome do botão selecionado. |
 
 <br />
@@ -9181,8 +9181,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;li-e-concordo&#039;, &#039;compartilhar&#039; e etc | Deve retornar o nome do botão selecionado. |
 
 <br />
@@ -9208,8 +9208,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;entrar-no-aplicativo&#039;, &#039;compartilhar&#039; e etc | Deve retornar o nome do botão selecionado. |
 
 <br />
@@ -9236,8 +9236,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[motivo-cancelamento]] | &#039;nao-uso-muito&#039;, &#039;trabalho-com-outros-bancos&#039;, &#039;aplicativo-nao-tem-uma-navegacao-intuitiva&#039; etc. | Deve retornar a opção selecionada pelo usuário no select de &#039;Motivo do cancelamento&#039;. |
 
 <br />
@@ -9252,8 +9252,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -9278,8 +9278,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -9317,8 +9317,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;confirmar&#039; ou &#039;agora-nao&#039;. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -9333,8 +9333,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-erro]] | &#039;sucesso&#039;, &#039;erro:nao-foi-possivel-realizar-cancelamento&#039;, &#039;erro:tente-novamente-mais-tarde&#039; etc. | Deve retornar o nome do erro ocorrido. |
 
 <br />
@@ -9400,8 +9400,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-erro]] | &#039;sucesso&#039;, &#039;erro:nao-foi-possivel-realizar-o-desbloqueio&#039;, &#039;erro:tente-novamente-mais-tarde&#039; etc. | Deve retornar o nome do erro ocorrido. |
 
 <br />
@@ -9427,8 +9427,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;desbloquear-cartao&#039; ou &#039;voltar-para-home&#039;. | Deve retornar o nome do botão clicado pelo usuário. |
 
 <br />
@@ -9443,8 +9443,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-erro]] | &#039;sucesso&#039;, &#039;erro:nao-foi-possivel-realizar-o-bloqueio&#039;, &#039;erro:tente-novamente-mais-tarde&#039; etc. | Deve retornar o nome do erro ocorrido. |
 
 <br />
@@ -9472,8 +9472,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[posicao-contato]] | &#039;1&#039;, &#039;2&#039;, &#039;3&#039; e etc | Deve retornar a posição do contato escolhido pelo usuário. |
 
 <br />
@@ -9511,8 +9511,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao-selecionada]] | &#039;000-midway&#039;, &#039;341-itau&#039; e etc | Deve retornar o nome da instituição escolhida pelo usuário. |
 
 <br />
@@ -9586,8 +9586,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[sucesso-ou-erro]] | &#039;sucesso&#039; ou &#039;erro:saldo-nao-disponivel&#039; e etc | Deve retornar o status após clicar no botão. |
 
 <br />
@@ -9611,8 +9611,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;sim&#039;, &#039;nao-ir-para-inicio&#039; e etc | Deve retornar o nome do botão clidado pelo usuário. |
 
 <br />
@@ -9647,8 +9647,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[data]] | &#039;13/04/2020&#039;, &#039;03/05/2020&#039; e etc | Deve retornar data selecionada pelo usuário. |
 
 <br />
@@ -9663,8 +9663,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;cancelar&#039;, &#039;ok&#039; e etc | Deve retornar o nome do botão clidado pelo usuário. |
 
 <br />
@@ -9692,8 +9692,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao-selecionada]] | &#039;1-mes&#039;, &#039;2-meses&#039; e etc | Deve retornar a opção selecionada pelo usuário. |
 
 <br />
@@ -9754,8 +9754,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;concluir&#039;, &#039;compartilhar-comprovante&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -9793,8 +9793,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;editar-contato&#039; ou &#039;transferir-para-novo-contato&#039; | Deve retornar o nome do botão selecionado. |
 
 <br />
@@ -9820,8 +9820,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao-selecionada]] |  | Deve retornar a opção selecionada pelo usuário. Ex.: &#039;000-midway&#039;, &#039;341-itau-unibanco&#039;, &#039;001-banco-do-brasil&#039;, etc |
 
 <br />
@@ -9889,8 +9889,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;sim&#039; ou &#039;nao-ir-para-o-inicio&#039; | Deve retornar o nome do botão selecionado. |
 
 <br />
@@ -9944,8 +9944,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao-selecionada]] |  | Deve retornar a opção selecionada pelo usuário. Ex.: &#039;1-mes&#039;, &#039;2-meses&#039;, &#039;3-meses&#039;, etc |
 
 <br />
@@ -10000,8 +10000,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:senha-digitada-diferente-da-anterior&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 | [[data-transferencia]] |  | Deve retornar a data selecionada pelo usuário para efetuar a transferência. Ex.: &#039;10.04.2019&#039;, &#039;05.05.2020&#039;, etc |
 | [[banco]] |  | Deve informar o banco que vai receber a transferência. Ex.: &#039;midway&#039;, &#039;itau-unibanco&#039;, &#039;banco-do-brasil&#039;, etc |
@@ -10070,8 +10070,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao-selecionada]] | &#039;conta-premiada&#039;, &#039;emprestimos&#039;, &#039;assistencias&#039;, &#039;seguros&#039;, &#039;voltar&#039; e etc | Deve retornar o nome da opção selecionada. |
 
 <br />
@@ -10097,8 +10097,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-item]] | &#039;veja-aqui-todos-ultimos-sorteios&#039;, &#039;saiba-mais&#039;, &#039;voltar&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -10114,8 +10114,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-link]] | &#039;veja-aqui-todos-ultimos-sorteios&#039;, &#039;saiba-mais&#039; e etc | Deve retornar o nome do link clicado. |
 
 <br />
@@ -10554,8 +10554,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/home/mktplace-financeiro/[[nome-produto]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-produto]] | &#039;gift-card&#039;, &#039;emprestimo-pessoal&#039; e etc. | Deve retornar o nome do produto. |
 
 <br />
@@ -10571,8 +10571,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-card]] | &#039;botao&#039; ou &#039;card&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;seus-pedidos&#039;, &#039;gift-card&#039;, &#039;play-store&#039;, &#039;ifood&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -10586,8 +10586,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/home/mktplace-financeiro/[[nome-produto]]//home/mktplace-financeiro/[[nome-produto]]/[[seller]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[seller]] | &#039;play-store&#039;, &#039;ifood&#039; e etc. | Deve retornar o gift card escolhido. |
 
 <br />
@@ -10603,8 +10603,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[card-seller]] | &#039;play-store&#039;, &#039;ifood&#039;, &#039;creditas&#039; e etc | Deve retornar o nome do card clicado.  |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;valor-20&#039;, &#039;valor-10&#039;, &#039;valor-do-emprestimo-2000&#039; e etc | Deve retornar qual foi o botão clicado. |
 
@@ -10619,8 +10619,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/home/mktplace-financeiro/[[nome-produto]]/[[seller]]/resumo/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-produto]] | &#039;gift-card&#039;, &#039;emprestimo-pessoal&#039; e etc. | Deve retornar o nome do produto. |
 | [[seller]] | &#039;play-store&#039;, &#039;ifood&#039; e etc. | Deve retornar o gift card escolhido. |
 
@@ -10637,8 +10637,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[card-seller]] | &#039;play-store&#039;, &#039;ifood&#039;, &#039;creditas&#039; e etc | Deve retornar o nome do card clicado.  |
 | [[botao-link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar se foi clicado num botao ou link. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;ver-detalhes&#039;, &#039;termos-e-condicoes&#039;, &#039;proximo&#039; e etc | Deve retornar o nome do item clicado. |
@@ -10657,8 +10657,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[card-seller]] | &#039;ifood&#039;, &#039;uber&#039; e etc | Deve retornar o nome do card clicado.  |
 | [[ativar-desativar]] | &#039;ativar&#039; ou &#039;desativar&#039; | Deve retornar a ação do usuário. |
 
@@ -10673,8 +10673,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/home/mktplace-financeiro/[[nome-produto]]/[[seller]]/resumo/pagamento/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-produto]] | &#039;gift-card&#039;, &#039;emprestimo-pessoal&#039; e etc. | Deve retornar o nome do produto. |
 | [[seller]] | &#039;play-store&#039;, &#039;ifood&#039;, &#039;creditas&#039; e etc. | Deve retornar o gift card escolhido. |
 
@@ -10692,8 +10692,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[card-seller]] | &#039;ifood&#039;, &#039;uber&#039;, &#039;creditas&#039; e etc | Deve retornar o nome do card clicado.  |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;ver-detalhes&#039; e etc | Deve retornar qual foi o botão clicado. |
 
@@ -10712,8 +10712,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[card-seller]] | &#039;ifood&#039;, &#039;uber&#039;, &#039;creditas&#039; e etc | Deve retornar o nome do card clicado.  |
 | [[forma-pagamento]] | &#039;saldo&#039;, &#039;cartao-rchlo&#039; e etc | Deve retornar qual foi a forma de pagamento escolhida. |
 
@@ -10728,8 +10728,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/home/mktplace-financeiro/[[nome-produto]]/[[seller]]/sucesso/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-produto]] | &#039;gift-card&#039;, &#039;emprestimo-pessoal&#039; e etc. | Deve retornar o nome do produto. |
 | [[seller]] | &#039;play-store&#039;, &#039;ifood&#039;, &#039;creditas&#039; e etc. | Deve retornar o gift card escolhido. |
 
@@ -10746,8 +10746,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[card-seller]] | &#039;ifood&#039;, &#039;uber&#039;, &#039;creditas&#039; e etc | Deve retornar o nome do card clicado.  |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;ver-pedido&#039; e etc | Deve retornar qual foi o botão clicado. |
 
@@ -10776,8 +10776,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;uber&#039;, &#039;emprestimo-pessoal&#039; e etc | Deve retornar qual foi o botão clicado. |
 
 
@@ -10791,8 +10791,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/home/mktplace-financeiro/seus-pedidos/[[nome-produto]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-produto]] | &#039;gift-card&#039;, &#039;emprestimo-pessoal&#039; e etc. | Deve retornar o nome do produto. |
 
 <br />
@@ -10808,8 +10808,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[card-seller]] | &#039;ifood&#039;, &#039;uber&#039;, &#039;creditas&#039; e etc | Deve retornar o nome do card clicado.  |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;10.00:15/11/2021&#039;, &#039;2000&#039; e etc | Deve retornar qual foi o botão clicado. |
 
@@ -10824,8 +10824,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/home/mktplace-financeiro/[[nome-produto]]/[[seller]]/detalhes-pedido/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-produto]] | &#039;gift-card&#039;, &#039;emprestimo-pessoal&#039; e etc. | Deve retornar o nome do produto. |
 | [[seller]] | &#039;play-store&#039;, &#039;ifood&#039;, &#039;creditas&#039; e etc. | Deve retornar o seller escolhido.  |
 
@@ -10843,8 +10843,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[card-seller]] | &#039;ifood&#039;, &#039;uber&#039;, &#039;creditas&#039; e etc | Deve retornar o nome do card clicado.  |
 | [[status-etapa]] | &#039;pedido-feito&#039;, &#039;pagamento&#039;, &#039;confirmacao-com-parceiro&#039;, &#039;finalizando&#039;, &#039;pedido-cancelado&#039; e etc | Deve retornar em qual etapa do status do pedido. |
 
@@ -10862,8 +10862,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[card-seller]] | &#039;ifood&#039;, &#039;uber&#039;, &#039;creditas&#039; e etc | Deve retornar o nome do card clicado.  |
 | [[botao-ou-link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar se foi clicado num botao ou link.  |
 | [[nome-item]] | &#039;voltar&#039;, &#039;como-ativar&#039;, &#039;termos-e-condicoes&#039; e &#039;abrir-reclamacao&#039; | Deve retornar o nome do item clicado.  |
@@ -10883,8 +10883,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[card]] | &#039;ifood&#039;, &#039;uber&#039; e etc | Deve retornar o nome do card clicado.  |
 | [[status-mensagem]] | &#039;nao-foi-possivel-etc&#039;, &#039;nao-foi-possivel-confirmar-pagamento&#039; e etc | Deve retornar qual status de insucesso. |
 
@@ -10899,8 +10899,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/home/mktplace-financeiro/[[nome-produto]]/[[seller]]/modal-termos-condicoes/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-produto]] | &#039;gift-card&#039;, &#039;emprestimo-pessoal&#039; e etc. | Deve retornar o nome do produto. |
 | [[seller]] | &#039;play-store&#039;, &#039;ifood&#039;, &#039;creditas&#039; e etc. | Deve retornar o seller escolhido.  |
 
@@ -10918,8 +10918,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[card-seller]] | &#039;ifood&#039;, &#039;uber&#039;, &#039;creditas&#039; e etc | Deve retornar o nome do card clicado.  |
 
 <br />
@@ -11077,8 +11077,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao-icone]] | &#039;opcao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;emprestimo-pessoal&#039;, &#039;preventivo&#039;, &#039;voltar&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11091,8 +11091,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tela]] | &#039;emprestimo-pessoal&#039;, &#039;preventivo&#039; e etc. | Deve retornar nome da tela. |
 
 <br />
@@ -11109,8 +11109,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao-icone]] | &#039;opcao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[tela]] | &#039;emprestimo-pessoal&#039;, &#039;preventivo&#039; e etc. | Deve retornar nome da tela. |
 | [[nome-item]] | &#039;meus-contratos&#039;, &#039;solicitar-emprestimo-pessoal&#039;, &#039;voltar&#039;, &#039;cancelamento&#039; e etc | Deve retornar o nome do item clicado. |
@@ -11139,8 +11139,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao-icone]] | &#039;opcao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;continuar&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11178,8 +11178,8 @@ Resumo de produtos cadastrados
         });		
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;fechar&#039;, &#039;continuar&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11208,8 +11208,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;continuar&#039; e etc | Deve retornar o nome do item clicado. |
 | [[valorSolicitado]] |  &#039;1000&#039;, &#039;2000&#039; e etc | Deve retornar o valor solicitado para empréstimo pessoal |
@@ -11241,8 +11241,8 @@ Resumo de produtos cadastrados
         });		
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-link-icone]] | &#039;botao&#039;, &#039;icone&#039; ou &#039;link&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;fechar&#039;, &#039;contratar&#039;, &#039;detalhamento-cet&#039; e etc | Deve retornar o nome do item clicado. |
 | [[valorSolicitado]] |  &#039;1000&#039;, &#039;2000&#039; e etc | Deve retornar o valor solicitado para empréstimo pessoal |
@@ -11272,8 +11272,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;fechar&#039;, &#039;entendi&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11302,8 +11302,8 @@ Resumo de produtos cadastrados
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;li-concordo&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11333,8 +11333,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-link-icone]] | &#039;botao&#039; , &#039;link&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;fechar&#039;, &#039;compartilhar-contrato&#039;, &#039;concluir&#039; e etc | Deve retornar o nome do item clicado. |
 | [[valorSolicitado]] |  &#039;1000&#039;, &#039;2000&#039; e etc | Deve retornar o valor solicitado para empréstimo pessoal |
@@ -11365,8 +11365,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[aba]] | &#039;em-aberto&#039; ou &#039;pagos&#039; | Deve retornar o nome da aba carregada. |
 | [[qtd-contratos]] | &#039;2-contratos&#039;, &#039;nenhum-contrato&#039; e etc | Deve retornar a quantidade de contratos. |
 
@@ -11384,8 +11384,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[aba]] | &#039;em-aberto&#039; ou &#039;pagos&#039; | Deve retornar o nome da aba clicada. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;ver-detalhes-contrato-1&#039;, &#039;ver-detalhes-contrato-2&#039; e etc | Deve retornar o nome do item clicado. |
@@ -11400,8 +11400,8 @@ Resumo de produtos cadastrados
 	Analytics.logEvent("event",{"numeroContrato": "[[numeroContrato]]","statusContrato": "[[statusContrato]]"});
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[numeroContrato]] |  &#039;124327632&#039; e etc | Deve retornar o número do contrato |
 | [[statusContrato]] |  &#039;ativo&#039;,&#039;cancelado&#039;,&#039;liquidado&#039; e etc | Deve retornar o status do contrato |
 
@@ -11422,8 +11422,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;liquidar-parcelas&#039;, &#039;amortizar&#039;, &#039;cancelar-contrato&#039; e etc | Deve retornar o nome do item clicado. |
 | [[numeroContrato]] |  &#039;124327632&#039; e etc | Deve retornar o número do contrato |
@@ -11452,8 +11452,8 @@ Resumo de produtos cadastrados
         });		
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-item]] | &#039;quero-cancelar&#039;, &#039;agora-nao&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -11480,8 +11480,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;li-concordo&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11496,8 +11496,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | numeroContrato |  &#039;124327632&#039; e etc | Deve retornar o número do contrato |
 
 <br />
@@ -11539,8 +11539,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;liquidar-parcelas:2:valor-261.00&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11566,8 +11566,8 @@ Resumo de produtos cadastrados
         });		
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;boleto-bancario&#039;, &#039;debito-conta&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11593,8 +11593,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;confirmar-pagamento&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11608,8 +11608,8 @@ Resumo de produtos cadastrados
 	Analytics.logEvent("event",{"numeroContrato": "[[numeroContrato]]"});
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | numeroContrato |  &#039;124327632&#039; e etc | Deve retornar o número do contrato |
 
 <br />
@@ -11626,8 +11626,8 @@ Resumo de produtos cadastrados
         });		
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;fechar&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11654,8 +11654,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;gerar-boleto&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11669,8 +11669,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[numeroContrato]] |  &#039;124327632&#039; e etc | Deve retornar o número do contrato |
 | [[dataVencimento]] |  &#039;15/11&#039; e etc | Deve retornar a data de vencimento selecionada para o boleto |
 
@@ -11688,8 +11688,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;fechar&#039;, &#039;visualizar-boleto&#039;, &#039;copiar-codigo&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11716,8 +11716,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | [[nome-item]] | &#039;fechar&#039;, &#039;ok&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11744,81 +11744,6 @@ Resumo de produtos cadastrados
 
 <br />
 
-
-### Seguros e Assistências
-
-- **Onde:** Visualização da tela "Seguros e Assistências"
-
-```javascript
-    Analytics.logScreenView("/seguros-assistencias/");
-```
-
-
-<br />
-
-- **Quando:** No clique dos elementos
-- **Onde:** Na tela de &#039;Seguros e Assistências&#039;
-
-```javascript
-        Analytics.logEvent("event",{
-        	eventCategory: "app-midway:seguros-assistencias",
-        	eventAction: "clique:[[botao-icone]]",
-        	eventLabel: "[[nome-item]]"
-        });
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| `[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
-| `[[nome-item]]` | &#039;voltar&#039;, &#039;continuar&#039; e etc | Deve retornar o nome do item clicado. |
-
-<br />
-
-- **Onde:** Visualização das telas de "Produtos Contratados" (contratados ou cancelados)
-
-```javascript
-    Analytics.logScreenView("/seguros-assistencias/produtos-contratados-aba-[[contratados-cancelados]]-qtd-[[qtd-itens]]/");
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| `[[contratados-cancelados]]` | &#039;contratados&#039;, &#039;cancelados&#039; e etc | Deve retornar a aba carregada. |
-| `[[qtd-itens]]` | &#039;2&#039;, &#039;0&#039;, &#039;5&#039; e etc | Deve retornar a quantidade de itens. |
-
-<br />
-
-- **Quando:** Após interagir com as abas (também disparar quando a tela carregar já com a aba por padrão selecionada)
-- **Onde:** Nas telas de &quot;Produtos Contratados&quot; (contratados ou cancelados)
-
-```javascript
-        Analytics.logEvent("event",{
-        	eventCategory: "app-midway:produtos-contratados",
-        	eventAction: "clique:aba",
-        	eventLabel: "[[aba]]:[[qtd-itens]]"
-        });
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| `[[aba]]` | &#039;contratados&#039;, &#039;cancelados&#039; e etc | Deve retornar a aba carregada. |
-| `[[qtd-itens]]` | &#039;2&#039;, &#039;0&#039;, &#039;5&#039; e etc | Deve retornar a quantidade de itens. |
-
-<br />
-
-- **Quando:** No clique do ícone de voltar
-- **Onde:** Nas telas de &quot;Produtos Contratados&quot; (contratados ou cancelados)
-
-```javascript
-        Analytics.logEvent("event",{
-        	eventCategory: "app-midway:produtos-contratados",
-        	eventAction: "clique:icone",
-        	eventLabel: "voltar"
-        });
-```
-
-
-<br />
-
 ### Segunda via comprovante
 
 - **Onde:** Visualização da tela "Comprovantes e agendamentos"
@@ -11841,8 +11766,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | &#039;voltar&#039;, &#039;cancelar-recorrencia&#039;, &#039;segunda-via-comprovante&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11853,7 +11778,6 @@ Resumo de produtos cadastrados
 ```javascript
     Analytics.logScreenView("/seguros-assistencias/cancelar-recorrencia/");
 ```
-
 
 <br />
 
@@ -11868,8 +11792,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 |`[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]`| 'voltar:cancelar-recorrencia', 'recarga-programada' e etc | Deve retornar o nome do item clicado. |
 
@@ -11895,8 +11819,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 |`[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]`| 'voltar:detalhes-recorrencia', 'cancelar-recorrencia', 'ir-para-home' e etc | Deve retornar o nome do item clicado. |
 
@@ -11913,8 +11837,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-botao]]`| 'fechar', 'clicou-fora', 'confirmar-cancelamento' e etc. | Deve retornar o nome do botao clicado. |
 
 <br />
@@ -11939,8 +11863,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 |`[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]`| &#039;voltar&#039;, &#039;nova-transferencia&#039;, &#039;recorrente&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11966,8 +11890,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | &#039;fechar&#039;, &#039;concluir&#039;, &#039;ver-comprovante&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -11993,8 +11917,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-item]]` | &#039;compartilhar-comprovante&#039;, &#039;ir-para-home&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -12021,8 +11945,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | &#039;voltar&#039;, &#039;continuar:tim:20,00&#039;, &#039;continuar:vivo:25,00&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -12048,8 +11972,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[opcao-icone]]` | &#039;opcao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | &#039;fechar&#039;, &#039;R$10,00&#039;, &#039;R$25,00&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -12075,8 +11999,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | &#039;voltar&#039;, &#039;pagar:saldo-conta&#039;, &#039;pagar:cartao&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -12111,8 +12035,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/recarga-celular/[[tela]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[tela]]` | &#039;algo-deu-errado&#039;, &#039;cartao-sem-limite&#039; e etc | Deve retornar o nome da tela. |
 
 <br />
@@ -12128,8 +12052,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[tela]]` | &#039;algo-deu-errado&#039;, &#039;cartao-sem-limite&#039; e etc | Deve retornar o nome da tela. |
 
 <br />
@@ -12140,8 +12064,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/recarga-celular/realizada-sucesso:op-[[operadora]]:val-[[valor]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[operadora]]` | &#039;tim&#039;, &#039;claro&#039; e etc | Deve retornar a operadora que foi a recarga. |
 | `[[valor]]` |  '15,00', '20,00' e etc | Deve retornar o valor da recarga. |
 
@@ -12158,8 +12082,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-botao]]` | &#039;compartilhar&#039;, &#039;ver-comprovante&#039; e etc | Deve retornar o nome do botão. |
 
 <br /> 
@@ -12170,8 +12094,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/recarga-celular/comprovante-recarga:op-[[operadora]]:val-[[valor]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[operadora]]` | &#039;tim&#039;, &#039;claro&#039; e etc | Deve retornar a operadora que foi a recarga. |
 | `[[valor]]` | &#039;R$15,00&#039;, &#039;R$20,00&#039; e etc | Deve retornar o valor da recarga. |
 
@@ -12188,8 +12112,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | &#039;voltar&#039;, &#039;fechar&#039;, &#039;compartilhar&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -12214,8 +12138,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | 'fechar', 'repetir-recarga', 'voltar', 'continuar:tim:20,00', 'continuar:vivo:25,00' e etc | Deve retornar o nome do item clicado. |
 
@@ -12232,8 +12156,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-campo]]` | 'ddd', 'numero' e 'valor-recarga' | DDeve retornar o nome do campo. |
 
 <br />
@@ -12256,8 +12180,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[botao-icone]]` | 'botao' ou 'icone' | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | 'voltar', 'pagar:saldo-conta', 'pagar:cartao' e etc | Deve retornar o nome do item clicado. |
 
@@ -12274,8 +12198,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[botao-icone]]` | 'botao' ou 'icone' | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | 'fechar', 'recarregar' e etc | Deve retornar o nome do item clicado. |
 
@@ -12308,8 +12232,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-botao]]` | 'voltar:recarregue-sem-sair-de-casa' ou 'recarregar-celular' | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -12332,8 +12256,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-botao]]` | 'voltar:como-deseja-recarregar', 'recarregar-agora', 'programar-recarga-mensal' ou 'repertir-ultima-recarga' | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -12344,8 +12268,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/recarregar-celular/[[nome-fluxo]]/numero-recebe-recarga/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 
 <br />
@@ -12361,8 +12285,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 | `[[nome-campo]]` | 'ddd', 'telefone', 'nome' e etc | Deve retornar o nome do campo preenchido. |
 
@@ -12379,8 +12303,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 | `[[elemento]]` | 'botao' ou 'link' | Deve retornar o nome do elemento. |
 | `[[nome-elemento]]` | 'voltar:qual-numero-vai-receber-a-recarga', 'escolher-numero-dos-seus-contatos', 'continuar' e etc. | Deve retornar o nome do item clicado. |
@@ -12398,8 +12322,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 | `[[status]]` | 'selecionado' ou 'desselecionado' | Deve retornar o status do checkbox. |
 
@@ -12411,8 +12335,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/recarregar-celular/[[nome-fluxo]]/operadora-numero/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 
 <br />
@@ -12428,8 +12352,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 | `[[operadora]]` | 'claro', 'vivo', 'tim' e etc. | Deve retornar a operadora escolhida. |
 
@@ -12446,8 +12370,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 | `[[nome-botao]]` | 'voltar:qual-operadora-do-numero' ou 'continuar' | Deve retornar o nome do botão clicado |
 
@@ -12459,8 +12383,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/recarregar-celular/[[nome-fluxo]]/operadora-numero/valor-recarga/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 
 <br />
@@ -12476,8 +12400,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 | `[[valor]]` | '20', '30', '40' e etc  | Deve retornar o valor escolhido. |
 
@@ -12494,8 +12418,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 | `[[nome-botao]]` | 'voltar:qual-valor-da-recarga', 'continuar:20:tim', 'continuar:10:claro' e etc | Deve retornar o nome do botão clicado |
 
@@ -12507,8 +12431,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/recarregar-celular/[[nome-fluxo]]/operadora-numero/valor-recarga/forma-pagamento/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 
 <br />
@@ -12524,8 +12448,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 | `[[pagamento]]` | 'saldo-disponivel-em-conta' e etc | Deve retornar a forma de pagamento escolhida. |
 
@@ -12542,8 +12466,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 | `[[nome-botao]]` | 'voltar:forma-de-pagamento', 'continuar', 'voltar-para-o-inicio' e etc | Deve retornar o nome do botão clicado |
 
@@ -12560,8 +12484,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 | `[[erro]]` | 'saldo-insuficiente' e etc | Deve retornar o erro mostrado ao usuário. |
 
@@ -12592,8 +12516,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[dia-escolhido]]` | 'dia-01', 'dia-10', 'dia-20' e etc | Deve retornar o dia escolhido. |
 
 <br />
@@ -12612,8 +12536,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[fechar]]` | 'fechar' ou 'clicou-fora' | Deve retornar o clique do usuário. |
 
 <br />
@@ -12632,8 +12556,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-botao]]` | 'voltar:programar-recarga-mensal', 'continuar' e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -12644,8 +12568,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/recarregar-celular/[[nome-fluxo]]/operadora-numero/valor-recarga/forma-pagamento/resumo-transacao/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 
 <br />
@@ -12661,8 +12585,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 | `[[nome-botao]]` | 'voltar:resumo-transacao', 'concluir-recarga' e etc | Deve retornar o nome do botão clicado. |
 
@@ -12674,8 +12598,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/recarregar-celular/[[nome-fluxo]]/operadora-numero/valor-recarga/forma-pagamento/resumo-transacao/pedido-concluido-com-sucesso/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 
 <br />
@@ -12691,8 +12615,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-fluxo]]` | 'recarregar-agora' ou 'recarga-programada' | Deve retornar o nome do fluxo correspondente. |
 | `[[nome-botao]]` | 'fechar:pedido-concluido', 'programar-recarga-mensal' e etc | Deve retornar o nome do botão clicado. |
 
@@ -12719,8 +12643,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-campo]]` | 'operadora', 'valor', 'forma-de-pagamento' e etc| Deve retornar o nome do campo que o usuário quer editar. |
 
 <br />
@@ -12736,8 +12660,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-botao]]` | 'voltar:repertir-ultima-recarga', 'recarregar-celular' e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -12761,8 +12685,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-campo]]` | 'fechar:pedido-concluido', 'programar-recarga-mensal' e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -12788,8 +12712,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-botao]]` | 'voltar:numero-dos-contatos', 'buscar-na-agenda-do-seu-celular', 'meu-numero', 'tia-claudia' e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -12813,8 +12737,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-campo]]` | 'ddd', 'telefone', 'nome', 'operadora:vivo', 'operadora:tim', 'operadora:claro' e etc | Deve retornar o nome do campo preenchido. |
 
 <br />
@@ -12830,8 +12754,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-botao]]` | 'voltar:informacao-do-contato', 'remover-contato' ou 'selecionar-contato' | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -12847,8 +12771,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-botao]]` | 'fechar', 'confirmar-remocao' ou 'clicou-fora' | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -12864,8 +12788,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[acao]]` | 'salvar:contato', 'remover:contato' e etc | Deve retornar a ação do usuário. |
 | `[[retorno]]` | 'alteracoes-salvas-com-sucesso', 'erro:nao-foi-possivel-excluir-contato', 'nao-foi-possivel-salvar-as-alteracoes' e etc | Deve retornar o callback da aplicação |
 
@@ -12879,8 +12803,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/bem-vindo-pix-[[numero-tela]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[numero-tela]]` | &#039;1&#039;, &#039;2&#039;, &#039;3&#039; e etc | Deve retornar o número da tela. |
 
 <br />
@@ -12896,8 +12820,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[numero-tela]]` | &#039;1&#039;, &#039;2&#039;, &#039;3&#039; e etc | Deve retornar o número da tela. |
 | `[[botao-icone]]` | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | &#039;fechar&#039;, &#039;proximo&#039;, &#039;ok&#039; e etc | Deve retornar o nome do item clicado. |
@@ -12910,8 +12834,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/home-pix-[[tem|nao-chave-registrada]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[tem\|nao-chave-registrada]]` | &#039;nao-tem-chave-registrada&#039; ou &#039;tem-chave-registrada&#039; | Deve retornar se o usuário possui ou não chave registrada. |
 
 <br />
@@ -12927,8 +12851,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[botao-icone-link-card-carrossel]]` | &#039;botao&#039;, &#039;icone&#039;, &#039;link&#039; ou &#039;card-carrossel&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | &#039;voltar&#039;, &#039;todas-funcionalidades-pix&#039;, &#039;cadastrar-chave&#039;, &#039;ver-extrato&#039;, &#039;transferencia-pix&#039;, &#039;leitor-qrcode&#039;, &#039;copia-cola&#039;, &#039;minhas-chaves&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -12945,8 +12869,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-item]]` | &#039;cancelar&#039;, &#039;devolver&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -12971,8 +12895,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[botao-link]]` | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | &#039;voltar&#039;, &#039;central-atendimento&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -12997,8 +12921,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[botao-link]]` | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | &#039;voltar&#039;, &#039;central-atendimento&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -13027,8 +12951,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[botao-link]]` | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | &#039;voltar&#039;, &#039;mais-chave&#039;, &#039;cadastrar-chave&#039; e etc | Deve retornar o nome do item clicado. |
 | `[[TipoChavePix]]` |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
@@ -13046,8 +12970,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[status]]` | &#039;erro:campo-obrigatorio&#039;, &#039;erro:formato-email-invalido&#039; e etc | Deve retornar o status do callback. |
 
 <br />
@@ -13058,8 +12982,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/modal-[[nome-modal]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-modal]]` | &#039;chave-existente&#039;, &#039;limite-5-chaves-conta&#039; e etc | Deve retornar o nome do modal. |
 
 <br />
@@ -13084,8 +13008,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[icone-link]]` | &#039;icone&#039; ou &#039;link&#039; | Deve retornar o nome da opção clicada. |
 | `[[nome-item]]` | &#039;voltar&#039;, &#039;reenviar&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -13102,8 +13026,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[status]]` | &#039;erro:codigo-incorreto&#039; e etc | Deve retornar o status do callback. |
 
 <br />
@@ -13114,8 +13038,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/modal-[[nome-modal]]/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-modal]]` | &#039;solicitacao-chave-pendente&#039;, &#039;portabilidade-chave&#039;, reivindicaoca-chave&#039;, &#039;chave-solicitacao-aberto&#039; e etc | Deve retornar o nome do modal. |
 
 <br />
@@ -13131,8 +13055,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-modal]]` | &#039;solicitacao-chave-pendente&#039;, &#039;portabilidade-chave&#039;, reivindicaoca-chave&#039;, &#039;chave-solicitacao-aberto&#039; e etc | Deve retornar o nome do modal. |
 | `[[nome-item]]` | &#039;continuar&#039;, &#039;voltar&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -13146,8 +13070,8 @@ Resumo de produtos cadastrados
 	Analytics.logEvent("event",{"TipoChavePix": "[[TipoChavePix]]"});
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[TipoChavePix]]` |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
 
 <br />
@@ -13159,8 +13083,8 @@ Resumo de produtos cadastrados
 	Analytics.logEvent("event",{"TipoChavePix": "[[TipoChavePix]]"});
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-tela]]` | &#039;chave-pix-cadastrada-sucesso&#039;, &#039;solicitacao-em-analise&#039; e etc | Deve retornar o nome da tela. |
 | `[[TipoChavePix]]` |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
 
@@ -13177,8 +13101,8 @@ Resumo de produtos cadastrados
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | `[[nome-tela]]` | &#039;chave-pix-cadastrada-sucesso&#039;, &#039;solicitacao-em-analise&#039; e etc | Deve retornar o nome da tela. |
 | `[[botao-icone-link]]` | &#039;botao&#039;, &#039;icone&#039; ou &#039;link&#039; | Deve retornar o elemento clicado. |
 | `[[nome-item]]` | &#039;fechar&#039;, &#039;minhas-chaves&#039;, &#039;atendimento&#039; e etc | Deve retornar o nome do item clicado. |
@@ -13211,8 +13135,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-aba-link]] | &#039;botao&#039;, &#039;aba&#039; ou &#039;link&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;cadastrar-nova-chave&#039;, &#039;todos:2-chaves&#039;, &#039;ativas:4-chaves&#039;, &#039;em-analise:5-chaves&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -13230,8 +13154,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-link]] | &#039;botao&#039;ou &#039;link&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;ver-mais&#039;, &#039;excluir&#039; e etc | Deve retornar o nome do item clicado. |
 | [[TipoChavePix]] |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
@@ -13244,8 +13168,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/minhas-chaves/modal-[[nome-modal]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-modal]] | &#039;solicitacao-portabilidade&#039;, &#039;solicitacao-reivindicacao&#039; e etc | Deve retornar o nome do modal. |
 
 <br />
@@ -13261,8 +13185,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-modal]] |  'modal-solicitacao-portabilidade', 'modal-solicitacao-reivindicacao' e etc | Deve retornar o nome do modal. |
 | [[botao-icone]] |  'botao' ou 'icone' |  Deve retornar o elemento clicado. |
 | [[nome-item]]] |  'fechar', 'recusar', 'aceitar' e etc | Deve retornar o nome do item clicado. |
@@ -13275,8 +13199,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/minhas-chaves/solicitacao-[[recusada-aceita]]-sucesso/");
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[recusada-aceita]] | &#039;recusada&#039; ou &#039;aceita&#039; | Deve retornar a tela. |
 | TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
 
@@ -13295,8 +13219,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-tela]] | &#039;solicitacao-recusada-sucesso&#039;, &#039;solicitacao-aceita-sucesso&#039; e etc | Deve retornar o nome da tela. |
 | [[botao-icone-link]] | &#039;botao&#039;, &#039;icone&#039; ou &#039;link&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;fechar&#039;, &#039;minha-conta&#039;, &#039;atendimento&#039; e etc | Deve retornar o nome do item clicado. |
@@ -13320,8 +13244,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/devolucao-pix/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
 
 <br />
@@ -13339,8 +13263,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;devolver&#039; e etc | Deve retornar o nome do item clicado. |
 | TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
@@ -13359,8 +13283,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;valor-maior-que-recebido&#039; e etc | Deve retornar o status do callback. |
 
 <br />
@@ -13371,8 +13295,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/devolucao-pix-sucesso/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
 
 
@@ -13390,8 +13314,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;fechar&#039;, &#039;fazer-outro-pix&#039;, &#039;ver-comprovante&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -13417,8 +13341,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-item]] | &#039;voltar&#039;, &#039;confirmar&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -13430,8 +13354,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[nome-tela]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-tela]] | &#039;chave-pix-excluida-sucesso&#039;, &#039;chave-pix-sera-excluida&#039; e etc | Deve retornar o nome da tela. |
 | TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
 
@@ -13449,8 +13373,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone-link]] | &#039;botao&#039;, &#039;icone&#039; ou &#039;link&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;fechar&#039;, &#039;minha-conta&#039;, &#039;atendimento&#039; e etc | Deve retornar o nome do item clicado. |
 | [[nome-tela]] | &#039;chave-pix-excluida-sucesso&#039;, &#039;chave-pix-sera-excluida&#039; e etc | Deve retornar o nome da tela. |
@@ -13481,8 +13405,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;criar-qr-code&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -13499,8 +13423,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-campo]] | &#039;valor&#039;, &#039;descricao&#039; e etc | Deve retornar o campo opcional preenchido. |
 | TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
 
@@ -13518,8 +13442,8 @@ Resumo de produtos cadastrados
 ```javascript
     Analytics.logScreenView("/qr-code-criado/")
 ```
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
 
 
@@ -13536,8 +13460,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;fechar&#039;, &#039;compartilhar-qr-code&#039;, &#039;copiar-codigo&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -13551,8 +13475,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[nome-tela]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-tela]] | &#039;posicione-qr-code-abaixo&#039;, &#039;cole-codigo-pix&#039; e etc | Deve retornar o nome da tela. |
 
 <br />
@@ -13568,8 +13492,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-tela]] | &#039;posicione-qr-code-abaixo&#039;, &#039;cole-codigo-pix&#039; e etc | Deve retornar o nome da tela. |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;pix-copia-cola&#039;, &#039;continuar&#039; e etc | Deve retornar o nome do item clicado. |
@@ -13589,8 +13513,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-tela]] | &#039;posicione-qr-code-abaixo&#039;, &#039;cole-codigo-pix&#039; e etc | Deve retornar o nome da tela. |
 | [[status]] | &#039;erro:nao-foi-possivel-identificar-qr-code&#039;, &#039;erro:pix-incorreto&#039; e etc | Deve retornar o status do callback. |
 
@@ -13615,8 +13539,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[opcao-selecionada]] | &#039;cpf/cnpj&#039;, &#039;celular&#039;, &#039;chave-aleatoria&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -13628,8 +13552,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/[[nome-tela]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-tela]] | &#039;digite-cpf-cnpj&#039;, &#039;digite-celular-ddd&#039;, &#039;digite-email&#039;, &#039;digite-chave-aleatoria&#039; e etc | Deve retornar o nome da tela. |
 
 <br />
@@ -13645,8 +13569,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-tela]] | &#039;digite-cpf-cnpj&#039;, &#039;digite-celular-ddd&#039;, &#039;digite-email&#039;, &#039;digite-chave-aleatoria&#039; e etc | Deve retornar o nome da tela. |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;continuar&#039; e etc | Deve retornar o nome do item clicado. |
@@ -13664,8 +13588,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-tela]] | &#039;digite-cpf-cnpj&#039;, &#039;digite-celular-ddd&#039;, &#039;digite-email&#039;, &#039;digite-chave-aleatoria&#039; e etc | Deve retornar o nome da tela. |
 | [[status]] | &#039;erro:cpf-incorreto&#039;, &#039;erro:celular-incorreto&#039;, &#039;erro:email-incorreto&#039; e etc | Deve retornar o status do callback. |
 
@@ -13678,8 +13602,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/transferencia-pix-[[estatico-dinamico]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[estatico-dinamico]] | &#039;estatico&#039; ou &#039;dinamico&#039; | Deve retornar o tipo da tela. |
 | TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
 
@@ -13698,8 +13622,8 @@ Resumo de produtos cadastrados
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[estatico-dinamico]] | &#039;estatico&#039; ou &#039;dinamico&#039; | Deve retornar o tipo da tela. |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;voltar&#039;, &#039;transferir&#039; e etc | Deve retornar o nome do item clicado. |
@@ -13718,8 +13642,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[estatico-dinamico]] | &#039;estatico&#039; ou &#039;dinamico&#039; | Deve retornar o tipo da tela. |
 | [[nome-campo]] | &#039;descricao&#039; e etc | Deve retornar o campo opcional preenchido. |
 
@@ -13731,8 +13655,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/modal-erro-[[nome-erro]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-erro]] | &#039;saldo-insuficiente&#039;, &#039;algo-deu-errado&#039;, &#039;chave-dados-bancarios-invalidos&#039; e etc | Deve retornar o nome do erro. |
 
 <br />
@@ -13743,8 +13667,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/pix-realizado-sucesso/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
 
 <br />
@@ -13760,8 +13684,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;fechar&#039;, &#039;fazer-outro-pix&#039;, &#039;ver-comprovante&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -13773,8 +13697,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/comprovante-pix-[[estatico-dinamico]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[estatico-dinamico]] | &#039;estatico&#039; ou &#039;dinamico&#039; | Deve retornar o tipo da tela. |
 | TipoChavePix |  &#039;cpf&#039;, &#039;email&#039;, &#039;celular&#039;, &#039;cpf/email&#039;, &#039;pix-qrcode-criado:cpf/celular&#039;, &#039;pix-qrcode-criado:cpf&#039; e etc | Deve retornar o(s) tipo(s) de pix selecionado(s) |
 
@@ -13792,8 +13716,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] | &#039;fechar&#039;, &#039;compartilhar&#039;, &#039;fazer-outro-pix&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -13821,8 +13745,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-item]] | &#039;devolver-pix&#039;, &#039;ver-comprovante&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -13849,8 +13773,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-item]] | &#039;voltar&#039;, &#039;mostrar-senha&#039;, &#039;esconder-senha&#039;, &#039;enviar-senha&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -13868,8 +13792,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039;, &#039;erro:repeticao-numeros-seguidos&#039; e etc | Deve retornar o status do callback. |
 
 <br />
@@ -13893,8 +13817,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-item]] | &#039;voltar&#039;, &#039;mostrar-senha&#039;, &#039;esconder-senha&#039;, &#039;enviar-confirmacao-senha&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -13911,8 +13835,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039;, &#039;erro:senha-digitada-diferente-anterior&#039; e etc | Deve retornar o status do callback. |
 
 <br />
@@ -13954,8 +13878,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-link]] | &#039;link&#039; ou &#039;botao&#039; | Deve retornar o tipo de elemento. |
 | [[nome-item]] | &#039;o-numero-do-cartao-nao-e-esse&#039;, &#039;continuar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do item clicado. |
 
@@ -13981,8 +13905,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-link]] | &#039;link&#039; ou &#039;botao&#039; | Deve retornar o tipo de elemento. |
 | [[nome-item]] | &#039;fechar&#039;, &#039;telefone-capitais&#039;, &#039;telefone-demais-localidades&#039; etc. | Deve retornar o nome do item clicado. |
 
@@ -14008,8 +13932,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;mostrar-senha&#039;, &#039;esconder-senha&#039;, &#039;voltar&#039;, &#039;enviar-senha&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -14025,8 +13949,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:repeticao-numeros-seguidos&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -14048,8 +13972,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] | &#039;mostrar-senha&#039;, &#039;esconder-senha&#039;, &#039;voltar&#039;, &#039;enviar-senha&#039; etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -14067,8 +13991,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:senha-diferente-anterior&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -14092,13 +14016,213 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]] | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar se clicou no botao ou no icone. |
 
 <br />
 
-### Eventos - Super App - Assistências e Seguros
+### Seguros e Assistências - Meus Produtos Contratados
+
+- **Onde:** Visualização da tela "Seguros e Assistências"
+
+```javascript
+    Analytics.logScreenView("/seguros-assistencias/");
+```
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de &#039;Seguros e Assistências&#039;
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:seguros-assistencias",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-item]]` | 'voltar:seguros-e-assistencias', 'contratar-novos-produtos', 'meus-produtos-cadastrados' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Visualização das telas de "Consultar Meus Produtos Contratados" (contratados ou cancelados)
+
+```javascript
+    Analytics.logScreenView("/seguros-assistencias/consultar-meus-produtos-contratados/");
+```
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de 'Consultar meus produtos contratados'
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:seguros-assistencias:consultar-meus-produtos-contratados",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-item]]` | 'voltar:meus-produtos-contratados', 'continuar' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela "Consultar"
+
+```javascript
+    Analytics.logScreenView("/seguros-assistencias/consultar-meus-produtos-contratados/consultar/");
+```
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de 'Consultar'
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:seguros-assistencias:consultar",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-item]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-item]]` | 'voltar:consultar', 'produtos-contratados', 'meus-numeros-da-sorte', 'atendimento' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela de "Numeros da Sorte"
+
+```javascript
+    Analytics.logScreenView("/seguros-assistencias/consultar-meus-produtos-contratados/consultar/numeros-da-sorte/[[qtd-numeros]]/");
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[qtd-numeros]]` | '2', '0', '5' e etc | Retorna a quantidade de números da sorte. |
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de 'Numeros da Sorte'
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:seguros-assistencias:consultar:numeros-da-sorte",
+        	eventAction: "clique:botao",
+        	eventLabel: "voltar:numeros-da-sorte"
+        });
+```
+
+<br />
+
+- **Onde:** Visualização da tela de "Atendimento"
+
+```javascript
+    Analytics.logScreenView("/seguros-assistencias/consultar-meus-produtos-contratados/consultar/atendimento:[[aba-visualizada]]/");
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[aba-visualizada]]` | 'cartoes-rchlo' ou 'canal-do-parceiro' | Retorna a aba visualizada. |
+
+<br />
+
+- **Quando:** No clique das Abas
+- **Onde:** Na tela de 'Atendimento'
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:seguros-assistencias:consultar:atendimento",
+        	eventAction: "clique:aba",
+        	eventLabel: "[[aba-clicada]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[aba-clicada]]` | 'cartoes-rchlo' ou 'canal-do-parceiro' | Retorna o nome da aba clicada. |
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de 'Atendimento'
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:seguros-assistencias:consultar:atendimento",
+        	eventAction: "clique:botao",
+        	eventLabel: "voltar:atendimento"
+        });
+```
+
+<br />
+
+- **Onde:** Visualização da tela de "Produtos Contratados"
+
+```javascript
+    Analytics.logScreenView("/seguros-assistencias/produtos-contratados:[[aba-visualizada]]/");
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[aba-visualizada]]` | 'ativos' ou 'inativos' | Retorna a aba visualizada. |
+
+<br />
+
+- **Quando:** No clique nos elementos
+- **Onde:** Na tela de "Produtos Cadastrados"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:seguros-assistencias:produtos-contratados:[[aba-visualizada]]",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-item]]",
+		statusContrato: "[[statusContrato]]",
+		dataVencimento: "[[dataVencimento]]",
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		numeroContrato: "[[numeroContrato]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[aba-visualizada]]` | 'ativos' ou 'inativos' | Retorna a aba visualizada. |
+| `[[nome-item]]` | 'voltar:produtos-contratatos', 'ver-detalhes' e etc | Deve retornar o nome do item clicado. |
+| `[[statusContrato]]` | 'ativo', 'cancelado', 'liquidado' e etc | Deve retornar o status do contrato |
+| `[[dataVencimento]]` | '15/11' e etc | Deve retornar a data de vencimento selecionada para o boleto |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[numeroContrato]]` | '124327632' e etc | Deve retornar o número do contrato |
+
+<br />
+
+- **Quando:** Após interagir com as abas (também disparar quando a tela carregar já com a aba por padrão selecionada)
+- **Onde:** Nas telas de &quot;Produtos Contratados&quot; (contratados ou cancelados)
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:seguros-assistencias:consultar:produtos-contratados",
+        	eventAction: "clique:aba",
+        	eventLabel: "[[aba]]:[[qtd-itens]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[aba]]` | 'ativos' ou 'inativos' | Deve retornar a aba carregada. |
+| `[[qtd-itens]]` | &#039;2&#039;, &#039;0&#039;, &#039;5&#039; e etc | Deve retornar a quantidade de itens. |
+
+<br />
+
+### Seguros e Assistências - Contratar Novos Produtos
 
 - **Onde:** Visualização da tela &quot;assistencia e seguros&quot;
 
@@ -14106,151 +14230,183 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/seguros-e-assistencias/")
 ```
 
-
 <br />
 
-- **Quando:** No clique nos botões &#039;Simule e contrate&#039;
-- **Onde:** Na tela de &quot;Seguros e assitências&quot;
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de 'Seguros e Assistências'
 
 ```javascript
         Analytics.logEvent("event", {
         	eventCategory: "app-midway:seguros-e-assistencias" ,
         	eventAction: "clique:botao" ,
-        	eventLabel: "simule-e-contrate"
+        	eventLabel: "[[nome-item]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-item]]` |  'voltar:seguros-e-assistencias', 'contratar-novos-produtos', 'meus-produtos-cadastrados' e etc | Deve retornar o nome do item clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela de "Contratar Seguros e Assistências"
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/contratar-seguros-e-assistencias/")
+```
 
 <br />
 
 
-- **Quando:** No clique nos botões
-- **Onde:** Nas telas &quot;Seguros e assitências&quot;
+- **Quando:** No clique nos elementos
+- **Onde:** Na tela de "Contratar Seguros e Assistências"
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias" ,
+        	eventCategory: "app-midway:contratar-seguros-assistencias" ,
         	eventAction: "clique:botao" ,
-        	eventLabel: "[[nome-botao]]"
+        	eventLabel: "[[nome-item]]"
 		})
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;cancelamento&#039;, &#039;meus-numeros-da-sorte&#039;, &#039;produtos-contratados&#039; e etc. | Deve retornar o nome do botão clicado. |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-item]]` | 'voltar:contratar-seguros-e-assistencias', 'continuar' e etc | Deve retornar o nome do item clicado. |
 
 <br />
 
-- **Onde:** Visualização da tela de &quot;produtos de  assistencia e seguros&quot;
+- **Onde:** Visualização da tela de "Contratar"
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-tela-modal]]/")
+    Analytics.logScreenView("/seguros-e-assistencias/contratar-seguros-e-assistencias/contratar/")
 ```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-tela-modal]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; , &#039;modal-moto-premiavel&#039;, &#039;modal-mais-saude&#039; e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
 
 <br />
 
-
-- **Quando:** No clique nos botões
-- **Onde:** Nas telas de detalhes do produtos de &quot;Seguros e assitências&quot;
+- **Quando:** No clique nos elementos
+- **Onde:** Na tela de "Contratar"
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:detalhe-produto" ,
+        	eventCategory: "app-midway:contratar-seguros-assistencias" ,
         	eventAction: "clique:botao" ,
-        	eventLabel: "[[nome-botao]]"
+        	eventLabel: "[[nome-item]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;entendi-vamos-la&#039;, &#039;fechar&#039;, &#039;continuar&#039; e etc. | Deve retornar o nome do botão clicado. |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-item]]` | 'voltar:contratar', 'seguros', 'assistencias' e etc | Deve retornar o nome do item clicado. |
 
 <br />
 
-- **Onde:** Visualização da tela de &quot;home de produtos de  assistencia e seguros&quot;
+- **Onde:** Visualização da tela de "Assistências"
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-tela]]/home/")
+    Analytics.logScreenView("/seguros-e-assistencias/contratar-seguros-e-assistencias/contratar/[[seguro-ou-assistencias]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-tela]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[seguro-ou-assistencias]]` |'seguro' ou 'assistencias' | Retorna o tipo de contratação. |
 
 <br />
 
-- **Quando:** No clique nos botões
-- **Onde:** Nas telas de home do produtos de &quot;Seguros e assitências&quot;
+- **Quando:** No clique nos elementos
+- **Onde:** Na tela de "Assistências"
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:home-produto" ,
+        	eventCategory: "app-midway:contratar-[[seguro-ou-assistencias]]" ,
         	eventAction: "clique:botao" ,
-        	eventLabel: "[[nome-botao]]"
+        	eventLabel: "[[nome-item]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;simular-e-contratar&#039;, &#039;saiba-mais&#039;, &#039;area-do-cliente&#039; e etc | Deve retornar o nome do botão clicado. |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[seguro-ou-assistencias]]` |'seguro' ou 'assistencias' | Retorna o tipo de contratação. |
+| `[[nome-item]]` | 'voltar:contratar', 'moto', 'automovel', 'residencial', 'odonto' e etc | Deve retornar o nome do item clicado. |
 
 <br />
 
-
-- **Onde:** Visualização do modal que aparece após clicar em &quot;área do cliente&quot; e em &quot;saiba mais&quot; na home de produtos de assistência e seguros.
+- **Onde:** Visualização da tela do produto escolhido
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-tela]]/home/[[nome-modal]]/")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-tela]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
-| [[nome-modal]] | &#039;saiba-mais&#039;, &#039;parceiro-vale-saude&#039; e etc | Deve retornar o nome do modal . |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 
 <br />
 
-- **Quando:** No clique nos botões
-- **Onde:** No modal que aparece após clicar em &#039;área do cliente&#039; e em &#039;saiba mais &#039; na home de produtos de &#039; assistência e seguros
+- **Quando:** No clique nos elementos
+- **Onde:** Na tela do produto escolhido
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:home-produto" ,
-        	eventAction: "[[nome-modal]]:clique-botao" ,
-        	eventLabel: "[[nome-botao]]"
+        	eventCategory: "app-midway:contratar-[[seguro-ou-assistencias]]" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-item]]",
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
 		})
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] |  &#039;fechar&#039;, &#039;entendi&#039; , &#039;ok-continuar&#039; e etc | Deve retornar o nome do botão clicado. |
-| [[nome-modal]] | &#039;saiba-mais&#039;, &#039;parceiro-vale-saude&#039; e etc | Deve retornar o nome do modal . |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[seguro-ou-assistencias]]` |'seguro' ou 'assistencias' | Retorna o tipo de contratação. |
+| `[[nome-item]]` | 'voltar:assistencia-odonto', 'voltar:automovel-premiavel', 'saiba-mais', 'conheca-agora' e etc | Deve retornar o nome do item clicado. |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 
 <br />
 
+- **Onde:** Visualização do modal que aparece após clicar em 'área do cliente' e em 'saiba mais ' na home de produtos de ' assistência e seguros
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]/[[nome-modal]]/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nome-modal]]` | 'saiba-mais', 'parceiro-vale-saude' e etc | Deve retornar o nome do modal. |
+
+<br />
+
+- **Quando:** No clique nos elementos do modais
+- **Onde:** No modal que aparece após clicar em 'área do cliente' e em 'saiba mais' na home de produtos de 'assistência e seguros'
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:modal:[[nome-modal]]" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]",
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
+		})
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-modal]]` | 'saiba-mais', 'parceiro-vale-saude' e etc | Deve retornar o nome do modal. |
+| `[[nome-botao]]` | 'clicou-fora', 'fechar', 'entendi' , 'ok-continuar' e etc | Deve retornar o nome do item clicado. |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
 
 - **Onde:** Visualização da tela de cadastro de dados para os produtos de  assistencia e seguros
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/cadastro-de-dados/[[etapa-form]]/")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]/cadastro-de-dados/[[etapa-form]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
-| [[etapa-form]] | &#039;etapa-1&#039;, &#039;etapa-2&#039; e etc | Caso o formulario de cadastro tenha mais de uma etapa , essa variavel deve retornar a etapa do formulario em que o usuario esta, caso contrario retornar a informação vazia. |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[etapa-form]]` | &#039;etapa-1&#039;, &#039;etapa-2&#039; e etc | Caso o formulario de cadastro tenha mais de uma etapa , essa variavel deve retornar a etapa do formulario em que o usuario esta, caso contrario retornar a informação vazia. |
 
 <br />
 
@@ -14261,16 +14417,17 @@ Resumo de produtos cadastrados
         Analytics.logEvent("event", {
         	eventCategory: "app-midway:seguros-e-assistencias:cadastro" ,
         	eventAction: "callback:campo:[[etapa-form]]" ,
-        	eventLabel: "[[nome-campo]]:[[sucesso-erro]]"
+        	eventLabel: "[[nome-campo]]:[[sucesso-erro]]",
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[etapa-form]] | &#039;etapa-1&#039;, &#039;etapa-2&#039; e etc | Caso o formulario de cadastro tenha mais de uma etapa , essa variavel deve retornar a etapa do formulario em que o usuario esta, caso contrario retornar a informação vazia. |
-| [[nome-campo]] | &#039;nome&#039;, &#039;cpf&#039;, &#039;celular&#039; e etc | Deve retornar o nome do campo preenchido. |
-| [[sucesso-erro]] | &#039;sucesso&#039;, &#039;campo-invalido&#039; e etc | Deve retornar se o campo foi preenchido com sucesso ou o tipo de erro. |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[etapa-form]]` | &#039;etapa-1&#039;, &#039;etapa-2&#039; e etc | Caso o formulario de cadastro tenha mais de uma etapa , essa variavel deve retornar a etapa do formulario em que o usuario esta, caso contrario retornar a informação vazia. |
+| `[[nome-campo]]` | &#039;nome&#039;, &#039;cpf&#039;, &#039;celular&#039; e etc | Deve retornar o nome do campo preenchido. |
+| `[[sucesso-erro]]` | &#039;sucesso&#039;, &#039;campo-invalido&#039; e etc | Deve retornar se o campo foi preenchido com sucesso ou o tipo de erro. |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 
 <br />
 
@@ -14281,32 +14438,30 @@ Resumo de produtos cadastrados
         Analytics.logEvent("event", {
         	eventCategory: "app-midway:seguros-e-assistencias:cadastro" ,
         	eventAction: "clique:botao" ,
-        	eventLabel: "[[etapa-form]]:[[nome-botao]]"
+        	eventLabel: "[[etapa-form]]:[[nome-botao]]",
+			produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[etapa-form]] | &#039;etapa-1&#039;, &#039;etapa-2&#039; e etc | Caso o formulario de cadastro tenha mais de uma etapa , essa variavel deve retornar a etapa do formulario em que o usuario esta, caso contrario retornar a informação vazia. |
-| [[nome-botao]] |  &#039;continuar&#039;, &#039;cancelar&#039; , &#039;voltar&#039; e etc | Deve retornar o nome do botão clicado. |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[etapa-form]]` | &#039;etapa-1&#039;, &#039;etapa-2&#039; e etc | Caso o formulario de cadastro tenha mais de uma etapa , essa variavel deve retornar a etapa do formulario em que o usuario esta, caso contrario retornar a informação vazia. |
+| `[[nome-botao]]` |  &#039;continuar&#039;, &#039;cancelar&#039; , &#039;voltar&#039; e etc | Deve retornar o nome do botão clicado. |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 
 <br />
-
 
 - **Onde:** Visualização da tela de "Vamos iniciar" na seleção de quem e para quantos será o benefício 
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]/vamos-iniciar/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
-
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 
 <br />
-
 
 - **Quando:** No clique nos botões
 - **Onde:** Na tela de "Vamos iniciar"
@@ -14320,301 +14475,479 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | 'voltar', 'apenas-para-mim', 'para-mim-e-dependentes', 'para-outras-pessoas' e etc. | Deve retornar o nome do botão clicado. |
-| [[produtoAssistenciaSeguro]] |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-botao]]` | 'voltar', 'apenas-para-mim', 'para-mim-e-dependentes', 'para-outras-pessoas' e etc. | Deve retornar o nome do botão clicado. |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 
 <br />
 
-- **Quando:** No clique dos itens "Para mim e dependentes" ou "Para outras pessoas"
+- **Quando:** Na interação com o campo "Quantas pessoas"
 - **Onde:** Na tela de "Vamos iniciar"
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:vamos-iniciar" ,
-        	eventAction: "clique:botao:[[selecao]]" ,
-        	eventLabel: "[[nome-botao]]", 
-		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
+        	eventCategory: "app-midway:seguros-e-assistencias:vamos-iniciar",
+        	eventAction: "interacao:campo:quantas-pessoas",
+        	eventLabel: "[[opcao-escolhida]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		nomeFluxo: "[[nomeFluxo]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[selecao]] | '0-dependentes', '01-dependentes' e etc. | Deve retornar uma lista suspensa com a quantidade de dependentes. |
-| [[nome-botao]] |  'continuar' e etc | Deve retornar o nome do botão clicado. |
-| [[produtoAssistenciaSeguro]] |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[opcao-escolhida]]` | '2-pessoas', '3-pessoas' e etc | Retorna a opção escolhida. |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Quando:** No clique nos elementos
+- **Onde:** Na tela de "Vamos iniciar"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:vamos-iniciar",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[opcao-escolhida]]:[[nome-botao]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		nomeFluxo: "[[nomeFluxo]]"
+		})
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[opcao-escolhida]]` | '2-pessoas', '3-pessoas', 'eu-e-mais-1-pessoa-total-2' e etc |
+| `[[nome-botao]]` | 'voltar:vamos-iniciar' ,'continuar' | Deve retornar o botão clicado. |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Onde:** Ao visualizar a tela de "Escolha um Plano"
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/escolha-um-plano/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Quando:** No clique nos elementos
+- **Onde:** Na tela de "Escolha um Plano"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:escolha-um-plano",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-item]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		nomeFluxo: "[[nomeFluxo]]",
+		valorParcela: "[[valorParcela]]",
+		})
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[opcao-escolhida]]` | '2-pessoas', '3-pessoas' e etc | Retorna a opção escolhida. |
+| `[[nome-botao]]` | 'voltar:vamos-iniciar' ,'continuar' | Deve retornar o botão clicado. |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[valorParcela]]` |  '24.90', '15.90' e etc | Deve retornar o valor da parcela do plano selecionado dos produto de assistencia ou seguro |
+
+<br />
+
+- **Onde:** Visualização da tela de "Meus Dados" na tela de cadastro de dependentes
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/dados-do-dependente/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Quando:** Na interação com os checkbox
+- **Onde:** Na tela de "Meus Dados"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:dados-do-dependente",
+        	eventAction: "interacao:checkbox:receber-proposta",
+        	eventLabel: "[[acao]]:[[opcao-escolhida]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		nomeFluxo: "[[nomeFluxo]]"
+		})
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[acao]]` | 'selecionou' ou 'desselecionou' | Retorna a ação no checkbox.|
+| `[[opcao-escolhida]]` | 'e-mail', 'sms' e etc | Retorna a ação no checkbox. |
+| `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Quando:** No clique nos elementos
+- **Onde:** Na tela de "Meus Dados"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:dados-do-dependente",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-item]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		nomeFluxo: "[[nomeFluxo]]"
+		})
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-item]]` | 'voltar:meus-dados', 'continuar' e etc |Deve retornar o nome do item clicado. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Onde:** Visualização do modal "Confirmação de dados"
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/modal:confirmacao-dados-dependente/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+<br />
+
+- **Quando:** No clique nos elementos
+- **Onde:** No modal de "Confirmação de dados"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:confirmacao-de-dados",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		nomeFluxo: "[[nomeFluxo]]"
+		})
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-botao]]` | 'clicou-fora:modal:confirmacao-de-dados', 'sim-continuar', 'editar-dados' e etc. |Deve retornar o nome do botão clicado. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Onde:** Visualização da tela de "Validação"
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/validacao/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+<br />
+
+- **Quando:** No clique das opções
+- **Onde:** Na tela de Validação
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:validacao",
+        	eventAction: "clique:opcao",
+        	eventLabel: "[[nome-opcao]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		planoAssistenciaSeguro: "[[planoAssistenciaSeguro]]"
+		nomeFluxo: "[[nomeFluxo]]"
+		})
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-opcao]]` | 'biometria-facial', 'token-embarcado', 'biometria+token' e etc |Deve retornar o nome da opção clicada. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Onde:** Visualização da tela de "Dados do Titular", exclusivo para o fluxo de "Para Outras Pessoas"
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:para-outras-pessoas/dados-do-titular/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de "Dados do Titular", exclusivo para o fluxo de "Para Outras Pessoas"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:dados-do-titular",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		planoAssistenciaSeguro: "[[planoAssistenciaSeguro]]"
+		nomeFluxo: "[[nomeFluxo]]"
+		})
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-botao]]` | 'voltar:dados-do-titular', 'adicionar-titular-do-plano', 'adicionar-titular' e etc
+ |Deve retornar o nome do botão clicado. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de Formulario de "Dados do Titular", exclusivo para o fluxo de "Para Outras Pessoas"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:form:dados-do-titular",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		planoAssistenciaSeguro: "[[planoAssistenciaSeguro]]"
+		nomeFluxo: "[[nomeFluxo]]"
+		})
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-botao]]` | 'voltar:formulario:dados-do-titular', 'continuar' | Deve retornar o nome do botão clicado. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Onde:** Visualização do modal de "Dados do Titular", exclusivo para o fluxo de "Para Outras Pessoas"
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/modal-dados-do-titular/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** No modal de "Dados do Titular", exclusivo para o fluxo de "Para Outras Pessoas"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:modal:dados-do-titular",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		planoAssistenciaSeguro: "[[planoAssistenciaSeguro]]"
+		nomeFluxo: "[[nomeFluxo]]"
+		})
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-botao]]` | 'clicou-fora:dados-do-titular', 'sim-continuar', 'editar-dados' e etc | Deve retornar o nome do botão clicado. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 
 <br />
 
 - **Onde:** Visualização da tela de "relação de benefíciarios" para opções com mais dependentes
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/relacao-beneficiarios/")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/relacao-beneficiarios/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 
 <br />
 
-- **Onde:** Visualização da tela de cadastro de um novo beneficiario
-
-```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/relacao-beneficiarios/")
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
-
-<br />
-
-- **Quando:** No clique nos botões
+- **Quando:** No clique nos botões.
 - **Onde:** Na tela de "relação de benefíciarios"
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:relacao-beneficiarios" ,
-        	eventAction: "clique:botao" ,
+        	eventCategory: "app-midway:seguros-e-assistencias:relacao-beneficiarios",
+        	eventAction: "clique:botao",
         	eventLabel: "[[nome-botao]]", 
-		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		nomeFluxo: "[[nomeFluxo]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | 'voltar', 'editar-dados', 'continuar', 'adicionar-dependentes' e etc. | Deve retornar o nome do botão clicado. |
-| [[produtoAssistenciaSeguro]] |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-botao]]` | 'voltar:relacao-de-beneficiarios', 'editar-dados', 'continuar', 'adicionar-dependente' e etc. | Deve retornar o nome do botão clicado. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 
 <br />
-
-- **Onde:** Visualização da tela de "dados do dependente" na tela de cadastro de dependentes
-
-```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/dados-do-dependente/")
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
-
-<br />
-
-- **Quando:** No clique nos botões
-- **Onde:** Na tela de "dados do dependente"
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:dados-do-dependente" ,
-        	eventAction: "clique:botao" ,
-        	eventLabel: "[[nome-botao]]", 
-		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
-		})
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | 'voltar', 'adicionar-dependentes' e etc. | Deve retornar o nome do botão clicado. |
-| [[produtoAssistenciaSeguro]] |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
-
-<br />
-
-- **Onde:** Visualização da tela de modal "dados pessoais do dependente" na tela de confirmação
-
-```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/confirmacao-dados-dependente/")
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
-
-<br />
-
-- **Quando:** No clique nos botões
-- **Onde:** Na tela de "dados pessoais do dependente"
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:dados-pessoais-do-dependente" ,
-        	eventAction: "clique:botao" ,
-        	eventLabel: "[[nome-botao]]", 
-		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
-		})
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | 'fechar', 'salvar-continuar', 'editar-dados' e etc. | Deve retornar o nome do botão clicado. |
-| [[produtoAssistenciaSeguro]] |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
-
-<br />
-
-- **Onde:** Visualização da tela de modal "editar dados do dependente" quando clicado em "editar dados"
-
-```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/editar-dados/")
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
-
-<br />
-
-- **Quando:** No clique nos botões
-- **Onde:** Na tela de "editar dados do dependente"
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:editar-dados-dependente" ,
-        	eventAction: "clique:botao" ,
-        	eventLabel: "[[nome-botao]]", 
-		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
-		})
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | 'fechar', 'editar-dados', 'cancelar' e etc. | Deve retornar o nome do botão clicado. |
-| [[produtoAssistenciaSeguro]] |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
-
-<br />
-
-- **Onde:** Visualização da tela de planos após finalizar o preenchimento do formulario de cadastro
-
-```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/planos/")
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
-
-<br />
-
-
-- **Quando:** No clique nos botões( OBS: Os extra parameters só devem retornar preenchidos, quando o usuario selecionar o plano)
-- **Onde:** Na tela de planos para os produtos de  assistencia e seguros e detalhes de planos
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:planos" ,
-        	eventAction: "clique:botao" ,
-        	eventLabel: "[[nome-botao]]"
-		})
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] |  &#039;continuar&#039;, &#039;contratar&#039; , &#039;voltar&#039; e etc | Deve retornar o nome do botão clicado. |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
-| qtdeParcelas |  &#039;10x-130,50&#039; e etc | Deve retornar a quantidade de parcelas |
-| qtdeParcelas |  &#039;1&#039;, &#039;2&#039;, &#039;12&#039; e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
-
-<br />
-
-**Visualização da tela de cartão riachuelo, após o usuario escolher o plano do produto de assistencia e seguros**<br />
 
 - **Onde:** Visualização da tela de cartão riachuelo, após o usuario escolher o plano do produto de assistencia e seguros
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/cartao-riachuelo/")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/cartao-riachuelo/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 
 <br />
 
-- **Quando:** No clique nos botões e links(Os extraparameters planoAssistenciaSeguro, qtdeParcelas e
-- **Onde:** valorParcela só devem ser retornados quando o clique for no botão &quot;continuar&quot; ou &quot;contratar&quot;).
+- **Quando:** No clique nos botões e links (Os extraparameters planoAssistenciaSeguro, qtdeParcelas e 
+valorParcela só devem ser retornados quando o clique for no botão "continuar" ou "contratar").
+- **Onde:** Na tela de cartão riachuelo, após o usuario escolher o plano do produto de assistencia e seguros
 
 ```javascript
         Analytics.logEvent("event", {
         	eventCategory: "app-midway:seguros-e-assistencias:cartao-riachuelo" ,
         	eventAction: "clique:[[botao-link]]" ,
-        	eventLabel: "[[nome-item]]"
+        	eventLabel: "[[nome-item]]",
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		planoAssistenciaSeguro: "[[planoAssistenciaSeguro]]",
+		qtdeParcelas: "[[qtdeParcelas]]",
+		valorParcela: "[[valorParcela]]",
+		nomeFluxo: "[[nomeFluxo]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-item]] |  &#039;cancelar&#039;, &#039;continuar&#039;, &#039;contratar&#039; e etc | Deve retornar o nome do item clicado(Os extraparameters planoAssistenciaSeguro, qtdeParcelas e  |
-| [[botao-link]] | &#039;botao&#039; ou &#039;link&#039;  . | Deve retornar se o item clicado foi um link ou um botão. |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
-| qtdeParcelas |  &#039;10x-130,50&#039; e etc | Deve retornar a quantidade de parcelas |
-| qtdeParcelas |  &#039;1&#039;, &#039;2&#039;, &#039;12&#039; e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-item]]` |  &#039;cancelar&#039;, &#039;continuar&#039;, &#039;contratar&#039; e etc | Deve retornar o nome do item clicado(Os extraparameters planoAssistenciaSeguro, qtdeParcelas e  |
+| `[[botao-link]]` | &#039;botao&#039; ou &#039;link&#039; | Deve retornar se o item clicado foi um link ou um botão. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[qtdeParcelas]]` |  '1', '2', '12' e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+| `[[valorParcela]]` | '24.90', '15.90' e etc | Deve retornar o valor da parcela do plano selecionado dos produto de assistencia ou seguro. |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
 
 <br />
 
-**Ao visualizar a tela de &quot;Plano escolhido&quot;**<br />
-
-- **Onde:** Ao visualizar a tela de &quot;Plano escolhido&quot;
+- **Onde:** Visualização do modal "Periodo de Carências"
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/[[nome-plano]]/")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/[[planoAssistenciaSeguro]]/modal:periodo-de-carencia/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
-| [[nome-plano]] | &#039;pacote-mega&#039;, &#039;mais-saude-premiavel&#039; e etc | Deve retornar o nome do plano escolhido. |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
+
 
 <br />
 
-- **Quando:** No clique nos botões e links(Os extraparameters planoAssistenciaSeguro, qtdeParcelas e
-- **Onde:** valorParcela só devem ser retornados quando o clique for no botão &quot;Finalizar Contratação&quot;)
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:plano-escolhido" ,
-        	eventAction: "clique:[[botao-link]]" ,
-        	eventLabel: "[[nome-item]]"
-		})
-```
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-item]] |  &#039;cancelar, &#039;finalizar-contratacao&#039; e etc | Deve retornar o nome do item clicado (Os extraparameters planoAssistenciaSeguro, qtdeParcelas e  |
-| [[botao-link]] | &#039;botao&#039; ou &#039;link&#039;  . | Deve retornar se o item clicado foi um link ou um botão. |
-
-<br />
-
-- **Quando:** Ao aceitar os termos listados na tela
-- **Onde:** Na tela de plano escolhido, após o usuario escolher o plano do produto de assistencia e seguros
+- **Quando:** No clique dos elementos
+- **Onde:** No modal "Periodo de Carências"
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:plano-escolhido" ,
-        	eventAction: "[[acao]]:termos" ,
-        	eventLabel: "[[termo-aceito]]"
+        	eventCategory: "app-midway:seguros-e-assistencias:modal:pedido-de-carencias",
+        	eventAction: "clique:botao",
+        	eventLabel: "entendi", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		planoAssistenciaSeguro: "[[planoAssistenciaSeguro]]",
+		nomeFluxo: "[[nomeFluxo]]"
 		})
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[acao]] | &#039;marcou&#039; ou &#039;desmarcou&#039; . | Deve retornar se o usuario marcou ou desmarcou o termo. |
-| [[termo-aceito]] | &#039;termos-e-condicoes&#039;, &#039;compartilhar-dados-com-vale-saude&#039; e etc | Deve retornar o nome do termo aceito. |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 
 <br />
 
-**Visualização do modal de confirmação de adesão do plano**<br />
+- **Onde:** Visualização da tela de "Resumo do Plano"
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/resumo:[[planoAssistenciaSeguro]]/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
+
+
+<br />
+
+- **Quando:** No clique dos elementos
+- **Onde:** Na tela de "Resumo do Plano"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:resumo-do-plano",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[nome-item]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		planoAssistenciaSeguro: "[[planoAssistenciaSeguro]]",
+		qtdeParcelas: "[[qtdeParcelas]]",
+		valorParcela: "[[valorParcela]]",
+		nomeFluxo: "[[nomeFluxo]]"
+		})
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[elemento]]` | 'botao', 'link', 'checkbox' e etc | Retorna o elemento clicado. |
+| `[[nome-item]]` | 'voltar:resumo-do-plano', 'termos-e-condicoes', 'autorizo-compartilhamento-clique-aqui', 'cancelar', 'finalizar-contratacao' e etc
+ | Retorna o nome do item clicado. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[qtdeParcelas]]` |  '1', '2', '12' e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+| `[[valorParcela]]` | '24.90', '15.90' e etc | Deve retornar o valor da parcela do plano selecionado dos produto de assistencia ou seguro. |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
+
+<br />
 
 - **Onde:** Visualização do modal de confirmação de adesão do plano
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/modal-confirmacao-de-adesao/")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/modal-confirmacao-de-adesao/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 
 <br />
 
@@ -14623,17 +14956,54 @@ Resumo de produtos cadastrados
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:cartao-riachuelo" ,
-        	eventAction: "modal:clique:botao" ,
-        	eventLabel: "confirmar-adesao:[[nome-botao]]"
+        	eventCategory: "app-midway:seguros-e-assistencias:modal:confirmacao-de-adesao",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		nomeFluxo: "[[nomeFluxo]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
-| [[nome-botao]] |  &#039;fechar&#039; &#039;sim-confirmar-e-contratar&#039;  e etc | Deve retornar o nome do botão clicado. |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-botao]]` | 'clicou-fora:modal:confirmacao-de-adesao' 'confirmar-e-contratar', 'voltar:confirmacao-de-adesao' e etc | Deve retornar o nome do botão clicado. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Onde:** Visualização da tela de "Solicitação em Análise"
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/solicitacao-em-analise/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Quando:** No clique do botão "OK"
+- **Onde:** Na tela de "Solicitação em Análise"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:seguros-e-assistencias:solicitao-em-analise",
+        	eventAction: "clique:botao",
+        	eventLabel: "ok", 
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		planoAssistenciaSeguro: "[[planoAssistenciaSeguro]]",
+		nomeFluxo: "[[nomeFluxo]]"
+		})
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
 
 <br />
 
@@ -14642,13 +15012,14 @@ Resumo de produtos cadastrados
 - **Onde:** Visualização da tela de sucesso ou erro ao tentar contratar o plano
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/contratacao-plano/[[sucesso-erro]]/")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/contratacao-plano/[[sucesso-erro]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc | Deve retornar a tela de qual opção o usuario escolheu. |
-| [[sucesso-erro]] | &#039;sucesso&#039; ou &#039;erro&#039; | Deve retornar se a tela é de erro ou sucesso. |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[sucesso-erro]]` | &#039;sucesso&#039; ou &#039;erro&#039; | Deve retornar se a tela é de erro ou sucesso. |
 
 <br />
 
@@ -14657,17 +15028,24 @@ Resumo de produtos cadastrados
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias" ,
+        	eventCategory: "app-midway:seguros-e-assistencias-contratada-com-sucesso" ,
         	eventAction: "callback:contratacao" ,
-        	eventLabel: "sucesso"
+        	eventLabel: "sucesso",
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		planoAssistenciaSeguro: "[[planoAssistenciaSeguro]]",
+		qtdeParcelas: "[[qtdeParcelas]]",
+		valorParcela: "[[valorParcela]]",
+		nomeFluxo: "[[nomeFluxo]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
-| qtdeParcelas |  &#039;10x-130,50&#039; e etc | Deve retornar a quantidade de parcelas |
-| qtdeParcelas |  &#039;1&#039;, &#039;2&#039;, &#039;12&#039; e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[qtdeParcelas]]` |  '1', '2', '12' e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+| `[[valorParcela]]` | '24.90', '15.90' e etc | Deve retornar o valor da parcela do plano selecionado dos produto de assistencia ou seguro. |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
 
 <br />
 
@@ -14678,16 +15056,23 @@ Resumo de produtos cadastrados
         Analytics.logEvent("event", {
         	eventCategory: "app-midway:seguros-e-assistencias" ,
         	eventAction: "callback:contratacao" ,
-        	eventLabel: "erro:[[tipo-erro]]"
+        	eventLabel: "erro:[[tipo-erro]]",
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		planoAssistenciaSeguro: "[[planoAssistenciaSeguro]]",
+		qtdeParcelas: "[[qtdeParcelas]]",
+		valorParcela: "[[valorParcela]]",
+		nomeFluxo: "[[nomeFluxo]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[tipo-erro]] | &#039;cadastro-invalido&#039; e etc. | Deve retornar  o tipo de erro. |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
-| qtdeParcelas |  &#039;10x-130,50&#039; e etc | Deve retornar a quantidade de parcelas |
-| qtdeParcelas |  &#039;1&#039;, &#039;2&#039;, &#039;12&#039; e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[qtdeParcelas]]` |  '1', '2', '12' e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+| `[[valorParcela]]` | '24.90', '15.90' e etc | Deve retornar o valor da parcela do plano selecionado dos produto de assistencia ou seguro. |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
 
 <br />
 
@@ -14698,15 +15083,18 @@ Resumo de produtos cadastrados
         Analytics.logEvent("event", {
         	eventCategory: "app-midway:seguros-e-assistencias:[[tela]]" ,
         	eventAction: "clique:botao" ,
-        	eventLabel: "[[nome-botao]]"
+        	eventLabel: "[[nome-botao]]",
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		nomeFluxo: "[[nomeFluxo]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;ok&#039;, &#039;fechar&#039;, &#039;sim&#039;, &#039;nao&#039; e &#039;continuar&#039; e etc | Deve retornar o nome do botão. |
-| [[tela]] | &#039;cancelamento&#039;, &#039;conclusao&#039; e etc | Deve retornar se o usuario esta na tela de conclusao ou de cancelamento. |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-botao]]` | &#039;ok&#039;, &#039;fechar&#039;, &#039;sim&#039;, &#039;nao&#039; e &#039;continuar&#039; e etc | Deve retornar o nome do botão. |
+| `[[tela]]` | &#039;cancelamento&#039;, &#039;conclusao&#039; e etc | Deve retornar se o usuario esta na tela de conclusao ou de cancelamento. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 
 <br />
 
@@ -14715,12 +15103,13 @@ Resumo de produtos cadastrados
 - **Onde:** Visualização da tela de cancelar contratação do plano
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/contratacao-plano/cancelar/")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/contratacao-plano/cancelar/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 
 <br />
 
@@ -14729,13 +15118,14 @@ Resumo de produtos cadastrados
 - **Onde:** Visualização da tela de &quot;Termos e Condições&quot;
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/[[nome-plano]]/termos-e-condicoes/")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/[[planoAssistenciaSeguro]]/termos-e-condicoes/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
-| [[nome-plano]] | &#039;pacote-mega&#039;, &#039;mais-saude-premiavel&#039; e etc | Deve retornar o nome do plano escolhido. |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
 
 <br />
 
@@ -14746,14 +15136,17 @@ Resumo de produtos cadastrados
         Analytics.logEvent("event", {
         	eventCategory: "app-midway:seguros-e-assistencias:termos-e-condicoes" ,
         	eventAction: "clique:botao" ,
-        	eventLabel: "[[nome-item]]"
+        	eventLabel: "[[nome-item]]",
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		nomeFluxo: "[[nomeFluxo]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-item]] |  &#039;entendi&#039;, &#039;fechar&#039; e etc | Deve retornar o nome do botão clicado. |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-item]]` |  &#039;entendi&#039;, &#039;fechar&#039; e etc | Deve retornar o nome do botão clicado. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 
 <br />
 
@@ -14762,13 +15155,14 @@ Resumo de produtos cadastrados
 - **Onde:** Visualização das telas de erros
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[nome-produto]]/[[tipo-do-erro]]")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/[[tipo-do-erro]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039;  e etc&quot; | Deve retornar a tela de qual opção o usuario escolheu. |
-| [[tela-erro]] |  &#039;notificacao-de-bloqueio&#039;, &#039;algo-deu-errado&#039;, &#039;notificacao-de-seguranca&#039;. | Deve retornar o nome da tela de erro que o usuário se encontra. |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[tela-erro]]` |  &#039;notificacao-de-bloqueio&#039;, &#039;algo-deu-errado&#039;, &#039;notificacao-de-seguranca&#039;. | Deve retornar o nome da tela de erro que o usuário se encontra. |
 
 <br />
 
@@ -14778,20 +15172,25 @@ Resumo de produtos cadastrados
         Analytics.logEvent("event", {
         	eventCategory: "app-midway:seguros-e-assistencias:[[tela-erro]]" ,
         	eventAction: "clique:[[item]]" ,
-        	eventLabel: "[[nome-item]]"
+        	eventLabel: "[[nome-item]]",
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		nomeFluxo: "[[nomeFluxo]]"
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[tela-erro]] |  &#039;notificacao-de-bloqueio&#039;, &#039;algo-deu-errado&#039;, &#039;notificacao-de-seguranca&#039;. | Deve retornar o nome da tela de erro que o usuário se encontra. |
-| [[item]] |  &#039;link&#039; ou &#039;botao&#039; | Deve retornar o nome do item clicado. |
-| [[nome-item]] |  &#039;central-de-atendimento&#039; ou &#039;ok&#039; | Deve retornar o nome do botão clicado. |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[tela-erro]]` |  &#039;notificacao-de-bloqueio&#039;, &#039;algo-deu-errado&#039;, &#039;notificacao-de-seguranca&#039;. | Deve retornar o nome da tela de erro que o usuário se encontra. |
+| `[[item]]` |  &#039;link&#039; ou &#039;botao&#039; | Deve retornar o nome do item clicado. |
+| `[[nome-item]]` |  &#039;central-de-atendimento&#039; ou &#039;ok&#039; | Deve retornar o nome do botão clicado. |
 | produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 
 <br />
 
 ### Eventos - Saque Digital
+
 **Visualização das telas de onboarding**<br />
 
 - **Onde:** Visualização das telas de erros
@@ -14800,8 +15199,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/saque-digital/onboarding-[[numero-tela]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[numero-tela]] | &#039;1&#039;, &#039;2&#039;, &#039;3&#039;  e etc | Deve retornar o número da tela apresentada. |
 
 <br />
@@ -14817,8 +15216,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[numero-tela]] | &#039;1&#039;, &#039;2&#039;, &#039;3&#039;  e etc | Deve retornar o número da tela apresentada. |
 | [[botao-icone]]  | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] |  &#039;voltar&#039;, &#039;continuar&#039; e etc | Deve retornar o nome do item clicado. |
@@ -14843,8 +15242,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]]  | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] |  &#039;voltar&#039;, &#039;sacar-outro-valor&#039;, &#039;continuar:saque:200.00&#039;, &#039;continuar:saque:250.00&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -14856,8 +15255,8 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/saque-digital-1-3/callback-[[nome-tela]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-tela]] | &#039;valor-abaixo-minimo-permitido&#039;, &#039;valor-acima-maximo-permitido&#039;, &#039;valor-invalido&#039;, &#039;saldo-insuficiente&#039;  e etc | Deve retornar o nome da tela apresentada. |
 
 <br />
@@ -14873,8 +15272,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-tela]] | &#039;valor-abaixo-minimo-permitido&#039;, &#039;valor-acima-maximo-permitido&#039;, &#039;valor-invalido&#039;, &#039;saldo-insuficiente&#039;  e etc | Deve retornar o nome da tela apresentada. |
 
 <br />
@@ -14898,8 +15297,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[botao-icone]]  | &#039;botao&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] |  &#039;voltar&#039;, &#039;sacar-outro-valor&#039;, &#039;leitor-qr-code&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -14924,8 +15323,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[link-icone]]  | &#039;link&#039; ou &#039;icone&#039; | Deve retornar o elemento clicado. |
 | [[nome-item]] |  &#039;voltar&#039;, &#039;precisa-ajuda&#039; e etc | Deve retornar o nome do item clicado. |
 
@@ -14942,8 +15341,8 @@ Resumo de produtos cadastrados
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[retorno]] |  &#039;erro:nao-foi-possivel-ler-qr-code&#039;, &#039;qr-code-lido-com-sucesso&#039; e etc | Deve retornar o erro. |
 
 <br />
@@ -14986,8 +15385,8 @@ Resumo de produtos cadastrados
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
 | [[nome-botao]] |  &#039;compartilhar&#039;, &#039;voltar-para-inicio&#039; e etc | Deve retornar o nome do botão. |
 
 <br />
