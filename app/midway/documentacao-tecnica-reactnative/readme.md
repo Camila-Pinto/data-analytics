@@ -14439,7 +14439,7 @@ Resumo de produtos cadastrados
         	eventCategory: "app-midway:seguros-e-assistencias:cadastro" ,
         	eventAction: "clique:botao" ,
         	eventLabel: "[[etapa-form]]:[[nome-botao]]",
-			produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]"
 		})
 ```
 
@@ -14628,9 +14628,10 @@ Resumo de produtos cadastrados
 | :-------------- | :-----------------| :---------------- |
 | `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 | `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
 <br />
 
-- **Quando:** No clique nos elementos
+- **Quando:** No clique nos botões.
 - **Onde:** No modal de "Confirmação de dados"
 
 ```javascript
@@ -14661,6 +14662,7 @@ Resumo de produtos cadastrados
 | :-------------- | :-----------------| :---------------- |
 | `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 | `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
 <br />
 
 - **Quando:** No clique das opções
@@ -14928,8 +14930,7 @@ valorParcela só devem ser retornados quando o clique for no botão "continuar" 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
 | `[[elemento]]` | 'botao', 'link', 'checkbox' e etc | Retorna o elemento clicado. |
-| `[[nome-item]]` | 'voltar:resumo-do-plano', 'termos-e-condicoes', 'autorizo-compartilhamento-clique-aqui', 'cancelar', 'finalizar-contratacao' e etc
- | Retorna o nome do item clicado. |
+| `[[nome-item]]` | 'voltar:resumo-do-plano', 'termos-e-condicoes', 'autorizo-compartilhamento-clique-aqui', 'cancelar', 'finalizar-contratacao' e etc| Retorna o nome do item clicado. |
 | `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 | `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 | `[[qtdeParcelas]]` |  '1', '2', '12' e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
@@ -14990,7 +14991,7 @@ valorParcela só devem ser retornados quando o clique for no botão "continuar" 
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:solicitao-em-analise",
+        	eventCategory: "app-midway:seguros-e-assistencias:solicitacao-em-analise",
         	eventAction: "clique:botao",
         	eventLabel: "ok", 
 		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
@@ -15054,7 +15055,7 @@ valorParcela só devem ser retornados quando o clique for no botão "continuar" 
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias" ,
+        	eventCategory: "app-midway:seguros-e-assistencias:erro-ao-contratar" ,
         	eventAction: "callback:contratacao" ,
         	eventLabel: "erro:[[tipo-erro]]",
 		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
@@ -15067,7 +15068,7 @@ valorParcela só devem ser retornados quando o clique for no botão "continuar" 
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
-| [[tipo-erro]] | &#039;cadastro-invalido&#039; e etc. | Deve retornar  o tipo de erro. |
+| `[[tipo-erro]]` | &#039;cadastro-invalido&#039; e etc. | Deve retornar  o tipo de erro. |
 | `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 | `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 | `[[qtdeParcelas]]` |  '1', '2', '12' e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
@@ -15183,7 +15184,6 @@ valorParcela só devem ser retornados quando o clique for no botão "continuar" 
 | `[[tela-erro]]` |  &#039;notificacao-de-bloqueio&#039;, &#039;algo-deu-errado&#039;, &#039;notificacao-de-seguranca&#039;. | Deve retornar o nome da tela de erro que o usuário se encontra. |
 | `[[item]]` |  &#039;link&#039; ou &#039;botao&#039; | Deve retornar o nome do item clicado. |
 | `[[nome-item]]` |  &#039;central-de-atendimento&#039; ou &#039;ok&#039; | Deve retornar o nome do botão clicado. |
-| produtoAssistenciaSeguro |  &#039;automovel-premiavel&#039;, &#039;moto-premiavel&#039;, &#039;mais-saude&#039; e etc | Deve retornar o nome do produto de assistencia ou seguro |
 | `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 | `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 
