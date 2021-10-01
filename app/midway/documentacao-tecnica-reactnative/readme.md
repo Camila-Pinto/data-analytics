@@ -14716,8 +14716,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
-| `[[nome-botao]]` | 'voltar:dados-do-titular', 'adicionar-titular-do-plano', 'adicionar-titular' e etc
- |Deve retornar o nome do botão clicado. |
+| `[[nome-botao]]` | 'voltar:dados-do-titular', 'adicionar-titular-do-plano', 'adicionar-titular' e etc |Deve retornar o nome do botão clicado. |
 | `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 | `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
 | `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
