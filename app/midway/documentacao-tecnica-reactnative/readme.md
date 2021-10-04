@@ -14364,16 +14364,16 @@ Resumo de produtos cadastrados
 
 <br />
 
-- **Onde:** Visualização do modal que aparece após clicar em 'área do cliente' e em 'saiba mais ' na home de produtos de ' assistência e seguros
+- **Onde:** Visualização do modais 'saiba mais', 'Parceiro mais saude' e 'capitalização' 
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]/[[nome-modal]]/")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]/modal:[[nome-modal]]/")
 ```
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
 | `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
-| `[[nome-modal]]` | 'saiba-mais', 'parceiro-vale-saude' e etc | Deve retornar o nome do modal. |
+| `[[nome-modal]]` | 'saiba-mais', 'parceiro-vale-saude', 'capitalizacao' e etc | Deve retornar o nome do modal. |
 
 <br />
 
@@ -14565,13 +14565,14 @@ Resumo de produtos cadastrados
 - **Onde:** Visualização da tela de "Meus Dados" na tela de cadastro de dependentes
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/dados-do-dependente/")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/dados-do:[[titular-ou-dependente]]/")
 ```
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
 | `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 | `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[titular-ou-dependente]]` | 'titular' ou 'dependente' | Retornar o tipo de pessoa cadastrada. |
 
 <br />
 
@@ -14580,7 +14581,7 @@ Resumo de produtos cadastrados
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:dados-do-dependente",
+        	eventCategory: "app-midway:seguros-e-assistencias:dados-do-[[titular-ou-dependente]]",
         	eventAction: "interacao:checkbox:receber-proposta",
         	eventLabel: "[[acao]]:[[opcao-escolhida]]", 
 		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
@@ -14594,6 +14595,7 @@ Resumo de produtos cadastrados
 | `[[opcao-escolhida]]` | 'e-mail', 'sms' e etc | Retorna a ação no checkbox. |
 | `[[produtoAssistenciaSeguro]]` |  'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 | `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[titular-ou-dependente]]` | 'titular' ou 'dependente' | Retornar o tipo de pessoa cadastrada. |
 
 <br />
 
@@ -14602,7 +14604,7 @@ Resumo de produtos cadastrados
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:dados-do-dependente",
+        	eventCategory: "app-midway:seguros-e-assistencias:dados-do-[[titular-ou-dependente]]",
         	eventAction: "clique:botao",
         	eventLabel: "[[nome-item]]", 
 		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
@@ -14615,13 +14617,15 @@ Resumo de produtos cadastrados
 | `[[nome-item]]` | 'voltar:meus-dados', 'continuar' e etc |Deve retornar o nome do item clicado. |
 | `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
 | `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[titular-ou-dependente]]` | 'titular' ou 'dependente' | Retornar o tipo de pessoa cadastrada. |
+
 
 <br />
 
 - **Onde:** Visualização do modal "Confirmação de dados"
 
 ```javascript
-    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/modal:confirmacao-dados-dependente/")
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/modal:confirmacao-de-dados/")
 ```
 
 | Variável        | Exemplo           | Descrição         |
@@ -14636,7 +14640,7 @@ Resumo de produtos cadastrados
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:seguros-e-assistencias:confirmacao-de-dados",
+        	eventCategory: "app-midway:seguros-e-assistencias:modal:confirmacao-de-dados",
         	eventAction: "clique:botao",
         	eventLabel: "[[nome-botao]]", 
 		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
