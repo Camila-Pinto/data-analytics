@@ -266,8 +266,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável      | Exemplo         | Descrição             |
 | :------------ | :-------------- | :-------------------- |
-| `[[nome-tela]]` | 'home', 'customize', 'pagamento' e etc
- | Retorna o nome da tela onde aconteceu a interação. |
+| `[[nome-tela]]` | 'home', 'customize', 'pagamento' e etc | Retorna o nome da tela onde aconteceu a interação. |
 | `[[nome-botao]]` | 'rchlo+', 'riachuelo.com' ou 'acompanhar-meu-pedido' | Retorna o nome da opção clicada no Header. |
 
 <br />
