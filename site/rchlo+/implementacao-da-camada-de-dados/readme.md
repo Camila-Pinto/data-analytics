@@ -248,6 +248,30 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
+**No clique nas opções do Header**<br />
+
+- **Onde:** Em todas as páginas que estiverem disponiveis
+
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:header:[[nome-tela]]',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
+
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-tela]]` | 'home', 'customize', 'pagamento' e etc
+ | Retorna o nome da tela onde aconteceu a interação. |
+| `[[nome-botao]]` | 'rchlo+', 'riachuelo.com' ou 'acompanhar-meu-pedido' | Retorna o nome da opção clicada no Header. |
+
+<br />
+
 ### Home
 
 **No clique do botões 'Acompanhar meu pedido' e 'Criar minha estampa'**<br />
