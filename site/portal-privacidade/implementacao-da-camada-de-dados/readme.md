@@ -8,6 +8,7 @@
 ## Sumário
 
 - [Objetivo](#objetivo)
+- [Posicionamento do Código - Google Tag Manager](#posicionamento-do-c&oacute;digo---google-tag-manager)
 - [Implementação](#implementa%c3%a7%c3%a3o)
 - [Especificações Globais](#especifica%c3%a7%c3%b5es-globais)
 - [Dimensões Globais](#dimens&#245;es-globais)
