@@ -1494,8 +1494,6 @@ window.dataLayer.push({
 </script>
 ```
 
-
-
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
 | [[localizacao-filtro]] | &#039;busca&#039;, &#039;plp&#039; | Deve retornar a localização do filtro. |
@@ -1504,20 +1502,21 @@ window.dataLayer.push({
 
 <br />
 
+**No clique nos botões "Aplicar" ou "Limpar" para aplicar os filtros selecionados**<br />
 
-**No clique do botão &quot;Aplicar&quot; para aplicar os filtros selecionados**<br />
+- **Onde:** Na página de busca, após buscar algum termo e também nas páginas de Listas de Produtos    
 
-- **Onde:** Na página de busca, após buscar algum termo e também nas páginas de Listas de Produtos
-    - **Titulo ou nome do botão/link:** &quot;Aplicar&quot;
-    
 ```html
-<div
-   data-gtm-event-category='riachuelo:filtro'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[localizacao-filtro]]:[[nome-botao]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:filtro',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[localizacao-filtro]]:[[nome-botao]]'
+  });
+</script>
 ```
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
