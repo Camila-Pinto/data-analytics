@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Riachuelo APP
 
-Última atualização: 23/09/2021. <br />
+Última atualização: 15/10/2021. <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -50,6 +50,7 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
   - [Checkout Progress:](#checkout-progress)
   - [Purchase](#purchase)
 - [Eventos - Cartões - Super APP](#eventos---cart&#245;es---super-app)
+- [Cartões - Novo Fluxo Desbloqueio 2 Cartões SICC & TSYS ](#cart&#245;es---novo-fluxo-desbloqueio-2-cart&#245;es-sicc-&amp;-tsys)
 - [Cartões - Antecipar Pagamento](#cart&#245;es---antecipar-pagamento)
 - [Eventos - Cartões - Super APP Guideline](#eventos---cart&#245;es---super-app-guideline)
 - [Eventos - Super App - Declarações Anuais](#eventos---super-app---declara&#231;&#245;es-anuais)
@@ -4125,6 +4126,264 @@ Analytics.logEvent("event", {
 | :-------------- | :-------------------- | :----------------------------------- |
 | `[[erro]]` | 'nao-foi-possivel-realizar-upgrade' | Deve retornar o nome do sucesso ou erro. |
 | `[[nome-botao]]` | 'tentar-novamente', 'voltar', 'fechar' e etc. | Deve retornar o nome do botão clicado. |
+
+<br />
+
+### Cartões - Novo Fluxo Desbloqueio 2 Cartões SICC & TSYS 
+
+- **Onde:** **Visualização da tela de "Limite dos Cartões" (Cartão Riachuelo)**<br />
+
+**Obs:** Para os casos que o usuário tem 2 cartões disponiveis, retornar na seguinte estrutura: '1-mastercard:cartao-cancelado', '1-visa:cartao-ativo' e etc<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/associe-riachuelo/limite/[[qtd+bandeira-cartao]]:[[status-cartao]]/")
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[qtd+bandeira-cartao]] | '1-mastercard', '1-rchlo' e etc | Retorna a quantidade de cartões + a bandeira do cartão apresentada na tela de limite. |
+| [[status-cartao]] | 'cartao-bloqueado', 'cartao-cancelado', 'cartao-ativo' e etc | Retorna o status do cartão para cada cartão apresentado na tela de limite. |
+
+<br />
+
+- **Quando:** No clique nas opções de "Ações Rápidas"
+- **Onde:** Na tela de "Limite dos Cartões"
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:limite-disponivel",
+        	"eventAction": "clique:botao:acao-rapida",
+        	"eventLabel": "[[nome-botao]]"
+        })
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[nome-botao]] | 'desbloquear-cartao', 'minhas-faturas', 'emprestimo-pessoal', 'seguros-e-assistencias', 'upgrade-do-cartao' e etc | Retorna o nome do botão clicado. |
+
+<br />
+
+- **Quando:** No clique do icone para mostrar ou esconder o valor do limite
+- **Onde:** Na tela de "Limite dos Cartões"
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:limite-disponivel",
+        	"eventAction": "clique:icone",
+        	"eventLabel": "[[mostrar-ou-esconder]]:limite",
+                "status_fatura": "[[status_fatura]]",
+                "status_cartao": "[[status_cartao]]",
+                "tipo_cartao": "[[tipo_cartao]]"
+        })
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[mostrar-ou-esconder]] | 'mostrar' ou 'esconder' | Retorna a ação do usuário. |
+| [[status_fatura]] | 'fatura-aberta', 'fatura-fechada', 'fatura-em-atraso', 'pagamento-nao-identificado', 'pagamento-identificado' e etc. | Deve retornar o status da fatura. |
+| [[status_cartao]] | 'cartao-cancelado', 'cartao-bloqueado', 'cartao-ativo' e etc | Retorna o Status do cartão |
+| [[tipo_cartao]] | 'cartao-midway-master', 'cartao-midway-visa', 'cartao-midway-pl' e etc | Deve retornar o tipo do cartão |
+
+<br />
+
+- **Quando:** No clique do botão "Carregar Novamente" (Ultimos Lançamentos)
+- **Onde:** Na tela de "Limite dos Cartões", quando não foi possível carregar as informações dos seus últimos lançamentos
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:limite-disponivel",
+        	"eventAction": "clique:botao:nao-carregou-ultimos-lancamentos",
+        	"eventLabel": "ultimos-lancamentos:carregar-novamente",
+                "status_fatura": "[[status_fatura]]",
+                "status_cartao": "[[status_cartao]]",
+                "tipo_cartao": "[[tipo_cartao]]"
+        })
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[status_fatura]] | 'fatura-aberta', 'fatura-fechada', 'fatura-em-atraso', 'pagamento-nao-identificado', 'pagamento-identificado' e etc. | Deve retornar o status da fatura. |
+| [[status_cartao]] | 'cartao-cancelado', 'cartao-bloqueado', 'cartao-ativo' e etc | Retorna o Status do cartão |
+| [[tipo_cartao]] | 'cartao-midway-master', 'cartao-midway-visa', 'cartao-midway-pl' e etc | Deve retornar o tipo do cartão |
+
+<br />
+
+- **Quando:** No clique do botão "Carregar Novamente" (Informações do Cartão)
+- **Onde:** Na tela de "Limite dos Cartões", quando não foi possível carregar as informações do seu Cartão
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:limite-disponivel",
+        	"eventAction": "clique:botao:nao-carregou-dados-cartao",
+        	"eventLabel": "dados-cartao:carregar-novamente",
+                "status_fatura": "[[status_fatura]]",
+                "status_cartao": "[[status_cartao]]",
+                "tipo_cartao": "[[tipo_cartao]]"
+        })
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[status_fatura]] | 'fatura-aberta', 'fatura-fechada', 'fatura-em-atraso', 'pagamento-nao-identificado', 'pagamento-identificado' e etc. | Deve retornar o status da fatura. |
+| [[status_cartao]] | 'cartao-cancelado', 'cartao-bloqueado', 'cartao-ativo' e etc | Retorna o Status do cartão |
+| [[tipo_cartao]] | 'cartao-midway-master', 'cartao-midway-visa', 'cartao-midway-pl' e etc | Deve retornar o tipo do cartão |
+
+<br />
+
+- **Onde:** **Visualização da tela de "Minhas Faturas"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/associe-riachuelo/limite/minhas-faturas/")
+```
+
+<br />
+
+- **Quando:** Na escolha de "Faturas que deseja consultar"
+- **Onde:** Na tela de "Minhas Faturas"
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:minhas-faturas",
+        	"eventAction": "clique:consultar-fatura",
+        	"eventLabel": "[[opcao-selecionada]]"
+        })
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[opcao-selecionada]] |'faturas-fechadas', 'faturas-abertas', 'fatura-em-atraso' e etc | Retorna a opção selecionada do usuário. |
+
+<br />
+
+- **Quando:** No clique dos botões da tela
+- **Onde:** Na tela de "Minhas Faturas"
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:minhas-faturas",
+        	"eventAction": "clique:botao",
+        	"eventLabel": "[[nome-botao]]",
+                "status_fatura": "[[status_fatura]]",
+                "status_cartao": "[[status_cartao]]",
+                "tipo_cartao": "[[tipo_cartao]]",
+                "data_vencimento": "[[data_vencimento]]"
+        })
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[nome-botao]] |'voltar:minhas-faturas', 'ver-extrato', 'opcoes-de-pagamento', 'copiar-codigo', 'ver-boleto' e et | Retorna o nome do botão clicado. |
+| [[status_fatura]] | 'fatura-aberta', 'fatura-fechada', 'fatura-em-atraso', 'pagamento-nao-identificado', 'pagamento-identificado' e etc. | Deve retornar o status da fatura. |
+| [[status_cartao]] | 'cartao-cancelado', 'cartao-bloqueado', 'cartao-ativo' e etc | Retorna o Status do cartão |
+| [[tipo_cartao]] | 'cartao-midway-master', 'cartao-midway-visa', 'cartao-midway-pl' e etc | Deve retornar o tipo do cartão |
+| [[data_vencimento]] | '15/11' e etc | Retorna a data de vencimento da fatura |
+
+<br />
+
+- **Quando:** No callback das faturas que informam alguma indisponibilidade para o usuário
+- **Onde:** Na tela de "Minhas Faturas"
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:minhas-faturas",
+        	"eventAction": "callback:[[tipo-de-fatura]]",
+        	"eventLabel": "[[callback-retornado]]",
+                "status_fatura": "[[status_fatura]]",
+                "status_cartao": "[[status_cartao]]",
+                "tipo_cartao": "[[tipo_cartao]]",
+                "data_vencimento": "[[data_vencimento]]"
+        })
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[tipo-de-fatura]] |'fatura-anterior', 'fatura-aberta' e etc | Retorna o tipo de fatura consultado. |
+| [[callback-retornado]] |'voce-nao-possui-nenhuma-fatura-anterior-em-seu-cartao', 'funcionalidade-nao-disponivel-para-este-cartao', 'em-breve-numero-do-boleto-estara-disponivel', 'voce-nao-possui-nenhuma-fatura-fechada-em-seus-cartoes' e etc | Retorna o callback que foi apresentado ao usuário. |
+| [[status_fatura]] | 'fatura-aberta', 'fatura-fechada', 'fatura-em-atraso', 'pagamento-nao-identificado', 'pagamento-identificado' e etc. | Deve retornar o status da fatura. |
+| [[status_cartao]] | 'cartao-cancelado', 'cartao-bloqueado', 'cartao-ativo' e etc | Retorna o Status do cartão |
+| [[tipo_cartao]] | 'cartao-midway-master', 'cartao-midway-visa', 'cartao-midway-pl' e etc | Deve retornar o tipo do cartão |
+| [[data_vencimento]] | '15/11' e etc | Retorna a data de vencimento da fatura |
+
+<br />
+
+- **Onde:** **Visualização do modal de "Desbloqueio do Cartão"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/associe-riachuelo/limite/modal:desbloqueio-do-cartao/")
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** No modal de "Desbloqueio do cartão"
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:modal:desbloqueio-do-cartao",
+        	"eventAction": "clique:botao",
+        	"eventLabel": "[[nome-botao]]",
+                "tipo_cartao": "[[tipo_cartao]]",
+        })
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[nome-botao]] |'fechar:modal-desbloqueio-do-cartao', 'clicou-fora:modal-desbloqueio-do-cartao', 'desbloquear-o-cartao-agora' e etc | Retorna o nome do botão clicado. |
+| [[tipo_cartao]] | 'cartao-midway-master', 'cartao-midway-visa', 'cartao-midway-pl' e etc | Deve retornar o tipo do cartão |
+
+<br />
+
+- **Onde:** **Visualização do modal de "Cartão Cancelado"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/associe-riachuelo/limite/modal:cartao-cancelado/")
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** No modal de "Cartão Cancelado"
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:modal:cartao-cancelado",
+        	"eventAction": "clique:botao",
+        	"eventLabel": "[[nome-botao]]",
+                "tipo_cartao": "[[tipo_cartao]]",
+        })
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[nome-botao]] |'fechar:modal-cartao-cancelado', 'clicou-fora:modal-cartao-cancelado', 'entendi' e etc | Retorna o nome do botão clicado. |
+| [[tipo_cartao]] | 'cartao-midway-master', 'cartao-midway-visa', 'cartao-midway-pl' e etc | Deve retornar o tipo do cartão |
+
+<br />
+
+- **Onde:** **Visualização do modal de "Pagamento em Atraso"**<br />
+
+```javascript
+    Analytics.setCurrentScreen("/riachuelo-app/cartoes/midway/associe-riachuelo/limite/modal:pagamento-em-atraso/")
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** No modal de "Pagamento em Atraso"
+
+```javascript
+        Analytics.logEvent("event", {
+        	"eventCategory": "riachuelo:app:cartoes:modal:pagamento-em-atraso",
+        	"eventAction": "clique:botao",
+        	"eventLabel": "[[nome-botao]]",
+                "tipo_cartao": "[[tipo_cartao]]",
+        })
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[nome-botao]] |'fechar:modal-pagamento-em-atraso', 'clicou-fora:modal-pagamento-em-atraso', 'entendi' e etc | Retorna o nome do botão clicado. |
+| [[tipo_cartao]] | 'cartao-midway-master', 'cartao-midway-visa', 'cartao-midway-pl' e etc | Deve retornar o tipo do cartão |
 
 <br />
 
