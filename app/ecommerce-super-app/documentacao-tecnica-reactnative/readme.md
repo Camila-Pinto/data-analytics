@@ -50,7 +50,7 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
   - [Checkout Progress:](#checkout-progress)
   - [Purchase](#purchase)
 - [Eventos - Cartões - Super APP](#eventos---cart&#245;es---super-app)
-- [Cartões - Novo Fluxo Desbloqueio 2 Cartões SICC & TSYS ](#cart&#245;es---novo-fluxo-desbloqueio-2-cart&#245;es-sicc-&amp;-tsys)
+- [Cartões - Novo Fluxo Desbloqueio 2 Cartões SICC e TSYS ](#cart&#245;es---novo-fluxo-desbloqueio-2-cart&#245;es-sicc-e-tsys)
 - [Cartões - Antecipar Pagamento](#cart&#245;es---antecipar-pagamento)
 - [Eventos - Cartões - Super APP Guideline](#eventos---cart&#245;es---super-app-guideline)
 - [Eventos - Super App - Declarações Anuais](#eventos---super-app---declara&#231;&#245;es-anuais)
@@ -4129,7 +4129,7 @@ Analytics.logEvent("event", {
 
 <br />
 
-### Cartões - Novo Fluxo Desbloqueio 2 Cartões SICC & TSYS 
+### Cartões - Novo Fluxo Desbloqueio 2 Cartões SICC e TSYS 
 
 - **Onde:** **Visualização da tela de "Limite dos Cartões" (Cartão Riachuelo)**<br />
 
