@@ -40,6 +40,7 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Cheque Especial](#cheque-especial)
 - [Desbloqueio de Cartão](#desbloqueio-de-cart&#227;o)
 - [Home](#home)
+- [Home - Gift Cards](#home---gift-cards)
 - [Home - Migração de Conta](#home-migra&#231;&#227;o-de-conta)
 - [Cotação de câmbio](#cota&#231;&#227;o-de-c&#226;mbio)
 - [Habilitar Função Crédito do Cartão](#habilitar-fun&#231;&#227;o-cr&#233;dito-do-cart&#227;o)
