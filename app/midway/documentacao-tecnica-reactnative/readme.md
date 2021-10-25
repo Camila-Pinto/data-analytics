@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Midway APP
 
-Última atualização: 01/10/2021 <br />
+Última atualização: 25/10/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -5965,13 +5965,14 @@ Resumo de produtos cadastrados
         Analytics.logEvent("event", {
         	eventCategory: "app-midway:home",
         	eventAction: "clique:card",
-        	eventLabel: "[[nome-card]]"
+        	eventLabel: "[[nome-card]]:[[posicao-card]]"
         });
 ```
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
-| [[nome-card]] | &#039;extrato&#039;, &#039;pagamento&#039;, &#039;transferencia&#039;, &#039;desbloqueio-de-cartao&#039; etc. | Deve retornar o nome do card de atalho clicado. |
+| [[nome-card]] |'gift-cards', 'extrato', 'pagamento', 'transferencia', 'desbloqueio-de-cartao' etc. | Deve retornar o nome do card de atalho clicado. |
+| [[posicao-card]] | '1', '2' e etc | Retorna a posição que o card está na seção de atalhos. |
 
 <br />
 
@@ -6157,6 +6158,33 @@ Resumo de produtos cadastrados
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
 | [[nome-card]] | &#039;cotacao-diaria-euro&#039;, &#039;cotacao-diaria-dolar&#039; e etc | Deve retornar o nome do card clicado. |
+
+<br />
+
+### Home - Gift Cards
+
+- **Visualização do modal de "O Gift card está chegando"** 
+
+```javascript
+    Analytics.logScreenView("/home/gift-card-esta-chegando/")
+```
+
+<br />
+
+- **Quando:** No clique dos emoctions
+- **Onde:**  No modal de "O Gift card está chegando"
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:home:modal:gift-cards",
+        	eventAction: "clique:emoction" ,
+        	eventLabel: "[[reacao]]"
+        ])
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[reacao]] | 'amei' ou 'triste' | Retorna a reação clicada pelo usuário. |
 
 <br />
 
@@ -10072,7 +10100,7 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
-| [[opcao-selecionada]] | &#039;conta-premiada&#039;, &#039;emprestimos&#039;, &#039;assistencias&#039;, &#039;seguros&#039;, &#039;voltar&#039; e etc | Deve retornar o nome da opção selecionada. |
+| [[opcao-selecionada]] | 'conta-premiada', 'emprestimos', 'assistencias', 'seguros', 'gift-cards', 'voltar' e etc | Deve retornar o nome da opção selecionada. |
 
 <br />
 
