@@ -306,7 +306,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | :-------------- | :--------------- | :----------------- |
 | [[link-ou-icone]] | 'link' ou 'icone' |Retorna o tipo de icone que o usuario clicou.  |
 | [[nome-categoria]] | 'cartao-riachuelo', 'sobre-a-riachuelo', 'sustentabilidade', 'baixe-nosso-app' e etc | Deve retornar o nome da categoria do footer. |
-| [[nome-link]] | saiba-como-adquirir', 'a-empresa', 'na-pratica', 'google-play', 'app-store' e etc | Deve retornar o nome do link do footer clicado. |
+| [[nome-link]] | 'saiba-como-adquirir', 'a-empresa', 'na-pratica', 'google-play', 'app-store' e etc | Deve retornar o nome do link do footer clicado. |
 
 <br />
 
@@ -328,7 +328,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo          | Descrição          |
 | :-------------- | :--------------- | :----------------- |
-| [[interesse-selecionado]] | "novidades", "selecionar-todos", "infantil", "novidades-feminino" e etc. | Deve retornar o interesse selecionado no checkbox. |
+| [[interesse-selecionado]] | 'novidades', 'selecionar-todos', 'infantil', 'novidades-feminino' e etc. | Deve retornar o interesse selecionado no checkbox. |
 
 <br />
 
@@ -352,7 +352,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo          | Descrição          |
 | :-------------- | :--------------- | :----------------- |
-| [[nome-link]] |  "riachuelo-facebook",  "riachuelo-youtube", "riachuelo-linkedin", "riachuelo-casa", "acessibilidade" e etc | Deve retornar o nome do link da rede social clicada. |
+| [[nome-link]] |  'riachuelo-facebook',  'riachuelo-youtube', 'riachuelo-linkedin', 'riachuelo-casa', 'acessibilidade' e etc | Deve retornar o nome do link da rede social clicada. |
 
 <br />
 
