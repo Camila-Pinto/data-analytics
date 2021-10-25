@@ -28,7 +28,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Ecommerce
-Última atualização: 13/10/2021 <br />
+Última atualização: 25/10/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -215,306 +215,49 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 ### General
 
-
-**No carregamento do modal lateral  -Sua Sacola;**<br />
-
-- **Onde:** Em todas as páginas do site.
-    
-```html
-<script>
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-    'event': 'virtual-pageview',
-    'page': 'pageName:  /modal-carrinho',
-});
-</script>
-```
-
-<br />
-
-
-**No carregamento do modal de login**<br />
-
-- **Onde:** Em todas as páginas do site.
-    
-```html
-<script>
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-    'event': 'virtual_pageview',
-    'page': 'pageName: /modal-cpf',
-});
-</script>
-```
-
-
-
-
-<br />
-
-
-**No carregamento do modal lateral  - Sua Sacola com produtos;**<br />
-
-- **Onde:** No modal lateral, em todas as páginas.
-    
-```html
-<script>
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-    'event': 'virtual_pageview',
-    'page': 'pageName:  /modal-carrinho-com-produtos/',
-});
-</script>
-```
-
-
-
-
-<br />
-
-
-**No carregamento do modal lateral  - Sua Sacola sem produtos;**<br />
-
-- **Onde:** No modal lateral, em todas as páginas.
-    
-```html
-<script>
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-    'event': 'virtual_pageview',
-    'page': 'pageName: /modal-sacola',
-});
-</script>
-```
-
-
-
-
-<br />
-
-
-**No carregamento do modal de login para confirmar o cpf**<br />
-
-- **Onde:** No modal lateral, em todas as páginas.
-    
-```html
-<script>
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-    'event': 'virtual_pageview',
-    'page': 'pageName: /modal-confirmacao-cpf/',
-});
-</script>
-```
-
-
-
-
-<br />
-
-
-**No carregamento do modal de login para confirmar a senha**<br />
-
-- **Onde:** No modal lateral, em todas as páginas.
-    
-```html
-<script>
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-    'event': 'virtual_pageview',
-    'page': 'pageName: /modal-confirmacao-senha/',
-});
-</script>
-```
-
-
-
-
-<br />
-
-
-**No carregamento do modal lateral  - Sua Sacola sem produtos ou com produtos;**<br />
-
-- **Onde:** No modal lateral, em todas as páginas.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'riachuelo:geral',
-    'eventAction': 'visualizou-modal-lateral',
-'noInteraction': '1',
-    'eventLabel': 'sacola:[[com ou sem]]-produtos'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[com ou sem]] | &#039;sacola:com-produtos&#039;, &#039;sacola:sem-produtos&#039;  | Deve retornar se a sacola está com ou sem produtos. |
-
-<br />
-
-
-**No carregamento do modal de login para confirmar o cpf e senha**<br />
-
-- **Onde:** No modal lateral, em todas as páginas.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'riachuelo:geral',
-    'eventAction': 'visualizou-modal-lateral',
-'noInteraction': '1',
-    'eventLabel': '[[cpf ou senha]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cpf ou senha]] | &#039;cpf&#039;, &#039;senha&#039; | Deve retornar a confirmação que o usuário preencheu cpf e senha. |
-
-<br />
-
-
-**Na aparição do modal de newsletter**<br />
-
-- **Onde:** No modal de cadastro de newsletter flutuante em todas as páginas
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'riachuelo:geral',
-    'eventAction': 'visualizou-modal',
-'noInteraction': '1',
-    'eventLabel': 'newsletter'
-  });
-</script>
-```
-
-
-
-
-<br />
-
-
-**Após o preenchimento do campo de email do newsletter**<br />
-
-- **Onde:** No cadastro de newsletter flutuante em todas as páginas
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'riachuelo:geral',
-    'eventAction': 'preencheu-campo:cadastro-newsletter',
-    'eventLabel': 'email'
-  });
-</script>
-```
-
-
-
-
-<br />
-
-
-**Na interação para fechar o modal de newsletter**<br />
-
-- **Onde:** No modal de cadastro de newsletter flutuante em todas as páginas
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'r_form_modal',
-    'eventCategory': 'riachuelo:geral',
-    'eventAction': 'enviar:cadastro-newsletter',
-    'eventLabel': 'fechou'
-  });
-</script>
-```
-
-
-
-
-<br />
-
-
-**No sucesso ou erro da tentativa de cadastro de newsletter**<br />
-
-- **Onde:** No modal de cadastro de newsletter flutuante em todas as páginas
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'r_form_modal',
-    'eventCategory': 'riachuelo:geral',
-    'eventAction': 'enviar:cadastro-newsletter',
-    'eventLabel': '[[sucesso ou erro]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou erro]] | &quot;sucesso&quot; ou &quot;erro&quot; | Deve retornar o status do envio. |
-
-<br />
-
-
 **No clique dos links do Stick Bar (pré header)**<br />
 
 - **Onde:** Em todas as páginas em que estiverem disponíveis
-    - **Titulo ou nome do botão/link:** &quot;Carter&#039;s&quot;, &quot;Pool&quot;, &quot;Jeans&quot;, &quot;Geek&quot; etc
+    - **Titulo ou nome do botão/link:** 'carters', 'jeans', 'nossas-lojas' , 'compre-pelo-whatsapp' e etc
     
 ```html
-<div
-   data-gtm-event-category='riachuelo:geral'
-   data-gtm-event-action='clique:header-stick-bar'
-   data-gtm-event-label='[[nome-clicado]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:geral',
+    'eventAction': 'clique:header-stick-bar',
+    'eventLabel': '[[nome-clicado]]'
+  });
+</script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-clicado]] | &#039;cartes&#039;, &#039;pool&#039;, &#039;plus-size&#039; e etc | Deve retornar o nome do link do stick bar clicado. |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[nome-clicado]] | 'carters', 'jeans', 'nossas-lojas' , 'compre-pelo-whatsapp' e etc | Deve retornar o nome do link do stick bar clicado. |
 
 <br />
-
 
 **No clique dos links do header**<br />
 
 - **Onde:** Em todas as páginas em que estiverem disponíveis
     - **Titulo ou nome do botão/link:** &quot;riachuelo&quot;(logo), &quot;login&quot;, &quot;minha-conta&quot; etc
-    
+
 ```html
-<div
-   data-gtm-event-category='riachuelo:geral'
-   data-gtm-event-action='clique:header'
-   data-gtm-event-label='[[nome-clicacdo]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:geral',
+    'eventAction': 'clique:header',
+    'eventLabel': '[[nome-clicado]]'
+  });
+</script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-clicado]] | &#039;riachuelo&#039; (logo), &#039;login&#039;, &#039;minha-conta&#039; e etc | Deve retornar o nome do link do header e no logo clicado. |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[nome-clicado]] |  'riachuelo' (logo), 'login', 'minha-conta', 'lista-de-desejos', 'sacola' e etc | Deve retornar o nome do link do header e no logo clicado. |
 
 <br />
 
@@ -524,71 +267,50 @@ window.dataLayer.push({
 - **Onde:** Em todas as páginas em que estiverem disponíveis
     - **Titulo ou nome do botão/link:** &quot;Novidades&quot;, &quot;Masculino&quot;, &quot;Feminino&quot;, &quot;Calça&quot; etc
     
-```html
-<div
-   data-gtm-event-category='riachuelo:geral'
-   data-gtm-event-action='clique:menu-superior'
-   data-gtm-event-label='[[nome-clicacdo]]'
->Botão</div>
-```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-clicacdo]] | &#039;novidades&#039;, &#039;masculino&#039;, &#039;feminino&#039;, &#039;alfaiataria&#039;, &#039;outlet&#039;, &#039;busca&#039;, &#039;camisetas, tenis, polo_manga_curta&#039;, &#039;super_skinny&#039;, &#039;regular&#039;, &#039;feminino:vestido_feminino_colecao_feminina&#039;, &#039;feminino:busca_feminino_colecao_feminina&#039; | Deve retornar o nome do link principal do menu. |
-
-<br />
-
-
-**No clique dos ícones de &quot; + &quot;  e &quot; - &quot; do footer para abrir as categorias**<br />
-
-- **Onde:** Em todas as páginas em que estiverem disponíveis
-    
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'riachuelo:geral',
-    'eventAction': 'clique:footer:categoria',
-    'eventLabel': '[[nome-categoria]]:[[abriu-ou-fechou]]'
+    'eventAction': 'clique:menu-superior',
+    'eventLabel': '[[nome-clicado]]'
   });
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-categoria]] | &quot;cartao-riachuelo&quot;, &quot;sobre-a-riachuelo&quot;, &quot;moda-que-transforma&quot; e etc | Deve retornar o nome da categoria do footer. |
-| [[abriu-ou-fechou]] | &quot;abriu&quot; ou &quot;fechou&quot; | Deve retornar o status da categoria. |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[nome-clicacdo]] | 'novidades', 'masculino', 'feminino', 'alfaiataria', 'outlet', 'camisetas, 'feminino:colecao-feminina:vestido', 'masculino:plus-size:camisa-e-polo', 'masculino:esporte-e-fitness:ver-todos' e etc | Deve retornar o nome do link principal do menu. |
 
 <br />
-
 
 **No clique dos links interno do footer**<br />
 
 - **Onde:** Em todas as páginas em que estiverem disponíveis
-    - **Titulo ou nome do botão/link:** &quot;Carter&#039;s&quot;, &quot;Pool&quot;, &quot;Jeans&quot;, &quot;Geek&quot; etc
     
 ```html
-<div
-   data-gtm-event-category='riachuelo:geral'
-   data-gtm-event-action='clique:footer:link'
-   data-gtm-event-label='[[nome-categoria]]:[[nome-link]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:geral',
+    'eventAction': 'clique:footer:[[link-ou-icone]]',
+    'eventLabel': '[[nome-categoria]]:[[nome-link]]'
+  });
+</script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-categoria]] | &quot;cartao-riachuelo&quot;, &quot;sobre-a-riachuelo&quot;, &quot;moda-que-transforma&quot; e etc | Deve retornar o nome da categoria do footer. |
-| [[nome-link]] | &#039;saiba-como-adquirir &#039;a-empresa&#039;, &#039;entre-costuras&#039;  e etc | Deve retornar o nome do link do footer clicado. |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[link-ou-icone]] | 'link' ou 'icone' |Retorna o tipo de icone que o usuario clicou.  |
+| [[nome-categoria]] | 'cartao-riachuelo', 'sobre-a-riachuelo', 'sustentabilidade', 'baixe-nosso-app' e etc | Deve retornar o nome da categoria do footer. |
+| [[nome-link]] | saiba-como-adquirir', 'a-empresa', 'na-pratica', 'google-play', 'app-store' e etc | Deve retornar o nome do link do footer clicado. |
 
 <br />
 
-
-**Após a seleção de interesse dentro do checkbox para se cadastrar em newsletter (OBS: Caso seja selecionado mais de uma opção, deve retornar todas as opções concatenadas, separando por ponto e vírgula ( ; ). Ex: &quot;novidades;feminino;&quot; etc)**<br />
+**No clique do botão "Cadastrar" (OBS: Caso seja selecionado mais de uma opção, deve retornar todas as opções concatenadas, separando por ponto e vírgula ( ; ). Ex: "novidades;feminino;" etc)**<br />
 
 - **Onde:** No cadastro de newsletter, localizado no footer em todas as páginas
     
@@ -598,170 +320,86 @@ window.dataLayer.push({
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'riachuelo:geral',
-    'eventAction': 'selecionou-interesse:newsletter-footer',
-    'eventLabel': '[[interesse-selecionado]]'
+    'eventAction': 'cadastrar:newsletter-footer',
+    'eventLabel': 'selecionou-interesse:[[interesse-selecionado]]'
   });
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[interesse-selecionado]] | &quot;novidades&quot;, &quot;selecionar-todos&quot;, &quot;infantil&quot; e etc. | Deve retornar o interesse selecionado no checkbox. |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[interesse-selecionado]] | "novidades", "selecionar-todos", "infantil", "novidades-feminino" e etc. | Deve retornar o interesse selecionado no checkbox. |
 
 <br />
 
-
-**Após o preenchimento do campo do newsletter**<br />
-
-- **Onde:** No cadastro de newsletter, localizado no footer em todas as páginas
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'riachuelo:geral',
-    'eventAction': 'preencheu-campo:cadastro-newsletter-footer',
-    'eventLabel': 'email'
-  });
-</script>
-```
-
-
-
-
-<br />
-
-
-**No sucesso ou erro da tentativa de cadastro de newsletter**<br />
-
-- **Onde:** No cadastro de newsletter, localizado no footer em todas as páginas
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'riachuelo:geral',
-    'eventAction': 'enviar:cadastro-newsletter-footer',
-    'eventLabel': '[[sucesso ou erro]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou erro]] | &quot;sucesso&quot; ou &quot;erro&quot; | Deve retornar o status do envio. |
-
-<br />
-
-
-**No clique nos links de redes sociais**<br />
+**No clique nos links de redes sociais/acessibilidade**<br />
 
 - **Onde:** Localizado no footer em todas as páginas
     - **Titulo ou nome do botão/link:** &quot;Riachuelo-facebook&quot;, &quot;Riachuelo-Youtube&quot; etc
     
-```html
-<div
-   data-gtm-event-category='riachuelo:geral'
-   data-gtm-event-action='clique:link:rede-social:footer'
-   data-gtm-event-label='[[nome-link]]'
->Botão</div>
-```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-link]] | &quot;riachuelo-facebook&quot;,  &quot;riachuelo-youtube&quot;, &quot;riachuelo-linkedin&quot; e etc | Deve retornar o nome do link da rede social clicada. |
-
-<br />
-
-
-**Na aparição do banner de lightbox**<br />
-
-- **Onde:** No banner de lightbox ao acessar o site na página home
-    
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'riachuelo:geral',
-    'eventAction': 'visualizou-banner',
-    'eventLabel': 'lightbox'
+    'eventAction': 'clique:link:rede-social:footer',
+    'eventLabel': '[[nome-link]]'
   });
 </script>
 ```
 
-
-
-
-<br />
-
-
-**Ao sair do banner de lightbox**<br />
-
-- **Onde:** No banner de lightbox ao acessar o site na página home
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'riachuelo:geral',
-    'eventAction': 'saiu-banner',
-    'eventLabel': 'lightbox'
-  });
-</script>
-```
-
-
-
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[nome-link]] |  "riachuelo-facebook",  "riachuelo-youtube", "riachuelo-linkedin", "riachuelo-casa", "acessibilidade" e etc | Deve retornar o nome do link da rede social clicada. |
 
 <br />
 
-
-**Ao clicar no botão de &quot;Conheça a coleção de dia das crianças&quot;**<br />
-
-- **Onde:** No banner de lightbox ao acessar o site na página home
-    
-```html
-<div
-   data-gtm-event-category='riachuelo:geral'
-   data-gtm-event-action='clique:botao-banner'
-   data-gtm-event-label='conheca-colecao-dia-das-criancas'
->Botão</div>
-```
-
-
-
-<br />
-
-
-**No clique dos botões ou links no modal &quot;Sacola&quot;**<br />
+**No clique dos botões ou links no modal "Sacola"**<br />
 
 - **Onde:** Na página de detalhe de produto
-    
+
 ```html
-<div
-   data-gtm-event-category='riachuelo:geral'
-   data-gtm-event-action='clique:[[botao ou link]]:modal-sacola'
-   data-gtm-event-label='[[nome-item]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:geral',
+    'eventAction': 'clique:[[botao ou link]]:modal-sacola',
+    'eventLabel': '[[nome-item]]'
+  });
+</script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[botao ou link]] | &#039;botao&#039; ou &#039;link&#039;. | Deve retornar o tipo de elemento clicado. |
-| [[nome-item]] | &#039;ver-todos-os-itens&#039;, &#039;ir-para-sacola&#039;. | Deve retornar o nome do item clicado, |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[botao ou link]] | 'botao' ou 'link'. | Deve retornar o tipo de elemento clicado. |
+| [[nome-item]] | 'ver-todos-os-itens', 'ir-para-sacola'. | Deve retornar o nome do item clicado |
 
 <br />
 
+**No clique nas opções de "Termos mais buscados" recomendados**<br />
+
+- **Onde:** No campo de busca, em todas as páginas que estiver disponível
+
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:geral',
+    'eventAction': 'clique:termos-mais-buscados',
+    'eventLabel': '[[item-clicado]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[item-clicado]] | 'vestido-feminino', 'cropped', 'biquini' e etc | Retorna o item clicado pelo usuário. |
+
+<br />
 
 ### Lightbox de Abandono Checkout
 
@@ -774,15 +412,13 @@ window.dataLayer.push({
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
+    'noInteraction': '1',
     'eventCategory': 'riachuelo:geral',
     'eventAction': 'exibiu:lightbox',
-'noInteraction': '1',
     'eventLabel': '[[id-lightbox]]'
   });
 </script>
 ```
-
-
 
 | Variável        | Exemplo                               | Descrição                         |
 | :-------------- | :------------------------------------ | :-------------------------------- |
@@ -2441,18 +2077,18 @@ window.dataLayer.push({
 
 ### Novo Enhanced E-commerce 
 
-**Na visualização de cada banner exibido durante a navegação**<br />
+**Na visualização dos banners promocionais**<br />
 
-- **Onde:** Em todas as páginas que exibirem banners (home, clp, plp)
+- **Onde:**  Em todas as páginas que exibirem banners promocionais (home, PLP, CLP)
     
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'promotionImpression',
+    'noInteraction': '1',
     'eventCategory': 'enhanced-ecommerce',
     'eventAction': 'promoView',
-    'noInteraction': '1',
     'ecommerce': {
     'promoView': {
       'promotions': [{
@@ -2466,17 +2102,14 @@ window.dataLayer.push({
 </script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
 | [[id-promocao]] | &quot;https://midia.fotos-riachuelo.com.br/fotos/megamenu/home/janeiro2020/ADS-5506/Carrossel-home-mcasa-kit-colcha_.jpg&quot; e etc | Deve retornar o link da imagem do banner |
-| [[nome-promocao]] | &quot;polos-diferenciadas&quot; | Deve retornar o nome amigável do banner |
-| [[arte-banner]] | &quot;hero;clp;banner:clicavel&quot;, &quot;mosaico;blog;banner:nao-clicavel&quot; e etc | Deve retornar o formato, o tipo de página que o banner foi clicado e o tipo do banner  |
-| [[posicao-promocao]] | &quot;1&quot; | Deve retornar a posição que o banner é exibido  |
-
+| [[nome-promocao]] | "polos-diferenciadas", "moschino-for-riachuelo", "carters-leve-segunda-peca-50-off" | Deve retornar o nome amigável do banner |
+| [[arte-banner]] | "hero:home", "hero:infantil", "faixa-superior:home", 'faixa-1:home", 'barra-de-servicos:home' "mosaico:home", "promocional:home", "blog:home" e etc | Deve retornar o formato, o tipo de página que o banner foi clicado e o tipo do banner  |
+| [[posicao-promocao]] | "1", "2", "3" e etc | Deve retornar a posição que o banner é exibido  |
 
 <br />
-
 
 **No clique dos banners**<br />
 
@@ -2504,15 +2137,14 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
 | [[id-promocao]] | &quot;https://midia.fotos-riachuelo.com.br/fotos/megamenu/home/janeiro2020/ADS-5506/Carrossel-home-mcasa-kit-colcha_.jpg&quot; e etc | Deve retornar o link da imagem do banner |
-| [[nome-promocao]] | &quot;polos-diferenciadas&quot; | Deve retornar o nome amigável do banner |
-| [[arte-banner]] | &quot;hero;clp;banner:clicavel&quot;, &quot;mosaico;blog;banner:nao-clicavel&quot; e etc | Deve retornar o formato, o tipo de página que o banner foi clicado e o tipo do banner  |
-| [[posicao-promocao]] | &quot;1&quot; | Deve retornar a posição que o banner é exibido  |
+| [[nome-promocao]] | "polos-diferenciadas", "moschino-for-riachuelo", "carters-leve-segunda-peca-50-off" | Deve retornar o nome amigável do banner |
+| [[arte-banner]] | "hero:home", "hero:infantil", "faixa-superior:home", 'faixa-1:home", 'barra-de-servicos:home' "mosaico:home", "promocional:home", "blog:home" e etc | Deve retornar o formato, o tipo de página que o banner foi clicado e o tipo do banner  |
+| [[posicao-promocao]] | "1", "2", "3" e etc | Deve retornar a posição que o banner é exibido  |
 
 <br />
-
 
 **Na visualização de uma vitrine de produtos**<br />
 
@@ -2523,43 +2155,53 @@ window.dataLayer.push({
 <script>
 window.dataLayer = window.dataLayer || [];
 window.dataLayer.push({
-  'event': 'productImpressions',
+  'event': 'productImpression',
+  'noInteraction': '1',
   'eventCategory':'enhanced-ecommerce',
   'eventAction': 'impressions',
-  'noInteraction': '1',
   'ecommerce': {
     'impressions': [{
+      'dimension30': '[[product-sub-categoria]]',
+      'dimension32': '[[product-preco-original]]',
       'dimension40': '[[product-exclusivoecommerce+marketplace]]',
+      'dimension42': '[[product-sku-filho]]',
       'dimension58': '[[product-selo/tag]]',
       'name': '[[nome-produto]]',
       'id': '[[id-produto]]',
       'list': '[[lista-produto]]',
       'variant': '[[variacao-produto]]',
-      'position': '[[posicao-produto]]'
+      'position': '[[posicao-produto]]',
+      'brand': '[[marca-produto]]',
+      'category': '[[categoria-produto]]',
+      'price': '[[preco-produto]]'
     }]
   }
 });
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[product-exclusivoecommerce+marketplace]] | &#039;sim:riachuelo&#039;, &#039;nao:riachuelo&#039;, &#039;nao:pontofrio&#039;, &#039;nao:extra&#039;, &#039;nao:sem-seller&#039; | Deve retornar se o produto é exclusivo do ecommerce e o seu id do  seller/marketplace |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[product-sub-categoria]] | '310090' | Código da categoria GM  |
+| [[product-preco-original]] |  '12', 'produto-temporariamente-indisponivel', 'indisponivel' etc | Preço do produto (dê). OBS: Caso o preço do mesmo apresente um erro e não traga a informação de preço, substituir a informação do “Preço DE” pelo “callback” do erro de preço.  |
+| [[product-exclusivoecommerce+marketplace]] | 'sim:richlo', 'nao:richlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do  seller/marketplace |
+| [[product-sku-filho]] | '2552' | ID filho do produto |
 | [[product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
 | [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
 | [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
-| [[lista-produto]] | &quot;feminino-blusa&quot;, &quot;masculino-polo&quot;, &quot;acessorios-e-relogios-aneis&quot;, &quot;feminino_em-destaque_plus-size&quot;, &quot;plp_campanhas_modacasa_fevereiro-2020_pascoa-casa-riachuelo&quot;, &quot;pdp_quem-viu-tambem-viu&quot;, &quot;home-destaques&quot;, &quot;novidades&quot; e etc | Nome da lista que o produto aparece, no caso de PLP, o nome da PLP tem que ser a URL ao invés de usar a “/” colocar “_“ |
+| [[lista-produto]] | "home:destaques", "plp:dia-das-maes:moderna", "clp:masculino:plus-size:camiseta", "clp:moda-intima:linha-plus-size:cintas-e-modeladores", "home:novidades", "home:outlet", "plp:moschino-for-riachuelo", "pdp:quem-viu-tambem-gostou" e etc | Nome da lista que o produto aparece, no caso de PLP, o nome da PLP tem que ser a URL ao invés de usar a “/” colocar “-“ |
 | [[posicao-produto]] | &quot;2&quot; | Posição que o produto aparece em uma lista de produtos |
 | [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
+| [[marca-produto]] |"pool-original" | Marca do produto |
+| [[categoria-produto]] |"masculino" | Departamento do produto |
+| [[preco-produto]] | "139.99" | Preço do produto |
 
 <br />
 
-
 **No clique dos produtos da vitrine interagidos na página**<br />
 
-- **Onde:** Em todas as páginas que exibirem uma lista de produtos (home, PLP, PDP)
+- **Onde:** Em todas as páginas que exibirem uma lista de produtos (home, CLP, PLP, PDP)
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -2571,22 +2213,19 @@ window.dataLayer.push({
     'click': {
       'actionField': {'list': '[[lista-produto]]'},
         'products': [{
-          'dimension13': '[[cd13-product-idadedoproduto]]',
-          'dimension24': '[[product-ordemdeinserção]]',
-          'dimension27': '[[product-padronagemdoproduto]]',
-          'dimension30': '[[product-subcategoria]]',
-          'dimension32': '[[product-preçooriginal]]',
-          'dimension38': '[[product-lifestyle]]',
-          'dimension39': '[[product-gender]]',
+          'dimension30': '[[product-sub-categoria]]',
+          'dimension32': '[[product-preco-original]]',
           'dimension40': '[[product-exclusivoecommerce+marketplace]]',
-          'dimension42': '[[product-skufilho]]',
+          'dimension42': '[[product-sku-filho]]',
           'dimension58': '[[product-selo/tag]]',
           'name': '[[nome-produto]]',
           'id': '[[id-produto]]',
-          'price': '[[preco-produto]]',
+          'list': '[[lista-produto]]',
+          'variant': '[[variacao-produto]]',
+          'position': '[[posicao-produto]]',
           'brand': '[[marca-produto]]',
           'category': '[[categoria-produto]]',
-          'position': '[[posicao-produto]]'
+          'price': '[[preco-produto]]'
         }]
     }
   }
@@ -2594,26 +2233,21 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[cd13-product-idadedoproduto]] |  &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
-| [[product-ordemdeinserção]] | 1,2,3 .. | Ordem de inserção ao carrinho |
-| [[product-padronagemdoproduto]] | &#039;florido&#039;,&#039;listado&#039; | Padrão da estampa do produto |
-| [[product-subcategoria]] |  &#039;310090&#039; | Código da categoria GM  |
-| [[product-subcategoria]] |  &#039;310090&#039; | Código da categoria GM  |
-| [[product-preçooriginal]] |  &#039;12&#039;, &#039;produto-temporariamente-indisponivel&#039;,&#039;indisponivel&#039; etc | Preço do produto (dê). OBS: Caso o preço do mesmo apresente um erro e não traga a informação de preço, substituir a informação do “Preço DE” pelo “callback” do erro de preço.  |
-| [[product-lifestyle]] | &#039;casual&#039;, &#039;esportivo&#039; | Estilo do produto  |
-| [[product-gender]] | &#039;unisex&#039;, &#039;feminino&#039; | Genero do produto |
-| [[product-exclusivoecommerce+marketplace]] | &#039;sim:riachuelo&#039;, &#039;nao:riachuelo&#039;, &#039;nao:pontofrio&#039;, &#039;nao:extra&#039;, &#039;nao:sem-seller&#039; | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
-| [[product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| [[product-sub-categoria]] | '310090' | Código da categoria GM  |
+| [[product-preco-original]] |  '12', 'produto-temporariamente-indisponivel', 'indisponivel' etc | Preço do produto (dê). OBS: Caso o preço do mesmo apresente um erro e não traga a informação de preço, substituir a informação do “Preço DE” pelo “callback” do erro de preço.  |
+| [[product-exclusivoecommerce+marketplace]] | 'sim:richlo', 'nao:richlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller' | Deve retornar se o produto é exclusivo do ecommerce e o seu id do  seller/marketplace |
+| [[product-sku-filho]] | '2552' | ID filho do produto |
 | [[product-selo/tag]] |  &#039;selo:black-friday&#039;, &#039;tag:frete-gratis&#039; e etc | Deve retornar o tipo do selo ou tag e a promoção. OBS: Caso apareça tanto o selo quanto a tag, disparar os dois na mesma dimensão e separar por &quot; ; &quot; (Ponto e vírgula) |
 | [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
 | [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
-| [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
-| [[marca-produto]] | &quot;pool-original&quot; | Marca do produto |
-| [[categoria-produto]] | &quot;masculino&quot; | Departamento do produto |
-| [[lista-produto]] | &quot;feminino-blusa&quot;, &quot;masculino-polo&quot;, &quot;acessorios-e-relogios-aneis&quot;, &quot;feminino_em-destaque_plus-size&quot;, &quot;plp_campanhas_modacasa_fevereiro-2020_pascoa-casa-riachuelo&quot;, &quot;pdp_quem-viu-tambem-viu&quot;, &quot;home-destaques&quot;, &quot;novidades&quot; e etc | Nome da lista que o produto aparece, no caso de PLP, o nome da PLP tem que ser a URL ao invés de usar a “/” colocar “_“ |
+| [[lista-produto]] | "home:destaques", "plp:dia-das-maes:moderna", "clp:masculino:plus-size:camiseta", "clp:moda-intima:linha-plus-size:cintas-e-modeladores", "home:novidades", "home:outlet", "plp:moschino-for-riachuelo", "pdp:quem-viu-tambem-gostou" e etc | Nome da lista que o produto aparece, no caso de PLP, o nome da PLP tem que ser a URL ao invés de usar a “/” colocar “-“ |
 | [[posicao-produto]] | &quot;2&quot; | Posição que o produto aparece em uma lista de produtos |
+| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
+| [[marca-produto]] |"pool-original" | Marca do produto |
+| [[categoria-produto]] |"masculino" | Departamento do produto |
+| [[preco-produto]] | "139.99" | Preço do produto |
 
 <br />
 
