@@ -603,7 +603,7 @@ window.dataLayer.push({
 | `[[marca-produto]]` |'pool-original' | Marca do produto |
 | `[[categoria-produto]]` |'masculino' | Departamento do produto |
 | `[[preco-produto]]` | '310090' | Preço do produto |
-| `[[dm11-product-subcategoria]]` | '139.99' | Código da categoria GM  |
+| `[[dm11-product-subcategoria]]` | '310090' | Código da categoria GM  |
 | `[[dm12-vendedor]]` | 'riachuelo', etc | Deve retornar o nome da loja que esta vendendo o produto |
 
 <br />
@@ -650,7 +650,7 @@ window.dataLayer.push({
 | `[[marca-produto]]` |'pool-original' | Marca do produto |
 | `[[categoria-produto]]` |'masculino' | Departamento do produto |
 | `[[preco-produto]]` | '310090' | Preço do produto |
-| `[[dm11-product-subcategoria]]` | '139.99' | Código da categoria GM  |
+| `[[dm11-product-subcategoria]]` | '310090' | Código da categoria GM  |
 | `[[dm12-vendedor]]` | 'riachuelo', etc | Deve retornar o nome da loja que esta vendendo o produto |
 
 <br />
@@ -705,7 +705,7 @@ window.dataLayer.push({
 | `[[dm8-product-estilo]]` | &quot;feminino-delicado&quot;, &quot;casual-e-atemporal, etc | Estilo do produto |
 | `[[dm9-product-tamanho]]` | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
 | `[[dm10-product-skufilho]]` |  &#039;2552&#039; | ID filho do produto |
-| `[[dm11-product-subcategoria]]` | 310090&#039; | Código da categoria GM  |
+| `[[dm11-product-subcategoria]]` |  '310090' | Código da categoria GM  |
 | `[[dm12-vendedor]]` | &quot;riachuelo&quot;, etc | Deve retornar o nome da loja ques esta vendendo o produto |
 | `[[dm13-quantidadepresentes]]` | &quot;45-itens&quot;, etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
 
@@ -759,8 +759,8 @@ window.dataLayer.push({
 | `[[dm6-product-cor]]` | 'rosa', 'azul', etc | Cor do produto |
 | `[[dm-7product-estampa]]` | 'face-selva', 'floral', etc | Estampa do produto |
 | `[[dm8-product-estilo]]` | 'feminino-delicado', 'casual-e-atemporal, etc | Estilo do produto |
-| `[[dm9-product-tamanho]]` | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
-| `[[dm10-product-skufilho]]` |  &#039;2552&#039; | ID filho do produto |
+| `[[dm9-product-tamanho]]` | 'p','m','8-12','42' e etc | Tamanho do produto |
+| `[[dm10-product-skufilho]]` |  '2552' | ID filho do produto |
 | `[[dm11-product-subcategoria]]` | '310090' | Código da categoria GM  |
 | `[[dm12-vendedor]]` | 'riachuelo', etc | Deve retornar o nome da loja ques esta vendendo o produto |
 | `[[dm13-quantidadepresentes]]` | '45-itens', etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
@@ -818,9 +818,9 @@ window.dataLayer.push({
 | `[[dm6-product-cor]]` | 'rosa', 'azul', etc | Cor do produto |
 | `[[dm7-product-estampa]]` | 'face-selva', 'floral', etc | Estampa do produto |
 | `[[dm8-product-estilo]]` | 'feminino-delicado', 'casual-e-atemporal, etc | Estilo do produto |
-| `[[dm9-product-tamanho]]` | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
-| `[[dm10-product-skufilho]]` |  &#039;2552&#039; | ID filho do produto |
-| `[[dm11-product-subcategoria]]` | 310090&#039; | Código da categoria GM  |
+| `[[dm9-product-tamanho]]` | 'p','m','8-12','42' e etc | Tamanho do produto |
+| `[[dm10-product-skufilho]]` |  '2552' | ID filho do produto |
+| `[[dm11-product-subcategoria]]` | '310090' | Código da categoria GM  |
 | `[[dm12-vendedor]]` | 'riachuelo', etc | Deve retornar o nome da loja ques esta vendendo o produto |
 | `[[dm13-quantidadepresentes]]` | '45-itens', etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
 | `[[passo-checkout]]` | '1' | Página de carrinho de compras |
@@ -882,9 +882,9 @@ window.dataLayer.push({
 | `[[dm6-product-cor]]` | 'rosa', 'azul', etc | Cor do produto |
 | `[[dm7-product-estampa]]` | 'face-selva', 'floral', etc | Estampa do produto |
 | `[[dm8-product-estilo]]` | 'feminino-delicado', 'casual-e-atemporal, etc | Estilo do produto |
-| `[[product-tamanho]]` | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
-| `[[dm10-product-skufilho]]` |  &#039;2552&#039; | ID filho do produto |
-| `[[dm11-product-subcategoria]]` | 310090&#039; | Código da categoria GM  |
+| `[[product-tamanho]]` | 'p','m','8-12','42' e etc | Tamanho do produto |
+| `[[dm10-product-skufilho]]` |  '2552' | ID filho do produto |
+| `[[dm11-product-subcategoria]]` | '310090' | Código da categoria GM  |
 | `[[dm12-vendedor]]` | 'riachuelo', etc | Deve retornar o nome da loja ques esta vendendo o produto |
 | `[[quantidadepresentes]]` | '45-itens', etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
 | `[[id-transacao]]` | '000011652' | Número do pedido |
@@ -900,11 +900,7 @@ window.dataLayer.push({
 
 <br />
 
-
-<br />
-
 ---
-
 
 ## Considerações Finais
 
