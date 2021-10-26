@@ -602,7 +602,7 @@ window.dataLayer.push({
 | `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
 | `[[marca-produto]]` |'pool-original' | Marca do produto |
 | `[[categoria-produto]]` |'masculino' | Departamento do produto |
-| `[[preco-produto]]` | '310090' | Preço do produto |
+| `[[preco-produto]]` | '139,99' | Preço do produto |
 | `[[dm11-product-subcategoria]]` | '310090' | Código da categoria GM  |
 | `[[dm12-vendedor]]` | 'riachuelo', etc | Deve retornar o nome da loja que esta vendendo o produto |
 
@@ -649,7 +649,7 @@ window.dataLayer.push({
 | `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
 | `[[marca-produto]]` |'pool-original' | Marca do produto |
 | `[[categoria-produto]]` |'masculino' | Departamento do produto |
-| `[[preco-produto]]` | '310090' | Preço do produto |
+| `[[preco-produto]]` | '139,99' | Preço do produto |
 | `[[dm11-product-subcategoria]]` | '310090' | Código da categoria GM  |
 | `[[dm12-vendedor]]` | 'riachuelo', etc | Deve retornar o nome da loja que esta vendendo o produto |
 
@@ -693,21 +693,21 @@ window.dataLayer.push({
 
 | Variável        | Exemplo          | Descrição          |
 | :-------------- | :--------------- | :----------------- |
-| `[[nome-produto]]` | &quot;cafeteira&quot; | Nome do produto |
-| `[[id-produto]]` | &quot;i17mcjf106-771-2&quot; | SKU do produto |
-| `[[preco-produto]]` | &quot;139,99&quot; | Preço do produto |
-| `[[categoria-produto]]` | &quot;casa&quot;, &quot;moda&quot;, &quot;eletronicos&quot; e etc | Categoria do produto (departamento onde o produto aparece) |
-| `[[variacao-produto]]` | &quot;325&quot; | Código DCO - Categoria do produto |
-| `[[marca-produto]]` | &quot;nespresso&quot; | Marca do produto |
-| `[[quantidade-produto]]` | &quot;1&quot; | Quantidade do produto |
-| `[[dm6-product-cor]]` | &quot;rosa&quot;, &quot;azul&quot;, etc | Cor do produto |
-| `[[dm7-product-estampa]]` | &quot;face-selva&quot;, &quot;floral&quot;, etc | Estampa do produto |
-| `[[dm8-product-estilo]]` | &quot;feminino-delicado&quot;, &quot;casual-e-atemporal, etc | Estilo do produto |
-| `[[dm9-product-tamanho]]` | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
-| `[[dm10-product-skufilho]]` |  &#039;2552&#039; | ID filho do produto |
+| `[[nome-produto]]` | 'cafeteira' | Nome do produto |
+| `[[id-produto]]` | 'i17mcjf106-771-2' | SKU do produto |
+| `[[preco-produto]]` | '139,99' | Preço do produto |
+| `[[categoria-produto]]` | 'casa', 'moda', 'eletronicos' e etc | Categoria do produto (departamento onde o produto aparece) |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[marca-produto]]` | 'nespresso' | Marca do produto |
+| `[[quantidade-produto]]` | '1' | Quantidade do produto |
+| `[[dm6-product-cor]]` | 'rosa', 'azul', etc | Cor do produto |
+| `[[dm7-product-estampa]]` | 'face-selva', 'floral', etc | Estampa do produto |
+| `[[dm8-product-estilo]]` | 'feminino-delicado', 'casual-e-atemporal, etc | Estilo do produto |
+| `[[dm9-product-tamanho]]` | 'p','m','8-12','42' e etc | Tamanho do produto |
+| `[[dm10-product-skufilho]]` |  '2552' | ID filho do produto |
 | `[[dm11-product-subcategoria]]` |  '310090' | Código da categoria GM  |
-| `[[dm12-vendedor]]` | &quot;riachuelo&quot;, etc | Deve retornar o nome da loja ques esta vendendo o produto |
-| `[[dm13-quantidadepresentes]]` | &quot;45-itens&quot;, etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
+| `[[dm12-vendedor]]` | 'riachuelo', etc | Deve retornar o nome da loja ques esta vendendo o produto |
+| `[[dm13-quantidadepresentes]]` | '45-itens', etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
 
 <br />
 
