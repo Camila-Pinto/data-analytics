@@ -349,8 +349,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo        | Descrição            |
 | :-------------- | :------------- | :--------------------|
-| `[[nome-pergunta]]` | 'o-que-e-do-meu-jeito-com-br', 'como-compartilhar-minha-lista' e etc.
- | Retorna o nome da pergunta.  |
+| `[[nome-pergunta]]` | 'o-que-e-do-meu-jeito-com-br', 'como-compartilhar-minha-lista' e etc.| Retorna o nome da pergunta.  |
 | `[[acao]]` | 'abrir' ou 'fechar'. | Retorna a ação do usuário. |
 
 <br />
