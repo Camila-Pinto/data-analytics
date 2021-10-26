@@ -11,11 +11,17 @@
 - [Implementação](#implementa%c3%a7%c3%a3o)
 - [Especificações Globais](#especifica%c3%a7%c3%b5es-globais)
 - [Dimensões Globais](#dimens&#245;es-globais)
+- [Geral](#geral)
+- [Home](#home)
+- [Login](#login)
+- [Lista de Presentes - Visão Convidados](#lista-de-presentes---vis&#227;o-convidados)
+- [Página de Busca](#p&#225;gina-de-busca)
+- [Enhanced E-commerce](#enhanced-e-commerce)
 
 <br />
 
 ## Implementação da Camada de dados - Projeto Do Meu Jeito
-Última atualização: 02/06/2021 <br />
+Última atualização: 26/10/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -184,34 +190,57 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[userid]] | &quot;01234&quot; | ID único de usuário definido após o cadastro |
-| [[quantidadepresentes]] | &quot;45-itens&quot;, etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
-| [[tipolista]] | &quot;cha-de-bebe&quot;, &#039;lista-de-casamento&#039;, &#039;open-house&#039; e etc. | Deve retornar o tipo de lista selecionada |
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[userid]]` | &quot;01234&quot; | ID único de usuário definido após o cadastro |
+| `[[quantidadepresentes]]` | &quot;45-itens&quot;, etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
+| `[[tipolista]]` | &quot;cha-de-bebe&quot;, &#039;lista-de-casamento&#039;, &#039;open-house&#039; e etc. | Deve retornar o tipo de lista selecionada |
 
 ---
 
-
 ### Geral 
-
 
 **No clique dos itens do footer.**<br />
 
 - **Onde:** Em todas as páginas que estiver disponível.
     
 ```html
-<div
-   data-gtm-event-category='do-meu-jeito:geral'
-   data-gtm-event-action='clique:footer'
-   data-gtm-event-label='[[nome-item]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'dmj:geral',
+    'eventAction': 'clique:footer',
+    'eventLabel': '[[nome-item]]'
+  });
+</script>
 ```
 
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[nome-item]]` | 'politica-de-privacidade', 'termos-e-condicoes-de-uso', 'acessibilidade' e etc | Deve retornar o nome do item clicado. |
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-item]] | &#039;como-funciona&#039;, &#039;beneficios&#039;, &#039;quem-somos&#039; e etc. | Deve retornar o nome do item clicado. |
+<br />
+
+**No clique dos itens do Header.**<br />
+
+- **Onde:** Em todas as páginas que estiver disponível.
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'dmj:geral',
+    'eventAction': 'clique:header',
+    'eventLabel': '[[nome-item]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[nome-item]]` | 'logo-riachuelo', 'logo-do-meu-jeito', 'perguntas-frequentes', 'como-funciona', 'beneficios', 'acesse-sua-conta' e etc | Deve retornar o nome do item clicado. |
 
 <br />
 
@@ -221,63 +250,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 - **Onde:** Em todas as páginas que estiver disponível.
     
 ```html
-<div
-   data-gtm-event-category='do-meu-jeito:geral'
-   data-gtm-event-action='clique:icone'
-   data-gtm-event-label='acessar-sacola'
->Botão</div>
-```
-
-
-
-<br />
-
-
-**No callback de &quot;Sua conta foi atualizada&quot;**<br />
-
-- **Onde:** Na página de &quot;Sua conta foi atualizada&quot;
-    
-```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'do-meu-jeito:geral',
-    'eventAction': 'callback:atualizacao-de-conta',
-    'eventLabel': '[[atualizacao]]:conta-atualizada'
+    'eventCategory': 'dmj:geral',
+    'eventAction': 'clique:icone',
+    'eventLabel': 'acessar-sacola'
   });
 </script>
 ```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[atualizacao]] | &#039;senha&#039;, &#039;dados-cadastrais&#039;, &#039;cadastro-dos-noivos&#039; e etc | Deve retornar o que foi atualizado na conta. |
-
-<br />
-
-**No clique dos botões da pagina, após realizar uma busca.**<br />
-
-- **Onde:** Em todas as páginas  de busca em que estiver disponível;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'do-meu-jeito:geral',
-    'eventAction': 'buscar-lista:clique:botao',
-    'eventLabel': '[[nome-botao]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;nova-busca&#039;, &#039;ver-lista&#039;, &#039;ver-mais-listas&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
 
@@ -290,46 +272,22 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'do-meu-jeito:nps',
+    'eventCategory': 'dmj:nps',
     'eventAction': 'callback:enviar:modal',
     'eventLabel': '[[opcao]]'
   });
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
 | [[opcao]] | &#039;nao-gostei&#039;, &#039;gostei&#039;, &#039;sei-la&#039; e etc | Deve retornar o nome da opção clicada. |
 
 <br />
 
+### Home 
 
-
-### Home - Sem logar
-
-**No clique dos itens do menu.**<br />
-
-- **Onde:** Na página Home.
-    
-```html
-<div
-   data-gtm-event-category='dmj:deslogado:home'
-   data-gtm-event-action='clique:menu'
-   data-gtm-event-label='[[nome-item]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-item]] | &#039;logo&#039;, &#039;perguntas-frequentes&#039;, &#039;como-funciona&#039;, &#039;beneficios&#039;, &#039;quem-somos&#039; e etc. | Deve retornar o nome do item clicado. |
-
-<br />
-
-
-**Na interação com o campo &quot;Buscar Lista&quot;.**<br />
+**Na interação com os campos "Buscar uma Lista".**<br />
 
 - **Onde:** Na página Home.
     
@@ -338,100 +296,40 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'dmj:deslogado:home',
+    'eventCategory': 'dmj:home',
     'eventAction': 'interacao:campo',
-    'eventLabel': 'preencheu:campo:buscar-lista'
+    'eventLabel': '[[nome-campo]]'
   });
 </script>
 ```
 
-
-
-
-<br />
-
-
-**No clique do Perfil.**<br />
-
-- **Onde:** Na página Home.
-
-
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:deslogado:home',
-    'eventAction': 'clique:botao',
-    'eventLabel': 'criar-ou-acessar-lista'
-  });
-</script>
-```
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[nome-campo]]` | 'nome-dos-anfitrioes', 'data-do-evento' e etc | Retorna o nome do campo interagido.|
 
 <br />
-
 
 **No clique dos botões.**<br />
 
 - **Onde:** Na página Home.
-    
+
 ```html
-<div
-   data-gtm-event-category='dmj:deslogado:home'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'dmj:home',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;criar-nova-lista&#039;, &#039;buscar-listas&#039;. | Deve retornar o nome do botão clicado. |
-
-<br />
-
-
-**No clique dos botões em &quot;como funciona ou perguntas frequentes&quot;**<br />
-
-- **Onde:** Na página Home, no menu &quot;Como funciona&quot;
-    
-```html
-<div
-   data-gtm-event-category='dmj:deslogado:home'
-   data-gtm-event-action='clique:[[nome-menu]]'
-   data-gtm-event-label='botao:[[nome-botao]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-menu]] | &#039;como-funciona&#039; ou &#039;perguntas-frequentes&#039;. | Deve retornar o nome do menu. |
-| [[nome-botao]] | &#039;noivos&#039;, &#039;convidados&#039;. | Deve retornar o nome do botão clicado. |
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[nome-botao]]` | 'buscar', 'criar-lista', 'criar-lista-gratis' e etc | Retorna o nome do botão clicado. |
 
 <br />
-
-
-**No clique dos botão &quot;Criar nova lista&quot; de cada menu**<br />
-
-- **Onde:** Na página Home, em todos os menus
-    
-```html
-<div
-   data-gtm-event-category='dmj:deslogado:home'
-   data-gtm-event-action='clique:[[nome-pagina]]'
-   data-gtm-event-label='botao:[[nome-botao]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-pagina]] | &#039;como-funciona&#039;, &#039;beneficios&#039;, &#039;quem-somos&#039;, &#039;perguntas-frequentes&#039; ,  &#039;home&#039; e etc. | Deve retornar o nome da pagina. |
-| [[nome-botao]] | &#039;criar-nova-lista&#039;, &#039;buscar-listas&#039;, etc | Deve retornar o nome do botão clicado. |
-
-<br />
-
 
 **Na interação para abrir ou fechar uma pergunta**<br />
 
@@ -442,1385 +340,325 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'dmj:deslogado:home',
+    'eventCategory': 'dmj:home',
     'eventAction': 'interacao:perguntas-frequentes',
     'eventLabel': '[[nome-pergunta]]:[[acao]]'
   });
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-pergunta]] | &#039;o-que-e-do-meu-jeito-com-br&#039; e etc. | Deve retornar o nome da pergunta. |
-| [[acao]] | &#039;abrir&#039; ou &#039;fechar&#039;. | Deve retornar a ação do usuário. |
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[nome-pergunta]]` | 'o-que-e-do-meu-jeito-com-br', 'como-compartilhar-minha-lista' e etc.
+ | Retorna o nome da pergunta.  |
+| `[[acao]]` | 'abrir' ou 'fechar'. | Retorna a ação do usuário. |
 
 <br />
 
+**Na interação com o vídeo de "Como Funciona?"**<br />
+
+- **Onde:** Na página Home, seção de "Como Funciona?"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'dmj:home',
+    'eventAction': 'interacao:video:como-funciona',
+    'eventLabel': '[[acao]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[acao]]` | 'play' ou 'pause' | Retorna a ação do usuário com o video.  |
+
+<br />
 
 ### Login
 
-**Na interação com os campos &quot;Acesse sua lista&quot;.**<br />
+**No clique dos links no fluxo de Login**<br />
 
-- **Onde:** Na página de login.
+- **Onde:** Nas página de login, todas as etapas
     
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'dmj:login',
-    'eventAction': 'interacao:acesse-sua-lista',
-    'eventLabel': 'preencheu:campo:[[nome-campo]]'
+    'eventCategory': 'dmj:login:[[etapa]]',
+    'eventAction': 'clique:link',
+    'eventLabel': '[[nome-link]]'
   });
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;email&#039;, &#039;senha&#039;. | Deve retornar o nome do campo preenchido. |
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[etapa]]` | 'dados', 'senha', 'lista' ou 'evento' | Retorna a etapa que o usuário está. |
+| `[[nome-link]]` | 'ja-tem-uma-conta-entre', 'termos-de-adesao' e etc | Retorna o nome do link clicado. |
 
 <br />
 
+**No clique no botão "Continuar" para cada etapa**<br />
 
-**Na interação com o checkbox &quot;manter conectado&quot;.**<br />
-
-- **Onde:** Na página de login.
+- **Onde:** Nas páginas de login, todas as etapas
+- **Obs:** Na etapa de "Lista", retornar o tipo de lista escolhido. Para as outras etapas, podemos desconsiderar a dimension14
     
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'dmj:login',
-    'eventAction': 'interacao:acesse-sua-lista',
-    'eventLabel': 'checkbox:manter-conectado'
-  });
-</script>
-```
-
-
-
-
-<br />
-
-
-**No clique do botão &quot;entrar&quot;.**<br />
-
-- **Onde:** Na página de login.
-    
-```html
-<div
-   data-gtm-event-category='dmj:login'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='entrar'
->Botão</div>
-```
-
-
-
-<br />
-
-
-**No clique do links.**<br />
-
-- **Onde:** Na página de login.
-    
-```html
-<div
-   data-gtm-event-category='dmj:login'
-   data-gtm-event-action='clique:link'
-   data-gtm-event-label='[[nome-link]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-link]] | &#039;esqueceu-sua-senha&#039; ou &#039;quer-criar-uma-lista&#039;. | Deve retornar o nome do link clicado. |
-
-<br />
-
-
-**No preenchimento do campo e-mail, após clicar em &quot;esqueceu sua senha&quot;.**<br />
-
-- **Onde:** Na página &quot;Esqueceu sua senha?&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:login:esqueceu-sua-senha',
-    'eventAction': 'preencheu:campo',
-    'eventLabel': 'email'
-  });
-</script>
-```
-
-
-
-
-<br />
-
-
-**No clique do botão &quot;OK&quot;, após clicar em esqueceu sua senha.**<br />
-
-- **Onde:** Na página de &quot;Esqueceu sua senha?&quot;
-    
-```html
-<div
-   data-gtm-event-category='dmj:login:esqueceu-sua-senha'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='ok'
->Botão</div>
-```
-
-
-
-<br />
-
-
-**No callback para checar a caixa de entrada do e-mail**<br />
-
-- **Onde:** Na página de &quot;Crie ou acesse a lista do seu evento&quot;
-    
-```html
-<div
-   data-gtm-event-category='dmj:login:esqueceu-sua-senha'
-   data-gtm-event-action='callback:checar-caixa-de-entrada'
-   data-gtm-event-label='[[instrucao]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[instrucao]] | &#039;voce-devera-receber-um-email-em-breve-com-mais-instrucoes&#039; e etc | Deve retornar a instrução recebida |
-
-<br />
-
-
-**No clique do botão &quot;OK&quot;, após ter recebido o link via e-mail para atualização de senha**<br />
-
-- **Onde:** Na página de &quot;Atualização de Senha&quot;
-    
-```html
-<div
-   data-gtm-event-category='dmj:login:atualizacao-de-senha'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='ok'
->Botão</div>
-```
-
-
-
-<br />
-
-
-**No callback da tentiva de login.**<br />
-
-- **Onde:** Na página Login.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'login',
-    'eventCategory': 'dmj:login',
-    'eventAction': 'envio:callback',
-    'eventLabel': '[[sucesso ou tipo-de-erro]]',
-    'dimension1': '[[userid]]',
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-de-erro]] | &#039;sucesso&#039;, &#039;nao-foi-possivel&#039; e etc. | Deve retornar a mensagem de sucesso ou o tipo de erro. |
-| [[userid]] | &quot;01234&quot; | ID único de usuário definido após o cadastro |
-
-<br />
-
-
-### Cadastro Lista
-
-**Na escolha do tipo da sua lista.**<br />
-
-- **Onde:** Na página de cadastro.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:lista:cadastro',
+    'eventCategory': 'dmj:login:[[etapa]]',
     'eventAction': 'clique:botao',
-    'eventLabel': '[[nome-do-botao]]:[[tipo-lista-selecionada]]'
+    'eventLabel': 'continuar',
+    'dimension14': '[[tipo-de-lista]]'
   });
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-do-botao]] | &#039;continuar&#039; | Deve retornar o nome do botão clicado. 
-| [[tipo-lista-selecionada]] | &#039;cha-de-bebe&#039;, &#039;open-house&#039;, &#039;lista-de-casamento&#039; e etc. | Deve retornar qual o tipo da lista selecionada. |
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[etapa]]` | 'dados', 'senha', 'lista' ou 'evento' | Retorna a etapa que o usuário está. |
+| `[[tipo-de-lista]]` | 'cha-de-bebe', 'lista-de-casamento', 'open-house' e etc | Retorna o tipo de lista selecionada |
 
 <br />
 
+**Na interação com o checkbox de "Aceite os termos"**<br />
 
-**Na interação com os campos &quot;Criar Lista&quot;.**<br />
-
-- **Onde:** Na página de cadastro.
+- **Onde:** Na página de login, etapa de "Senha"
     
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'dmj:noivos:cadastro',
-    'eventAction': 'interacao:criar-lista',
-    'eventLabel': 'preencheu:campo:[[nome-campo]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;nome&#039;, &#039;nome-do-seu-amor&#039;, &#039;cpf&#039; e etc. | Deve retornar o nome do campo preenchido. |
-
-<br />
-
-
-**Ao selecionar a data do casamento**<br />
-
-- **Onde:** Na página de cadastro.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:cadastro',
-    'eventAction': 'interacao:criar-lista',
-    'eventLabel': 'selecionou:data-de-casamento:[[valor]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[valor]] | &#039;01-janeiro-2020&#039; e etc. | Deve retornar a data escolhida. |
-
-<br />
-
-
-**No clique do link &quot;termos de uso&quot;**<br />
-
-- **Onde:** Na página de cadastro.
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:cadastro'
-   data-gtm-event-action='clique:link'
-   data-gtm-event-label='termos-de-uso'
->Botão</div>
-```
-
-
-
-<br />
-
-
-**No clique do botão &quot;continuar&quot;**<br />
-
-- **Onde:** Na página de cadastro.
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:cadastro'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='continuar'
->Botão</div>
-```
-
-
-
-<br />
-
-
-**No callback da tentiva de cadastro.**<br />
-
-- **Onde:** Na página de cadastro.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'conversion',
-    'eventCategory': 'dmj:noivos:cadastro',
-    'eventAction': 'envio:callback',
-    'eventLabel': '[[sucesso ou tipo-de-erro]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-de-erro]] | &#039;sucesso&#039;, &#039;nao-foi-possivel&#039; e etc. | Deve retornar a mensagem de sucesso ou o tipo de erro. |
-
-<br />
-
-
-### Geral - Noivos - Aréa Logada
-
-**No clique para editar o perfil, na lateral esquerda**<br />
-
-- **Onde:** Em todas as páginas que estiver disponível
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:geral-minha-conta'
-   data-gtm-event-action='clique:perfil'
-   data-gtm-event-label='editar'
->Botão</div>
-```
-
-
-
-<br />
-
-
-**No clique do menu lateral**<br />
-
-- **Onde:** Em todas as páginas que estiver disponível.
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:geral-minha-conta'
-   data-gtm-event-action='clique:menu'
-   data-gtm-event-label='[[nome-item]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-item]] | &#039;minha-conta&#039;, &#039;sair&#039;, &#039;adicionar-presentes-a-lista&#039; e etc. | Deve retornar o nome do item clicado. |
-
-<br />
-
-
-**No clique do botões em compartilhe sua lista, na lateral esquerda.**<br />
-
-- **Onde:** Em todas as páginas que estiver disponível.
-
-
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:geral-minha-conta',
-    'eventAction': 'clique:compartilhe-sua-lista',
-    'eventLabel': 'botao:[[nome-botao]]'
-  });
-</script>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;copiar-link-do-site&#039;, &#039;facebook&#039;, &#039;whatsapp&#039; e etc. | Deve retornar o nome do botão clicado. |
-
-<br />
-
-
-### Minha Conta - Noivos - Aréa Logada
-
-**Na interação com os campos do formulário.**<br />
-
-- **Onde:** Na página minha conta.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:acesso:minha-conta',
-    'eventAction': 'interacao:formularia',
-    'eventLabel': 'preencheu:campo:[[nome-campo]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;nome-completo&#039;, &#039;nome-do-amor&#039;, &#039;email&#039;, &#039;cpf&#039; e etc. | Deve retornar o nome do campo preenchido. |
-
-<br />
-
-
-**No clique dos botões ou links do formulário.**<br />
-
-- **Onde:** Na página minha conta.
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:acesso:minha-conta'
-   data-gtm-event-action='clique:formulario'
-   data-gtm-event-label='[[botao ou link]]:[[nome-item]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[botao ou link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o nome do elemento clicado. |
-| [[nome-item]] | &#039;salvar-edicao&#039;,  &#039;excluir-conta&#039;. | Deve retornar o nome do item clicado. |
-
-<br />
-
-
-**No clique dos botões do modal de exclusão de conta.**<br />
-
-- **Onde:** Na página minha conta.
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:acesso:minha-conta'
-   data-gtm-event-action='clique:modal-excluir-conta'
-   data-gtm-event-label='botao:[[nome-botao]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;excluir&#039;, &#039;cancelar&#039;, &#039;fechar&#039;. | Deve retornar o nome do botão clicado. |
-
-<br />
-
-
-### Cadastro - Noivos - Área Logada
-
-**No clique do link &quot;Clique aqui para continuar&quot;**<br />
-
-- **Onde:** Ao fim do cadastro dos noivos, após receber o e-mail de verificação
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:cadastro-noivos'
-   data-gtm-event-action='clique:link'
-   data-gtm-event-label='clique-aqui-para-continuar'
->Botão</div>
-```
-
-
-
-<br />
-
-
-### Personalização - Noivos - Área Logada
-
-**Ao enviar uma imagem para capa, ou selecionar uma existente.**<br />
-
-- **Onde:** Na página de personalização.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:personalizacao',
-    'eventAction': 'selecionar:imagem-capa',
-    'eventLabel': '[[existente ou anexada]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[existente ou enviada]] | &#039;existente&#039; ou &#039;anexada&#039;. | Deve retornar que tipo de imagem foi utilizada. |
-
-<br />
-
-
-**Ao inserir uma imagem para noiva e noivo.**<br />
-
-- **Onde:** Na página de personalização.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:personalizacao',
-    'eventAction': 'inserir:foto',
-    'eventLabel': '[[noivo ou noiva]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[noivo ou noiva]] | &#039;noiva&#039; ou &#039;noivo&#039;. | Deve retornar onde inseriu a foto. |
-
-<br />
-
-
-**Na seleção dos campos da seção &quot;Edite informações sobre seu casamento&quot;**<br />
-
-- **Onde:** Na página de personalização.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:personalizacao',
-    'eventAction': 'interacao:edite-informacoes',
-    'eventLabel': 'selecionou:[[nome-filtro]]:[[valor-filtro]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-filtro]] | &#039;data-do-casamento&#039; ou &#039;estado&#039;, &#039;cidade&#039;. | Deve retornar o nome do filtro. |
-| [[valor-filtro]] | &#039;03-fevereiro-2020&#039;, &#039;sp&#039;, &#039;sao-paulo&#039; e etc. | Deve retornar o valor do filtro. |
-
-<br />
-
-
-**Na interação com &quot;Disponibilidade da lista&quot;**<br />
-
-- **Onde:** Na página de personalização.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:personalizacao',
-    'eventAction': 'interacao:disponibilidade-da-lista',
-    'eventLabel': '[[visivel ou indisponivel]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[visivel ou indisponivel]] | &#039;visivel&#039; ou &#039;indisponivel&#039;. | Deve retornar a disponibilidade da lista. |
-
-<br />
-
-
-**Na interação com o campo &quot;personalize o endereço do seu site&quot;**<br />
-
-- **Onde:** Na página de personalização.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:personalizacao',
-    'eventAction': 'interacao:campo',
-    'eventLabel': 'personalize-o-endereco-do-seu-site'
-  });
-</script>
-```
-
-
-
-
-<br />
-
-
-**Na tentativa de callback para personalizar o endereço do seu site**<br />
-
-- **Onde:** Na página de personalização.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:personalizacao',
-    'eventAction': 'envio:callback-personalize-o-endereco',
-    'eventLabel': '[[sucesso ou tipo-de-erro]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-de-erro]] | &#039;sucesso-url-disponivel&#039;, &#039;erro:url-ja-utilizada&#039; e etc | Deve retornar a mensagem de erro ou de sucesso. |
-
-<br />
-
-
-**No clique do botão &quot;Salvar Personalização&quot;**<br />
-
-- **Onde:** Na página de personalização.
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:personalizacao'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='salvar-personalizacao'
->Botão</div>
-```
-
-
-
-<br />
-
-
-**No clique dos botões do lightbox**<br />
-
-- **Onde:** Na página de personalização.
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:personalizacao'
-   data-gtm-event-action='clique:lightbox'
-   data-gtm-event-label='botao:[[nome-botao]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;nao&#039;, &#039;sim&#039;, &#039;fechar&#039;. | Deve retornar o nome do botão clicado. |
-
-<br />
-
-
-###   Adicionar Presentes- Noivos - Aréa Logada
-
-**No clique dos botões do lightbox.**<br />
-
-- **Onde:** Na página Adicionar presentes à lista.
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:adicionar-presentes'
-   data-gtm-event-action='clique:lightbox'
-   data-gtm-event-label='botao:[[nome-botao]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;comecar-agora&#039; ou &#039;fechar&#039;. | Deve retornar o nome do botão clicado. |
-
-<br />
-
-
-**Ao clicar em buscar**<br />
-
-- **Onde:** Na página Adicionar presentes à lista.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:adicionar-presentes',
-    'eventAction': 'busca',
-    'eventLabel': '[[nome-buscado]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-buscado]] | &#039;tapetes&#039; e etc. | Deve o nome buscado. |
-
-<br />
-
-
-**No callback de erro de busca**<br />
-
-- **Onde:** Na página Adicionar presentes à lista.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'conversion',
-    'eventCategory': 'dmj:noivos:adicionar-presentes',
-    'eventAction': 'envio:callback-busca',
-    'eventLabel': '[[sucesso-erro]]:[[nome-buscado]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso-erro]] | &#039;sucesso&#039;, &#039;erro:ops-nao-encontramos-nenhum-resultado&#039; e etc | Deve retornar a mensagem de sucesso ou o tipo de erro. |
-| [[nome-buscado]] | &#039;tapetes&#039; e etc. | Deve o nome buscado. |
-
-<br />
-
-
-**No retorno de erro ao excluir um dos itens da lista**<br />
-
-- **Onde:** Na página Adicionar presentes à lista.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'conversion',
-    'eventCategory': 'dmj:noivos:adicionar-presentes',
-    'eventAction': 'envio:callback-excluir-item',
-    'eventLabel': '[[sucesso-erro]]',
-    'dimension6': '[[product-cor]]',
-    'dimension7': '[[product-estampa]]',
-    'dimension8': '[[product-estilo]]',
-    'dimension9': '[[product-tamanho]]',
-    'dimension10': '[[product-skufilho]]',
-    'dimension11': '[[product-subcategoria]]',
-    'dimension12': '[[vendedor]]',
-    'dimension13': '[[quantidadepresentes]]',
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso-erro]] | &#039;sucesso&#039;, &#039;erro:ops-algo-deu-errado&#039; e etc | Deve retornar a mensagem de sucesso ou o tipo de erro. |
-| [[product-cor]] | &quot;rosa&quot;, &quot;azul&quot;, etc | Cor do produto |
-| [[product-estampa]] | &quot;face-selva&quot;, &quot;floral&quot;, etc | Estampa do produto |
-| [[product-estilo]] | &quot;feminino-delicado&quot;, &quot;casual-e-atemporal, etc | Estilo do produto |
-| [[product-tamanho]] | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
-| [[product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
-| [[product-subcategoria]] | 310090&#039; | Código da categoria GM  |
-| [[vendedor]] | &quot;riachuelo&quot;, etc | Deve retornar o nome da loja ques esta vendendo o produto |
-| [[quantidadepresentes]] | &quot;45-itens&quot;, etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
-
-<br />
-
-
-**Após clicar nos botões de &quot;Limpar Filtro&quot; ou &quot;Aplicar&quot; depois de interagir com os filtros.**<br />
-
-- **Onde:** Na página Adicionar presentes à lista.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:adicionar-presentes',
-    'eventAction': 'clique:filtro:[[nome-botao]]',
-    'eventLabel': '[[nome-fitro]]:[[categoria]]:[[valor-filtro]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;fechar&#039;, &#039;aplicar-filtro&#039;, &#039;limpar-filtro&#039; . | Deve retornar o nome do botão clicado. |
-| [[nome-fitro]] | &#039;departamento&#039;, &#039;filtrar-ordenar&#039;, &#039;filtrar-categorias&#039; e etc | Deve retornar o nome do filtro. |
-| [[categoria]] | &#039;cama&#039;, &#039;banho&#039; e etc | Deve retornar a categoria do filtro. |
-| [[valor-filtro]] | &#039;menor-preco&#039;, &#039;maior-preco&#039; e etc.  | Deve retornar o valor do filtro selecionado. |
-
-<br />
-
-
-### Minha Lista de Presentes - Noivos - Aréa Logada
-
-**Ao selecionar a opção de habiliar e desabilitar a lista**<br />
-
-- **Onde:** Na página Minha lista de presentes.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:minha-lista',
-    'eventAction': 'interacao',
-    'eventLabel': '[[habilitar ou desabilitar]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[habilitar ou desabilitar]] | &#039;habilitar&#039; ou &#039;desabilitar&#039;. | Deve retornar a opção selecionada. |
-
-<br />
-
-
-**No clique dos botões.**<br />
-
-- **Onde:** Na página Minha lista de presentes.
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:minha-lista'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;esvaziar-lista&#039;, &#039;adicionar-mais-presentes&#039;. | Deve retornar o nome do botão clicado. |
-
-<br />
-
-
-**Na interação com o filtro &quot;Filtrar/ordenar&quot;.**<br />
-
-- **Onde:** Na página Minha lista de presentes.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:minha-lista',
-    'eventAction': 'interacao:filtro',
-    'eventLabel': 'filtrar-ordenar:[[categoria]]:[[valor-filtro]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[categoria]] | &#039;cama&#039;, &#039;banho&#039; e etc | Deve retornar a categoria do filtro. |
-| [[valor-filtro]] | &#039;cama&#039;, &#039;toaha-de-rosto&#039;, &#039;ordenar&#039;, &#039;menor-preco&#039; e etc. Obs: se tiver mais de um valor de filtro aplicado, separar por virgula. | Deve retornar o valor do filtro selecionado. |
-
-<br />
-
-
-**No clique do botão &quot;Excluir da lista&quot; de cada presente**<br />
-
-- **Onde:** Na página Minha lista de presentes.
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:minha-lista'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='excluir-da-lista:[[nome-produto]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;conjunto-de-lorem-ipsum-dolor&#039; e etc. | Deve retornar o nome do produto. |
-
-<br />
-
-
-**No callback de exclusão de produto**<br />
-
-- **Onde:** Na página Minha lista de presentes.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'conversion',
-    'eventCategory': 'dmj:noivos:minha-lista',
-    'eventAction': 'envio:callback-excluir-produto',
-    'eventLabel': '[[sucesso ou tipo-de-erro]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-de-erro]] | &#039;sua-lista-de-presentes-esta-vazia&#039;, &#039;nao-foi-possivel-excluir&#039; e etc. | Deve retornar a mensagem de erro ou de sucesso. |
-
-<br />
-
-
-**No clique dos botão &quot;Adicionar presentes&quot; , para quando a lista de presentes esta vazia.**<br />
-
-- **Onde:** Na página Minha lista de presentes.
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:minha-lista'
-   data-gtm-event-action='clique:lista-vazia'
-   data-gtm-event-label='botao:adicionar-presentes-agora'
->Botão</div>
-```
-
-
-
-<br />
-
-
-### Créditos e Mensagens - Noivos - Aréa Logada
-
-**No clique do botão &quot;Ler mensagem&quot;**<br />
-
-- **Onde:** Na página Créditos e Mensagens
-   
-
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:creditos-e-mensagens',
-    'eventAction': 'clique:botao',
-    'eventLabel': 'ler-mensagem:[[sku-filho]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sku-filho]] | &#039;13411195001&#039; e etc. | Deve retornar o sku do item clicado |
-
-<br />
-
-
-**Na interação para visualizar cartão presente**<br />
-
-- **Onde:** Na página Créditos e Mensagens
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:noivos:creditos-e-mensagens',
-    'eventAction': 'interacao:opcao:visualizar',
-    'eventLabel': 'cartao-presente'
-  });
-</script>
-```
-
-
-
-
-<br />
-
-
-**No clique do links ou botão**<br />
-
-- **Onde:** Ná pagina de &quot;Créditos e Mensagens&quot;
-    
-```html
-<div
-   data-gtm-event-category='dmj:noivos:creditos-e-mensagens'
-   data-gtm-event-action='clique:[[elemento]]'
-   data-gtm-event-label='[[item-clicado]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[elemento]] | &#039;link&#039; ou &#039;botao&#039; | Deve retornar o elemento clicado. |
-| [[item-clicado]] |  | Deve retornar o nome do item clicado. &#039;adicionar-presentes-a-lista&#039;, &#039;clique-e-conheca&#039; ou &#039;adicionar-presentes-agora&#039; |
-
-<br />
-
-
-### Cadastro de Convidados
-
-**Na interação com os campos de cadastro.**<br />
-
-- **Onde:** Na página de indetificação.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:convidados:cadastro',
-    'eventAction': 'interacao:indentificacao',
-    'eventLabel': 'preencheu:campo:[[nome-campo]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;nome-completo&#039;, &#039;rg&#039;, &#039;cpf&#039; e etc. | Deve retornar o nome do campo preenchido. |
-
-<br />
-
-
-**No clique do botão ou link do cadastro.**<br />
-
-- **Onde:** Na página de indetificação.
-    
-```html
-<div
-   data-gtm-event-category='dmj:convidados:cadastro'
-   data-gtm-event-action='clique:[[botao ou link]]'
-   data-gtm-event-label='[[nome-item]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[botao ou link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o nome do elemento clicado. |
-| [[nome-item]] | &#039;continuar&#039; , &#039;nao-sei-meu-cep&#039; e etc. | Deve retornar o nome do item clicado. |
-
-<br />
-
-
-**No callback da tentiva de cadastro**<br />
-
-- **Onde:** Na página de indetificação.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'conversion',
-    'eventCategory': 'dmj:convidados:cadastro',
-    'eventAction': 'envio:callback',
-    'eventLabel': '[[sucesso ou tipo-de-erro]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[sucesso ou tipo-de-erro]] | &#039;sucesso&#039;, &#039;erro:cpf-invalido&#039; e etc. | Deve retornar a mensagem de erro ou de sucesso. |
-
-<br />
-
-
-### Convidados
-
-**Na interação com o campo busca**<br />
-
-- **Onde:** Na página convidados
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:convidados',
-    'eventAction': 'interacao:campo',
-    'eventLabel': '[[nome-campo]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;busca-por-nomes&#039;, &#039;data&#039; | Deve retornar o nome do campo que utilizou a busca. |
-
-<br />
-
-
-**Após clicar no botão &quot;buscar lista&quot;.**<br />
-
-- **Onde:** Na página convidados
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:convidados',
-    'eventAction': 'clique:botao:buscar-lista',
-    'eventLabel': 'preencheu:[[campos-preenchidos]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[campos-preenchidos]] | &#039;nomes:data-[[data-selecionada]]&#039;, &#039;data-[[data-selecionada]]&#039;, &#039;nomes&#039; e etc  | Deve retornar os campos preenchidos para fazer a pesquisa. |
-| [[data-selecionada]] | &#039;11/05/2020&#039; | Deve retornar a data que o usuário selecionou. |
-
-<br />
-
-
-**No callback de sucesso ao buscar uma lista de presentes**<br />
-
-- **Onde:** Na página convidados após o clique em &#039;buscar lista&#039;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'conversion',
-    'eventCategory': 'dmj:convidados',
-    'eventAction': 'envio:callback-busca',
-    'eventLabel': 'sucesso:[[quantidade-de-listas-encontradas]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[quantidade-de-listas-encontradas]] |  | Deve retornar a quantidade de listas de casamento encontradas após a busca. Ex.: &#039;20&#039;, &#039;15&#039;, etc |
-
-<br />
-
-
-**No callback de erro ao buscar uma lista de presentes**<br />
-
-- **Onde:** Na página convidados após o clique em &#039;buscar lista&#039;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'conversion',
-    'eventCategory': 'dmj:convidados',
-    'eventAction': 'envio:callback-busca',
-    'eventLabel': '[[mensagem-erro]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[mensagem-erro]] | &#039;erro:nao-foi-possivel-localizar-a-lista&#039;, etc | Deve retornar o tipo de erro. |
-
-<br />
-
-
-**Após clicar nos botões de &quot;Limpar Filtro&quot; ou &quot;Aplicar&quot; depois de interagir com os filtros.**<br />
-
-- **Onde:** Na página convidados
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:convidados',
-    'eventAction': 'clique:filtro:[[nome-botao]]',
-    'eventLabel': '[[nome-fitro]]:[[categoria]]:[[valor-filtro]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-botao]] | &#039;fechar&#039;, &#039;aplicar-filtro&#039;, &#039;limpar-filtro&#039; . | Deve retornar o nome do botão clicado. |
-| [[nome-fitro]] | &#039;departamento&#039;, &#039;filtrar-ordenar&#039;, &#039;filtrar-categorias&#039; e etc | Deve retornar o nome do filtro. |
-| [[categoria]] | &#039;cama&#039;, &#039;banho&#039; e etc | Deve retornar a categoria do filtro. |
-| [[valor-filtro]] | &#039;cama&#039;, &#039;toaha-de-rosto&#039;, &#039;ordenar&#039;, &#039;menor-preco&#039; e etc.  | Deve retornar o valor do filtro selecionado. |
-
-<br />
-
-
-**Na interação com o filtro de quantidade**<br />
-
-- **Onde:** No carrinho, na primeira etapa &quot;Sacola de presentes&quot;
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:convidados',
-    'eventAction': 'interacao:sacola-de-presentes',
-    'eventLabel': 'filtro:quantidade:[[valor-filtro]]:[[nome-produto]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &#039;conjunto-lorem&#039; e etc. | Deve retornar o nome do produto. |
-
-<br />
-
-
-**No clique do botão &quot;Comprar mais presentes&quot;**<br />
-
-- **Onde:** No carrinho, na primeira etapa &quot;Sacola de presentes&quot;
-    
-```html
-<div
-   data-gtm-event-category='dmj:convidados'
-   data-gtm-event-action='clique:sacola-de-presentes'
-   data-gtm-event-label='botao:comprar-mais-presentes'
->Botão</div>
-```
-
-
-
-<br />
-
-
-### Checkout
-
-**No preenchimento dos campos das etapas do checkout**<br />
-
-- **Onde:** Na página de checkout.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:convidados:checkout',
-    'eventAction': 'interacao:campo',
-    'eventLabel': '[[nome-campo]]:[[step]]'
-  });
-</script>
-```
-
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-campo]] | &#039;nome-completo&#039;, &#039;email&#039;, &#039;mensagem-para-os-noivos&#039; e etc | Deve retornar o nome do campo preenchido. |
-| [[step]] | &#039;identificacao&#039;, &#039;pagamento&#039; e etc | Deve retornar o nome da etapa do checkout. |
-
-<br />
-
-
-**No clique do botões ou links nas etapas do checkout**<br />
-
-- **Onde:** Na página de checkout.
-    
-```html
-<div
-   data-gtm-event-category='dmj:convidados:checkout'
-   data-gtm-event-action='clique:[[botao ou link]]'
-   data-gtm-event-label='[[nome-item]]:[[step]]'
->Botão</div>
-```
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[botao ou link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o tipo de elemento clicado. |
-| [[nome-item]] | &#039;continuar&#039;, &#039;continuar-comprando&#039;, &#039;finalizar-compra&#039; e etc | Deve retornar o nome do item clicado. |
-| [[step]] | &#039;identificacao&#039;, &#039;pagamento&#039; e etc | Deve retornar o nome da etapa do checkout. |
-
-<br />
-
-
-**Na interação com o checkbox na etapa pagamento**<br />
-
-- **Onde:** Na página de checkout.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'dmj:convidados:checkout',
+    'eventCategory': 'dmj:login:[[etapa]]',
     'eventAction': 'interacao:checkbox',
-    'eventLabel': 'confirmar-presenca:pagamento'
+    'eventLabel': 'aceito-os-termos'
   });
 </script>
 ```
 
-
-
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[etapa]]` | 'dados', 'senha', 'lista' ou 'evento' | Retorna a etapa que o usuário está. |
 
 <br />
 
+### Lista de Presentes - Visão Convidados
 
-**Ao selecionar uma opção de pagamento**<br />
+**Na interação com o campo de Busca**<br />
 
-- **Onde:** Na página de checkout.
+- **Onde:** Na página de Lista de Presentes, visão Convidados
     
 ```html
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'event',
-    'eventCategory': 'dmj:convidados:checkout',
-    'eventAction': 'selecionar',
-    'eventLabel': 'opcao-de-pagamento:[[nome]]'
+    'eventCategory': 'dmj:lista-de-presentes:convidados',
+    'eventAction': 'interacao:busca',
+    'eventLabel': '[[termo-buscado]]'
   });
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome]] | &#039;cartao-de-credito&#039; e etc. | Deve retornar o nome da opção de pagamento. |
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[termo-buscado]]` | 'cafeteira', 'televisao', 'conjunto-de-mesa' e etc | Retorna o termo buscado pelo usuário. |
 
 <br />
 
+**Na interação com o filtro "Ordenar Por"**<br />
+
+- **Onde:** Na página de Lista de Presentes, visão Convidados
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'dmj:lista-de-presentes:convidados',
+    'eventAction': 'interacao:filtro:ordenar-por',
+    'eventLabel': '[[filtro-selecionado]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[filtro-selecionado]]` | 'maior-valor', 'menor-valor', 'personalizado' e etc | Retorna o filtro selecionado.  |
+
+<br />
+
+### Página de Busca
+
+**Na interação com os tipos de Busca**<br />
+
+- **Onde:** Na página de Busca
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'dmj:buscar-lista',
+    'eventAction': 'interacao:campo:[[nome-campo]]',
+    'eventLabel': '[[termo-buscado]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[nome-campo]]` | 'insira-aqui-os-nomes', 'data', 'tipo-de-lista' e etc | Retorna o nome do campo preenchido. |
+| `[[termo-buscado]]` | 'joao-marcos', '25/12', 'aniversario', 'cha-bebe' e etc | Retorna o termo buscado pelo usuário.  |
+
+<br />
+
+**No clique do botão "Buscar"**<br />
+
+- **Onde:** Na página de Busca
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'dmj:buscar-lista',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'buscar'
+  });
+</script>
+```
+
+<br />
+
+**No clique do botão "Ver Lista"**<br />
+
+- **Onde:** Na página de Busca
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'dmj:buscar-lista',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'ver-lista',
+    'dimension14': '[[tipo-de-lista]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo        | Descrição            |
+| :-------------- | :------------- | :--------------------|
+| `[[tipo-de-lista]]` | 'cha-de-bebe', 'lista-de-casamento', 'open-house' e etc | Retorna o tipo de lista selecionada |
+
+<br />
 
 ### Enhanced E-commerce
+
+**Na visualização de uma vitrine de produtos**<br />
+
+- **Onde:** Em todas as páginas que exibirem uma lista de produtos (CLP, PLP, PDP e etc)
+
+```html
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'event': 'productImpression',
+  'noInteraction': '1',
+  'eventCategory':'enhanced-ecommerce',
+  'eventAction': 'impressions',
+  'dimension12': '[[dm12-vendedor]]',
+  'ecommerce': {
+    'impressions': [{
+      'name': '[[nome-produto]]',
+      'id': '[[id-produto]]',
+      'list': '[[lista-produto]]',
+      'variant': '[[variacao-produto]]',
+      'position': '[[posicao-produto]]',
+      'brand': '[[marca-produto]]',
+      'category': '[[categoria-produto]]',
+      'price': '[[preco-produto]]',
+      'dimension11': '[[dm11-product-subcategoria]]'
+    }]
+  }
+});
+</script>
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| `[[nome-produto]]` | 'cafeteira' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[lista-produto]]` | 'decoracao' | Nome da lista que o produto aparece |
+| `[[posicao-produto]]` | '2' | Posição que o produto aparece em uma lista de produtos |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[marca-produto]]` |'pool-original' | Marca do produto |
+| `[[categoria-produto]]` |'masculino' | Departamento do produto |
+| `[[preco-produto]]` | '310090' | Preço do produto |
+| `[[dm11-product-subcategoria]]` | '139.99' | Código da categoria GM  |
+| `[[dm12-vendedor]]` | 'riachuelo', etc | Deve retornar o nome da loja que esta vendendo o produto |
+
+<br />
+
+**No clique dos produtos da vitrine interagidos na página**<br />
+
+- **Onde:** Em todas as páginas que exibirem uma lista de produtos (CLP, PLP, PDP e etc)
+
+```html
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'event': 'productClick',
+  'eventCategory': 'enhanced-ecommerce',
+  'eventAction': 'click',
+  'dimension12': '[[dm12-vendedor]]',
+  'ecommerce': {
+    'click': {
+      'actionField': {'list': '[[lista-produto]]'},
+        'products': [{
+          'name': '[[nome-produto]]',
+          'id': '[[id-produto]]',
+          'list': '[[lista-produto]]',
+          'variant': '[[variacao-produto]]',
+          'position': '[[posicao-produto]]',
+          'brand': '[[marca-produto]]',
+          'category': '[[categoria-produto]]',
+          'price': '[[preco-produto]]',
+          'dimension11': '[[dm11-product-subcategoria]]'
+        }]
+    }
+  }
+});
+</script>
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| `[[nome-produto]]` | 'cafeteira' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[lista-produto]]` | 'decoracao' | Nome da lista que o produto aparece |
+| `[[posicao-produto]]` | '2' | Posição que o produto aparece em uma lista de produtos |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[marca-produto]]` |'pool-original' | Marca do produto |
+| `[[categoria-produto]]` |'masculino' | Departamento do produto |
+| `[[preco-produto]]` | '310090' | Preço do produto |
+| `[[dm11-product-subcategoria]]` | '139.99' | Código da categoria GM  |
+| `[[dm12-vendedor]]` | 'riachuelo', etc | Deve retornar o nome da loja que esta vendendo o produto |
+
+<br />
 
 **Ao adicionar um produto da lista de presentes ou no filtro de quantidade do carrinho**<br />
 
 - **Onde:** Na página de lista de presentes para comprar um dos itens ou na página sacola
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -1828,17 +666,17 @@ window.dataLayer.push({
   'event': 'addToCart',
   'eventCategory':'dmj:enhanced-ecommerce',
   'eventAction': 'addToCart',
-  'dimension12': '[[vendedor]]',
-  'dimension13': '[[quantidadepresentes]]',
+  'dimension12': '[[dm12-vendedor]]',
+  'dimension13': '[[dm13-quantidadepresentes]]',
   'ecommerce': {
     'add': {
       'products': [{
-        'dimension6': '[[product-cor]]',
-        'dimension7': '[[product-estampa]]',
-        'dimension8': '[[product-estilo]]',
-        'dimension9': '[[product-tamanho]]',
-        'dimension10': '[[product-skufilho]]',
-        'dimension11': '[[product-subcategoria]]',
+        'dimension6': '[[dm6-product-cor]]',
+        'dimension7': '[[dm7-product-estampa]]',
+        'dimension8': '[[dm8-product-estilo]]',
+        'dimension9': '[[dm9-product-tamanho]]',
+        'dimension10': '[[dm10-product-skufilho]]',
+        'dimension11': '[[dm11-product-subcategoria]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1853,31 +691,29 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &quot;cafeteira&quot; | Nome do produto |
-| [[id-produto]] | &quot;i17mcjf106-771-2&quot; | SKU do produto |
-| [[preco-produto]] | &quot;139,99&quot; | Preço do produto |
-| [[categoria-produto]] | &quot;casa&quot;, &quot;moda&quot;, &quot;eletronicos&quot; e etc | Categoria do produto (departamento onde o produto aparece) |
-| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
-| [[marca-produto]] | &quot;nespresso&quot; | Marca do produto |
-| [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
-| [[product-cor]] | &quot;rosa&quot;, &quot;azul&quot;, etc | Cor do produto |
-| [[product-estampa]] | &quot;face-selva&quot;, &quot;floral&quot;, etc | Estampa do produto |
-| [[product-estilo]] | &quot;feminino-delicado&quot;, &quot;casual-e-atemporal, etc | Estilo do produto |
-| [[product-tamanho]] | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
-| [[product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
-| [[product-subcategoria]] | 310090&#039; | Código da categoria GM  |
-| [[vendedor]] | &quot;riachuelo&quot;, etc | Deve retornar o nome da loja ques esta vendendo o produto |
-| [[quantidadepresentes]] | &quot;45-itens&quot;, etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| `[[nome-produto]]` | &quot;cafeteira&quot; | Nome do produto |
+| `[[id-produto]]` | &quot;i17mcjf106-771-2&quot; | SKU do produto |
+| `[[preco-produto]]` | &quot;139,99&quot; | Preço do produto |
+| `[[categoria-produto]]` | &quot;casa&quot;, &quot;moda&quot;, &quot;eletronicos&quot; e etc | Categoria do produto (departamento onde o produto aparece) |
+| `[[variacao-produto]]` | &quot;325&quot; | Código DCO - Categoria do produto |
+| `[[marca-produto]]` | &quot;nespresso&quot; | Marca do produto |
+| `[[quantidade-produto]]` | &quot;1&quot; | Quantidade do produto |
+| `[[dm6-product-cor]]` | &quot;rosa&quot;, &quot;azul&quot;, etc | Cor do produto |
+| `[[dm7-product-estampa]]` | &quot;face-selva&quot;, &quot;floral&quot;, etc | Estampa do produto |
+| `[[dm8-product-estilo]]` | &quot;feminino-delicado&quot;, &quot;casual-e-atemporal, etc | Estilo do produto |
+| `[[dm9-product-tamanho]]` | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
+| `[[dm10-product-skufilho]]` |  &#039;2552&#039; | ID filho do produto |
+| `[[dm11-product-subcategoria]]` | 310090&#039; | Código da categoria GM  |
+| `[[dm12-vendedor]]` | &quot;riachuelo&quot;, etc | Deve retornar o nome da loja ques esta vendendo o produto |
+| `[[dm13-quantidadepresentes]]` | &quot;45-itens&quot;, etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
 
 <br />
-
 
 **Ao remover um produto da lista ou diminuir a quantidade deste no filtro de quantidade**<br />
 
 - **Onde:** Na página de sacola
-    
 
 ```html
 <script>
@@ -1886,17 +722,17 @@ window.dataLayer.push({
   'event': 'removeFromCart',
   'eventCategory': 'dmj:enhanced-ecommerce',
   'eventAction': 'removeFromCart',
+  'dimension12': '[[dm12-vendedor]]',
+  'dimension13': '[[dm13-quantidadepresentes]]',
   'ecommerce': {
     'remove': {
       'products': [{
-        'dimension6': '[[product-cor]]',
-        'dimension7': '[[product-estampa]]',
-        'dimension8': '[[product-estilo]]',
-        'dimension9': '[[product-tamanho]]',
-        'dimension10': '[[product-skufilho]]',
-        'dimension11': '[[product-subcategoria]]',
-        'dimension12': '[[vendedor]]',
-        'dimension13': '[[quantidadepresentes]]',
+        'dimension6': '[[dm6-product-cor]]',
+        'dimension7': '[[dm-7product-estampa]]',
+        'dimension8': '[[dm8-product-estilo]]',
+        'dimension9': '[[dm9-product-tamanho]]',
+        'dimension10': '[[dm10-product-skufilho]]',
+        'dimension11': '[[dm11-product-subcategoria]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1911,32 +747,30 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-produto]] | &quot;cafeteira&quot; | Nome do produto |
-| [[id-produto]] | &quot;i17mcjf106-771-2&quot; | SKU do produto |
-| [[preco-produto]] | &quot;139,99&quot; | Preço do produto |
-| [[categoria-produto]] | &quot;casa&quot;, &quot;moda&quot;, &quot;eletronicos&quot; e etc | Categoria do produto (departamento onde o produto aparece) |
-| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
-| [[marca-produto]] | &quot;nespresso&quot; | Marca do produto |
-| [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
-| [[product-cor]] | &quot;rosa&quot;, &quot;azul&quot;, etc | Cor do produto |
-| [[product-estampa]] | &quot;face-selva&quot;, &quot;floral&quot;, etc | Estampa do produto |
-| [[product-estilo]] | &quot;feminino-delicado&quot;, &quot;casual-e-atemporal, etc | Estilo do produto |
-| [[product-tamanho]] | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
-| [[product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
-| [[product-subcategoria]] | 310090&#039; | Código da categoria GM  |
-| [[vendedor]] | &quot;riachuelo&quot;, etc | Deve retornar o nome da loja ques esta vendendo o produto |
-| [[quantidadepresentes]] | &quot;45-itens&quot;, etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| `[[nome-produto]]` | 'cafeteira' | Nome do produto |
+| `[[id-produto]]` | 'i17mcjf106-771-2' | SKU do produto |
+| `[[preco-produto]]` | '139,99' | Preço do produto |
+| `[[categoria-produto]]` | 'casa', 'moda', 'eletronicos' e etc | Categoria do produto (departamento onde o produto aparece) |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[marca-produto]]` | 'nespresso' | Marca do produto |
+| `[[quantidade-produto]]` | '1' | Quantidade do produto |
+| `[[dm6-product-cor]]` | 'rosa', 'azul', etc | Cor do produto |
+| `[[dm-7product-estampa]]` | 'face-selva', 'floral', etc | Estampa do produto |
+| `[[dm8-product-estilo]]` | 'feminino-delicado', 'casual-e-atemporal, etc | Estilo do produto |
+| `[[dm9-product-tamanho]]` | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
+| `[[dm10-product-skufilho]]` |  &#039;2552&#039; | ID filho do produto |
+| `[[dm11-product-subcategoria]]` | '310090' | Código da categoria GM  |
+| `[[dm12-vendedor]]` | 'riachuelo', etc | Deve retornar o nome da loja ques esta vendendo o produto |
+| `[[dm13-quantidadepresentes]]` | '45-itens', etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
 
 <br />
-
 
 **Nas etapas de checkout**<br />
 
 - **Onde:** Nas páginas de checkout
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -1945,18 +779,18 @@ window.dataLayer.push({
   'eventCategory': 'dmj:enhanced-ecommerce',
   'eventAction': 'checkout',
   'noInteraction': '1',
+  'dimension12': '[[dm12-vendedor]]',
+  'dimension13': '[[dm13-quantidadepresentes]]',
   'ecommerce': {
     'checkout': {
       'actionField': {'step': '[[passo-checkout]]'},
       'products': [{
-        'dimension6': '[[product-cor]]',
-        'dimension7': '[[product-estampa]]',
-        'dimension8': '[[product-estilo]]',
-        'dimension9': '[[product-tamanho]]',
-        'dimension10': '[[product-skufilho]]',
-        'dimension11': '[[product-subcategoria]]',
-        'dimension12': '[[vendedor]]',
-        'dimension13': '[[quantidadepresentes]]',
+        'dimension6': '[[dm6-product-cor]]',
+        'dimension7': '[[dm7-product-estampa]]',
+        'dimension8': '[[dm8-product-estilo]]',
+        'dimension9': '[[dm9-product-tamanho]]',
+        'dimension10': '[[dm10-product-skufilho]]',
+        'dimension11': '[[dm11-product-subcategoria]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -1971,27 +805,27 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[checkout-index]] |  | Retornar &quot;1&quot; ou &quot;2&quot; ou &quot;3&quot; de acordo com a página que o usuário está.  |
-| [[nome-produto]] | &quot;cafeteira&quot; | Nome do produto |
-| [[id-produto]] | &quot;i17mcjf106-771-2&quot; | SKU do produto |
-| [[preco-produto]] | &quot;139,99&quot; | Preço do produto |
-| [[categoria-produto]] | &quot;casa&quot;, &quot;moda&quot;, &quot;eletronicos&quot; e etc | Categoria do produto (departamento onde o produto aparece) |
-| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
-| [[marca-produto]] | &quot;nespresso&quot; | Marca do produto |
-| [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
-| [[product-cor]] | &quot;rosa&quot;, &quot;azul&quot;, etc | Cor do produto |
-| [[product-estampa]] | &quot;face-selva&quot;, &quot;floral&quot;, etc | Estampa do produto |
-| [[product-estilo]] | &quot;feminino-delicado&quot;, &quot;casual-e-atemporal, etc | Estilo do produto |
-| [[product-tamanho]] | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
-| [[product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
-| [[product-subcategoria]] | 310090&#039; | Código da categoria GM  |
-| [[vendedor]] | &quot;riachuelo&quot;, etc | Deve retornar o nome da loja ques esta vendendo o produto |
-| [[quantidadepresentes]] | &quot;45-itens&quot;, etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
-| [[passo-checkout]] | &quot;1&quot; | Página de carrinho de compras |
-| [[passo-checkout]] | &quot;2&quot; | Página de confirmação do endereço de entrega |
-| [[passo-checkout]] | &quot;3&quot; | Página de seleção do método de pagamento |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| `[[checkout-index]]` | '1' ou '2' ou '3' | Retornar o index de acordo com a página que o usuário está.  |
+| `[[nome-produto]]` | 'cafeteira' | Nome do produto |
+| `[[id-produto]]` | 'i17mcjf106-771-2' | SKU do produto |
+| `[[preco-produto]]` | '139,99' | Preço do produto |
+| `[[categoria-produto]]` | 'casa', 'moda', 'eletronicos' e etc | Categoria do produto (departamento onde o produto aparece) |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[marca-produto]]` | 'nespresso' | Marca do produto |
+| `[[quantidade-produto]]` | '1' | Quantidade do produto |
+| `[[dm6-product-cor]]` | 'rosa', 'azul', etc | Cor do produto |
+| `[[dm7-product-estampa]]` | 'face-selva', 'floral', etc | Estampa do produto |
+| `[[dm8-product-estilo]]` | 'feminino-delicado', 'casual-e-atemporal, etc | Estilo do produto |
+| `[[dm9-product-tamanho]]` | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
+| `[[dm10-product-skufilho]]` |  &#039;2552&#039; | ID filho do produto |
+| `[[dm11-product-subcategoria]]` | 310090&#039; | Código da categoria GM  |
+| `[[dm12-vendedor]]` | 'riachuelo', etc | Deve retornar o nome da loja ques esta vendendo o produto |
+| `[[dm13-quantidadepresentes]]` | '45-itens', etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
+| `[[passo-checkout]]` | '1' | Página de carrinho de compras |
+| `[[passo-checkout]]` | '2' | Página de confirmação do endereço de entrega |
+| `[[passo-checkout]]` | '3' | Página de seleção do método de pagamento |
 
 <br />
 
@@ -2000,7 +834,6 @@ window.dataLayer.push({
 
 - **Onde:** Na página de pedido
     
-
 ```html
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -2009,6 +842,10 @@ window.dataLayer.push({
   'eventCategory': 'dmj:enhanced-ecommerce',
   'eventAction': 'purchase',
   'noInteraction': '1',
+  'dimension4': '[[dm4-transaction-pagamento]]',
+  'dimension5': '[[dm5-transaction-parcelas]]',
+  'dimension12': '[[dm12-vendedor]]',
+  'dimension13': '[[dm13-quantidadepresentes]]',
   'ecommerce': {
     'purchase': {
       'actionField': {
@@ -2017,17 +854,12 @@ window.dataLayer.push({
         'tax': '[[taxa-transacao]]'
       },
       'products': [{
-        'dimension1': '[[userid]]',
-        'dimension4': '[[transaction-pagamento]]',
-        'dimension5': '[[transaction-parcelas]]',
-        'dimension6': '[[product-cor]]',
-        'dimension7': '[[product-estampa]]',
-        'dimension8': '[[product-estilo]]',
-        'dimension9': '[[product-tamanho]]',
-        'dimension10': '[[product-skufilho]]',
-        'dimension11': '[[product-subcategoria]]',
-        'dimension12': '[[vendedor]]',
-        'dimension13': '[[quantidadepresentes]]',
+        'dimension6': '[[dm6-product-cor]]',
+        'dimension7': '[[dm7-product-estampa]]',
+        'dimension8': '[[dm8-product-estilo]]',
+        'dimension9': '[[dm9-product-tamanho]]',
+        'dimension10': '[[dm10-product-skufilho]]',
+        'dimension11': '[[dm11-product-subcategoria]]',
         'name': '[[nome-produto]]',
         'id': '[[id-produto]]',
         'price': '[[preco-produto]]',
@@ -2042,29 +874,29 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[userid]] | &quot;01234&quot; | ID único de usuário definido após o cadastro |
-| [[transaction-pagamento]] | &quot;a-vista&quot;, &quot;cartao-de-credito&quot;, &quot;debito&quot; | Meio de pagamento |
-| [[transaction-parcelas]] | &quot;1x&quot;, &quot;4x&quot;, &quot;12x&quot; | Número de parcelas |
-| [[product-cor]] | &quot;rosa&quot;, &quot;azul&quot;, etc | Cor do produto |
-| [[product-estampa]] | &quot;face-selva&quot;, &quot;floral&quot;, etc | Estampa do produto |
-| [[product-estilo]] | &quot;feminino-delicado&quot;, &quot;casual-e-atemporal, etc | Estilo do produto |
-| [[product-tamanho]] | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
-| [[product-skufilho]] |  &#039;2552&#039; | ID filho do produto |
-| [[product-subcategoria]] | 310090&#039; | Código da categoria GM  |
-| [[vendedor]] | &quot;riachuelo&quot;, etc | Deve retornar o nome da loja ques esta vendendo o produto |
-| [[quantidadepresentes]] | &quot;45-itens&quot;, etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
-| [[id-transacao]] | &quot;000011652&quot; | Número do pedido |
-| [[valor-total-transacao]] | &quot;139,99&quot; | Valor total da transação incluindo frete e taxas |
-| [[taxa-transacao]] | &quot;0.00&quot; | Valor de taxas da transação |
-| [[nome-produto]] | &quot;cafeteira&quot; | Nome do produto |
-| [[id-produto]] | &quot;i17mcjf106-771-2&quot; | SKU do produto |
-| [[preco-produto]] | &quot;139,99&quot; | Preço do produto |
-| [[categoria-produto]] | &quot;casa&quot;, &quot;moda&quot;, &quot;eletronicos&quot; e etc | Categoria do produto (departamento onde o produto aparece) |
-| [[variacao-produto]] | &quot;325&quot; | Código DCO - Categoria do produto |
-| [[marca-produto]] | &quot;nespresso&quot; | Marca do produto |
-| [[quantidade-produto]] | &quot;1&quot; | Quantidade do produto |
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| `[[userid]]` | '01234' | ID único de usuário definido após o cadastro |
+| `[[dm4-transaction-pagamento]]` | 'a-vista', 'cartao-de-credito', 'debito' | Meio de pagamento |
+| `[[dm5-transaction-parcelas]]` | '1x', '4x', '12x' | Número de parcelas |
+| `[[dm6-product-cor]]` | 'rosa', 'azul', etc | Cor do produto |
+| `[[dm7-product-estampa]]` | 'face-selva', 'floral', etc | Estampa do produto |
+| `[[dm8-product-estilo]]` | 'feminino-delicado', 'casual-e-atemporal, etc | Estilo do produto |
+| `[[product-tamanho]]` | p&#039;,&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; e etc | Tamanho do produto |
+| `[[dm10-product-skufilho]]` |  &#039;2552&#039; | ID filho do produto |
+| `[[dm11-product-subcategoria]]` | 310090&#039; | Código da categoria GM  |
+| `[[dm12-vendedor]]` | 'riachuelo', etc | Deve retornar o nome da loja ques esta vendendo o produto |
+| `[[quantidadepresentes]]` | '45-itens', etc | Deve retornar a quantidade de presentes que os noivos adicionaram na lista |
+| `[[id-transacao]]` | '000011652' | Número do pedido |
+| `[[valor-total-transacao]]` | '139,99' | Valor total da transação incluindo frete e taxas |
+| `[[taxa-transacao]]` | '0.00' | Valor de taxas da transação |
+| `[[nome-produto]]` | 'cafeteira' | Nome do produto |
+| `[[id-produto]]` | 'i17mcjf106-771-2' | SKU do produto |
+| `[[preco-produto]]` | '139,99' | Preço do produto |
+| `[[categoria-produto]]` | 'casa', 'moda', 'eletronicos' e etc | Categoria do produto (departamento onde o produto aparece) |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[marca-produto]]` | 'nespresso' | Marca do produto |
+| `[[quantidade-produto]]` | '1' | Quantidade do produto |
 
 <br />
 
