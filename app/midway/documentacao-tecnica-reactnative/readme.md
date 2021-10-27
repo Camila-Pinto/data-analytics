@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Midway APP
 
-Última atualização: 25/10/2021 <br />
+Última atualização: 27/10/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -45,20 +45,22 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Cotação de câmbio](#cota&#231;&#227;o-de-c&#226;mbio)
 - [Habilitar Função Crédito do Cartão](#habilitar-fun&#231;&#227;o-cr&#233;dito-do-cart&#227;o)
 - [Credito Pré Aprovado](#credito-pr&#233;-aprovado)
-- [Cartões - Fase 2.1 - Cartões - Home](#cart&#245;es---fase-2.1---cart&#245;es---home)
-- [Cartões - Fase 2.1 - Cartões - Termo e adesão](#cart&#245;es---fase2.1---cart&#245;es---termo-e-ades&#227;o)
-- [Cartões - Fase 2.1 - Cartões - Notificações](#cart&#245;es---fase-2.1---cart&#245;es---notifica&#231;&#245;es)
-- [Cartões - Fase 2.1 - Cartões - Consulta de Fatura](#cart&#245;es---fase-2.1---cart&#245;es---consulta-de-fatura)
+- [Cartões - Home](#cart&#245;es---home)
+- [Cartões - Termo e adesão](#cart&#245;es---termo-e-ades&#227;o)
+- [Cartões - Notificações](#cart&#245;es---notifica&#231;&#245;es)
+- [Cartões - Consulta de Fatura](#cart&#245;es---consulta-de-fatura)
 - [Pagamento de Fatura](#pagamento-de-fatura)
-- [Fase 2.3](#fase-2.3)
-- [Fase 2.2.5 - Conta Pagamento - Depósito via Boleto](#fase-2.2.5-conta-pagamento-deposito-via-boleto)
-- [Fase 2.4 - Conta Pagamento - Extrato](#fase2.4-conta-pagamento-extrato)
-- [Fase 2.5 - Conta corrente - Parcelamento Cheque Especial](#fase2.5-conta-corrente-parcelamento-cheque-especial)
-- [Fase 2.5 - Conta Pagamento - Migração para Conta Corrente](#fase2.5-conta-pagamento-migra%c3%a7%c3%a3o-para-conta-corrente)
-- [Fase 2.6 - Conta Pagamento - Encerrar Conta](#fase2.6-conta-pagamento-encerrar-conta)
-- [Fase 2.6 - Conta Pagamento - Bloquear e desbloquear cartão](#fase2.6-conta-pagamento-bloquear-e-desbloquear-cartao)
-- [Fase 2.7 - Conta Pagamento - Transferênica Midway para Midway](#fase2.7-conta-pagamento-transferencia-midway-para-midway)
-- [Fase 2.8 - Conta Pagamento - Transferência Midway - Outros Bancos](#fase2.8-conta-pagamento-transferencia-midway-para-outros-bancos)
+- [Conta Pagamento - Solicitar Cartão](#conta-pagamento---solicitar-cart&#227;o)
+- [Conta Pagamento - Home](#conta-pagamento---home)
+- [Conta Pagamento - Perfil](#conta-pagamento---perfil)
+- [Conta Simples e Conta Completa - Depósito via Boleto](#conta-simples-e-conta-completa---dep&#243;sito-via-boleto)
+- [Conta Simples - Extrato](#conta-simples---extrato)
+- [Conta corrente - Parcelamento Cheque Especial](#conta-corrente---parcelamento-cheque-especial)
+- [Conta Pagamento - Migração para Conta Corrente](#conta-pagamento---migra%c3%a7%c3%a3o-para-conta-corrente)
+- [Conta Pagamento - Encerrar Conta](#conta-pagamento---encerrar-conta)
+- [Conta Pagamento - Bloquear e desbloquear cartão](#conta-pagamento---bloquear-e-desbloquear-cart&#227;o)
+- [Conta Pagamento - Transferência Midway para Midway](#conta-pagamento---transfer&#234;ncia-midway-para-midway)
+- [Conta Pagamento - Transferência Midway - Outros Bancos](#conta-pagamento---transfer&#234;ncia-midway---outros-bancos)
 - [Outros Serviços](#outros-servi&#231;os)
 - [Convide e Ganhe](#convide-e-ganhe)
 - [MarketPlace Financeiro - Geral](#marketplace-financeiro---geral)
@@ -6523,14 +6525,13 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Cartões - Fase 2.1 - Cartões - Home
+### Cartões - Home
 
 - **Onde:** Visualização da tela &#039;Home&#039; para Cartões.
 
 ```javascript
     Analytics.logScreenView("/cartoes/home/");
 ```
-
 
 <br />
 
@@ -6622,7 +6623,7 @@ Resumo de produtos cadastrados
 <br />
 
 
-### Cartões - Fase 2.1 - Cartões - Termo e adesão
+### Cartões - Termo e adesão
 
 - **Onde:** VIsualização da tela &#039;Termo e adesão&#039; para Cartões.
 
@@ -6712,7 +6713,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Cartões - Fase 2.1 - Cartões - Notificações
+### Cartões - Notificações
 
 - **Onde:** VIsualização da tela &#039;Notificações&#039;.
 
@@ -6770,7 +6771,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Cartões - Fase 2.1 - Cartões - Consulta de Fatura
+### Cartões - Consulta de Fatura
 
 - **Onde:**  Visualização da tela de &#039;Consulta de Fatura&#039;
 
@@ -7322,7 +7323,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Fase 2.3 - Conta Pagamento - Solicitar Cartão
+### Conta Pagamento - Solicitar Cartão
 
 - **Onde:**  Visualização da tela &#039;Cartão de débito&#039;.
 
@@ -7745,7 +7746,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Fase 2.2.5 - Conta Simples e Conta Completa - Depósito via Boleto
+### Conta Simples e Conta Completa - Depósito via Boleto
 
 - **Onde:**  Visualização da tela &#039;Qual o valor do depósito&#039;, na funcionalidade de &quot;Conta Simples&quot; e &quot;Conta Completa&quot;
 
@@ -8052,7 +8053,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Fase 2.4 - Conta Simples - Extrato
+### Conta Simples - Extrato
 
 - **Onde:** Visualização da tela &#039;Extrato&#039;.
 
@@ -8373,7 +8374,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Fase 2.5 - Conta corrente - Parcelamento Cheque Especial
+### Conta corrente - Parcelamento Cheque Especial
 
 
 - **Onde:** Visualização da tela &#039;Parcelamento limite emergencial&#039;.
@@ -8527,7 +8528,8 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Fase 2.5 - Conta Pagamento - Migração para Conta Corrente
+### Conta Pagamento - Migração para Conta Corrente
+
 - **Quando:** No clique no botão de &quot;Começar&quot;, no card de &quot;Mudar para Conta Completa&quot;
 - **Onde:** Na tela &#039;Home&#039;.
 
@@ -9252,7 +9254,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Fase 2.6 - Conta Pagamento - Encerrar Conta
+### Conta Pagamento - Encerrar Conta
 
 - **Onde:** Visualização da tela &#039;Cancelamento de conta pagamento&#039;
 
@@ -9403,7 +9405,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Fase 2.6 - Conta Pagamento - Bloquear e desbloquear cartão
+### Conta Pagamento - Bloquear e desbloquear cartão
 
 - **Onde:** Na abertura da tela &#039;Seu cartão foi desbloqueado!&#039;
 
@@ -9487,8 +9489,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Fase 2.7 - Conta Pagamento - Transferência Midway para Midway
-
+### Conta Pagamento - Transferência Midway para Midway
 
 - **Onde:** Visualização da tela &#039;Para quem quer transferir?&#039;
 
@@ -9805,10 +9806,9 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/conta-pagamento/transferencia-midway-para-midway/para-quem-transferir/transferencia-feita/comprovante-de-transferencia-entre-contas-midway/");
 ```
 
-
 <br />
 
-### Fase 2.8 - Conta Pagamento - Transferência Midway - Outros Bancos
+### Conta Pagamento - Transferência Midway - Outros Bancos
 
 - **Onde:** Na visualização da tela inicial de Transferência.
 
