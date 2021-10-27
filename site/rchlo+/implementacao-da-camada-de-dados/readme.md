@@ -16,6 +16,7 @@
 - [Modal Importante](#modal-importante)
 - [Customização](#customiza&#231;&#227;o)
 - [Customização - Enviar minha foto](#customiza&#231;&#227;o-enviar-minha-foto)
+- [Customização - Categorias e Estampas](#customiza&#231;&#227;o---categorias-e-estampas)
 - [Acesso - Login](#acesso-login)
 - [Acesso - Redefinir minha senha](#acesso-redefinir-minha-senha)
 - [Cadastro](#cadastro)
@@ -27,7 +28,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Rchlo+
-Última atualização: 23/07/2021 <br />
+Última atualização: 27/10/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -597,6 +598,31 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | Variável      | Exemplo         | Descrição             |
 | :------------ | :-------------- | :-------------------- |
 | `[[nome-botao]]` | &#039;enviar-uma-nova-foto&#039; ou &#039;tentar-novamente&#039; | Deve retornar o nome do botão clicado. |
+
+<br />
+
+### Customização - Categorias e Estampas
+
+**Na interação com as categorias**<br />
+
+- **Onde:** Na página de customização do site, seção "Customizar"
+
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlo-mais:customizacao:costumizar',
+    'eventAction': 'clique:categoria:[[nome-categoria]]',
+    'eventLabel': '[[nome-estampa]]'
+  });
+</script>
+```
+
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-categoria]]` | 'desenhos', 'icones', 'icones:branco', 'icones:vermelho' e etc | Retorna o nome da categoria. |
+| `[[nome-estampa]]` | 'tubarao', 'tigre', 'girafa', 'banana' e etc | DRetorna o nome da estampa cadastrada na base. |
 
 <br />
 
