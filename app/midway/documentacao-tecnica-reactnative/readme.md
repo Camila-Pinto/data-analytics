@@ -6777,6 +6777,31 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/cartoes/consulta-de-fatura/");
 ```
 
+<br />
+
+- **Quando:** No clique nos elementos da tela
+- **Onde:** Na tela de Faturas
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:consulta-de-fatura",
+        	eventAction: "clique:[[elemento]]",
+        	eventLabel: "[[titulo-botao]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[elemento]] | 'aba', 'botao' ou 'link' | Retorna o elemento clicado. |
+| [[titulo-botao]] | 'anterior', 'fechada', 'aberta', 'detalhes', 'ver-lancamentos', 'gere-aqui-seu-boleto' | Retorna o nome do elemento clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela de "Detalhes da Fatura"
+
+```javascript
+    Analytics.logScreenView("/cartoes/consulta-de-fatura/detalhes-fatura/");
+```
 
 <br />
 
@@ -6794,23 +6819,6 @@ Resumo de produtos cadastrados
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
 | [[mes]] | Ex.: &#039;set&#039;, &#039;out&#039;, &#039;nov&#039;, etc | Deve retornar o título do mês clicado pelo usuário. |
-
-<br />
-
-- **Quando:** Na interação com os botões &quot;Pagar em PDF&quot;, &quot;Visualizar a fatura em PDF&quot; e &quot;Pagar Fatura&quot;
-- **Onde:** Na tela de Faturas
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:consulta-de-fatura",
-        	eventAction: "clique:botao",
-        	eventLabel: "[[titulo-botao]]"
-        });
-```
-
-| Variável        | Exemplo           | Descrição         |
-| :-------------- | :-----------------| :---------------- |
-| [[titulo-botao]] | Deve retornar o título do botões clicado. | Ex.:  &#039;pagar-em-pdf&#039;, &#039;visualizar-a-fatura-em-pdf&#039; e &#039;pagar-fatura&#039; |
 
 <br />
 
