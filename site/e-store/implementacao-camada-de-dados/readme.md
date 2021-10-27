@@ -18,6 +18,7 @@
 - [Desktop - Modal Sacola](#desktop---modal-sacola)
 - [Desktop - Sacola-QR Code](#desktop---sacola-qr-code)
 - [MSite - Login - Esqueci Senha e Cadastro](#msite---login---esqueci-senha-e-cadastro)
+- [MSite - Nova Sacola](#msite---nova-sacola)
 - [MSite - Checkout](#msite---checkout)
 - [Logoff](#logoff)
 - [Enhanced Ecommerce - Desktop-Msite](#enhanced-ecommerce---desktop-msite)
@@ -25,7 +26,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto E-Store
-Última atualização: 16/09/2021 <br />
+Última atualização: 27/10/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -868,6 +869,94 @@ Título: "sacola" (ícone), "Riachuelo" (logo)
 | :---------- | :---------- | :-------------- |
 | `[[sucesso ou tipo-erro]]` | 'a-quantidade-desejada-esta-indisponivel-no-momento', 'sacola-vazia' e etc | Deve retornar o erro aprensentado na sacola.|
 | `[[cd1-user-userid]]` | '01234312hbjhdsfs32' e etc | CPF racheado do usuário|
+
+<br />
+
+### MSite - Nova Sacola
+
+**Nos callbacks de erros na Sacola**<br />
+
+- **Onde:** Na página da Sacola do MSite
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:sacola',
+    'eventAction': 'callback:sacola',
+    'eventLabel': '[[erro]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[erro]]` | 'ops-sacola-acessada-nao-esta-mais-disponivel', 'ops-aconteceu-um-problema-ou-o-link-acessado-esta-invalido' e etc | Deve retornar o tipo de erro apresentado.|
+
+<br />
+
+**No clique do botão "Aplicar"**<br />
+
+- **Onde:** Na página da Sacola do MSite, para aplicar o código da sacola
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:sacola',
+    'eventAction': 'clique:botao',
+    'eventLabel': 'aplicar'
+  });
+</script>
+```
+
+<br />
+
+**No callback após ter aplicado um código/link de sacola**<br />
+
+- **Onde:** Na página da Sacola do MSite, para aplicar o código da sacola
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:sacola',
+    'eventAction': 'callback:aplicar-codigo-sacola',
+    'eventLabel': '[[sucesso-ou-erro]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[sucesso-ou-erro]]` | 'sucesso', 'erro:codigo-invalido', 'erro:link-indisponivel' e etc | Retorna o callback do campo para aplicar o código da sacola.|
+
+<br />
+
+**No clique dos itens da página**<br />
+
+- **Onde:** Na página da Sacola do MSite, etapas de "Sacola" e "Modo de Envio"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'estore:checkout:[[etapa]]',
+    'eventAction': 'clique:[[elemento]]',
+    'eventLabel': '[[item-clicado]]'
+  });
+</script>
+```
+
+| Variável    | Exemplo     | Descrição       |
+| :---------- | :---------- | :-------------- |
+| `[[etapa]]` | 'sacola', 'modo-de-envio', 'pagamento' e etc | Retorna a etapa que o usuário esta.|
+| `[[elemento]]` | 'botao' ou 'link' | Retorna o tipo de elemento.|
+| `[[item-clicado]]` | 'selecionar-modo-de-envio', 'ir-para-pagamento', 'editar-sacola' e etc | Retorna o nome do item clicado. |
 
 <br />
 
