@@ -50,7 +50,7 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Cartões - Notificações](#cart&#245;es---notifica&#231;&#245;es)
 - [Cartões - Consulta de Fatura](#cart&#245;es---consulta-de-fatura)
 - [Pagamento de Fatura](#pagamento-de-fatura)
-- [Conta Pagamento - Solicitar Cartão](#conta-pagamento---solicitar-cart&#227;o)
+- [Conta Pagamento - Solicitar Cartão Débito](#conta-pagamento---solicitar-cart&#227;o-d&#233;bito)
 - [Conta Pagamento - Home](#conta-pagamento---home)
 - [Conta Pagamento - Perfil](#conta-pagamento---perfil)
 - [Conta Simples e Conta Completa - Depósito via Boleto](#conta-simples-e-conta-completa---dep&#243;sito-via-boleto)
@@ -7323,14 +7323,59 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Conta Pagamento - Solicitar Cartão
+### Conta Pagamento - Solicitar Cartão Débito
+
+- **Onde:** Visualização do modal "Você não paga nada para solicitar o seu cartão de débito e é sem anuidade!"
+
+```javascript
+    Analytics.logScreenView("/conta-pagamento/modal:voce-nao-paga-nada-para-solicitar-seu-cartao-de-debito/");
+```
+
+<br />
+
+- **Quando:** No clique do botão "Depositar"
+- **Onde:** No modal "Você não paga nada para solicitar o seu cartão de débito e é sem anuidade!"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:conta-pagamento:modal:voce-nao-paga-nada-para-solicitar-seu-cartao-de-debito",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[nome-botao]] | 'depositar' ou 'clicou-fora' | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela 'No momento você não possui nenhum cartão'.
+
+```javascript
+    Analytics.logScreenView("/conta-pagamento/no-momento-voce-nao-possui-nenhum-cartao/");
+```
+
+<br />
+
+- **Quando:** No clique do botão "Solicitar Cartão de Débito"
+- **Onde:** Na tela de 'No momento você não possui nenhum cartão'.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:conta-pagamento:solicitar-cartao:cartao-de-debito",
+        	eventAction: "clique:botao",
+        	eventLabel: "solicitar-cartao-de-debito"
+        });
+```
+
+<br />
 
 - **Onde:**  Visualização da tela &#039;Cartão de débito&#039;.
 
 ```javascript
     Analytics.logScreenView("/conta-pagamento/solicitar-cartao/cartao-de-debito/");
 ```
-
 
 <br />
 
@@ -7347,10 +7392,9 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
-| [[nome-botao]] | 'agora-nao', 'aceito' etc. | Deve retornar o nome do botão clicado. |
+| [[nome-botao]] | 'agora-nao', 'aceito', 'voltar' e etc. | Deve retornar o nome do botão clicado. |
 
 <br />
-
 
 - **Onde:**  Visualização da  tela &#039;Seu cartão será enviado&#039;.
 
