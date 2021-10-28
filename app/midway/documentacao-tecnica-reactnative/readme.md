@@ -5540,109 +5540,11 @@ Resumo de produtos cadastrados
 <br />
 
 ### Desbloqueio de Cartão
- - **Onde:** Visualização da tela &#039;Confirme o CVV do seu novo cartão&#039;.
-
-```javascript
-    Analytics.logScreenView("/desbloqueio-cartao/confirmacao-cvv/");
-```
-
-
-<br />
-
-- **Quando:** No clique do link &#039;O número do cartão não é esse&#039;.
-- **Onde:** Na tela &#039;Confirme o CVV do seu novo cartão&#039;.
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:confirmacao-cvv",
-        	eventAction: "clique:link",
-        	eventLabel: "o-numero-do-cartao-nao-e-esse"
-        });
-```
-
-
-<br />
-
-- **Quando:** No clique em um dos botões.
-- **Onde:** Na tela &#039;Confirme o CVV do seu novo cartão&#039;.
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:confirmacao-cvv",
-        	eventAction: "clique:botao",
-        	eventLabel: "[[nome-botao]]"
-        });
-```
-
-| Variável        | Exemplo           | Descrição         |
-| :-------------- | :-----------------| :---------------- |
-| [[nome-botao]] | &#039;continuar&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
-
-<br />
-
-- **Quando:** Após o preenchimento do campo &#039;CVV&#039;.
-- **Onde:** Na tela &#039;Confirme o CVV do seu novo cartão&#039;.
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:confirmacao-cvv",
-        	eventAction: "preencheu:campo",
-        	eventLabel: "cvv"
-        });
-```
-
-
-<br />
-
-- **Quando:** No callback do preenchimento do campo de &#039;CVV&#039;.
-- **Onde:** Na tela &#039;Confirme o CVV do seu novo cartão&#039;.
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:confirmacao-cvv",
-        	eventAction: "callback",
-        	eventLabel: "[[status]]"
-        });
-```
-
-| Variável        | Exemplo           | Descrição         |
-| :-------------- | :-----------------| :---------------- |
-| [[status]] | &#039;sucesso&#039; ou &#039;erro:erro-de-preenchimento&#039;, &#039;erro:numero-invalido&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
-
-<br />
-
-- **Quando:** Na abertura do modal &#039;Número do cartão diferente&#039;.
-- **Onde:** Na tela &#039;Confirme o CVV do seu novo cartão&#039;.
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:confirmacao-cvv",
-        	eventAction: "abriu:modal",
-        	eventLabel: "numero-do-cartao-diferente"
-        });
-```
-
-
-<br />
-
-- **Quando:** No clique do botão &#039;fechar&#039;.
-- **Onde:** No modal &#039;Número do cartão diferente&#039; na tela &#039;Confirme o CVV do seu novo cartão&#039;.
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:confirmacao-cvv",
-        	eventAction: "clique:botao",
-        	eventLabel: "fechar"
-        });
-```
-
-
-<br />
 
 - **Onde:** Visualização da tela 'Digite os 4 primeiros dígitos do seu CPF'.
 
 ```javascript
-    Analytics.logScreenView("/desbloqueio-cartao/cpf/");
+    Analytics.logScreenView("/desbloqueio-cartao/4-primeiros-digitos-do-seu-cpf/");
 ```
 
 <br />
@@ -5692,14 +5594,14 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
-| [[elemento-clicado]] | 'continuar' ou 'voltar' | Deve retornar o nome do elemento clicado. |
+| [[elemento-clicado]] | 'continuar' ou 'voltar:4-primeiros-digitos-do-seu-cpf' | Deve retornar o nome do elemento clicado. |
 
 <br />
 
 - **Onde:** Visualização da tela 'Confirme o numero do seu novo cartão'.
 
 ```javascript
-    Analytics.logScreenView("/desbloqueio-cartao/confirme-cartao/");
+    Analytics.logScreenView("/desbloqueio-cartao/confirme-o-numero-do-seu-novo-cartao/");
 ```
 
 <br />
@@ -5752,38 +5654,72 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
-| [[elemento-clicado]] | 'continuar', 'voltar' ou 'precisa-de-ajuda' | Deve retornar o nome do elemento clicado. |
+| [[elemento-clicado]] | 'continuar', 'voltar:confirme-o-numero-do-seu-novo-cartao' ou 'precisa-de-ajuda' | Deve retornar o nome do elemento clicado. |
 
 <br />
 
-- **Onde:** Visualização da tela &#039;Digite uma senha para seu cartão&#039;.
+- **Onde:** Onde: Visualização do modal "Precisa de Ajuda?"
 
 ```javascript
-    Analytics.logScreenView("/desbloqueio-cartao/criacao-senha/");
+    Analytics.logScreenView("/desbloqueio-cartao/modal:precisa-de-ajuda/");
 ```
 
 <br />
 
-- **Quando:** Após o preenchimento do campo de &#039;senha&#039;.
-- **Onde:** Na tela &#039;Digite uma senha para seu cartão&#039;.
+- **Quando:** No clique de um dos botões
+- **Onde:** No modal "Precisa de Ajuda?"
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:criacao-senha",
-        	eventAction: "preencheu:campo",
-        	eventLabel: "senha"
+        	eventCategory: "app-midway:desbloqueio-cartao:modal:precisa-de-ajuda",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
         });
 ```
 
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[nome-botao]] | 'fechar' ou 'clicou-fora' | Deve retornar o nome do botão clicado. |
 
 <br />
 
-- **Quando:** No callback do preenchimento do campo de senha.
-- **Onde:** Na tela &#039;Digite uma senha para seu cartão&#039;.
+- **Onde:** Visualização das telas de "Digite uma senha para seu cartão" e "Confirme a sua senha"
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/[[criar-ou-confirmar]]-senha/");
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[criar-ou-confirmar]] | 'criar' ou 'confirmar' | Retornar o step para criar ou confirmar senha. |
+
+
+<br />
+
+- **Quando:** Após os preenchimento dos campos de "Criar e Confirmar senha"
+- **Onde:** Nas telas de "Digite uma senha para seu cartão" e "Confirme a sua senha"
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:criacao-senha",
+        	eventCategory: "app-midway:desbloqueio-cartao:[[criar-ou-confirmar]]-senha",
+        	eventAction: "preencheu:campo",
+        	eventLabel: "[[nome-campo]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[criar-ou-confirmar]] | 'criar' ou 'confirmar' | Retornar o step para criar ou confirmar senha. |
+| [[nome-campo]] | 'senha' ou 'confirme-senha' | Retorna o nome do campo. |
+
+<br />
+
+- **Quando:** No callback do preenchimento dos campos de "Criar e Confirmar senha"
+- **Onde:** Nas telas de "Digite uma senha para seu cartão" e "Confirme a sua senha"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:desbloqueio-cartao:[[criar-ou-confirmar]]-senha",
         	eventAction: "callback",
         	eventLabel: "[[status]]"
         });
@@ -5791,16 +5727,17 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
+| [[criar-ou-confirmar]] | 'criar' ou 'confirmar' | Retornar o step para criar ou confirmar senha. |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:repeticao-de-numeros-seguidos&#039;, &#039;erro:data-de-nascimento&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
 
 - **Quando:** No clique em um dos botões.
-- **Onde:** Na tela &#039;Digite uma senha para seu cartão&#039;.
+- **Onde:** Nas telas de "Digite uma senha para seu cartão" e "Confirme a sua senha"
 
 ```javascript
         Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:criacao-senha",
+        	eventCategory: "app-midway:desbloqueio-cartao:[[criar-ou-confirmar]]-senha",
         	eventAction: "clique:botao",
         	eventLabel: "[[nome-botao]]"
         });
@@ -5808,98 +5745,16 @@ Resumo de produtos cadastrados
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
-| [[nome-botao]] | &#039;ver-senha&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
+| [[criar-ou-confirmar]] | 'criar' ou 'confirmar' | Retornar o step para criar ou confirmar senha. |
+| [[nome-botao]] | 'ver-senha', 'voltar:digite-uma-senha-para-seu-cartao', 'voltar:confirme-sua-senha' etc. | Deve retornar o nome do botão clicado. |
 
 <br />
 
-- **Onde:** Na tela &#039;Confirme sua senha&#039;.
-
-
-
-```javascript
-    Analytics.logScreenView("/desbloqueio-cartao/confirmacao-senha/");
-```
-
-
-<br />
-
-- **Quando:** Após o preenchimento do campo de &#039;confirmar senha&#039;.
-- **Onde:** Na tela &#039;Confirme sua senha&#039;.
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:confirmacao-senha",
-        	eventAction: "preencheu:campo",
-        	eventLabel: "confirmar-senha"
-        });
-```
-
-
-<br />
-
-- **Quando:** No callback do preenchimento do campo de confirmação de senha.
-- **Onde:** Na tela &#039;Confirme sua senha&#039;.
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:confirmacao-senha",
-        	eventAction: "callback",
-        	eventLabel: "[[status]]"
-        });
-```
-
-| Variável        | Exemplo           | Descrição         |
-| :-------------- | :-----------------| :---------------- |
-| [[status]] | &#039;sucesso&#039; ou &#039;erro:senha-diferente-da-anterior&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
-
-<br />
-
-- **Quando:** No clique de um dos botões.
-- **Onde:** Na tela &#039;Confirme sua senha&#039;.
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:confirmacao-senha",
-        	eventAction: "clique:botao",
-        	eventLabel: "[[nome-botao]]"
-        });
-```
-
-| Variável        | Exemplo           | Descrição         |
-| :-------------- | :-----------------| :---------------- |
-| [[nome-botao]] | &#039;ver-senha&#039;, &#039;voltar&#039; etc. | Deve retornar o nome do botão clicado. |
-
-<br />
-
-- **Onde:** Visualização da tela &#039;Confirme sua senha&#039;.
-
-```javascript
-    Analytics.logScreenView("/desbloqueio-cartao/autenticacao/");
-```
-
-
-<br />
-
-- **Quando:** No clique do botão &#039;confirmar&#039;.
-- **Onde:** Na tela &#039;Autenticação&#039;.
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:autenticacao",
-        	eventAction: "clique:botao",
-        	eventLabel: "confirmar"
-        });
-```
-
-
-<br />
-
-- **Onde:**  Visualização da tela 'Você já pode começar a usar seu cartão de débito Midway'
+- **Onde:** Visualização da tela 'Você já pode começar a usar seu cartão de débito Midway'
 
 ```javascript
     Analytics.logScreenView("/desbloqueio-cartao/cartao-desbloqueado/");
 ```
-
 
 <br />
 
@@ -5913,26 +5768,6 @@ Resumo de produtos cadastrados
         	eventLabel: "fechar"
         });
 ```
-
-
-<br />
-
-- **Quando:** No callback da operação de desbloqueio do cartão.
-- **Onde:** No fluxo de desbloqueio de cartão.
-
-```javascript
-        Analytics.logEvent("event", {
-        	eventCategory: "app-midway:desbloqueio-cartao:cartao-desbloqueado",
-        	eventAction: "callback",
-        	eventLabel: "[[status]]",
-        	dimension2: "[[dimension2]]"
-        });
-```
-
-| Variável        | Exemplo           | Descrição         |
-| :-------------- | :-----------------| :---------------- |
-| [[status]] | &#039;sucesso&#039; ou &#039;erro:nao-foi-possivel-realizar-o-desbloqueio&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
-| [[dimension2]] | &quot;conta-corrente&quot;, &quot;cartao-de-credito&quot; ou &quot;conta-corrente-e-cartao-de-credito&quot; | Deve retornar se o usuário possui uma conta corrente, cartão de crédito ou as duas opções |
 
 <br />
 
