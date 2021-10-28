@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Riachuelo APP
 
-Última atualização: 15/10/2021. <br />
+Última atualização: 28/10/2021. <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -2122,6 +2122,34 @@ Analytics.logPurchase({
 
 ### Eventos - Cartões - Super APP
 
+- **Onde:** Visualização do modal de "ATENÇÃO! Não foi possível autenticar com segurança neste momento" logo após de tentar acessar a aba de cartões do App
+
+```javascript
+Analytics.setCurrentScreen(
+  "/riachuelo-app/cartoes/atencao-nao-foi-possivel-autenticar/"
+);
+```
+
+<br />
+
+- **Quando:** No clique dos botões e icones
+- **Onde:** No modal "ATENÇÃO! Não foi possível autenticar com segurança neste momento" logo após de tentar acessar a aba cartões do App
+
+```javascript
+Analytics.logEvent("event", {
+  eventCategory: "riachuelo:app:cartoes:modal-atencao-nao-foi-possivel-autenticar",
+  eventAction: "clique:[[botao-icone]]",
+  eventLabel: "[[nome-item]]"
+});
+```
+
+| Variável         | Exemplo         | Descrição          |
+| :--------------- | :-------------- | :----------------- |
+| `[[botao-icone]]` | 'botao' ou 'icone' | Deve retornar o elemento clicado. |
+| `[[nome-item]]` | 'voltar', 'tentar-novamente', 'fechar' ou 'clique-fora' e etc | Deve retornar o nome do item. |
+
+<br />
+
 - **Onde:** Visualização da tela "Midway".
 
 ```javascript
@@ -2143,13 +2171,11 @@ Analytics.logEvent("event", {
 });
 ```
 
-| Variável         | Exemplo                                                 | Descrição                             |
-| :--------------- | :------------------------------------------------------ | :------------------------------------ |
+| Variável         | Exemplo         | Descrição          |
+| :--------------- | :-------------- | :----------------- |
 | `[[nome-botao]]` | &#039;fazer-login&#039;, &#039;solicitar-cartao&#039; e etc | Deve retornar o nome do botão clicado |
 
 <br />
-
-
 
 **Visualização do modal de &quot;Sobre o cartão Riachuelo&quot;**<br />
 
