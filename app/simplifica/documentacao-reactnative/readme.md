@@ -9,7 +9,7 @@
 
 ## Implementação de Tags Firebase - Projeto APP Simplifica - React Native
 
-Última atualização: 22/07/2021 <br />
+Última atualização: 29/10/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -33,6 +33,8 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Reembolso](#reembolso)
 - [NPS](#nps)
 - [Holerite](#holerite)
+- [Espaço Saúde](#espa&#231;o-sa&#250;de)
+- [Atestado Médico](#atestado-m&#233;dico)
 - [Fluxo Covid 19](#fluxo-covid-19)
 - [FAQ RH](#faq-rh)
 - [Considerações Finais](#considera%c3%a7%c3%b5es-finais)
@@ -73,8 +75,8 @@ Analytics.setUserId('[[UserID]]');
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | userID | &quot;01234&quot; | A matrícula do funcionário Riachuelo |
 
 
@@ -92,8 +94,8 @@ Analytics.setUserId('[[UserID]]');
         });
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-item]] | &#039;inicio&#039;, &#039;notificacoes&#039;, &#039;perfil&#039; e etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -120,8 +122,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[tela]] | &#039;login&#039;, &#039;recuperar-senha&#039; e etc. | Deve retornar o nome da tela preenchida. |
 | [[nome-campo]] | &#039;matricula&#039;, &#039;senha&#039;,matricula&#039;, &#039;cpf&#039;,&#039;data-de-nascimento&#039;,&#039;celular&#039;, &#039;nova-senha&#039;, &#039;confirme-nova-senha&#039;. | Deve retornar se o campo foi preenchido. |
 | [[etapa]] | &#039;redefinir-senha&#039;, &#039;celular&#039;, &#039;celular-codigo&#039;, &#039;nova-senha&#039;, &#039;login&#039;. | Deve retornar a etapa de redefinição de senha que o usuário está. |
@@ -141,8 +143,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[etapa]] | &#039;redefinir-senha&#039;, &#039;celular&#039;, &#039;celular-codigo&#039;, &#039;nova-senha&#039;, &#039;login&#039;. | Deve retornar a etapa de redefinição de senha que o usuário está. |
 | [[sucesso-erro]] | &#039;sucesso&#039;, &#039;erro:acesso-invalido&#039;, &#039;erro:celular-invalido&#039; | Deve retornar se ocorreu sucesso ou erro na solicitação. |
 | [[tela]] | &#039;login&#039;, &#039;recuperar-senha&#039; e etc. | Deve retornar o nome da tela preenchida. |
@@ -164,8 +166,8 @@ Analytics.setUserId('[[UserID]]');
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[botao-link]] | &#039;botao&#039;, &#039;link&#039; e etc. | Deve retornar se o nome do item clicado é botão ou link. |
 | [[etapa]] | &#039;redefinir-senha&#039;, &#039;celular&#039;, &#039;celular-codigo&#039;, &#039;nova-senha&#039;, &#039;login&#039;. | Deve retornar a etapa de redefinição de senha que o usuário está. |
 | [[nome-item]] | visualizar-senha&#039;, &#039;ocultar-senha&#039;, &#039;acessar&#039;,&#039;continuar&#039;, &#039;enviar&#039;, &#039;voltar&#039;,&#039;reenviar&#039;, &#039;voltar-ao-login&#039;  | Deve retornar o nome do item clicado. |
@@ -258,8 +260,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[botao-link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar se o  item clicado é um &#039;botao&#039; ou &#039;link&#039; .  |
 | [[secao]] | &#039;servicos&#039;, &#039;redes&#039; e etc.  | Deve retornar a seção do item clicado. |
 | [[nome-item]] |  &#039;reembolso&#039; e etc. | Deve retornar o nome do item clicado. |
@@ -303,8 +305,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-notificacao]] | &#039;reembolso-aprovado&#039;, &#039;reembolso-rejeitado&#039; e etc. | Deve retornar o nome da notificação clicada. |
 
 <br />
@@ -333,8 +335,8 @@ Analytics.setUserId('[[UserID]]');
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;sair-do-app&#039;, &#039;sair&#039;, &#039;cancelar&#039; , &#039;alterar-minha-senha&#039; e etc. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -361,8 +363,8 @@ Analytics.setUserId('[[UserID]]');
         )
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[tela]] | &#039;reembolso&#039;, &#039;novo-reembolso&#039;, &#039;detalhes-reembolso&#039;, &#039;reembolso-em-progresso&#039;, &#039;confirmacao-novo-reembolso&#039; e etc | Deve retornar em qual tela o usuario esta. |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;filtrar-status&#039;, &#039;duvida&#039;, &#039;filtrar-data&#039;, &#039;novo-reembolso&#039;,  &#039;alterar&#039;, &#039;enviar&#039;, &#039;voltar&#039;, &#039;enviar&#039;, &#039;duvida&#039;,&#039;ok&#039;, &#039;cancelar&#039;  e etc. | Deve retornar o nome do botão clicado. |
 
@@ -380,8 +382,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[dimension1]] | &quot;aprovado&quot;, &quot;processando&quot; e etc | Deve retornar o status do reembolso do usuario |
 
 <br />
@@ -397,8 +399,8 @@ Analytics.setUserId('[[UserID]]');
             })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-status]] | &#039;aprovado&#039;, &#039;concluido&#039; e etc | Deve retornar o status selecionado. |
 
 <br />
@@ -415,8 +417,8 @@ Analytics.setUserId('[[UserID]]');
         ])
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-botao]] | &#039;ok&#039;, &#039;cancelar&#039; | Deve retornar o nome do botão clicado. |
 | [[dimension2]] | &#039;02-02-2020-ate-10-02-2020&#039; e etc | Deve retornar o periodo de reembolso selecionado pelo usuario no filtro de data. Caso o Usuario clique em cancelar, a dimension2 retorna undefined |
 
@@ -431,8 +433,8 @@ Analytics.setUserId('[[UserID]]');
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[dimension1]] | &quot;aprovado&quot;, &quot;processando&quot; e etc | Deve retornar o status do reembolso do usuario |
 
 <br />
@@ -448,8 +450,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-item]] | &#039;em-andamento&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -474,8 +476,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-campo]] | &#039;motivo-da-nota-fiscal&#039;, &#039;data&#039; &#039;nota-fiscal&#039;, &#039;valor-da-nota-fiscal&#039; e etc. | Deve retornar se o campo foi preenchido. |
 
 <br />
@@ -530,8 +532,8 @@ Analytics.setUserId('[[UserID]]');
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[status]] | &#039;sucesso&#039;, &#039;erro:falha-no-sistema&#039;, &#039;erro:dado-invalido&#039; e etc | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
 
 <br />
@@ -545,8 +547,8 @@ Analytics.setUserId('[[UserID]]');
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[tela]] | &#039;1&#039;, &#039;2&#039; ou &#039;3&#039; | Deve retornar se o usuario esta visualizando a tela 1, 2 ou 3. |
 
 <br />
@@ -562,8 +564,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-botao]] | &#039;fechar&#039;,&#039;proximo&#039;, &#039;anterior&#039; e etc | Deve retornar o nome do botão clicado. |
 | [[etapa]] | &#039;1&#039;, &#039;2&#039;,&#039;3&#039;. | Qual etapa o usuário estava quando clicou em fechar. |
 
@@ -594,8 +596,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[dimension3]] | &#039;odiei&#039;, &#039;adorei&#039; e etc | Deve retornar a avaliação do Usuario, se o usuario clicar em fechar retornar undefined |
 | [[dimension4]] | &#039;achei-otima-experiencia&#039; e etc | Deve retornar a mensagem de avaliação do Usuario, Se o campo estiver vazio retornar &#039;default&#039;|
 
@@ -610,8 +612,8 @@ Analytics.setUserId('[[UserID]]');
     Analytics.logScreenView("/holerite/[[periodo]]/")
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[periodo]] | &#039;mensal&#039;, &#039;quinzenal&#039; e etc | deve retornar se o usuario interagiu com itens do holerite mensal ou quinzenal. |
 
 <br />
@@ -627,8 +629,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-botao]] | &#039;compartilhar&#039;, &#039;voltar&#039;, &#039;quinzenal&#039;, &#039;mensal&#039;, &#039;compartilhar&#039; e etc | deve retornar o nome do botão clicado. |
 | [[periodo]] | &#039;mensal&#039;, &#039;quinzenal&#039; e etc | deve retornar se o usuario interagiu com itens do holerite mensal ou quinzenal. |
 
@@ -645,8 +647,8 @@ Analytics.setUserId('[[UserID]]');
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[mes-selecionado]] | &#039;abril/2020&#039; , &#039;dez/2020&#039; e etc | deve retornar o mes selecionado. |
 | [[periodo]] | &#039;mensal&#039;, &#039;quinzenal&#039; e etc | deve retornar se o usuario interagiu com itens do holerite mensal ou quinzenal. |
 
@@ -663,22 +665,147 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[abriu-fechou]] | &quot;abriu&quot;, &quot;fechou&quot; | deve retornar se o usuario abriu ou fechou. |
 | [[item]] | &#039;descontos&#039;, &#039;salario&#039; e etc | deve retornar o nome do item clicado. |
 
 <br />
 
-### Fluxo Covid 19
+### Espaço Saúde
 
+**Visualização da tela de "Espaço Saúde"**<br />
+
+```javascript
+    Analytics.logScreenView("/espaco-saude/")
+```
+
+<br />
+
+- **Quando:** No clique nos cards
+- **Onde:** Na tela de "Espaço Saúde"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:espaco-saude" ,
+        	eventAction: "clique:card" ,
+        	eventLabel: "[[nome-card]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-card]] |'covid-19' ou 'enviar-atestado-medico' | Retorna o nome do card clicado. |
+
+<br />
+
+### Atestado Médico
+
+**Visualização da tela de "Atestado Médico"**<br />
+
+```javascript
+    Analytics.logScreenView("/atestado-medico/")
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "Atestado Médico"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:atestado-medico" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-botao]] | 'continuar', 'voltar:atestado-medico' e etc | Retorna o nome do botão clicado. |
+
+<br />
+
+- **Quando:** Na interação com as opções de atestado médico
+- **Onde:** Na tela de "Atestado Médico"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:atestado-medico" ,
+        	eventAction: "interacao:[[questao]]" ,
+        	eventLabel: "[[resposta]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[questao]] | 'selecione-o-conselho-de-classe', 'atestado-decorrente-de-acidente-de-trabalho', 'atestado-contem-cid' e etc | Retorna a questão interagida. |
+| [[resposta]] | 'crm', 'cro', 'sim', 'nao' e etc| Retorna a resposta clicada. |
+
+<br />
+
+- **Quando:** No clique dos botões para enviar foto do atestado
+- **Onde:** Na tela de "Atestado Médico", etapa "Envie sua foto do atestado"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:atestado-medico" ,
+        	eventAction: "clique:botao:foto-atestado",
+        	eventLabel: "[[nome-botao]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-botao]] | 'toque-para-anexar', 'enviar' e etc | Retorna o nome do botão clicado. |
+
+<br />
+
+- **Quando:** No callback do envio da foto
+- **Onde:** Na tela de "Atestado Médico", etapa "Envie sua foto do atestado"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:atestado-medico" ,
+        	eventAction: "callback:envio-foto-atestado" ,
+        	eventLabel: "[[sucesso-ou-erro]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[sucesso-ou-erro]] | 'sucesso:atestado-enviado', 'erro:404:falha-ao-enviar-atestado' e etc | Retorna o callback do envio da foto do atestado.  |
+
+<br />
+
+**Visualização do pop up "Atestado Enviado!"**<br />
+
+```javascript
+    Analytics.logScreenView("/atestado-medico/pop-up:atestado-enviado/")
+```
+
+<br />
+
+- **Quando:** No clique no botão "OK"
+- **Onde:** No pop up "Atestado Enviado!"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:atestado-medico-enviado" ,
+        	eventAction: "clique:botao",
+        	eventLabel: "ok" 
+		})
+```
+
+<br />
+
+### Fluxo Covid 19
 
 **Visualização da tela de &quot;Ola Covid19&quot; e &quot;Bom te-lo novamento Covid19&quot;**<br />
 
 ```javascript
     Analytics.logScreenView("/covid19/")
 ```
-
 
 <br />
 
@@ -693,8 +820,8 @@ Analytics.setUserId('[[UserID]]');
 		})
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-botao]] | &#039;continuar&#039;, &#039;voltar&#039; e etc | deve retornar o nome do botão clicado. |
 
 <br />
@@ -719,8 +846,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;relatar-covid-19&#039;, &#039;estou-com-duvidas&#039; e etc | deve retornar o nome do botão clicado. |
 
 <br />
@@ -745,8 +872,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-botao]] | &#039;voltar&#039;, &#039;continuar&#039; | deve retornar o nome do botão clicado. |
 
 <br />
@@ -762,8 +889,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[sucesso-erro]] | &#039;sucesso&#039;, &#039;erro:numero-invalido&#039; e etc | deve retornar se o contato foi enviado com sucesso ou o tipo de erro. |
 
 <br />
@@ -790,8 +917,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-filtro]] | &#039;admissao&#039;, &#039;alteracao-e-selecao-de-talentos&#039;, &#039;beneficios&#039; e etc | Deve retornar o nome do filtro clicado pelo usuario.  |
 
 <br />
@@ -815,8 +942,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[nome-botao]] | &#039;indicacao&#039;, &#039;carreira&#039; e etc | Deve retornar o nome do botão clicado.  |
 
 <br />
@@ -840,8 +967,8 @@ Analytics.setUserId('[[UserID]]');
         })
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
 | [[pergunta]] | &#039;como-faco-para-me-candidatar-a-vagas-internas&#039; e &#039;como-uma-vaga-em-meu-time&#039; e etc | Deve retornar a pergunta selecionada.  |
 | [[nome-icone]] | &#039;abrir&#039; e &#039;fechar&#039; e etc | Deve retornar o icone clicado.  |
 
