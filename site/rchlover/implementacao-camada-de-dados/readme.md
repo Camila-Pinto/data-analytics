@@ -33,7 +33,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Rchlover
-Última atualização: 22/04/2021 <br />
+Última atualização: 01/11/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -201,8 +201,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[userid]] | &quot;01234&quot; | ID único de usuário defeinido após o cadastro |
 | [[afiliado]] | &quot;riachuelo&quot;, &quot;cacau-show&quot;, &quot;autonomo&quot; e etc | Retornar o nome do colaborador, parceiro ou a qualquer pessoa |
 
@@ -247,8 +247,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-botao]] | &#039;enviar&#039;, &#039;fechar&#039; | Deve retornar o nome clicado no modal. |
 | [[parte]] | &#039;primeira-parte&#039; ou &#039;segunda-parte&#039; | Deve retornar em qual parte do modal está. |
 
@@ -273,8 +273,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[opcao]] | &#039;nao-gostei&#039;, &#039;gostei&#039; e etc | Deve retornar o nome da opção clicada. |
 | [[sugestao]] | &#039;site-lento&#039;, &#039;default&#039; e etc | Deve retornar a sugestão feita pelo usuário. |
 | [[status]] | &#039;sugestao-enviada&#039;, &#039;erro:nao-foi-possivel-enviar-sugestao&#039; e etc | Deve retornar a mensagem de sucesso ou tipo de erro. |
@@ -294,8 +294,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-elemento]] | &#039;fechar&#039;. &#039;ir-para-meus-dados&#039; e etc. | Deve retornar o nome do elemento. |
 
 <br />
@@ -337,8 +337,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-botao]] | &#039;acessar&#039; ou &#039;junte-se-a-nos&#039;. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -357,8 +357,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-item]] | &#039;venda-online&#039;, &#039;como-funciona&#039;, &#039;acessar&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -377,8 +377,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-item]] | &#039;politica-de-privacidade&#039;, &#039;facebook&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -397,8 +397,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[secao]] | &#039;mais-uma-oportunidade-para-voce&#039;, &#039;crie-agora-sua-loja&#039; e etc | Deve retornar a seção do botão criar minha loja. |
 
 <br />
@@ -422,8 +422,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-video]] | &#039;veja-como-e-facil-aprender&#039; e etc | Deve retornar o nome do vídeo. |
 | [[acao]] | &#039;play&#039; ou &#039;pause&#039; | Deve retornar a ação do usuário. |
 
@@ -443,8 +443,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-botao]] | &#039;cadastro&#039;, &#039;comissao&#039;, &#039;vendas&#039; ou &#039;divulgacao&#039; | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -463,8 +463,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-pergunta]] | &#039;onde-posso-personalizar-minha-loja&#039;, &#039;o-que-e-o-sourchlover&#039; e etc. | Deve retornar o nome da pergunta. |
 | [[acao]] | &#039;expandiu&#039; ou &#039;recolheu&#039; | Deve retornar a ação do usuário. |
 
@@ -491,8 +491,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-campo]] | &#039;email-ou-credenciais&#039; ou &#039;senha&#039;. | Deve retornar o nome do campo preenchido. |
 
 <br />
@@ -533,8 +533,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-botao]] | &#039;acessar&#039;, &#039;esqueci-minha-senha&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -558,8 +558,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[sucesso ou tipo-de-erro]] | &#039;sucesso&#039; ou &#039;erro:voce-precisa-inserir-todos-os-dados-para-continuar&#039; e etc | Deve retornar a mensagem de sucesso ou o tipo de erro. |
 
 <br />
@@ -578,8 +578,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-botao]] | &#039;recusar&#039; ou &#039;aceitar-e-prosseguir&#039;. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -622,8 +622,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[botao ou link]] | &#039;botao&#039; ou &#039;link&#039;. | Deve retornar o tipo do elemento clicado. |
 | [[nome-item]] | &#039;continuar&#039; ou &#039;entrar&#039;  | Deve retornar o nome do item clicado. |
 
@@ -648,8 +648,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[sucesso ou tipo-de-erro]] | &#039;sucesso&#039;, &#039;erro:matricula-ou-senha-invalida&#039; e etc | Deve retornar a mensagem de sucesso ou tipo de erro. |
 
 <br />
@@ -673,8 +673,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-campo]] | &#039;cpf&#039;, &#039;data-de-nascimento&#039; e etc | Deve retornar o nome do campo preenchido. |
 
 <br />
@@ -698,8 +698,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[sucesso ou tipo-de-erro]] | &#039;sucesso&#039;, &#039;erro:nao-foi-possivel-validar-as-informacoes-fornecidas&#039; e etc | Deve retornar a mensagem de sucesso ou tipo de erro. |
 
 <br />
@@ -718,8 +718,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-item]] | &#039;quer-reiniciar-seu-login&#039; e etc | Deve retornar o nome da categoria do link. |
 
 <br />
@@ -740,8 +740,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-menu]] | &#039;dashboard&#039;, &#039;compartilhe&#039; e etc | Deve retornar o nome do menu clicado. |
 | [[nome-sub-menu]] | &#039;acompanhe-sua-evolucao&#039;, &#039;historico-de-campanhas&#039; e etc | Deve retornar o nome do sub menu clicado. |
 
@@ -761,12 +761,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 |  [[nome-botao]] | &#039;personalizar-loja&#039;, &#039;fechar&#039;. | Deve retornar o nome do botão. |
 
 <br />
-
 
 **Nos botoes do video da home**<br />
 
@@ -781,12 +780,31 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[botao-video]] | &#039;play&#039;,  &#039;pause&#039;, &#039;continuar&#039;, etc  | Retorna qual botao foi clicado pelo usuário ao ver o vídeo no onboarding. |
 
 <br />
 
+**No clique nos botões do modal "Produtos Indisponíveis"**<br />
+
+- **Onde:** Na página home ou onde estiver disponível
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:home:modal:produtos-indisponiveis',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
+| [[nome-botao]] | 'fechar:modal:produtos-indisponiveis', 'ir-para-minha-loja' e etc | Retorna o nome do botão clicado.|
 
 ### Minha loja
 
@@ -820,8 +838,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-campo]] | &#039;nome-da-loja&#039;, &#039;descricao&#039; e etc | Deve retornar o nome do campo preenchido. |
 
 <br />
@@ -839,8 +857,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-botao]] | &#039;copiar-link&#039;, &#039;cancelar&#039;, &#039;salvar&#039;. | Deve retornar o nome do botão. |
 
 <br />
@@ -859,8 +877,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-botao]] | &#039;salvar&#039;, &#039;cancelar&#039;, &#039;fechar&#039; | Deve retornar o nome do botão. |
 
 <br />
@@ -879,8 +897,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[ativar-desativar]] | &#039;ativar&#039; , &#039;desativar&#039;. | Deve retornar se a pessoa ativou ou desativou a lojinha. |
 
 <br />
@@ -904,8 +922,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[sucesso ou tipo-de-erro]] | &#039;sucesso&#039;, &#039;erro:formato-imagem-invalido&#039; e etc | Deve retornar a mensagem de sucesso ou tipo de erro. |
 
 <br />
@@ -929,8 +947,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[sucesso ou tipo-de-erro]] | &#039;sucesso&#039;, &#039;erro:este-link-ja-esta-sendo-usado&#039; e etc | Deve retornar a mensagem de sucesso ou tipo de erro. |
 
 <br />
@@ -971,8 +989,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[termo-buscado]] | &#039;sueter&#039;, &#039;camiseta&#039; e etc | Deve retornar o termo buscado. |
 
 <br />
@@ -1013,8 +1031,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[termo-buscado]] | &#039;sueter&#039;, &#039;camiseta&#039; e etc | Deve retornar o termo buscado. |
 
 <br />
@@ -1033,8 +1051,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-botao]] | &#039;adicionar&#039; ou &#039;remover&#039; | Deve retornar o nome do botão clicado. |
 | [[produto]] | &#039;suter-trico-listras-bege&#039; e etc | Deve retornar o nome do produto. |
 
@@ -1074,8 +1092,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-filtro]] | &#039;novidades&#039;, &#039;feminino&#039;, &#039;masculino&#039; e etc | Deve retornar o nome do filtro. |
 | [[valor-selecionado]] | &#039;colecao-feminina&#039;, &#039;plus-size&#039; e etc | Deve retornar o valor selecionado no filtro. |
 
@@ -1094,8 +1112,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[botao ou link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o tipo de elemento clicado. |
 | [[nome-item]] | &#039;carregar-mais-produtos&#039;, &#039;ir-para-minha-loja&#039;, &#039;clique-aqui-para-ver-seus-produtos&#039;. | Deve retornar o nome do item clicado. |
 
@@ -1117,8 +1135,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[botao-clicado]] | 'whatsapp', 'facebook', 'twitter' e etc | Retorna o botão clicado. |
 
 <br />
@@ -1157,9 +1175,52 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[botao-clicado]] | 'whatsapp', 'facebook', 'twitter' e etc | Retorna o botão clicado. |
+
+<br />
+
+**No clique para editar a capa**<br />
+
+- **Onde:** Na página minha loja, menu "Minha Loja - Personalizar"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-loja',
+    'eventAction': 'clique:icone-personalizar',
+    'eventLabel': 'editar-capa'
+  });
+</script>
+```
+
+<br />
+
+**No clique nos botões do modal "Editar Capa"**<br />
+
+- **Onde:** Na página minha loja, menu "Minha Loja - Personalizar", modal "Editar Capa"
+
+- **Obs: Para os botões fechar e cancelar podem coletar de forma única. Para o botão salvar, concatenar com a capa escolhida. Ex: 'salvar:ofertas-para-voce-aproveitar' e etc**
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-loja:modal:editar-capa',
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]:[[capa-escolhida]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
+| [[nome-botao]] | 'fechar:editar-capa', 'cancelar', 'salvar' e etc | Retorna o nome do botão clicado.  |
+| [[capa-escolhida]] | 'ofertas-para-voce-aproveitar', 'sou-rchlover', 'conectar-desejos-a-realizacoes' e etc | Retorna a capa escolhida.|
 
 <br />
 
@@ -1182,8 +1243,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[botao ou link]] | 'botao' ou 'link' | Deve retornar o tipo de elemento clicado |
 | [[item-clicado]] | 'meus-dados', 'carregar-mais' e etc | Deve retornar o nome do item clicado. |
 
@@ -1205,8 +1266,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-item]] | &#039;logo&#039;, &#039;busca&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -1225,8 +1286,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-item]] | &#039;politica-de-privacidade&#039;, &#039;termos-e-condicoes-de-uso&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -1245,8 +1306,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-item]] | &#039;1&#039;, &#039;2&#039;, &#039;3&#039; e etc | Deve retornar o nome do item clicado. |
 
 <br />
@@ -1270,8 +1331,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[termo-buscado]] | &#039;sueter&#039;, &#039;camiseta&#039; e etc | Deve retornar o termo buscado. |
 
 <br />
@@ -1295,8 +1356,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[termo-buscado]] | &#039;sueter&#039;, &#039;camiseta&#039; e etc | Deve retornar o termo buscado. |
 
 <br />
@@ -1313,8 +1374,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
    data-gtm-event-label='copiar-cupom'
 >Botão</div>
 ```
-
-
 
 <br />
 
@@ -1335,15 +1394,35 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
-| [[nome-filtro]] | &#039;ordernar-por&#039; e etc | Deve retornar o nome do filtro. |
-| [[valor-selecionado]] | &#039;menor-preco&#039;, &#039;maior-preco&#039;, 'personalizado' e etc | Deve retornar o valor selecionado no filtro. |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
+| [[nome-filtro]] | 'ordernar-por', 'categorias' e etc | Deve retornar o nome do filtro. |
+| [[valor-selecionado]] | 'menor-preco', 'maior-preco', 'personalizado', 'feminino', 'masculino' | Deve retornar o valor selecionado no filtro. |
 
 <br />
 
+**No callback dos filtros.**<br />
+
+- **Onde:** Na página da loja criada.
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-loja:loja-criada',
+    'eventAction': 'callback:filtro',
+    'eventLabel': '[[nome-filtro]]:[[status]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
+| [[nome-filtro]] | 'ordernar-por', 'categorias' e etc | Deve retornar o nome do filtro. |
+| [[status]] | 'sucesso', 'erro:nao-ha-produtos-na-categoria-selecionada' e etc | Retorna o callback aplicado nos filtros.  |
+
+<br />
 
 **No clique do link &quot;Crie a sua loja&quot;**<br />
 
@@ -1357,10 +1436,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-
-
 <br />
-
 
 **No clique do botão &quot;Comprar&quot;**<br />
 
@@ -1374,9 +1450,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-produto]] | &#039;luminaria-de-mesa-madeira&#039; e etc. | Deve retornar o nome do produto. |
 
 <br />
@@ -1397,8 +1472,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[status]] | &#039;loja-não-encontrada&#039;, &#039;nao-existe-produtos-nessa-loja&#039; e etc. | Deve retornar qual o status de erro da tentativa de acesso a loja. |
 
 <br />
@@ -1457,9 +1532,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
-
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-da-campanha]] | &#039;nome-campanha&#039; e etc | Deve retornar o nome da campanha. |
 
 <br />
@@ -1502,8 +1576,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[palavra-pesquisada]] |  | Deve retornar o que foi preenchido no campo da busca |
 
 <br />
@@ -1527,8 +1601,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[sucesso ou tipo-de-erro]] | &#039;sucesso&#039;, &#039;erro:nenhum-produto-foi-encontrado&#039; e etc | Deve retornar a mensagem de sucesso ou o tipo de erro. |
 
 <br />
@@ -1552,8 +1626,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-filtro]] | &#039;novidades&#039;, &#039;feminino&#039;, &#039;masculino&#039; e etc | Deve retornar o nome do filtro. |
 | [[valor-selecionado]] | &#039;colecao-feminina&#039;, &#039;plus-size&#039; e etc | Deve retornar o valor selecionado no filtro. |
 
@@ -1573,8 +1647,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-produto]] | &#039;sueter-listrado&#039; e etc | Deve retornar o nome do produto. |
 
 <br />
@@ -1593,8 +1667,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-botao]] | &#039;whatsapp&#039;, &#039;copiar-link&#039;, &#039;fechar&#039; e etc | Deve retornar o nome do botão clicado. |
 | [[formato]] | &#039;campanha, arte,  guide ou produtos&#039; | Deve retornar o formato utilizado. |
 
@@ -1614,8 +1688,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-campanha]] | &#039;ta-sabendo-linha-fitness&#039; e etc. | Deve retornar o nome da campanha. |
 | [[formato]] | &#039;campanha, arte,  guide ou produtos&#039; | Deve retornar o formato utilizado. |
 
@@ -1635,8 +1709,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-icone]] | &#039;baixar&#039;, &#039;whatsapp&#039; e etc | Deve retornar o nome do botão clicado. |
 | [[nome-campanha]] | &#039;ta-sabendo-linha-fitness&#039; e etc. | Deve retornar o nome da campanha. |
 | [[formato]] | &#039;campanha, arte,  guide ou produtos&#039; | Deve retornar o formato utilizado. |
@@ -1657,8 +1731,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-guide]] | &#039;casa-raichuelo&#039; e etc | Deve retornar o nome do guide. |
 
 <br />
@@ -1713,8 +1787,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-botao]] | &#039;continuar&#039; ou &#039;cancelar&#039;. | Deve retornar o nome do botão clicado. |
 
 <br />
@@ -1736,8 +1810,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-campo]] | &#039;nome-completo&#039;, &#039;cpf&#039; e etc | Deve retornar o nome do campo preenchido. |
 
 <br />
@@ -1759,8 +1833,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[sucesso ou tipo-de-erro]] | &#039;sucesso&#039;, &#039;erro:nao-foi-possivel&#039; e etc | Deve retornar a mensagem de sucesso ou o tipo de erro. |
 
 <br />
@@ -1810,8 +1884,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-do-video]] | &#039;video-de-onboarding&#039;, &#039;como-resgatar-comissao&#039;, etc | Retorna o nome do vídeo clicado para assistir. |
 | [[acao-do-video]] | &#039;play&#039;,  &#039;pause&#039;, &#039;replay&#039;, etc | Deve retornar a açao feita no vídeo. |
 
@@ -1836,8 +1910,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-campo]] | &#039;nome-completo&#039;, &#039;cpf&#039; e etc | Deve retornar o nome do campo preenchido. |
 | [[nome-tela]] | &#039;comissao&#039; ou &#039;meus-dados&#039; | Deve retornar o nome da tela em que o usuario está, &#039;meus dados&#039; para colaboradores e &#039;comissao&#039; para afiliados. |
 
@@ -1857,8 +1931,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-botao]] | &#039;salvar&#039; ou &#039;cancelar&#039;. | Deve retornar o nome do botão clicado. |
 | [[nome-tela]] | &#039;comissao&#039; ou &#039;meus-dados&#039; | Deve retornar o nome da tela em que o usuario está, &#039;meus dados&#039; para colaboradores e &#039;comissao&#039; para afiliados. |
 
@@ -1878,8 +1952,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-botao]] | &#039;salvar&#039; ou &#039;editar&#039;. | Deve retornar o nome do botão clicado. |
 | [[nome-tela]] | &#039;comissao&#039; ou &#039;meus-dados&#039; | Deve retornar o nome da tela em que o usuario está, &#039;meus dados&#039; para colaboradores e &#039;comissao&#039; para afiliados. |
 
@@ -1902,8 +1976,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[sucesso ou tipo-de-erro]] | &#039;sucesso&#039;, &#039;erro:dados-invalidos&#039; e etc | Deve retornar a mensagem de sucesso ou o tipo de erro. |
 
 <br />
@@ -1937,8 +2011,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-demonstrativo]] | &#039;demonstrativo-comissao-agosto&#039; e etc | Deve retornar o nome do demonstrativo. |
 
 <br />
@@ -1960,8 +2034,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-demonstrativo]] | &#039;demonstrativo-comissao-agosto&#039; e etc | Deve retornar o nome do demonstrativo. |
 
 <br />
@@ -1980,8 +2054,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ```
 
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[botao ou link]] | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o tipo de elemento clicado. |
 | [[nome-demonstrativo]] | &#039;demonstrativo-comissao-agosto&#039; e etc | Deve retornar o nome do demonstrativo. |
 | [[nome-item]] | &#039;ajuda&#039;, &#039;confirmar&#039; | Deve retornar o nome do item clicado. |
@@ -2005,8 +2079,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[status]] | status-cancelado, status-aguardando-faturamento, etc | Deve retornar o status selecionado |
 
 <br />
@@ -2047,8 +2121,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[item-selecionado]] | &#039;concordo-com-uso-dos-dados-para-contato&#039; ou  &#039;deixar-de-fornecer-meus-dados-para-contato&#039; | Deve retornar a ideia generica do checkbox selecionado. |
 
 <br />
@@ -2072,8 +2146,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[passo] | &#039;step-1&#039;, &#039;step-2&#039;. | Deve retortar se é o primeiro ou segundo botão &quot;Excluir minha conta&quot; do processo de exclusão. |
 
 <br />
@@ -2095,8 +2169,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[selecionou-desselecionou]] | 'selecionou' ou 'desselecionou' | Deve retornar se o checkbox foi selecionado ou desselecionado. |
 
 <br />
@@ -2118,8 +2192,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[botao]] | &#039;fechar&#039;, &#039;cancelar&#039;, &#039;continuar&#039;, &#039;confirmar&#039;, etc. | Deve retornar o nome do botão ou link clicado no modal de exclusão. |
 | [[motivo]] | &#039;nao-gostei-da-comeissao&#039;, &#039;nao-consigo-vender&#039;, &#039;nao-gostei-da-plataforma&#039;, &#039;outro&#039;. | Quando clicar em continuar deve trazer o motivo selecionado da exclusão. |
 
@@ -2142,8 +2216,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[botao-link]] | &#039;fechar&#039;, &#039;cancelar&#039;, &#039;clique-aqui&#039;, &#039;confirmar&#039;, &#039;finalizar&#039;, etc. | Deve retornar o nome do botão ou link clicado no modal de exclusão. |
 
 <br />
@@ -2165,8 +2239,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[botao]] | &#039;finalizar&#039;. | Deve retornar o nome do botão clicado no modal de alerta de exclusão. |
 | [[modal-tipo]] | &#039;modal-conta-excluida-em-ate-24-horas&#039;, &#039;modal-aguarde-processamento-exclusao&#039;. | Retornar o tipo de alerta de exclussão. |
 
@@ -2190,8 +2264,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[nome-pergunta]] | &#039;1-quem-pode-participar-da-campanha&#039; e etc | Deve retornar o nome da pergunta que teve interação. |
 | [[acao]] | &#039;abrir&#039; ou &#039;fechar&#039; | Deve retornar a ação do usuário. |
 
@@ -2241,8 +2315,8 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[id-promocao]] | &quot;banner123&quot; | ID único do Banner |
 | [[nome-promocao]] | &quot;o-primeiro-colocado-ganha-uma-honda-biz-0km&quot; | Nome amigável do banner |
 | [[posicao-promocao]] | &quot;1&quot; | Posição que o banner é exibido  |
@@ -2277,8 +2351,8 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[id-promocao]] | &quot;banner123&quot; | ID único do Banner |
 | [[nome-promocao]] | &quot;o-primeiro-colocado-ganha-uma-honda-biz-0km&quot; | Nome amigável do banner |
 | [[posicao-promocao]] | &quot;1&quot; | Posição que o banner é exibido  |
@@ -2320,8 +2394,8 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[dco-product-codsubcategoria]] | 135&#039; | Código da subcategoria |
 | [[product-padronagemdoproduto]] | &#039;florido&#039;,&#039;listado&#039; | Padrão da estampa do produto |
 | [[product-subcategoria]] | 109093&#039; | Código da categoria GM  |
@@ -2372,8 +2446,8 @@ window.dataLayer.push({
 </script>
 ```
 
-| Variável        | Exemplo                               | Descrição                         |
-| :-------------- | :------------------------------------ | :-------------------------------- |
+| Variável        | Exemplo       | Descrição           |
+| :-------------- | :------------ | :------------------ |
 | [[dco-product-codsubcategoria]] | 135&#039; | Código da subcategoria |
 | [[product-padronagemdoproduto]] | &#039;florido&#039;,&#039;listado&#039; | Padrão da estampa do produto |
 | [[product-subcategoria]] | 109093&#039; | Código da categoria GM  |
