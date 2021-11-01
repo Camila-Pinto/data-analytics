@@ -34,7 +34,9 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Pagamento Boleto](#pagamento-boleto)
 - [Extrato](#extrato)
 - [Transferência](#transfer&#234;ncia)
-- [Perfil Canais Digitais 2.2.5](#perfil-canais-digitais-2.2.5)
+- [Perfil - Canais Digitais](#perfil---canais-digitais)
+- [Perfil - Configurar Cartão - Bloqueio Temporário Cartão](#perfil---configurar-cart&#227;o---bloqueio-tempor&#225;rio-cart&#227;o)
+- [Perfil - Configurar Cartão - Limite Emergencial](#perfil---configurar-cart&#227;o---limite-emergencial)
 - [Conta Remunerada](#conta-remunerada)
 - [Encerramento de conta](#encerramento-de-conta)
 - [Cheque Especial](#cheque-especial)
@@ -4578,7 +4580,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Perfil / Canais Digitais 2.2.5
+### Perfil - Canais Digitais 
 
 - **Onde:** Visualização da tela &quot;Perfil&quot;.
 
@@ -4752,7 +4754,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Perfil / Bloqueio Cartão
+### Perfil - Configurar Cartão - Bloqueio Temporário Cartão
 
 **Ao visualizar a tela de &quot;Configurar Cartão&quot;**
 - **Link:** 5
@@ -4760,7 +4762,6 @@ Resumo de produtos cadastrados
 ```javascript
     Analytics.logScreenView("/perfil/configurar-cartao")
 ```
-
 
 <br />
 
@@ -4875,10 +4876,7 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/perfil/configurar-cartao/bloqueio-definitivo/sucesso")
 ```
 
-
 <br />
-
-
 
 - **Quando:** No clique dos botões na tela de cartao bloqueado definitivamente
 - **Onde:** No modal de Bloqueio Definitivo
@@ -4921,9 +4919,7 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/perfil/configurar-cartao/2-via-cartao/confirmar-endereco")
 ```
 
-
 <br />
-
 
 - **Quando:** No clique dos botões na tela de Confirmaçao de endereço
 - **Onde:**  Na tela de confirmaçao de endereço
@@ -4941,7 +4937,6 @@ Resumo de produtos cadastrados
 | [[nome-item]] | &#039;voltar&#039;, &#039;editar endereço&#039;, &#039;concluir&#039; e etc | Deve retornar o nome do botão clicado. |
 
 <br />
-
 
 **Ao visualizar a tela de ediçao de endereço após a clique no botão edição de endereço**
 
@@ -4975,10 +4970,7 @@ Resumo de produtos cadastrados
     Analytics.logScreenView("/perfil/configurar-cartao/2-via-cartao/confirmar-endereco/sucesso")
 ```
 
-
 <br />
-
-
 
 - **Quando:** No clique dos bot&#245;es na tela de Sucesso de solicita&#231;&#227;o da  2&#170; via do cart&#227;o
 - **Onde:**  Na tela de confirmaçao de endereço
@@ -4997,6 +4989,69 @@ Resumo de produtos cadastrados
 
 <br />
 
+### Perfil - Configurar Cartão - Limite Emergencial
+
+- **Onde:** Ao visualizar a tela de "Limite Emergencial"
+
+```javascript
+    Analytics.logScreenView("/perfil/configurar-cartao/limite-emergencial/");
+```
+
+<br />
+
+- **Quando:** Ao interagir com os botões.
+- **Onde:** Na tela de "Limite Emergencial"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:perfil:configurar-cartao:limite-emergencial",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[nome-botao]] | fechar:limite-emergencial', 'confirmar' e etc | Retorna o nome do botão clicado. |
+
+<br />
+
+- **Quando:** Na interação de Ativar ou Desativar o Limite Emergencial
+- **Onde:** Na tela de "Limite Emergencial"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:perfil:configurar-cartao:limite-emergencial",
+        	eventAction: "clique:botao:limite-emergencial",
+        	eventLabel: "[[ativou-ou-desativou]]:limite-emergencial"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[ativou-ou-desativou]] | 'ativou' ou 'desativou' | Retorna a ação do usuário para ativar ou desativar o limite emergencial. |
+
+<br />
+
+- **Onde:** Ao visualizar a tela de "Limite Emergencial", quando o cliente não tem uma opção de crédito emergencial disponível.
+
+```javascript
+    Analytics.logScreenView("/perfil/configurar-cartao/limite-emergencial-nao-disponivel/");
+```
+
+<br />
+
+- **Onde:** Ao visualizar as telas de sucesso de "Limite Emergencial ativado" e "Limite Emergencial desativado"
+
+```javascript
+    Analytics.logScreenView("/perfil/configurar-cartao/limite-emergencial-[[acao]]-com-sucesso/");
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[acao]] | 'ativado' ou 'desativado'| Retorna a ação do usuário para ativar ou desativar o limite emergencial. |
+
+<br />
 
 ### Conta Remunerada
 
