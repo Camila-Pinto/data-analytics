@@ -1452,6 +1452,7 @@ window.dataLayer.push({
   'eventCategory': 'rchlo-mais:enhanced-ecommerce',
   'eventAction': 'purchase',
   'dimension15': '[[cd15-hit-nome-loja]]',
+  'dimension16': '[[cd16-hit-tipo-de-frete]]',
   'noInteraction': '1',
   'ecommerce': {
     'purchase': {
@@ -1503,6 +1504,7 @@ window.dataLayer.push({
 | `[[cd11-product-subcategoria]]` | '310090'| Código da categoria GM  |
 | `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
 | `[[cd15-hit-nome-loja]]` | 'spa-morumbi-sh', 'abc' e etc | Retorna o nome da loja selecionada. |
+| `[[cd16-hit-tipo-de-frete]]` |  'retira-rapido', 'express', 'normal' e etc | Retorna o tipo de frete selecionado |
 
 <br />
 
