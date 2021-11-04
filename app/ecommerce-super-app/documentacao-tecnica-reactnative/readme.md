@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Riachuelo APP
 
-Última atualização: 28/10/2021. <br />
+Última atualização: 04/11/2021. <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -50,7 +50,8 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
   - [Checkout Progress:](#checkout-progress)
   - [Purchase](#purchase)
 - [Eventos - Cartões - Super APP](#eventos---cart&#245;es---super-app)
-- [Cartões - Novo Fluxo 2 Cartões SICC e TSYS ](#cart&#245;es---novo-fluxo-2-cart&#245;es-sicc-e-tsys)
+- [Desbloqueio de Cartão com Biometria](#desbloqueio-de-cart&#227;o-com-biometria)
+- [Cartões - Novo Fluxo 2 Cartões SICC e TSYS](#cart&#245;es---novo-fluxo-2-cart&#245;es-sicc-e-tsys)
 - [Cartões - Antecipar Pagamento](#cart&#245;es---antecipar-pagamento)
 - [Eventos - Cartões - Super APP Guideline](#eventos---cart&#245;es---super-app-guideline)
 - [Eventos - Super App - Declarações Anuais](#eventos---super-app---declara&#231;&#245;es-anuais)
@@ -4152,6 +4153,294 @@ Analytics.logEvent("event", {
 | :-------------- | :-------------------- | :----------------------------------- |
 | `[[erro]]` | 'nao-foi-possivel-realizar-upgrade' | Deve retornar o nome do sucesso ou erro. |
 | `[[nome-botao]]` | 'tentar-novamente', 'voltar', 'fechar' e etc. | Deve retornar o nome do botão clicado. |
+
+<br />
+
+### Desbloqueio de Cartão com Biometria
+
+- **Onde:** Visualização da tela "Leia com atenção antes de seguir"
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/leia-com-atencao-antes-de-seguir/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela "Leia com atenção antes de seguir"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:cartoes:desbloqueio-cartao:leia-com-atencao",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[elemento-clicado]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[elemento-clicado]] |'seguir-com-o-desbloqueio' ou 'voltar:leia-com-atencao-antes-de-seguir' | Deve retornar o nome do elemento clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela 'Digite os 4 primeiros dígitos do seu CPF'.
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/4-primeiros-digitos-do-seu-cpf/");
+```
+
+<br />
+
+- **Quando:** No preenchimento do campo CPF
+- **Onde:** Na tela 'Digite os 4 primeiros dígitos do seu CPF'.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:desbloqueio-cartao:cpf",
+        	eventAction: "preencheu:campo",
+        	eventLabel: "cpf"
+        });
+```
+
+<br />
+
+- **Quando:** No callback do preenchimento do campo CPF
+- **Onde:** Na tela 'Digite os 4 primeiros dígitos do seu CPF'.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:desbloqueio-cartao:cpf",
+        	eventAction: "callback",
+        	eventLabel: "[[status]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[status]] | 'sucesso', 'erro:cpf-invalido', 'erro:numero-invalido' e etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
+
+
+<br />
+
+- **Quando:** No clique do botão "Continuar" ou no Ícone de "Voltar"
+- **Onde:** Na tela 'Digite os 4 primeiros dígitos do seu CPF'.
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:desbloqueio-cartao:cpf",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[elemento-clicado]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[elemento-clicado]] | 'continuar' ou 'voltar:4-primeiros-digitos-do-seu-cpf' | Deve retornar o nome do elemento clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela 'Confirme o numero do seu novo cartão'.
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/confirme-o-numero-do-seu-novo-cartao/");
+```
+
+<br />
+
+- **Quando:** No preenchimento dos campos
+- **Onde:** Na tela 'Confirme o numero do seu novo cartão'
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:desbloqueio-cartao:confirme-cartao",
+        	eventAction: "preencheu:campo",
+        	eventLabel: "[[nome-campo]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[nome-campo]] | 'primeiros-digitos' ou 'ultimos-digitos' | Deve retornar o nome do campo preenchido. |
+
+<br />
+
+- **Quando:** No callback do preenchimento do campo CPF
+- **Onde:** Na tela 'Confirme o numero do seu novo cartão'
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:desbloqueio-cartao:confirme-cartao",
+        	eventAction: "callback",
+        	eventLabel: "[[status]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[status]] | 'sucesso', 'erro:cartao-invalido', 'erro:numero-invalido' e etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
+
+<br />
+
+- **Quando:** No clique dos botões da tela
+- **Onde:** Na tela 'Confirme o numero do seu novo cartão'
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:desbloqueio-cartao:confirme-cartao",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[elemento-clicado]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[elemento-clicado]] | 'continuar', 'voltar:confirme-o-numero-do-seu-novo-cartao' ou 'precisa-de-ajuda' | Deve retornar o nome do elemento clicado. |
+
+<br />
+
+- **Onde:** Visualização do modal "Precisa de Ajuda?"
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/modal:precisa-de-ajuda/");
+```
+
+<br />
+
+- **Quando:** No clique de um dos botões
+- **Onde:** No modal "Precisa de Ajuda?"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:desbloqueio-cartao:modal:precisa-de-ajuda",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[nome-botao]] | 'fechar' ou 'clicou-fora' | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização das telas de Biometria Facial
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/biometria-facial:etapa:[[nome-etapa]]/");
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[nome-etapa]] | 'enquadre-o-rosto-no-contorno', 'de-um-sorriso', 'nao-se-mexa' e etc | Retorna o nome da etapa de Biometria Facial. |
+
+<br />
+
+- **Quando:** No callback da Biometria Facial
+- **Onde:** Nas telas de "Biometria Facial"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:cartoes:desbloqueio-cartao:biometria-facial",
+        	eventAction: "callback",
+        	eventLabel: "[[status]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[status]] | 'sucesso', 'erro:biometria-invalida', 'erro:nao-foi-possivel-identificar-a-biometria' e etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
+
+<br />
+
+- **Onde:** Visualização das telas de "Escolha sua senha" e "Confirme a sua senha"
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/[[criar-ou-confirmar]]-senha/");
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[criar-ou-confirmar]] | 'criar' ou 'confirmar' | Retornar o step para criar ou confirmar senha. |
+
+
+<br />
+
+- **Quando:** Após os preenchimento dos campos de "Criar e Confirmar senha"
+- **Onde:** Nas telas de "Digite uma senha para seu cartão" e "Confirme a sua senha"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:desbloqueio-cartao:[[criar-ou-confirmar]]-senha",
+        	eventAction: "preencheu:campo",
+        	eventLabel: "[[nome-campo]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[criar-ou-confirmar]] | 'criar' ou 'confirmar' | Retornar o step para criar ou confirmar senha. |
+| [[nome-campo]] | 'senha' ou 'confirme-senha' | Retorna o nome do campo. |
+
+<br />
+
+- **Quando:** No callback do preenchimento dos campos de "Criar e Confirmar senha"
+- **Onde:** Nas telas de "Escolha sua senha" e "Confirme a sua senha"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:desbloqueio-cartao:[[criar-ou-confirmar]]-senha",
+        	eventAction: "callback",
+        	eventLabel: "[[status]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[criar-ou-confirmar]] | 'criar' ou 'confirmar' | Retornar o step para criar ou confirmar senha. |
+| [[status]] | &#039;sucesso&#039; ou &#039;erro:repeticao-de-numeros-seguidos&#039;, &#039;erro:data-de-nascimento&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
+
+<br />
+
+- **Quando:** No clique em um dos botões.
+- **Onde:** Nas telas de "Escolha sua senha" e "Confirme a sua senha"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:desbloqueio-cartao:[[criar-ou-confirmar]]-senha",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[criar-ou-confirmar]] | 'criar' ou 'confirmar' | Retornar o step para criar ou confirmar senha. |
+| [[nome-botao]] | 'ver-senha', 'voltar:digite-uma-senha-para-seu-cartao', 'voltar:confirme-sua-senha' etc. | Deve retornar o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela "Cartão Desbloqueado"
+
+```javascript
+    Analytics.logScreenView("/desbloqueio-cartao/cartao-desbloqueado/");
+```
+
+<br />
+
+- **Quando:** No clique em um dos botões de &#039;fechar&#039;.
+- **Onde:** Na tela de "Cartão Desbloqueado"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "riachuelo:app:desbloqueio-cartao:cartao-desbloqueado",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[nome-botao]] | 'ir-para-loja-online', 'fechar' e etc | Deve retornar o nome do botão clicado. |
 
 <br />
 
