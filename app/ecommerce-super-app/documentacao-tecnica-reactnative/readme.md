@@ -4294,7 +4294,7 @@ Analytics.logEvent("event", {
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
-| [[elemento-clicado]] | 'continuar', 'voltar:confirme-o-numero-do-seu-novo-cartao' ou 'precisa-de-ajuda' | Deve retornar o nome do elemento clicado. |
+| [[elemento-clicado]] | 'prosseguir', 'voltar:confirme-o-numero-do-seu-novo-cartao' ou 'precisa-de-ajuda' | Deve retornar o nome do elemento clicado. |
 
 <br />
 
@@ -4415,7 +4415,7 @@ Analytics.logEvent("event", {
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
 | [[criar-ou-confirmar]] | 'criar' ou 'confirmar' | Retornar o step para criar ou confirmar senha. |
-| [[nome-botao]] | 'ver-senha', 'voltar:digite-uma-senha-para-seu-cartao', 'voltar:confirme-sua-senha' etc. | Deve retornar o nome do botão clicado. |
+| [[nome-botao]] | 'ver-senha', 'voltar:escolha-sua-senha', 'voltar:confirme-sua-senha', 'avancar' e etc. | Deve retornar o nome do botão clicado. |
 
 <br />
 
