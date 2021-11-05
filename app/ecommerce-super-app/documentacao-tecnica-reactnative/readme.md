@@ -4161,7 +4161,7 @@ Analytics.logEvent("event", {
 - **Onde:** Visualização da tela "Leia com atenção antes de seguir"
 
 ```javascript
-    Analytics.logScreenView("/desbloqueio-cartao/leia-com-atencao-antes-de-seguir/");
+    Analytics.logScreenView("/riachuelo-app/cartoes/desbloqueio-cartao/leia-com-atencao-antes-de-seguir/");
 ```
 
 <br />
@@ -4186,7 +4186,7 @@ Analytics.logEvent("event", {
 - **Onde:** Visualização da tela 'Digite os 4 primeiros dígitos do seu CPF'.
 
 ```javascript
-    Analytics.logScreenView("/desbloqueio-cartao/4-primeiros-digitos-do-seu-cpf/");
+    Analytics.logScreenView("/riachuelo-app/cartoes/desbloqueio-cartao/4-primeiros-digitos-do-seu-cpf/");
 ```
 
 <br />
@@ -4242,7 +4242,7 @@ Analytics.logEvent("event", {
 - **Onde:** Visualização da tela 'Confirme o numero do seu novo cartão'.
 
 ```javascript
-    Analytics.logScreenView("/desbloqueio-cartao/confirme-o-numero-do-seu-novo-cartao/");
+    Analytics.logScreenView("/riachuelo-app/cartoes/desbloqueio-cartao/confirme-o-numero-do-seu-novo-cartao/");
 ```
 
 <br />
@@ -4301,7 +4301,7 @@ Analytics.logEvent("event", {
 - **Onde:** Visualização do modal "Precisa de Ajuda?"
 
 ```javascript
-    Analytics.logScreenView("/desbloqueio-cartao/modal:precisa-de-ajuda/");
+    Analytics.logScreenView("/riachuelo-app/cartoes/desbloqueio-cartao/modal:precisa-de-ajuda/");
 ```
 
 <br />
@@ -4326,7 +4326,7 @@ Analytics.logEvent("event", {
 - **Onde:** Visualização das telas de Biometria Facial
 
 ```javascript
-    Analytics.logScreenView("/desbloqueio-cartao/biometria-facial:etapa:[[nome-etapa]]/");
+    Analytics.logScreenView("/riachuelo-app/cartoes/desbloqueio-cartao/biometria-facial:etapa:[[nome-etapa]]/");
 ```
 
 | Variável        | Exemplo           | Descrição         |
@@ -4355,7 +4355,7 @@ Analytics.logEvent("event", {
 - **Onde:** Visualização das telas de "Escolha sua senha" e "Confirme a sua senha"
 
 ```javascript
-    Analytics.logScreenView("/desbloqueio-cartao/[[criar-ou-confirmar]]-senha/");
+    Analytics.logScreenView("/riachuelo-app/cartoes/desbloqueio-cartao/[[criar-ou-confirmar]]-senha/");
 ```
 
 | Variável        | Exemplo           | Descrição         |
@@ -4422,7 +4422,7 @@ Analytics.logEvent("event", {
 - **Onde:** Visualização da tela "Cartão Desbloqueado"
 
 ```javascript
-    Analytics.logScreenView("/desbloqueio-cartao/cartao-desbloqueado/");
+    Analytics.logScreenView("/riachuelo-app/cartoes/desbloqueio-cartao/cartao-desbloqueado/");
 ```
 
 <br />
