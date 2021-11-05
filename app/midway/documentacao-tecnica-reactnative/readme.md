@@ -51,7 +51,8 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Cartões - Termo e adesão](#cart&#245;es---termo-e-ades&#227;o)
 - [Cartões - Notificações](#cart&#245;es---notifica&#231;&#245;es)
 - [Cartões - Consulta de Fatura](#cart&#245;es---consulta-de-fatura)
-- [Pagamento de Fatura](#pagamento-de-fatura)
+- [Pagamento de Fatura - Pagar Total](#pagamento-de-fatura---pagar-total)
+- [Pagamento de Fatura - Parcelar Fatura](#pagamento-de-fatura---parcelar-fatura)
 - [Conta Pagamento - Solicitar Cartão Débito](#conta-pagamento---solicitar-cart&#227;o-d&#233;bito)
 - [Conta Pagamento - Home](#conta-pagamento---home)
 - [Conta Pagamento - Perfil](#conta-pagamento---perfil)
@@ -6749,7 +6750,7 @@ Resumo de produtos cadastrados
 
 <br />
 
-### Pagamento de Fatura
+### Pagamento de Fatura - Pagar Total
 
 - **Onde:** Visualização da tela de "Pagamento de Fatura"
 
@@ -6777,6 +6778,158 @@ Resumo de produtos cadastrados
 ```
 
 <br />
+
+- **Onde:** Visualização da tela de "Boleto gerado com sucesso!"
+
+```javascript
+    Analytics.logScreenView("/pagamento-de-fatura/pagar-total/boleto-gerado-com-sucesso/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de Boleto gerado com sucesso
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:pagar-total:boleto-gerado",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
+| [[nome-botao]] |'copiar-codigo', 'pagar-agora', 'voltar:boleto-gerado-com-sucesso' | Retorna o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização do modal "Código de barras copiado!"
+
+```javascript
+    Analytics.logScreenView("/pagamento-de-fatura/pagar-total/boleto-gerado-com-sucesso/codigo-de-barras-copiado/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** No modal de Cógido de barras copiado!
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:pagar-total:codigo-de-barras-copiado",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
+| [[nome-botao]] |'fechar' ou 'ok' | Retorna o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela "Digite o código de barras"
+
+```javascript
+    Analytics.logScreenView("/pagamento-de-fatura/pagar-total/digite-o-codigo-de-barras/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "Digite o código de barras"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:pagar-total:digite-codigo-de-barras",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
+| [[nome-botao]] |'voltar:digite-o-codigo-de-barras', 'camera', 'limpar', 'continuar' e etc | Retorna o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela "Pagamento", para escolher a forma de pagamento
+
+```javascript
+    Analytics.logScreenView("/pagamento-de-fatura/pagar-total/escolha-forma-de-pagamento/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "Pagamento", para escolher a forma de pagamento
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:pagar-total:forma-de-pagamento",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
+| [[nome-botao]] |'voltar:forma-pagamento', 'forma-pagamento:saldo-em-conta', 'forma-pagamento:cartao-rchlo' | Retorna o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela "Pagamento", no resumo do pagamento
+
+```javascript
+    Analytics.logScreenView("/pagamento-de-fatura/pagar-total/resumo-pagamento/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "Pagamento", no resumo do pagamento
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:pagar-total:resumo-pagamento",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
+| [[nome-botao]] |'voltar:resumo-pagamento', 'pagar' e etc | Retorna o nome do botão clicado. |
+
+<br />
+
+- **Onde:** Visualização da tela "Pagamento Realizado"
+
+```javascript
+    Analytics.logScreenView("/pagamento-de-fatura/pagar-total/pagamento-realizado/");
+```
+
+<br />
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "Pagamento Realizado"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:pagamento-de-fatura:pagar-total:pagamento-realizado",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+        });
+```
+
+| Variável  | Exemplo  | Descrição    |
+| :--------- | :------ | :------------------ |
+| [[nome-botao]] |'fechar:pagamento-realizado', 'ver-comprovante', 'fazer-outro-pagamento' e etc | Retorna o nome do botão clicado. |
+
+<br />
+
+### Pagamento de Fatura - Parcelar Fatura
 
 - **Quando:** Na interação com o card "Parcelar Fatura"
 - **Onde:** Na primeira tela de "Pagamento de Fatura"
