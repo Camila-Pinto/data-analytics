@@ -6586,7 +6586,8 @@ Resumo de produtos cadastrados
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
 | [[status]] | &#039;sucesso&#039; ou &#039;erro:falha-ao-autenticar-a-assinatura&#039; etc. | Deve retornar a mensagem de sucesso ou erro apresentada para o usuário. |
-| [[dimension2]] | &quot;conta-corrente&quot;, &quot;cartao-de-credito&quot; ou &quot;conta-corrente-e-cartao-de-credito&quot; | Deve retornar se o usuário possui uma conta corrente, cartão de crédito ou as duas opções |
+| [[dimension2]] | &quot;conta-corrente&quot;, &quot;cartao-de-credito&quot; ou &quot;conta-corrente-e-cartao-de-credito&quot; | Deve retornar se o usuário possui 
+uma conta corrente, cartão de crédito ou as duas opções |
 
 <br />
 
