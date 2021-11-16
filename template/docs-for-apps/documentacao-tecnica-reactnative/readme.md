@@ -62,7 +62,7 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
 
 ### ScreenViews
 
-- **Quando:** Em todos os momentos que uma nova do APP for carregada.
+- **Quando:** Em todos os momentos que uma nova tela do APP for carregada.
 
 **OBS:** No Tagbook, temos exatamente o path pensado para a feature mapeada no aplicativo. Abaixo segue alguns exemplos de como implementar um evento de screenView.
 
