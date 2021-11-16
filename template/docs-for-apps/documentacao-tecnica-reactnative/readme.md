@@ -82,7 +82,7 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
 
 ### Eventos Genéricos
 
-- **Quando:** Em todos os eventos que no tabgook solicitar eventCategory, eventAction e eventLabel
+- **Quando:** Em todos os eventos que no tabgook solicitar os atributos eventCategory, eventAction e eventLabel
 
 
 ```javascript
@@ -97,7 +97,7 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
 
 ### Eventos Com Extras Parameters
 
-- **Quando:** Em todos os eventos que no tabgook solicitar eventCategory, eventAction, eventLabel mais extras parameters adicionais
+- **Quando:** Em todos os eventos que no tabgook solicitar os atributos eventCategory, eventAction, eventLabel mais extras parameters adicionais.
 
 ```javascript
         Analytics.logEvent("event", {
