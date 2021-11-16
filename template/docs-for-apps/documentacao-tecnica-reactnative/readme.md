@@ -60,6 +60,26 @@ Analytics.setUserProperty("dimension1", "[[Bandeira do Cartão]]");
 | dimension1   | [[Bandeira do Cartão]]   | "pl", "visa", "mastercard", etc | Deve retornar a bandeira do cartão utilizada pelo usuário |
 
 
+### ScreenViews
+
+- **Quando:** Em todos os momentos que uma nova do APP for carregada.
+
+**OBS:** No Tagbook, temos exatamente o path pensado para a feature mapeada no aplicativo. Abaixo segue alguns exemplos de como implementar um evento de screenView.
+
+**Os exemplos abaixos são fictícios, induzem apenas a forma correta para a implementação de um evento do tipo ScreenView**
+
+- **Onde:** Visualização da tela "Home"
+
+```javascript
+    Analytics.logScreenView("/home/");
+```
+
+- **Onde:** Visualização da tela "Parcelamento da Fatura"
+
+```javascript
+    Analytics.logScreenView("/home/parcelamento-da-fatura/");
+```
+
 ### Eventos Genéricos
 
 - **Quando:** Em todos os eventos que no tabgook solicitar eventCategory, eventAction e eventLabel
