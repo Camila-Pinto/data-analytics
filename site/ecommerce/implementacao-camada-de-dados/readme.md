@@ -30,7 +30,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Ecommerce
-Última atualização: 25/10/2021 <br />
+Última atualização: 19/11/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
