@@ -2381,6 +2381,7 @@ window.dataLayer.push({
       'dimension9': '[[product-subcategoria]]',
       'dimension10': '[[product-lifestyle]]',
       'dimension11': '[[product-gender]]',
+      'dimension12': '[[product-status-product]]',
       'name': '[[nome-produto]]',
       'id': '[[id-produto]]',
       'list': '[[lista-produto]]',
@@ -2401,6 +2402,7 @@ window.dataLayer.push({
 | [[product-subcategoria]] | 109093&#039; | Código da categoria GM  |
 | [[product-lifestyle]] | &#039;casual&#039;&#039;, &#039;&#039;esportivo&#039; | Estilo do produto  |
 | [[product-gender]] | &#039;unisex&#039;&#039;, &#039;&#039;feminino&#039; | Genero do produto |
+| [[product-status-product]] |  'indisponivel' ou 'disponivel' | Retorna o status do produto |
 | [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
 | [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
 | [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
@@ -2433,6 +2435,7 @@ window.dataLayer.push({
           'dimension9': '[[product-subcategoria]]',
           'dimension10': '[[product-lifestyle]]',
           'dimension11': '[[product-gender]]',
+          'dimension12': '[[product-status-product]]',
           'name': '[[nome-produto]]',
           'id': '[[id-produto]]',
           'price': '[[preco-produto]]',
@@ -2453,6 +2456,7 @@ window.dataLayer.push({
 | [[product-subcategoria]] | 109093&#039; | Código da categoria GM  |
 | [[product-lifestyle]] | &#039;casual&#039;&#039;, &#039;&#039;esportivo&#039; | Estilo do produto  |
 | [[product-gender]] | &#039;unisex&#039;&#039;, &#039;&#039;feminino&#039; | Genero do produto |
+| [[product-status-product]] |  'indisponivel' ou 'disponivel' | Retorna o status do produto |
 | [[nome-produto]] | &quot;calca-masculina-super-skinny-em-jeans&quot; | Nome do produto |
 | [[id-produto]] | &quot;13239635&quot; | SKU do produto - pai |
 | [[preco-produto]] | &quot;139.99&quot; | Preço do produto |
