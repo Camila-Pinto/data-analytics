@@ -2350,9 +2350,9 @@ window.dataLayer.push({
 
 <br />
 
-**No clique para adicionar produto ao carrinho**<br />
+**No clique para adicionar ou aumentar a quantidade do produto ao carrinho**<br />
 
-- **Onde:** Na página de detalhes de um produto
+- **Onde:** Em todas as opções de Adição ao Carrinho, na PDP, Sacola e etc
     
 ```html
 <script>
@@ -2411,9 +2411,9 @@ window.dataLayer.push({
 
 <br />
 
-**No clique da lixeira para remover produto do carrinho,**<br />
+**No clique da lixeira para remover e diminuir a quantidade do produto do carrinho**<br />
 
-- **Onde:** No carrinho modal lateral - Sua Sacola;
+- **Onde:** Em todas as opções de Remoção ao Carrinho, na Sacola do checkout e etc
     
 ```html
 <script>
