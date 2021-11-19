@@ -1618,7 +1618,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 **Na interação com o campo para calcular o frete e prazo**<br />
 
-- **Onde:** Na etapa sacola
+- **Onde:** No fluxo de checkout, etapa de Sacola
     
 ```html
 <script>
@@ -1634,23 +1634,9 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
-**No clique do link &quot;Não sei meu cep&quot;**<br />
+**No callback para calcular o frete, apos clicar em aplicar**<br />
 
-- **Onde:** Na etapa sacola
-    
-```html
-<div
-   data-gtm-event-category='riachuelo:checkout'
-   data-gtm-event-action='interacao:link:sacola'
-   data-gtm-event-label='nao-sei-meu-cep'
->Botão</div>
-```
-
-<br />
-
-**Na tentativa de callback para calcular o frete, apos clicar em aplicar**<br />
-
-- **Onde:** Na etapa sacola
+- **Onde:** No fluxo de checkout, etapa de Sacola
     
 ```html
 <script>
@@ -1666,36 +1652,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
-| `[[sucesso ou tipo-de-erro]]` | &#039;sucesso&#039;, &#039;erro:nao-e-possivel-entregar-neste-cep&#039; e etc | Deve retornar a mensagem de sucesso ou tipo de erro. |
+| `[[sucesso ou tipo-de-erro]]` | 'sucesso', 'erro:nao-e-possivel-entregar-neste-cep' e etc| Deve retornar a mensagem de sucesso ou tipo de erro. |
 
 <br />
 
-**Ao selecionar a quantidade do produto**<br />
-
-- **Onde:** Na etapa sacola e fluxo de checkout.
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'riachuelo:checkout',
-    'eventAction': 'interacao:quantidade:[[etapa]]',
-    'eventLabel': '[[mais ou menos]]:[[quantidade]]:[[categoria-produto]]',
-  });
-</script>
-```
-
-| Variável        | Exemplo         | Descrição            |
-| :-------------- | :-------------- | :------------------- |
-| `[[mais ou menos]]` | &#039;mais&#039; ou &#039;menos&#039; | Deve retornar o nome do item clicado. |
-| `[[quantidade]]` | &#039;1&#039;, &#039;3&#039;, &#039;4&#039; e etc | Deve retornar a quantidade. |
-| `[[etapa]]` | &#039;sacola&#039;, &#039;pagamento&#039; e etc | Deve retornar a etapa em que ocorreu o clique. |
-| `[[categoria-produto]]` | 'masculino', 'feminino' e etc | Deve retornar a categoria do produto |
-
-<br />
-
-**No callback apos selecionar a quantidade do produto**<br />
+**No callback de erro para adição e remoção de produtos no carrinho**<br />
 
 - **Onde:** Na etapa sacola e Checkout
     
@@ -1707,26 +1668,26 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventCategory': 'riachuelo:checkout',
     'eventAction': 'callback:quantidade:[[etapa]]',
     'eventLabel': '[[status]]:[[quantidade]]:[[categoria-produto]]',
-    'dimension40': '[[product-exclusivoecommerce+marketplace]]',
-    'dimension30': '[[product-subcategoria]]',
+    'dimension30': '[[product-sub-categoria]]',
+    'dimension40': '[[product-exclusivo-ecommerce+marketplace]]'
   });
 </script>
 ```
 
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
-| `[[status]]` | &#039;sucesso&#039;, &#039;erro:nao-existe-a-quantidade-em-estoque&#039;, &#039;restam-apenas-2-unidades-deste-item-no-estoque&#039; e etc | Deve retornar a mensagem de sucesso ou tipo de erro; |
-| `[[quantidade]]` | &#039;1&#039;, &#039;3&#039;, &#039;4&#039; e etc | Deve retornar a quantidade. |
-| `[[etapa]]` | &#039;sacola&#039;, &#039;pagamento&#039; e etc | Deve retornar a etapa em que ocorreu o clique. |
-| `[[categoria-produto]]` | &#039;masculino&#039;, &#039;feminino&#039; e etc | Deve retornar a categoria do produto. |
-| `[[product-exclusivoecommerce+marketplace]]` | &#039;sim:richlo&#039;, &#039;nao:richlo&#039;, &#039;nao:pontofrio&#039;, &#039;nao:extra&#039;, &#039;nao:sem-seller&#039; | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
-| `[[product-subcategoria]]` |  &#039;310090&#039; | Código da categoria GM  |
+| `[[etapa]]` |'sacola', 'entrega-e-pagamento' e etc| Deve retornar a etapa em que ocorreu o clique. |
+| `[[status]]` | 'erro:nao-existe-a-quantidade-em-estoque', 'restam-apenas-2-unidades-deste-item-no-estoque' e etc| Deve retornar a mensagem de erro. |
+| `[[quantidade]]` | '1', '3', '4' e etc | Deve retornar a quantidade. |
+| `[[categoria-produto]]` |  'masculino', 'feminino' e etc| Deve retornar a categoria do produto. |
+| `[[product-sub-categoria]]` | '310090'| Código da categoria GM  |
+| `[[product-exclusivo-ecommerce+marketplace]]` |'sim:richlo', 'nao:richlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller'| Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
 
 <br />
 
-**No clique dos icones para editar ou remover os produtos**<br />
+**No clique dos botões do modal "Tem certeza que deseja excluir este prouto?"**<br />
 
-- **Onde:** No fluxo de checkout e sacola
+- **Onde:** No modal "Deseja excluir este produto", após clicar no ícone de "Remover tudo"
     
 ```html
 <script>
@@ -1734,21 +1695,41 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'riachuelo:checkout',
-    'eventAction': 'clique:icone:[[etapa]]',
-    'eventLabel': '[[nome-icone]]:[[categoria-produto]]',
+    'eventAction': 'clique:modal:deseja-excluir-este-produto',
+    'eventLabel': '[[nome-botao]]'
   });
 </script>
 ```
 
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
-| `[[nome-icone]]` | &#039;editar&#039;, &#039;remover&#039; | Deve retornar o nome do icone clicado. |
-| `[[etapa]]` | &#039;sacola&#039;, &#039;pagamento&#039; e etc | Deve retornar a etapa em que ocorreu o clique. |
-| `[[categoria-produto]]` | 'masculino', 'feminino' e etc | Deve retornar a categoria do produto |
+| `[[nome-botao]]` | 'voltar', 'excluir', 'fechar' e etc | Retorna o nome do botão clicado. |
 
 <br />
 
-**No clique dos links  e botões**<br />
+**No clique do ícone de informação, onde informa que você pode comprar até o máximo 10 unidades do item**<br />
+
+- **Onde:** No fluxo de checkout, etapa de sacola, quando excede o máximo de 10 produtos
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:checkout',
+    'eventAction': 'clique:icone:informacao',
+    'eventLabel': 'maximo-de-10-unidades-desse-item'
+  });
+</script>
+```
+
+| Variável        | Exemplo         | Descrição            |
+| :-------------- | :-------------- | :------------------- |
+| `[[nome-botao]]` | 'voltar', 'excluir', 'fechar' e etc | Retorna o nome do botão clicado. |
+
+<br />
+
+**No clique dos links e botões**<br />
 
 - **Onde:** No fluxo de checkout e sacola
     
@@ -1766,9 +1747,9 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
-| `[[etapa]]` | &#039;sacola&#039;, &#039;pagamento&#039; e etc | Deve retornar a etapa em que ocorreu o clique. |
-| `[[tipo-item]]`  | &#039;botao&#039;, &#039;link&#039;| Deve retornar se o item é um botão ou um link|
-| `[[nome-item]]`  | &#039;editar-sacola&#039; e etc| Deve retornar se o nome do item clicado|
+| `[[tipo-item]]` | 'botao', 'link' | Deve retornar se o item é um botão ou um link.  |
+| `[[etapa]]` | 'sacola', 'entrega-e-pagamento' e etc | Deve retornar a etapa em que ocorreu o clique. |
+| `[[nome-item]]` | 'editar-sacola', 'nao-sei-meu-cep', 'editar-endereco', 'mais-opcoes-de-envio', 'aplicar-cupom' e etc | Deve retornar o nome do item clicado. |
 
 <br />
 
@@ -1784,53 +1765,16 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventCategory': 'riachuelo:checkout',
     'eventAction': 'callback:[[etapa]]',
     'eventLabel': '[[sucesso ou tipo-erro]]',
-    'dimension40': '[[product-exclusivoecommerce+marketplace]]',
+    'dimension40': '[[product-exclusivo-ecommerce+marketplace]]'
   });
 </script>
 ```
 
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
-| `[[sucesso-ou-tipo-erro]]` | &#039;sucesso&#039;, &#039;cupom-invalido&#039; e etc. | Deve retornar sucesso ou o tipo de erro. |
-| `[[etapa]]` | &#039;sacola&#039;, &#039;pagamento&#039; e etc | Deve retornar a etapa em que ocorreu o clique. |
-| `[[product-exclusivoecommerce+marketplace]]` | &#039;sim:richlo&#039;, &#039;nao:richlo&#039;, &#039;nao:pontofrio&#039;, &#039;nao:extra&#039;, &#039;nao:sem-seller&#039; | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
-
-<br />
-
-**No carregamento dos tipos de entrega disponíveis**<br />
-
-- **Onde:** Na página de checkout
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'event',
-    'eventCategory': 'riachuelo:checkout',
-    'eventAction': 'tipos-de-entrega:[[origem-lista]]',
-    'noInteraction': '1',
-    'dimension40': '[[product-exclusivoecommerce+marketplace]]',
-    'eventLabel': [{
-      't':'[[tipo-frete]]',
-      'd':'[[previsao]]',
-      'p':'[[valor]]'
-    },
-    {
-      't':'[[tipo-frete]]',
-      'd':'[[previsao]]',
-      'p':'[[valor]]'
-    }],
-  });
-</script>
-```
-
-| Variável        | Exemplo         | Descrição            |
-| :-------------- | :-------------- | :------------------- |
-| `[[origem-lista]]` | &#039;pdp&#039;, &#039;pagamento&#039; ou &#039;sacola&#039; | Deve retornar o local de origem que a lista de tipos de entrega aparece. |
-| `[[tipo-frete]]` | &#039;normal&#039;, &#039;expresso &#039;, &#039;entrega-agendada&#039;,&#039;retirar-em-loja&#039;  | Deve retornar os nomes dos tipos de frete. |
-| `[[previsao]]` | &#039;DD/MM/AAAA&#039;| Deve retornar a quantidade de dias para a entrega. |
-| `[[valor]]` | &#039;0.00&#039;, &#039;2.99&#039;, &#039;5.00&#039; | Deve retornar os valores dos fretes. |
-| `[[product-exclusivoecommerce+marketplace]]` | &#039;sim:richlo&#039;, &#039;nao:richlo&#039;, &#039;nao:pontofrio&#039;, &#039;nao:extra&#039;, &#039;nao:sem-seller&#039; | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
+| `[[etapa]]` | 'sacola', 'entrega-e-pagamento' e etc | Deve retornar a etapa em que ocorreu o clique. |
+| `[[sucesso ou tipo-erro]]` | 'sucesso', 'erro:cupom-invalido', 'erro:produto-indisponivel' e etc.| Deve retornar sucesso ou o tipo de erro. |
+| `[[product-exclusivo-ecommerce+marketplace]]` |'sim:richlo', 'nao:richlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller'| Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
 
 <br />
 
@@ -1846,79 +1790,69 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'eventCategory': 'riachuelo:checkout',
     'eventAction': 'selecionou:entrega:[[origem-lista]]',
     'eventLabel': '[[tipo-frete]]:[[previsao]]:[[valor]]',
-    'dimension40': '[[product-exclusivoecommerce+marketplace]]',
+    'dimension40': '[[product-exclusivo-ecommerce+marketplace]]'
   });
 </script>
 ```
 
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
-| `[[origem-lista]]` | &#039;pdp&#039;, &#039;checkout&#039; ou &#039;sacola&#039;  | Deve retornar o local de origem que a lista de tipos de entrega aparece. |
-| `[[tipo-frete]]` | &#039;normal&#039;, &#039;expresso &#039;, &#039;entrega-agendada&#039;,&#039;retirar-em-loja&#039;  | Deve retornar os nomes dos tipos de frete. |
-| `[[previsao]]` | &#039;DD/MM/AAAA&#039;, | Deve retornar a quantidade de dias para a entrega. |
-| `[[valor]]` | &#039;0.00&#039;, &#039;2.99&#039;, &#039;5.00&#039; | Deve retornar os valores dos fretes. |
-| `[[product-exclusivoecommerce+marketplace]]` | &#039;sim:riachuelo&#039;, &#039;nao:riachuelo&#039;, &#039;nao:pontofrio&#039;, &#039;nao:extra&#039;, &#039;nao:sem-seller&#039; | Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
+| `[[origem-lista]]` |'pdp', 'checkout' ou 'sacola' | Deve retornar o local de origem que a lista de tipos de entrega aparece. |
+| `[[tipo-frete]]` | 'expresso ', 'entrega-agendada', 'retirar-em-loja', 'retirar-em-loja-expresso' | Deve retornar os nomes dos tipos de frete. |
+| `[[previsao]]` | 'DD/MM/AAAA' | Deve retornar a quantidade de dias para a entrega. |
+| `[[valor]]` | '0.00', '2.99', '5.00'| Deve retornar os valores dos fretes. |
+| `[[product-exclusivo-ecommerce+marketplace]]` |'sim:richlo', 'nao:richlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller'| Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
 
 <br />
 
-**No clique do icone para editar o endereço**<br />
+**No clique do icones e botões no modal "Meus Endereços Salvos"**<br />
 
-- **Onde:** Na página de checkout
+- **Onde:** Na página de checkout, após clicar no ícone de "Editar Endereço" na página de "Entrega e Pagamento"
     
 ```html
-<div
-   data-gtm-event-category='riachuelo:checkout'
-   data-gtm-event-action='clique:icone:[[etapa]]'
-   data-gtm-event-label='editar-endereco'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:checkout:modal:enderecos-salvos',
+    'eventAction': 'clique:[[icone ou botao]]',
+    'eventLabel': '[[nome-item]]'
+  });
+</script>
 ```
 
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
-| `[[etapa]]` | &#039;sacola&#039;, &#039;pagamento&#039; e etc | Deve retornar a etapa em que ocorreu o clique. |
-
-<br />
-
-**No clique do icones e botões no modal &quot;meus endereços salvos&quot;**<br />
-
-- **Onde:** Na página de checkout
-    
-```html
-<div
-   data-gtm-event-category='riachuelo:checkout'
-   data-gtm-event-action='clique:[[icone ou botao]]'
-   data-gtm-event-label='meus-enderecos:[[nome-item]]:[[posicao-endereco]]'
->Botão</div>
-```
-
-| Variável        | Exemplo         | Descrição            |
-| :-------------- | :-------------- | :------------------- |
-| `[[icone ou botao]]` | &#039;icone&#039;, &#039;botao&#039; | Deve retornar o tipo de elemento clicado. |
-| `[[nome-item]]` | &#039;voltar&#039;, &#039;salvar, &#039;fechar&#039;, &#039;excluir&#039; | Deve retornar o nome do item clicado. |
-| `[[posicao-endereco]]` | &#039;posicao-1&#039;, &#039;posicao-2&#039; e etc | Deve retornar a posição do endereço clicado. |
+| `[[icone ou botao]]` |'icone', 'botao' | Deve retornar o tipo de elemento clicado.  |
+| `[[nome-item]]` | 'fechar', 'editar-endereco', 'novo-endereco', 'salvar' e etc |Deve retornar o nome do item clicado. |
 
 <br />
 
 **No clique dos botão ou link no resumo do pedido**<br />
 
-- **Onde:** Na página de sacola
+- **Onde:** Na página de checkout, etapas Sacola e Entrega e Pagamento
     
 ```html
-<div
-   data-gtm-event-category='riachuelo:checkout'
-   data-gtm-event-action='clique:[[botao ou link]]:sacola'
-   data-gtm-event-label='resumo-pedido:[[nome-item]]'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:checkout',
+    'eventAction': 'clique:[[botao ou link]]:[[etapa]]',
+    'eventLabel': 'resumo-pedido:[[nome-item]]'
+  });
+</script>
 ```
 
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
-| `[[botao ou link]]` | &#039;botao&#039; ou &#039;link&#039; | Deve retornar o tipo de elemento clicado. |
-| `[[nome-item]]` | &#039;continuar-comprando, &#039;ir-para-pagamento&#039; | Deve retornar o nome do item clicado. |
+| `[[botao ou link]]` |'botao' ou 'link' | Deve retornar o tipo de elemento clicado. |
+| `[[etapa]]` | 'sacola', 'entrega-e-pagamento', 'identificacao' e etc | Deve retornar a etapa em que ocorreu o clique. |
+| `[[nome-item]]` | 'continuar-comprando, 'ir-para-pagamento', 'finalizar-pedido' e etc |Deve retornar o nome do item clicado. |
 
 <br />
 
-**Na interação com os tipos de cartão na seção de &#039;pagamentos&#039;,para saber se o cliente selecionou um cartão salvo ou clicou em usar outro cartão**<br />
+**Na interação com os tipos de cartão na seção de 'pagamentos', para saber se o cliente selecionou um cartão salvo ou clicou em usar outro cartão**<br />
 
 - **Onde:** Na página de checkout
     
@@ -1936,7 +1870,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
-| `[[tipo-cartao]]` | &#039;usar-outro-cartao&#039;, &#039;cartao-salvo&#039; e etc | Deve retornar  se o cliente estava usando um cartão salvo para pagar ou se ele clicou em usar outro cartao. |
+| `[[tipo-cartao]]` |'usar-outro-cartao' ou 'cartao-salvo'e etc | Deve retornar  se o cliente estava usando um cartão salvo para pagar ou se ele clicou em usar outro cartao.  |
 
 <br />
 
@@ -1948,7 +1882,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
-    'event': 'conversion',
+    'event': 'event',
     'eventCategory': 'riachuelo:checkout',
     'eventAction': 'callback:adicionar-cupom',
     'eventLabel': '[[sucesso-ou-tipo-erro]]'
@@ -1958,88 +1892,11 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
-| `[[sucesso-ou-tipo-erro]]` | &#039;sucesso&#039;, &#039;cupom-invalido&#039; e etc. | Deve retornar sucesso ou o tipo de erro. |
+| `[[sucesso-ou-tipo-erro]]` |'sucesso', 'erro:cupom-invalido' e etc.|Deve retornar sucesso ou o tipo de erro. |
 
 <br />
 
-**Ao clicar no botão &#039;consultar&#039;  ou &#039;aplicar&#039;, após selecionar &#039;Cartão Presente&#039;, &#039;Vale troca&#039; ou outros cartões como forma de pagamento**<br />
-
-- **Onde:** Na página de checkout
-    
-```html
-<div
-   data-gtm-event-category='riachuelo:checkout'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='[[nome-botao]]:[[tipo-cartao]]'
->Botão</div>
-```
-
-| Variável        | Exemplo         | Descrição            |
-| :-------------- | :-------------- | :------------------- |
-| `[[tipo-cartao]]` | &#039;cartao-presente&#039;, &#039;vale-troca&#039;, &#039;cartao-de-credito&#039; e etc | Deve retornar o tipo de cartão removido. |
-| `[[nome-botao]]` | &#039;consultar&#039; , &#039;aplicar&#039; e etc | deve retornar o nome do botão clicado. |
-
-<br />
-
-**Ao clicar no icone de remover&#039; , após selecionar &#039;Cartão Presente&#039; , &#039;Vale Troca&#039; ou outros cartões como forma de pagamento**<br />
-
-- **Onde:** Na página de checkout
-    
-```html
-<div
-   data-gtm-event-category='riachuelo:checkout'
-   data-gtm-event-action='clique:icone'
-   data-gtm-event-label='remover:[[tipo-cartao]]'
->Botão</div>
-```
-
-| Variável        | Exemplo         | Descrição            |
-| :-------------- | :-------------- | :------------------- |
-| `[[tipo-cartao]]` | &#039;cartao-presente&#039;, &#039;vale-troca&#039;, &#039;cartao-de-credito&#039; e etc | Deve retornar o tipo de cartão removido. |
-
-<br />
-
-**No clique nos links  &#039;Adicionar novo cartão presente&#039;, &#039;Aplicar novo vale troca&#039;, &#039;Usar outro cartão&#039; após selecionar algum cartão como forma de pagamento**<br />
-
-- **Onde:** Na página de checkout
-    
-```html
-<div
-   data-gtm-event-category='riachuelo:checkout'
-   data-gtm-event-action='clique:link'
-   data-gtm-event-label='[[nome-link]]'
->Botão</div>
-```
-
-| Variável        | Exemplo         | Descrição            |
-| :-------------- | :-------------- | :------------------- |
-| `[[nome-link]]` | &#039;usar-outro-cartao&#039;, &#039;aplicar-novo-vale-troca&#039;,&#039;aplicar-novo-cartao-presente&#039;, &#039;continuar-comprando&#039; e etc. |  Deve retornar o nome do link clicado. |
-
-<br />
-
-**Na interação com os campos do formulário de cadastro de cliente.**<br />
-
-- **Onde:** Na etapa de dados pessoais do checkout
-    
-```html
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'r_GlobalEvent',
-    'eventCategory': 'riachuelo:checkout',
-    'eventAction': 'interacao:dados-pessoais',
-    'eventLabel': 'erro:[[nome campo]]'
-  });
-</script>
-```
-
-| Variável        | Exemplo         | Descrição            |
-| :-------------- | :-------------- | :------------------- |
-| `[[nome campo]]` | &#039;nome&#039;, &#039;email&#039; etc | Deve retornar o nome do campo preenchido. |
-
-<br />
-
-**No erro de preenchimento de campo**<br />
+**Ao clicar no botão 'consultar' ou 'aplicar', após selecionar 'Cartão Presente', 'Vale troca' ou outros cartões como forma de pagamento**<br />
 
 - **Onde:** Na página de checkout
     
@@ -2049,34 +1906,158 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'riachuelo:checkout',
-    'eventAction': 'interacao:campo:[[nome-campo]]',
-    'eventLabel': 'erro:[[tipo-erro]]'
+    'eventAction': 'clique:botao',
+    'eventLabel': '[[nome-botao]]:[[tipo-cartao]]'
   });
 </script>
 ```
 
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
-| `[[nome-campo]]` | &#039;numero-do-cartao&#039;, &#039;data-de-validade&#039; etc | Deve retornar o nome do campo preenchido. |
-| `[[tipo-erro]]` | &#039;dados-invalidos&#039; etc | Deve retornar a descrição do erro de preechimento de campo. |
+| `[[nome-botao]]` |'consultar' , 'aplicar' e etc| Deve retornar o nome do botão clicado. |
+| `[[tipo-cartao]]` |'cartao-presente', 'vale-troca', 'cartao-de-credito' e etc.|Deve retornar o tipo de cartão removido. |
 
 <br />
 
-**Ao clicar nos botão Finalizar compra&#039; .**<br />
+**Ao clicar no icone de 'remover', após selecionar 'Cartão Presente' , 'Vale Troca' ou outros cartões como forma de pagamento**<br />
 
 - **Onde:** Na página de checkout
     
 ```html
-<div
-   data-gtm-event-category='riachuelo:checkout'
-   data-gtm-event-action='clique:botao'
-   data-gtm-event-label='finalizar-compra'
->Botão</div>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:checkout',
+    'eventAction': 'clique:icone',
+    'eventLabel': 'remover:[[tipo-cartao]]'
+  });
+</script>
 ```
+
+| Variável        | Exemplo         | Descrição            |
+| :-------------- | :-------------- | :------------------- |
+| `[[tipo-cartao]]` |'cartao-presente', 'vale-troca', 'cartao-de-credito' e etc.|Deve retornar o tipo de cartão removido. |
 
 <br />
 
-**No callback  de finalização de compra**<br />
+**Ao clicar no icone de 'remover', após selecionar 'Cartão Presente' , 'Vale Troca' ou outros cartões como forma de pagamento**<br />
+
+- **Onde:** Na página de checkout
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:checkout',
+    'eventAction': 'clique:icone',
+    'eventLabel': 'remover:[[tipo-cartao]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo         | Descrição            |
+| :-------------- | :-------------- | :------------------- |
+| `[[tipo-cartao]]` |'cartao-presente', 'vale-troca', 'cartao-de-credito' e etc.|Deve retornar o tipo de cartão removido. |
+
+<br />
+
+**No callback ao incluir alguma "Forma de Pagamento"**<br />
+
+- **Onde:** Na página de checkout, etapa "Formas de Pagamento"
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:checkout',
+    'eventAction': 'callback:[[forma-pagamento]]',
+    'eventLabel': '[[sucesso-ou-tipo-erro]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo         | Descrição            |
+| :-------------- | :-------------- | :------------------- |
+| `[[forma-pagamento]]` |'cartao-de-credito', 'vale-troca', 'cartao-presente' e etc|Retorna a forma de pagamento.|
+| `[[sucesso-ou-tipo-erro]]` |'sucesso', 'erro:por-favor-insira-um-numero-de-vale-troca-valido', 'erro:cartao-presente-invalido', 'erro:cartao-de-credito-invalido' e etc.|Deve retornar sucesso ou o tipo de erro |
+
+<br />
+
+**No clique dos botões da etapa de cadastro**<br />
+
+- **Onde:** Nas etapas de identificação do checkout
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:checkout:identificacao:[[login-cadastro-esqueci-senha]]',
+    'eventAction': 'clique:[[botao ou link]]',
+    'eventLabel': '[[nome-item]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo         | Descrição            |
+| :-------------- | :-------------- | :------------------- |
+| `[[login-cadastro-esqueci-senha]]` |'login', 'formulario-de-cadastro', 'esqueci-senha' e etc |Retorna a etapa da indentificação que aconteceu o clique. |
+| `[[botao ou link]]` |'botao' ou 'link'|Deve retornar o tipo de elemento clicado.  |
+| `[[nome-item]]` |'continuar', 'esqueceu-a-senha', 'privacidade-e-condicoes', 'nao-sei-meu-cep' e etc |Deve retornar o nome do item clicado. |
+
+<br />
+
+**No callback de erro dos campos em todas as etapas de identificação**<br />
+
+- **Onde:** Nas etapas de identificação do checkout
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:checkout:identificacao:[[login-cadastro-esqueci-senha]]',
+    'eventAction': 'callback:campo:[[nome-campo]]',
+    'eventLabel': '[[erro]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo         | Descrição            |
+| :-------------- | :-------------- | :------------------- |
+| `[[login-cadastro-esqueci-senha]]` |'login', 'formulario-de-cadastro', 'esqueci-senha' e etc |Retorna a etapa da indentificação que aconteceu o clique. |
+| `[[nome-campo]]` |'nome', 'telefone', 'email', 'cpf', 'senha', 'confirma-senha' e etc|Retorna o nome do campo preenchido. |
+| `[[erro]]` |'erro:cpf-invalido', 'erro:senha-invalida', 'erro:cep-invalido', 'erro:senha-diferente-da-anterior' e etc |Deve retornar o erro que o campo apresentar. |
+
+<br />
+
+**No clique nos botões e links**<br />
+
+- **Onde:** Na página de sucesso de compra
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:checkout-sucesso',
+    'eventAction': 'clique:[[tipo-item]]',
+    'eventLabel': '[[nome-botao]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo         | Descrição            |
+| :-------------- | :-------------- | :------------------- |
+| `[[tipo-item]]` |'botao', 'link' |Deve retornar o tipo do item clicado. |
+| `[[nome-botao]]` |'cadastrar', 'copiar-codigo', 'imprimir-boleto', 'politica-privacidade', 'sua-conta' e etc|Deve retornar o nome do botão clicado. |
+
+<br />
+
+**No callback de erro ao tentar finalizar uma compra**<br />
 
 - **Onde:** Ao tentar finalizar a compra
     
@@ -2086,7 +2067,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'riachuelo:checkout',
-    'eventAction': 'callback:finalizar-pedido',
+    'eventAction': 'callback:tentativa-de-compra',
     'eventLabel': '[[status]]'
   });
 </script>
@@ -2094,7 +2075,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
-| `[[status]]` | &#039;sucesso&#039; , &#039;erro:dados-invalidos&#039;, &#039;erro:cartao-invalido&#039; &#039;erro:endereco-invalido&#039; e etc| Deve retornar se a compra foi realizada com sucesso ou erro|
+| `[[status]]` |'sucesso' ,'erro:dados-invalidos', 'erro:cartao-invalido', 'erro:endereco-invalido' e etc|Deve retornar se a compra foi realizada com sucesso ou o tipo de  erro relacionado.|
 
 <br />
 
