@@ -1685,7 +1685,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
-**No clique dos botões do modal "Tem certeza que deseja excluir este prouto?"**<br />
+**No clique dos botões do modal "Tem certeza que deseja excluir este produto?"**<br />
 
 - **Onde:** No modal "Deseja excluir este produto", após clicar no ícone de "Remover tudo"
     
