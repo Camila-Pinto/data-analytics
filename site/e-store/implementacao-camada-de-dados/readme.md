@@ -956,7 +956,7 @@ Título: "sacola" (ícone), "Riachuelo" (logo)
 | :---------- | :---------- | :-------------- |
 | `[[etapa]]` | 'sacola', 'modo-de-envio', 'pagamento' e etc | Retorna a etapa que o usuário esta.|
 | `[[elemento]]` | 'botao' ou 'link' | Retorna o tipo de elemento.|
-| `[[item-clicado]]` | 'selecionar-modo-de-envio', 'ir-para-pagamento', 'editar-sacola' e etc | Retorna o nome do item clicado. |
+| `[[item-clicado]]` | 'selecionar-modo-de-envio', 'ir-para-pagamento', 'editar-sacola', 'continuar', 'voltar:sacola', 'voltar:modo-de-envio' e etc | Retorna o nome do item clicado. |
 
 <br />
 
@@ -1787,7 +1787,7 @@ window.dataLayer.push({
 | `[[nome-entrega]]` | 'frete-gratis', 'normal', 'expressa' | Retorna a opção de entrega |
 | `[[previsao-entrega]]` |  'dd/mm/yyyy', '3-dias', '2-dias' e etc | Retorna a previsão de entrega |
 | `[[valor]]` | '7.50', '0.00' e etc | Retorna o valor do frete |
-| `[[passo-checkout]]` | '1', '2', '3', '4' ou '5' | Retorna o step do checkout da página carregada |
+| `[[passo-checkout]]` | 'sacola', 'modo-de-envio', 'pagamento', 'sucesso' | Retorna o step do checkout da página carregada |
 | `[[shipping ou payment]]` | 'shipping' ou 'payment' | Deve retornar a opção escolhida pelo usuário |
 | `[[opcao escolhida]]` | 'boleto', 'cartao-de-credito', 'frete-gratis', 'expressa' e etc | Deve retornar a opção de frete ou pagamento escolhida pelo usuário |
 
