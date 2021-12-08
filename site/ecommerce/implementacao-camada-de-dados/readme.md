@@ -1789,10 +1789,9 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'noInteraction': '1',
     'eventCategory': 'riachuelo:checkout',
-    'eventAction': 'entrega-e-pagamento:tipos-de-entrega',
-    'eventLabel': '[[numero-entrega]]',
-    'dimension40': '[[product-exclusivo-ecommerce+marketplace]]',
-    'dimension28': '[[hit-frete]]'
+    'eventAction': 'entrega-e-pagamento:tipos-de-entrega:[[numero-entrega]]',
+    'eventLabel': '[[frete-previsao-valor]]',
+    'dimension40': '[[product-exclusivo-ecommerce+marketplace]]'
   });
 </script>
 ```
@@ -1801,7 +1800,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | :-------------- | :-------------- | :------------------- |
 | `[[numero-entrega]]` |'entrega-1-de-1', 'entrega-2-de-2', 'entrega-1-de-3' e etc | Retornar o numera de cada entrega para o método de pagamento. |
 | `[[product-exclusivo-ecommerce+marketplace]]` |'sim:richlo', 'nao:richlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller'| Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
-| `[[hit-frete]]` | 'normal', 'expresso', 'entrega-agendada'. **Obs: Para compras que tiverem mais de uma opção de entrega, retornar a informação de forma concatenada.** Ex: 'normal-expresso', 'normal-expresso-agendada', 'normal-agendado-retire-em-loja' e etc | Nome do tipo de entrega.  |
+| `[[frete-previsao-valor]]` | 'normal-7dias-5.90', 'agendado-15dias-20.70', 'normal-7dias-5.90:agendado-15dias-20.00:retira-em-loja-1dia-0.00' | Retorna o frete, a previsão e o valor da entrega disponível |
 
 
 <br />
