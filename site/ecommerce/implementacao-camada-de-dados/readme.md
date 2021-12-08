@@ -1778,6 +1778,35 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
+**No carregamento dos tipos de entrega disponíveis**<br />
+
+- **Onde:** Na página de pdp e checkout. Obs: Na
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'noInteraction': '1',
+    'eventCategory': 'riachuelo:checkout',
+    'eventAction': 'entrega-e-pagamento:tipos-de-entrega',
+    'eventLabel': '[[numero-entrega]]',
+    'dimension40': '[[product-exclusivo-ecommerce+marketplace]]',
+    'dimension28': '[[hit-frete]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo         | Descrição            |
+| :-------------- | :-------------- | :------------------- |
+| `[[origem-lista]]` |'pdp', 'checkout' ou 'sacola' | Deve retornar o local de origem que a lista de tipos de entrega aparece. |
+| `[[numero-entrega]]` |'entrega-1-de-1', 'entrega-2-de-2', 'entrega-1-de-3' e etc | Retornar o numera de cada entrega para o método de pagamento. |
+| `[[product-exclusivo-ecommerce+marketplace]]` |'sim:richlo', 'nao:richlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller'| Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
+| `[[hit-frete]]` | 'normal', 'expresso', 'entrega-agendada'. **Obs: Para compras que tiverem mais de uma opção de entrega, retornar a informação de forma concatenada.** Ex: 'normal-expresso', 'normal-expresso-agendada', 'normal-agendado-retire-em-loja' e etc | Nome do tipo de entrega.  |
+
+
+<br />
+
 **No tipo de entrega selecionada**<br />
 
 - **Onde:** Na página de pdp e checkout
