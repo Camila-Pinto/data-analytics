@@ -1780,7 +1780,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 **No carregamento dos tipos de entrega disponíveis**<br />
 
-- **Onde:** Na página de pdp e checkout. Obs: Na
+- **Onde:** Na página de Entrega e Pagamento. Obs: Disparar um hit para cada grupo de entrega.
     
 ```html
 <script>
@@ -1799,7 +1799,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
-| `[[origem-lista]]` |'pdp', 'checkout' ou 'sacola' | Deve retornar o local de origem que a lista de tipos de entrega aparece. |
 | `[[numero-entrega]]` |'entrega-1-de-1', 'entrega-2-de-2', 'entrega-1-de-3' e etc | Retornar o numera de cada entrega para o método de pagamento. |
 | `[[product-exclusivo-ecommerce+marketplace]]` |'sim:richlo', 'nao:richlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller'| Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
 | `[[hit-frete]]` | 'normal', 'expresso', 'entrega-agendada'. **Obs: Para compras que tiverem mais de uma opção de entrega, retornar a informação de forma concatenada.** Ex: 'normal-expresso', 'normal-expresso-agendada', 'normal-agendado-retire-em-loja' e etc | Nome do tipo de entrega.  |
