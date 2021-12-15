@@ -14988,6 +14988,40 @@ valorParcela só devem ser retornados quando o clique for no botão "continuar" 
 
 <br />
 
+
+
+- **Onde:** Visualização da tela "Formas de Pagamentos" para quando o usuário puder selecionar a opção de pagamento.
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/formas-de-pagamento/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Quando:** No clique dos elementos.
+- **Onde:** Na tela "Formas de Pagamento"
+**Obs.** Os extraparameters planoAssistenciaSeguro, qtdParcelas e valorParcela só devem ser retornados quando o clique for no botão continuar
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:[[seguro-ou-assistencias]]:formas-de-pagamento" ,
+        	eventAction: "clique:[[botao-opcao]]" ,
+        	eventLabel: "[[nome-item]]",
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		planoAssistenciaSeguro: "[[planoAssistenciaSeguro]]",
+		qtdeParcelas: "[[qtdeParcelas]]",
+		valorParcela: "[[valorParcela]]",
+		nomeFluxo: "[[nomeFluxo]]"
+		})
+```
+
+<br />
+
 - **Onde:** Visualização do modal "Periodo de Carências"
 
 ```javascript
@@ -15000,6 +15034,17 @@ valorParcela só devem ser retornados quando o clique for no botão "continuar" 
 | `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 | `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
 
+<br />
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-item]]` |  &#039;continuar&#039;, &#039;voltar&#039;, &#039;cartao-riachuelo&#039;, &#039;debito-em-conta&#039; e etc | Deve retornar o nome do item clicado.  |
+| `[[botao-opcao]]` | &#039;botao&#039; ou &#039;opcao&#039; | Deve retornar se o item clicado foi uma opcao ou um botão. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[qtdeParcelas]]` |  '1', '2', '12' e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+| `[[valorParcela]]` | '24.90', '15.90' e etc | Deve retornar o valor da parcela do plano selecionado dos produto de assistencia ou seguro. |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
 
 <br />
 
