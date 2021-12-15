@@ -15005,6 +15005,7 @@ valorParcela só devem ser retornados quando o clique for no botão "continuar" 
 
 - **Quando:** No clique dos elementos.
 - **Onde:** Na tela "Formas de Pagamento"
+
 **Obs.** Os extraparameters planoAssistenciaSeguro, qtdParcelas e valorParcela só devem ser retornados quando o clique for no botão continuar
 
 ```javascript
@@ -15019,6 +15020,16 @@ valorParcela só devem ser retornados quando o clique for no botão "continuar" 
 		nomeFluxo: "[[nomeFluxo]]"
 		})
 ```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-item]]` |  &#039;continuar&#039;, &#039;voltar&#039;, &#039;cartao-riachuelo&#039; e etc | Deve retornar o nome do item clicado(Os extraparameters planoAssistenciaSeguro, qtdeParcelas e  |
+| `[[botao-opcao]]` | &#039;botao&#039; ou &#039;opcao&#039; | Deve retornar se o item clicado foi um link ou um botão. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[qtdeParcelas]]` |  '1', '2', '12' e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+| `[[valorParcela]]` | '24.90', '15.90' e etc | Deve retornar o valor da parcela do plano selecionado dos produto de assistencia ou seguro. |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
 
 <br />
 
