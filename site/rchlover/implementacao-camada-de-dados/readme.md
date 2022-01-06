@@ -1386,16 +1386,25 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique para copiar o cupom**<br />
 
 - **Onde:** Na página da loja criada.
-    
+   
+
+
 ```html
-<div
-   data-gtm-event-category='rchlover:minha-loja:loja-criada'
-   data-gtm-event-action='clique:link'
-   data-gtm-event-label='copiar-cupom'
->Botão</div>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-loja:loja-criada',
+    'eventAction': 'clique:link',
+    'eventLabel': 'copiar-cupom'
+  });
+</script>
 ```
 
 <br />
+
+
 
 
 **Na interação com o filtro**<br />
