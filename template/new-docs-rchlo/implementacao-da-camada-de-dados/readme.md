@@ -15,7 +15,7 @@
 <br />
 
 ## Implementação da Camada de dados - [[Nome Do Projeto]]
-Última atualização: 14/07/2021 <br />
+Última atualização: 06/12/2021 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -176,6 +176,30 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 ---
 
 ### Corpo da documentação
+
+### General
+
+**Ao clicar no botão de “Cadastre-se usando suas Redes Sociais”**<br />
+
+- **Onde:** Modal de Cadastro/Login.
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:login',
+    'eventAction': 'clique:header-stick-bar',
+    'eventLabel': '[[nome-clicado]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo          | Descrição          |
+| :-------------- | :--------------- | :----------------- |
+| `[[nome-clicado]]` | XXXXXX e etc | Deve retornar o nome do link do stick bar clicado. |
+
+<br />
 
 ---
 

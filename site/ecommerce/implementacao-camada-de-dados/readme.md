@@ -30,7 +30,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Ecommerce
-Última atualização: 19/11/2021 <br />
+Última atualização: 04/01/2022 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -1778,6 +1778,33 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
+**No carregamento dos tipos de entrega disponíveis**<br />
+
+- **Onde:** Na página de Entrega e Pagamento. Obs: Disparar um hit para cada grupo de entrega.
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'noInteraction': '1',
+    'eventCategory': 'riachuelo:checkout',
+    'eventAction': 'entrega-e-pagamento:tipos-de-entrega:[[numero-entrega]]',
+    'eventLabel': '[[frete-previsao-valor]]',
+    'dimension40': '[[product-exclusivo-ecommerce+marketplace]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo         | Descrição            |
+| :-------------- | :-------------- | :------------------- |
+| `[[numero-entrega]]` |'entrega-1-de-1', 'entrega-2-de-2', 'entrega-1-de-3' e etc | Retornar o numera de cada entrega para o método de pagamento. |
+| `[[product-exclusivo-ecommerce+marketplace]]` |'sim:richlo', 'nao:richlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller'| Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
+| `[[frete-previsao-valor]]` | 'normal-7dias-5.90', 'agendado-15dias-20.70', 'normal-7dias-5.90:agendado-15dias-20.00:retira-em-loja-1dia-0.00', 'normal-08/12/2021-5.90:agendado-01/01/2022-20.00:retira-em-loja-09/12/2021-0.00' | Retorna o frete, a previsão e o valor da entrega disponível |
+
+
+<br />
+
 **No tipo de entrega selecionada**<br />
 
 - **Onde:** Na página de pdp e checkout
@@ -2053,7 +2080,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
 | `[[tipo-item]]` |'botao', 'link' |Deve retornar o tipo do item clicado. |
-| `[[nome-botao]]` |'cadastrar', 'copiar-codigo', 'imprimir-boleto', 'politica-privacidade', 'sua-conta' e etc|Deve retornar o nome do botão clicado. |
+| `[[nome-botao]]` |'cadastrar', 'copiar-codigo', 'imprimir-boleto', 'copiar-codigo-pix', 'politica-privacidade', 'sua-conta' e etc|Deve retornar o nome do botão clicado. |
 
 <br />
 
@@ -2076,6 +2103,28 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
 | `[[status]]` |'sucesso' ,'erro:dados-invalidos', 'erro:cartao-invalido', 'erro:endereco-invalido' e etc|Deve retornar se a compra foi realizada com sucesso ou o tipo de  erro relacionado.|
+
+<br />
+
+**No callback da opção de pagamento PIX**<br />
+
+- **Onde:** Na página de sucesso de compra
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:checkout-sucesso',
+    'eventAction': 'callback:pix',
+    'eventLabel': '[[status]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo         | Descrição            |
+| :-------------- | :-------------- | :------------------- |
+| `[[status]]` |'codigo-copiado', 'pagamento-confirmado', 'pagamento-expirado', 'pagamento-cancelado', etc|Deve retornar o status do PIX. |
 
 <br />
 
@@ -2669,7 +2718,7 @@ window.dataLayer.push({
 | `[[cd2-tipodecartão]]` |  &#039;credito&#039;, &#039;riachuelo&#039; | Tipo do cartão utilizado na compra |
 | `[[cd3-bandeiracartão]]` | &quot;visa&quot;, &quot;mastercard&quot; | Bandeira do cartão utilizada na compra |
 | `[[cd13-product-idadedoproduto]]` |  &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
-| `[[cd22-hit-metodopagamento]]` |  &#039;cartao-de-credito&#039;, &#039;boleto&#039;  | Nome do tipo do pagamento. |
+| `[[cd22-hit-metodopagamento]]` |  &#039;cartao-de-credito&#039;, &#039;boleto&#039;, &#039;PIX&#039;  | Nome do tipo do pagamento. |
 | `[[cd23-hit-statuspagamento]]` |  &#039;aprovado&#039;   | Nome do status do pagamento.  |
 | `[[product-ordemdeinserção]]` | 1,2,3 .. | Ordem de inserção ao carrinho |
 | `[[product-tamanhodoproduto]]` |  &#039;p&#039;,&#039;&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; | Tamanho do produto |
