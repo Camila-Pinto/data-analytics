@@ -1396,7 +1396,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'event': 'event',
     'eventCategory': 'rchlover:minha-loja:loja-criada',
-    'eventAction': 'clique:link',
+    'eventAction': 'clique:copiar-codigo',
     'eventLabel': 'copiar-cupom'
   });
 </script>
