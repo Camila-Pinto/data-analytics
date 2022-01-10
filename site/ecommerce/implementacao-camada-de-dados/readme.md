@@ -193,6 +193,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
+    'event': 'global'
     'dimension4': '[[cd4-hit-userstatus]]',
     'dimension5': '[[cd5-hit-loginstatus]]',
     'dimension7': '[[cd7-user-usermagentoid]]',
@@ -1801,7 +1802,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | `[[numero-entrega]]` |'entrega-1-de-1', 'entrega-2-de-2', 'entrega-1-de-3' e etc | Retornar o numera de cada entrega para o método de pagamento. |
 | `[[product-exclusivo-ecommerce+marketplace]]` |'sim:richlo', 'nao:richlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller'| Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
 | `[[frete-previsao-valor]]` | 'normal-7dias-5.90', 'agendado-15dias-20.70', 'normal-7dias-5.90:agendado-15dias-20.00:retira-em-loja-1dia-0.00', 'normal-08/12/2021-5.90:agendado-01/01/2022-20.00:retira-em-loja-09/12/2021-0.00' | Retorna o frete, a previsão e o valor da entrega disponível |
-
 
 <br />
 
