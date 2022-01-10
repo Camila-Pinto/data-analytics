@@ -30,7 +30,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Ecommerce
-Última atualização: 04/01/2022 <br />
+Última atualização: 10/01/2022 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -203,7 +203,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
 | `[[cd4-hit-userstatus]]` | &#039;sim&#039;, &#039;nao&#039; | Deve retornar se o usuário já fez alguma compra anteriormente (sim) ou se não é sua primeira compra (nao). |
@@ -212,9 +211,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | `[[cd17-hit-pagename]]` | &#039;home&#039;, &#039;pdp-produto-1&#039; | Nome amigável da página definido |
 | `[[cd61-user-cartID]]` |  '04245fsdf4fsdaf32fsd' | Deve retornar o ID do carrinho do usuário |
 
-
 ---
-
 
 ### General
 
