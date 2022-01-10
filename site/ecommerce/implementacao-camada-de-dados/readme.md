@@ -193,7 +193,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
-    'event': 'global'
+    'global': 'global'
     'dimension4': '[[cd4-hit-userstatus]]',
     'dimension5': '[[cd5-hit-loginstatus]]',
     'dimension7': '[[cd7-user-usermagentoid]]',
