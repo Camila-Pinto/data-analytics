@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Midway APP
 
-Última atualização: 05/11/2021 <br />
+Última atualização: 07/01/2022 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -6171,10 +6171,77 @@ Resumo de produtos cadastrados
 
 
 
+### Rastrear cartão
+
+
+- **Visualização da tela de 'Rastrear cartão', bem como a etapa de entrega do cartão**
+
+```javascript
+    Analytics.logScreenView("/rastrear-cartao-[[step-rastreio]]/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[step-rastreio]] | &#039;producao&#039;, &#039;enviado&#039; e etc | Deve retornar qual step que está o rastreio do cartão. |
+
+<br />
+
+- **Quando:** No clique dos botões;
+- **Onde:** Na tela de &quot;Rastrear cartão&quot;, bem como em qual step
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:rastrear-cartao:[[step-rastreio]]",
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+        ])
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[step-rastreio]] | &#039;producao&#039;, &#039;enviado&#039;, &#039;entregue&#039; e etc | Deve retornar qual step que está o rastreio do cartão. |
+| [[nome-botao]] | &#039;preciso-de-ajuda&#039;, &#039;cartao-ja-chegou&#039;, &#039;desbloquear-cartao&#039;, &#039;clique-aqui&#039; e etc | Deve retonrar o  nome do botão clicado. |
+
+<br />
+
+- **Visualização dos modais após interações em "Rastrear cartão"**
+
+```javascript
+    Analytics.logScreenView("/rastrear-cartao-[[step-rastreio]]/modal-[[nome-modal]]/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[step-rastreio]] | &#039;producao&#039;, &#039;enviado&#039; e etc | Deve retornar qual step que está o rastreio do cartão. |
+| [[nome-modal]] | &#039;cartao-em-producao&#039;, &#039;cartao-enviado&#039;, &#039;cartao-entregue&#039; e etc |  Deve retornar qual o modal que esta sendo visualizado. |
+
+<br />
+
+- **Quando:** No clique dos botões;
+- **Onde:** Nos modais de &quot;Rastrear cartão&quot;
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:rastrear-cartao:[[step-rastreio]]:modal-[[nome-modal]]",
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+        ])
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[step-rastreio]] | &#039;producao&#039;, &#039;enviado&#039;, &#039;entregue&#039; e etc | Deve retornar qual step que está o rastreio do cartão. |
+| [[nome-modal]] | &#039;cartao-em-producao&#039;, &#039;cartao-enviado&#039;, &#039;cartao-entregue&#039; e etc |  Deve retornar qual o modal que esta sendo visualizado. |
+| [[nome-botao]] | &#039;falar-com-suporte&#039;, &#039;fechar&#039;, &#039;clique-fora&#039;, &#039;rastrear-meu-cartao&#039;, &#039;www.flashcorrier.com.br&#039; e etc | Deve retonrar o  nome do botão clicado. |
+
+<br />
+
+
+
 ### Cotação de câmbio
 
 
--**VIsualização da tela de Cotações**
+- **Visualização da tela de Cotações**
 
 ```javascript
     Analytics.logScreenView("/cotacao/cambio/[[moeda]]")
@@ -14988,6 +15055,51 @@ valorParcela só devem ser retornados quando o clique for no botão "continuar" 
 
 <br />
 
+
+
+- **Onde:** Visualização da tela "Formas de Pagamentos" para quando o usuário puder selecionar a opção de pagamento.
+
+```javascript
+    Analytics.logScreenView("/seguros-e-assistencias/[[produtoAssistenciaSeguro]]:[[nomeFluxo]]/formas-de-pagamento/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+
+<br />
+
+- **Quando:** No clique dos elementos.
+- **Onde:** Na tela "Formas de Pagamento"
+
+**Obs.** Os extraparameters planoAssistenciaSeguro, qtdParcelas e valorParcela só devem ser retornados quando o clique for no botão continuar
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:[[seguro-ou-assistencias]]:formas-de-pagamento" ,
+        	eventAction: "clique:[[botao-opcao]]" ,
+        	eventLabel: "[[nome-item]]",
+		produtoAssistenciaSeguro: "[[produtoAssistenciaSeguro]]",
+		planoAssistenciaSeguro: "[[planoAssistenciaSeguro]]",
+		qtdeParcelas: "[[qtdeParcelas]]",
+		valorParcela: "[[valorParcela]]",
+		nomeFluxo: "[[nomeFluxo]]"
+		})
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-item]]` |  &#039;continuar&#039;, &#039;voltar&#039;, &#039;cartao-riachuelo&#039; e etc | Deve retornar o nome do item clicado(Os extraparameters planoAssistenciaSeguro, qtdeParcelas e  |
+| `[[botao-opcao]]` | &#039;botao&#039; ou &#039;opcao&#039; | Deve retornar se o item clicado foi um link ou um botão. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[qtdeParcelas]]` |  '1', '2', '12' e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+| `[[valorParcela]]` | '24.90', '15.90' e etc | Deve retornar o valor da parcela do plano selecionado dos produto de assistencia ou seguro. |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
+
+<br />
+
 - **Onde:** Visualização do modal "Periodo de Carências"
 
 ```javascript
@@ -15000,6 +15112,17 @@ valorParcela só devem ser retornados quando o clique for no botão "continuar" 
 | `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
 | `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
 
+<br />
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| `[[nome-item]]` |  &#039;continuar&#039;, &#039;voltar&#039;, &#039;cartao-riachuelo&#039;, &#039;debito-em-conta&#039; e etc | Deve retornar o nome do item clicado.  |
+| `[[botao-opcao]]` | &#039;botao&#039; ou &#039;opcao&#039; | Deve retornar se o item clicado foi uma opcao ou um botão. |
+| `[[produtoAssistenciaSeguro]]` | 'automovel-premiavel', 'moto-premiavel', 'mais-saude' e etc | Deve retornar o nome do produto de assistencia ou seguro |
+| `[[nomeFluxo]]` |  'para-mim', 'para-mim-e-dependentes' ou 'para-outras-pessoas' | Deve retornar o nome do fluxo escolhido. |
+| `[[qtdeParcelas]]` |  '1', '2', '12' e etc | Deve retornar a quantidade da parcela do plano selecionado dos produto de assistencia ou seguro |
+| `[[valorParcela]]` | '24.90', '15.90' e etc | Deve retornar o valor da parcela do plano selecionado dos produto de assistencia ou seguro. |
+| `[[planoAssistenciaSeguro]]` | 'essencial', 'mega', 'topazio' e etc | Deve retornar o plano do produto de assistencia ou seguro. |
 
 <br />
 

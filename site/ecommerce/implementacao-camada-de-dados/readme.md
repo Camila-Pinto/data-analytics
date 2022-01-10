@@ -30,7 +30,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Ecommerce
-Última atualização: 19/11/2021 <br />
+Última atualização: 04/01/2022 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -2080,7 +2080,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
 | `[[tipo-item]]` |'botao', 'link' |Deve retornar o tipo do item clicado. |
-| `[[nome-botao]]` |'cadastrar', 'copiar-codigo', 'imprimir-boleto', 'politica-privacidade', 'sua-conta' e etc|Deve retornar o nome do botão clicado. |
+| `[[nome-botao]]` |'cadastrar', 'copiar-codigo', 'imprimir-boleto', 'copiar-codigo-pix', 'politica-privacidade', 'sua-conta' e etc|Deve retornar o nome do botão clicado. |
 
 <br />
 
@@ -2103,6 +2103,28 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
 | `[[status]]` |'sucesso' ,'erro:dados-invalidos', 'erro:cartao-invalido', 'erro:endereco-invalido' e etc|Deve retornar se a compra foi realizada com sucesso ou o tipo de  erro relacionado.|
+
+<br />
+
+**No callback da opção de pagamento PIX**<br />
+
+- **Onde:** Na página de sucesso de compra
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'riachuelo:checkout-sucesso',
+    'eventAction': 'callback:pix',
+    'eventLabel': '[[status]]'
+  });
+</script>
+```
+
+| Variável        | Exemplo         | Descrição            |
+| :-------------- | :-------------- | :------------------- |
+| `[[status]]` |'codigo-copiado', 'pagamento-confirmado', 'pagamento-expirado', 'pagamento-cancelado', etc|Deve retornar o status do PIX. |
 
 <br />
 
@@ -2696,7 +2718,7 @@ window.dataLayer.push({
 | `[[cd2-tipodecartão]]` |  &#039;credito&#039;, &#039;riachuelo&#039; | Tipo do cartão utilizado na compra |
 | `[[cd3-bandeiracartão]]` | &quot;visa&quot;, &quot;mastercard&quot; | Bandeira do cartão utilizada na compra |
 | `[[cd13-product-idadedoproduto]]` |  &#039;X-day&#039; | Idade do produto cadastrado no Magento (checkout) |
-| `[[cd22-hit-metodopagamento]]` |  &#039;cartao-de-credito&#039;, &#039;boleto&#039;  | Nome do tipo do pagamento. |
+| `[[cd22-hit-metodopagamento]]` |  &#039;cartao-de-credito&#039;, &#039;boleto&#039;, &#039;PIX&#039;  | Nome do tipo do pagamento. |
 | `[[cd23-hit-statuspagamento]]` |  &#039;aprovado&#039;   | Nome do status do pagamento.  |
 | `[[product-ordemdeinserção]]` | 1,2,3 .. | Ordem de inserção ao carrinho |
 | `[[product-tamanhodoproduto]]` |  &#039;p&#039;,&#039;&#039;m&#039;,&#039;8-12&#039;,&#039;42&#039; | Tamanho do produto |
