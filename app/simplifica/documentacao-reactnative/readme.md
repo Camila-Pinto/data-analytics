@@ -9,12 +9,13 @@
 
 ## Implementação de Tags Firebase - Projeto APP Simplifica - React Native
 
-Última atualização: 29/10/2021 <br />
+Última atualização: 10/01/2022 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
 [guilherme.lacerda@riachuelo.com.br](mailto:guilherme.lacerda@riachuelo.com.br) <br />
 [gustavo.pereira@riachuelo.com.br](mailto:gustavo.pereira@riachuelo.com.br) <br />
+[igor.couto@riachuelo.com.br](mailto:igor.couto@riachuelo.com.br) <br />
 
 <br />
 
@@ -33,6 +34,7 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 - [Reembolso](#reembolso)
 - [NPS](#nps)
 - [Holerite](#holerite)
+- [Melhores e Piores](#melhores-e-piores)
 - [Espaço Saúde](#espa&#231;o-sa&#250;de)
 - [Atestado Médico](#atestado-m&#233;dico)
 - [Fluxo Covid 19](#fluxo-covid-19)
@@ -671,6 +673,430 @@ Analytics.setUserId('[[UserID]]');
 | [[item]] | &#039;descontos&#039;, &#039;salario&#039; e etc | deve retornar o nome do item clicado. |
 
 <br />
+
+### Melhores e Piores
+
+**Visualização da tela de "Melhores e Piores"**<br />
+
+```javascript
+    Analytics.logScreenView("/melhores-e-piores/")
+```
+
+<br />
+
+- **Quando:** No clique do botões
+- **Onde:** Na tela de "Melhores e Piores"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-botao]] |'continuar', ''voltar:melhores-e-piores' e etc | Retorna o nome do botão clicado. |
+
+<br />
+
+**Visualização do modal de permissão bloqueada do uso da câmera**<br />
+
+```javascript
+    Analytics.logScreenView("/melhores-e-piores/permissao-camera/permissao-bloqueada/")
+```
+
+<br />
+
+
+- **Quando:** No clique do botões
+- **Onde:** No modal  de permissão bloqueada em "permissao-camera-permissao-bloqueada"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:permissao-bloqueada" ,
+        	eventAction: "clique:modal" ,
+        	eventLabel: "[[nome-botao]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-botao]] |'cancelar', ''digitacao-manual' e etc | Retorna o nome do botão clicado. |
+
+<br />
+
+**Visualização de tela de escaneamento de QR code"**<br />
+
+```javascript
+    Analytics.logScreenView("/melhores-e-piores/escaneamento-qr-code/")
+```
+
+<br />
+
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "escaneamento de qr code"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:escaneamento-qr-code" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-botao]] |'voltar:escanear-qr-code' . 'informacoes' ou 'ou-digite-o-codigo-do-produto' e etc | Retorna o nome do botão clicado.|
+
+<br />
+
+
+- **Quando:** No callback de sucesso/erro ao escanear o qr code
+- **Onde:** Na tela de "escaneamento de qr code"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:escaneamento-qr-code" ,
+        	eventAction: "callback:escanear-qr-code" ,
+        	eventLabel: "[[sucesso-erro]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[sucesso-erro]] |'sucesso' ou 'erro:escaneamento-inconpleto' e etc | Deve retornar se ocorreu sucesso ou erro na solicitação. |
+
+<br />
+
+
+**Visualização de tela de escaneamento de QR code incompleto"**<br />
+
+```javascript
+    Analytics.logScreenView("/melhores-e-piores/escaneamento-qr-code/incompleto/")
+```
+
+<br />
+
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "escaneamento de qr code incompleto"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:escaneamento-qr-code:incompleto" ,
+        	eventAction: "clique:modal" ,
+        	eventLabel: "[[nome-botao]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-botao]] |'tentar-novamente' 'digitacao-manual' e etc | Retorna o nome do botão clicado.|
+
+<br />
+
+
+**Visualização de tela de instruções"**<br />
+
+```javascript
+    Analytics.logScreenView("/melhores-e-piores/instrucoes/")
+```
+
+<br />
+
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "instruções"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:instucoes" ,
+        	eventAction: "clique:modal" ,
+        	eventLabel: "[[nome-botao]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-botao]] |'fechar' e etc | Retorna o nome do botão clicado.|
+
+<br />
+
+
+**Visualização tela de codigo do produto**<br />
+
+```javascript
+    Analytics.logScreenView("/melhores-e-piores/codigo-do-produto/")
+```
+
+<br />
+
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "código do produto"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:codigo-do-produto" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-botao]] |'buscar', 'voltar:codigo-do-produto' e etc | Retorna o nome do botão clicado.|
+
+<br />
+
+- **Quando:** No preenchimento do campo
+- **Onde:** Na tela de "código do produto"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:codigo-do-produto" ,
+        	eventAction: "interacao:campo" ,
+        	eventLabel: "[[nome-campo]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-campo]] |'codigo-do-produto' e etc | Retornar quando o campo for preenchido.|
+
+<br />
+
+- **Quando:** No calback de sucesso/erro ao tentar acessar o produto atravez de seu código
+- **Onde:** Na tela de "código de produto"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:codigo-do-produto" ,
+        	eventAction: "callback:codigo-do-produto" ,
+        	eventLabel: "[[sucesso-erro]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[sucesso-erro]] |'sucesso',  'erro:produto-nao-encontrado', 'erro:codigo-invalido' e etc | Retorna se ocorreu sucesso ou erro na solicitação.|
+
+<br />
+
+
+**Visualização tela de visualização de produto**<br />
+
+```javascript
+    Analytics.logScreenView("/melhores-e-piores/pagina-de-produto/[[nome-produto]]/")
+```
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-produto]] |'travesseiro', 'roupa-de-cama' e etc | Retorna o nome do produto pesquisado.|
+
+
+<br />
+
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "código do produto"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:codigo-do-produto" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-botao]] |'avaliar', 'voltar:pagina-de-produto', 'ver-avaliacoes,'informacoes' e etc | Retorna o nome do botão clicado.|
+
+<br />
+
+- **Quando:** No callcback ao tentar avaliar o produto 
+- **Onde:** Na tela de "visualização de produto"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:pagina-de-produto" ,
+        	eventAction: "callback:avaliacao" ,
+        	eventLabel: "[[sucesso-erro]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[sucesso-erro]] |'sucesso', 'erro:voce-ja-efetuou-a-avaliacao-desse-produto' e etc | Retornar se ocorreu sucesso ou erro na solicitação.|
+
+<br />
+
+- **Quando:** No clique no modal ao acessar "ver avaliações" se ainda não tiver avaliado o produto
+- **Onde:** Na tela de "código de produto"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:pagina-de-produto" ,
+        	eventAction: "clique:modal" ,
+        	eventLabel: "[[nome-botao]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-botao]] |'avaliar-agora',  'voltar:modal-ainda-nao-avaliou-produto' e etc | Retorna o nome do botão clicado.|
+
+<br />
+
+
+**Visualização tela de avaliar produto**<br />
+
+```javascript
+    Analytics.logScreenView("/melhores-e-piores/pagina-de-produto/[[nome-produto]]/avaliar/")
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-produto]] |'travesseiro', 'roupa-de-cama' e etc | Retorna o nome do produto pesquisado.|
+
+<br />
+
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela de "avaliar produto"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:avaliar" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]" 
+		})
+```
+
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-botao]] |'enviar', 'voltar:avaliar-produto' e etc | Retorna o nome do botão clicado.|
+
+<br />
+
+- **Quando:** Na interção com o campo deixe seu comentrario
+- **Onde:** Na tela de "avaliar produto"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:avaliar-produto" ,
+        	eventAction: "interacao:campo" ,
+        	eventLabel: "comentario:[[preenchimento]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[preenchimento]] |'adorei-o-produto', 'otimo-custo-beneficio' e etc.  | Retornar o comentário feito.|
+
+<br />
+
+- **Quando:** Nas escolhas das notas (disparar a tag apenas ao ocorrer o clique no botão avaliar)
+- **Onde:** Na tela de "avaliar produto"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:avaliar-produto" ,
+        	eventAction: "avaliar:[[criterios]]" ,
+        	eventLabel: "[[nota]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[criterios]] | 'criterio-1', 'novo criterio-2', 'nomeclatura-do-criterio-3', criterio-4', 'deixe-seu-cometario' e etc.| Retorna o nome do campo avaliado. |
+| [[nota]] |'1-estrela', '2-estrela', '3-estrelas, '4-estrelas', '5-esttrelas', e etc.  | Retorna a nota escolhida.|
+
+
+<br />
+
+- **Quando:** No callback da tentativa de avaliar o produto
+- **Onde:** Na tela de "avaliar produto"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:avaliar-produto" ,
+        	eventAction: "callback:avaliar-produto" ,
+        	eventLabel: "[[sucesso-erro]]" 
+		})
+```
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[sucesso-erro]] | 'sucesso', 'erro:campos-obrigatorios-faltantes' e etc.  | Deve retornar se ocorreu sucesso ou erro na solicitação. |
+
+
+<br />
+
+
+**Visualização tela ver avaliações**<br />
+
+```javascript
+    Analytics.logScreenView("/melhores-e-piores/pagina-de-produto/[[nome-produto]]/avaliacoes")
+```
+
+
+<br />
+
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela  "avaliações"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:avaliacoes" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]" 
+		})
+```
+
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-botao]] |'voltar:avaliacoes' e etc | Retorna o nome do botão clicado.|
+
+<br />
+
+**Visualização da tela avaliação enviada**<br />
+
+```javascript
+    Analytics.logScreenView("/melhores-e-piores/pagina-de-produto/[[nome-produto]]/avaliacao-enviada")
+```
+
+
+<br />
+
+
+- **Quando:** No clique dos botões
+- **Onde:** Na tela "avaliação enviada"
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-simplifica:melhores-e-piores:avaliacao-enviada" ,
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]" 
+		})
+```
+
+
+| Variável        | Exemplo       | Descrição            |
+| :-------------- | :------------ | :------------------- |
+| [[nome-botao]] |'ok' e etc | Retorna o nome do botão clicado.|
+
+<br />
+
+
+
+
 
 ### Espaço Saúde
 

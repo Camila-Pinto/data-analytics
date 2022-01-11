@@ -33,12 +33,14 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Rchlover
-Última atualização: 01/11/2021 <br />
+Última atualização: 06/01/2022 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
 [guilherme.lacerda@riachuelo.com.br](mailto:guilherme.lacerda@riachuelo.com.br) <br />
 [gustavo.pereira@riachuelo.com.br](mailto:gustavo.pereira@riachuelo.com.br) <br />
+[igor.couto@riachuelo.com.br](mailto:igor.couto@riachuelo.com.br) <br />
+
 
 <br />
 
@@ -197,6 +199,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
   window.dataLayer.push({
     'dimension1': '[[userid]]',
     'dimension4': '[[afiliado]]',
+    'dimension13': '[[client-cupom]]',
   });
 </script>
 ```
@@ -205,6 +208,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | :-------------- | :------------ | :------------------ |
 | [[userid]] | &quot;01234&quot; | ID único de usuário defeinido após o cadastro |
 | [[afiliado]] | &quot;riachuelo&quot;, &quot;cacau-show&quot;, &quot;autonomo&quot; e etc | Retornar o nome do colaborador, parceiro ou a qualquer pessoa |
+[[client-cupom]] | &quot;rchlo123456afl&quot;, &quot;rchlo123456&quot; e etc | Trazer o cupom do usuário para podermos identificá-lo |
 
 ---
 
@@ -224,6 +228,21 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 >Botão</div>
 ```
 
+
+**Na visualização do modal NPS.**<br />
+
+- **Onde:** Em todas as páginas que estiver disponível.
+    
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:nps',
+    'eventAction': 'visualizacao:modal',
+    'eventLabel': 'nps-visualizado'
+  });
+</script>
 
 
 <br />
@@ -1349,7 +1368,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     'event': 'event',
     'eventCategory': 'rchlover:minha-loja:loja-criada',
     'eventAction': 'envio:callback:busca',
-    'eventLabel': '[[termo-buscado]]:adicionar-produtos'
+    'eventLabel': '[[termo-buscado]]:[[status]]'
   });
 </script>
 ```
@@ -1359,6 +1378,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | Variável        | Exemplo       | Descrição           |
 | :-------------- | :------------ | :------------------ |
 | [[termo-buscado]] | &#039;sueter&#039;, &#039;camiseta&#039; e etc | Deve retornar o termo buscado. |
+| [[status]] | &#039;sucesso&#039;, &#039;erro:produto-nao-encontrado&#039; e etc | Retorna o callback aplicado na busca. |
 
 <br />
 
@@ -1366,16 +1386,25 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 **No clique para copiar o cupom**<br />
 
 - **Onde:** Na página da loja criada.
-    
+   
+
+
 ```html
-<div
-   data-gtm-event-category='rchlover:minha-loja:loja-criada'
-   data-gtm-event-action='clique:link'
-   data-gtm-event-label='copiar-cupom'
->Botão</div>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'event',
+    'eventCategory': 'rchlover:minha-loja:loja-criada',
+    'eventAction': 'clique:copiar-codigo',
+    'eventLabel': 'copiar-cupom'
+  });
+</script>
 ```
 
 <br />
+
+
 
 
 **Na interação com o filtro**<br />
@@ -1396,7 +1425,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo       | Descrição           |
 | :-------------- | :------------ | :------------------ |
-| [[nome-filtro]] | 'ordernar-por', 'categorias' e etc | Deve retornar o nome do filtro. |
+| [[nome-filtro]] | 'ordenar-por', 'categorias' e etc | Deve retornar o nome do filtro. |
 | [[valor-selecionado]] | 'menor-preco', 'maior-preco', 'personalizado', 'feminino', 'masculino' | Deve retornar o valor selecionado no filtro. |
 
 <br />
@@ -1419,7 +1448,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável        | Exemplo       | Descrição           |
 | :-------------- | :------------ | :------------------ |
-| [[nome-filtro]] | 'ordernar-por', 'categorias' e etc | Deve retornar o nome do filtro. |
+| [[nome-filtro]] | 'ordenar-por', 'categorias' e etc | Deve retornar o nome do filtro. |
 | [[status]] | 'sucesso', 'erro:nao-ha-produtos-na-categoria-selecionada' e etc | Retorna o callback aplicado nos filtros.  |
 
 <br />
@@ -1945,7 +1974,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
     
 ```html
 <div
-   data-gtm-event-category='rchlover:[[nome-tela]]'
+   data-gtm-event-category='rchlover:meus-dados'
    data-gtm-event-action='clique:botao:modal-atencao'
    data-gtm-event-label='[[nome-botao]]:meus-dados'
 >Botão</div>
@@ -1955,7 +1984,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | Variável        | Exemplo       | Descrição           |
 | :-------------- | :------------ | :------------------ |
 | [[nome-botao]] | &#039;salvar&#039; ou &#039;editar&#039;. | Deve retornar o nome do botão clicado. |
-| [[nome-tela]] | &#039;comissao&#039; ou &#039;meus-dados&#039; | Deve retornar o nome da tela em que o usuario está, &#039;meus dados&#039; para colaboradores e &#039;comissao&#039; para afiliados. |
 
 <br />
 

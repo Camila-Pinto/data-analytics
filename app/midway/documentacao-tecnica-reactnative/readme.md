@@ -7,7 +7,9 @@
 
 ## Implementação de Tags Firebase - Projeto Midway APP
 
+
 Última atualização: 11/01/2022 <br />
+======
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -6171,10 +6173,77 @@ Resumo de produtos cadastrados
 
 
 
+### Rastrear cartão
+
+
+- **Visualização da tela de 'Rastrear cartão', bem como a etapa de entrega do cartão**
+
+```javascript
+    Analytics.logScreenView("/rastrear-cartao-[[step-rastreio]]/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[step-rastreio]] | &#039;producao&#039;, &#039;enviado&#039; e etc | Deve retornar qual step que está o rastreio do cartão. |
+
+<br />
+
+- **Quando:** No clique dos botões;
+- **Onde:** Na tela de &quot;Rastrear cartão&quot;, bem como em qual step
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:rastrear-cartao:[[step-rastreio]]",
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+        ])
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[step-rastreio]] | &#039;producao&#039;, &#039;enviado&#039;, &#039;entregue&#039; e etc | Deve retornar qual step que está o rastreio do cartão. |
+| [[nome-botao]] | &#039;preciso-de-ajuda&#039;, &#039;cartao-ja-chegou&#039;, &#039;desbloquear-cartao&#039;, &#039;clique-aqui&#039; e etc | Deve retonrar o  nome do botão clicado. |
+
+<br />
+
+- **Visualização dos modais após interações em "Rastrear cartão"**
+
+```javascript
+    Analytics.logScreenView("/rastrear-cartao-[[step-rastreio]]/modal-[[nome-modal]]/")
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[step-rastreio]] | &#039;producao&#039;, &#039;enviado&#039; e etc | Deve retornar qual step que está o rastreio do cartão. |
+| [[nome-modal]] | &#039;cartao-em-producao&#039;, &#039;cartao-enviado&#039;, &#039;cartao-entregue&#039; e etc |  Deve retornar qual o modal que esta sendo visualizado. |
+
+<br />
+
+- **Quando:** No clique dos botões;
+- **Onde:** Nos modais de &quot;Rastrear cartão&quot;
+
+```javascript
+        Analytics.logEvent("event",{
+        	eventCategory: "app-midway:rastrear-cartao:[[step-rastreio]]:modal-[[nome-modal]]",
+        	eventAction: "clique:botao" ,
+        	eventLabel: "[[nome-botao]]"
+        ])
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[step-rastreio]] | &#039;producao&#039;, &#039;enviado&#039;, &#039;entregue&#039; e etc | Deve retornar qual step que está o rastreio do cartão. |
+| [[nome-modal]] | &#039;cartao-em-producao&#039;, &#039;cartao-enviado&#039;, &#039;cartao-entregue&#039; e etc |  Deve retornar qual o modal que esta sendo visualizado. |
+| [[nome-botao]] | &#039;falar-com-suporte&#039;, &#039;fechar&#039;, &#039;clique-fora&#039;, &#039;rastrear-meu-cartao&#039;, &#039;www.flashcorrier.com.br&#039; e etc | Deve retonrar o  nome do botão clicado. |
+
+<br />
+
+
+
 ### Cotação de câmbio
 
 
--**VIsualização da tela de Cotações**
+- **Visualização da tela de Cotações**
 
 ```javascript
     Analytics.logScreenView("/cotacao/cambio/[[moeda]]")

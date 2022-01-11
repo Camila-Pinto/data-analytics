@@ -30,7 +30,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Ecommerce
-Última atualização: 19/11/2021 <br />
+Última atualização: 10/01/2022 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -193,6 +193,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 <script>
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
+    'global': 'global'
     'dimension4': '[[cd4-hit-userstatus]]',
     'dimension5': '[[cd5-hit-loginstatus]]',
     'dimension7': '[[cd7-user-usermagentoid]]',
@@ -202,7 +203,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 </script>
 ```
 
-
 | Variável        | Exemplo         | Descrição            |
 | :-------------- | :-------------- | :------------------- |
 | `[[cd4-hit-userstatus]]` | &#039;sim&#039;, &#039;nao&#039; | Deve retornar se o usuário já fez alguma compra anteriormente (sim) ou se não é sua primeira compra (nao). |
@@ -211,9 +211,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | `[[cd17-hit-pagename]]` | &#039;home&#039;, &#039;pdp-produto-1&#039; | Nome amigável da página definido |
 | `[[cd61-user-cartID]]` |  '04245fsdf4fsdaf32fsd' | Deve retornar o ID do carrinho do usuário |
 
-
 ---
-
 
 ### General
 
@@ -1801,7 +1799,6 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 | `[[numero-entrega]]` |'entrega-1-de-1', 'entrega-2-de-2', 'entrega-1-de-3' e etc | Retornar o numera de cada entrega para o método de pagamento. |
 | `[[product-exclusivo-ecommerce+marketplace]]` |'sim:richlo', 'nao:richlo', 'nao:pontofrio', 'nao:extra', 'nao:sem-seller'| Deve retornar se o produto é exclusivo do ecommerce e o seu id do seller/marketplace |
 | `[[frete-previsao-valor]]` | 'normal-7dias-5.90', 'agendado-15dias-20.70', 'normal-7dias-5.90:agendado-15dias-20.00:retira-em-loja-1dia-0.00', 'normal-08/12/2021-5.90:agendado-01/01/2022-20.00:retira-em-loja-09/12/2021-0.00' | Retorna o frete, a previsão e o valor da entrega disponível |
-
 
 <br />
 
