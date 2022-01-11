@@ -34,6 +34,7 @@ Em caso de dúvidas, entrar em contato com algum desses e-mails:
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
 [guilherme.lacerda@riachuelo.com.br](mailto:guilherme.lacerda@riachuelo.com.br) <br />
 [gustavo.pereira@riachuelo.com.br](mailto:gustavo.pereira@riachuelo.com.br) <br />
+[gisele.leite@riachuelo.com.br](mailto:gisele.leite@riachuelo.com.br) <br />
 
 <br />
 
@@ -424,7 +425,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 <br />
 
-**No clique do botão 'Apagar tudo'**<br />
+**No clique dos botões da página**<br />
 
 - **Onde:** Na página de customização do site, seção 'Criar minha estampa'
 
@@ -442,7 +443,7 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 | Variável      | Exemplo         | Descrição             |
 | :------------ | :-------------- | :-------------------- |
-| `[[item-clicado]]` | 'centralizar', 'apagar-tudo', 'girar' e etc | Deve retornar o nome do item clicado. |
+| `[[item-clicado]]` | 'centralizar', 'apagar-tudo', 'girar', 'frente', 'costas' e etc | Deve retornar o nome do item clicado. |
 
 <br />
 
@@ -1249,6 +1250,103 @@ Deve ser disparado um push de dataLayer no momento de carregamento de todas as p
 
 ### Enhanced Ecommerce
 
+**Na visualização da vitrine de produtos**<br />
+
+- **Onde:** Na página de seleção do produto.
+    
+
+```html
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'event': 'productImpression',
+  'eventCategory': 'rchlo-mais:enhanced-ecommerce',
+  'eventAction': 'producImpression',
+  'noInteraction': '1',
+    'ecommerce': {
+      'detail': {
+        'products': [{
+          'name': '[[nome-produto]]',
+          'id': '[[id-produto]]',
+          'price': '[[preco-produto]]',
+          'brand': '[[marca-produto]]',
+          'category': '[[categoria-produto]]',
+          'variant': '[[variacao-produto]]',
+          'dimension5': '[[cd5-product-modelo+nome+cor-da-peca]]',
+          'dimension10': '[[cd10-product-padronagem-do-produto]]',
+          'dimension11': '[[cd11-product-subcategoria]]',
+          'dimension12': '[[cd12-product-preco-de]]'
+        }]
+      }
+    }
+ });
+</script>
+```
+
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-produto]]` | 'calca-masculina-super-skinny-em-jeans' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[preco-produto]]` | '139.99' | Preço do produto |
+| `[[marca-produto]]` | 'pool-original' | Marca do produto |
+| `[[categoria-produto]]` | 'masculino' | Departamento do produto |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[cd5-product-modelo+nome+cor-da-peca]]` |  'camiseta-masculina-preta', 'camiseta-feminina-branca', 'camiseta-juvenil-preta' e etc. | Retorna o modelo + nome + cor da peça selecionada |
+| `[[cd10-product-padronagem-do-produto]]` |  'florido', 'listado' | Padrão da estampa do produto |
+| `[[cd11-product-subcategoria]]` | '310090'| Código da categoria GM  |
+| `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
+
+<br />
+
+**No clique dos produtos da vitrine interagidos da página**<br />
+
+- **Onde:** Na página de seleção do produto.
+    
+
+```html
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'event': 'productClick',
+  'eventCategory': 'rchlo-mais:enhanced-ecommerce',
+  'eventAction': 'productClick',
+  'noInteraction': '1',
+    'ecommerce': {
+      'detail': {
+        'products': [{
+          'name': '[[nome-produto]]',
+          'id': '[[id-produto]]',
+          'price': '[[preco-produto]]',
+          'brand': '[[marca-produto]]',
+          'category': '[[categoria-produto]]',
+          'variant': '[[variacao-produto]]',
+          'dimension5': '[[cd5-product-modelo+nome+cor-da-peca]]',
+          'dimension10': '[[cd10-product-padronagem-do-produto]]',
+          'dimension11': '[[cd11-product-subcategoria]]',
+          'dimension12': '[[cd12-product-preco-de]]'
+        }]
+      }
+    }
+ });
+</script>
+```
+
+| Variável      | Exemplo         | Descrição             |
+| :------------ | :-------------- | :-------------------- |
+| `[[nome-produto]]` | 'calca-masculina-super-skinny-em-jeans' | Nome do produto |
+| `[[id-produto]]` | '13239635' | SKU do produto - pai |
+| `[[preco-produto]]` | '139.99' | Preço do produto |
+| `[[marca-produto]]` | 'pool-original' | Marca do produto |
+| `[[categoria-produto]]` | 'masculino' | Departamento do produto |
+| `[[variacao-produto]]` | '325' | Código DCO - Categoria do produto |
+| `[[cd5-product-modelo+nome+cor-da-peca]]` |  'camiseta-masculina-preta', 'camiseta-feminina-branca', 'camiseta-juvenil-preta' e etc. | Retorna o modelo + nome + cor da peça selecionada |
+| `[[cd10-product-padronagem-do-produto]]` |  'florido', 'listado' | Padrão da estampa do produto |
+| `[[cd11-product-subcategoria]]` | '310090'| Código da categoria GM  |
+| `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
+
+<br />
+
+
 **No carregamento da página de Detalhe do Produto**<br />
 
 - **Onde:** Na página de customização do site.
@@ -1276,6 +1374,7 @@ window.dataLayer.push({
           'dimension10': '[[cd10-product-padronagem-do-produto]]',
           'dimension11': '[[cd11-product-subcategoria]]',
           'dimension12': '[[cd12-product-preco-de]]'
+          'dimension17': '[[cd17-product-area-customizada]]'
         }]
       }
     }
@@ -1296,6 +1395,7 @@ window.dataLayer.push({
 | `[[cd10-product-padronagem-do-produto]]` |  'florido', 'listado' | Padrão da estampa do produto |
 | `[[cd11-product-subcategoria]]` | '310090'| Código da categoria GM  |
 | `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
+| `[[cd17-product-area-customizada]]` |  'frente'| 'costas'  | 'frente-e-costas' |
 
 <br />
 
@@ -1325,6 +1425,7 @@ window.dataLayer.push({
         'dimension10': '[[cd10-product-padronagem-do-produto]]',
         'dimension11': '[[cd11-product-subcategoria]]',
         'dimension12': '[[cd12-product-preco-de]]'
+        'dimension17': '[[cd17-product-area-customizada]]'
       }]
     }
   }
@@ -1346,6 +1447,7 @@ window.dataLayer.push({
 | `[[cd10-product-padronagem-do-produto]]` |  'florido', 'listado' | Padrão da estampa do produto |
 | `[[cd11-product-subcategoria]]` | '310090'| Código da categoria GM  |
 | `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
+|`[[cd12-product-area-customizada]]` |  'frente'| 'costas'  | 'frente-e-costas' |
 
 <br />
 
@@ -1377,6 +1479,7 @@ window.dataLayer.push({
         'dimension10': '[[cd10-product-padronagem-do-produto]]',
         'dimension11': '[[cd11-product-subcategoria]]',
         'dimension12': '[[cd12-product-preco-de]]'
+        'dimension17': '[[cd17-product-area-customizada]]'
       }]
     }
   }
@@ -1399,6 +1502,7 @@ window.dataLayer.push({
 | `[[cd10-product-padronagem-do-produto]]` |  'florido', 'listado' | Padrão da estampa do produto |
 | `[[cd11-product-subcategoria]]` | '310090'| Código da categoria GM  |
 | `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
+|`[[cd12-product-area-customizada]]` |  'frente'| 'costas'  | 'frente-e-costas' |
 
 <br />
 
@@ -1476,6 +1580,7 @@ window.dataLayer.push({
         'dimension10': '[[cd10-product-padronagem-do-produto]]',
         'dimension11': '[[cd11-product-subcategoria]]',
         'dimension12': '[[cd12-product-preco-de]]'
+        'dimension17': '[[cd17-product-area-customizada]]'
       }]
     }
   }
@@ -1505,6 +1610,7 @@ window.dataLayer.push({
 | `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
 | `[[cd15-hit-nome-loja]]` | 'spa-morumbi-sh', 'abc' e etc | Retorna o nome da loja selecionada. |
 | `[[cd16-hit-tipo-de-frete]]` |  'retira-rapido', 'express', 'normal' e etc | Retorna o tipo de frete selecionado |
+|`[[cd12-product-area-customizada]]` |  'frente'| 'costas'  | 'frente-e-costas' |
 
 <br />
 
