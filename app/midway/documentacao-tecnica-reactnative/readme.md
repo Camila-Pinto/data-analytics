@@ -7,7 +7,7 @@
 
 ## Implementação de Tags Firebase - Projeto Midway APP
 
-Última atualização: 05/11/2021 <br />
+Última atualização: 11/01/2022 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -10772,6 +10772,45 @@ uma conta corrente, cartão de crédito ou as duas opções |
 
 <br />
 
+<br />
+
+- **Onde:** Visualização do modal "Ver Detalhes", na tela de Resumo
+
+
+```javascript
+    Analytics.logScreenView("/home/mktplace-financeiro/[[nome-produto]]/[[seller]]/resumo/modal:ver-detalhes/[[valor-card]]/");
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[nome-produto]] | &#039;gift-card&#039;, &#039;emprestimo-pessoal&#039; e etc. | Deve retornar o nome do produto. |
+| [[seller]] | &#039;play-store&#039;, &#039;ifood&#039; e etc. | Deve retornar o gift card escolhido. |
+| [[valor-card]] | &#039;valor-20&#039;, &#039;valor-30&#039; e etc. | Retorna o valor mostrado no card. |
+
+<br />
+
+- **Quando:** Nos cliques dos botões do modal "Ver Detalhes" da tela de resumo
+- **Onde:** Na tela de resumo do Seller;
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:mktplace-financeiro:[[card-seller]]:resumo:modal:ver-detalhes:[[valor-card]]",
+        	eventAction: "clique:botao",
+        	eventLabel: "[[nome-botao]]"
+		NomeProduto: "[[nomeProduto]]"
+        });
+```
+
+| Variável        | Exemplo           | Descrição         |
+| :-------------- | :-----------------| :---------------- |
+| [[card-seller]] | &#039;ifood&#039;, &#039;uber&#039; e etc | Deve retornar o nome do card clicado.  |
+| [[valor-card]] | &#039;20&#039; , &#039;30&#039; e etc | Retorna o valor mostrado no card. |
+| [[nome-botao]] | &#039;clicou-fora&#039; , &#039;fechar&#039; e etc | Deve retornar qual foi o botão clicado. |
+|[[NomeProduto]] | 'giftcard', 'emprestimo', etc | Deve retornar o nome do produto do marketplace |
+
+
+<br />
+
 - **Quando:** Após interagir com o checkbox
 - **Onde:** Na tela de resumo do Seller;
 
@@ -10815,13 +10854,15 @@ uma conta corrente, cartão de crédito ou as duas opções |
         	eventCategory: "app-midway:mktplace-financeiro:[[card-seller]]:pagamento",
         	eventAction: "clique:botao",
         	eventLabel: "[[nome-botao]]"
+		NomeProduto: "[[nomeProduto]]"
         });
 ```
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
 | [[card-seller]] | &#039;ifood&#039;, &#039;uber&#039;, &#039;creditas&#039; e etc | Deve retornar o nome do card clicado.  |
-| [[nome-botao]] | &#039;voltar&#039;, &#039;ver-detalhes&#039; e etc | Deve retornar qual foi o botão clicado. |
+| [[nome-botao]] | &#039;voltar&#039;, &#039;ver-detalhes&#039;, &#039;saldo-da-conta&#039;, &#039;cartao-credito-bandeira&#039;, &#039;dia-do-pagamento&#039;, etc | Deve retornar qual foi o botão clicado. |
+|[[NomeProduto]] | 'giftcard', 'emprestimo', etc | Deve retornar o nome do produto do marketplace |
 
 
 <br />
@@ -10835,13 +10876,15 @@ uma conta corrente, cartão de crédito ou as duas opções |
         	eventCategory: "app-midway:mktplace-financeiro:[[card-seller]]:pagamento",
         	eventAction: "calback",
         	eventLabel: "proximo:[[forma-pagamento]]"
+		NomeProduto: "[[nomeProduto]]"
         });
 ```
 
 | Variável        | Exemplo           | Descrição         |
 | :-------------- | :-----------------| :---------------- |
 | [[card-seller]] | &#039;ifood&#039;, &#039;uber&#039;, &#039;creditas&#039; e etc | Deve retornar o nome do card clicado.  |
-| [[forma-pagamento]] | &#039;saldo&#039;, &#039;cartao-rchlo&#039; e etc | Deve retornar qual foi a forma de pagamento escolhida. |
+| [[nome-botao]] | &#039;voltar&#039;, &#039;ver-detalhes&#039;, &#039;saldo-da-conta&#039;, &#039;cartao-credito-bandeira&#039;, &#039;dia-do-pagamento&#039;, etc | Deve retornar qual foi o botão clicado. |
+|[[NomeProduto]] | 'giftcard', 'emprestimo', etc | Deve retornar o nome do produto do marketplace |
 
 
 <br />
@@ -11178,6 +11221,64 @@ uma conta corrente, cartão de crédito ou as duas opções |
 | [[tela-ou-modal]] | 'tela' ou 'modal' | Retornar qual elemento foi apresentado. |
 | [[nome-botao]] | 'atualizar', 'voltar', 'fechar' e etc | Retorna o nome do botão clicado. |
 | [[codigo-erro]] | 'erro:500', 'erro:404' e etc | Retorna o código do erro apresentado. |
+
+<br />
+
+### MarketPlace Financeiro - FAQ
+
+- **Quando:** No clique no icone de FAQ
+- **Onde:** Nas telas dos produtos de Marketplace Financeiro
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:mktplace-financeiro:[[seller]]",
+        	eventAction: "clique:icone",
+        	eventLabel: "[[nome-botao]]"
+		NomeProduto: "[[nomeProduto]]"
+        });
+```
+
+| Variável     | Exemplo            | Descrição           |
+| :----------- | :----------------- | :------------------ |
+| [[seller]] |  'ifood', 'uber', etc | Retornar qual o produto mktplace está sendo feita a interação do FAQ. |
+| [[nome-botao]] | 'faq' | Retorna o nome do botão clicado. |
+|[[NomeProduto]] | 'giftcard', 'emprestimo', etc | Deve retornar o nome do produto do marketplace |
+
+<br />
+
+- **Onde:** Na visualização das telas de FAQ dos produtos mktplace
+
+
+```javascript
+    Analytics.logScreenView("/home/mktplace-financeiro/[[nome-produto]]/[[seller]]/faq");
+```
+
+| Variável     | Exemplo            | Descrição           |
+| :----------- | :----------------- | :------------------ |
+| [[nome-produto]] | 'gift-card', 'emprestimo-pessoal' e etc | Deve retornar o nome do produto. |
+| [[seller]] | 'play-store', 'ifood' e etc | Deve retornar o gift card escolhido. |
+
+<br />
+
+- **Quando:** No clique para abrir e fechar as perguntas do FAQ
+- **Onde:** Nas telas de FAQ dos produtos de Marketplace Financeiro
+
+```javascript
+        Analytics.logEvent("event", {
+        	eventCategory: "app-midway:mktplace-financeiro:[[seller]]",
+        	eventAction: "clique:[[acao]]",
+        	eventLabel: "[[categoria-da-pergunta]]:[[pergunta]]"
+		NomeProduto: "[[nomeProduto]]"
+        });
+```
+
+| Variável     | Exemplo            | Descrição           |
+| :----------- | :----------------- | :------------------ |
+| [[seller]] |  'ifood', 'uber', etc | Retornar qual o produto mktplace está sendo feita a interação do FAQ. |
+| [[acao]] | 'abrir' ou 'fechar', 'voltar' | Retorna o nome da ação do clique.
+| [[categoria-da-pergunta]] | 'compra', 'minha-conta', 'pagamento', etc | Retorna a categoria que a pergunta faz parte. |
+| [[pergunta]] | 'como-compro-o-meu-gift-card', 'posso-comprar-gift-card-com-qualquer-cartao-de-credito', etc | Retorna a pergunta do FAQ escolhida na interação. |
+|[[NomeProduto]] | 'giftcard', 'emprestimo', etc | Deve retornar o nome do produto do marketplace |
 
 <br />
 
