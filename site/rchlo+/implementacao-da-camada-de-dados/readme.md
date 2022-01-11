@@ -28,7 +28,7 @@
 <br />
 
 ## Implementação da Camada de dados - Projeto Rchlo+
-Última atualização: 27/10/2021 <br />
+Última atualização: 11/01/2022 <br />
 Em caso de dúvidas, entrar em contato com algum desses e-mails: 
 
 [camila.adalgisa@riachuelo.com.br](mailto:camila.adalgisa@riachuelo.com.br) <br />
@@ -1395,7 +1395,7 @@ window.dataLayer.push({
 | `[[cd10-product-padronagem-do-produto]]` |  'florido', 'listado' | Padrão da estampa do produto |
 | `[[cd11-product-subcategoria]]` | '310090'| Código da categoria GM  |
 | `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
-| `[[cd17-product-area-customizada]]` |  'frente'| 'costas'  | 'frente-e-costas' |
+| `[[cd17-product-area-customizada]]` | 'frente' ,'costas',  'frente-e-costas' | Area customizada do produto
 
 <br />
 
@@ -1447,7 +1447,7 @@ window.dataLayer.push({
 | `[[cd10-product-padronagem-do-produto]]` |  'florido', 'listado' | Padrão da estampa do produto |
 | `[[cd11-product-subcategoria]]` | '310090'| Código da categoria GM  |
 | `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
-|`[[cd12-product-area-customizada]]` |  'frente'| 'costas'  | 'frente-e-costas' |
+| `[[cd17-product-area-customizada]]` | 'frente' ,'costas',  'frente-e-costas' | Area customizada do produto
 
 <br />
 
@@ -1610,7 +1610,7 @@ window.dataLayer.push({
 | `[[cd12-product-preco-de]]` |  '24.90' e etc | Preço do produto (dê) |
 | `[[cd15-hit-nome-loja]]` | 'spa-morumbi-sh', 'abc' e etc | Retorna o nome da loja selecionada. |
 | `[[cd16-hit-tipo-de-frete]]` |  'retira-rapido', 'express', 'normal' e etc | Retorna o tipo de frete selecionado |
-|`[[cd12-product-area-customizada]]` |  'frente'| 'costas'  | 'frente-e-costas' |
+| `[[cd17-product-area-customizada]]` | 'frente' ,'costas',  'frente-e-costas' | Area customizada do produto
 
 <br />
 
